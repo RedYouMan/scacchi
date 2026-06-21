@@ -9,3 +9,5 @@ test
 problemi/*
 !problemi/problema1.txt
 !problemi/
+
+*/build/*
