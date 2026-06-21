@@ -1,0 +1,10 @@
+T: Ripresa partita precedente
+V:B
+B:Pe5;Pd4;Pa2;Pb2;Pc2;Pf2;Pg2;Ph2;Ta1;Cb1;Ac1;Dd1;Re1;Af1;Cg1;Th1;
+N:Ta8;Cb8;Ac8;Dd8;Re8;Af8;Cg8;Th8;Pa7;Pb7;Pc7;Pf7;Pg7;Ph7;Pe6;Pd5;
+M:N
+P:3
+F:
+C:e2 e4 e7 e6 d2 d4 d7 d5 e4 e5
+K:10
+E:Bianco

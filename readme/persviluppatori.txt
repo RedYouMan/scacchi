@@ -1,0 +1,233 @@
+NOTE PER SVILUPPATORI
+
+Il progetto Scacchi-it è un progetto italiano, nato per realizzare un gioco adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
+Tuttavia si è introdotta anche una grafica riproducente la scacchiera, in modo che i familiari possono aiutare e giocare col non vedente.
+Sul sito RedYouMan è presentato il gruppo NV&V e le loro finalità. 
+
+La grafica fa uso della libreria sfml-2.6.1 ed eventuali cambi di tale libreria necessiterebbero di porting della
+parte sfml, questo perchè le versioni superiori sono state ridisegnate diversamente e diverse funzioni sono state modificate/eliminate oppure è cambiato lo standard di nomenclatura passato a quello Camel.
+
+I sorgenti .cpp e .h sono nelle directory src80, src-clock , src-starter e serverScacchi.
+La versione src80 è contemporaneamente online e offline. 
+I pacchetti di riferimento sono:
+- scacchi80.7z per i sorgenti
+- scacchiGr.7z su github contenenti solo eseguibili
+ - scacchiGr80.7z su harddisk contenente gli eseguibili corrispondenti a github
+- scacchigr.txt del tutorial va prelevato da scacchi/readme di scacchi80.7z
+ 
+ Il progetto si completa con serverScacchi, lo starter di scacchi e dell'orologio scacchistico.
+In particolare l'orologio è compilato a parte per usare un header più limitato come tts.h per il sorgente tts.cpp.
+
+github 
+ In _posts/repo si trova scachiGr.7z
+ - in _posts/tutorials il file scacchigr.txt
+
+L'ambiente di sviluppo è basato su librerie Windows di Visual Studio 2022 col suo sdk e compilazione basata su cmake (CMAKELISTS.txt).
+Inoltre nell'ambiente è installato python 3.13.
+
+E' consigliata la installazione di Visual Studio 2022 con il suo sdk.
+Tuttavia, dopo aver installato le librerie che si porta dietro Visual Studio Community 2022, per maggiore libertà qui abbiamo usato Visual studio code con cmake.
+Il risultato è identico, anche se si appoggia alle librerie della installazione di VisualStudio 2022.
+Il cmakelist.txt  è presente in ogni directory dei sorgenti cpp insieme alla directory build contenente debug dove viene creato l'eseguibile.
+Il make alla fine (post build) copia eseguibile e dll necessarie nella destination_dir configurata nel cmake.
+Nel cmakelists.txt risiede il path al sfml-2.6.1 da esplicitare per il proprio ambiente windows.
+e la bin dove mettere scacchi.exe
+
+I sorgenti in serverScacchi e src-starter sono in python, producendo alla fine degli exe col comando pyinstaller:
+pyinstaller --onefile <script>.py
+
+I passi di compilazione sono:
+1 - cd src80/build
+2 - cmake ..
+3 - cmake --build . > log.txt
+ 4 - da scacchi si esegue scacchi-start.exe
+
+La directory src-starter  è utilizzata per file python che vengono resi eseguibili. Tali eseguibili sono scacchi-start e clock-start, posti poi nella home directory a mano.
+
+Il progetto è costituito da tre parti:
+- motore grafico di navigazione della scacchiera
+- motore di controllo 
+-motore di gioco
+
+Il motore di navigazione consente di navigare la scacchiera graficamente, utilizzando il mouse, le frecce e il return. Inoltre informa sul nome della casella, se contiene pezzi o se vuota. Infine gestisce tutti i controls da tastiera per il gioco
+Il motore di controllo, permette la gestione e il controllo di tutte le regole di gioco: movimento dei pezzi, arrocco, enpassant, scacco al re, scacco matto, stallo, notazione algebrica, RoT notation, i problemi, la registrazione della partita, la sospensione di gioco e la ripresa, la scelta di giocare col computer, la soluzione dei problemi con e senza computer, il cambio del punto di vista di gioco.
+Consente anche un addestramento alle aperture di gioco (Openings Trainer).
+Il motore di gioco, sfrutta il progetto open source stockfish.
+
+I test di sistema possono farsi prendendo i file da directory test e ponendoli in directory problemi per caricarli con cntrlP.
+ Inizialmente per i test unitari occorreva mettere in board.cpp a true le variabili durante la compilazione:
+ sospendi_test
+test
+test_fen
+Oppure solo quelle che maggiormente interessavano: test_fen produce un file chiamato test_fen.txt nella directory log, sospendi_test permette nel caso di problemi di poter fare lo stesso la sospensione e, quindi, utilizzabile con file di test messi nella directory problemi.
+Infine test permetteva di ascoltare il debugger interno al codice.
+test_fen produceva un file chiamato test_fen.txt nella directory log, sospendi_test permette nel caso di problemi di poter fare lo stesso la sospensione e, quindi, utilizzabile con file di test prelevati dalla directory test. 
+Si consiglia sempre di controllare nel codice se nelle ultime versioni sono rimaste le stampe nelle directory di logdir.
+Per i comandi uci e le posizioni fen, consultare:
+ucidoc.txt
+fen.txt
+fenhistory.txt
+
+Il protocollo uci tra stockfish e scacchi è realizzato in board.cpp e le primitive in engine4.cpp
+
+Scopo dei sorgenti principali
+Il progetto ha diversi sorgenti, di cui board.cpp è il main, mentre nav.cpp è importante per la gestione dei tasti e per la navigazione.Associato a nav.cpp c'è drawboard.cpp che contiene varie funzionalità importanti:
+- startGrafica() che avvia la finestra grafica
+- drawboard() che inizializza la grafica e, per , refresh leggeri
+- animationBoard che effettua l'animazione
+- myRefresh() che permette dei refresh col trucco di una finta animazione
+
+Il file gesfile.cpp è il fulcro su cui si basa lo start di inizializzazione dei pezzi sulla scacchiera, la sospensione, la ripresa e il cambio puntoDiVista.
+Esso si basa sulla rot notation.
+
+I file di test usati sono rilasciati nella directory test.
+Scacchi-it è è commentato nelle parti importanti
+
+Il programma è tipicamente Object Oriented. La scacchiera è una matrice di caselle, che possono contenere o meno i pezzi. Per scelta la cancellazione di un pezzo da una casella è solo logica con un metodo che setta a falso la casella (non occupata) per due motivi:
+a) velocità con meno istruzioni
+b) ci sono casi in cui si prova a controllare se la mossa è valida ed eventualmente si annulla
+
+Il posizionamento dei pezzi iniziale non prevede, per scelta, che vengano assegnati i nomi alle caselle (a1, b1, etc.) dove sono vuote per due motivi:
+a) velocità
+b) quando si effettua la mossa si battezza la casella coerentemente col punto di vista da cui giocare
+
+Il punto di vista da cui giocare determina come le caselle sono distribuite nella matrice: la matrice ha sempre le coordinate 0,0 in alto a sinistra, mentre le caselle sono poste in modo da rispettare il punto di vista.
+La classe ChessUtility fornisce i metodi opportuni e viene utilizzata ovunque.
+
+Per garantire di cambiare il punto di vista in qualsiasi momento, si utilizza la sospensione e il ricaricamento della posizione in modo che tutto sia di nuovo identico come posizione, mossa etc.
+
+e' stato definito una RoT notation (dal nome e cognome dell'autore) che rispetto alla posizione fen utilizzata negli scacchi è più utile per i non vedenti, anche rispettoaduna immagine di un libro. 
+La RoT notation è usata per:
+- inizializzare la scacchiera (init)
+- sospenzione (sospendi) e ripresa (loadFile) della partita
+- per il cambio del punto di vista(sospendi e loadFile)
+- per il caricamento dei problemi (loadFile) 
+- per registrare la presenza di enpassant nelle sospensioni
+
+La rot notation è una estensione della notazione algebrica delle posizioni e mosse degli scacchi, utilizzata per rendere un applicativo di scacchi di tipo open data.Difatti con essa è possibile interagire con Scacchi-it.
+
+Il metodo checkSquareUnderAttack è un mattoncino base per fare i seguenti controlli:
+a) case minacciate dell'arrocco (vedi anche checkCastleUnderAttack)
+b) verifica di scacco al re o scacco matto o stallo (vedi cheScacco e cheStallo)
+c) se un pezzo è difeso
+d) lo scacco matto si basa su checkFreeSquare che usa sempre il mattoncino di sopra
+Il concetto dietro a pezzo difeso sibasa sul fatto che è difeso se la casa su cui si trova è minacciata da un pezzo amico.
+In cheScacco() si dichiara scacco al re se non è scacco matto.
+In particolare per dichiarare scacco matto non ci devono essere case libere di fuga (checkFreeSquare)e il pezzo che da scacco non può essere catturato e non esistono propri pezzi che possono parare lo scacco, ovvero per parare si intende trovare un pezzo che possa mettersi davanti al re.
+Un pezzo avversario si può catturare col re se è adistanza 1 e non è difeso, altrimenti occorre verificare se catturabile con altro pezzo.
+Tutto questo viene esaminato nella funzione cheScacco() in questions.cpp. Questions.cpp considerache tipi di scacco sono in gioco, se un pezzo è catturabile e se si può interporre.
+ 
+Gli arrocchi sono settati validi alla disposizione iniziale dei pezzi, Poi se si muove la torre, viene posto afalso la validità dell'arrocco relativo (setValid000 o setValid00) nel momento che viene fatto setBusySquare a false sulla casella. Altro momento di invalidazione di arrocco ,nel checkMove del re, se il re viene mosso dalla posizione iniziale si invalidano entrambi gli arrocchi.
+Quando si cambia il punto di vista, lo stato degli arrocchi deve essere trasferito all'altro lato (vedi nav.cpp quando si fa cntrlG)
+Le funzionalità cheScacco e cheStallo sono in Questions.cpp
+
+Per evitare troppa manutenzione a checkSquareUnderAttack è stata introdotta anche isPieceDefended che evita la logica negativa e utilizzato solo in casi particolari.
+
+Le classi sono definite in chess.h e la implementazione di esse è in chess.cpp.
+
+Il caricamento dei pezzi con init, il caricamento dei file sono in gesfile.cpp
+
+Init() si occupa solo della predisposizione iniziale dei pezzi, mentre loadFile permette con gli opportuni flag 1 o 2 di caricare le sospensioni o i problemi.
+
+Viene utilizzato stockfish per consentire di giocare contro il computer. I file di gestione di stockfish sono:
+- engine.cnf
+- engine.h
+- engine4.cpp
+Lo start in engine4.cpp definisce anche un exit handler per consentire in caso di Cntrl-Q o di control-c di fare un 'graceful stop' di stockfish.
+Tuttavia non viene utilizzato, utilizzando invece i comandi diretti cntrlQ.
+
+Comandi uci
+
+L'insieme di comandi uci inviati a stockfish è localizzabile in board.cppe engine.cpp
+
+Occorre prima fare lo start() (vedi engine4.cpp)
+che invia il comando di sincronizzazione
+uci return
+Importante anche lo stop() (vedi engine4.cpp)
+e getOutputMovecon cui ricevo le risposte di stockfish.
+se parte il computercome bianco
+ucinewgame 
+oppure
+position startpos return
+meglio il primo come standard
+
+se parto come secondo oppure per proseguire
+position startpos moves e2 e4  ... <altro>return
+go depth 15 return
+da notare che depth va da 1 a 20 dipende a che livello facciamo giocare stockfish
+
+Per i problemi occorre partire con la fen
+Vedi void risolviProblema(char who) in board.cpp
+
+position fen " + fen + " moves";
+poi 
+go depth 15 return 
+
+Poi aggiungo sempre alle mosse tutto, compreso il comando iniziale e le mosse successive di giocatore e stockfish 
+
+Alla fine a causa di integrare sia i problemi, cntrlZ e CntrlA
+lo start del bianco viene fatto con "ucinewgame"
+mentre il successivo comando viene fatto sempre con "position fen " (vedi board.cpp)
+poi go depth level
+
+
+Distribuzione dell'applicativo 
+Occorre aggiungere le dll dell'estensione dovuta al sdk installato insieme a Visual Studio Community 2022.
+In particolare vcruntime140.dll, vcruntime140_1.dll, ucrtbase.dll, msvcp140.dll e le versioni con d.
+Nel seguito descriviamo il metodo per individuare le dll e rendere il progrmma autosufficiente, senza necessità di pre-installareun pacchetto redistribuibile.
+
+Per giocare a tali applicazioni si può scegliere tra varie soluzioni:
+1 - installare, metodo più semplice, Visual Studio Community 2022 con SDK scelto nel piano di lavoro dell'installer,in modo da avere tutte le dll necessarie
+2 - installare il pacchetto ridistribuibile di Visual Studio C++, ultima versione
+(vedi: https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version)
+3 - mettere le dll necessarieper rendere autosufficiente l'applicazione
+
+Il metodo 3 è vantaggioso per un utente non vedente.
+
+l'iter per il metodo 3 è il seguente:
+1. fare il test senza dll e farsi dire quelle che mancano
+2. spacchettare lo zip di lucasg dove è l'exe dell'applicazione(duplicare l'applicazione in un'altra directory)
+ (pacchettare Dependencies_x64_Release_.without.peview.exe)
+Spacchettando tale pacchetto ci saranno molte dll e file dovuti a lucasg 
+3. farsi fare il report da lucesg col comando:
+ dependencies.exe -modules -chain -depth 2 scacchi.exe > report.txt
+4. per le dll mancanti dal report si vede la directory dove sta ognuna
+5. copi da tali directory le dll accanto all'exe dell'applicazione
+6. fare la copia dell'applicazione su chiavetta comprensiva di dll senza dependencies e le sue innumerevoli dll e file
+7 prima prova su chiavetta prima sandbox)
+8 provi su altro pc vergine di Visual Studio(seconda sandbox)
+Se supera i punti 7 e 8, successo e fine della "Ricerca della dll perduta".
+
+Regressioni di codice
+Fare 
+rmdir build /s
+ribuildare daccapo
+
+Eventuali errori di Runtime library spesso sono dovuti a una build non corretta
+Tenere presente che .net framework su cui si basa sia Visual studio e cmake non ricompilano tutti gli oggetti se ritengono che l'exe è più nuovo della nuova compilazione, per questo gli oggetti (obj) si possono trovare disallineati.
+ 
+
+Comando uci per abbandona automatico in centopedoni
+setoption name resign value true
+resign threshold 100
+
+Architettura per online
+Scacchi-it haè il client in c++ di uno dei giocatori e comunica col server in python via socket.
+Il server è multiplayer e per garantire questo in modo semplice, dato che il server non usa db, si fa generare al server, grazie al pacchetto secrets, un nome univoco sicuto di room asegnandolo al bianco.
+
+I moduli myNet.cpp e serverScacchi.py gestiscono la comunicazione
+Board.cpp e nav.cpp l'utilizzo di Scacchi-it su online
+
+Per problemi che nascono dal fatto che si deve far giocare Scacchi-it del bianco o del nero solo su un colore, questo rende problematico alcune funzionalità specie quelle di registrazione, ma anche perchè la lentezza di scrittura può dar fastidio alle socket perdendo il momento in cui viene letta la mossa.
+per il calcolo del numero di mossa, poter fare :
+Dall'online sono , quindi, esclusi:
+- registrazione della partita
+- sospensione e ripristino della partita
+
+Difatti in nav.cpp non viene consentito.
+
+Non viene consentito l'utilizzo di stockfish in modalità online e nemmeno l'opening trainer.
+Nè dell'Openings Trainer.
+
+Grazie per l'attenzione.
+

@@ -1,0 +1,10 @@
+^C:\USERS\ROSARIO\DESKTOP\PROGC\SCACCHI\SRC2\BUILD\CMAKEFILES\0D112A83CBA3BF9E7577913E67DFCDFE\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Rosario/Desktop/progc/scacchi/src2 -BC:/Users/Rosario/Desktop/progc/scacchi/src2/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Rosario/Desktop/progc/scacchi/src2/build/OrologioScacchi.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

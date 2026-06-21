@@ -1,0 +1,6 @@
+Versione di MSBuild 17.14.19+164abd434 per .NET Framework
+
+  orologio.cpp
+  OrologioScacchi.vcxproj -> C:\Users\Rosario\Desktop\progc\scacchi\src2\build\Debug\OrologioScacchi.exe
+  Copia delle DLL di SFML nella directory di destination_dir configurata C:/users/Rosario/Desktop/progc/scacchi/bin
+  - Postbuild: Copia eseguibile in destination_dir configurata C:/users/Rosario/Desktop/progc/scacchi/bin

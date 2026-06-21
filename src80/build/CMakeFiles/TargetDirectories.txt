@@ -1,0 +1,3 @@
+C:/Users/Rosario/Desktop/progc/scacchi/src80/build/CMakeFiles/Scacchi.dir
+C:/Users/Rosario/Desktop/progc/scacchi/src80/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Rosario/Desktop/progc/scacchi/src80/build/CMakeFiles/ZERO_CHECK.dir

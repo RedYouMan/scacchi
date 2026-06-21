@@ -1,0 +1,65 @@
+History[edit]
+FEN is based on a system developed[when?] by Scottish newspaper journalist David Forsyth. His system became popular in the 19th century.[citation needed]
+Steven J. Edwards extended[when?] Forsyth's system to support its use by computers.[citation needed]
+Usage[edit]
+FEN is defined[2] in the "Portable Game Notation Specification and Implementation Guide".[1]
+In the Portable Game Notation for chess games, FEN is used to define initial positions other than the standard one.[3]
+FEN does not provide sufficient information to decide whether a draw by threefold repetition may be legally claimed or a draw offer may be accepted; for that, a different format such as Extended Position Description is needed.[clarification needed][citation needed]
+Definition[edit]
+A FEN record defines a particular game position, all in one text line and using only the ASCII character set. A text file with only FEN data records should use the filename extension .fen.[4]
+A FEN record contains six fields, each separated by a space. The fields are as follows:[5]
+• Piece placement data: Each rank is described, starting with rank 8 and ending with rank 1, with a "/" between each one; within each rank, the contents of the squares are described in order from the a-file to the h-file. Each piece is identified by a single letter taken from the standard English names in algebraic notation (pawn = "P", knight = "N", bishop = "B", rook = "R", queen = "Q", and king = "K"). White pieces are designated using uppercase letters ("PNBRQK"), while black pieces use lowercase letters ("pnbrqk"). A set of one or more consecutive empty squares within a rank is denoted by a digit from "1" to "8", corresponding to the number of squares.
+• Active color: "w" means that White is to move; "b" means that Black is to move.
+• Castling availability: If neither side has the ability to castle, this field uses the character "-". Otherwise, this field contains one or more letters: "K" if White can castle kingside, "Q" if White can castle queenside, "k" if Black can castle kingside, and "q" if Black can castle queenside. A situation that temporarily prevents castling does not prevent the use of this notation.
+• En passant target square: This is a square over which a pawn has just passed while moving two squares; it is given in algebraic notation. If there is no en passant target square, this field uses the character "-". This is recorded regardless of whether there is a pawn in position to capture en passant.[6] An updated version of the spec has since made it so the target square is recorded only if a legal en passant capture is possible, but the old version of the standard is the one most commonly used.[7][8]
+• Halfmove clock: The number of halfmoves since the last capture or pawn advance, used for the fifty-move rule.[9]
+• Fullmove number: The number of the full moves. It starts at 1 and is incremented after Black's move.[citation needed]
+Examples[edit]
+The following example is from the FEN specification:[10]
+Here is the FEN for the starting position: 
+rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+And after the move 1.e4: 
+rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1
+And then after 1...c5: 
+rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6 0 2
+And then after 2.Nf3: 
+rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2
+FEN adjustment for chess variants like Chess960[edit]
+FEN is crucial for recording games in chess variants such as Chess960 (also known as Fischer Random Chess), where the initial position is not necessarily the traditional initial position. However, the FEN castling availability encoding (KQkq) is inadequate when both rooks are on the same side of the king on the back rank (as a result of one rook having moved, or in a form of randomized chess that allows it in a starting position): if either rook is still available for castling, it would be ambiguous which rook this is without knowing their initial positions. The solution implemented by chess engines like Shredder and Fritz_9 is to use the letters of the columns on which the rooks began the game. This scheme is sometimes called Shredder-FEN.[11]
+For the traditional setup, Shredder-FEN would use AHah instead of KQkq.[citation needed]
+Another solution is offered by X-FEN, which offers more backward compatibility than Shredder-FEN does, but at the cost of more complexity.[citation needed]
+See also[edit]
+• Extended Position Description
+• Portable Game Notation
+References[edit]
+1. ^ 
+Jump up to: 
+a b c d e f g h "Standard: Portable Game Notation Specification and Implementation Guide". Internet Archive. 1994-03-12. Retrieved 2020-07-25. The page linking to the document is here.
+2. Jump up Section "16.1: FEN" in "Portable Game Notation Specification and Implementation Guide"[1]
+3. Jump up Sections "9.7.1: Tag: SetUp" and "9.7.2: Tag: FEN" in "Portable Game Notation Specification and Implementation Guide"[1]
+4. Jump up Last paragraph in section "16.1: FEN" in "Portable Game Notation Specification and Implementation Guide"[1]
+5. Jump up Sections 16.1.3.1 to 16.1.3.6: in "Portable Game Notation Specification and Implementation Guide"[1]
+6. Jump up Section "16.2.3.4: En passant target square" in "Portable Game Notation Specification and Implementation Guide"[1]
+7. Jump up "About that en passant target square". TalkChess.com. 2014-09-16. Archived from the original on 2022-07-02.
+8. Jump up "Portable Game Notation Specification and Implementation Guide". GitHub. 2020-06-03. Archived from the original on 2022-07-02.
+9. Jump up Section "16.1.3.5: Halfmove clock" states "This value is used for the fifty move draw rule."[1]
+10. Jump up Section "16.1.4: Examples" in "Portable Game Notation Specification and Implementation Guide"[1]
+11. Jump up "Shredder-FEN". www.chessprogramming.org. 2022-04-05.
+Bibliography[edit]
+External links[edit]
+• Portable Game Notation Specification and Implementation Guide, Steven J. Edwards
+Categories: Computer chessChess notationComputer file formats
+This page was last edited on 7 January 2026, at 19:04 (UTC).
+Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Legal & safety contacts
+Code of Conduct
+Developers
+Statistics
+Cookie statement
+Mobile view
+Wikimedia Foundation
+Powered by MediaWiki

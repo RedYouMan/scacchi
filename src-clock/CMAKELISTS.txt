@@ -1,0 +1,49 @@
+
+cmake_minimum_required(VERSION 3.10)
+project(OrologioScacchi CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# --- PERCORSI SFML (Personalizzabili) ---
+# Se SFML non è nel path di sistema, decommenta e imposta i percorsi qui:
+set(SFML_ROOT "C:/users/Rosario/Desktop/SFML-2.6.1") # Windows Esempio
+# set(SFML_ROOT "/usr/local/SFML-2.6.1") # Linux/macOS Esempio
+if(DEFINED SFML_ROOT)
+    # message(STATUS "Utilizzo SFML da: ${SFML_ROOT}")
+    set(CMAKE_INCLUDE_PATH ${SFML_ROOT}/include)
+    set(CMAKE_LIBRARY_PATH ${SFML_ROOT}/lib)
+endif()
+if(POLICY CMP0074)
+  cmake_policy(SET CMP0074 NEW)
+endif()
+
+# --- RICERCA PACCHETTO SFML ---
+# Componenti necessari per un gioco di scacchi: graphics, window, system
+find_package(SFML 2.6.1 REQUIRED COMPONENTS graphics window system audio)
+
+set(SOURCES
+orologio.cpp
+TTS.cpp
+tts.h
+)
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+# --- LINK DELLE LIBRERIE E INCLUDE ---
+# Questo collega SFML e gestisce automaticamente le directory di include/lib
+target_link_libraries(${PROJECT_NAME} PRIVATE sfml-graphics sfml-window sfml-system sfml-audio)
+
+# Se utilizzi SFML statico, potresti aver bisogno di definire questa macro:
+#target_compile_definitions(${PROJECT_NAME} PRIVATE SFML_STATIC)
+set(DESTINATION_DIR "C:/users/Rosario/Desktop/progc/scacchi/bin") # Personalizza questo percorso per la tua directory di destinazione
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E echo "- Postbuild: Copia eseguibile in destination_dir configurata ${DESTINATION_DIR}"
+    
+    # Copia l'eseguibile
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        $<TARGET_FILE:${PROJECT_NAME}>
+        ${DESTINATION_DIR}
+        
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${SFML_ROOT}/bin $<TARGET_FILE_DIR:${PROJECT_NAME}>
+        ${DESTINATION_DIR}
+        COMMENT "Copia delle DLL di SFML nella directory di destination_dir configurata ${DESTINATION_DIR}"
+    )
