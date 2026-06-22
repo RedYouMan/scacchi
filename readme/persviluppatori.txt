@@ -21,7 +21,11 @@ I pacchetti di riferimento sono:
 In particolare l'orologio è compilato a parte per usare un header più limitato come tts.h per il sorgente tts.cpp.
 
 github 
- In _posts/repo si trova scachiGr.7z
+ 
+Sono sotto github due parti:
+- quelle per il rilascio sotto Desktop\RedYouMan.io.git/_posts/repo che contiene il pacchetto scacchiGr.7z ottenuto dall'impacchettamento della cartella  scacchi-it, , sotto Desktop/progc/scacchi-it, che serve per il rilasciorinominato come scacchiGr.7z
+-quelle per il versioning  e build, sotto Desktop/progc/scacchi
+In _posts/repo si trova scachiGr.7z
  - in _posts/tutorials il file scacchigr.txt
 
 L'ambiente di sviluppo è basato su librerie Windows di Visual Studio 2022 col suo sdk e compilazione basata su cmake (CMAKELISTS.txt).
