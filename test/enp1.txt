@@ -1,0 +1,6 @@
+T:tre enpassant provocati da bianco 
+V:B
+B:Re1;Pb2;Pe2;Pg2;
+N:Rd8;Pa4;Pc4;Pd4;Pf4;Ph4;
+M:B
+P:1

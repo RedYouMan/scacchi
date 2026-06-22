@@ -1,0 +1,6 @@
+T:Donna indifesa,scacco b8 e patta
+V:B
+B:Rc5;Db6;
+N:Ra8;
+M:B
+P:         1

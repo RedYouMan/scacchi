@@ -1,0 +1,6 @@
+T:sospensione con messaggio enpassant alla ripresa
+V:B
+B:Re1;Pa2;
+N:Rd8;Pb4;
+M:B;
+P:1

@@ -1,0 +1,6 @@
+T:Stallo
+V:B
+B:Rc7;Dd3;
+N:Ra8;
+M:B
+P:1

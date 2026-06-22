@@ -1,0 +1,6 @@
+T: Ripresa partita precedente
+V:B
+B:Rg1;Ah2;
+N:Rh8;Ca8;Ac8;
+M:B
+P:21;

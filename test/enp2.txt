@@ -1,0 +1,6 @@
+T:tre enpassant provocati da Nero
+V:N
+B:Re1;Pa5;Pc5;Pd5;Pf5;Ph5;
+N:Rd8;Pb7;Pe7;Pg7;Pf4;Ph4;
+M:N;
+P:1;

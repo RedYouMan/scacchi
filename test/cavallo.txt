@@ -1,0 +1,6 @@
+T: matto in f7 di cavallo parato da alfiere
+V:B
+B:Ra1;Dg3;Cg5;
+N:Rh8;Ag8;Ph7;
+M:B
+P:1

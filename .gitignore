@@ -72,7 +72,6 @@ bin/*.bin
 logdir/*
 registrazioni/*
 sospensioni/*
-test
 *.exe
 
 # ignore all files in problemi except problema1.txt

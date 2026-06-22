@@ -1,0 +1,6 @@
+T:Abbandono
+V:B
+B:Re1;Dd1;Df1;
+N:Re8;
+M:B
+P:1
