@@ -1,8 +1,8 @@
 
 NOTE PER SVILUPPATORI
--- Rosario Turco
+Rosario Turco
 
-Il progetto Scacchi-it è un progetto italiano, nato per realizzare un gioco adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
+Il progetto Scacchi-it è un progetto italiano,  per piattaforma Windows, nato per realizzare un gioco adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
 Tuttavia si è introdotta anche una grafica riproducente la scacchiera, in modo che i familiari possono aiutare e giocare col non vedente.
 Sul sito RedYouMan è presentato il gruppo NV&V e le loro finalità. 
 
