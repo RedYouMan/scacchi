@@ -1,4 +1,6 @@
 
+import argparse
+import logging
 import socket
 import re
 import os
@@ -8,6 +10,22 @@ from datetime import datetime
 
 MAX_FIELD_LEN = 7
 MOVE_LEN = 6
+
+logger = logging.getLogger('serverScacchi')
+
+def configure_logging(log_file=None):
+    logger.setLevel(logging.INFO)
+    for handler in list(logger.handlers):
+        logger.removeHandler(handler)
+
+    if log_file:
+        handler = logging.FileHandler(log_file, encoding='utf-8')
+    else:
+        handler = logging.StreamHandler()
+    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s', '%Y-%m-%d %H:%M:%S')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+
 
 
 def load_config(config_file='server.cnf'):
@@ -31,7 +49,7 @@ def load_config(config_file='server.cnf'):
                         elif key == 'port':
                             port = int(value)
         except Exception as e:
-            print(f"Errore lettura config: {e}")
+            logger.error(f"Errore lettura config: {e}")
     
     return host, port
 
@@ -67,7 +85,7 @@ def suggest_room(existing_rooms):
 def room_in_use_error(conn, text, room_id, player_id, rooms):
     suggestion = suggest_room(rooms)
     conn.sendall(f"ERROR: room in use, try {suggestion}\n".encode('utf-8'))
-    print(f"Errore room in uso: {text} room={room_id} player={player_id}")
+    logger.warning(f"Errore room in uso: {text} room={room_id} player={player_id}")
 
 
 def start_server(host='127.0.0.1', port=65432):
@@ -83,7 +101,7 @@ def start_server(host='127.0.0.1', port=65432):
             rooms[room_id] = {'players': set(), 'pending': {}, 'buffered': []}
         return rooms[room_id]
 
-    print(f"Server in ascolto su {host}:{port}")
+    logger.info(f"Server in ascolto su {host}:{port}")
     while True:
         conn, address = server_socket.accept()
         with conn:
@@ -102,7 +120,7 @@ def start_server(host='127.0.0.1', port=65432):
                 room_id, player_id = parts[1], parts[2]
                 if not valid_field(room_id) or not valid_field(player_id):
                     conn.sendall(b"ERROR: invalid room/player length\n")
-                    print(f"Errore JOIN: {text} room={room_id} player={player_id}")
+                    logger.error(f"Errore JOIN: {text} room={room_id} player={player_id}")
                     continue
                 room = rooms.get(room_id)
                 if room and len(room['players']) >= 2 and player_id not in room['players']:
@@ -117,13 +135,13 @@ def start_server(host='127.0.0.1', port=65432):
                             room['buffered'].remove((sender, move))
                 conn.sendall(b"OK\n")
                 now = datetime.now().strftime("%Y-%m-%d %H:%M")
-                print(f"[{now}] JOIN {room_id} {player_id}")
+                logger.info(f"[{now}] JOIN {room_id} {player_id}")
 
             elif command == "SEND" and len(parts) == 4:
                 room_id, player_id, move = parts[1], parts[2], parts[3]
                 if not valid_field(room_id) or not valid_field(player_id) or not valid_move(move):
                     conn.sendall(b"ERROR: invalid room/player/move length\n")
-                    print(f"Errore SEND: {text} room={room_id} player={player_id}")
+                    logger.error(f"Errore SEND: {text} room={room_id} player={player_id}")
                     continue
                 existing_room = rooms.get(room_id)
                 if existing_room and len(existing_room['players']) >= 2 and player_id not in existing_room['players']:
@@ -139,7 +157,7 @@ def start_server(host='127.0.0.1', port=65432):
                     room['buffered'].append((player_id, move))
                 conn.sendall(b"OK\n")
                 now = datetime.now().strftime("%Y-%m-%d %H:%M")
-                print(f"[{now}] Mossa ricevuta da {player_id} in {room_id}: {move}")
+                logger.info(f"[{now}] Mossa ricevuta da {player_id} in {room_id}: {move}")
 
             elif command == "RECV" and len(parts) == 3:
                 room_id, player_id = parts[1], parts[2]
@@ -148,7 +166,7 @@ def start_server(host='127.0.0.1', port=65432):
                 # ridigitare il player senza che il server chiuda la comunicazione.
                 if not valid_field(room_id) or not valid_field(player_id):
                     conn.sendall(b"NONE\n")
-                    print(f"Errore RECV: {text} room={room_id} player={player_id}")
+                    logger.error(f"Errore RECV: {text} room={room_id} player={player_id}")
                     continue
                 # Modifica fine
                 existing_room = rooms.get(room_id)
@@ -161,7 +179,7 @@ def start_server(host='127.0.0.1', port=65432):
                 if move:
                     conn.sendall(move.encode('utf-8') + b"\n")
                     now = datetime.now().strftime("%Y-%m-%d %H:%M")
-                    print(f"[{now}] Mossa inviata a {player_id} in {room_id}: {move}")
+                    logger.info(f"[{now}] Mossa inviata a {player_id} in {room_id}: {move}")
                 else:
                     conn.sendall(b"NONE\n")
                     #print(f"Nessuna mossa per {player_id} in {room_id}")
@@ -171,7 +189,7 @@ def start_server(host='127.0.0.1', port=65432):
                 room_id, player_id = parts[1], parts[2]
                 if not valid_field(room_id) or not valid_field(player_id):
                     conn.sendall(b"ERROR: invalid room/player length\n")
-                    print(f"Errore {command}: {text} room={room_id} player={player_id}")
+                    logger.error(f"Errore {command}: {text} room={room_id} player={player_id}")
                     continue
                 existing_room = rooms.get(room_id)
                 if existing_room and len(existing_room['players']) >= 2 and player_id not in existing_room['players']:
@@ -189,18 +207,29 @@ def start_server(host='127.0.0.1', port=65432):
                     room['buffered'].append((player_id, command))
                 conn.sendall(b"OK\n")
                 now = datetime.now().strftime("%Y-%m-%d %H:%M")
-                print(f"[{now}] {command} by {player_id} in {room_id}")
+                logger.info(f"[{now}] {command} by {player_id} in {room_id}")
             elif command == "SUGGEST":
                 suggestion = suggest_room(rooms)
                 conn.sendall(f"{suggestion}\n".encode('utf-8'))
-                print(f"Suggerimento room inviato: {suggestion}")
+                logger.info(f"Suggerimento room inviato: {suggestion}")
 
             else:
                 conn.sendall(b"ERROR: invalid command\n")
-                print(f"Comando sconosciuto: {text}")
+                logger.error(f"Comando sconosciuto: {text}")
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description=(
+            "Server di scacchi.",
+        ),
+        usage="serverScacchi [--log logName]",
+        epilog="Esempio: serverScacchi.exe --log server.log"
+    )
+    parser.add_argument('--log', '-l', help='Nome del file di log. Se assente i messaggi vengono stampati a video.')
+    args = parser.parse_args()
+
+    configure_logging(args.log)
     host, port = load_config()
     start_server(host, port)
 
