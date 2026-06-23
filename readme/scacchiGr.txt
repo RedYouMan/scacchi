@@ -541,9 +541,14 @@ Leggere se esiste nel file porte.txt la porta 65432.
 Senel file  è presente e non è stato lanciato serverScacchi.exe, significa che è già in uso da altro programma. Per cui nel file server.cnf va cambiata port a 65431 o simili.
 
 Verifica visibilità del server
-Su prompt di comando digitare:
-ping ip-address (es. ping 192.168.x.y dove x e y sono quelli del server)
-Se l'ip non è visibile occorre che Windows Defender Firewall del server non intervenga sulla porta 65432, per cui clicca con il tasto destro su Regole in entrata (nel menu a sinistra) e seleziona Nuova regola. Dovrai indicare la porta da escludere dal controllo.
+Sul vostro pc che non è server sul prompt di comandi digitare:
+ping <ip-addres>s (es. ping 192.168.x.y dove l'ip con x e y è quello del server)
+Se l'ip non è visibile occorre che Windows Defender Firewall del server non intervenga sulla porta 65432, ovvero occorre creare una regola in entrata.
+
+Regole in entrata per Windows Defender Firewall
+1. Apri le impostazioni avanzate: premi la combinazione di tasti Windows + R, digita wf.msc nella finestra Esegui e premi Invio.
+2. Crea la nuova regola: nella colonna di sinistra, fai clic con il tasto destro su Regole connessioni in entrata e seleziona Nuova regola....
+3. Scegli il tipo di regola: seleziona Programma (per limitare un'app) o Porta (per aprire uno specifico canale di rete).
 
 Attivazione del server
 Il serverScacchi.exe deve essere attivato solo sul pc che fa da server.
@@ -570,18 +575,18 @@ Cancellare un pc dalla rete Hamachi
 Il gestore della rete può eliminare i pc che non vogliono più partecipare alla rete, per permettere ad altri di parteciparvi.
 
 Tempi di rete
-I tempi di rete possono dipendere dal controllo del firewall e del antivirus. Eventualmente se notate lentezza escludete da essi serverScacchi.exe, scacchi.exe e scacchi-start.exe
+I tempi di rete possono dipendere dal controllo del firewall e del antivirus. Eventualmente se notate lentezza escludete da essi serverScacchi.exe, scacchi.exe e scacchi-start.exeo in alternativa la sola cartella scacchi-it che li contiene.
 
 Tracciamento delle mosse da parte  del server 
 Il log del server , prelevato dalla console con cntrlA e messo su un file di testo (notepad),permette l'osservazione del tracciamento di ogni partita , mossa per mossa inviata, in ogni room. 
 L'esito della partita può essere compreso da i comandi che il server traccia:
 - quitAB: c'è stato l'abbandono da parte di chi lo inoltra.
-- Matto: la partita è terminata con matto inflitto a chi riceve il comando Matto 
+- Matto: la partita è terminata con matto inflitto a chi riceve il comando Matto. Il matto viene dato da chi effettua l'ultima mossa. 
 - Stallo: la partita è terminata con Stallo da parte di chi doveva muovere
 - Patta: la partita è terminata con patta elementare da parte di chi doveva muovere
 - none : probabile patta concordata (da verificare con i giocatori)
 
-Il messaggio Errore send riporta uno di questi comandi, ma l'errore dipende dal fatto che nel caso Matto, Stallo, Patta l'altro Scacchi-it ha già completato la partita e ha restartato e, quindi, non preleva l'ultimo messaggio. Tuttavia il tracciamento del Matto, Stallo e Patta elementare sono corretti.
+Il messaggio Errore send riporta uno di questi comandi, ma la dicitura errore dipende dal fatto che nel caso Matto, Stallo, Patta l'altro applicativo Scacchi-it ha già completato la partita dopo la ricezione della mossa riconosciuta come matto o patta o stallo e ha restartato , di conseguenza , non ha prelevato l'ultimo messaggio. Tuttavia il tracciamento del Matto, Stallo e Patta elementare sono corretti.
 
 Le patte non elementari sono concordate trai giocatori e verranno, eventualmente, comunicate a parte al circolo con una email.
 
@@ -590,12 +595,14 @@ ESISTONO VARI piani tariffari annuali estendendo ad esempio fino a 32 pc una ret
 Consultare il sito ufficiale.
 
 Segnalazioni
-Per segnalazioni di bug o altro potreste inviare via email (rosturco.na@gmail.com) la posizione dei pezzi attraverso il file di sospensione della partita, segnalando anche la versione di scacchi che state usando e la descrizione del problema.
+Per segnalazioni di bug o altro potreste inviare via email a rosturco.na@gmail.com la posizione dei pezzi attraverso il file di sospensione della partita, segnalando anche la versione di scacchi che state usando e la descrizione del problema.
 Molto utile sarebbe avere la selezione della videata delle console (di Scacchi-it e serverScacchi se state online) che si ottiene su essa con CntrlA e CntrlC da incollare, poi, in un file di testo da inviare nella email.
 
 Conclusioni
 L'applicativo Scacchi-it presentato coglie vari aspetti importanti:
 - permette di giocare a non vedenti e vedenti
+- abbatte le barriere di distanza, digitali e di lingua
+- include in un gioco alla pari vedenti e non vedenti
 - fa fruire, in modo trasparente, un insieme di cose che gli appassionati di scacchi non informatici non saprebbero come utilizzare: chess engine, comandi uci, tuning, openings book, formato pgn e polyglot, reti neurali, algoritmo alpha0 e altro ancora. 
 - è un applicativo open data, che permette l'interazione con esso attraverso la rot notation
 - permette di studiare, analizzare, giocare e dare lezioni di scacchi
