@@ -460,10 +460,20 @@ Sono però controllate alcune patte teoriche elementari:
 Altre Regole di gioco
 Per le regole coinvolte potreste consultare Wikipedia.
 
+
 Giocare online
 Si può giocare nella stessa rete o su Internet, con giocatori su reti diverse.
 Il server è multiplayer e assegna al bianco il nome della room da utilizzare.
 Il bianco comunicherà via email o whatsapp al nero il nome della room e attenderà , prima di fare la mossa, che il nero sia connesso.
+
+Perchè usare un proprio server
+I motivi possono essere diversi:
+- per non usare piattaforme commerciali 
+- per motivi di privacy
+- per essere liberi sulle modalità di gioco con i propri amici
+- per poter giocare quando si vuole
+- poter introdurre propri addon e utility per analizzare comodamente i log del server sull'andamento delle partite
+- per portarsi su una pendrive tutto il gioco utilizzabile ovunque
 
 Giocare su stessa rete
 I due pc dovranno avere server.cnf configurati allo stesso modo. 
