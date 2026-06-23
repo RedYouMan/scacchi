@@ -484,12 +484,16 @@ Leggere se esiste nel file porte.txt la porta 65432.
 Senel file  è presente e non è stato lanciato serverScacchi.exe, significa che è già in uso da altro programma. Per cui nel file server.cnf va cambiata port a 65431 o simili.
 
 Verifica visibilità del server
-Su prompt di comando digitare:
-ping ip-address (es. ping 192.168.x.y dove x e y sono quelli del server)
-Se l'ip non è visibile occorre fare:
-disattivare prima di giocare Windows Defender Firewall sul server
-su Impostazione di rete per entrambi i giocatori indicare la rete come PRIVATA
-Alla fine della partita rimettere su Windows Firewall.
+Su pc che non è server,  sul prompt di comandi digitare:
+ping <ip-address> (es. ping 192.168.x.y dove l'ip è quello del server)
+Se l'ip non è visibile occorre o disattivare prima di giocare Windows Defender Firewall sul server oppure mettere delle regole in entrata sulla porta 65432.
+Inoltre su Impostazione di rete per entrambi i giocatori indicare la rete come PRIVATA
+Alla fine della partita rimettere su Windows Firewall sul server se era stato disattivato.
+
+Regole in entrata per Windows Defender Firewall
+1. Apri le impostazioni avanzate: premi la combinazione di tasti Windows + R, digita wf.msc nella finestra Esegui e premi Invio.
+2. Crea la nuova regola: nella colonna di sinistra, fai clic con il tasto destro su Regole connessioni in entrata e seleziona Nuova regola....
+3. Scegli il tipo di regola: seleziona Programma (per limitare un'app) o Porta (per aprire uno specifico canale di rete).
 
 Attivazione del server
 Il serverScacchi.exe deve essere attivato solo sul pc che fa da server.

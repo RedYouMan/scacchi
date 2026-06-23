@@ -45,8 +45,7 @@ int main(int argc, char *argv[])
 {
     if (argc < 6)
     {
-        cout << "Usage: fenpos <textProblem between "
-                "> <Who_string> <numMove> <numProblem> <fenstring>"
+        cout << "Usage: fenpos <textProblem between double quotes> <Who_string> <numMove> <numProblem> <fenstring>"
              << endl;
         return 1;
     }
