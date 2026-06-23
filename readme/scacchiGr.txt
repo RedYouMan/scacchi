@@ -507,6 +507,11 @@ Regole in entrata per Windows Defender Firewall
 
 Attivazione del server
 Il serverScacchi.exe deve essere attivato solo sul pc che fa da server.
+Sono possibili due comandi:
+serverScacchi
+ServerScacchi --log server.log
+
+Il primo comando manda i log a video, il secondo sul file server.log.
 
  Come si gioca su stessa rete
 1. Solo il bianco avvia l'eseguibile serverScacchi.exe nella directory serverScacchi
@@ -566,7 +571,13 @@ Regole in entrata per Windows Defender Firewall
 
 Attivazione del server
 Il serverScacchi.exe deve essere attivato solo sul pc che fa da server.
+Sono possibili due comandi:
+serverScacchi
+ServerScacchi --log server.log
 
+Il primo comando manda i log a video, il secondo sul file server.log.
+
+Come giocare su Hamachi
 I passaggi per giocare sono gli stessi di prima, indicati sopra nella parte dove si parlava di giocare sulla stessa rete.
 
 Per terminare di giocare online
