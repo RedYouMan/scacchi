@@ -5,7 +5,7 @@ Da oggi anche online e multiplayer.
 
 Scelta file testo per il tutorial
 Si è scelto di usare un file di testo, al posto di un professionale manuale in pdf . 
-Per il semplice motivo che un file di testo è il più accessibile possibile su browser per un non vedente.  
+Per il semplice motivo che un file di testo è il più accessibile possibile su browser con NVDA per un non vedente.  
 
 Versione disponibile 
 Questo paragrafo del tutorial segnalerà sempre la presenza di eventuali nuove versioni migliorative.
@@ -512,6 +512,7 @@ serverScacchi
 ServerScacchi --log server.log
 
 Il primo comando manda i log a video, il secondo sul file server.log.
+E' consigliabile il secondo comando.
 
  Come si gioca su stessa rete
 1. Solo il bianco avvia l'eseguibile serverScacchi.exe nella directory serverScacchi
@@ -576,6 +577,8 @@ serverScacchi
 ServerScacchi --log server.log
 
 Il primo comando manda i log a video, il secondo sul file server.log.
+E' consigliabile il secondo comando.
+
 Attenzione: seHamachi non è attivo, il server leggendo su server.cnf l'ip di Hamachi andrà in errore (Traceback).
  
  Come giocare su Hamachi
@@ -624,7 +627,7 @@ Consultare il sito ufficiale.
 
 Segnalazioni
 Per segnalazioni di bug o altro potreste inviare via email a rosturco.na@gmail.com la posizione dei pezzi attraverso il file di sospensione della partita, segnalando anche la versione di scacchi che state usando e la descrizione del problema.
-Molto utile sarebbe avere la selezione della videata delle console (di Scacchi-it e serverScacchi se state online) che si ottiene su essa con CntrlA e CntrlC da incollare, poi, in un file di testo da inviare nella email.
+Molto utile sarebbe avere server.log se state online e la selezione della videata della console  scacchi-start  . La videata di scacchi-start si ottiene con CntrlA e CntrlC da incollare, poi, in un file di testo da inviare nella email.
 
 Conclusioni
 L'applicativo Scacchi-it presentato coglie vari aspetti importanti:
@@ -636,7 +639,7 @@ L'applicativo Scacchi-it presentato coglie vari aspetti importanti:
 - permette di studiare, analizzare, giocare e dare lezioni di scacchi
 - permette di giocare offline o online
 
-Alla prossima
 
 Ricorda: L'accessibilità e la sicurezza, in ogni settore e genere, non sono un'opzione ma un diritto.
+Alla prossima
   
