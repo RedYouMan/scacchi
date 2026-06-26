@@ -241,6 +241,33 @@ Suggerimento per ricerca di stringhe nei file
 E' possibile che durante la manutenzione occorre cercare una funzione o una stringa tra tutti i sorgenti.
 Il comando dos migliore è:
 findstr <stringa> *
+Comandi git
+di Mario Turco
+La guida la puoi seguire sia da cmd che da visual studio code aprendo la console (ctrl + J)
+1) Step 1 segnare i file modificati come pronti per essere inviati, si può fare in vari modi:
+ - git add .  ovvero aggiungi tutti i file modificati della cartella corrente
+ - git add nomefile aggiungi solo nomefile
+ - git add ./cartella aggiungi i file in cartella
 
+2) Step 2, aggiungere un messaggio di commit  git commit -m 'Ho modificato il file xyz'
+3) Step 3, pushare verso github, git push
+
+
+Se vuoi lavorare su un branch per provare un feature nuova e poi poter tornare eventualmente indietro ad una versione precedente:
+1) git checkout -b nome_feature dove -b significa 'crea il branch se non esiste', se ti vuoi spostare ad un branch esistente invece basta git checkout nomebranch, ad esempio git checkout main (che è il branch principale del progetto)
+2) fai sempre il giro di sopra, git add, git commit, git push
+
+Una volta che ha finito di lavorare su un branch lo puoi mergiare sul main:
+1) ti sposti sul main, git checkout main
+2) git merge nomebranch, questo unirà nomebranch sul master
+3) opzionalmente, puoi anche cancellare nomebranch visto che non ti serve più: git branch -d nomebranch
+
+Per riprendere un sorgente precedente occorre fare
+git checkout <codice hash della commit>
+poi si fa il branch
+
+Qua sta la documentazione ufficiale di git in italiano, le prime parti sono in italiano le altre sono in inglese: https://git-scm.com/book/it/v2/Per-Iniziare-Il-Controllo-di-Versione
+
+Conclusione della nota
 Grazie per l'attenzione.
 
