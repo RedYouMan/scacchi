@@ -332,7 +332,7 @@ Ci sono altri record gestiti in modo indiretto dal programma per le sospensioni 
 Quest'ultimi record indirettamente gestiti dal programma non vengono documentati dato che sono competenza solo del programma. 
 
 Vantaggi della rot
-La rot unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla fen. Infatti aggiunge il testo (T:) che valorizza il momento artistico e clou della posizione, inoltre aggiunge il punto di vista da cui guardare e giocare la partita. La sinteticità della notazione algebrica rede pù rapidamente intuibile la posizione.
+La rot unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla fen. Infatti aggiunge il testo (T:) che valorizza il momento artistico e clou della posizione, inoltre aggiunge il punto di vista da cui guardare e giocare la partita. La sinteticità della notazione algebrica rende pù rapidamente intuibile la posizione.
 Per comprendere meglio i limiti di una fen esaminiamo come è fatta.
 
 fu ideata daSteven J. Edwards estendendo il Forsyth'ssystem ideato per l'uso del calcolatore. La sua forma,inizialmente, era dovuta al tentativo di risparmiare la quantità di memoria nel registrare delle informazioni.
@@ -354,7 +354,7 @@ Difatti i componenti di una stringa FEN (6 parti) sono:
    rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2.
 
 Ad esempio la fenseguente mostra i suoi limiti:
-/7k/5k2/8/8/8/8/8/6q1 B ---- - 0 34 
+7k/5k2/8/8/8/8/8/6q1 B ---- - 0 34 
   
 Tutto questo per dire che il nero ha due pezzi: re e regina e il bianco solo il re.  con la mossa al nero. Ma non diceche occorre fare e da che punto di vista mettersi per valutare megliola posizione.
 Nella rot troveremosemplicemente e in maniera chiara senza doversi fare i conti: 
