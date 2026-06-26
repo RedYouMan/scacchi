@@ -360,14 +360,16 @@ Esempi FEN:
 Ad esempio la fenseguente mostra i suoi limiti:
 7k/5k2/8/8/8/8/8/6q1 B ---- - 0 34 
   
-Tutto questo per dire che il nero ha due pezzi: re e regina e il bianco solo il re.  con la mossa al nero. Ma non diceche occorre fare e da che punto di vista mettersi per valutare megliola posizione.
+Tutto questo per dire che il nero ha due pezzi: re e regina e il bianco solo il re, con la mossa al nero; Ma non dice cosa occorre fare e da che punto di vista mettersi per valutare meglio la posizione.
 Nella rot troveremosemplicemente e in maniera chiara senza doversi fare i conti: 
 T:Matto in una mossa
 V:N;
 B:Rh8;
 N:Rf7;Dg1;
 M:N;
-p:34;
+p:33;
+
+Abbiamo messo P:33; dato che Scacchi-it in partenza dirà che occorre muovere la 34esima mossa.
 
 Inoltre per un umano non serve sapere la situazione degli arrocchi, lo vede da se, e anche il computer è in grado di analizzarlo e settarlo, nè gli serve la segnalazione delle 50 mosse o dell'enpassant. 
 
