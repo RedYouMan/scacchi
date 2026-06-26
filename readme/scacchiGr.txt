@@ -331,6 +331,52 @@ Ci sono altri record gestiti in modo indiretto dal programma per le sospensioni 
 
 Quest'ultimi record indirettamente gestiti dal programma non vengono documentati dato che sono competenza solo del programma. 
 
+Vantaggi della rot
+La rot unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla fen. Infatti aggiunge il testo (T:) che valorizza il momento artistico e clou della posizione, inoltre aggiunge il punto di vista da cui guardare e giocare la partita. La sinteticità della notazione algebrica rede pù rapidamente intuibile la posizione.
+Per comprendere meglio i limiti di una fen esaminiamo come è fatta.
+
+fu ideata daSteven J. Edwards estendendo il Forsyth'ssystem ideato per l'uso del calcolatore. La sua forma,inizialmente, era dovuta al tentativo di risparmiare la quantità di memoria nel registrare delle informazioni.
+Difatti i componenti di una stringa FEN (6 parti) sono:
+
+1. Posizione dei pezzi: Fila per fila (dall'8a alla 1a), lettere minuscole per il nero, maiuscole per il bianco, numeri per le case vuote.
+2. Turno: w (bianco) o b (nero).
+3. Arrocco: Kqkq (disponibilità arrocco lato re/donna) oppure valorizzati ognuno con -.
+4. Cattura en passant: Casa in cui un pedone avversario potrebbe andare dopo la cattura , o -.
+   C'è da aggiungere che, per standard, all'atto della fotografia della posizione, essa contiene il valore della casa di cattura dovuta allo spostamento di due passi di un pedone, anche se non esiste nessun pedone avversario che possa usufruire dell'enpassant.Ad esempio se si muove un pedone da b2 a b4 la casa indicata è b3, ovvero la casa di cattura in cui si metterebbe un pedone avversario in caso di cattura enpassant.
+5. Semi-mosse: Numero per la regola delle 50 mosse.
+6. Mosse totali: Numero di mosse della partita.
+
+   Per la semimossa nella fen(quinto campo della stringa), come recita Wikipedia, è un contatore del numero di mezzi turni (mosse del Bianco
+   o del Nero) effettuati dall'ultima cattura o spinta di pedone. Viene utilizzato per determinare la regola delle 50 mosse: se arriva a 100 (50 mosse complete), la partita può essere dichiarata patta.
+   Esempi FEN:
+   • Posizione iniziale: rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1.
+   • Dopo 1.e4 c5 2.Ch8f3:
+   rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2.
+
+Ad esempio la fenseguente mostra i suoi limiti:
+/7k/5k2/8/8/8/8/8/6q1 B ---- - 0 34 
+  
+Tutto questo per dire che il nero ha due pezzi: re e regina e il bianco solo il re.  con la mossa al nero. Ma non diceche occorre fare e da che punto di vista mettersi per valutare megliola posizione.
+Nella rot troveremosemplicemente e in maniera chiara senza doversi fare i conti: 
+T:Matto in una mossa
+V:N;
+B:Rh8;
+N:Rf7;Dg1;
+M:N;
+p:34;
+
+Inoltre per un umano non serve sapere la situazione degli arrocchi, lo vede da se, e anche il computer è in grado di analizzarlo e settarlo, nè gli serve la segnalazione delle 50 mosse o dell'enpassant. 
+
+Scacchi-it , ideato per vedenti e non vedenti, nelle sospensioni si segna l'enpassant per comunicare la possibilità di esso alla ripresa, ma solo se esiste tale possibilità, diversamente dallo standard fen.
+
+In un e-book per non vedenti se si trovano immagini, esse non sono fruibili dal non vedente; per cui generalmente viene descritta la posizione con la notazione algebrica, che ha il vantaggio di far comprendere la posizione dei pezzi rapidamente. 
+La rot fa un passo ulteriore, consentendo l'ascolto e l'immediato utilizzo su scacchiera.
+
+Se in un e-book viene mostrata la rot, col copia e incolla si può rapidamente trasferirla in un file e caricarla in Scacchi-it. In tal modo si può ascoltare, con sintesi vocale, il testo e navigare sulla scacchiera esplorando la posizione, apprezzando meglio quanto descritto nel e-book.
+
+La rot, inoltre, rende open data l'applicativo Scacchi-it in modo bidirezionale: consente di sospendere una partita e di riprenderla più tardi, utilizzando la rot; come pure scrivere o copiare problemi e caricarli per la loro soluzione.
+Per cui la giusta definizione della rot notation è che essa estende la notazione algebrica e rende open data un applicativo di scacchi, consentendo di interagire con esso in due direzioni e aggiungendo la sintesi vocale e i vantaggi di una immagine.
+
 Il programma fenpos
 Nella parte di download c'è il programma fenpos che a partire da una posizione fen relativa ad un problema, vi estrae un file con rot notation, in modo da caricarla con l'applicativo scacchi-it. 
 Su questo sito troverete una "Problems Collection" con almeno 100 fen associate, traducibili in rot notation con fenpos. Sul sito troverete anche una "Chess Combinations Collection"  e una "final chess collection" con le fen associate e con fenpos potrete ottenere i file da caricare sotto scacchi-it.
