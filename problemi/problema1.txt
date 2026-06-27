@@ -3,4 +3,4 @@ V:B;
 B:Rc1;Td1;Ac3;Dh3;Te1;Pa2;Pb2;Pc2;Pf2;Pg2;Pd3;
 N:Rg8;Ph7;Pg6;Pf7;Ae8;TF8;Ta8;Dd6;Pb7;
 M:B
-P:0;;
+P:0;
