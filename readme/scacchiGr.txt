@@ -371,6 +371,9 @@ B:Rh8;
 N:Rf7;Dg1;
 M:N
 P:34;
+Come si nota la fen ha anche altre due barriere invisibili all'accessibilità:
+- la lingua: K, k, Q, q, B, b etc.
+- la non immediata comprensione: occorre farsi dei calcoli per capire la posizione dei pezzi
 
 Inoltre per un umano non serve sapere la situazione degli arrocchi, lo vede da se, e anche il computer è in grado di analizzarlo e settarlo, nè gli serve la segnalazione delle 50 mosse o dell'enpassant. 
 
