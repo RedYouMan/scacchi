@@ -333,8 +333,8 @@ Ci sono altri record gestiti in modo indiretto dal programma per le sospensioni 
 
 Quest'ultimi record indirettamente gestiti dal programma non vengono documentati dato che sono competenza solo del programma. 
 
-Vantaggi della rot
-La rot unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla fen. 
+Vantaggi della rotn
+La rotn unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla fen. 
 Infatti aggiunge il testo (T:) che valorizza il momento artistico e clou della posizione, inoltre aggiunge il punto di vista da cui guardare e giocare la partita. La sinteticità della notazione algebrica rende pù rapidamente intuibile la posizione.
 
 Per comprendere meglio i limiti di una fen esaminiamo come è fatta.
