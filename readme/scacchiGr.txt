@@ -358,7 +358,7 @@ Esempi FEN:
    rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2.
 
 Ad esempio la fenseguente mostra i suoi limiti:
-7k/5k2/8/8/8/8/8/6q1 B ---- - 0 34 
+7K/5k2/8/8/8/8/8/6q1 B ---- - 0 34 
   
 Tutto questo per dire che il nero ha due pezzi: re e regina e il bianco solo il re, con la mossa al nero; Ma non dice cosa occorre fare e da che punto di vista mettersi per valutare meglio la posizione.
 Nella rot troveremosemplicemente e in maniera chiara senza doversi fare i conti: 
