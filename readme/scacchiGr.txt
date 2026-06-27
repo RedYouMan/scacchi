@@ -324,6 +324,7 @@ Dopo la lettera iniziale vi è la casella che indica dove va posizionato il pezz
 M: dice chi deve muovere per prima (B per bianco e N per Nero). 
 P: il numero di mossa di partenza che può essere anche 0 se inventate il problema con mossa al Bianco oppure 1 se mossa al Nero.  
 Lo stesso se traete il problema da una partita, potreste usare il numero di mossa reale, mettendo un valore diminuito di 1, se muove il Bianco o uguale a quello dichiarato se muove il Nero che vi consentirà di partire col numero di mossa uguale a quello del testo da cui avete tratto il tutto.
+Il motivo del valore in meno se gioca il Bianco e non quando gioca il Nero dipende solo dal fatto che Scacchi-it incrementa la mossa di 1 quando è Bianco e non lo fa quando è Nero, difatti il numero di mossa deve essere lo stesso per le due semimosse.
 Fate attenzione a tutti i tipi di record di sopra. Ad esempio se M:B e giocate un pezzo nero per prima vi dirà che non potete usare quel colore.
 
 Il programma Scacchi-it controlla molte cose su tali file e se ci sono parti scritte in modo impreciso, naturalmente se fate l'errore di mettere in Bianco (B:) la posizione Ac5 e lo fate anche per il Nero, vi troverete solo l'alfiere nero, ovvero l'ultima istruzione data sul pezzo.  
