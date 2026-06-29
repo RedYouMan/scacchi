@@ -318,11 +318,11 @@ Attaccati ai due punti ci sono i pezzi separati da punti e virgola.
 Ad esempio B:Re1;Ac4;Td1;Dd8;Cg3;Pd6;
 Come potete notare le iniziali sono quelle dei pezzi in italiano e P è usata per il pedone.
 Lostesso vale per il Nero. La prima lettera riguarda il pezzo, dove: A=alfiere, T=Torre,C=cavallo,D=donna,R=Re,P=pedone.
-Il programma Scacchi-it usa solo le lettere in italiano, ma la rot notation può, in generale, usare anche le lettere inglesi dei pezzi. 
+Il programma Scacchi-it usa solo le lettere dei pezzi in italiano, ma la rot notation puòessere generalizzata e usare anche le lettere inglesi dei pezzi. e al posto di B: il corrispondente W: e analogamente B: al posto di N:.
 Dopo la lettera iniziale vi è la casella che indica dove va posizionato il pezzo.
 
 M: dice chi deve muovere per prima (B per bianco e N per Nero). 
-P: il numero di mossa di partenza che può essere anche 0 se inventate il problema con mossa al Bianco oppure 1 se mossa al Nero.  
+P: il punto di partenza della mossa che può essere anche 0 se inventate il problema con mossa al Bianco oppure 1 se mossa al Nero.  
 Lo stesso se traete il problema da una partita, potreste usare il numero di mossa reale, mettendo un valore diminuito di 1, se muove il Bianco o uguale a quello dichiarato se muove il Nero che vi consentirà di partire col numero di mossa uguale a quello del testo da cui avete tratto il tutto.
 Il motivo del valore in meno se gioca il Bianco e non quando gioca il Nero dipende solo dal fatto che Scacchi-it incrementa la mossa di 1 quando è Bianco e non lo fa quando è Nero, difatti il numero di mossa deve essere lo stesso per le due semimosse.
 Fate attenzione a tutti i tipi di record di sopra. Ad esempio se M:B e giocate un pezzo nero per prima vi dirà che non potete usare quel colore.
