@@ -9,7 +9,7 @@ Licenza
 You may use, copy, and modify it freely, provided that this copyright notice is retained.
 
 Scelta file testo per il tutorial
-Si è scelto di usare un file di testo, al posto di un professionale manuale in pdf . 
+Si è scelto di usare un file di testo, al posto di un professionale manuale in pdf. 
 Per il semplice motivo che un file di testo è il più accessibile possibile su browser con NVDA per un non vedente.  
 
 Versione disponibile 
@@ -20,7 +20,7 @@ La grande novità è che il programma ora consente anche di giocare online in mu
 I cambiamenti sono tracciati nel file changelog.txt nella directory readme e sono frutto delle segnalazioni della Community.
 La versione 7 ha completato tutti gli strumenti utili durante una lezione di scacchi, mentre la 8 aggiunge la possibilità di giocare online.
 
-Per verificare la vostra versione ascoltate quando parte il programma oppure digitate CntrlH.
+Per verificare la vostra versione ascoltate quando parte il programma oppure digitate CtrlH.
 
 Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima versione del presente file.
 
@@ -38,16 +38,16 @@ Il programma Scacchi-it consente di:
 2 - scegliere il lato o il punto di vista da cui giocare
 3 - inserire le mosse del Bianco e del Nero
 4 - controllare il diritto di mossa (Bianco o Nero)
-5 - registrare o meno la partita con notazione algebrica scacchistica(CntrlW per registrare)
-6 - sospendere la partita per riprenderla quando si vuole(Cntrl-S)
-7 - riprendere una partita sospesa, continuando a registrare, se prima lo stavamo facendo, . Inoltre la ripresa di una partita non registrata col computer, fa continuare a giocare con quest'ultimo (CntrlR)
-8 - caricare dei problemi scacchistici da risolvere(CntrlP)
-9 - poter fare l'undo delle mosse (annullamento delle mosse CntrlU) 
+5 - registrare o meno la partita con notazione algebrica scacchistica(CtrlW per registrare)
+6 - sospendere la partita per riprenderla quando si vuole(Ctrl-S)
+7 - riprendere una partita sospesa, continuando a registrare, se prima lo stavamo facendo, . Inoltre la ripresa di una partita non registrata col computer, fa continuare a giocare con quest'ultimo (CtrlR)
+8 - caricare dei problemi scacchistici da risolvere(CtrlP)
+9 - poter fare l'undo delle mosse (annullamento delle mosse CtrlU) 
 10 - controllare che le mosse siano corrette rispetto alle regole dei pezzi
-11 - controllare lo scacco al re, lo scacco matto , lo stallo e le patte elementari
+11 - controllare lo scacco al re, lo scacco matto, lo stallo e le patte elementari
 12 - mettere a conoscenza, nel caso di ripresa di una partita, della possibilità dell'enpassant, verificandone l'utilizzo
-13 - fare Abbandono da parte del re (CntrlL)
-14 - scegliere di giocare contro il computer (CntrlZ)
+13 - fare Abbandono da parte del re (CtrlL)
+14 - scegliere di giocare contro il computer (CtrlZ)
 15 - scegliere il livello di gioco contro il computer
 16 - usare i problemi scritti con una RoTnotation  per Non Vedenti  che informa sulla posizione in termini di descrizione del problema, disposizione dei pezzi del bianco e del nero, il punto di vista da cui giocare, il diritto di mossa, il numero di mossa di partenza
 17 - controllare la correttezza dei file dei problemi scritti a mano
@@ -57,18 +57,18 @@ Il programma Scacchi-it consente di:
 21 - utilizzare le frecce e return oppure  il mouse per giocare
 22 - sintesi vocale in italiano con messaggi verbosi su console
 23 - sonoro del toc di gioco di un pezzo
-24 - chiudere la scacchiera con CntrlQ oppure con il mouse sulla crocetta della finestra "Scacchi-it"
+24 - chiudere la scacchiera con CtrlQ oppure con il mouse sulla crocetta della finestra "Scacchi-it"
 25 - utilizzare Alt-Tab per spostarsi da scacchiera a console per inserire informazioni e ulteriore Alt-Tab per tornare a giocare
 26 - utilizzare in modo configurabile il motore di gioco stockfish
 27 - ottenere la valutazione della posizione sia dopo ogni semimossa del nero e sia durante la sospensione col computer
 28 - poter fare un tuning dei parametri del chess engine
 29 - ottenere una analisi delle prime 'multiPV' principali varianti che si possono intraprendere
 30 - usare un orologio 
-31 - forzare con CntrlA  il computer a giocare l'apertura che si desidera, creandosi anche un openings book personalizzato
+31 - forzare con CtrlA  il computer a giocare l'apertura che si desidera, creandosi anche un openings book personalizzato
 32 - utilizzare un Openings Trainer, per apprendere le aperture di gioco
 33 - essere utilizzato su un video grande per presentazioni o lezioni
-34 - reinizializzare la scacchiera con CntrlN
-- 35 giocare online
+34 - reinizializzare la scacchiera con CtrlN
+- 35 - giocare online
 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
@@ -93,7 +93,7 @@ Fate Start+E + return per "Esplora file" e cercate la cartella Downloads.
 Nota: nel seguito Fn (tasto Funzione) va usato solo se a sinistra della barra spaziatrice avete quattro tasti. Se ne avete solo tre, valgono le stesse operazioni di sotto senza fare Fn. 
 
 Quando siete in Downloads cercate scacchiGr.7z e su tale file fate Fn+"Menu Contestuale" e cercate con le frecce "Copia" e fate return. 
-Fate Alt+freccia a sinistra (per salire nelmenu di"Esplora file" e cercate ora Desktop.
+Fate Alt+freccia a sinistra (per salire nel menu di "Esplora file" e cercate ora Desktop.
 Fare di nuovo Fn+"Menu contestuale"+"Incolla" seguito da return.
 Ora scacchiGr.7z è sul desktop.
 Con "Esplora file" selezionare lo zip e fare Fn+"Menu contestuale"+"7z"+return e cercare "estrai qui".
@@ -126,12 +126,12 @@ Dove sono attivabili i controls
 Tutti i controls sono attivi solo sulla scacchiera grafica.
 
 Help
-L'Help si può richiamare con CntrlH (contrl + h) in qualunque momento del gioco, in modo che si può ricordare cosa fare per la situazione in corso.
+L'Help si può richiamare con CtrlH (contrl + h) in qualunque momento del gioco, in modo che si può ricordare cosa fare per la situazione in corso.
 L'help della versione grafica è con sintesi vocale. 
 Maggiori dettagli però sono nel tutorial che vi conviene leggere.
 
-Tutorial con CntrlX
-Questo tutorial è attivabile anche da programma Scacchi-it  con CntrlX sulla scacchiera.
+Tutorial con CtrlX
+Questo tutorial è attivabile anche da programma Scacchi-it  con CtrlX sulla scacchiera.
 
 Navigazione
 La navigazione consente al non vedente di esplorare tutta la scacchiera tramite le frecce su, giù, destra e sinistra. Per i vedenti è possibile l'uso del mouse.
@@ -143,7 +143,7 @@ Tempi di attesa con mouse o tasti
 Essendo un gioco dedicato ai non vedenti, esiste sempre 1 secondo di ritardo per individuare se la casa è vuota o con presenza di pezzo da menzionare.
 
 Tempi di attesa durante il caricamento file 
-Durante un CntrlR o CntrlP o CntrlJ occorre attendere per il caricamento dei dati e delle immagini corrispondenti. 
+Durante un CtrlR o CtrlP o CtrlJ occorre attendere per il caricamento dei dati e delle immagini corrispondenti. 
 
 ESC per zittire la console
 Se nel passaggio da una finestra ad un'altra con Alt-Tab, la console su NVDA si intromette a parlare, usate ESC per zittirla.
@@ -156,8 +156,8 @@ Spostatevi con Alt+Tab seguito da Esc  solo dopo che vi sarà richiesto. Il prog
 Alt e Tab sono a sinistra della tastiera, con il Tab nella parte centrale della fila verticale dei tasti a sinistra ad inizio tastiera.
 L'Alt si trova a sinistra accanto alla barra spaziatrice.
 
-Quando il programma vi chiederà informazioni, dopo aver risposto adeguatamente alla domanda, occorre premere return.Poi di nuovo Alt-Tab per tornare alla scacchiera.
-Solo nel caso della sospensione potreste scegliere tra varie cose: CntrlQ  per uscire o analizzare un problema (CntrlJ), risolvere un problema da soli (CntrlP) o anche ritornare sulla scacchiera e studiarsi cosa potrà rispondere l'amico.
+Quando il programma vi chiederà informazioni, dopo aver risposto adeguatamente alla domanda, occorre premere return. Poi di nuovo Alt-Tab per tornare alla scacchiera.
+Solo nel caso della sospensione potreste scegliere tra varie cose: CtrlQ  per uscire o analizzare un problema (CtrlJ), risolvere un problema da soli (CtrlP) o anche ritornare sulla scacchiera e studiarsi cosa potrà rispondere l'amico.
 
 Nel passare da console a finestra scacchi-it, può accadere il messaggio "Scacchi-it non risponde" ma è solo per la perdita del focus momentaneamente.
 Se continua a dire tale messaggio   , fate di nuovo Alt-Tab per andare su console e di nuovo Alt-Tab per tornare sulla scacchiera. Appena ritornati sulla scacchiera tutto procede normalmente.
@@ -190,28 +190,28 @@ Come fare l'arrocco
 Basta selezionare il re e muoverlo di due case. Ad esempio per un arrocco corto del bianco, il re da e1 si sposta in g1, mentre per un arrocco lungo bianco il re si sposta da e1 a c1. Il programma automaticamente sposta, poi, la torre relativa. 
 
 Come fare l'enpassant
-Occorre mettere il proprio pedone alle spalle del pedone che si vuole catturare con enpassant,poi sarà Scacchi-it che completerà la cattura.
+Occorre mettere il proprio pedone alle spalle del pedone che si vuole catturare con enpassant, poi sarà Scacchi-it che completerà la cattura.
 
 Come promuovere un pedone
 Si viene guidati sulla console con Alt-Tab e si deve rispondere Con T per torre, C per cavallo, A per alfiere o D per donna. Se si da un valore diverso non viene promosso il pedone.
 
 Scelta automatica della lingua italiana
-Scacchi-it sceglie automaticamente la lingua italiana se disponibile, altrimenti quella di sistema. Ad esempio se avete Windows in inglese, vi leggerà le frasi italiane con accento inglese.Per evitare questo occorre installare anche la lingua italiana su Windows in inglese.
+Scacchi-it sceglie automaticamente la lingua italiana se disponibile, altrimenti quella di sistema. Ad esempio se avete Windows in inglese, vi leggerà le frasi italiane con accento inglese. Per evitare questo occorre installare anche la lingua italiana su Windows in inglese.
 Se avete già entrambe le lingue userà l'italiano.
 Non ci sono problemi di installazione se avete Windows in italiano. 
 
 Registrazione partita
-La registrazione è consentita attivarla in offline solo ad inizio partita con CntrlW. Non si registrano i problemi, nè le partite col computer.
+La registrazione è consentita attivarla in offline solo ad inizio partita con CtrlW. Non si registrano i problemi, nè le partite col computer.
 La registrazione avviene ad ogni semimossa dei giocatori e continua anche se la partita viene ripresa dopo una sospensione.
  
 Scelta livello di skill
-Quando si gioca in offline contro il computer (CntrlZ o CntrlA) è possibile scegliere un livello di gioco tra 0 e 20.
+Quando si gioca in offline contro il computer (CtrlZ o CtrlA) è possibile scegliere un livello di gioco tra 0 e 20.
 
 Nomi dei file
-I nomi dei file vi possono essere chiesti nella modalità offline nell'uso di CntrlS (sospensione), CntrlR (ripresa gioco), CntrlW (registrazione partita), CntrlJ (problema che il computer risolve), CntrlP (problema che dobbiamo risolvere).
+I nomi dei file vi possono essere chiesti nella modalità offline nell'uso di CtrlS (sospensione), CtrlR (ripresa gioco), CtrlW (registrazione partita), CtrlJ (problema che il computer risolve), CtrlP (problema che dobbiamo risolvere).
 Per i nomi dei file per la registrazione della partita con notazione algebrica,   o la sua momentanea sospensione, dovrete mantenere un vostro metodo per ricordare a cosa si riferiscono.
 I file di registrazione verranno aperti nella directory registrazioni , mentre quelli di sospensioni nella directory sospensioni, per cui possono avere anche lo stesso nome.
-Noi consigliamo semplicemente  di usare una  abbreviazione di nome e cognome dei due giocatori seguita da data. Ad esempio se giocate il12 febbraio 2026 tra Giuseppe Rivieccio e Carlo Cavour potreste chiamare il file
+Noi consigliamo semplicemente  di usare una  abbreviazione di nome e cognome dei due giocatori seguita da data. Ad esempio se giocate il 12 febbraio 2026 tra Giuseppe Rivieccio e Carlo Cavour potreste chiamare il file
 giurivcarcav12022026, senza estensione. Sarà il  programma che aggiungerà l'estensione  .txt.
 Il file verrà aperto nella directory registrazioni se state registrando o nella directory sospensioni se state sospendendo la partita. Alla ripresa dovrete solo ricordarne il nome.
 
@@ -224,7 +224,7 @@ I problemi vanno posti nella directory problemi e devono avere estensione .txt q
 Un esempio è problema1.txt.  
 Quando caricate un problema non è importante digitare il nome con le lettere maiuscole se vi fossero e non va indicata la estensione (.txt).
 I file di sospensione verranno posti dal programma nella directory sospensioni e dopo essere stati caricati verranno rimossi.
-La sospensione con un nome diverso ogni volta vi può permettere di poter giocare più partite con vari amici e ricaricando,poi, solo quella relativa all'amico che vi ha comunicato la sua mossa.
+La sospensione con un nome diverso ogni volta vi può permettere di poter giocare più partite con vari amici e ricaricando, poi, solo quella relativa all'amico che vi ha comunicato la sua mossa.
  
 Sospensione partita giocata col computer
 E' possibile sospendere una partita che si sta giocando col computer per , poi, riprenderla.
@@ -232,8 +232,8 @@ Durante questo tipo di sospensione si ottiene anche la valutazione della posizio
 Alla ripresa vi troverete attivato il computer, pronto a giocare e col punto di vista che avevate precedentemente.
 
 Valutazione posizione 
-In offline durante il gioco col computer, (CntrlZ o CntrlA) sia dopo la semimossa del nero che alla sospensione si ottiene una valutazione della posizione che può essere positiva o negativa lato Bianco. 
-Questovalore ottenuto dall'engine è la differenza tra la posizione giocata e quella della best move che avrebbe potuto fare il bianco.Il valore è espresso in centipedone (centesimo di pedone).
+In offline durante il gioco col computer, (CtrlZ o CtrlA) sia dopo la semimossa del nero che alla sospensione si ottiene una valutazione della posizione che può essere positiva o negativa lato Bianco. 
+Questo valore ottenuto dall'engine è la differenza tra la posizione giocata e quella della best move che avrebbe potuto fare il bianco. Il valore è espresso in centipedone (centesimo di pedone).
 Se il valore è positivo "white side" sta meglio il Bianco.
 
 Elenco dei file registrati oppure dei problemi disponibili
@@ -248,12 +248,12 @@ Se voleste la lista dei problemi:
 dir .\problemi\*
 
 Cambio punto di vista di gioco
-Il cambio del punto di vista da cui giocare può essere fatto in qualunque momento della partita con CntrlG, con la sola avvertenza che Va fatto prima di passare all'online.
+Il cambio del punto di vista da cui giocare può essere fatto in qualunque momento della partita con CtrlG, con la sola avvertenza che Va fatto prima di passare all'online.
 Esso serve per mettersi dalla parte del colore che dobbiamo giocare.
 
 Strumenti per fare lezioni di scacchi
 Quando si fa una lezione di scacchi su video per persone vedenti, è consuetudine tornare indietro per mostrare cosa sarebbe successo facendo altre mosse.
-In tal caso sono utili sia CntrlN (per reinizializzare la scacchiera)e CntrlU (undo delle mosse). 
+In tal caso sono utili sia CtrlN (per reinizializzare la scacchiera)e CtrlU (undo delle mosse). 
 La undoMove è permessa solo nei seguenti casi:
 - partita giocata senza engine 
 - soluzione di problemi da solo
@@ -263,7 +263,7 @@ Nei tre casi di sopra, si parte da una coda di comandi undo vuota ogni volta.
 
 Non viene consentito il suo uso nei seguenti casi:
 - durante una registrazione di una partita
-- durante il gioco con l'engine stockfish (cntrlA, CntrlJ, cntrlZ)
+- durante il gioco con l'engine stockfish (CtrlA, CtrlJ, CtrlZ)
 - con l'Openings Trainer
 - con lo scacco matto, dato che si resetta la scacchiera  
 
@@ -279,28 +279,28 @@ Nel caso di due o più enpassant consecutivi, l'annullamento di quello che viene
 Esempio di uso del programma Scacchi-itin offline
 Supponiamo che vogliamo giocare gestendo bianco e nero    liberamente,per attendere la mossa di un amico, con il punto di vista nero e registrare la partita:
 - avviamo il programmache apre la scacchiera 
-- facciamo CntrlW per la registrazione della partita, questo solo ad inizio partita, inserendo il nome desiderato del file 
+- facciamo CtrlW per la registrazione della partita, questo solo ad inizio partita, inserendo il nome desiderato del file 
 - il programma avvia la nuova predisposizione dei pezziche tiene conto della registrazione
-- Facciamo ora CntrlG per avere il punto di vista nero da cui giocare
+- Facciamo ora CtrlG per avere il punto di vista nero da cui giocare
 
 Se volessimo giocare col computer e che questi avesse il bianco, in sequenza dovremo fare:
 - avviare il programmaattendendo la scacchiera
-- CntrlZ
+- CtrlZ
 - Ci chiederà con che colore deve giocare il computer 
 - La seconda domanda che ci farà è il livello di gioco desiderato (da 1 a 20).
-- Facciamo Cntrl-G per stare dalla parte del nero
+- Facciamo Ctrl-G per stare dalla parte del nero
  Nota: le partite col computer non si registrano. Si possono registrare le partite contro gli amici nello scenario precedente.
 
 Se volessimo ascoltare l'analisi del computer nel risolver un problema:
 - avviare il programma
-- fare CntrlJ e inserire il nome del problema
+- fare CtrlJ e inserire il nome del problema
 - ascoltare l'analisi
 L'analisi avverrà su un massimo di dieci mosse e occorre attendere che il computer termini.
 Stockfish potrebbe farvi vedere linee di gioco anche diverse da quelle ipotizzate dal problema, preferendo, a volte, mosse solide al posto di sacrifici o rischi.
 
 Problemi da caricare
 I problemi potreste copiarli dalla settimana enigmistica, da un libro facendovi aiutare, oppure inventarli. Ovviamente dovrete riportare la posizione nel formato RoT su un file txt, come spiegheremo di seguito.
-Un esempio fornitovi è problema1.txt nella directori problemi e caricabile con CntrlP o anche con CntrlJ. 
+Un esempio fornitovi è problema1.txt nella directori problemi e caricabile con CtrlP o anche con CtrlJ. 
 
 Analisi problemi da parte del computer
 E' utile ascoltare come il computer affronta i problemi, sia quelli inventati da noi che quelli proposti altrove.
@@ -342,7 +342,7 @@ Infatti aggiunge il testo (T:) che valorizza il momento artistico e clou della p
 
 Per comprendere meglio i limiti di una fen esaminiamo come è fatta.
 
-fu ideata daSteven J. Edwards estendendo il Forsyth'ssystem ideato per l'uso del calcolatore. La sua forma,inizialmente, era dovuta al tentativo di risparmiare la quantità di memoria nel registrare delle informazioni.
+fu ideata da Steven J. Edwards estendendo il Forsyth's system ideato per l'uso del calcolatore. La sua forma,inizialmente, era dovuta al tentativo di risparmiare la quantità di memoria nel registrare delle informazioni.
 Difatti i componenti di una stringa FEN (6 parti) sono:
 
 1. Posizione dei pezzi: Fila per fila (dall'8a alla 1a), lettere minuscole per il nero, maiuscole per il bianco, numeri per le case vuote.
@@ -476,7 +476,7 @@ Sul sito indicato una volta scaricato lo zip di un'apertura, dovrete estrarre da
 
 Come si attiva l'Openings Trainer? Bastano i seguenti passi:
 1. Si fa caricare la scacchiera con i pezzi alla linea di partenza.
-2. CntrlG per mettere il punto di vista desiderato seguito da CntrlT per attivare l'OpeningsTrainer 
+2. CtrlG per mettere il punto di vista desiderato seguito da CtrlT per attivare l'OpeningsTrainer 
 3. Si attende il caricamento.
 4. Si da un return e si attende il completamento della spiegazione sui tasti da usare
 5. Si usano le frecce per trovare le aperture di interesse
@@ -488,17 +488,17 @@ Come si attiva l'Openings Trainer? Bastano i seguenti passi:
 11. All'uscita potreste fare quattro cose alternative:
 - creare un OpeningsBook personalizzato con la sospensione
 - Continuare a giocare da solo
-- CntrlA per far giocare da li il computer con voi.
-- CntrlT ancora
+- CtrlA per far giocare da li il computer con voi.
+- CtrlT ancora
   
 Sovrapposizione di controls
 Che succede se:
-1. Faccio CntrlZ dando il bianco al computer con skill 10, lo faccio giocare e quando devo giocare in nero faccio CntrlA e gli assegno lo stesso skill e colore nero?
+1. Faccio CtrlZ dando il bianco al computer con skill 10, lo faccio giocare e quando devo giocare in nero faccio CtrlA e gli assegno lo stesso skill e colore nero?
  Il computer da quel momento gioca solo da nero e vi lascia il bianco.
-2. Sto nell'OpeningsTrainer e sto vedendo una apertura guidata e faccio CntrlZ o CntrlA. Essi non hanno effetto.
-3. Sono uscito dall'OpeningsTrainer con ESC e faccio CntrlZ con scacchiera già con pezzi in mezzo. CntrlZ vi rimette la scacchiera con i pezzi alla linea di partenza.
-4. Sono uscito dall'Openings Trainer con i pezzi che sono stati giocati. Posso fare CntrlA per far giocare anche il computer da quel punto. Ma prima posso anche crearmi un OpeningsBook con CntrlS (sospensione).
-5. Sono uscito dall'OpeningsTrainer con ESC e rifaccio CntrlT, ok è possibile.
+2. Sto nell'OpeningsTrainer e sto vedendo una apertura guidata e faccio CtrlZ o CtrlA. Essi non hanno effetto.
+3. Sono uscito dall'OpeningsTrainer con ESC e faccio CtrlZ con scacchiera già con pezzi in mezzo. CtrlZ vi rimette la scacchiera con i pezzi alla linea di partenza.
+4. Sono uscito dall'Openings Trainer con i pezzi che sono stati giocati. Posso fare CtrlA per far giocare anche il computer da quel punto. Ma prima posso anche crearmi un OpeningsBook con CtrlS (sospensione).
+5. Sono uscito dall'OpeningsTrainer con ESC e rifaccio CtrlT, ok è possibile.
 
 Scacco al Re, scacco matto e stallo
 Tutte e tre le tipologie sono controllate dal motore grafico di Scacchi-it.
@@ -576,12 +576,12 @@ E' consigliabile il secondo comando.
  Come si gioca su stessa rete
 1. Solo il bianco avvia l'eseguibile serverScacchi.exe nella directory serverScacchi
 2. ogni giocatore avvia il programma scacchi-start.exe   
-3. ogni giocatore, aspetta prima il caricamento solito del programma,  poi fa cntrlI e risponde correttamente alle domande
+3. ogni giocatore, aspetta prima il caricamento solito del programma,  poi fa CtrlI e risponde correttamente alle domande
 Dato che si gioca in multiplayer è importante che ogni giocatore inserisca come player almeno la iniziale del proprio nome seguito da cognome senza spazi (es. FArionne) . 
 Suggerimento al Bianco: usare 1 per giocare in bianco su online.
-Suggerimento al Nero: prima di fare cntrlI, fare CntrlG per stare dalla parte del Nero e usare 2 per giocare in Nero su online. 
+Suggerimento al Nero: prima di fare 	CtrlI, fare CtrlG per stare dalla parte del Nero e usare 2 per giocare in Nero su online. 
 Il server assegna al Bianco il nome della room con cui accedere e che va comunicata al Nero. 
-I non vedenti possono catturare il nome della room dalla console facendo prima cntrl-A sulla console seguito da copia cntrlC e incollarlo su un notepad e trovare il nome della room da copiare e comunicare al Nero, magari con whatsapp.
+I non vedenti possono catturare il nome della room dalla console facendo prima Ctrl-A sulla console seguito da copia CtrlC e incollarlo su un notepad e trovare il nome della room da copiare e comunicare al Nero, magari con whatsapp.
 4. se il nero è collegato, il bianco può fare la prima mossa
 5. dopo una mossa il programma segnala come sempre quale numero di mossa si dovrà fare successivamente
 6. ogni giocatore vede la mossa fatta dall'altro
@@ -645,9 +645,9 @@ I passaggi per giocare sono gli stessi di prima, indicati sopra nella parte dove
 
 Per terminare di giocare online
 Nel caso di giocatore che deve giocare e non è bloccato per ricevere  una mossa, ha varie possibilità:
-a. cntrlL per abbandono del re
-b. cntrlQ per uscire
-c. cntrlN per riavviare la scacchiera ma in offline 
+a. CtrlL per abbandono del re
+b. CtrlQ per uscire
+c. CtrlN per riavviare la scacchiera ma in offline 
 d. cliccare col mouse sulla crocetta della finestra. Mentre per chi è bloccato cliccare sulla crocetta col mouse oppure fare Alt-Tab sulla console e chiudere la console.
 
 Queste possibilità comunicano via rete anche all'altro giocatore e lo fanno riavviare in offline.
@@ -686,7 +686,7 @@ Consultare il sito ufficiale.
 
 Segnalazioni
 Per segnalazioni di bug o altro potreste inviare via email a rosturco.na@gmail.com la posizione dei pezzi attraverso il file di sospensione della partita, segnalando anche la versione di scacchi che state usando e la descrizione del problema.
-Molto utile sarebbe avere server.log se state online e la selezione della videata della console  scacchi-start  . La videata di scacchi-start si ottiene con CntrlA e CntrlC da incollare, poi, in un file di testo da inviare nella email.
+Molto utile sarebbe avere server.log se state online e la selezione della videata della console  scacchi-start  . La videata di scacchi-start si ottiene con CtrlA e CtrlC da incollare, poi, in un file di testo da inviare nella email.
 
 Conclusioni
 L'applicativo Scacchi-it presentato coglie vari aspetti importanti:
