@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
     who.clear();
     textProblem = argv[1];
     who = argv[2];
+    who[0] = toupper(who[0]);
     numero = stoi(argv[3]);
     if (who == "B" || who == "b")
     {
