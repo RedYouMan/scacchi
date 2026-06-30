@@ -338,7 +338,7 @@ Dopo la lettera iniziale vi è la casella che indica dove va posizionato il pezz
 
 Vantaggi della rotn
 La rotn unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla FEN.
-Infatti aggiunge il testo (T:) che valorizza il momento artistico e clou della posizione, inoltre aggiunge il punto di vista da cui guardare e giocare la partita. La sinteticità della notazione algebrica rende pù rapidamente intuibile la posizione.
+Infatti aggiunge il testo (T:) che valorizza il momento artistico e clou della posizione, inoltre aggiunge il punto di vista da cui guardare e giocare la partita. La sinteticità della notazione algebrica rende più rapidamente intuibile la posizione.
 
 Per comprendere meglio i limiti di una fen esaminiamo come è fatta.
 
