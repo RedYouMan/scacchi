@@ -311,32 +311,30 @@ La RoT Notation che esamineremo di seguito è importante perchè su Internet le 
 Essa è una estensione della notazione algebrica per rendere un applicativo di scacchi di tipo open data.
 La paternità di essa è tutelata dal copyright di Scacchi-it.
 
-Come si scrive un problema 
-Per scrivere con Notepad un file di problemi a mano con estensione .txt da porre sotto la directory problemi, occorrre seguire la RoTnotation  per l'occasione definita: 
-T: rappresenta il titolo. Ad esempio:
-T:Il nero muove e matta in 3 mosse.
-Segue il record V: che può valere B o N seguito da punto e virgola. Esso rappresenta il punto di vista da cui giocare.E' obbligatoria la sua presenza prima dei record B: e N:
-La disposizione dei pezzi coinvolge i record B: e N:
-B: riguarda il bianco 
-N: riguarda il Nero
-Attaccati ai due punti ci sono i pezzi separati da punti e virgola.
-Ad esempio B:Re1;Ac4;Td1;Dd8;Cg3;Pd6;
-Come potete notare le iniziali sono quelle dei pezzi in italiano e P è usata per il pedone.
-Lostesso vale per il Nero. La prima lettera riguarda il pezzo, dove: A=alfiere, T=Torre,C=cavallo,D=donna,R=Re,P=pedone.
-Il programma Scacchi-it usa solo le lettere dei pezzi in italiano, ma la rot notation puòessere generalizzata e usare anche le lettere inglesi dei pezzi. e al posto di B: il corrispondente W: e analogamente B: al posto di N:.
+Come si scrive un problema o una posizione
+
+La RoTN è un file testuale fatto di descrittori seguiti da valori. Tutti i campi descrittori sono obbligatori e V: va messo dopo T: e prima degli altri rimanenti.
+
+*Esempio RoTN*
+T:Matto in una mossa
+V:N;
+B:Rh8;
+N:Rf7;Dg1;
+M:N
+P:34;
+- T: descrive la posizione che verrà letta anche con sintesi vocale 
+- V: descrive da che punto di vista si vuole che il programma carichi la posizione (Bianco o Nero usando B; o N;) 
+- B: descrive l'elenco separato da punti e virgole dei pezzi con notazione algebrica italiana (es: Ag5;Re2;)
+- N: descrive l'insieme dei pezzi neri come sopra
+- M: descrive a chi tocca la mossa (Bianco o Nero usando B o N)
+- P: descrive il numero di mossa di partenza
+
+In particolare P: va diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale se gioca per prima il Nero (M:N). Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
+
+E' obbligatorio mettere il descrittore V: dopo quello T: ma prima di tutti gli altri rimanenti.
+
+Il programma Scacchi-it usa solo le lettere dei pezzi in italiano, ma la rot notation puòessere generalizzata e usare anche le lettere inglesi dei pezzi. e al posto del descrittore italiano B: il corrispondente inglese W: e analogamente per il descrittore italiano N: sostituito con quello inglese B:.
 Dopo la lettera iniziale vi è la casella che indica dove va posizionato il pezzo.
-
-M: dice chi deve muovere per prima (B per bianco e N per Nero). 
-P: il punto di partenza della mossa che può essere anche 0 se inventate il problema con mossa al Bianco oppure 1 se mossa al Nero.  
-Lo stesso se traete il problema da una partita, potreste usare il numero di mossa reale, mettendo un valore diminuito di 1, se muove il Bianco o uguale a quello dichiarato se muove il Nero che vi consentirà di partire col numero di mossa uguale a quello del testo da cui avete tratto il tutto.
-Il motivo del valore in meno se gioca il Bianco e non quando gioca il Nero dipende solo dal fatto che Scacchi-it incrementa la mossa di 1 quando è Bianco e non lo fa quando è Nero, difatti il numero di mossa deve essere lo stesso per le due semimosse.
-Fate attenzione a tutti i tipi di record di sopra. Ad esempio se M:B e giocate un pezzo nero per prima vi dirà che non potete usare quel colore.
-
-Il programma Scacchi-it controlla molte cose su tali file e se ci sono parti scritte in modo impreciso, naturalmente se fate l'errore di mettere in Bianco (B:) la posizione Ac5 e lo fate anche per il Nero, vi troverete solo l'alfiere nero, ovvero l'ultima istruzione data sul pezzo.  
-In altri termini gli errori di logica il programma Scacchi-it non li può correggere.
-Ci sono altri record gestiti in modo indiretto dal programma per le sospensioni tra cui anche la presenza di enpassant che si potrebbe utilizzare alla ripresa di gioco.
-
-Quest'ultimi record indirettamente gestiti dal programma non vengono documentati dato che sono competenza solo del programma. 
 
 Vantaggi della rotn
 La rotn unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla fen. 
