@@ -57,7 +57,19 @@ int main(int argc, char *argv[])
     textProblem = argv[1];
     who = argv[2];
     numero = stoi(argv[3]);
-    numMove = numero - 1;
+    if (who == "B" || who == "b")
+    {
+        numMove = numero - 1;
+    }
+    else if (who == "N" || who == "n")
+    {
+        numMove = numero;
+    }
+    else
+    {
+        std::cout << "Error who - hints: B or N" << std::endl;
+        exit(1);
+    }
     numProblem = stoi(argv[4]);
     fen = argv[5];
     string result1 = "", result2 = "";
