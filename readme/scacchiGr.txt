@@ -3,6 +3,11 @@ Tutorial su Scacchi-it
 Benvenuti a Scacchi-it il gioco degli scacchi in italiano con interfaccia vocale.
 Da oggi anche online e multiplayer. 
 
+Licenza
+*Scacchi-it* is free software released under the MIT License.  
+*Copyright © 2025 Rosario Turco* - Version 8.1  
+You may use, copy, and modify it freely, provided that this copyright notice is retained.
+
 Scelta file testo per il tutorial
 Si è scelto di usare un file di testo, al posto di un professionale manuale in pdf . 
 Per il semplice motivo che un file di testo è il più accessibile possibile su browser con NVDA per un non vedente.  
