@@ -38,7 +38,7 @@ Il programma Scacchi-it consente di:
 2 - scegliere il lato o il punto di vista da cui giocare
 3 - inserire le mosse del Bianco e del Nero
 4 - controllare il diritto di mossa (Bianco o Nero)
-5 - registrare o meno la partita con notazione algebrica scacchistica(CtrlW per registrare)
+5 - registrare o meno la partita con notazione algebrica scacchistica (CtrlW per registrare)
 6 - sospendere la partita per riprenderla quando si vuole(Ctrl-S)
 7 - riprendere una partita sospesa, continuando a registrare, se prima lo stavamo facendo, . Inoltre la ripresa di una partita non registrata col computer, fa continuare a giocare con quest'ultimo (CtrlR)
 8 - caricare dei problemi scacchistici da risolvere(CtrlP)
@@ -88,7 +88,7 @@ PER evitare che Windows Defender consideri una minaccia lo zip lo dovrete esclud
 AGGIUNGETE lo zip. 
 
 Installazione con "Esplora File" 
-Fate Start+E + return per "Esplora file" e cercate la cartella Downloads.
+Fate Win+E + return per "Esplora file" e cercate la cartella Downloads.
 
 Nota: nel seguito Fn (tasto Funzione) va usato solo se a sinistra della barra spaziatrice avete quattro tasti. Se ne avete solo tre, valgono le stesse operazioni di sotto senza fare Fn. 
 
@@ -111,7 +111,7 @@ Installazione con comandi da prompt
 Come alternativa al paragrafo precedente si possono fare i comandi a mano. Se avete già fatto il paragrafo precedente, questo lo potrete saltare.
 Si seguono i seguenti step:
 1 - unzippare in Desktop lo zip in modo che vi crei la directory scacchi-it.
-Tale operazione la potreste fare con Start+E + return per "Esplora file", andare sullo zip e con Fn+"menu contestuale" e cercare 7zip per fare Estrai qui. 
+Tale operazione la potreste fare con Win+E + return per "Esplora file", andare sullo zip e con Fn+"menu contestuale" e cercare 7zip per fare Estrai qui. 
 2 - Aggiungete a Windows Defender la cartella scacchi-it 
 3 - per lanciare scacchi-start.exe potreste farlo sempre da "Esplora file" oppure lanciarlo da linea di comando della console o cliccando su esso col mouse.
 Per comodità ricordiamo che dopo aver aperto la console con Tasto Start + c + enter,
@@ -137,7 +137,7 @@ Navigazione
 La navigazione consente al non vedente di esplorare tutta la scacchiera tramite le frecce su, giù, destra e sinistra. Per i vedenti è possibile l'uso del mouse.
 La navigazione è udibile con NVDA o con sintesi vocale, mentre senza NVDA si udranno le informazioni essenziali della sintesi vocale per la comprensione del gioco.
 Si consiglia durante la navigazione di attendere sempre un secondo per ascoltare nome della casa e presenza o meno di un pezzo.
-Attenzione che occorre usare il RETURN per le frecce,sia per selezionare il pezzo che per indicare la casa dove metterlo. Analogamente col mouse si usa il tasto sinistro per selezionare pezzo e casa destinazione con un click sul tasto.
+Attenzione che occorre usare il RETURN per le frecce, sia per selezionare il pezzo che per indicare la casa dove metterlo. Analogamente col mouse si usa il tasto sinistro per selezionare pezzo e casa destinazione con un click sul tasto.
 
 Tempi di attesa con mouse o tasti 
 Essendo un gioco dedicato ai non vedenti, esiste sempre 1 secondo di ritardo per individuare se la casa è vuota o con presenza di pezzo da menzionare.
@@ -219,7 +219,7 @@ Per i nomi dei problemi che create a mano, potreste solamente numerarli: problem
 Per le partite sospese è sufficiente un nome come sospesa Se giocate con un solo amico senza estensione a cui provvederà il programma. Tale file non dovrete preoccuparvi di cancellarlo se sospendete ancora la partita e usate lo stesso nome, difatti esso  verrà rimosso al suo caricamento successivo.
 Fate attenzione quando vi viene richiesto il nome del file desiderato, dato che viene precisato di NON mettere l'estensione.
 
-Directory DEI PROBLEMI E DELLE SOSPENSIONI
+Directory dei Problemi e delle Sospensioni
 I problemi vanno posti nella directory problemi e devono avere estensione .txt quando li create col NOTEPAD a mano. 
 Un esempio è problema1.txt.  
 Quando caricate un problema non è importante digitare il nome con le lettere maiuscole se vi fossero e non va indicata la estensione (.txt).
@@ -276,15 +276,15 @@ Si possono annullare:
 
 Nel caso di due o più enpassant consecutivi, l'annullamento di quello che viene per ultimo richiede un annullamento in più.
 
-Esempio di uso del programma Scacchi-itin offline
+Esempio di uso del programma Scacchi-it in offline
 Supponiamo che vogliamo giocare gestendo bianco e nero    liberamente,per attendere la mossa di un amico, con il punto di vista nero e registrare la partita:
-- avviamo il programmache apre la scacchiera 
+- avviamo il programma che apre la scacchiera 
 - facciamo CtrlW per la registrazione della partita, questo solo ad inizio partita, inserendo il nome desiderato del file 
-- il programma avvia la nuova predisposizione dei pezziche tiene conto della registrazione
+- il programma avvia la nuova predisposizione dei pezzi che tiene conto della registrazione
 - Facciamo ora CtrlG per avere il punto di vista nero da cui giocare
 
 Se volessimo giocare col computer e che questi avesse il bianco, in sequenza dovremo fare:
-- avviare il programmaattendendo la scacchiera
+- avviare il programma attendendo la scacchiera
 - CtrlZ
 - Ci chiederà con che colore deve giocare il computer 
 - La seconda domanda che ci farà è il livello di gioco desiderato (da 1 a 20).
@@ -300,20 +300,20 @@ Stockfish potrebbe farvi vedere linee di gioco anche diverse da quelle ipotizzat
 
 Problemi da caricare
 I problemi potreste copiarli dalla settimana enigmistica, da un libro facendovi aiutare, oppure inventarli. Ovviamente dovrete riportare la posizione nel formato RoT su un file txt, come spiegheremo di seguito.
-Un esempio fornitovi è problema1.txt nella directori problemi e caricabile con CtrlP o anche con CtrlJ. 
+Un esempio fornitovi è problema1.txt nella directory problemi e caricabile con CtrlP o anche con CtrlJ. 
 
 Analisi problemi da parte del computer
 E' utile ascoltare come il computer affronta i problemi, sia quelli inventati da noi che quelli proposti altrove.
 Nel caso di nostri problemi, il computer potrebbe evidenziare delle cose a cui non avevamo pensato. Non sempre il computer è fortemente brillante nelle combinazioni, ma nella maggior parte delle analisi è molto preciso.
 
-RoT Notation
-La RoT Notation che esamineremo di seguito è importante perchè su Internet le partite o i problemi mostrano solo immagini che un non vedente non può utilizzare. La RoT Notation descrive, più efficacemente di una FE Notation,  lo scopo della posizione, come sono dislocati tutti i pezzi, il punto di vista da cui mettersi, chi muove e il numero di mossa da cui partire. 
+ROTN
+La ROTN che esamineremo di seguito è importante perchè su Internet le partite o i problemi mostrano solo immagini che un non vedente non può utilizzare. La RoT Notation descrive, più efficacemente di una FE Notation,  lo scopo della posizione, come sono dislocati tutti i pezzi, il punto di vista da cui mettersi, chi muove e il numero di mossa da cui partire. 
 Essa è una estensione della notazione algebrica per rendere un applicativo di scacchi di tipo open data.
 La paternità di essa è tutelata dal copyright di Scacchi-it.
 
 Come si scrive un problema o una posizione
 
-La RoTN è un file testuale fatto di descrittori seguiti da valori. Tutti i campi descrittori sono obbligatori e V: va messo dopo T: e prima degli altri rimanenti.
+La ROTN è un file testuale fatto di descrittori seguiti da valori. Tutti i campi descrittori sono obbligatori e V: va messo dopo T: e prima degli altri rimanenti.
 
 *Esempio RoTN*
 T:Matto in una mossa
@@ -322,6 +322,7 @@ B:Rh8;
 N:Rf7;Dg1;
 M:N
 P:34;
+
 - T: descrive la posizione che verrà letta anche con sintesi vocale 
 - V: descrive da che punto di vista si vuole che il programma carichi la posizione (Bianco o Nero usando B; o N;) 
 - B: descrive l'elenco separato da punti e virgole dei pezzi con notazione algebrica italiana (es: Ag5;Re2;)
@@ -333,7 +334,7 @@ In particolare P: va diminuito di 1 se a giocare per prima è il Bianco (M:B) op
 
 E' obbligatorio mettere il descrittore V: dopo quello T: ma prima di tutti gli altri rimanenti.
 
-Il programma Scacchi-it usa solo le lettere dei pezzi in italiano, ma la rot notation puòessere generalizzata e usare anche le lettere inglesi dei pezzi. e al posto del descrittore italiano B: il corrispondente inglese W: e analogamente per il descrittore italiano N: sostituito con quello inglese B:.
+Il programma Scacchi-it usa solo le lettere dei pezzi in italiano, ma la rot notation può essere generalizzata e usare anche le lettere inglesi dei pezzi. e al posto del descrittore italiano B: il corrispondente inglese W: e analogamente per il descrittore italiano N: sostituito con quello inglese B:.
 Dopo la lettera iniziale vi è la casella che indica dove va posizionato il pezzo.
 
 Vantaggi della rotn
@@ -439,7 +440,7 @@ Giochiamo sia il bianco che il nero ad esempio:
 1 e2 e4 -e7 e6
 2 d2 d4 - d7 d5
 3 e4 e5
-Ora facciamo control-A. 
+Ora facciamo CtrlA. 
 Questa funzionalità prevede che diciamoal computer:
 - lo skill che deve avere
 - il colore che deve usare
@@ -453,7 +454,7 @@ Sospendiamo la partita, sia senza che  col computer e salviamo come difFrancese<
 Esiste un secondo metodo legato all'Openings Trainer che vediamo tra poco.
 
 I file PGN
-I file pgn sono legati all'Openings Trainer. Il nome della estensione dei file pgn deriva da "portable games notation", uno standard per rappresentare partite di scacchi inun file . 
+I file pgn sono legati all'Openings Trainer. Il nome della estensione dei file pgn deriva da "portable games notation", uno standard per rappresentare partite di scacchi in un file . 
 Un file pgn può contenere centinaia di migliaia di stringhe che rappresentano partite di scacchi.
 Tali file vengono organizzati o classificati in due modi:
 - per campione di scacchi
@@ -462,13 +463,13 @@ Tali file vengono organizzati o classificati in due modi:
 Per l'OpeningsTrainer ci interessano soprattutto i file pgn classificati per apertura, scaricabili da siti specifici. 
 Un sito ufficiale è "PGN Mentor". I file sono scaricabili dal link:
 https://www.pgnmentor.com/files.html#openings
-Qui le aperture sono classificate ulterirormente in:
+Qui le aperture sono classificate ulteriormente in:
 - aperture di pedone di donna sia moderna che classica
 - aperture di pedone di Re, sia moderna che classica
 
-Nelle aperture di pedone di Donna nella parte moderna troverete ad esempio NimzoIndiana, EstIndiana, OvestIndiana,BenOni, mentre nelle aperture di pedone di Donna parte classica troverete ad esempio il gambetto di Donna.
+Nelle aperture di pedone di Donna nella parte moderna troverete ad esempio NimzoIndiana, EstIndiana, OvestIndiana,Benoni, mentre nelle aperture di pedone di Donna parte classica troverete ad esempio il gambetto di Donna.
 
-Nella classificazione delle aperture di pedone di Re parte moderna troverete: Difesa Francese, Difesa Siciliana, Difesa Caro Kann, Difesa Aleckine etc., mentre nella parte classica ad esempio Partita Spagnola (Ruy Lopez), Partita Italiana, gambetto di Re etc. 
+Nella classificazione delle aperture di pedone di Re parte moderna troverete: Difesa Francese, Difesa Siciliana, Difesa Caro Kann, Difesa Alekhine etc., mentre nella parte classica ad esempio Partita Spagnola (Ruy Lopez), Partita Italiana, gambetto di Re etc. 
 
 Openings Trainer
 Con l'Openings Trainer potrete addestrarvi alle aperture di gioco, dopo aver scaricato i file pgn che vi interessano. Attualmente per iniziare Scacchi-it fornisce il file NimzoDefense.pgn (difesa NimzoIndiana su d4).
@@ -482,7 +483,7 @@ Come si attiva l'Openings Trainer? Bastano i seguenti passi:
 5. Si usano le frecce per trovare le aperture di interesse
 6. Si da qualche return dopo aver ascoltato quante partite ci sono
 7. Si sceglie un numero di partita tra quelli disponibili seguito da return
-8. Il trainer vi da informazioni sulla partita: evento, luogo, data, giocatori, il round del torneo, esito della partita. 
+8. Il trainer vi fornisce informazioni sulla partita: evento, luogo, data, giocatori, il round del torneo, esito della partita. 
 9. Parte la visione dell'apertura guidata per almeno una quindicina di mosse. Il messaggio "Sconosciuto" dipende da una iniziale perdita di focus. 
 10. Il trainer vi chiederà di fare spazio dopo ogni due semimosse dei giocatori oppure di fare ESC per uscire dall'apertura guidata.
 11. All'uscita potreste fare quattro cose alternative:
@@ -550,7 +551,7 @@ Verifica se la porta desiderata non sia già in uso
 Se serverScacchi.exe non è stato lanciato, sulla console del  server fare il comando:
 netstat -a > porte.txt
 Leggere se esiste nel file porte.txt la porta 65432. 
-Senel file  è presente e non è stato lanciato serverScacchi.exe, significa che è già in uso da altro programma. Per cui nel file server.cnf va cambiata port a 65431 o simili.
+Se nel file  è presente e non è stato lanciato serverScacchi.exe, significa che è già in uso da altro programma. Per cui nel file server.cnf va cambiata port a 65431 o simili.
 
 Verifica visibilità del server
 Su pc che non è server,  sul prompt di comandi digitare:
@@ -607,11 +608,11 @@ Per permettere ai tuoi amici di unirsi alla tua rete, devono seguire questi rapi
 • Accedere al programma con proprie credenziali (user=email e password).
 • Cliccare sul pulsante Accendi.
 • Cliccare su Partecipa a una rete esistente.
-• Inserire il Nome Rete e la Password che è stata creatadal gestore della rete
+• Inserire il Nome Rete e la Password che è stata creata dal gestore della rete
 • Cliccare su Partecipa
 
 Ora tutti i computer appariranno nella lista di Hamachi con un indirizzo IP unico (che inizia con 25.). 
-Tutti i pc , compreso il server, quindi nel file server.cnf devono contenere l'ip del pc che farà  da server.
+Tutti i pc, compreso il server, quindi nel file server.cnf devono contenere l'ip del pc che farà  da server.
 
 Verifica se la porta desiderata non sia già in uso
 Se serverScacchi.exe non è stato lanciato, sulla console del  server fare il comando:
@@ -638,7 +639,7 @@ ServerScacchi --log server.log
 Il primo comando manda i log a video, il secondo sul file server.log.
 E' consigliabile il secondo comando.
 
-Attenzione: seHamachi non è attivo, il server leggendo su server.cnf l'ip di Hamachi andrà in errore (Traceback).
+Attenzione: se Hamachi non è attivo, il server leggendo su server.cnf l'ip di Hamachi andrà in errore (Traceback).
  
  Come giocare su Hamachi
 I passaggi per giocare sono gli stessi di prima, indicati sopra nella parte dove si parlava di giocare sulla stessa rete.
@@ -654,7 +655,7 @@ Queste possibilità comunicano via rete anche all'altro giocatore e lo fanno ria
 
 Avvertenze generali per l'online
 - Non si consente online l'uso di stockfish
-- Nnon si può registrare una partita 
+- Non si può registrare una partita 
 - Non si può sospendere e riprendere una partita
 - non si possono fare mosse di undo
 - non si può fare l'opening trainer
@@ -678,7 +679,7 @@ Ricordare che sul log bisogna mettersi dal punto di vista del server, cioè è i
 
 Il messaggio Errore send riporta uno di questi comandi, ma la dicitura errore dipende dal fatto che nel caso Matto, Stallo, Patta l'altro applicativo Scacchi-it ha già completato la partita dopo la ricezione della mossa riconosciuta come matto o patta o stallo e ha restartato , di conseguenza , non ha prelevato l'ultimo messaggio. Tuttavia il tracciamento del Matto, Stallo e Patta elementare sono corretti.
 
-Le patte non elementari sono concordate trai giocatori e verranno, eventualmente, comunicate a parte al circolo con una email.
+Le patte non elementari sono concordate tra i giocatori e verranno, eventualmente, comunicate a parte al circolo con una email.
 
 Estendere una rete Hamachi
 ESISTONO VARI piani tariffari annuali estendendo ad esempio fino a 32 pc una rete con un abbonamento annuo minimo oppure estendendo a reti multiple a costi contenuti.
