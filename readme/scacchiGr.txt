@@ -85,7 +85,7 @@ PER evitare che Windows Defender consideri una minaccia lo zip lo dovrete esclud
 2. Vai su Protezione da virus e minacce e clicca su Gestisci impostazioni.
 3. Scorri fino in fondo alla voce Esclusioni e clicca su Aggiungi o rimuovi esclusioni.
 
-AGGIUNGETE lo zip. 
+Aggiungete lo zip. 
 
 Installazione con "Esplora File" 
 Fate Win+E + return per "Esplora file" e cercate la cartella Downloads.
@@ -126,7 +126,7 @@ Dove sono attivabili i controls
 Tutti i controls sono attivi solo sulla scacchiera grafica.
 
 Help
-L'Help si può richiamare con CtrlH (contrl + h) in qualunque momento del gioco, in modo che si può ricordare cosa fare per la situazione in corso.
+L'Help si può richiamare con CtrlH Ctrl+ h) in qualunque momento del gioco, in modo che si può ricordare cosa fare per la situazione in corso.
 L'help della versione grafica è con sintesi vocale. 
 Maggiori dettagli però sono nel tutorial che vi conviene leggere.
 
@@ -299,21 +299,21 @@ L'analisi avverrà su un massimo di dieci mosse e occorre attendere che il compu
 Stockfish potrebbe farvi vedere linee di gioco anche diverse da quelle ipotizzate dal problema, preferendo, a volte, mosse solide al posto di sacrifici o rischi.
 
 Problemi da caricare
-I problemi potreste copiarli dalla settimana enigmistica, da un libro facendovi aiutare, oppure inventarli. Ovviamente dovrete riportare la posizione nel formato RoT su un file txt, come spiegheremo di seguito.
+I problemi potreste copiarli dalla settimana enigmistica, da un libro facendovi aiutare, oppure inventarli. Ovviamente dovrete riportare la posizione nel formato RoT notation (RoTN) su un file txt, come spiegheremo di seguito.
 Un esempio fornitovi è problema1.txt nella directory problemi e caricabile con CtrlP o anche con CtrlJ. 
 
 Analisi problemi da parte del computer
 E' utile ascoltare come il computer affronta i problemi, sia quelli inventati da noi che quelli proposti altrove.
 Nel caso di nostri problemi, il computer potrebbe evidenziare delle cose a cui non avevamo pensato. Non sempre il computer è fortemente brillante nelle combinazioni, ma nella maggior parte delle analisi è molto preciso.
 
-ROTN
-La ROTN che esamineremo di seguito è importante perchè su Internet le partite o i problemi mostrano solo immagini che un non vedente non può utilizzare. La RoT Notation descrive, più efficacemente di una FE Notation,  lo scopo della posizione, come sono dislocati tutti i pezzi, il punto di vista da cui mettersi, chi muove e il numero di mossa da cui partire. 
+RoTN
+La RoTN che esamineremo di seguito è importante perchè su Internet le partite o i problemi mostrano solo immagini che un non vedente non può utilizzare. La RoT Notation descrive, più efficacemente di una FE Notation,  lo scopo della posizione, come sono dislocati tutti i pezzi, il punto di vista da cui mettersi, chi muove e il numero di mossa da cui partire. 
 Essa è una estensione della notazione algebrica per rendere un applicativo di scacchi di tipo open data.
 La paternità di essa è tutelata dal copyright di Scacchi-it.
 
 Come si scrive un problema o una posizione
 
-La ROTN è un file testuale fatto di descrittori seguiti da valori. Tutti i campi descrittori sono obbligatori e V: va messo dopo T: e prima degli altri rimanenti.
+La RoTN è un file testuale fatto di descrittori seguiti da valori. Tutti i campi descrittori sono obbligatori e V: va messo dopo T: e prima degli altri rimanenti.
 
 *Esempio RoTN*
 T:Matto in una mossa
@@ -337,8 +337,8 @@ E' obbligatorio mettere il descrittore V: dopo quello T: ma prima di tutti gli a
 Il programma Scacchi-it usa solo le lettere dei pezzi in italiano, ma la rot notation può essere generalizzata e usare anche le lettere inglesi dei pezzi. e al posto del descrittore italiano B: il corrispondente inglese W: e analogamente per il descrittore italiano N: sostituito con quello inglese B:.
 Dopo la lettera iniziale vi è la casella che indica dove va posizionato il pezzo.
 
-Vantaggi della rotn
-La rotn unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla FEN.
+Vantaggi della RoTN
+La RoTN unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla FEN.
 Infatti aggiunge il testo (T:) che valorizza il momento artistico e clou della posizione, inoltre aggiunge il punto di vista da cui guardare e giocare la partita. La sinteticità della notazione algebrica rende più rapidamente intuibile la posizione.
 
 Per comprendere meglio i limiti di una fen esaminiamo come è fatta.
@@ -367,7 +367,7 @@ Ad esempio la fen seguente mostra i suoi limiti:
 7K/5k2/8/8/8/8/8/6q1 B ---- - 0 34 
   
 Tutto questo per dire che il nero ha due pezzi: re e regina e il bianco solo il re, con la mossa al nero; Ma non dice cosa occorre fare e da che punto di vista mettersi per valutare meglio la posizione.
-Nella rot troveremo semplicemente e in maniera chiara senza doversi fare i conti: 
+Nella RoTN troveremo semplicemente e in maniera chiara senza doversi fare i conti: 
 
 T:Matto in una mossa
 V:N;
@@ -384,11 +384,11 @@ Inoltre per un umano non serve sapere la situazione degli arrocchi, lo vede da s
 Scacchi-it , ideato per vedenti e non vedenti, nelle sospensioni si segna l'enpassant per comunicare la possibilità di esso alla ripresa, ma solo se esiste tale possibilità, diversamente dallo standard fen.
 
 In un e-book per non vedenti se ci sono immagini, esse non sono fruibili dal non vedente; per cui, generalmente, viene descritta la posizione con la notazione algebrica, che ha il vantaggio di far comprendere la posizione dei pezzi rapidamente. 
-La rotn fa un passo ulteriore, consentendo l'ascolto e l'immediato utilizzo su scacchiera e non solo.
+La RoTN fa un passo ulteriore, consentendo l'ascolto e l'immediato utilizzo su scacchiera e non solo.
 
-Se in un e-book viene mostrata la rotn, col copia e incolla si può rapidamente trasferirla in un file e caricarla in Scacchi-it. In tal modo si può ascoltare, con sintesi vocale, il testo e navigare sulla scacchiera esplorando la posizione, apprezzando meglio quanto descritto nel e-book.
+Se in un e-book viene mostrata la RoTN, col copia e incolla si può rapidamente trasferirla in un file e caricarla in Scacchi-it. In tal modo si può ascoltare, con sintesi vocale, il testo e navigare sulla scacchiera esplorando la posizione, apprezzando meglio quanto descritto nel e-book.
 
-La rotn, inoltre, rende open data l'applicativo Scacchi-it in modo bidirezionale: consente di sospendere una partita e di riprenderla più tardi, come pure scrivere o copiare problemi e caricarli per la loro soluzione.
+La RoTN, inoltre, rende open data l'applicativo Scacchi-it in modo bidirezionale: consente di sospendere una partita e di riprenderla più tardi, come pure scrivere o copiare problemi e caricarli per la loro soluzione.
 Per cui la giusta definizione della rot notation è che essa estende la notazione algebrica e rende open data un applicativo di scacchi, consentendo di interagire con esso in due direzioni e aggiungendo la sintesi vocale e i vantaggi di una immagine.
 
 Il programma fenpos
@@ -410,11 +410,11 @@ Dall'help, durante il lancio di clock-start, si apprende:
 - Contrl-Q per uscire
 
 Dopo l'help occorre inserire la durata del gioco in minuti (es. 5 minuti, 240 minuti etc.) 
-L'orologio rileva la durata deltempo di pensiero della mossa e lo detrae solo al digitare dello spazio. Questa scelta è sia per evitare di consumare la CPU dietro solo all'orologio, sia per capire mentalmente quanto dura il proprio pensiero di gioco senza vedere l'orologio.
+L'orologio rileva la durata del tempo di pensiero della mossa e lo detrae solo al digitare dello spazio. Questa scelta è sia per evitare di consumare la CPU dietro solo all'orologio, sia per capire mentalmente quanto dura il proprio pensiero di gioco senza vedere l'orologio.
 Non dimentichiamo che lo strumento deve essere adatto ai non vedenti, che non possono vedere il trascorrere del tempo ma solo ascoltarlo, quindi, diventa improponibile aggiornare ogni secondo e far dire un vocale. 
 
 Quando usare l'orologio scacchistico
-Se vorreste allenarvi con un orologio, ad esempio giocando col computer a partite lampo di 5-10 minuti oppure con un amico assegnando un tempo di 120minuti (un'ora)per per fare 40 mosse,  abbiamo due possibili scenari:
+Se vorreste allenarvi con un orologio, ad esempio giocando col computer a partite lampo di 5-10 minuti oppure con un amico assegnando un tempo di 120 minuti (un'ora)per per fare 40 mosse,  abbiamo due possibili scenari:
 In entrambi gli scenari, dobbiamo attivare su una sola console sia Chess Clock che scacchi. 
 -Scenario col computer per le lampo
 1. attivate prima il Chess Clock (orologio) con clock-start(scacchi-start su una prima finestra di prompt)
@@ -441,7 +441,7 @@ Giochiamo sia il bianco che il nero ad esempio:
 2 d2 d4 - d7 d5
 3 e4 e5
 Ora facciamo CtrlA. 
-Questa funzionalità prevede che diciamoal computer:
+Questa funzionalità prevede che diciamo al computer:
 - lo skill che deve avere
 - il colore che deve usare
 
@@ -449,7 +449,7 @@ Il colore che il computer deve usare, ovviamente, è quello del giocatore succes
 
 Questa è, ad esempio,  la prima variante che vogliamo provare della difesa Francese
 
-Sospendiamo la partita, sia senza che  col computer e salviamo come difFrancese<numero> e il file mettiamolo in openingsbook, da usare con control-R successivamente senza rifare tutte le mosse. Questo procedimento possiamo usarlo per aggiungere anche altre varianti della difesa Francese, in base ad esempio a quello che gioca il computer. 
+Sospendiamo la partita, sia senza che  col computer e salviamo come difFrancese<numero> e il file mettiamolo in openingsbook, da usare con CtrlR successivamente senza rifare tutte le mosse. Questo procedimento possiamo usarlo per aggiungere anche altre varianti della difesa Francese, in base ad esempio a quello che gioca il computer. 
 
 Esiste un secondo metodo legato all'Openings Trainer che vediamo tra poco.
 
@@ -469,7 +469,7 @@ Qui le aperture sono classificate ulteriormente in:
 
 Nelle aperture di pedone di Donna nella parte moderna troverete ad esempio NimzoIndiana, EstIndiana, OvestIndiana,Benoni, mentre nelle aperture di pedone di Donna parte classica troverete ad esempio il gambetto di Donna.
 
-Nella classificazione delle aperture di pedone di Re parte moderna troverete: Difesa Francese, Difesa Siciliana, Difesa Caro Kann, Difesa Alekhine etc., mentre nella parte classica ad esempio Partita Spagnola (Ruy Lopez), Partita Italiana, gambetto di Re etc. 
+Nella classificazione delle aperture di pedone di Re parte moderna troverete: Difesa Francese, Difesa Siciliana, Difesa Caro-Kann, Difesa Alekhine etc., mentre nella parte classica ad esempio Partita Spagnola (Ruy Lopez), Partita Italiana, gambetto di Re etc. 
 
 Openings Trainer
 Con l'Openings Trainer potrete addestrarvi alle aperture di gioco, dopo aver scaricato i file pgn che vi interessano. Attualmente per iniziare Scacchi-it fornisce il file NimzoDefense.pgn (difesa NimzoIndiana su d4).
@@ -667,7 +667,7 @@ Tempi di rete
 I tempi di rete possono dipendere dal controllo del firewall e del antivirus. Eventualmente se notate lentezza escludete da essi serverScacchi.exe, scacchi.exe e scacchi-start.exe o in alternativa la sola cartella scacchi-it che li contiene.
 
 Tracciamento delle mosse da parte  del server 
-Il log del server permette l'osservazione del tracciamento di ogni partita , mossa per mossa inviata, in ogni room. 
+Il log del server permette l'osservazione del tracciamento di ogni partita mossa per mossa inviata, in ogni room. 
 L'esito della partita può essere compreso da i comandi che il server traccia:
 - quitAB: c'è stato l'abbandono da parte di chi lo inoltra.
 - Matto: la partita è terminata con matto inflitto a chi riceve il comando Matto. Il matto viene dato da chi effettua l'ultima mossa. 
@@ -677,7 +677,7 @@ L'esito della partita può essere compreso da i comandi che il server traccia:
 
 Ricordare che sul log bisogna mettersi dal punto di vista del server, cioè è il server che dice: "ricevuto da".
 
-Il messaggio Errore send riporta uno di questi comandi, ma la dicitura errore dipende dal fatto che nel caso Matto, Stallo, Patta l'altro applicativo Scacchi-it ha già completato la partita dopo la ricezione della mossa riconosciuta come matto o patta o stallo e ha restartato , di conseguenza , non ha prelevato l'ultimo messaggio. Tuttavia il tracciamento del Matto, Stallo e Patta elementare sono corretti.
+Il messaggio Errore send riporta uno di questi comandi, ma la dicitura errore dipende dal fatto che nel caso Matto, Stallo, Patta l'altro applicativo Scacchi-it ha già completato la partita dopo la ricezione della mossa riconosciuta come matto o patta o stallo e ha restartato, di conseguenza, non ha prelevato l'ultimo messaggio. Tuttavia il tracciamento del Matto, Stallo e Patta elementare sono corretti.
 
 Le patte non elementari sono concordate tra i giocatori e verranno, eventualmente, comunicate a parte al circolo con una email.
 
