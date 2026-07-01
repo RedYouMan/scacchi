@@ -689,6 +689,7 @@ Segnalazioni
 Per segnalazioni di bug o altro potreste inviare via email a rosturco.na@gmail.com la posizione dei pezzi attraverso il file di sospensione della partita, segnalando anche la versione di scacchi che state usando e la descrizione del problema.
 Molto utile sarebbe avere server.log se state online e la selezione della videata della console  scacchi-start  . La videata di scacchi-start si ottiene con CtrlA e CtrlC da incollare, poi, in un file di testo da inviare nella email.
 
+
 Conclusioni
 L'applicativo Scacchi-it presentato coglie vari aspetti importanti:
 - permette di giocare a non vedenti e vedenti
@@ -702,4 +703,51 @@ L'applicativo Scacchi-it presentato coglie vari aspetti importanti:
 
 Ricorda: L'accessibilità e la sicurezza, in ogni settore e genere, non sono un'opzione ma un diritto.
 Alla prossima
+
+ALLEGATO
+
+BNF in forma EBNF/ISO 14977, che è la più leggibile:
+(* ===== RoTN - Rot Notation per Scacchi-it v8.1 ===== *)
+
+rotn_file        = t_desc , v_desc , b_desc , n_desc , m_desc , p_desc ;
+
+(* 1. Regole base lessicali *)
+lettera_maiusc   = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" 
+                 | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+cifra            = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+alfa             = lettera_maiusc | cifra ;
+alfa_spazio      = alfa | " | "," | "." | "(" | ")" ;
+casella          = colonna , riga ; 
+colonna          = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" ;
+riga             = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" ;
+
+(* 2. I 6 Descrittori obbligatori e ordinati *)
+t_desc           = "T:" , testo_libero , ";" , newline ;
+v_desc           = "V:" , punto_vista , ";" , newline ;
+b_desc           = "B:" , lista_pezzi_bianco , ";" , newline ;
+n_desc           = "N:" , lista_pezzi_nero , ";" , newline ;
+m_desc           = "M:" , colore_mossa , newline ;        (* M: non ha ; finale nell'esempio *)
+p_desc           = "P:" , numero_mossa , ";" , newline ;  (* P: ha ; finale nell'esempio *)
+
+(* 3. Valori dei descrittori *)
+testo_libero     = { alfa_spazio } ;                      (* Es: "Matto in una mossa" *)
+punto_vista      = "B" | "N" ;                            (* B=Bianco, N=Nero *)
+colore_mossa     = "B" | "N" ;                            (* B=Bianco, N=Nero *)
+numero_mossa     = cifra , { cifra } ;                    (* Es: "34" *)
+
+lista_pezzi_bianco = pezzo_bianco , { ";" , pezzo_bianco } [ ";" ] ; (* ; finale opzionale *)
+lista_pezzi_nero   = pezzo_nero , { ";" , pezzo_nero } [ ";" ] ;    (* ; finale opzionale *)
+
+pezzo_bianco     = lettera_pezzo_it , casella ;
+pezzo_nero       = lettera_pezzo_it , casella ;
+
+(* Lettere pezzi in Italiano come da tutorial: R=Re, D=Donna, T=Torre, A=Alfiere, C=Cavallo *)
+lettera_pezzo_it = "R" | "D" | "T" | "A" | "C" ; 
+
+newline          = "\n" ; (* A capo. Il file è testuale *)
+#### *Note importanti sulla BNF :*
+
+1.  *Ordine Fisso*: `rotn_file = T V B N M P` Questo forza `V:` dopo `T:` e prima degli altri, .
+2.  *`;` finale*: obbligatorio il punto e virgola su T,V,B,N,P. M può non avere `;`. 
+3.  *Lettere pezzi*: IT: `R D T A C`. Mentre in versione EN `K Q B N`, ma B: va sostituito con W: e N: con B:.
   
