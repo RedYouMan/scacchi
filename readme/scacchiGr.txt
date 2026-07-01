@@ -15,12 +15,12 @@ Per il semplice motivo che un file di testo è il più accessibile possibile su 
 Versione disponibile 
 Questo paragrafo del tutorial segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione 8.1 di Scacchi-it, da considerarsi  la mainstream stabile.
+Sul sito è stata pubblicata la versione 8.1 di Scacchi-it, da considerarsi la main stream stabile.
 La grande novità è che il programma ora consente anche di giocare online in multiplayer e la 8.1 aggiunge il file di log del server, rendendone comoda la consultazione.
 I cambiamenti sono tracciati nel file changelog.txt nella directory readme e sono frutto delle segnalazioni della Community.
 La versione 7 ha completato tutti gli strumenti utili durante una lezione di scacchi, mentre la 8 aggiunge la possibilità di giocare online.
 
-Per verificare la vostra versione ascoltate quando parte il programma oppure digitate CtrlH.
+Per verificare la vostra versione ascoltate quando parte il programma oppure digitate Ctrl+H.
 
 Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima versione del presente file.
 
@@ -39,9 +39,9 @@ Il programma Scacchi-it consente di:
 3 - inserire le mosse del Bianco e del Nero
 4 - controllare il diritto di mossa (Bianco o Nero)
 5 - registrare o meno la partita con notazione algebrica scacchistica (CtrlW per registrare)
-6 - sospendere la partita per riprenderla quando si vuole(Ctrl-S)
-7 - riprendere una partita sospesa, continuando a registrare, se prima lo stavamo facendo, . Inoltre la ripresa di una partita non registrata col computer, fa continuare a giocare con quest'ultimo (CtrlR)
-8 - caricare dei problemi scacchistici da risolvere(CtrlP)
+6 - sospendere la partita per riprenderla quando si vuole (Ctrl-S)
+7 - riprendere una partita sospesa, continuando a registrare, se prima lo stavamo facendo. Inoltre la ripresa di una partita non registrata col computer, fa continuare a giocare con quest'ultimo (CtrlR)
+8 - caricare dei problemi scacchistici da risolvere (CtrlP)
 9 - poter fare l'undo delle mosse (annullamento delle mosse CtrlU) 
 10 - controllare che le mosse siano corrette rispetto alle regole dei pezzi
 11 - controllare lo scacco al re, lo scacco matto, lo stallo e le patte elementari
@@ -54,7 +54,7 @@ Il programma Scacchi-it consente di:
 18 - far risolvere i problemi al computer
 19 - leggere il tutorial
 20 - vedere animazione della mossa dei pezzi
-21 - utilizzare le frecce e return oppure  il mouse per giocare
+21 - utilizzare le frecce e return oppure il mouse per giocare
 22 - sintesi vocale in italiano con messaggi verbosi su console
 23 - sonoro del toc di gioco di un pezzo
 24 - chiudere la scacchiera con CtrlQ oppure con il mouse sulla crocetta della finestra "Scacchi-it"
@@ -93,7 +93,7 @@ Fate Win+E + return per "Esplora file" e cercate la cartella Downloads.
 Nota: nel seguito Fn (tasto Funzione) va usato solo se a sinistra della barra spaziatrice avete quattro tasti. Se ne avete solo tre, valgono le stesse operazioni di sotto senza fare Fn. 
 
 Quando siete in Downloads cercate scacchiGr.7z e su tale file fate Fn+"Menu Contestuale" e cercate con le frecce "Copia" e fate return. 
-Fate Alt+freccia a sinistra (per salire nel menu di "Esplora file" e cercate ora Desktop.
+Fate Alt+freccia a sinistra (per salire nel menu di "Esplora file") e cercate ora Desktop.
 Fare di nuovo Fn+"Menu contestuale"+"Incolla" seguito da return.
 Ora scacchiGr.7z è sul desktop.
 Con "Esplora file" selezionare lo zip e fare Fn+"Menu contestuale"+"7z"+return e cercare "estrai qui".
@@ -126,7 +126,7 @@ Dove sono attivabili i controls
 Tutti i controls sono attivi solo sulla scacchiera grafica.
 
 Help
-L'Help si può richiamare con CtrlH Ctrl+ h) in qualunque momento del gioco, in modo che si può ricordare cosa fare per la situazione in corso.
+L'Help si può richiamare con Ctrl+H in qualunque momento del gioco, in modo che si può ricordare cosa fare per la situazione in corso.
 L'help della versione grafica è con sintesi vocale. 
 Maggiori dettagli però sono nel tutorial che vi conviene leggere.
 
@@ -149,7 +149,7 @@ ESC per zittire la console
 Se nel passaggio da una finestra ad un'altra con Alt-Tab, la console su NVDA si intromette a parlare, usate ESC per zittirla.
 
 Inserimento Informazioni
-Se siete sulla parte  grafica di scacchi, per andare su console e inserire le informazioni richieste usate alt+tab seguito da ESC  che vi permette di spostarvi tra le finestre e zittire la console. Dopo sempre con alt+tab ritornate sulla grafica di scacchi-it.
+Se siete sulla parte grafica di scacchi, per andare su console e inserire le informazioni richieste usate alt+tab seguito da ESC  che vi permette di spostarvi tra le finestre e zittire la console. Dopo sempre con alt+tab ritornate sulla grafica di scacchi-it.
 Vi consigliamo di attendere sempre che termini il vocale prima di spostarvi di finestra per capire bene cosa fare.
 Spostatevi con Alt+Tab seguito da Esc  solo dopo che vi sarà richiesto. Il programma rimane difatti in attesa.
 
@@ -210,7 +210,7 @@ Quando si gioca in offline contro il computer (CtrlZ o CtrlA) è possibile scegl
 Nomi dei file
 I nomi dei file vi possono essere chiesti nella modalità offline nell'uso di CtrlS (sospensione), CtrlR (ripresa gioco), CtrlW (registrazione partita), CtrlJ (problema che il computer risolve), CtrlP (problema che dobbiamo risolvere).
 Per i nomi dei file per la registrazione della partita con notazione algebrica,   o la sua momentanea sospensione, dovrete mantenere un vostro metodo per ricordare a cosa si riferiscono.
-I file di registrazione verranno aperti nella directory registrazioni , mentre quelli di sospensioni nella directory sospensioni, per cui possono avere anche lo stesso nome.
+I file di registrazione verranno aperti nella directory registrazioni, mentre quelli di sospensioni nella directory sospensioni, per cui possono avere anche lo stesso nome.
 Noi consigliamo semplicemente  di usare una  abbreviazione di nome e cognome dei due giocatori seguita da data. Ad esempio se giocate il 12 febbraio 2026 tra Giuseppe Rivieccio e Carlo Cavour potreste chiamare il file
 giurivcarcav12022026, senza estensione. Sarà il  programma che aggiungerà l'estensione  .txt.
 Il file verrà aperto nella directory registrazioni se state registrando o nella directory sospensioni se state sospendendo la partita. Alla ripresa dovrete solo ricordarne il nome.
@@ -227,7 +227,7 @@ I file di sospensione verranno posti dal programma nella directory sospensioni e
 La sospensione con un nome diverso ogni volta vi può permettere di poter giocare più partite con vari amici e ricaricando, poi, solo quella relativa all'amico che vi ha comunicato la sua mossa.
  
 Sospensione partita giocata col computer
-E' possibile sospendere una partita che si sta giocando col computer per , poi, riprenderla.
+E' possibile sospendere una partita che si sta giocando col computer per, poi, riprenderla.
 Durante questo tipo di sospensione si ottiene anche la valutazione della posizione da parte del computer, scritta sia su console che letta col vocale.
 Alla ripresa vi troverete attivato il computer, pronto a giocare e col punto di vista che avevate precedentemente.
 
@@ -253,7 +253,7 @@ Esso serve per mettersi dalla parte del colore che dobbiamo giocare.
 
 Strumenti per fare lezioni di scacchi
 Quando si fa una lezione di scacchi su video per persone vedenti, è consuetudine tornare indietro per mostrare cosa sarebbe successo facendo altre mosse.
-In tal caso sono utili sia CtrlN (per reinizializzare la scacchiera)e CtrlU (undo delle mosse). 
+In tal caso sono utili sia CtrlN (per reinizializzare la scacchiera) e CtrlU (undo delle mosse). 
 La undoMove è permessa solo nei seguenti casi:
 - partita giocata senza engine 
 - soluzione di problemi da solo
@@ -277,7 +277,7 @@ Si possono annullare:
 Nel caso di due o più enpassant consecutivi, l'annullamento di quello che viene per ultimo richiede un annullamento in più.
 
 Esempio di uso del programma Scacchi-it in offline
-Supponiamo che vogliamo giocare gestendo bianco e nero    liberamente,per attendere la mossa di un amico, con il punto di vista nero e registrare la partita:
+Supponiamo che vogliamo giocare gestendo bianco e nero    liberamente, per attendere la mossa di un amico, con il punto di vista nero e registrare la partita:
 - avviamo il programma che apre la scacchiera 
 - facciamo CtrlW per la registrazione della partita, questo solo ad inizio partita, inserendo il nome desiderato del file 
 - il programma avvia la nuova predisposizione dei pezzi che tiene conto della registrazione
@@ -307,7 +307,7 @@ E' utile ascoltare come il computer affronta i problemi, sia quelli inventati da
 Nel caso di nostri problemi, il computer potrebbe evidenziare delle cose a cui non avevamo pensato. Non sempre il computer è fortemente brillante nelle combinazioni, ma nella maggior parte delle analisi è molto preciso.
 
 RoTN
-La RoTN che esamineremo di seguito è importante perchè su Internet le partite o i problemi mostrano solo immagini che un non vedente non può utilizzare. La RoT Notation descrive, più efficacemente di una FE Notation,  lo scopo della posizione, come sono dislocati tutti i pezzi, il punto di vista da cui mettersi, chi muove e il numero di mossa da cui partire. 
+La RoTN che esamineremo di seguito è importante perchè su Internet le partite o i problemi mostrano solo immagini che un non vedente non può utilizzare. La RoT Notation descrive, più efficacemente di una FEN Notation,  lo scopo della posizione, come sono dislocati tutti i pezzi, il punto di vista da cui mettersi, chi muove e il numero di mossa da cui partire. 
 Essa è una estensione della notazione algebrica per rendere un applicativo di scacchi di tipo open data.
 La paternità di essa è tutelata dal copyright di Scacchi-it.
 
@@ -407,14 +407,14 @@ Se dovete avere orologio e scacchiera, lanciate prima l'orologio e sulla stessa 
 Dall'help, durante il lancio di clock-start, si apprende:
 - digitare spazio la prima volta per avviarlo
 - spazio per dire di aver mosso e fare cambio turno
-- Contrl-Q per uscire
+- Ctrl-Q per uscire
 
 Dopo l'help occorre inserire la durata del gioco in minuti (es. 5 minuti, 240 minuti etc.) 
 L'orologio rileva la durata del tempo di pensiero della mossa e lo detrae solo al digitare dello spazio. Questa scelta è sia per evitare di consumare la CPU dietro solo all'orologio, sia per capire mentalmente quanto dura il proprio pensiero di gioco senza vedere l'orologio.
 Non dimentichiamo che lo strumento deve essere adatto ai non vedenti, che non possono vedere il trascorrere del tempo ma solo ascoltarlo, quindi, diventa improponibile aggiornare ogni secondo e far dire un vocale. 
 
 Quando usare l'orologio scacchistico
-Se vorreste allenarvi con un orologio, ad esempio giocando col computer a partite lampo di 5-10 minuti oppure con un amico assegnando un tempo di 120 minuti (un'ora)per per fare 40 mosse,  abbiamo due possibili scenari:
+Se vorreste allenarvi con un orologio, ad esempio giocando col computer a partite lampo di 5-10 minuti oppure con un amico assegnando un tempo di 120 minuti (un'ora) per fare 40 mosse,  abbiamo due possibili scenari:
 In entrambi gli scenari, dobbiamo attivare su una sola console sia Chess Clock che scacchi. 
 -Scenario col computer per le lampo
 1. attivate prima il Chess Clock (orologio) con clock-start(scacchi-start su una prima finestra di prompt)
@@ -426,7 +426,7 @@ In entrambi gli scenari, dobbiamo attivare su una sola console sia Chess Clock c
 - Scenario con un amico
 Stesso procedimento di prima, ma col punto 4 dove è il singolo giocatore che va sull'orologio e fa spazio
 
-Prima di giocare con l'orologio prendete prima la mano per spostarvi da una finestra ad un'altra, , lasciando Alt solo dopo che il Tab vi ha portato sulla finestra giusta, ascoltando la voce di aiuto. 
+Prima di giocare con l'orologio prendete prima la mano per spostarvi da una finestra ad un'altra, lasciando Alt solo dopo che il Tab vi ha portato sulla finestra giusta, ascoltando la voce di aiuto. 
 
 Abbandono automatico
 Stockfish è molto forte con punteggio ELO di circa 3500 punti e risponde sempre molto rapidamente.
@@ -524,7 +524,7 @@ Per le regole coinvolte potreste consultare Wikipedia.
 Giocare online
 Si può giocare nella stessa rete o su Internet, con giocatori su reti diverse.
 Il server è multiplayer e assegna al bianco il nome della room da utilizzare.
-Il bianco comunicherà via email o whatsapp al nero il nome della room e attenderà , prima di fare la mossa, che il nero sia connesso.
+Il bianco comunicherà via email o whatsapp al nero il nome della room e attenderà, prima di fare la mossa, che il nero sia connesso.
 
 Perchè usare un proprio server
 I motivi possono essere diversi:
@@ -586,7 +586,7 @@ I non vedenti possono catturare il nome della room dalla console facendo prima C
 4. se il nero è collegato, il bianco può fare la prima mossa
 5. dopo una mossa il programma segnala come sempre quale numero di mossa si dovrà fare successivamente
 6. ogni giocatore vede la mossa fatta dall'altro
-7. il giocatore che ha fatto la mossa vedrà bloccarsi i propri pezzi, dato cheScacchi-it si mette in attesa di risposta.
+7. il giocatore che ha fatto la mossa vedrà bloccarsi i propri pezzi, dato che Scacchi-it si mette in attesa di risposta.
 
 Giocare su reti diverse gratuitamente
 Si può giocare su reti diverse gratuitamente avendo il server in una VPN LogMein Hamachi free, che consente di collegare fino a 5 utenti, ovviamente i giocatori possono essere 4, mentre il quinto pc potrebbe fare da server tenendo su serveScacchi.exe
@@ -622,7 +622,7 @@ Se nel file  è presente e non è stato lanciato serverScacchi.exe, significa ch
 
 Verifica visibilità del server
 Sul vostro pc che non è server sul prompt di comandi digitare:
-ping <ip-addres>s (es. ping 192.168.x.y dove l'ip con x e y è quello del server)
+ping <ip-address> (es. ping 192.168.x.y dove l'ip con x e y è quello del server)
 Se l'ip non è visibile occorre che Windows Defender Firewall del server non intervenga sulla porta 65432, ovvero occorre creare una regola in entrata.
 
 Regole in entrata per Windows Defender Firewall
@@ -668,7 +668,7 @@ I tempi di rete possono dipendere dal controllo del firewall e del antivirus. Ev
 
 Tracciamento delle mosse da parte  del server 
 Il log del server permette l'osservazione del tracciamento di ogni partita mossa per mossa inviata, in ogni room. 
-L'esito della partita può essere compreso da i comandi che il server traccia:
+L'esito della partita può essere compreso dai comandi che il server traccia:
 - quitAB: c'è stato l'abbandono da parte di chi lo inoltra.
 - Matto: la partita è terminata con matto inflitto a chi riceve il comando Matto. Il matto viene dato da chi effettua l'ultima mossa. 
 - Stallo: la partita è terminata con Stallo da parte di chi doveva muovere
