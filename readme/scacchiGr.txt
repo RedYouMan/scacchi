@@ -706,8 +706,8 @@ Alla prossima
 
 ===== ALLEGATI=====
 
-BNF in forma EBNF/ISO 14977, 
-(* ===== RoTN - Rot Notation (versione italiana) per Scacchi-it v8.1 ===== *)
+BNF: EBNF/ISO 14977, 
+(* ===== RoTN - Rot Notation (versione italiana) ===== *)
 
 rotn_file        = t_desc , v_desc , b_desc , n_desc , m_desc , p_desc ;
 
@@ -752,6 +752,7 @@ newline          = "\n" ; (* A capo. Il file è testuale *)
 3.  *Lettere pezzi*: IT: `R D T A C`. Mentre in versione EN `K Q B N`, ma B: va sostituito con W: e N: con B:.
 
 
+BNF: EBNF/ISO 14977, 
 (* ===== RoTN - Rot Notation (English version) generalization ===== *)
 
 rotn_file        = t_desc , v_desc , w_desc , b_desc , m_desc , p_desc ;
