@@ -704,10 +704,10 @@ L'applicativo Scacchi-it presentato coglie vari aspetti importanti:
 Ricorda: L'accessibilità e la sicurezza, in ogni settore e genere, non sono un'opzione ma un diritto.
 Alla prossima
 
-ALLEGATO
+===== ALLEGATI=====
 
-BNF in forma EBNF/ISO 14977, che è la più leggibile:
-(* ===== RoTN - Rot Notation per Scacchi-it v8.1 ===== *)
+BNF in forma EBNF/ISO 14977, 
+(* ===== RoTN - Rot Notation (versione italiana) per Scacchi-it v8.1 ===== *)
 
 rotn_file        = t_desc , v_desc , b_desc , n_desc , m_desc , p_desc ;
 
@@ -750,4 +750,49 @@ newline          = "\n" ; (* A capo. Il file è testuale *)
 1.  *Ordine Fisso*: `rotn_file = T V B N M P` Questo forza `V:` dopo `T:` e prima degli altri, .
 2.  *`;` finale*: obbligatorio il punto e virgola su T,V,B,N,P. M può non avere `;`. 
 3.  *Lettere pezzi*: IT: `R D T A C`. Mentre in versione EN `K Q B N`, ma B: va sostituito con W: e N: con B:.
+
+
+(* ===== RoTN - Rot Notation (English version) generalization ===== *)
+
+rotn_file        = t_desc , v_desc , w_desc , b_desc , m_desc , p_desc ;
+
+(* 1. Base lexical rules *)
+uppercase_letter = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" 
+                 | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+digit            = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+alpha            = uppercase_letter | digit ;
+alpha_space      = alpha | " | "," | "." | "(" | ")" ;
+square           = file , rank ; 
+file             = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" ;
+rank             = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" ;
+
+(* 2. The 6 mandatory and ordered descriptors *)
+t_desc           = "T:" , free_text , ";" , newline ;
+v_desc           = "V:" , point_of_view , ";" , newline ;
+w_desc           = "W:" , white_pieces_list , ";" , newline ;  (* B: becomes W: in EN *)
+b_desc           = "B:" , black_pieces_list , ";" , newline ;  (* N: becomes B: in EN *)
+m_desc           = "M:" , side_to_move , newline ;             (* M: has no ; in the example *)
+p_desc           = "P:" , move_number , ";" , newline ;        (* P: has ; in the example *)
+
+(* 3. Descriptor values *)
+free_text        = { alpha_space } ;                           (* Ex: "Mate in one move" *)
+point_of_view    = "B" | "N" ;                                 (* B=White, N=Black *)
+side_to_move     = "B" | "N" ;                                 (* B=White, N=Black *)
+move_number      = digit , { digit } ;                         (* Ex: "34" *)
+
+white_pieces_list = white_piece , { ";" , white_piece } [ ";" ] ; (* trailing ; optional *)
+black_pieces_list = black_piece , { ";" , black_piece } [ ";" ] ; (* trailing ; optional *)
+
+white_piece      = piece_letter_en , square ;
+black_piece      = piece_letter_en , square ;
+
+(* Piece letters in English: K=King, Q=Queen, R=Rook, B=Bishop, N=Knight *)
+piece_letter_en  = "K" | "Q" | "R" | "B" | "N" ; 
+
+newline          = "\n" ; (* Line feed. The file is text-based *)
+*IMPORTANT Notes on the BNF EN:*
+
+1.  *Fixed Order*: `rotn_file = T V W B M P` This forces `V:` after `T:` and before the others.
+2.  *`;` trailing*: mandatory semicolon on T,V,W,B,P. M may not have `;`. 
+3.  *Piece letters*: EN: `K Q R B N`. And `B:` becomes `W:` for White, `N:` becomes `B:` for Black.
   
