@@ -9,8 +9,8 @@ Sul sito RedYouMan è presentato il gruppo NV&V e le loro finalità.
 La grafica fa uso della libreria sfml-2.6.1 ed eventuali cambi di tale libreria necessiterebbero di porting della
 parte sfml, questo perchè le versioni superiori sono state ridisegnate diversamente e diverse funzioni sono state modificate/eliminate oppure è cambiato lo standard di nomenclatura passato a quello Camel.
 
-I sorgenti .cpp e .h sono nelle directory src80, src-clock , src-starter , srcfenpos e serverScacchi.
-La versione src80 è contemporaneamente online e offline. 
+I sorgenti .cpp e .h sono nelle directory src81, src-clock , src-starter , srcfenpos e serverScacchi.
+La versione src81 è contemporaneamente online e offline. 
 I pacchetti di riferimento sono:
 - scacchi80.7z per i sorgenti
 - scacchiGr.7z su github contenenti solo eseguibili
@@ -45,7 +45,7 @@ I sorgenti in serverScacchi e src-starter sono in python, producendo alla fine d
 pyinstaller --onefile <script>.py
 
 I passi di compilazione sono:
-1 - cd src80/build
+1 - cd src81/build
 2 - cmake ..
 3 - cmake --build . > log.txt
  4 - da scacchi si esegue scacchi-start.exe
