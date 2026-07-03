@@ -706,6 +706,11 @@ Alla prossima
 
 ===== ALLEGATI=====
 
+Il documento ufficiale della ROTN BNF:EBNF/ISO 14977,  
+è al link https://redyouman.github.io/blog/2026/07/02/Spec-ROTN.html
+
+Per comodità di comprensione riportiamo qui anche la specifica.
+
 BNF: EBNF/ISO 14977, 
 (* ===== RoTN - Rot Notation (versione italiana) ===== *)
 
