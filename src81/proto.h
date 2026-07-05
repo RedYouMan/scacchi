@@ -78,5 +78,5 @@ bool sendMove(const std::string &room, const std::string &player, const std::str
 int test_main_net();
 void checkReceiveRete(char who);
 void invioMossaRete();
-
+void checkMate();
 #endif

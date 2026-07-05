@@ -122,7 +122,7 @@ void start_game()
 {
 
     // per default metto puntoDiVista a bianco
-    // CntrlG per cambiarlo
+    // CtrlG per cambiarlo
     puntoDiVista = "Bianco";
     gRow = 6;
     gCol = 4;
@@ -135,8 +135,8 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 8.1 - Rosario Turco\n";
-    cout << "sulla scacchiera: CntrlH per help(), CntrlX per tutorial\n";
+    cout << "Scacchi-it (C) 2025 versione 8.2 - Rosario Turco\n";
+    cout << "sulla scacchiera: CtrlH per help(), CtrlX per tutorial\n";
     init();
     Sleep(10000);
     startGrafica();
@@ -224,6 +224,8 @@ void playWhite()
     callTextToSpeech(msg);
     callTextToSpeech(string("Turno del Bianco\n"));
     int status = 0;
+    checkMate();
+
     cheStallo('W'); // controllo se può muovere
     patteElementari();
     if (stockfish_color != "Bianco" || stockfish_color.empty())
@@ -351,6 +353,8 @@ void playBlack()
     callTextToSpeech(string("Turno del Nero\n"));
     int status = 0;
     // controllo se può muovere
+    checkMate();
+
     cheStallo('B');
     patteElementari();
     if (stockfish_color != "Nero" || stockfish_color.empty())
@@ -744,7 +748,11 @@ int move(string src, string dest, char who)
     ChessPiece pezzoCatturato;
     string coloreCattura = "";
     pezzoCatturato = chessBoard[m][n].getChessPiece();
-
+    if (pezzoCatturato.getTypePiece() == KING)
+    {
+        printf("Mossa non valida. Non si deve catturare il Re.\n");
+        return 0;
+    }
     if (chessBoard[m][n].getBusySquare() && chessBoard[m][n].getChessPiece().getColorPiece() == 'W')
     {
         coloreCattura = "Bianco";

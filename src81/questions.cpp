@@ -263,22 +263,26 @@ who è il colore del giocatore che deve muovere
     }
 
     int num = (who == 'W' ? numBianchi : numNeri);
-
+    // printf("numBianchi senza contare il re %d\n", numBianchi);
+    // printf("numNeri senza contare il re %d\n", numNeri);
     if (num > 0)
     {
         // Puoi muovere altri pezzi oltre al Re
+        // printf("Puoi muovere altri pezzi oltre al re.\n");
         return;
     }
-    printf("verifichiamo se il re si può muovere\n");
-    // si controlla ora se è stallo
+    // printf("verifichiamo se il re si può muovere\n");
+    //  si controlla ora se è stallo
     string msg;
     bool isStallo = false;
-
+    string chire = (who == 'W' ? "Bianco" : "Nero");
+    // printf("stiamo verificando il re %s\n ", chire.c_str());
     for (int x = 0; x < 8; x++)
     {
         for (int y = 0; y < 8; y++)
         {
 
+            // trova dove si trova il re
             if (chessBoard[x][y].getBusySquare() == true && chessBoard[x][y].getChessPiece().getTypePiece() == KING && chessBoard[x][y].getChessPiece().getColorPiece() == who)
             {
                 King king_da_verificare = King();
@@ -1089,4 +1093,52 @@ bool isPieceDefended(int i, int j, char who)
         };
     }
     return status;
+}
+
+void checkMate()
+{
+    // per le posizioni rotn di matto soltanto e non durante il gioco
+    //  se è già stato dato matto si dichiara vocalmente e si esce
+    //  si fa il controllo per entrambi i re.
+
+    for (int x = 0; x < 8; x++)
+    {
+        for (int y = 0; y < 8; y++)
+        {
+
+            // trova dove si trova il re
+            if (chessBoard[x][y].getBusySquare() == true && chessBoard[x][y].getChessPiece().getTypePiece() == KING && chessBoard[x][y].getChessPiece().getColorPiece() == 'W')
+            {
+                King king_white = King();
+                if (king_white.checkSquareUnderAttack(x, y, 'W'))
+                {
+                    if (king_white.checkFreeSquare(x, y, 'W') == false)
+                    {
+                        callTextToSpeech(string("matto già dato al bianco! Partita terminata.\n"));
+                        Sleep(3);
+                        reStart();
+                    }
+                }
+            }
+            // PER B
+            if (chessBoard[x][y].getBusySquare() == true && chessBoard[x][y].getChessPiece().getTypePiece() == KING && chessBoard[x][y].getChessPiece().getColorPiece() == 'B')
+            {
+                King king_black = King();
+
+                if (king_black.checkSquareUnderAttack(x, y, 'B'))
+                {
+
+                    if (king_black.checkFreeSquare(x, y, 'B') == false)
+                    {
+                        callTextToSpeech(string("matto già dato al nero! Partita terminata.\n"));
+                        Sleep(3);
+                        reStart();
+                    }
+                }
+            }
+            //
+        }
+    }
+
+    return;
 }

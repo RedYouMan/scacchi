@@ -1,0 +1,6 @@
+T:Cattura dle re vietata 
+V:N;
+B:Rf1;Df6;
+N:Rh8;
+M:B;
+P:0;

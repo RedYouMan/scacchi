@@ -1,13 +1,20 @@
-Versione: 8.0
-data: 12 Giugno 2026
+Versione: 8.2
+data: 05 Luglio 2026
 
-La versione 8.0 rende Scacchi-it giocabile online oltre al gioco offline.
+La versione 8 rende Scacchi-it giocabile online oltre al gioco offline.
+
+Nella versione 8.2 sono state introdotti:
+- regola che il re non possa essere "mangiato", diretta conseguenza delle posizioni rotn che si possono caricare
+
+- per le posizioni ROTN si possa rappresentare una posizione di matto in cui il matto è stato già dato; in tal caso se 
+si carica una posizione simile, Scacchi-it dichiara che il matto era già stato dato e che dopo 3 secondi reinizializza la scacchiera
+- corretta una stampa di un testo accentato che veniva scritto male nello stallo
+
 
 La versione 8  è da considerarsi mainstream stabile, completa le funzionalità previste per l'applicativo e nella fattispecie aggiunge sia la possibilità di giocare online e ingloba tutto il precedente della versione 7.3 (vedi tutorial), oltre alla già presente reinizializzazione della scacchiera.
 
 oggetti cambiati o nuovi
 scacchi.exe in bin
-aggiunto serverScacchiLocale.exe e server.cnf nella directory serverLocale
 changelog cambiato
 
 

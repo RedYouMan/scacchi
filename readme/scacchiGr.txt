@@ -15,7 +15,7 @@ Per il semplice motivo che un file di testo è il più accessibile possibile su 
 Versione disponibile 
 Questo paragrafo del tutorial segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione 8.1 di Scacchi-it, da considerarsi la main stream stabile.
+Sul sito è stata pubblicata la versione 8.2 di Scacchi-it, da considerarsi la main stream stabile.
 La grande novità è che il programma ora consente anche di giocare online in multiplayer e la 8.1 aggiunge il file di log del server, rendendone comoda la consultazione.
 I cambiamenti sono tracciati nel file changelog.txt nella directory readme e sono frutto delle segnalazioni della Community.
 La versione 7 ha completato tutti gli strumenti utili durante una lezione di scacchi, mentre la 8 aggiunge la possibilità di giocare online.

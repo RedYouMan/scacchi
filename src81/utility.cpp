@@ -53,20 +53,20 @@ void help()
 
     // signal(SIGINT, signalHandler);
 
-    callTextToSpeech(string("Scacchi-it  v.8.1\n"));
+    callTextToSpeech(string("Scacchi-it  v.8.2\n"));
     if (!interrompiVocale)
     {
-        callTextToSpeech(string("CntrlX per approfondimenti sul sito\n"));
+        callTextToSpeech(string("CtrlX per approfondimenti sul sito\n"));
     }
 
     if (!interrompiVocale)
     {
-        callTextToSpeech(string("CntrlN perinizializzare la scacchiera\n"));
+        callTextToSpeech(string("CtrlN perinizializzare la scacchiera\n"));
     }
 
     if (!interrompiVocale)
     {
-        callTextToSpeech(string("CntrlG per cambiare punto di vista di gioco\n"));
+        callTextToSpeech(string("CtrlG per cambiare punto di vista di gioco\n"));
     }
     if (!interrompiVocale)
     {
@@ -80,51 +80,51 @@ void help()
 
     if (!interrompiVocale)
     {
-        callTextToSpeech(string("CntrlI per giocare online\n"));
+        callTextToSpeech(string("CtrlI per giocare online\n"));
     }
 
     if (!interrompiVocale)
     {
-        callTextToSpeech(string("CntrlA per forzare un'apertura desiderata\n"));
+        callTextToSpeech(string("CtrlA per forzare un'apertura desiderata\n"));
     }
     if (!interrompiVocale)
     {
-        callTextToSpeech(string("CntrlT per aprire l'Openings Trainer\n"));
-    }
-
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CntrlL per fare Abbandono col Re\n"));
-    }
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CntrlW per registrare la partita\n"));
+        callTextToSpeech(string("CtrlT per aprire l'Openings Trainer\n"));
     }
 
     if (!interrompiVocale)
     {
-        callTextToSpeech(string("CntrlU per fare l'undo delle mosse\n"));
+        callTextToSpeech(string("CtrlL per fare Abbandono col Re\n"));
+    }
+    if (!interrompiVocale)
+    {
+        callTextToSpeech(string("CtrlW per registrare la partita\n"));
     }
 
     if (!interrompiVocale)
     {
-        callTextToSpeech(string("CntrlP per caricare un problema da risolvere\n"));
+        callTextToSpeech(string("CtrlU per fare l'undo delle mosse\n"));
+    }
+
+    if (!interrompiVocale)
+    {
+        callTextToSpeech(string("CtrlP per caricare un problema da risolvere\n"));
     }
     if (!interrompiVocale)
     {
-        callTextToSpeech(string("CntrlJ per far risolvere un problema al computer\n"));
+        callTextToSpeech(string("CtrlJ per far risolvere un problema al computer\n"));
     }
     if (!interrompiVocale)
     {
-        callTextToSpeech(string("CntrlS per sospendere la partita da riprendere poi\n"));
+        callTextToSpeech(string("CtrlS per sospendere la partita da riprendere poi\n"));
     }
     if (!interrompiVocale)
     {
-        callTextToSpeech(string("CntrlR per riprendere una partita\n"));
+        callTextToSpeech(string("CtrlR per riprendere una partita\n"));
     }
     if (!interrompiVocale)
     {
-        callTextToSpeech(string("CntrlQ per uscire dal gioco\n"));
+        callTextToSpeech(string("CtrlQ per uscire dal gioco\n"));
     }
 
     interrompiVocale = false;
