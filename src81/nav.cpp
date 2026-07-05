@@ -659,6 +659,7 @@ void navOnBoard(char who)
                                 callTextToSpeech(string("Fai Alt-Tab per andare sulla console e inserire il nome del file da riprendere\n"));
                                 loadFile(2, false);
                                 myRefresh();
+                                checkKings();
                                 callTextToSpeech(string("Fai Alt-Tab per tornare sulla scacchiera\n"));
                                 gioca();
                             }
@@ -867,6 +868,8 @@ void gestione_Problemi(int caso)
     cleanBoard();
 
     loadFile(1, false);
+
+    checkKings(); // Controlla la presenza dei re sulla scacchiera
     callTextToSpeech(string("Fai Alt-Tab per tornare sulla scacchiera e attendi il caricamento grafico del problema"));
     myRefresh();
     if (caso == 2)
@@ -903,4 +906,34 @@ bool playerOk(string player)
         cout << "il nome del player deve contenere solo lettere e numeri " << endl;
     }
     return valido;
+}
+void checkKings()
+{
+
+    // su tutta la scacchiera cerco i due re se esistono altrimenti è un errore e
+    // devo uscire dal programma
+    bool foundWhiteKing = false;
+    bool foundBlackKing = false;
+
+    for (int row = 0; row < 8; ++row)
+    {
+        for (int col = 0; col < 8; ++col)
+        {
+            ChessPiece piece = chessBoard[row][col].getChessPiece();
+            if (piece.getNamePiece() == "ReBianco")
+            {
+                foundWhiteKing = true;
+            }
+            else if (piece.getNamePiece() == "ReNero")
+            {
+                foundBlackKing = true;
+            }
+        }
+    }
+
+    if (!foundWhiteKing || !foundBlackKing)
+    {
+        callTextToSpeech(string("Errore: uno o entrambi i re non sono presenti sulla scacchiera. Esco dal programma.\n"));
+        exit(1);
+    }
 }

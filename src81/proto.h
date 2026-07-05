@@ -79,4 +79,5 @@ int test_main_net();
 void checkReceiveRete(char who);
 void invioMossaRete();
 void checkMate();
+void checkKings();
 #endif

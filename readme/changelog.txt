@@ -9,7 +9,7 @@ Nella versione 8.2 sono state introdotti:
 - per le posizioni ROTN si possa rappresentare una posizione di matto in cui il matto è stato già dato; in tal caso se 
 si carica una posizione simile, Scacchi-it dichiara che il matto era già stato dato e che dopo 3 secondi reinizializza la scacchiera
 - corretta una stampa di un testo accentato che veniva scritto male nello stallo
-
+- verifica che i file rotn caricati come problemi o sotto sospensioni abbiano entrambi i re.
 
 La versione 8  è da considerarsi mainstream stabile, completa le funzionalità previste per l'applicativo e nella fattispecie aggiunge sia la possibilità di giocare online e ingloba tutto il precedente della versione 7.3 (vedi tutorial), oltre alla già presente reinizializzazione della scacchiera.
 
