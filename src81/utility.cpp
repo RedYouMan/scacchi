@@ -53,7 +53,7 @@ void help()
 
     // signal(SIGINT, signalHandler);
 
-    callTextToSpeech(string("Scacchi-it  v.8.2\n"));
+    callTextToSpeech(string("Scacchi-it  v.8.3\n"));
     if (!interrompiVocale)
     {
         callTextToSpeech(string("CtrlX per approfondimenti sul sito\n"));

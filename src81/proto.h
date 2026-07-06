@@ -80,4 +80,5 @@ void checkReceiveRete(char who);
 void invioMossaRete();
 void checkMate();
 void checkKings();
+void checkNumbers();
 #endif

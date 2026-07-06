@@ -113,14 +113,51 @@ bool makeConfig(string name, int tipoPath)
         isPresentB = false;
 
         // Leggi il file riga per riga finché ci sono righe
+        // ci devono essere tutti i descrittori necessari, quindi, non meno di 6
+        int countDescriptors = 0;
         while (getline(fin, row))
         {
+            countDescriptors++;
+            // qua posso capire se T: è valorizzato
+            if (countDescriptors == 1 && (row[0] != 'T' || row.length() < 3))
+            {
+                callTextToSpeech(string("Il file non contiene il descrittore T: necessario e valorizzato \n"));
+                callTextToSpeech(string("Correggi il problema e rilancialo\n"));
+                exit(1);
+            }
+            if (countDescriptors == 2 && (row[0] != 'V' || row.length() < 3))
+            {
+                callTextToSpeech(string("Il file non contiene il descrittore V necessario e valorizzato\n"));
+                callTextToSpeech(string("Correggi il problema e rilancialo\n"));
+                exit(1);
+            }
+            if (countDescriptors == 5 && (row[0] != 'M' || row.length() < 3))
+            {
+                callTextToSpeech(string("Il file non contiene il descrittore M:  necessario e valorizzato\n"));
+                callTextToSpeech(string("Correggi il problema e rilancialo\n"));
+                exit(1);
+            }
+            if (countDescriptors == 6 && (row[0] != 'P' || row.length() < 3))
+            {
+                callTextToSpeech(string("Il file non contiene il descrittore P: necessario e valorizzato con un intero\n"));
+                callTextToSpeech(string("Correggi il problema e rilancialo\n"));
+                exit(1);
+            }
+
+            // successivo ok
             if (!setPieceIntoSquare(row))
             {
                 callTextToSpeech(string("Correggi il problema e rilancialo\n"));
                 callTextToSpeech(string("Correggi il problema e rilancialo\n"));
                 exit(1);
             }
+        }
+
+        if (countDescriptors < 6)
+        {
+            callTextToSpeech(string("Il file non contiene tutti i descrittori necessari\n"));
+            callTextToSpeech(string("Correggi il problema e rilancialo\n"));
+            exit(1);
         }
         fin.close();
     }
@@ -154,7 +191,7 @@ bool setPieceIntoSquare(string com)
     else
     {
         // non viene valorizzato
-        callTextToSpeech(string("Controlla se nel file hai messo righe vuote o punti e virgola superflui\n"));
+        callTextToSpeech(string("Controlla se nel file hai omesso dei descrittori o messo righe vuote o punti e virgola superflui\n"));
         callTextToSpeech(string("Esco per consentirti i controlli sul file\n"));
         exit(1);
     }
@@ -173,7 +210,6 @@ bool setPieceIntoSquare(string com)
 
     string mossa;
     string msg;
-
     while (mosse.size() > 0)
     {
         mossa = mosse.back();
@@ -193,7 +229,7 @@ bool setPieceIntoSquare(string com)
             // printDebug(string("controlli superati\n"));
         }
         char myColor = toupper(color);
-
+        // introdotti regole validazione rotn
         if (myColor == 'T')
         {
             Sleep(2000);
@@ -202,6 +238,11 @@ bool setPieceIntoSquare(string com)
         }
         else if (myColor == 'M')
         {
+            if (mossa.empty() || !(mossa[0] == 'B' || mossa[0] == 'N'))
+            {
+                callTextToSpeech(string("M:risulta non valido, esco per farti correggere il file\n"));
+                exit(1);
+            }
             startColor = (mossa[0] == 'N' || mossa[0] == 'n' ? 1 : 0);
             msg = "debug: startColor settato a " + to_string(startColor) + "\n";
             printDebug(msg);
@@ -301,6 +342,11 @@ bool setPieceIntoSquare(string com)
 
         else if (myColor == 'V')
         {
+            if (mossa.empty() || !(mossa[0] == 'B' || mossa[0] == 'N'))
+            {
+                callTextToSpeech(string("V:risulta non valido, esco per farti correggere il file\n"));
+                exit(1);
+            }
             if (isPresentB)
             {
                 callTextToSpeech(string("Warning: il record V: deve essere posizionato prima di quelli B: e N:\n"));
@@ -323,7 +369,6 @@ bool setPieceIntoSquare(string com)
             setPiece(myColor, mossa);
         }
     }
-
     // posizione sicura per settare validi gli arrocchi
     // anche se ripetuta almeno 4 volte Entra solo in un if per volta.
     if (status == true)
@@ -448,7 +493,7 @@ void init()
     {
         if (cont == 1)
         {
-            com = "T:\n";
+            com = "T:...\n";
         }
         if (cont == 2)
         {

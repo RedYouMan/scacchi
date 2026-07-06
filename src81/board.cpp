@@ -135,7 +135,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 8.2 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 8.3 - Rosario Turco\n";
     cout << "sulla scacchiera: CtrlH per help(), CtrlX per tutorial\n";
     init();
     Sleep(10000);
@@ -224,7 +224,6 @@ void playWhite()
     callTextToSpeech(msg);
     callTextToSpeech(string("Turno del Bianco\n"));
     int status = 0;
-    checkMate();
 
     cheStallo('W'); // controllo se può muovere
     patteElementari();
@@ -353,7 +352,6 @@ void playBlack()
     callTextToSpeech(string("Turno del Nero\n"));
     int status = 0;
     // controllo se può muovere
-    checkMate();
 
     cheStallo('B');
     patteElementari();
@@ -1643,6 +1641,73 @@ void invioMossaRete()
         }
 
         // callTextToSpeech(string("Mossa inviata al server: ") + mossa);
+    }
+    return;
+}
+void checkKings()
+{
+
+    // su tutta la scacchiera cerco i due re se esistono altrimenti è un errore e
+    // devo uscire dal programma
+    bool foundWhiteKing = false;
+    bool foundBlackKing = false;
+
+    for (int row = 0; row < 8; row++)
+    {
+        for (int col = 0; col < 8; col++)
+        {
+            if (chessBoard[row][col].getBusySquare() && chessBoard[row][col].getChessPiece().getTypePiece() == KING && chessBoard[row][col].getChessPiece().getColorPiece() == 'W')
+            {
+                foundWhiteKing = true;
+            }
+            if (chessBoard[row][col].getBusySquare() && chessBoard[row][col].getChessPiece().getTypePiece() == KING && chessBoard[row][col].getChessPiece().getColorPiece() == 'B')
+            {
+                foundBlackKing = true;
+            }
+        }
+    }
+    if (!foundWhiteKing || !foundBlackKing)
+    {
+        callTextToSpeech(string("Errore: assenza dei descrittori B o N oppure uno o entrambi i re non sono presenti sulla scacchiera. Esco dal programma.\n"));
+        exit(1);
+    }
+    return;
+}
+
+void checkNumbers()
+{
+
+    // la funzione conta i pezzi del bianco e del nero
+    // se il loro numero supera il 16 per il bianco o per il nero esiste un errore
+    int numBianchi = 0, numNeri = 0;
+
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            if (chessBoard[i][j].getBusySquare())
+            {
+                if (chessBoard[i][j].getChessPiece().getColorPiece() == 'W')
+                {
+                    numBianchi++;
+                }
+                if (chessBoard[i][j].getChessPiece().getColorPiece() == 'B')
+                {
+                    numNeri++;
+                }
+            }
+        }
+    }
+
+    if (numBianchi > 16)
+    {
+        callTextToSpeech(string("Errore: il numero di pezzi bianchi supera 16. Esco dal programma.\n"));
+        exit(1);
+    }
+    if (numNeri > 16)
+    {
+        callTextToSpeech(string("Errore: il numero di pezzi neri supera 16. Esco dal programma.\n"));
+        exit(1);
     }
     return;
 }
