@@ -332,14 +332,14 @@ P:34;
 
 In particolare P: va diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale se gioca per prima il Nero (M:N). Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
 
-E' obbligatorio mettere il descrittore V: dopo quello T: ma prima di tutti gli altri rimanenti.
+I descrittori sono obbligatori e con ordine fisso, ognuno con una propria riga. Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella lista di posizioni algebriche dei pezzi.
 
 Il programma Scacchi-it usa solo le lettere dei pezzi in italiano, ma la rot notation può essere generalizzata e usare anche le lettere inglesi dei pezzi. e al posto del descrittore italiano B: il corrispondente inglese W: e analogamente per il descrittore italiano N: sostituito con quello inglese B:.
 Dopo la lettera iniziale vi è la casella che indica dove va posizionato il pezzo.
 
 Vantaggi della RoTN
 La RoTN unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla FEN.
-Infatti aggiunge il testo (T:) che valorizza il momento artistico e clou della posizione, inoltre aggiunge il punto di vista da cui guardare e giocare la partita. La sinteticità della notazione algebrica rende più rapidamente intuibile la posizione.
+Infatti aggiunge il testo (T:) che valorizza il momento artistico e clou della posizione, inoltre aggiunge il punto di vista da cui guardare e giocare la partita. Un programma di scacchi in base a V: può ruotare la scacchiera al caricamento della posizione. La sinteticità della notazione algebrica rende più rapidamente intuibile la posizione.
 
 Per comprendere meglio i limiti di una fen esaminiamo come è fatta.
 
@@ -708,3 +708,7 @@ Alla prossima
 
 Specifica Ufficiale ROTN completa, ISO 14977. 
 https://redyouman.github.io/blog/2026/07/02/Spec-ROTN.html
+
+Innanzitutto è una specifica di accessibilità digitale per chi sviluppa software scacchistico compatibile con screen reader (come NVDA e simili), ma che consente di utilizzare il software anche ai vedenti, in linea con un concetto a me caro di integrazione dei due mondi: non vedenti e vedenti (NV&V).
+Il gioco diventa un momento sociale di integrazione e di possibilità alla pari tra vedente e non vedente.
+La specifica dichiara un metodo semplice e intuitivo per superare facilmente vecchie problematiche, soprattutto editoriali, che gli scacchi da sempre si portano dietro: una immagine non è fruibile da un non vedente su Internet o su un ebook e la fen è poco intuitiva per un umano, adatta più a un computer e risalente al secolo scorso.
