@@ -383,18 +383,21 @@ Inoltre per un umano non serve sapere la situazione degli arrocchi, lo vede da s
 
 Scacchi-it , ideato per vedenti e non vedenti, nelle sospensioni si segna l'enpassant per comunicare la possibilità di esso alla ripresa, ma solo se esiste tale possibilità, diversamente dallo standard fen.
 
-In un e-book per non vedenti se ci sono immagini, esse non sono fruibili dal non vedente; per cui, generalmente, viene descritta la posizione con la notazione algebrica, che ha il vantaggio di far comprendere la posizione dei pezzi rapidamente. 
+In un ebook per non vedenti se ci sono immagini, esse non sono fruibili dal non vedente; per cui, generalmente, viene descritta la posizione con la notazione algebrica, che ha il vantaggio di far comprendere la posizione dei pezzi rapidamente. 
 La RoTN fa un passo ulteriore, consentendo l'ascolto e l'immediato utilizzo su scacchiera e non solo.
 
-Se in un e-book viene mostrata la RoTN, col copia e incolla si può rapidamente trasferirla in un file e caricarla in Scacchi-it. In tal modo si può ascoltare, con sintesi vocale, il testo e navigare sulla scacchiera esplorando la posizione, apprezzando meglio quanto descritto nel e-book.
+Se in un ebook viene mostrata la RoTN, col copia e incolla si può rapidamente trasferirla in un file e caricarla in Scacchi-it. In tal modo si può ascoltare, con sintesi vocale, il testo e navigare sulla scacchiera esplorando la posizione, apprezzando meglio quanto descritto nel ebook.
 
 La RoTN, inoltre, rende open data l'applicativo Scacchi-it in modo bidirezionale: consente di sospendere una partita e di riprenderla più tardi, come pure scrivere o copiare problemi e caricarli per la loro soluzione.
 Per cui la giusta definizione della rot notation è che essa estende la notazione algebrica e rende open data un applicativo di scacchi, consentendo di interagire con esso in due direzioni e aggiungendo la sintesi vocale e i vantaggi di una immagine.
 
 Il programma fenpos
-Nella parte di download c'è il programma fenpos che a partire da una posizione fen relativa ad un problema, vi estrae un file con rot notation, in modo da caricarla con l'applicativo scacchi-it. 
-Su questo sito troverete una "Problems Collection" con almeno 100 fen associate, traducibili in rot notation con fenpos. Sul sito troverete anche una "Chess Combinations Collection"  e una "final chess collection" con le fen associate e con fenpos potrete ottenere i file da caricare sotto scacchi-it.
+Scacchi-it richiede che scriviate con Notepad un file di testo in formato rotn oppure potreste copiare la rotn da un ebook o da Internet per metterlo in un file di testo nella directory problemi per caricarlo, poi, con Ctrl+P.
+Nel caso che su un ebook o su Internet troviate una fen, allora sul nostro sito potreste scaricare una ulteriore utility: fenpos.
+Il programma fenpos a partire da una posizione fen relativa ad un problema, vi estrae un file con rot notation, in modo da caricarla con l'applicativo scacchi-it. 
 
+La speranza è che l'editoria comprenda che la fen è poco comprensibile e nel copia e incolla un non vedente non ha un buon controllo su tutta la stringa. 
+ 
 Configurabilità delle versioni di stockfish
 Qualora ci fossero versioni più recenti di stockfish è possibile scaricare la nuova versione nella directory engine emodificare, nella directory bin, il file engine.cnf per mettervi il nuovo nome dell'eseguibile stockfish gui.
 L'applicativo Scacchi-it continuerà a lavorare correttamente se il nuovo motore stockfish si basa ancora su comandi standard uci (universal chess interface).
