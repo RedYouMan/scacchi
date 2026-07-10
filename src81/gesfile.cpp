@@ -21,7 +21,8 @@ using namespace std;
 
 // segnala che i record B o N sono stati elaborati prima di V:
 bool isPresentB = false;
-
+int bianco_arrocchi[2] = {0, 0}, nero_arrocchi[2] = {0, 0};
+// valgono ognuno {0,0} se sono validi, {1,0} se non valido  arrocco corto, {0,1} se non valido arrocco lungo, {1,1} se non validi entrambi
 void WriteGameToFile(string nameFile, string str, bool scrivi)
 {
     if (scrivi)
@@ -380,9 +381,37 @@ bool setPieceIntoSquare(string com)
 
 void setPiece(char color, string mossa)
 {
-
     string extendedColor = (color == 'B' ? "Bianco" : "Nero");
     string extendedColor_f = (color == 'B' ? "Bianca" : "Nera");
+
+    // ROS1 Settaggio se necessario di bianco_arrocchi e nero_arrocchi (globali)
+    if (mossa[0] == 'N' && mossa[1] == 'S' && color == 'B')
+    {
+        bianco_arrocchi[0] = 1;
+        printf("Bianco_arrocchi[0] settato a 1\n");
+        return;
+    }
+    if (mossa[0] == 'N' && mossa[1] == 'L' && color == 'B')
+    {
+        bianco_arrocchi[1] = 1;
+        printf("Bianco_arrocchi[1] settato a 1\n");
+        return;
+    }
+    // parte nera
+    if (mossa[0] == 'N' && mossa[1] == 'S' && color == 'N')
+    {
+        nero_arrocchi[0] = 1;
+        printf("Nero_arrocchi[0] settato a 1\n");
+        return;
+    }
+    if (mossa[0] == 'N' && mossa[1] == 'L' && color == 'N')
+    {
+        nero_arrocchi[1] = 1;
+        printf("Nero_arrocchi[1] settato a 1\n");
+        return;
+    }
+
+    // segue il for
     for (int i = 0; i < mossa.length(); i++)
     {
         if (!isalnum(mossa[i]))
@@ -394,9 +423,20 @@ void setPiece(char color, string mossa)
     }
     if (mossa.length() < 3 || mossa.length() > 3)
     {
-        callTextToSpeech(string("Lunghezza della posizione diversa da quella necessaria\n"));
-        printf("Esco per consentirti di verificare il file\n");
-        exit(1);
+
+        // ROS1 - solo NC e NL sono ammessi
+        if (mossa[0] == 'N' && (mossa[1] == 'C' || mossa[1] == 'L'))
+        {
+
+            // tutto ok
+        }
+        else
+        {
+
+            callTextToSpeech(string("Lunghezza della posizione diversa da quella necessaria\n"));
+            printf("Esco per consentirti di verificare il file\n");
+            exit(1);
+        }
     }
     // pre-elaborazione maiuscole e minuscole e numeri
     string posizione = mossa;
@@ -732,6 +772,7 @@ void viewValid()
 {
     // set e verifica
     //  problema settaggio arrocco valido
+    // ROS1 Deve controllare bianco_arrocchi e nero_arrocchi
 
     ChessUtility utility;
     string appo = "a8";
@@ -764,8 +805,6 @@ void viewValid()
 
     // verifichiamo se esistono sulla scacchieracome coppia re+torre
 
-    // in partenza al caricamento il punto di vista è quello del bianco, quindi in a8 e h8 dovrei trovare le torri  del Nero
-    // in a1 e h1 dovrei trovare le torri del bianco
     if (chessBoard[i_a8][j_a8].getBusySquare() == true && chessBoard[i_a8][j_a8].getChessPiece().getTypePiece() == ROOK && chessBoard[i_a8][j_a8].getChessPiece().getColorPiece() == 'B')
     {
         if (chessBoard[i_e8][j_e8].getBusySquare() == true && chessBoard[i_e8][j_e8].getChessPiece().getTypePiece() == KING && chessBoard[i_e8][j_e8].getChessPiece().getColorPiece() == 'B')
@@ -798,6 +837,25 @@ void viewValid()
             chessBoard[i_h1][j_h1].setValid00(true);
         }
     }
+    printf("valori di bianco_arrocchi: %d %d\n", bianco_arrocchi[0], bianco_arrocchi[1]);
+    printf("valori di nero_arrocchi: %d %d\n", nero_arrocchi[0], nero_arrocchi[1]);
+    if (bianco_arrocchi[0] == 1)
+    {
+        chessBoard[i_h1][j_h1].setValid00(false);
+    }
+    if (bianco_arrocchi[1] == 1)
+    {
+        chessBoard[i_a1][j_a1].setValid000(false);
+    }
 
+    if (nero_arrocchi[0] == 1)
+    {
+        chessBoard[i_h8][j_h8].setValid00(false);
+    }
+
+    if (nero_arrocchi[1] == 1)
+    {
+        chessBoard[i_a8][j_a8].setValid000(false);
+    }
     return;
 }

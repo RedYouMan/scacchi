@@ -1,5 +1,5 @@
-Versione: 8.3
-data: 06 Luglio 2026
+Versione: 8.4
+data: 10 Luglio 2026
 
 La versione 8 rende Scacchi-it giocabile online oltre al gioco offline.
 
@@ -14,6 +14,9 @@ Nella versione 8.3 rispettate regole di validazione ROTN:
 - esistenza descrittori, posizione fissa, presenza valori attesi
 - non superamento di 16 pezzi per colore
 - presenza dei re
+
+La versione 8.4 aggiunge i valori NS e NL, nei casi di ambiguità di arrocco, per segnalare in B: o N: che l'arrocco corto non è valido (NS) o l'arrocco lungo non è valido (NL) o entrambi NS;NL
+Inoltre al caricamento di un problema viene dichiarato dove sono i re.
 
 La versione 8  è da considerarsi mainstream stabile, completa le funzionalità previste per l'applicativo e nella fattispecie aggiunge sia la possibilità di giocare online e ingloba tutto il precedente della versione 7.3 (vedi tutorial), oltre alla già presente reinizializzazione della scacchiera.
 

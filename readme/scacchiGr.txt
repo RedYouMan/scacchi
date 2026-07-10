@@ -15,7 +15,7 @@ Per il semplice motivo che un file di testo è il più accessibile possibile su 
 Versione disponibile 
 Questo paragrafo del tutorial segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione 8.3 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione 8.4 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 La grande novità è che il programma ora consente anche di giocare online in multiplayer e la 8.1 aggiunge il file di log del server, rendendone comoda la consultazione.
 I cambiamenti sono tracciati nel file changelog.txt nella directory readme e sono frutto delle segnalazioni della Community.
 La versione 7 ha completato tutti gli strumenti utili durante una lezione di scacchi, mentre la 8 aggiunge la possibilità di giocare online.
@@ -333,6 +333,8 @@ P:34;
 In particolare P: va diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale se gioca per prima il Nero (M:N). Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
 
 I descrittori sono obbligatori e con ordine fisso, ognuno con una propria riga. Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella lista di posizioni algebriche dei pezzi.
+
+Per i casi ambigui di arrocco, come ad esempio di torre o re mossi in precedenza e poi ritornati nella posizione di origine o altre situazioni ambigue, si segnala l'arrocco non valido in B: o N: nella lista di pezzi: il valore NS (No Short Castle) e NL (No Long Castle). I due valori possono essere presenti uno solo, o entrambi separati da ';'. 
 
 Il programma Scacchi-it usa solo le lettere dei pezzi in italiano, ma la rot notation può essere generalizzata e usare anche le lettere inglesi dei pezzi. e al posto del descrittore italiano B: il corrispondente inglese W: e analogamente per il descrittore italiano N: sostituito con quello inglese B:.
 Dopo la lettera iniziale vi è la casella che indica dove va posizionato il pezzo.

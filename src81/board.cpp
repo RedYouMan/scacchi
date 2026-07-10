@@ -135,7 +135,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 8.3 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 8.4 - Rosario Turco\n";
     cout << "sulla scacchiera: CtrlH per help(), CtrlX per tutorial\n";
     init();
     Sleep(10000);
@@ -1651,18 +1651,27 @@ void checkKings()
     // devo uscire dal programma
     bool foundWhiteKing = false;
     bool foundBlackKing = false;
-
+    ChessUtility utility;
+    string casa, my_king;
+    ;
     for (int row = 0; row < 8; row++)
     {
         for (int col = 0; col < 8; col++)
         {
+            casa.clear();
+            casa = utility.getSquarePuntoDiVista(row, col, puntoDiVista);
+
             if (chessBoard[row][col].getBusySquare() && chessBoard[row][col].getChessPiece().getTypePiece() == KING && chessBoard[row][col].getChessPiece().getColorPiece() == 'W')
             {
                 foundWhiteKing = true;
+                my_king = "Re bianco in casa " + casa + "\n";
+                callTextToSpeech(my_king);
             }
             if (chessBoard[row][col].getBusySquare() && chessBoard[row][col].getChessPiece().getTypePiece() == KING && chessBoard[row][col].getChessPiece().getColorPiece() == 'B')
             {
                 foundBlackKing = true;
+                my_king = "Re nero in casa " + casa + "\n";
+                callTextToSpeech(my_king);
             }
         }
     }
