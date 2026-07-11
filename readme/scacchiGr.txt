@@ -49,7 +49,7 @@ Il programma Scacchi-it consente di:
 13 - fare Abbandono da parte del re (CtrlL)
 14 - scegliere di giocare contro il computer (CtrlZ)
 15 - scegliere il livello di gioco contro il computer
-16 - usare i problemi scritti con una RoTnotation  per Non Vedenti  che informa sulla posizione in termini di descrizione del problema, disposizione dei pezzi del bianco e del nero, il punto di vista da cui giocare, il diritto di mossa, il numero di mossa di partenza
+16 - usare le posizioni o i problemi scritti con una RoTnotation  per Non Vedenti  che informa sulla posizione in termini di descrizione del problema, disposizione dei pezzi del bianco e del nero, il punto di vista da cui giocare, il diritto di mossa, il numero di mossa di partenza
 17 - controllare la correttezza dei file dei problemi scritti a mano
 18 - far risolvere i problemi al computer
 19 - leggere il tutorial
@@ -157,7 +157,7 @@ Alt e Tab sono a sinistra della tastiera, con il Tab nella parte centrale della 
 L'Alt si trova a sinistra accanto alla barra spaziatrice.
 
 Quando il programma vi chiederà informazioni, dopo aver risposto adeguatamente alla domanda, occorre premere return. Poi di nuovo Alt-Tab per tornare alla scacchiera.
-Solo nel caso della sospensione potreste scegliere tra varie cose: CtrlQ  per uscire o analizzare un problema (CtrlJ), risolvere un problema da soli (CtrlP) o anche ritornare sulla scacchiera e studiarsi cosa potrà rispondere l'amico.
+Solo nel caso della sospensione potreste scegliere tra varie cose: CtrlQ  per uscire o analizzare un problema (CtrlJ), risolvere un problema o una posizione da soli (CtrlP) o anche ritornare sulla scacchiera e studiarsi cosa potrà rispondere l'amico.
 
 Nel passare da console a finestra scacchi-it, può accadere il messaggio "Scacchi-it non risponde" ma è solo per la perdita del focus momentaneamente.
 Se continua a dire tale messaggio   , fate di nuovo Alt-Tab per andare su console e di nuovo Alt-Tab per tornare sulla scacchiera. Appena ritornati sulla scacchiera tutto procede normalmente.
@@ -171,14 +171,14 @@ Nomi dei comandi da ricordare
 I nomi dei controls sono tali da avere l'ultima lettera che stimoli una associazione di idee per ricordarli:
 - H per help o aiuto
 - W per write/registrare 
-- P per i problemi
+- P per i problemi o le posizioni 
 - S per sospendere
 - R per riprendere
 - L per lasciare o abbandonare
 - U per l'undo della mossa
 - G per giocare da un altro punto di vista: bianco o nero
 - Z per giocare contro il computer (zombie)
-- J per usare il Jolly del computer per risolvere i problemi
+- J per usare il Jolly del computer per risolvere i problemi o una posizione
 - A per forzare l'apertura desiderata che il computer deve giocare
 - T per attivare l'Openings Trainer
 - X per avere questa introduzione
@@ -215,12 +215,12 @@ Noi consigliamo semplicemente  di usare una  abbreviazione di nome e cognome dei
 giurivcarcav12022026, senza estensione. Sarà il  programma che aggiungerà l'estensione  .txt.
 Il file verrà aperto nella directory registrazioni se state registrando o nella directory sospensioni se state sospendendo la partita. Alla ripresa dovrete solo ricordarne il nome.
 
-Per i nomi dei problemi che create a mano, potreste solamente numerarli: problema1.txt  etc
+Per i nomi dei problemi o delle posizioni che create a mano, potreste solamente numerarli: problema1.txt  etc
 Per le partite sospese è sufficiente un nome come sospesa Se giocate con un solo amico senza estensione a cui provvederà il programma. Tale file non dovrete preoccuparvi di cancellarlo se sospendete ancora la partita e usate lo stesso nome, difatti esso  verrà rimosso al suo caricamento successivo.
 Fate attenzione quando vi viene richiesto il nome del file desiderato, dato che viene precisato di NON mettere l'estensione.
 
 Directory dei Problemi e delle Sospensioni
-I problemi vanno posti nella directory problemi e devono avere estensione .txt quando li create col NOTEPAD a mano. 
+I problemi o le posizioni vanno posti nella directory problemi e devono avere estensione .txt quando li create col NOTEPAD a mano. 
 Un esempio è problema1.txt.  
 Quando caricate un problema non è importante digitare il nome con le lettere maiuscole se vi fossero e non va indicata la estensione (.txt).
 I file di sospensione verranno posti dal programma nella directory sospensioni e dopo essere stati caricati verranno rimossi.
@@ -298,7 +298,7 @@ Se volessimo ascoltare l'analisi del computer nel risolver un problema:
 L'analisi avverrà su un massimo di dieci mosse e occorre attendere che il computer termini.
 Stockfish potrebbe farvi vedere linee di gioco anche diverse da quelle ipotizzate dal problema, preferendo, a volte, mosse solide al posto di sacrifici o rischi.
 
-Problemi da caricare
+Problemi o Posizioni da caricare
 I problemi potreste copiarli dalla settimana enigmistica, da un libro facendovi aiutare, oppure inventarli. Ovviamente dovrete riportare la posizione nel formato RoT notation (RoTN) su un file txt, come spiegheremo di seguito.
 Un esempio fornitovi è problema1.txt nella directory problemi e caricabile con CtrlP o anche con CtrlJ. 
 
