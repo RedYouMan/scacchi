@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
     if (argc < 6)
     {
         cout << "fenpos v.1.8 - Usage: fenpos <textProblem in double quotes> <Who> <numMove> <numProblem> <fenstring in double quotes>" << endl;
+        cout << "fenpos non valida una fen ma la trasforma in formato rotn" << endl;
         return 1;
     }
     int numero = 0, numMove = 0, numProblem = 0;
