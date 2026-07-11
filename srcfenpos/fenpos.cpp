@@ -45,11 +45,13 @@ int main(int argc, char *argv[])
 {
     if (argc < 6)
     {
-        cout << "Usage: fenpos <textProblem between double quotes> <Who_string> <numMove> <numProblem> <fenstring>"
+        cout << "fenpos v.1.2 - Usage: fenpos <textProblem between double quotes> <Who_string> <numMove> <numProblem> <fenstring>"
              << endl;
         return 1;
     }
     int numero = 0, numMove = 0, numProblem = 0;
+
+    cout << "Attenzione: Dopo la creazione del file controlla se in B: o N: serve mettere NS o NL o entrambiseparati da punto e virgola , per gli arrocchi ambigui non validi " << endl;
     string fen, who, textProblem;
     textProblem.clear();
     fen.clear();
