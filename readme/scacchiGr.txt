@@ -339,6 +339,9 @@ Per i casi ambigui di arrocco, come ad esempio di torre o re mossi in precedenza
 Il programma Scacchi-it usa solo le lettere dei pezzi in italiano, ma la rot notation può essere generalizzata e usare anche le lettere inglesi dei pezzi. e al posto del descrittore italiano B: il corrispondente inglese W: e analogamente per il descrittore italiano N: sostituito con quello inglese B:.
 Dopo la lettera iniziale vi è la casella che indica dove va posizionato il pezzo.
 
+
+Descrittore opzionale U: se presente indica la lista di pedoni che possono fare una cattura enpassant. es. U:c4; altro esempio U:d4;f4;
+
 Vantaggi della RoTN
 La RoTN unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla FEN.
 Infatti aggiunge il testo (T:) che valorizza il momento artistico e clou della posizione, inoltre aggiunge il punto di vista da cui guardare e giocare la partita. Un programma di scacchi in base a V: può ruotare la scacchiera al caricamento della posizione. La sinteticità della notazione algebrica rende più rapidamente intuibile la posizione.
