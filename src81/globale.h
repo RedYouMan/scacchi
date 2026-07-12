@@ -4,6 +4,8 @@
 #include "chess.h"
 #include <atomic>
 extern std::atomic<bool> interrompiVocale;
+
+extern string enpFEN;
 extern bool online;
 extern string colorOnline;
 extern string roomOnline;

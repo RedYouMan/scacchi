@@ -241,6 +241,8 @@ string getPositionFen(char who)
     }
     string b = getPositionFenLast(who);
     string result = str + b;
+
+    // printf("fen: %s\n", result.c_str());
     return result;
 }
 
@@ -312,11 +314,26 @@ string getPositionFenLast(char who)
 
     fen.append(str_arrocchi);
     fen.append(" ");
-    fen.push_back('-');
+
+    // campo enpassant
+
+    if (enpFEN.empty())
+    {
+        fen.push_back('-');
+    }
+    else
+    {
+
+        // printf("enpassant fen: %s\n", enpFEN.c_str());
+        fen.append(enpFEN);
+    }
+
     fen.append(" ");
     fen.push_back('0');
     fen.append(" ");
     fen.append(to_string(numMove));
+
+    enpFEN.clear();
     return fen;
 }
 
@@ -341,7 +358,9 @@ string getPositionFenBlackStart7()
 
                     if (count_free == 8 && count_line == 1)
                     {
-                        fen = fen + "/" + to_string(count_free) + "/";
+                        // ROS1 modifica che toglie lo slash iniziale
+                        // fen = fen + "/" + to_string(count_free) + "/";
+                        fen = fen + to_string(count_free) + "/";
                     }
                     else
                     {
@@ -432,7 +451,9 @@ string getPositionFenBlackStart0()
 
                     if (count_free == 8 && count_line == 1)
                     {
-                        fen = fen + "/" + to_string(count_free) + "/";
+                        // ROS2 modifica tolto lo slash iniziale
+                        // fen = fen + "/" + to_string(count_free) + "/";
+                        fen = fen + to_string(count_free) + "/";
                     }
                     else
                     {

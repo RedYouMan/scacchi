@@ -103,6 +103,9 @@ int startRookCol = 0, startRookRow = 0, endRookCol = 0, endRookRow = 0;
 string tipoArrocco;
 // per problema
 int startSolRow = 0, startSolCol = 0, endSolRow = 0, endSolCol = 0;
+
+// per la fen campo enpassant
+string enpFEN;
 // Autore : Rosario Turco
 // data: Dicembre 2025
 
@@ -135,7 +138,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 8.4 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 8.5 - Rosario Turco\n";
     cout << "sulla scacchiera: CtrlH per help(), CtrlX per tutorial\n";
     init();
     Sleep(10000);
@@ -587,6 +590,8 @@ int move(string src, string dest, char who)
                     casaEnpReale[1] = casellaDaCatturare[1] + 1;
                 }
                 msg.clear();
+                enpFEN.clear();
+                enpFEN = casaEnpReale;
                 msg = "pedone da catturare in " + casellaDaCatturare + " \n";
                 printf("%s", msg.c_str());
                 msg.clear();
@@ -632,6 +637,8 @@ int move(string src, string dest, char who)
                     casaEnpReale[1] = casellaDaCatturare[1] + 1;
                 }
 
+                enpFEN.clear();
+                enpFEN = casaEnpReale;
                 msg = "pedone da catturare in " + casellaDaCatturare + " \n";
                 printf("%s", msg.c_str());
             }
@@ -923,6 +930,8 @@ void clear_globali()
 {
     // pulizia variabili delle globali
     // tranne gRow , gCol, puntoDiVista
+
+    enpFEN.clear();
     online = false;
     colorOnline.clear();
     roomOnline.clear();
@@ -1665,12 +1674,14 @@ void checkKings()
             {
                 foundWhiteKing = true;
                 my_king = "Re bianco in casa " + casa + "\n";
+                Sleep(1500);
                 callTextToSpeech(my_king);
             }
             if (chessBoard[row][col].getBusySquare() && chessBoard[row][col].getChessPiece().getTypePiece() == KING && chessBoard[row][col].getChessPiece().getColorPiece() == 'B')
             {
                 foundBlackKing = true;
                 my_king = "Re nero in casa " + casa + "\n";
+                Sleep(1500);
                 callTextToSpeech(my_king);
             }
         }

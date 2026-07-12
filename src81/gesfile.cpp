@@ -837,8 +837,8 @@ void viewValid()
             chessBoard[i_h1][j_h1].setValid00(true);
         }
     }
-    printf("valori di bianco_arrocchi: %d %d\n", bianco_arrocchi[0], bianco_arrocchi[1]);
-    printf("valori di nero_arrocchi: %d %d\n", nero_arrocchi[0], nero_arrocchi[1]);
+    // printf("valori di bianco_arrocchi: %d %d\n", bianco_arrocchi[0], bianco_arrocchi[1]);
+    // printf("valori di nero_arrocchi: %d %d\n", nero_arrocchi[0], nero_arrocchi[1]);
     if (bianco_arrocchi[0] == 1)
     {
         chessBoard[i_h1][j_h1].setValid00(false);
