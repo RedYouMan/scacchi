@@ -81,4 +81,5 @@ void invioMossaRete();
 void checkMate();
 void checkKings();
 void checkNumbers();
+void checkU(string mossa);
 #endif

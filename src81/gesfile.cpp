@@ -254,12 +254,8 @@ bool setPieceIntoSquare(string com)
             // Segnalazione di enpassant da gestire - ROS3
             EnP = true;
             callTextToSpeech(string("presenza di enpassant da gestire o meno durante il gioco\n"));
-            int len = mossa.length();
-            if (len != 4 && len != 6)
-            {
-                callTextToSpeech(string("Il descrittore U: non ha la lunghezza adeguata. Esco per farti verificare\n"));
-                exit(0);
-            }
+
+            checkU(mossa);
             if (mossa.length() == 4)
             {
                 string parte1 = mossa.substr(0, 2);
@@ -420,15 +416,7 @@ void setPiece(char color, string mossa)
     }
 
     // segue il for
-    for (int i = 0; i < mossa.length(); i++)
-    {
-        if (!isalnum(mossa[i]))
-        {
-            callTextToSpeech(string("Presenza di caratteri non alfanumerici\n"));
-            printf("Esco per consentirti di controllare il file\n");
-            exit(1);
-        }
-    }
+
     if (mossa.length() < 3 || mossa.length() > 3)
     {
 
@@ -864,6 +852,80 @@ void viewValid()
     if (nero_arrocchi[1] == 1)
     {
         chessBoard[i_a8][j_a8].setValid000(false);
+    }
+    return;
+}
+void checkU(string mossa)
+{
+
+    int len = mossa.length();
+
+    // controllo lunghezze
+    if (len != 4 && len != 6)
+    {
+        callTextToSpeech(string("Il descrittore U: non ha la lunghezza adeguata. Esco per farti verificare\n"));
+        exit(1);
+    }
+    // isalnum
+    for (int i = 0; i < mossa.length(); i++)
+    {
+        if (!isalnum(mossa[i]))
+        {
+            callTextToSpeech(string("Presenza di caratteri non alfanumerici\n"));
+            exit(1);
+        }
+    }
+
+    if (len == 4)
+    {
+
+        if (mossa[1] != mossa[3])
+        {
+            callTextToSpeech(string("U:Case non sulla stessa riga. Esco per farti controllare\n"));
+            exit(1);
+        }
+    }
+
+    if (len == 6)
+    {
+        if (mossa[1] != mossa[3] && mossa[1] != mossa[5])
+        {
+            callTextToSpeech(string("U: Case non sulla stessa riga . Esco per farti controllare\n"));
+            exit(1);
+        }
+
+        // controllo pedone da prendere
+        if (!(mossa[4] < mossa[2] && mossa[4] > mossa[0]))
+        {
+            callTextToSpeech(string("U: Casa del pedone da catturare non valida in quella posizione. Esco per farti controllare\n"));
+            exit(1);
+        }
+    }
+    // verifico se esistono i pedoni
+    string casa1 = mossa.substr(0, 2);
+    string casa2 = mossa.substr(2, 2);
+
+    string casa3;
+    if (len == 6)
+    {
+        casa3 = mossa.substr(4, 2);
+    }
+    ChessUtility utility;
+    vector<int> casa1Ind = utility.getIndexPuntoDiVista(casa1, puntoDiVista);
+    vector<int> casa2Ind = utility.getIndexPuntoDiVista(casa2, puntoDiVista);
+    if (!(chessBoard[casa1Ind.front()][casa1Ind.back()].getBusySquare() == true && chessBoard[casa1Ind.front()][casa1Ind.back()].getChessPiece().getTypePiece() == PAWN && chessBoard[casa2Ind.front()][casa2Ind.back()].getBusySquare() == true && chessBoard[casa2Ind.front()][casa2Ind.back()].getChessPiece().getTypePiece() == PAWN))
+    {
+        callTextToSpeech(string("U: alcuni pedoni non esistono per enpassant. Esco per farti controllare\n"));
+        exit(1);
+    }
+    if (len == 6)
+    {
+        vector<int> casa3Ind = utility.getIndexPuntoDiVista(casa3, puntoDiVista);
+        if (!(chessBoard[casa3Ind.front()][casa3Ind.back()].getBusySquare() == true && chessBoard[casa3Ind.front()][casa3Ind.back()].getChessPiece().getTypePiece() == PAWN))
+        {
+            callTextToSpeech(string("U: alcuni pedoni non esistono per enpassant. Esco per farti controllare\n"));
+            exit(1);
+        }
     }
     return;
 }
