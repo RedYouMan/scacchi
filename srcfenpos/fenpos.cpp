@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 {
     if (argc < 6)
     {
-        cout << "fenpos v.1.9 - Usage: fenpos <textProblem in double quotes> <Who_move in italian letter> <numMove> <numProblem> <fenstring in double quotes>" << endl;
+        cout << "fenpos v.2.0 - Usage: fenpos <textProblem in double quotes> <Who_move in italian letter> <numMove> <numProblem> <fenstring in double quotes>" << endl;
         cout << "fenpos non fa la validazione della fen ma la trasforma in formato rotn" << endl;
         return 1;
     }
@@ -147,7 +147,7 @@ int main(int argc, char *argv[])
                 pawn1 += enpassant[0] - 1;
                 pawn1 += num_casa;
                 if (searchPawn(fen, pawn1))
-                    totaleU += pawn1 + ";";
+                    totaleU += pawn1;
             }
             if (enpassant[0] < 'h')
             {
@@ -155,9 +155,22 @@ int main(int argc, char *argv[])
                 pawn2 += enpassant[0] + 1;
                 pawn2 += num_casa;
                 if (searchPawn(fen, pawn2))
-                    totaleU += pawn2 + ";";
+                    totaleU += pawn2;
             }
         }
+
+        // aggiungere la casa del pedone da catturare.
+        string casaDaCatturare = "";
+        casaDaCatturare.append(enpassant);
+        if (enpassant[1] == '3')
+        {
+            casaDaCatturare[1] = '4';
+        }
+        if (enpassant[1] == '6')
+        {
+            casaDaCatturare[1] = '5';
+        }
+        totaleU += casaDaCatturare;
         outFile << "U:" << totaleU << endl;
     }
     else
