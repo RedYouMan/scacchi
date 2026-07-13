@@ -250,8 +250,16 @@ bool setPieceIntoSquare(string com)
         }
         else if (myColor == 'U')
         {
+
+            // Segnalazione di enpassant da gestire - ROS3
             EnP = true;
             callTextToSpeech(string("presenza di enpassant da gestire o meno durante il gioco\n"));
+            int len = mossa.length();
+            if (len != 4 && len != 6)
+            {
+                callTextToSpeech(string("Il descrittore U: non ha la lunghezza adeguata. Esco per farti verificare\n"));
+                exit(0);
+            }
             if (mossa.length() == 4)
             {
                 string parte1 = mossa.substr(0, 2);

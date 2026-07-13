@@ -1,0 +1,7 @@
+T:Test enpassant nero
+V:N;
+B:Pd4;Pa2;Pb2;Pc2;Pe2;Pf2;Pg2;Ph2;Ta1;Cb1;Ac1;Dd1;Re1;Af1;Cg1;Th1
+N:Ta8;Cb8;Ac8;Dd8;Re8;Af8;Cg8;Th8;Pa7;Pb7;Pc7;Pd7;Pf7;Pg7;Ph7;Pe5
+M:N;
+P:2;
+U:d4;
