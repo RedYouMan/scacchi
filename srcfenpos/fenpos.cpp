@@ -37,27 +37,27 @@ bool searchPawn(string fen, string sq)
 
 int main(int argc, char *argv[])
 {
-    if (argc < 6)
+    if (argc < 4)
     {
-        cout << "fenpos v.2.0 - Usage: fenpos <textProblem in double quotes> <Who_move in italian letter> <numMove> <numProblem> <fenstring in double quotes>" << endl;
+        cout << "fenpos v.2.1 - Usage: fenpos <testo in doppi apici > numero posizione> <fen in doppi apici" << endl;
         cout << "fenpos non fa la validazione della fen ma la trasforma in formato rotn" << endl;
         return 1;
     }
+
     string textProblem = argv[1];
-    string who = argv[2];
-    who[0] = toupper(who[0]);
-    int numero = stoi(argv[3]);
-    int numMove = (who == "B") ? numero - 1 : numero;
-    int numProblem = stoi(argv[4]);
-    string fen = argv[5];
+    int numProblem = stoi(argv[2]);
+    string fen = argv[3];
 
     stringstream ss(fen);
     string fields[6];
+    string who;
     for (int i = 0; i < 6 && ss >> fields[i]; i++)
         ;
     string pezzi = fields[0];
+    string appo_who = fields[1];
     string castling = fields[2].empty() ? "-" : fields[2];
     string enpassant = fields[3].empty() ? "-" : fields[3];
+    int numero = stoi(fields[5]);
 
     string whitePieces = "", blackPieces = "";
     int row = 8, col = 0;
@@ -93,6 +93,22 @@ int main(int argc, char *argv[])
 
     string result1 = "B:" + whitePieces;
     string result2 = "N:" + blackPieces;
+
+    if (appo_who == "b" || appo_who == "B")
+    {
+        who = "N";
+    }
+    else if (appo_who == "W" || appo_who == "w")
+    {
+        who = "B";
+    }
+    else
+    {
+        cout << "Errore: non trovato chi muove\n";
+        exit(1);
+    }
+    int numMove = (who == "B") ? numero - 1 : numero;
+
     bool wK = false, wQ = false, bK = false, bQ = false;
     if (castling != "-")
         for (char c : castling)
@@ -125,7 +141,7 @@ int main(int argc, char *argv[])
             result2 += "NL;";
     }
 
-    string nameFile = "prob" + to_string(numProblem) + ".txt";
+    string nameFile = "pos_" + to_string(numProblem) + ".txt";
     ofstream outFile(nameFile.c_str());
     outFile << "T:" << textProblem << endl;
     outFile << "V:" << who << ";" << endl;
@@ -173,8 +189,6 @@ int main(int argc, char *argv[])
         totaleU += casaDaCatturare;
         outFile << "U:" << totaleU << endl;
     }
-    else
-        outFile << "U:" << endl;
     outFile.close();
     return 0;
 }
