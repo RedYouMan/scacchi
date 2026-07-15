@@ -39,11 +39,12 @@ int main(int argc, char *argv[])
 {
     if (argc < 4)
     {
-        cout << "fenpos v.2.1 - Usage: fenpos <testo in doppi apici > numero posizione> <fen in doppi apici" << endl;
+        cout << "fenpos v.2.2 - Usage: fenpos <testo in doppi apici > numero posizione> <fen in doppi apici" << endl;
         cout << "fenpos non fa la validazione della fen ma la trasforma in formato rotn" << endl;
         return 1;
     }
 
+    int semimosse;
     string textProblem = argv[1];
     int numProblem = stoi(argv[2]);
     string fen = argv[3];
@@ -57,6 +58,7 @@ int main(int argc, char *argv[])
     string appo_who = fields[1];
     string castling = fields[2].empty() ? "-" : fields[2];
     string enpassant = fields[3].empty() ? "-" : fields[3];
+    semimosse = stoi(fields[4]);
     int numero = stoi(fields[5]);
 
     string whitePieces = "", blackPieces = "";
@@ -189,6 +191,12 @@ int main(int argc, char *argv[])
         totaleU += casaDaCatturare;
         outFile << "U:" << totaleU << endl;
     }
+    if (semimosse > 0)
+    {
+        string semiM = to_string(semimosse);
+        outFile << "Z:" << semiM << endl;
+    }
+
     outFile.close();
     return 0;
 }

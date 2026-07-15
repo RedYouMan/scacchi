@@ -15,7 +15,7 @@ Per il semplice motivo che un file di testo è il più accessibile possibile su 
 Versione disponibile 
 Questo paragrafo del tutorial segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione 8.6 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione 8.7 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 La grande novità è che il programma ora consente anche di giocare online in multiplayer e la 8.1 aggiunge il file di log del server, rendendone comoda la consultazione.
 I cambiamenti sono tracciati nel file changelog.txt nella directory readme e sono frutto delle segnalazioni della Community.
 La versione 7 ha completato tutti gli strumenti utili durante una lezione di scacchi, mentre la 8 aggiunge la possibilità di giocare online.
@@ -342,6 +342,12 @@ Dopo la lettera iniziale vi è la casella che indica dove va posizionato il pezz
 
 Descrittore opzionale U: se presente indica la lista di case, non separate da ';', dei pedoni che possono fare una cattura enpassant e la casa del pedone sotto attacco es. U:c4b4; altro esempio U:d4f4e4;
 Il descrittore serve negli automatismi di sospensione di una partita e  la sua ripresa. In posizioni scritte a mano,  è responsabilità di chi scrive osservare l'ordine esatto e la sintassi del comando.
+
+Descrittore opzionale Z: indica il numero di semimosse presenti nella fen (campo 5)
+
+Descrittori riservati ai produttori software:F, K, L, C, E.
+La sintesi vocale nell'applicativo deve leggere: T, M, P, U, Z. 
+Inoltre l'applicativo ruota la scacchiera secondo V.
 
 Vantaggi della RoTN
 La RoTN unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla FEN.

@@ -275,6 +275,12 @@ bool setPieceIntoSquare(string com)
                 printDebug(string("enpassant step 2\n"));
             }
         }
+        else if (myColor == 'Z')
+        {
+
+            string mes = "numero di semimosse pari a " + mossa + "\n";
+            callTextToSpeech(mes);
+        }
         else if (myColor == 'L')
         {
             level = atoi(mossa.c_str());
