@@ -339,6 +339,8 @@ string getPositionFenLast(char who)
 
 string getPositionFenBlackStart7()
 {
+
+    // BlackStart7 sulla scacchiera è sotto
     string fen;
     int count_line = 0, count_free = 0;
     char lettera = 'Z';
@@ -431,7 +433,7 @@ string getPositionFenBlackStart7()
 // seconda parte
 string getPositionFenBlackStart0()
 {
-
+    // BlackStart0nella scacchiera è sopra
     string fen;
     int count_line = 0, count_free = 0;
     char lettera = 'Z';
