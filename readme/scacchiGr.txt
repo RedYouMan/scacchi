@@ -386,13 +386,14 @@ B:Rh8;
 N:Rf7;Dg1;
 M:N
 P:34;
+
 Come si nota la fen ha anche altre due barriere invisibili all'accessibilità:
 - la lingua: K, k, Q, q, B, b etc.
 - la non immediata comprensione: occorre farsi dei calcoli per capire la posizione dei pezzi
 
-Inoltre per un umano non serve sapere la situazione degli arrocchi, lo vede da se, e anche il computer è in grado di analizzarlo e settarlo, nè gli serve la segnalazione delle 50 mosse o dell'enpassant. 
-
 Scacchi-it , ideato per vedenti e non vedenti, nelle sospensioni si segna l'enpassant per comunicare la possibilità di esso alla ripresa, ma solo se esiste tale possibilità, diversamente dallo standard fen.
+
+Scacchi-it, inoltre,  marca la situazione degli arrocchi validi e segnala il valore delle semimosse per la regola delle 50 mosse.
 
 In un ebook per non vedenti se ci sono immagini, esse non sono fruibili dal non vedente; per cui, generalmente, viene descritta la posizione con la notazione algebrica, che ha il vantaggio di far comprendere la posizione dei pezzi rapidamente. 
 La RoTN fa un passo ulteriore, consentendo l'ascolto e l'immediato utilizzo su scacchiera e non solo.
@@ -407,8 +408,15 @@ Scacchi-it richiede che scriviate con Notepad un file di testo in formato rotn o
 Nel caso che su un ebook o su Internet troviate una fen, allora sul nostro sito potreste scaricare una ulteriore utility: fenpos.
 Il programma fenpos a partire da una posizione fen relativa ad un problema, vi estrae un file con rot notation, in modo da caricarla con l'applicativo scacchi-it. 
 
+Sono state sviluppate anche estensioni browser fen-to-rotn-firefox e fen-rotn-to-chrome per dare voce alla fen, tramite la rotn, con sintesi vocale. Basta selezionare la fen su un portale, un ebook, un txt, un articolo web e viene spiegato tutto, fornendo anche negli appunti la ROTN valorizzata da mettere su un file Notepad.
+Le estensioni sono compatibili per la maggior parte dei browser utilizzati.
+Il software è al link:
+https://redyouman.github.io/blog/2026/07/18/estensioni-browser.html 
+
 La speranza è che l'editoria comprenda che la fen è poco comprensibile e nel copia e incolla un non vedente non ha un buon controllo su tutta la stringa. 
- 
+E' stato suggerito anche un modo per scrivere un articolo con ROTN al link:
+https://redyouman.github.io/blog/2026/07/09/esempio-editoriale-rotn.html 
+
 Configurabilità delle versioni di stockfish
 Qualora ci fossero versioni più recenti di stockfish è possibile scaricare la nuova versione nella directory engine emodificare, nella directory bin, il file engine.cnf per mettervi il nuovo nome dell'eseguibile stockfish gui.
 L'applicativo Scacchi-it continuerà a lavorare correttamente se il nuovo motore stockfish si basa ancora su comandi standard uci (universal chess interface).
