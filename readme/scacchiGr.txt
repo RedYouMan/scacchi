@@ -15,8 +15,9 @@ Per il semplice motivo che un file di testo è il più accessibile possibile su 
 Versione disponibile 
 Questo paragrafo del tutorial segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione 8.7 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
-La grande novità è che il programma ora consente anche di giocare online in multiplayer e la 8.1 aggiunge il file di log del server, rendendone comoda la consultazione.
+Sul sito è stata pubblicata la versione 9.0 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+La versione 9.0 consente anche di incollare una fen a Scacchi-it.
+La grande novità è che il programma ora consente anche di giocare online in multiplayer e la 8.1 ha aggiunto il file di log del server, rendendone comoda la consultazione.
 I cambiamenti sono tracciati nel file changelog.txt nella directory readme e sono frutto delle segnalazioni della Community.
 La versione 7 ha completato tutti gli strumenti utili durante una lezione di scacchi, mentre la 8 aggiunge la possibilità di giocare online.
 
@@ -68,7 +69,8 @@ Il programma Scacchi-it consente di:
 32 - utilizzare un Openings Trainer, per apprendere le aperture di gioco
 33 - essere utilizzato su un video grande per presentazioni o lezioni
 34 - reinizializzare la scacchiera con CtrlN
-- 35 - giocare online
+35 - giocare online
+36 - incollare la fen a Scacchi-it
 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
@@ -106,6 +108,7 @@ Sempre con "Esplora file" cliccate sulla cartella scacchi-it e vi entrate.
 Con "Esplora file" per lanciare nella directory scacchi-it un eseguibile, basta selezionarlo e fare return. Gli eseguibili sono:
 - scacchi-start
 - clock-start
+- incolla-fen(ne parleremo in un paragrafo a parte)
 
 Installazione con comandi da prompt
 Come alternativa al paragrafo precedente si possono fare i comandi a mano. Se avete già fatto il paragrafo precedente, questo lo potrete saltare.
@@ -121,6 +124,7 @@ cd scacchi-it
 ora digitate scacchi-start 
 l'ultimo comando farà partire il programma.
 Se vi servisse l'orologio digitare clock-start seguito da return (Vedi il paragrafo che lo riguarda per avere una sola console).
+Di incolla-fen, anche qui, ne parleremo in seguito.
 
 Dove sono attivabili i controls
 Tutti i controls sono attivi solo sulla scacchiera grafica.
@@ -224,6 +228,7 @@ I problemi o le posizioni vanno posti nella directory problemi e devono avere es
 Un esempio è problema1.txt.  
 Quando caricate un problema non è importante digitare il nome con le lettere maiuscole se vi fossero e non va indicata la estensione (.txt).
 I file di sospensione verranno posti dal programma nella directory sospensioni e dopo essere stati caricati verranno rimossi.
+Non toccare eventuali eseguibili qui presenti.
 La sospensione con un nome diverso ogni volta vi può permettere di poter giocare più partite con vari amici e ricaricando, poi, solo quella relativa all'amico che vi ha comunicato la sua mossa.
  
 Sospensione partita giocata col computer
@@ -246,6 +251,7 @@ Se ne voleste eliminarne solo una:
 del .\registrazioni\nomefileconestensione
 Se voleste la lista dei problemi:
 dir .\problemi\*
+Questo metodo NON VA USATO con la directory sospensioni.
 
 Cambio punto di vista di gioco
 Il cambio del punto di vista da cui giocare può essere fatto in qualunque momento della partita con CtrlG, con la sola avvertenza che Va fatto prima di passare all'online.
@@ -403,19 +409,44 @@ Se in un ebook viene mostrata la RoTN, col copia e incolla si può rapidamente t
 La RoTN, inoltre, rende open data l'applicativo Scacchi-it in modo bidirezionale: consente di sospendere una partita e di riprenderla più tardi, come pure scrivere o copiare problemi e caricarli per la loro soluzione.
 Per cui la giusta definizione della rot notation è che essa estende la notazione algebrica e rende open data un applicativo di scacchi, consentendo di interagire con esso in due direzioni e aggiungendo la sintesi vocale e i vantaggi di una immagine.
 
-Il programma fenpos
-Scacchi-it richiede che scriviate con Notepad un file di testo in formato rotn oppure potreste copiare la rotn da un ebook o da Internet per metterlo in un file di testo nella directory problemi per caricarlo, poi, con Ctrl+P.
-Nel caso che su un ebook o su Internet troviate una fen, allora sul nostro sito potreste scaricare una ulteriore utility: fenpos.
-Il programma fenpos a partire da una posizione fen relativa ad un problema, vi estrae un file con rot notation, in modo da caricarla con l'applicativo scacchi-it. 
+Il programma incolla-fen
+E' possibile incollarea Scacchi-it una fen o prima di fare scacchi-start oppure su console a parte aperta appositamente.
+Se si digita solo: 
+incolla-fen 
+si ottienelo usage che ci avverte che il comando necessita di tre parametri:
+incolla-fen <Testo tra virgolette> <numero posizione desiderata> <fen tra virgolette>
 
-Sono state sviluppate anche estensioni browser fen-to-rotn-firefox e fen-rotn-to-chrome per dare voce alla fen, tramite la rotn, con sintesi vocale. Basta selezionare la fen su un portale, un ebook, un txt, un articolo web e viene spiegato tutto, fornendo anche negli appunti la ROTN valorizzata da mettere su un file Notepad.
+Esempio:
+incolla-fen "Testo desiderato" 12 "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+
+Dopo aver avviato Scacchi-it e attesa la scacchiera, per caricare la posizione 12 occorre fare:
+CtrlR
+Alt-Tab sulla console
+attendere che finisca la sintesi vocale
+come nome del file occorre inserire pos_<numero posizione> nell'esempio pos_12
+Fate attenzione a mettere il carattere sottolineato (underscore) tra pos e 12.
+
+Il programma fenpose le estensioni browser
+
+Vi possono capitare due situazioni:
+- trovate una ROTN
+- Trovate una FEN
+
+Nel primo caso potreste incollare la ROTN in un file Notepad e metterlo nella directory problemi (tratta posizioni o problemi) e date ad esso un nome con estensione txt di default.
+Nel secondo caso avete due soluzioni:
+a. usare incolla-fen 
+b. scaricare dal nostro sito le estensioni per il vostro browser e sistema operativo
+c. usare la utility fenpos scaricabile dal nostro sito
+
+Il caso a di incolla-fen è stato mostrato nel paragrafo precedente.
+
+Per il caso b sono state sviluppate delle estensioni browser fen-to-rotn-firefox e fen-rotn-to-chrome per dare voce alla fen, tramite la rotn, con sintesi vocale. Basta selezionare la fen su un portale, un ebook, un txt, un articolo web e viene spiegato tutto, fornendo anche negli appunti la ROTN valorizzata da mettere su un file Notepad.
 Le estensioni sono compatibili per la maggior parte dei browser utilizzati.
 Il software è al link:
 https://redyouman.github.io/blog/2026/07/18/estensioni-browser.html 
 
-La speranza è che l'editoria comprenda che la fen è poco comprensibile e nel copia e incolla un non vedente non ha un buon controllo su tutta la stringa. 
-E' stato suggerito anche un modo per scrivere un articolo con ROTN al link:
-https://redyouman.github.io/blog/2026/07/09/esempio-editoriale-rotn.html 
+Nel caso c consultare lo usage di fenpos digitando semplicemente:
+fenpos
 
 Configurabilità delle versioni di stockfish
 Qualora ci fossero versioni più recenti di stockfish è possibile scaricare la nuova versione nella directory engine emodificare, nella directory bin, il file engine.cnf per mettervi il nuovo nome dell'eseguibile stockfish gui.
