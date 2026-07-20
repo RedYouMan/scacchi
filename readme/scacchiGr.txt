@@ -428,11 +428,13 @@ Fate attenzione a mettere il carattere sottolineato (underscore) tra pos e 12.
 
 Il programma fenpose le estensioni browser
 
-Vi possono capitare due situazioni:
+Vi possono capitare tre situazioni:
 - trovate una ROTN
 - Trovate una FEN
+- scrivete una ROTN
 
 Nel primo caso potreste incollare la ROTN in un file Notepad e metterlo nella directory problemi (tratta posizioni o problemi) e date ad esso un nome con estensione txt di default.
+
 Nel secondo caso avete due soluzioni:
 a. usare incolla-fen 
 b. scaricare dal nostro sito le estensioni per il vostro browser e sistema operativo
@@ -444,9 +446,12 @@ Per il caso b sono state sviluppate delle estensioni browser fen-to-rotn-firefox
 Le estensioni sono compatibili per la maggior parte dei browser utilizzati.
 Il software è al link:
 https://redyouman.github.io/blog/2026/07/18/estensioni-browser.html 
+Con esse potete selezionare una FEN, leggerla e ottenere una ROTN.
 
 Nel caso c consultare lo usage di fenpos digitando semplicemente:
 fenpos
+
+Se, invece, volete scrivere da voi un file ROTN in cartella problemi, dovete solo rispettare la sintassi della ROTN.
 
 Configurabilità delle versioni di stockfish
 Qualora ci fossero versioni più recenti di stockfish è possibile scaricare la nuova versione nella directory engine emodificare, nella directory bin, il file engine.cnf per mettervi il nuovo nome dell'eseguibile stockfish gui.
