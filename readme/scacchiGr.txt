@@ -69,7 +69,7 @@ Scacchi-it consente di:
 33 - essere utilizzato su un video grande per presentazioni o lezioni
 34 - reinizializzare la scacchiera con CtrlN
 35 - giocare online
-36 - incollare la fen a Scacchi-it
+36 - incollare la fen su console 
 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
@@ -408,14 +408,16 @@ Se in un ebook viene mostrata la RoTN, col copia e incolla si può rapidamente t
 La RoTN, inoltre, rende open data l'applicativo Scacchi-it in modo bidirezionale: consente di sospendere una partita e di riprenderla più tardi, come pure scrivere o copiare problemi e caricarli per la loro soluzione.
 Per cui la giusta definizione della rot notation è che essa estende la notazione algebrica e rende open data un applicativo di scacchi, consentendo di interagire con esso in due direzioni e aggiungendo la sintesi vocale e i vantaggi di una immagine.
 
+La ROTN funge anche da lingua interna a Scacchi-it di interscambio con altri formati esterni come la fen o possibili formati futuri.
+
 La funzionalità incolla-fen
-E' possibile incollarea Scacchi-it una fen prima di fare scacchi-start oppure su console a parte aperta appositamente.
+E' possibile incollarea Scacchi-it una fen prima di fare scacchi-start oppure su una console a parte 
 Se si digita solo: 
 incolla-fen 
 si ottienelo usage che ci avverte che il comando necessita di tre parametri:
 incolla-fen <Testo tra virgolette> <numero posizione desiderata> <fen tra virgolette>
 
-A che serve numero posizione? Potreste avere più FEN da incollare, allora le numerate con 1, 2, 3 etc., ognuna col proprio testo(tema e/o suggerimento tecnico), come indicato dallo usage.
+A che serve numero posizione? Potreste avere più FEN da incollare, allora le numerate con 1, 2, 3 etc, ognuna col proprio testo(tema e/o suggerimento tecnico), come indicato dallo usage.
 
 Esempio:
 incolla-fen "Testo desiderato" 12 "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
@@ -427,7 +429,7 @@ attendere che finisca la sintesi vocale
 come nome del file occorre inserire pos_<numero posizione> nell'esempio pos_12
 Fate attenzione a mettere il carattere sottolineato (underscore) tra pos e 12.
 
-Fate attenzione anche ad una seconda cosa: una volta che il puzzle o problema lo avete caricato con CtrlR su scacchiera non è più disponibile a CtrlR. Per cui se vorreste continuare più tardi alla soluzione di esso vi conviene fare la sospensione con CtrlS e dargli un nome che dovete ricordare.
+Fate attenzione anche ad una seconda cosa: una volta che il puzzle corrispondente alla fen lo avete caricato con CtrlR su scacchiera non è più disponibile ancora a CtrlR. Per cui se vorreste continuare più tardi alla soluzione di esso vi conviene fare la sospensione con CtrlS e dargli un nome che dovete ricordare.
 
 Il programma fenpos e le estensioni browser
 
