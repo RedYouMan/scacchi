@@ -5,8 +5,9 @@ Da oggi anche online e multiplayer.
 
 Licenza
 *Scacchi-it* is free software released under the MIT License.  
-*Copyright © 2025 Rosario Turco* - Version 8.1  
+*Copyright © 2025 Rosario Turco* - Version 9.0  
 You may use, copy, and modify it freely, provided that this copyright notice is retained.
+
 
 Scelta file testo per il tutorial
 Si è scelto di usare un file di testo, al posto di un professionale manuale in pdf. 
@@ -16,10 +17,8 @@ Versione disponibile
 Questo paragrafo del tutorial segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
 Sul sito è stata pubblicata la versione 9.0 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
-La versione 9.0 consente anche di incollare una fen a Scacchi-it.
-La grande novità è che il programma ora consente anche di giocare online in multiplayer e la 8.1 ha aggiunto il file di log del server, rendendone comoda la consultazione.
+La versione 9.0 consente anche di incollare una fen a Scacchi-it e di giocare online in multiplayer , fornendo il file di log del server, rendendone comoda la consultazione.
 I cambiamenti sono tracciati nel file changelog.txt nella directory readme e sono frutto delle segnalazioni della Community.
-La versione 7 ha completato tutti gli strumenti utili durante una lezione di scacchi, mentre la 8 aggiunge la possibilità di giocare online.
 
 Per verificare la vostra versione ascoltate quando parte il programma oppure digitate Ctrl+H.
 
@@ -409,12 +408,14 @@ Se in un ebook viene mostrata la RoTN, col copia e incolla si può rapidamente t
 La RoTN, inoltre, rende open data l'applicativo Scacchi-it in modo bidirezionale: consente di sospendere una partita e di riprenderla più tardi, come pure scrivere o copiare problemi e caricarli per la loro soluzione.
 Per cui la giusta definizione della rot notation è che essa estende la notazione algebrica e rende open data un applicativo di scacchi, consentendo di interagire con esso in due direzioni e aggiungendo la sintesi vocale e i vantaggi di una immagine.
 
-Il programma incolla-fen
-E' possibile incollarea Scacchi-it una fen o prima di fare scacchi-start oppure su console a parte aperta appositamente.
+La funzionalità incolla-fen
+E' possibile incollarea Scacchi-it una fen prima di fare scacchi-start oppure su console a parte aperta appositamente.
 Se si digita solo: 
 incolla-fen 
 si ottienelo usage che ci avverte che il comando necessita di tre parametri:
 incolla-fen <Testo tra virgolette> <numero posizione desiderata> <fen tra virgolette>
+
+A che serve numero posizione? Potreste avere più FEN da incollare, allora le numerate con 1, 2, 3 etc.ognuna col proprio testo(tema e/o suggerimento tecnico) come suggerisce lo usage.
 
 Esempio:
 incolla-fen "Testo desiderato" 12 "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
@@ -426,7 +427,7 @@ attendere che finisca la sintesi vocale
 come nome del file occorre inserire pos_<numero posizione> nell'esempio pos_12
 Fate attenzione a mettere il carattere sottolineato (underscore) tra pos e 12.
 
-Il programma fenpose le estensioni browser
+Il programma fenpos e le estensioni browser
 
 Vi possono capitare tre situazioni:
 - trovate una ROTN
