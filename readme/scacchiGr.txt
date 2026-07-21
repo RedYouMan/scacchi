@@ -415,7 +415,7 @@ incolla-fen
 si ottienelo usage che ci avverte che il comando necessita di tre parametri:
 incolla-fen <Testo tra virgolette> <numero posizione desiderata> <fen tra virgolette>
 
-A che serve numero posizione? Potreste avere più FEN da incollare, allora le numerate con 1, 2, 3 etc.ognuna col proprio testo(tema e/o suggerimento tecnico) come suggerisce lo usage.
+A che serve numero posizione? Potreste avere più FEN da incollare, allora le numerate con 1, 2, 3 etc., ognuna col proprio testo(tema e/o suggerimento tecnico), come indicato dallo usage.
 
 Esempio:
 incolla-fen "Testo desiderato" 12 "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
@@ -426,6 +426,8 @@ Alt-Tab sulla console
 attendere che finisca la sintesi vocale
 come nome del file occorre inserire pos_<numero posizione> nell'esempio pos_12
 Fate attenzione a mettere il carattere sottolineato (underscore) tra pos e 12.
+
+Fate attenzione anche ad una seconda cosa: una volta che il puzzle o problema lo avete caricato con CtrlR su scacchiera non è più disponibile a CtrlR. Per cui se vorreste continuare più tardi alla soluzione di esso vi conviene fare la sospensione con CtrlS e dargli un nome che dovete ricordare.
 
 Il programma fenpos e le estensioni browser
 
