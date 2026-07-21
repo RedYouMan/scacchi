@@ -25,15 +25,15 @@ Per verificare la vostra versione ascoltate quando parte il programma oppure dig
 Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima versione del presente file.
 
 Introduzione al programma Scacchi-it 
-Esso è un programma offline /online ascoltabile con sintesi vocale, consigliato ai non vedenti, ma con grafica per consentire di giocare anche alle persone vedenti.
+Esso è un progetto italiano gratuito, , una piattaforma completa offline /online, ascoltabile con sintesi vocale, consigliato ai non vedenti, ma con grafica per consentire di giocare anche alle persone vedenti.
 
 Il non vedente, tramite lo screen reader NVDA, potrà utilizzare il computer e il programma, ascoltando anche i messaggi "verbosi" della console.
 
-Come si vedrà Scacchi-it è soprattutto un programma di studio e analisi, adatto a partite dove si attende la risposta di un amico oppure per lezioni di scacchi, o risolvere dei problemi o per giocare contro il computer e infine per giocare anche online.
-Questa caratteristica sottolinea la modalità non sempre agonistica del programma e, quindi, non necessita di orologio per la misurazione del tempo per le risposte di ogni giocatore.
+Come si vedrà Scacchi-it è soprattutto una piattaforma di studio e analisi, da usare a casa, oppure adatto a partite dove si attende la risposta di un amico oppure per lezioni di scacchi, o per risolvere dei problemi (puzzle) o per giocare contro il computer e infine per giocare anche online.
+Questa caratteristica sottolinea la modalità non agonistica del programma e, quindi, non necessita di orologio per la misurazione del tempo per le risposte di ogni giocatore.
 Tuttavia la presenza dell'orologio nel pacchetto ha solo il significato di "allenamento col computer" per abituarsi al tempo di gioco.
 
-Il programma Scacchi-it consente di:
+Scacchi-it consente di:
 1 - navigare, con frecce e mouse, sulla scacchiera dando informazioni di pezzi e case vuote
 2 - scegliere il lato o il punto di vista da cui giocare
 3 - inserire le mosse del Bianco e del Nero
