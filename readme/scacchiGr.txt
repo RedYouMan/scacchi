@@ -333,9 +333,11 @@ P:34;
 - B: descrive l'elenco separato da punti e virgole dei pezzi con notazione algebrica italiana (es: Ag5;Re2;)
 - N: descrive l'insieme dei pezzi neri come sopra
 - M: descrive a chi tocca la mossa (Bianco o Nero usando B o N)
-- P: descrive il numero di mossa di partenza
+- P: descrive il numero di mossa di partenza 
 
-In particolare P: va diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale se gioca per prima il Nero (M:N). Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
+P nella rotn che serve a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se viene passato ad un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N). 
+Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
+Anche il programma fenpos, che serve per tradurre la FEN a Scacchi-it, diminuisce di 1 se M:B, altrimenti lascia il valore trovato.
 
 I descrittori sono obbligatori e con ordine fisso, ognuno con una propria riga. Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella lista di posizioni algebriche dei pezzi.
 
