@@ -455,8 +455,10 @@ Le estensioni sono compatibili per la maggior parte dei browser utilizzati.
 Il software è al link:
 https://redyouman.github.io/blog/2026/07/18/estensioni-browser.html 
 Con esse potete selezionare una FEN, leggerla e ottenere una ROTN.
+Se vorreste usare la ROTN degli appunti delle estensioni con Scacchi-it se risulta M:B dovrete diminuire di 1 il numero di mossa della posizione P, altrimenti lo lasciate uguale.
 
-Se, invece, volete scrivere da voi un file ROTN in cartella problemi, dovete solo rispettare la sintassi della ROTN.
+Se, invece, volete scrivere da voi un file ROTN in cartella problemi, dovete solo rispettare la sintassi della ROTN e la condizione che se M:B diminuire di 1 il numero di mossa della posizione P.
+.
 
 Configurabilità delle versioni di stockfish
 Qualora ci fossero versioni più recenti di stockfish è possibile scaricare la nuova versione nella directory engine emodificare, nella directory bin, il file engine.cnf per mettervi il nuovo nome dell'eseguibile stockfish gui.
