@@ -337,6 +337,8 @@ P:34;
 
 P nella rotn che serve a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se viene passato ad un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N). 
 Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
+Questa diminuzione di 1 deve avvenire sia se compilate a mano il file ROTN da dare a Scacchi-it, sia automaticamente se usate il comando incolla-fen che si poggia su fenpos.
+
 Ad esempio, il programma fenpos, che serve per tradurre la FEN a Scacchi-it, diminuisce di 1 se M:B, altrimenti lascia il valore trovato.
 
 I descrittori sono obbligatori e con ordine fisso, ognuno con una propria riga. Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella lista di posizioni algebriche dei pezzi.
@@ -445,7 +447,6 @@ Nel primo caso potreste incollare la ROTN in un file Notepad e metterlo nella di
 Nel secondo caso avete due soluzioni:
 a. usare incolla-fen 
 b. scaricare dal nostro sito le estensioni per il vostro browser e sistema operativo
-c. usare la utility fenpos scaricabile dal nostro sito
 
 Il caso a di incolla-fen è stato mostrato nel paragrafo precedente.
 
@@ -454,9 +455,6 @@ Le estensioni sono compatibili per la maggior parte dei browser utilizzati.
 Il software è al link:
 https://redyouman.github.io/blog/2026/07/18/estensioni-browser.html 
 Con esse potete selezionare una FEN, leggerla e ottenere una ROTN.
-
-Nel caso c consultare lo usage di fenpos digitando semplicemente:
-fenpos
 
 Se, invece, volete scrivere da voi un file ROTN in cartella problemi, dovete solo rispettare la sintassi della ROTN.
 
