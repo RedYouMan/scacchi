@@ -396,6 +396,9 @@ N:Rf7;Dg1;
 M:N
 P:34;
 
+un ultima osservazione: la vera forza di Scacchi-it e ROTN non è evidente. 
+Mi permette di piazzare qualsiasi posizione in 3 secondi e testare: matto, stallo, arrocco, en passant e qualsiasi altra posizione complicata, senza dover giocare 40 mosse ogni volta.
+
 Come si nota la fen ha anche altre due barriere invisibili all'accessibilità:
 - la lingua: K, k, Q, q, B, b etc.
 - la non immediata comprensione: occorre farsi dei calcoli per capire la posizione dei pezzi
