@@ -70,6 +70,7 @@ Scacchi-it consente di:
 34 - reinizializzare la scacchiera con CtrlN
 35 - giocare online
 36 - incollare la fen su console 
+37 - leggere una FEN con estensione browser e ottenere negli appunti la ROTN 
 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
@@ -438,14 +439,14 @@ Fate attenzione a mettere il carattere sottolineato (underscore) tra pos e 12.
 
 Fate attenzione anche ad una seconda cosa: una volta che il puzzle corrispondente alla fen lo avete caricato con CtrlR su scacchiera non è più disponibile ancora a CtrlR. Per cui se vorreste continuare più tardi alla soluzione di esso vi conviene fare la sospensione con CtrlS e dargli un nome che dovete ricordare.
 
-Il programma fenpos e le estensioni browser
+Le estensioni browser
 
 Vi possono capitare tre situazioni:
-- trovate una ROTN
+- trovate una ROTNgià adatta a Scacchi-it
 - Trovate una FEN
 - scrivete una ROTN
 
-Nel primo caso potreste incollare la ROTN in un file Notepad e metterlo nella directory problemi (tratta posizioni o problemi) e date ad esso un nome con estensione txt di default.
+Nel primo caso potreste incollare la ROTN in un file Notepad e metterlo nella directory problemi, che tratta posizioni o puzzle, e date ad esso un nome con estensione txt.  
 
 Nel secondo caso avete due soluzioni:
 a. usare incolla-fen 
