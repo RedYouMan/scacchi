@@ -17,7 +17,7 @@ Versione disponibile
 Questo paragrafo del tutorial segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
 Sul sito è stata pubblicata la versione 9.1 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
-La versione 9.1 consente anche di validare e incollare una fen a Scacchi-it e di giocare online in multiplayer , fornendo il file di log del server, rendendone comoda la consultazione.
+La versione 9.1 consente anche di validare e incollare una FEN a Scacchi-it e di giocare online in multiplayer , fornendo il file di log del server, rendendone comoda la consultazione.
 I cambiamenti sono tracciati nel file changelog.txt nella directory readme e sono frutto delle segnalazioni della Community.
 
 Per verificare la vostra versione ascoltate quando parte il programma oppure digitate Ctrl+H.
@@ -49,7 +49,7 @@ Scacchi-it consente di:
 13 - fare Abbandono da parte del re (CtrlL)
 14 - scegliere di giocare contro il computer (CtrlZ)
 15 - scegliere il livello di gioco contro il computer
-16 - usare le posizioni o i problemi scritti con una RoTnotation  per Non Vedenti  che informa sulla posizione in termini di descrizione del problema, disposizione dei pezzi del bianco e del nero, il punto di vista da cui giocare, il diritto di mossa, il numero di mossa di partenza
+16 - usare le posizioni o i problemi scritti con una ROT notation per Non Vedenti  che informa sulla posizione in termini di descrizione del problema, disposizione dei pezzi del bianco e del nero, il punto di vista da cui giocare, il diritto di mossa, il numero di mossa di partenza
 17 - controllare la correttezza dei file dei problemi scritti a mano
 18 - far risolvere i problemi al computer
 19 - leggere il tutorial
@@ -69,7 +69,7 @@ Scacchi-it consente di:
 33 - essere utilizzato su un video grande per presentazioni o lezioni
 34 - reinizializzare la scacchiera con CtrlN
 35 - giocare online
-36 - incollare la fen su console 
+36 - incollare la FEN su console 
 37 - leggere una FEN con estensione browser e ottenere negli appunti la ROTN 
 38 - validare una FEN
 
@@ -307,23 +307,23 @@ L'analisi avverrà su un massimo di dieci mosse e occorre attendere che il compu
 Stockfish potrebbe farvi vedere linee di gioco anche diverse da quelle ipotizzate dal problema, preferendo, a volte, mosse solide al posto di sacrifici o rischi.
 
 Problemi o Posizioni da caricare
-I problemi potreste copiarli dalla settimana enigmistica, da un libro facendovi aiutare, oppure inventarli. Ovviamente dovrete riportare la posizione nel formato RoT notation (RoTN) su un file txt, come spiegheremo di seguito.
+I problemi potreste copiarli dalla settimana enigmistica, da un libro facendovi aiutare, oppure inventarli. Ovviamente dovrete riportare la posizione nel formato ROT notation (ROTN) su un file txt, come spiegheremo di seguito.
 Un esempio fornitovi è problema1.txt nella directory problemi e caricabile con CtrlP o anche con CtrlJ. 
 
 Analisi problemi da parte del computer
 E' utile ascoltare come il computer affronta i problemi, sia quelli inventati da noi che quelli proposti altrove.
 Nel caso di nostri problemi, il computer potrebbe evidenziare delle cose a cui non avevamo pensato. Non sempre il computer è fortemente brillante nelle combinazioni, ma nella maggior parte delle analisi è molto preciso.
 
-RoTN
-La RoTN che esamineremo di seguito è importante perchè su Internet le partite o i problemi mostrano solo immagini che un non vedente non può utilizzare. La RoT Notation descrive, più efficacemente di una FEN Notation,  lo scopo della posizione, come sono dislocati tutti i pezzi, il punto di vista da cui mettersi, chi muove e il numero di mossa da cui partire. 
+ROTN
+La ROTN che esamineremo di seguito è importante perchè su Internet le partite o i problemi mostrano solo immagini che un non vedente non può utilizzare. La RoT Notation descrive, più efficacemente di una FEN Notation,  lo scopo della posizione, come sono dislocati tutti i pezzi, il punto di vista da cui mettersi, chi muove e il numero di mossa da cui partire. 
 Essa è una estensione della notazione algebrica per rendere un applicativo di scacchi di tipo open data.
 La paternità di essa è tutelata dal copyright di Scacchi-it.
 
 Come si scrive un problema o una posizione
 
-La RoTN è un file testuale fatto di descrittori seguiti da valori. Tutti i campi descrittori sono obbligatori e V: va messo dopo T: e prima degli altri rimanenti.
+La ROTN è un file testuale fatto di descrittori seguiti da valori. Tutti i campi descrittori sono obbligatori e V: va messo dopo T: e prima degli altri rimanenti.
 
-*Esempio RoTN*
+*Esempio ROTN*
 T:Matto in una mossa
 V:N;
 B:Rh8;
@@ -338,9 +338,9 @@ P:34;
 - M: descrive a chi tocca la mossa (Bianco o Nero usando B o N)
 - P: descrive il numero di mossa della posizione
 
-P nella rotn che serve a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se viene passato ad un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N). 
+P nella ROTN che serve a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se viene passato ad un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N). 
 Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
-Questa diminuzione di 1 deve avvenire sia se compilate a mano il file ROTN da dare a Scacchi-it, sia automaticamente se usate il comando incolla-fen che si poggia su fenpos.
+Questa diminuzione di 1 deve avvenire sia se compilate a mano il file ROTN da dare a Scacchi-it, sia automaticamente avviene se usate il comando incolla-fen che si poggia su fenpos.
 
 Ad esempio, il programma fenpos, che serve per tradurre la FEN a Scacchi-it, diminuisce di 1 se M:B, altrimenti lascia il valore trovato.
 
@@ -357,11 +357,13 @@ Il descrittore serve negli automatismi di sospensione di una partita e  la sua r
 Descrittore opzionale Z: indica il numero di semimosse presenti nella fen (campo 5)
 
 Descrittori riservati ai produttori software:F, K, L, C, E.
-La sintesi vocale nell'applicativo deve leggere: T, M, P, U, Z. 
+
+La sintesi vocale nell'applicativo deve leggere: obbligatoriamente T, M, P, U, Z; mentre per i pezzi deve leggere almeno: le posizioni dei re e le situazioni degli arrocchi. 
+
 Inoltre l'applicativo ruota la scacchiera secondo V.
 
-Vantaggi della RoTN
-La RoTN unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla FEN.
+Vantaggi della ROTN
+La ROTN unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla FEN.
 Infatti aggiunge il testo (T:) che valorizza il momento artistico e clou della posizione, inoltre aggiunge il punto di vista da cui guardare e giocare la partita. Un programma di scacchi in base a V: può ruotare la scacchiera al caricamento della posizione. La sinteticità della notazione algebrica rende più rapidamente intuibile la posizione.
 
 Per comprendere meglio i limiti di una fen esaminiamo come è fatta.
@@ -390,7 +392,7 @@ Ad esempio la fen seguente mostra i suoi limiti:
 7K/5k2/8/8/8/8/8/6q1 B ---- - 0 34 
   
 Tutto questo per dire che il nero ha due pezzi: re e regina e il bianco solo il re, con la mossa al nero; Ma non dice cosa occorre fare e da che punto di vista mettersi per valutare meglio la posizione.
-Nella RoTN troveremo semplicemente e in maniera chiara senza doversi fare i conti: 
+Nella ROTN troveremo semplicemente e in maniera chiara senza doversi fare i conti: 
 
 T:Matto in una mossa
 V:N;
@@ -411,11 +413,11 @@ Scacchi-it , ideato per vedenti e non vedenti, nelle sospensioni si segna l'enpa
 Scacchi-it, inoltre,  marca la situazione degli arrocchi validi e segnala il valore delle semimosse per la regola delle 50 mosse.
 
 In un ebook per non vedenti se ci sono immagini, esse non sono fruibili dal non vedente; per cui, generalmente, viene descritta la posizione con la notazione algebrica, che ha il vantaggio di far comprendere la posizione dei pezzi rapidamente. 
-La RoTN fa un passo ulteriore, consentendo l'ascolto e l'immediato utilizzo su scacchiera e non solo.
+La ROTN fa un passo ulteriore, consentendo l'ascolto e l'immediato utilizzo su scacchiera e non solo.
 
-Se in un ebook viene mostrata la RoTN, col copia e incolla si può rapidamente trasferirla in un file e caricarla in Scacchi-it. In tal modo si può ascoltare, con sintesi vocale, il testo e navigare sulla scacchiera esplorando la posizione, apprezzando meglio quanto descritto nel ebook.
+Se in un ebook viene mostrata la ROTN, col copia e incolla si può rapidamente trasferirla in un file e caricarla in Scacchi-it. In tal modo si può ascoltare, con sintesi vocale, il testo e navigare sulla scacchiera esplorando la posizione, apprezzando meglio quanto descritto nel ebook.
 
-La RoTN, inoltre, rende open data l'applicativo Scacchi-it in modo bidirezionale: consente di sospendere una partita e di riprenderla più tardi, come pure scrivere o copiare problemi e caricarli per la loro soluzione.
+La ROTN, inoltre, rende open data l'applicativo Scacchi-it in modo bidirezionale: consente di sospendere una partita e di riprenderla più tardi, come pure scrivere o copiare problemi e caricarli per la loro soluzione.
 Per cui la giusta definizione della rot notation è che essa estende la notazione algebrica e rende open data un applicativo di scacchi, consentendo di interagire con esso in due direzioni e aggiungendo la sintesi vocale e i vantaggi di una immagine.
 
 La ROTN funge anche da lingua interna a Scacchi-it di interscambio con altri formati esterni come la fen o possibili formati futuri.
@@ -452,7 +454,7 @@ Fate attenzione anche ad una seconda cosa: una volta che il puzzle corrispondent
 Le estensioni browser
 
 Vi possono capitare tre situazioni:
-- trovate una ROTNgià adatta a Scacchi-it
+- trovate una ROTN già adatta a Scacchi-it
 - Trovate una FEN
 - scrivete una ROTN
 
@@ -790,4 +792,5 @@ https://redyouman.github.io/blog/2026/07/02/Spec-ROTN.html
 
 Innanzitutto è una specifica di accessibilità digitale per chi sviluppa software scacchistico compatibile con screen reader (come NVDA e simili), ma che consente di utilizzare il software anche ai vedenti, in linea con un concetto a me caro di integrazione dei due mondi: non vedenti e vedenti (NV&V).
 Il gioco diventa un momento sociale di integrazione e di possibilità alla pari tra vedente e non vedente.
-La specifica dichiara un metodo semplice e intuitivo per superare facilmente vecchie problematiche, soprattutto editoriali, che gli scacchi da sempre si portano dietro: una immagine non è fruibile da un non vedente su Internet o su un ebook e la fen è poco intuitiva per un umano, adatta più a un computer e risalente al secolo scorso.
+
+La specifica mostra, però, che la ROTN non è solo accessibilità degli screen reader.

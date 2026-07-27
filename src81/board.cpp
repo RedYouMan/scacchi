@@ -27,7 +27,8 @@ AUTORE: Rosario Turco
 DATA: Dicembre 2025
 COPYRIGHT: vedi MIT license
  */
-/* variabili globali */
+
+ /* variabili globali */
 ;
 // variabili globali per giocare in rete
 bool online = false;
