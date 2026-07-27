@@ -9,8 +9,8 @@ Sul sito RedYouMan è presentato il gruppo NV&V e le loro finalità.
 La grafica fa uso della libreria sfml-2.6.1 ed eventuali cambi di tale libreria necessiterebbero di porting della
 parte sfml, questo perchè le versioni superiori sono state ridisegnate diversamente e diverse funzioni sono state modificate/eliminate oppure è cambiato lo standard di nomenclatura passato a quello Camel.
 
-I sorgenti .cpp e .h sono nelle directory src81, src-clock , src-starter , srcfenpos e serverScacchi.
-La versione src81 è contemporaneamente online e offline. 
+I sorgenti .cpp e .h sono nelle directory src81, src-clock , src-starter , srcfenpos , srcvalidaFEN e serverScacchi.
+La versione src81 è contemporaneamente online e offline, aggiornata alla 9.1. 
 I pacchetti di riferimento sono:
 - scacchi80.7z per i sorgenti
 - scacchiGr.7z su github contenenti solo eseguibili
