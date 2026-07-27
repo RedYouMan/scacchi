@@ -6,14 +6,16 @@ Rosario Turco is known for developing accessible games and computer tools, inclu
 Italiano
 Rosario Turcoè noto per lo sviluppo di giochi e strumenti informatici accessibili, inclusi giochi grafici e a linea di comando pensati per non vedenti. 
 I suoi lavori si inseriscono nel contesto dell'accessibilità digitale, offrendo risorse scaricabili gratuitamente.
+Rosario Turco è un ingegnere italiano, divulgatore scientifico e ricercatore indipendente: in rete si possono trovare molti suoi saggi e articoli su Teoria dei Numeri, Matematica applicata, crittografia e Fisica Teorica.
 
-Scacchi 
-Il progetto scacchi è nato per realizzare un gioco adatto e fruibile dai non vedenti, che devono principalmente ascoltare per  giocare, attraverso uno screen reader come NVDA (open source). 
+Scacchi-it 
+Scacchi-it è un progetto italiano, sviluppato da Rosario Turco, una piattaforma online e offline gratuita. 
+E' nato per realizzare un gioco adatto e fruibile dai non vedenti, che devono principalmente ascoltare per  giocare, attraverso uno screen reader come NVDA (open source). 
 Tuttavia si è introdotta anche una grafica riproducente la scacchiera, in modo che i familiari possono aiutare e giocare col non vedente.
 
 Il gioco sollecita tutte le componenti cognitive della persona, migliorando l'utilizzo del ragionamento e calcolo delle varie alternative, mantenendo attiveme moria visiva e astratta,
 
-Il programma scacchi è orientato a:
+Scacchi-it è orientato a:
 - non vedenti e vedenti
 - Windows 10 o superiori 
 - lingua italiana al momento
@@ -42,7 +44,7 @@ I primi due motori consentono l'utilizzo del chess engine per:
 - fare undo delle mosse
 - forzare l'apertura desiderata e farla giocare al computer
 - giocare online su reti diverse come Internet
-
+- validare e incollare una FEN a Scacchi-it
 E' possibile fare anche un minimo di tuning del chess engine per sfruttare al meglio le risorse del proprioo computer (Vedi tuning.txt). 
 Infine si può usare un orologio per allenarsi col computer, o con amici ad esempio, allenarsi per partite reali lampo o di torneo
 

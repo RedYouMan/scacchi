@@ -12,6 +12,43 @@ def main():
     exe_name = "fenpos.exe"
     exe_path = os.path.join(bin_dir, exe_name)
 
+    # Verifica parametri: devono essere 3 (escluso il nome dello script)
+    if len(sys.argv) - 1 != 3:
+        print("Usage: incolla-fen <testo tra doppi apici> <numero posizione> <fen tra doppi apici>")
+        print("Dopo su CtrlR inserire nome file pos_<numero posizione>. Fai attenzione a mettere il carattere sottolineato tra pos e numero posizione nel nome del file")
+        sys.exit(2)
+
+    # Prende i tre parametri
+    args = sys.argv[1:4]
+
+    # Rimuove eventuali apici esterni dalla FEN prima di passarla a validaFEN
+    fen = args[2]
+    if (fen.startswith('"') and fen.endswith('"')) or (fen.startswith("'") and fen.endswith("'")):
+        fen = fen[1:-1]
+    args[2] = fen
+
+    # Prima di spostarsi in sospensioni, esegue validaFEN.exe accanto a questo script
+    valida_exe = os.path.join(start_dir, "validaFEN.exe")
+    if not os.path.exists(valida_exe):
+        print(f"Error: validaFEN.exe non trovato in {start_dir}")
+        sys.exit(4)
+
+    # lancia validaFEN con il terzo argomento (la FEN)
+    try:
+        res = subprocess.run([valida_exe, args[2]])
+    except Exception as e:
+        print(f"Errore avviando validaFEN.exe: {e}")
+        sys.exit(5)
+
+    # Se validaFEN torna 1 si esce con messaggio
+    if res.returncode == 1:
+        print("La stringa non risulta una FEN.")
+        sys.exit(6)
+    # se torna 0 si prosegue; altri codici li lasciamo proseguire o segnalare
+    if res.returncode != 0:
+        print(f"validaFEN.exe ha ritornato codice {res.returncode}")
+        sys.exit(7)
+
     # 2. Controlla se la directory bin esiste
     if os.path.exists(bin_dir) and os.path.isdir(bin_dir):
         # print(f"Spostamento nella directory: {bin_dir}")

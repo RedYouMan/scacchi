@@ -1,6 +1,7 @@
-Versione: 9.0
-data: 20 Luglio 2026
+Versione: 9.1
+data: 27 Luglio 2026
 
+La versione 9.1 aggiunge la funzionalità validaFEN
 La versione 9.0 aggiunge la funzionalità incolla-fen, permettendo di dare a Scacchi-it una fen da caricare come posizione.
 
 La versione 8 rende Scacchi-it giocabile online oltre al gioco offline.
