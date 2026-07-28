@@ -197,7 +197,7 @@ int main(int argc, char *argv[])
     std::string message = "La migliore mossa e' " + bestMove;
     // std::cout << message << std::endl;
     callTextToSpeech(message);
-    message = "Attendi valutazione ...";
+    message = "Attendi valutazione della posizione della FEN ...";
     callTextToSpeech(message);
 
     evalPosition();

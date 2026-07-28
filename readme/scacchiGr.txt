@@ -16,8 +16,9 @@ Per il semplice motivo che un file di testo è il più accessibile possibile su 
 Versione disponibile 
 Questo paragrafo del tutorial segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione 9.1 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
-La versione 9.1 consente anche di validare e incollare una FEN a Scacchi-it e di giocare online in multiplayer , fornendo il file di log del server, rendendone comoda la consultazione.
+Sul sito è stata pubblicata la versione 10.0 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+La versione 10.0 aggiunge il coach, come potrete leggere di seguito.
+Questa versione consente anche di validare e incollare una FEN a Scacchi-it e di giocare online in multiplayer , fornendo il file di log del server, rendendone comoda la consultazione.
 I cambiamenti sono tracciati nel file changelog.txt nella directory readme e sono frutto delle segnalazioni della Community.
 
 Per verificare la vostra versione ascoltate quando parte il programma oppure digitate Ctrl+H.
@@ -72,6 +73,7 @@ Scacchi-it consente di:
 36 - incollare la FEN su console 
 37 - leggere una FEN con estensione browser e ottenere negli appunti la ROTN 
 38 - validare una FEN
+39 - sapere la miglior mossa da fare su una FEN (coaching)
 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
@@ -111,7 +113,7 @@ Con "Esplora file" per lanciare nella directory scacchi-it un eseguibile, basta 
 - clock-start
 - incolla-fen(ne parleremo in un paragrafo a parte)
 validaFEN (ne parleremo in un paragrafo a parte)
-
+coachFEN-start (ne parleremo in un paragrafo apposito) 
 Installazione con comandi da prompt
 Come alternativa al paragrafo precedente si possono fare i comandi a mano. Se avete già fatto il paragrafo precedente, questo lo potrete saltare.
 Si seguono i seguenti step:
@@ -475,6 +477,14 @@ Se vorreste usare la ROTN degli appunti delle estensioni con Scacchi-it se risul
 
 Se, invece, volete scrivere da voi un file ROTN in cartella problemi, dovete solo rispettare la sintassi della ROTN e la condizione che se M:B diminuire di 1 il numero di mossa della posizione P.
 .
+
+La funzionalità coachFEN-start
+Questa funzionalità di coaching permette, prima di incollare la FEN a Scacchi-it, di sapere la miglior mossa da fare. 
+Essa non va usata se avete una partita in corso col computer, altrimenti vi chiuderà la sessione col computer.
+PER l'uso digitate come sempre:
+coachFEN-start invio
+
+Da qui saprete che il programma accetta un solo parametro ovvero la FEN tra doppi apici.
 
 Configurabilità delle versioni di stockfish
 Qualora ci fossero versioni più recenti di stockfish è possibile scaricare la nuova versione nella directory engine emodificare, nella directory bin, il file engine.cnf per mettervi il nuovo nome dell'eseguibile stockfish gui.
