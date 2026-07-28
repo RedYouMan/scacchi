@@ -485,7 +485,9 @@ PER l'uso digitate come sempre:
 coachFEN-start invio
 
 Da qui saprete che il programma accetta un solo parametro ovvero la FEN tra doppi apici.
-
+La risposta del coach è in gergo stockfish: casa partenza+casa arrivo. Senza lettera del pezzo. Ad esempio: e1g1 è una mossa di re bianco per fare l'arrocco corto a destra, mentre e1c1 mossa di rebianco per l'arrocco lungo a sinistra, c2c4 è una mossa di pedone bianco, e7e5 una mossa di pedone nero.
+Oltre alla "best move" il coach fornisce la valutazione della posizione relativa alla FEN.
+ 
 Configurabilità delle versioni di stockfish
 Qualora ci fossero versioni più recenti di stockfish è possibile scaricare la nuova versione nella directory engine emodificare, nella directory bin, il file engine.cnf per mettervi il nuovo nome dell'eseguibile stockfish gui.
 L'applicativo Scacchi-it continuerà a lavorare correttamente se il nuovo motore stockfish si basa ancora su comandi standard uci (universal chess interface).
