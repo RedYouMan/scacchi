@@ -1,3 +1,9 @@
+#ifndef MYAD
+#define MYAD
+// header di adattamento per la compilazione derivata da board.cpp
+#include <iostream>
+#include <atomic>
+std::atomic<bool> interrompiVocale(false);
 
 // variabili globali per giocare in rete
 bool online = false;
@@ -76,3 +82,5 @@ int startSolRow = 0, startSolCol = 0, endSolRow = 0, endSolCol = 0;
 
 // per la fen campo enpassant
 string enpFEN;
+
+#endif

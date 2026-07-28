@@ -24,6 +24,7 @@ set(SOURCES
 coach.cpp
 engine4.cpp
 chess.cpp
+utility.cpp
 TTS.cpp
 engine.h
 myad.h

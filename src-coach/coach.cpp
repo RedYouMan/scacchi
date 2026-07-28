@@ -11,15 +11,15 @@ Se la fen e la profondità sono valide,
 */
 
 // coach.cpp
+#include "proto.h"
+
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <vector>
 #include <algorithm>
 #include "engine.h"
-#include "proto.h"
 #include "myad.h"
-// myad.h contiene tutte le globali di board.cpp per compilare
 
 static std::vector<std::string> splitString(const std::string &text, char sep)
 {
@@ -165,6 +165,8 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    // banner di inizio
+    cout << "Coach (C) - 2026 - Rosario Turco" << endl;
     std::string fen = argv[1];
     int depth = 15;
     if (argc >= 3)
@@ -208,13 +210,4 @@ int main(int argc, char *argv[])
 }
 
 
-
-
-void printDebug(const std::string &msg)
-{
-    if (test)
-    {
-        std::cout << msg << std::endl;
-    }
-}
 
