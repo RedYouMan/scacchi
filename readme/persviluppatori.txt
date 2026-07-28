@@ -9,7 +9,7 @@ Sul sito RedYouMan è presentato il gruppo NV&V e le loro finalità.
 La grafica fa uso della libreria sfml-2.6.1 ed eventuali cambi di tale libreria necessiterebbero di porting della
 parte sfml, questo perchè le versioni superiori sono state ridisegnate diversamente e diverse funzioni sono state modificate/eliminate oppure è cambiato lo standard di nomenclatura passato a quello Camel.
 
-I sorgenti .cpp e .h sono nelle directory src81, src-clock , src-starter , srcfenpos , srcvalidaFEN e serverScacchi.
+I sorgenti .cpp e .h sono nelle directory src81 (contiene tutte le versioni), src-clock , src-starter , srcfenpos , srcvalidaFEN , src-coach e serverScacchi.
 La versione src81 è contemporaneamente online e offline, aggiornata alla 9.1. 
 I pacchetti di riferimento sono:
 - scacchi80.7z per i sorgenti
@@ -21,6 +21,8 @@ I pacchetti di riferimento sono:
 In particolare l'orologio è compilato a parte per usare un header più limitato come tts.h per il sorgente tts.cpp.
 
 Per srcfenpos che ha un solo .cpp si utilizza direttamente la compilazione di visual studio code, avente in .vscode i file launch.json e task.json.
+
+Il coach riceve una FEN e collaborando con stockfish, dice la miglior mossa che si può fare sulla posizione espressa dalla FEN e la valutazione posizione.
 
 github 
  

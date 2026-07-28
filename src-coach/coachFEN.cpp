@@ -160,23 +160,15 @@ int main(int argc, char *argv[])
 {
     if (argc < 2)
     {
-        std::cout << "Uso: coach.exe \"<FEN>\" [depth]" << std::endl;
-        std::cout << "Profondita' supportata: 15-20. Se non specificata, viene usata 15." << std::endl;
+        std::cout << "Uso: coachFEN \"<FEN con doppi apici>\"" << std::endl;
         return 1;
     }
 
     // banner di inizio
-    cout << "Coach (C) - 2026 - Rosario Turco" << endl;
+    std::cout << "CoachFEN (C) 2026 - Rosario Turco" << std::endl;
     std::string fen = argv[1];
     int depth = 15;
-    if (argc >= 3)
-    {
-        if (!parseDepth(argv[2], depth))
-        {
-            std::cerr << "Profondita' non valida. Valori ammessi: 15-20." << std::endl;
-            return 1;
-        }
-    }
+    // depth is fixed to 15
 
     if (!isValidFen(fen))
     {
@@ -203,8 +195,12 @@ int main(int argc, char *argv[])
     }
 
     std::string message = "La migliore mossa e' " + bestMove;
-    std::cout << message << std::endl;
+    // std::cout << message << std::endl;
     callTextToSpeech(message);
+    message = "Attendi valutazione ...";
+    callTextToSpeech(message);
+
+    evalPosition();
     stop();
     return 0;
 }
