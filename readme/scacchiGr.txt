@@ -800,9 +800,8 @@ Alla prossima
 ===== ALLEGATI=====
 
 Specifica Ufficiale ROTN completa, ISO 14977. 
-https://redyouman.github.io/blog/2026/07/02/Spec-ROTN.html
+https://redyouman.github.io/blog/2026/07/02/specifica-rotn.html
 
-Innanzitutto è una specifica di accessibilità digitale per chi sviluppa software scacchistico compatibile con screen reader (come NVDA e simili), ma che consente di utilizzare il software anche ai vedenti, in linea con un concetto a me caro di integrazione dei due mondi: non vedenti e vedenti (NV&V).
+E' una specifica di accessibilità digitale per chi sviluppa software scacchistico compatibile con screen reader (come NVDA e simili), ma che consente di utilizzare il software anche ai vedenti, in linea con un concetto a me caro di integrazione dei due mondi: non vedenti e vedenti (NV&V).
 Il gioco diventa un momento sociale di integrazione e di possibilità alla pari tra vedente e non vedente.
 
-La specifica mostra, però, che la ROTN non è solo accessibilità degli screen reader.
