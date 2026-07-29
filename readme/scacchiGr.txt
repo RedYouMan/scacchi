@@ -360,9 +360,9 @@ Descrittore opzionale Z: indica il numero di semimosse presenti nella fen (campo
 
 Descrittori riservati ai produttori software:F, K, L, C, E.
 
-La sintesi vocale nell'applicativo deve leggere: obbligatoriamente T, M, P, U, Z; mentre per i pezzi deve leggere almeno: le posizioni dei re e le situazioni degli arrocchi. 
+La sintesi vocale nell'applicativo scacchistico deve leggere: obbligatoriamente T, M, P, U, Z; mentre per i pezzi deve leggere almeno: le posizioni dei re e opzionalmente, a proprio giudizio, le situazioni degli arrocchi o segnalarle su console. 
 
-Inoltre l'applicativo ruota la scacchiera secondo V.
+Inoltre l'applicativo obbligatoriamente ruota la scacchiera secondo V.
 
 Vantaggi della ROTN
 La ROTN unisce i vantaggi di una immagine con quelli della notazione algebrica più sintetica rispetto alla FEN.
