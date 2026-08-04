@@ -17,6 +17,7 @@ getUciok per sincronizzarsi col motore-
 isEngineRunning per verificare lo stato del motore
 string getPositionFen per ottenere la fen
 void evalPosition che da una valutazione della posizione
+float evalStock() che ritorna il valore numerico della valutazione di stockfish in centipedoni
 bool evalWithStop che valuta lo stato di gioco di stockfish (matto, stallo, patta, abbandona)
 setSkill(unsigned int skill) per settare lo skill con cui giocare
 setParam(int,int)per fare tuning del chess engine
@@ -771,4 +772,53 @@ string evalWithStop(string stock_color)
         }
     }
     return "0";
+}
+
+float evalStock()
+{
+    // questa funzionalità legge la valutazione di stockfish e ritorna il valore numerico in centipedoni
+    float eval_value = 0.0f;
+    string line = "", evaluation = "";
+    line.clear();
+    evaluation.clear();
+    char buffer[1024];
+    memset(buffer, '\0', sizeof(buffer));
+
+    sendCommand("eval\n");
+
+    DWORD dwRead;
+    while (ReadFile(hChildStdoutRd, buffer, sizeof(buffer) - 1, &dwRead, NULL) && dwRead > 0)
+    {
+        buffer[dwRead] = '\0';
+        line += buffer;
+
+        size_t pos = line.find("Final evaluation");
+        if (pos != string::npos)
+        {
+            size_t end = line.find(")", pos);
+            if (end != string::npos)
+            {
+                evaluation = line.substr(pos + 23, end - (pos + 23));
+
+                size_t start = evaluation.find_first_of("+-0123456789");
+                size_t last = evaluation.find_last_of("+-0123456789");
+
+                if (start != string::npos && last != string::npos && last >= start)
+                {
+                    evaluation = evaluation.substr(start, last - start + 1);
+                    try
+                    {
+                        eval_value = static_cast<float>(stof(evaluation) * 100.0);
+                    }
+                    catch (...)
+                    {
+                        eval_value = 0.0f;
+                    }
+                }
+                break;
+            }
+        }
+    }
+
+    return eval_value;
 }

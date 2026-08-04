@@ -26,4 +26,5 @@ bool isSettingParam();
 bool isReady();
 void risolviProblema(int start);
 string evalWithStop(string stockfish_color);
+float evalStock();
 #endif
