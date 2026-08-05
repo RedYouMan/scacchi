@@ -1,7 +1,4 @@
 // coachGame.cpp
-/*
-
-*/
 
 #include "proto.h"
 
@@ -312,122 +309,129 @@ int main(int argc, char *argv[])
         std::cout << "Colore non valido. Usa 'b' per bianco o 'n' per nero." << std::endl;
         return 1;
     }
+
     FENCurrent = FENStart;
-    // Nel seguito si controlla se file_game esiste  e viene aperto . Se non esiste o non è leggibile, si esce con errore.
+
     std::ifstream myfile(file_game);
     if (!myfile.is_open())
     {
         std::cout << "Errore: impossibile aprire il file " << file_game << std::endl;
         return 1;
     }
-    // si contano le mosse nel file
-    // per definire la dimensione del array game
 
-    int num_moves = 0;
-    std::string line, line2;
-
-    std::getline(myfile, line); // leggo line
+    std::string line;
+    std::getline(myfile, line);
     myfile.close();
-    line2 = line; // line2 serve per l'analisi successiva
-    /* La line è fatta nel seguente modo 1.e4 e5 2.Cf3 Cc6 3.Ac4 etc. *
-     Devo ciclare per trovare l'ultimo numero di mossa, che è quello che mi serve per definire la dimensione dell'array game.
-     */
-    size_t pos = 0;
-    while ((pos = line.find('.', pos)) != std::string::npos)
+
+    std::vector<std::string> whiteMoves;
+    std::vector<std::string> blackMoves;
+    std::istringstream iss(line);
+    std::string token;
+    bool expectBlackMove = false;
+
+    while (iss >> token)
     {
-        num_moves++;
-        pos++; // sposto la posizione per cercare il prossimo '.'
+        std::size_t dotPos = token.find('.');
+        if (dotPos != std::string::npos && dotPos + 1 < token.size())
+        {
+            std::string moveText = token.substr(dotPos + 1);
+            if (!moveText.empty())
+            {
+                whiteMoves.push_back(moveText);
+                expectBlackMove = true;
+            }
+        }
+        else if (expectBlackMove)
+        {
+            blackMoves.push_back(token);
+            expectBlackMove = false;
+        }
+    }
+
+    if (whiteMoves.empty())
+    {
+        std::cerr << "Nessuna mossa trovata nel file " << file_game << std::endl;
+        return 1;
+    }
+
+    const size_t num_moves = std::min(whiteMoves.size(), blackMoves.size());
+    if (num_moves == 0)
+    {
+        std::cerr << "Il file non contiene coppie di mosse valide: " << file_game << std::endl;
+        return 1;
     }
 
     std::vector<MossaAnalizzata> game(num_moves);
-    int i = -1;
     double previousEval = 0.0;
     bool havePreviousEval = true;
     std::string fenPrimaMossa;
 
-    // mi serve attivo stockfish
     if (!start())
     {
         std::cerr << "Impossibile avviare il motore di scacchi." << std::endl;
         return 1;
     }
-    /* ora devo ciclare per leggere le mosse da line2 escludendo numero e punto e prelevando tutti i caratteri prima dello spazio e poi quelli dopo lo spazio,
-        il primo è la semimossa del bianco e il secondo la semimossa del nero
 
-                * /
-
-            pos = 0;
-    while ((pos = line2.find('.', pos)) != std::string::npos)
+    for (size_t i = 0; i < num_moves; ++i)
     {
-        i++;
-        game[i].set_n_mossa(i + 1);
+        game[i].set_n_mossa(static_cast<int>(i + 1));
+        game[i].set_alu_bianco(whiteMoves[i]);
+        game[i].set_alu_nero(blackMoves[i]);
         fenPrimaMossa = FENCurrent;
-        // la riga è del tipo 1.e4 e5
-/*L'Analisi verte su questo:
-    - se il delta tra la valutazione della semimossa precedente al giocatore detto in input e la valutazione della semimossa del giocatore  è in valore assoluto minore di 0.5 non viene fatto niente e si prosegue sulla mossa successiva
-    - se il delta tra la valutazione della semimossa precedente al giocatore detto in input e la valutazione della semimossa del giocatore  è in valore assoluto maggiore di 0.5 e minore di 1.0 allora si da un commento vocale che la mossa è sbagliata e si da un commento scritto e si trova la best move sostitutiva in corrispondenza della fen.
-    - se il delta tra la valutazione della semimossa precedente al giocatore detto in input e la valutazione della semimossa del giocatore  è in valore assoluto maggiore di 1.0 e minore di 1.5 allora si da un commento vocale che la mossa è molto sbagliata e si da un commento scritto e si trova la best move sostitutiva in corrispondenza della fen.
-    ora alla fine produce un report.txt con tutte le mosse e le valutazioni di stockfish e i commenti vocali e scritti.Il report.txt deve essere scritto nella cartella.. // registrazioni// con lo stesso nome del file di input ma con estensione .txt. Il report.txt deve essere scritto in modo leggibile e deve contenere tutte le informazioni necessarie per capire l'andamento della partita e le mosse sbagliate o pessime del giocatore detto in input.
-            */
 
-    pos = line2.find('.', pos);
-    game[i].set_alu_bianco(line2.substr(pos + 1, line.find(' ')));
-    game[i].set_alu_nero(line.substr(line2.find(' ') + 1));
-    game[i].set_stock_bianco(whatIsNewFEN(game[i].get_alu_bianco(), 'b'));
-    FENCurrent = game[i].get_stock_bianco();
-    sendCommand("position fen " + FENCurrent + "\n");
-    sendCommand("go depth 15\n");
-    // non prendo la best move dato che devo portare stockfish alla posizione giocata
-    // prendo la valutazione della posizione
-    game[i].set_eval_prima_b(evalStock());
-    game[i].set_stock_nero(whatIsNewFEN(game[i].get_alu_nero(), 'n'));
-    FENCurrent = game[i].get_stock_nero();
-    sendCommand("position fen " + FENCurrent + "\n");
-    sendCommand("go depth 15\n");
-    // non prendo la best move dato che devo portare solo stockfish alla posizione giocata
-    // prendo la valutazione della posizione
-    game[i].set_eval_prima_n(evalStock());
+        game[i].set_stock_bianco(whatIsNewFEN(game[i].get_alu_bianco(), 'b'));
+        FENCurrent = game[i].get_stock_bianco();
+        sendCommand("position fen " + FENCurrent + "\n");
+        sendCommand("go depth 15\n");
+        game[i].set_eval_prima_b(evalStock());
 
-    if (havePreviousEval)
-    {
-        double currentEval = (colore == 'b') ? game[i].get_eval_prima_b() : game[i].get_eval_prima_n();
-        double delta = std::fabs(currentEval - previousEval);
-        std::string commentoVocale;
-        std::string commentoScrittto;
+        game[i].set_stock_nero(whatIsNewFEN(game[i].get_alu_nero(), 'n'));
+        FENCurrent = game[i].get_stock_nero();
+        sendCommand("position fen " + FENCurrent + "\n");
+        sendCommand("go depth 15\n");
+        game[i].set_eval_prima_n(evalStock());
 
-        if (delta >= 0.5 && delta < 1.0)
+        if (havePreviousEval)
         {
-            commentoVocale = "Questa mossa è sbagliata";
-            commentoScrittto = "Mossa sbagliata: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
-        }
-        else if (delta >= 1.0 && delta < 1.5)
-        {
-            commentoVocale = "Questa mossa è molto sbagliata";
-            commentoScrittto = "Mossa molto sbagliata: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
-        }
-        else if (delta >= 1.5)
-        {
-            commentoVocale = "Questa mossa è pessima";
-            commentoScrittto = "Mossa pessima: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
-        }
+            double currentEval = (colore == 'b') ? game[i].get_eval_prima_b() : game[i].get_eval_prima_n();
+            double delta = std::fabs(currentEval - previousEval);
+            std::string commentoVocale;
+            std::string commentoScrittto;
 
-        if (!commentoScrittto.empty())
-        {
-            std::cout << commentoScrittto << " (delta: " << delta << ")" << std::endl;
-            callTextToSpeech(commentoVocale);
-            /* qua viene suggerita la mossa migliore */
-            sendCommand("position fen " + fenPrimaMossa + "\n");
-            sendCommand("go depth 15\n");
-            std::string bestMove = getOutputMove();
-            if (!bestMove.empty() && bestMove != "1")
+            if (delta >= 0.5 && delta < 1.0)
             {
-                std::cout << "Best move suggerita: " << bestMove << std::endl;
-                callTextToSpeech("La migliore risposta è " + bestMove);
+                commentoVocale = "Questa mossa è sbagliata";
+                commentoScrittto = "Mossa sbagliata: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
             }
+            else if (delta >= 1.0 && delta < 1.5)
+            {
+                commentoVocale = "Questa mossa è molto sbagliata";
+                commentoScrittto = "Mossa molto sbagliata: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
+            }
+            else if (delta >= 1.5)
+            {
+                commentoVocale = "Questa mossa è pessima";
+                commentoScrittto = "Mossa pessima: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
+            }
+
+            if (!commentoScrittto.empty())
+            {
+                std::cout << commentoScrittto << " (delta: " << delta << ")" << std::endl;
+                callTextToSpeech(commentoVocale);
+                sendCommand("position fen " + fenPrimaMossa + "\n");
+                sendCommand("go depth 15\n");
+                std::string bestMove = getOutputMove();
+                if (!bestMove.empty() && bestMove != "1")
+                {
+                    std::cout << "Best move suggerita: " << bestMove << std::endl;
+                    callTextToSpeech("La migliore risposta è " + bestMove);
+                }
+            }
+
+            previousEval = (colore == 'b') ? game[i].get_eval_prima_b() : game[i].get_eval_prima_n();
         }
-        previousEval = (colore == 'b') ? game[i].get_eval_prima_b() : game[i].get_eval_prima_n();
     }
-    // a questo punto abbiamo riempito il array game con tutte le mosse e le valutazioni di stockfish. Ora possiamo fare l'analisi delle mosse e dei commenti.
+
     std::string reportFileName = "..//registrazioni//" + std::string(argv[1]) + "-report.txt";
     std::ofstream reportFile(reportFileName);
 
@@ -436,23 +440,21 @@ int main(int argc, char *argv[])
         std::cerr << "Errore: impossibile creare il file di report " << reportFileName << std::endl;
         return 1;
     }
-    else
+
+    reportFile << "Report della partita: " << file_game << std::endl;
+    reportFile << "Colore del giocatore analizzato: " << (colore == 'b' ? "Bianco" : "Nero") << std::endl;
+    reportFile << "--------------------------------------------------" << std::endl;
+
+    for (size_t j = 0; j < game.size(); ++j)
     {
-        reportFile << "Report della partita: " << file_game << std::endl;
-        reportFile << "Colore del giocatore analizzato: " << (colore == 'b' ? "Bianco" : "Nero") << std::endl;
+        reportFile << "Mossa " << game[j].get_n_mossa() << ":" << std::endl;
+        reportFile << "  Mossa Bianco: " << game[j].get_alu_bianco() << ", FEN: " << game[j].get_stock_bianco() << ", Valutazione: " << game[j].get_eval_prima_b() << std::endl;
+        reportFile << "  Mossa Nero: " << game[j].get_alu_nero() << ", FEN: " << game[j].get_stock_nero() << ", Valutazione: " << game[j].get_eval_prima_n() << std::endl;
         reportFile << "--------------------------------------------------" << std::endl;
-
-        for (int j = 0; j <= i; ++j)
-        {
-            reportFile << "Mossa " << game[j].get_n_mossa() << ":" << std::endl;
-            reportFile << "  Mossa Bianco: " << game[j].get_alu_bianco() << ", FEN: " << game[j].get_stock_bianco() << ", Valutazione: " << game[j].get_eval_prima_b() << std::endl;
-            reportFile << "  Mossa Nero: " << game[j].get_alu_nero() << ", FEN: " << game[j].get_stock_nero() << ", Valutazione: " << game[j].get_eval_prima_n() << std::endl;
-            reportFile << "--------------------------------------------------" << std::endl;
-        }
-
-        reportFile.close();
-        std::cout << "Report della partita scritto in: " << reportFileName << std::endl;
     }
+
+    reportFile.close();
+    std::cout << "Report della partita scritto in: " << reportFileName << std::endl;
     return 0;
 }
 

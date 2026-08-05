@@ -1,7 +1,8 @@
-Tutorial su Scacchi-it
+Manuale completo di Scacchi-it
 
 Benvenuti a Scacchi-it il gioco degli scacchi in italiano con interfaccia vocale.
 Da oggi anche online e multiplayer. 
+Compatibile con screen reader come NVDA e JAWS
 
 Licenza
 *Scacchi-it* is free software released under the MIT License.  
@@ -9,9 +10,9 @@ Licenza
 You may use, copy, and modify it freely, provided that this copyright notice is retained.
 
 
-Scelta file testo per il tutorial
+Scelta file di testo per il manuale
 Si è scelto di usare un file di testo, al posto di un professionale manuale in pdf. 
-Per il semplice motivo che un file di testo è il più accessibile possibile su browser con NVDA per un non vedente.  
+Questo per il semplice motivo che un file di testo è il più accessibile possibile per un non vedente su browser con un screen reader. 
 
 Versione disponibile 
 Questo paragrafo del tutorial segnalerà sempre la presenza di eventuali nuove versioni migliorative.
