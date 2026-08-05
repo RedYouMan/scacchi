@@ -1,5 +1,14 @@
 // coachGame.cpp
 
+#ifndef _HAS_STD_BYTE
+#define _HAS_STD_BYTE 0
+#endif
+
+#include <cstddef>
+#define NOMINMAX
+#include <windows.h>
+#undef max
+#undef min
 #include "proto.h"
 
 #include <algorithm>
@@ -7,6 +16,7 @@
 #include <cmath>
 #include <cstdlib>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -286,11 +296,18 @@ namespace
     }
 } // namespace
 
+std::string formatStockfishEval(double eval)
+{
+    std::ostringstream oss;
+    oss << std::fixed << std::setprecision(2) << std::showpos << eval;
+    return oss.str();
+}
+
 // prototipo locale
 std::string whatIsNewFEN(const std::string &moveInput, char colore);
 
 // FEN globale da inizio gioco
-std::string FENStart = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+std::string FENStart = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 0";
 static std::string FENCurrent;
 int main(int argc, char *argv[])
 {
@@ -302,6 +319,7 @@ int main(int argc, char *argv[])
 
     // banner di inizio
     std::cout << "CoachGame (C) 2026 - Rosario Turco" << std::endl;
+    Sleep(3000);
     std::string file_game = "..//registrazioni//" + std::string(argv[1]);
     char colore = tolower(argv[2][0]);
     if (colore != 'b' && colore != 'n')
@@ -362,6 +380,8 @@ int main(int argc, char *argv[])
     }
 
     std::vector<MossaAnalizzata> game(num_moves);
+    std::vector<std::string> reportComments;
+    std::vector<std::string> reportBestMoves;
     double previousEval = 0.0;
     bool havePreviousEval = true;
     std::string fenPrimaMossa;
@@ -395,44 +415,51 @@ int main(int argc, char *argv[])
         {
             double currentEval = (colore == 'b') ? game[i].get_eval_prima_b() : game[i].get_eval_prima_n();
             double delta = std::fabs(currentEval - previousEval);
-            std::string commentoVocale;
-            std::string commentoScrittto;
+            std::string commentoScritto;
+
+            std::string spokenMoveText = "Mossa numero " + std::to_string(i + 1) + ". Mossa del bianco: " +
+                                         game[i].get_alu_bianco() + ". Mossa del nero: " + game[i].get_alu_nero();
+            // callTextToSpeech(spokenMoveText);
+            Sleep(2000);
 
             if (delta >= 0.5 && delta < 1.0)
             {
-                commentoVocale = "Questa mossa è sbagliata";
-                commentoScrittto = "Mossa sbagliata: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
+                commentoScritto = "Mossa sbagliata: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
             }
             else if (delta >= 1.0 && delta < 1.5)
             {
-                commentoVocale = "Questa mossa è molto sbagliata";
-                commentoScrittto = "Mossa molto sbagliata: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
+                commentoScritto = "Mossa molto sbagliata: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
             }
             else if (delta >= 1.5)
             {
-                commentoVocale = "Questa mossa è pessima";
-                commentoScrittto = "Mossa pessima: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
+                commentoScritto = "Mossa pessima: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
             }
 
-            if (!commentoScrittto.empty())
+            std::string bestMove;
+            if (!commentoScritto.empty())
             {
-                std::cout << commentoScrittto << " (delta: " << delta << ")" << std::endl;
-                callTextToSpeech(commentoVocale);
+                std::cout << commentoScritto << " (delta: " << delta << ")" << std::endl;
                 sendCommand("position fen " + fenPrimaMossa + "\n");
                 sendCommand("go depth 15\n");
-                std::string bestMove = getOutputMove();
+                bestMove = getOutputMove();
                 if (!bestMove.empty() && bestMove != "1")
                 {
                     std::cout << "Best move suggerita: " << bestMove << std::endl;
-                    callTextToSpeech("La migliore risposta è " + bestMove);
                 }
             }
 
+            reportComments.push_back(commentoScritto.empty() ? "Nessun commento" : commentoScritto);
+            reportBestMoves.push_back(bestMove.empty() || bestMove == "1" ? "N/A" : bestMove);
             previousEval = (colore == 'b') ? game[i].get_eval_prima_b() : game[i].get_eval_prima_n();
+        }
+        else
+        {
+            reportComments.push_back("Nessun commento");
+            reportBestMoves.push_back("N/A");
         }
     }
 
-    std::string reportFileName = "..//registrazioni//" + std::string(argv[1]) + "-report.txt";
+    std::string reportFileName = "..//registrazioni//report.txt";
     std::ofstream reportFile(reportFileName);
 
     if (!reportFile.is_open())
@@ -448,8 +475,12 @@ int main(int argc, char *argv[])
     for (size_t j = 0; j < game.size(); ++j)
     {
         reportFile << "Mossa " << game[j].get_n_mossa() << ":" << std::endl;
-        reportFile << "  Mossa Bianco: " << game[j].get_alu_bianco() << ", FEN: " << game[j].get_stock_bianco() << ", Valutazione: " << game[j].get_eval_prima_b() << std::endl;
-        reportFile << "  Mossa Nero: " << game[j].get_alu_nero() << ", FEN: " << game[j].get_stock_nero() << ", Valutazione: " << game[j].get_eval_prima_n() << std::endl;
+        reportFile << "  Mossa Bianco: " << game[j].get_alu_bianco() << ", FEN: " << game[j].get_stock_bianco()
+                   << ", Valutazione Stockfish: " << formatStockfishEval(game[j].get_eval_prima_b()) << std::endl;
+        reportFile << "  Mossa Nero: " << game[j].get_alu_nero() << ", FEN: " << game[j].get_stock_nero()
+                   << ", Valutazione Stockfish: " << formatStockfishEval(game[j].get_eval_prima_n()) << std::endl;
+        reportFile << "  Commento: " << (j < reportComments.size() ? reportComments[j] : "Nessun commento") << std::endl;
+        reportFile << "  Best move consigliata: " << (j < reportBestMoves.size() ? reportBestMoves[j] : "N/A") << std::endl;
         reportFile << "--------------------------------------------------" << std::endl;
     }
 
