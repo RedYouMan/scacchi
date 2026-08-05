@@ -403,13 +403,13 @@ int main(int argc, char *argv[])
         FENCurrent = game[i].get_stock_bianco();
         sendCommand("position fen " + FENCurrent + "\n");
         sendCommand("go depth 15\n");
-        game[i].set_eval_prima_b(evalStock());
+        game[i].set_eval_prima_b(evalStock() / 100);
 
         game[i].set_stock_nero(whatIsNewFEN(game[i].get_alu_nero(), 'n'));
         FENCurrent = game[i].get_stock_nero();
         sendCommand("position fen " + FENCurrent + "\n");
         sendCommand("go depth 15\n");
-        game[i].set_eval_prima_n(evalStock());
+        game[i].set_eval_prima_n(evalStock() / 100);
 
         if (havePreviousEval)
         {
