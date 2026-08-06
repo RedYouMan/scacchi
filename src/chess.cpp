@@ -300,8 +300,15 @@ bool Queen::checkMove(string source, string destination)
 {
     bool status = true;
     string msg = "debug: verifica regole di gioco per la donna\n";
+    // devo trovare le coordinate della casa g6
+    ChessUtility utility;
+    string casa = "g6";
+    vector<int> Idx_casa = utility.getIndexPuntoDiVista(casa, puntoDiVista);
+    int i = Idx_casa.front();
+    int j = Idx_casa.back();
+
     // bug complesso da trovare: patch momentanea
-    if (source == "h5" && destination == "f7")
+    if (source == "h5" && destination == "f7" && chessBoard[i][j].getBusySquare() == false)
     {
         // printf("debug: donna h5->f7\n");
         return true;

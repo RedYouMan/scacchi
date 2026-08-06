@@ -17,7 +17,7 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del tutorial segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione 10.1 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione 10.2 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 La versione 10.0 aggiunge il coach, come potrete leggere di seguito.
 Questa versione consente anche di validare e incollare una FEN a Scacchi-it e di giocare online in multiplayer , fornendo il file di log del server, rendendone comoda la consultazione.
 I cambiamenti sono tracciati nel file changelog.txt nella directory readme e sono frutto delle segnalazioni della Community.

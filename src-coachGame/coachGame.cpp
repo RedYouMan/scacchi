@@ -453,15 +453,6 @@ int main(int argc, char *argv[])
         std::string bestMove;
         if (!commentoScritto.empty())
         {
-
-            stop(); // per farlo ripartire da zero con la fen che gli mando ora.
-
-            if (!start())
-            {
-                std::cerr << "Impossibile avviare il motore di scacchi." << std::endl;
-                return 1;
-            }
-
             std::string fenDaUsare;
             if (colore == 'b')
             {
