@@ -385,6 +385,7 @@ int main(int argc, char *argv[])
     std::vector<std::string> reportComments;
     std::vector<std::string> reportBestMoves;
     std::string fenPrimaMossa;
+    std::string fenPrimaNero;
 
     if (!start())
     {
@@ -401,7 +402,7 @@ int main(int argc, char *argv[])
 
         game[i].set_stock_bianco(whatIsNewFEN(game[i].get_alu_bianco(), 'b'));
         FENCurrent = game[i].get_stock_bianco();
-        std::string fenPrimaNero = FENCurrent;
+        fenPrimaNero = FENCurrent;
         sendCommand("position fen " + FENCurrent + "\n");
         sendCommand("go depth 15\n");
         game[i].set_eval_prima_b(evalStock() / 100);
@@ -444,11 +445,23 @@ int main(int argc, char *argv[])
             commentoScritto = "Mossa pessima: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
         }
 
+        // zona delicata della best move da ricavare
+        /*
+          se si analizza colore bianco: la best move va calcolata a partire dalla FEN del nero precedente alla mossa corrente del bianco ritenuta scarsa o dalla FEN di inizio partita se è la prima mossa,
+          se si analizza colore nero: la best move va calcolata a partire dalla FEN prima della mossa corrente nera prendendo la mossa precedente bianca o la prima fen se di inizio partita.
+        */
         std::string bestMove;
         if (!commentoScritto.empty())
         {
-            // Usa la FEN precedente del colore opposto a quello sotto analisi
-            std::string fenDaUsare = (colore == 'b') ? fenPrimaNero : fenPrimaMossa;
+            std::string fenDaUsare;
+            if (colore == 'b')
+            {
+                fenDaUsare = (i == 0) ? FENCurrent : game[i - 1].get_stock_nero();
+            }
+            else
+            {
+                fenDaUsare = (i == 0) ? FENCurrent : game[i].get_stock_bianco();
+            }
             std::cout << commentoScritto << " (delta: " << delta << ")" << std::endl;
             sendCommand("position fen " + fenDaUsare + "\n");
             sendCommand("go depth 15\n");
