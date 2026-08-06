@@ -139,7 +139,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 10.0 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 10.1 - Rosario Turco\n";
     cout << "sulla scacchiera: CtrlH per help(), CtrlX per tutorial\n";
     init();
     Sleep(10000);
@@ -646,6 +646,7 @@ int move(string src, string dest, char who)
         }
         // primaLettera = "P";
         primaLettera.clear();
+        check = false; // Introdotta il 6 agosto 2026
         // notazione algebrica nel filedi registrazione  e in ultima mossa senza P
         check = pedone.checkMove(src, dest);
     }
@@ -1186,7 +1187,7 @@ int whatInitialSquare(std::string mossaCasaDestinazione, char who)
         La mossa rappresenta solo la mossa nella casa di destinazione.
         la mossa è del tipo e4 per un pedone oppure Ac5 per un pezzo. Tale mossa rappresenta la mossa verso la casa destinazione soltanto.
         Le mosse che arrivano in input non avranno O-O oppure O-O-O ma solo una mossa di Re per sfruttare il software già sviluppato.
-        Una mossa come e4 di pedone, avrà la casa precedente sulla stessa colonna, indietro (numero minore) se giocatore bianco, avanti (numero maggiore) se giocatore nero, mentre non è la stessa colonna solo nei casi di cattura o enpassant e in tal caso il pedone va in diagonale a distanza 1.
+\        Una mossa come e4 di pedone, avrà la casa precedente sulla stessa colonna, indietro (numero minore) se giocatore bianco, avanti (numero maggiore) se giocatore nero, mentre non è la stessa colonna solo nei casi di cattura o enpassant e in tal caso il pedone va in diagonale a distanza 1.
         Invece per trovare la casa di partenza dei pezzi sapendo il colore del pezzo , si deve cercare dove è posizionato sulla scacchiera un pezzo che possa arrivare alla destinazione (di sicuro è unico) e si trova in tal modo la mossa della casa iniziale.
 
         Per cui la funzione ricerca il colore della casa della mossa ricevuta, per determinare:
