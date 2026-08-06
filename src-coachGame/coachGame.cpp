@@ -320,6 +320,8 @@ int main(int argc, char *argv[])
     // banner di inizio
     std::cout << "CoachGame (C) 2026 - Rosario Turco" << std::endl;
     Sleep(3000);
+
+    callTextToSpeech(string("Benvenuto in CoachGame, il tuo assistente per l'analisi delle partite di scacchi.;(Attendi che venga completata l'analisi e ti verrà fornito un report\n"));
     std::string file_game = "..//registrazioni//" + std::string(argv[1]);
     char colore = tolower(argv[2][0]);
     if (colore != 'b' && colore != 'n')
@@ -382,8 +384,6 @@ int main(int argc, char *argv[])
     std::vector<MossaAnalizzata> game(num_moves);
     std::vector<std::string> reportComments;
     std::vector<std::string> reportBestMoves;
-    double previousEval = 0.0;
-    bool havePreviousEval = true;
     std::string fenPrimaMossa;
 
     if (!start())
@@ -401,6 +401,7 @@ int main(int argc, char *argv[])
 
         game[i].set_stock_bianco(whatIsNewFEN(game[i].get_alu_bianco(), 'b'));
         FENCurrent = game[i].get_stock_bianco();
+        std::string fenPrimaNero = FENCurrent;
         sendCommand("position fen " + FENCurrent + "\n");
         sendCommand("go depth 15\n");
         game[i].set_eval_prima_b(evalStock() / 100);
@@ -411,52 +412,54 @@ int main(int argc, char *argv[])
         sendCommand("go depth 15\n");
         game[i].set_eval_prima_n(evalStock() / 100);
 
-        if (havePreviousEval)
+        double evalBeforeMove = 0.0;
+        if (colore == 'b')
         {
-            double currentEval = (colore == 'b') ? game[i].get_eval_prima_b() : game[i].get_eval_prima_n();
-            double delta = std::fabs(currentEval - previousEval);
-            std::string commentoScritto;
-
-            std::string spokenMoveText = "Mossa numero " + std::to_string(i + 1) + ". Mossa del bianco: " +
-                                         game[i].get_alu_bianco() + ". Mossa del nero: " + game[i].get_alu_nero();
-            // callTextToSpeech(spokenMoveText);
-            Sleep(2000);
-
-            if (delta >= 0.5 && delta < 1.0)
-            {
-                commentoScritto = "Mossa sbagliata: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
-            }
-            else if (delta >= 1.0 && delta < 1.5)
-            {
-                commentoScritto = "Mossa molto sbagliata: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
-            }
-            else if (delta >= 1.5)
-            {
-                commentoScritto = "Mossa pessima: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
-            }
-
-            std::string bestMove;
-            if (!commentoScritto.empty())
-            {
-                std::cout << commentoScritto << " (delta: " << delta << ")" << std::endl;
-                sendCommand("position fen " + fenPrimaMossa + "\n");
-                sendCommand("go depth 15\n");
-                bestMove = getOutputMove();
-                if (!bestMove.empty() && bestMove != "1")
-                {
-                    std::cout << "Best move suggerita: " << bestMove << std::endl;
-                }
-            }
-
-            reportComments.push_back(commentoScritto.empty() ? "Nessun commento" : commentoScritto);
-            reportBestMoves.push_back(bestMove.empty() || bestMove == "1" ? "N/A" : bestMove);
-            previousEval = (colore == 'b') ? game[i].get_eval_prima_b() : game[i].get_eval_prima_n();
+            evalBeforeMove = (i == 0) ? 0.0 : game[i - 1].get_eval_prima_n();
         }
         else
         {
-            reportComments.push_back("Nessun commento");
-            reportBestMoves.push_back("N/A");
+            evalBeforeMove = game[i].get_eval_prima_b();
         }
+
+        double currentEval = (colore == 'b') ? game[i].get_eval_prima_b() : game[i].get_eval_prima_n();
+        double delta = std::fabs(currentEval - evalBeforeMove);
+        std::string commentoScritto;
+
+        std::string spokenMoveText = "Mossa numero " + std::to_string(i + 1) + ". Mossa del bianco: " +
+                                     game[i].get_alu_bianco() + ". Mossa del nero: " + game[i].get_alu_nero();
+        // callTextToSpeech(spokenMoveText);
+        Sleep(2000);
+
+        if (delta >= 0.5 && delta < 1.0)
+        {
+            commentoScritto = "Mossa sbagliata: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
+        }
+        else if (delta >= 1.0 && delta < 1.5)
+        {
+            commentoScritto = "Mossa molto sbagliata: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
+        }
+        else if (delta >= 1.5)
+        {
+            commentoScritto = "Mossa pessima: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
+        }
+
+        std::string bestMove;
+        if (!commentoScritto.empty())
+        {
+            std::string fenDaUsare = (colore == 'b') ? fenPrimaMossa : fenPrimaNero;
+            std::cout << commentoScritto << " (delta: " << delta << ")" << std::endl;
+            sendCommand("position fen " + fenDaUsare + "\n");
+            sendCommand("go depth 15\n");
+            bestMove = getOutputMove();
+            if (!bestMove.empty() && bestMove != "1")
+            {
+                std::cout << "Best move suggerita: " << bestMove << std::endl;
+            }
+        }
+
+        reportComments.push_back(commentoScritto.empty() ? "Nessun commento" : commentoScritto);
+        reportBestMoves.push_back(bestMove.empty() || bestMove == "1" ? "N/A" : bestMove);
     }
 
     std::string reportFileName = "..//registrazioni//report.txt";
