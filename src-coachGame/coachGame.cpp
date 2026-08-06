@@ -469,7 +469,9 @@ int main(int argc, char *argv[])
             }
             else
             {
-                fenDaUsare = (i == 0) ? FENCurrent : game[i].get_stock_bianco();
+                // Per il nero: best move è calcolata dalla FEN PRIMA della mossa corrente del nero
+                // Se è la prima mossa nera (i==0), partiamo da FENCurrent dopo la prima mossa bianca
+                fenDaUsare = game[i].get_stock_bianco();
             }
             std::cout << commentoScritto << " (delta: " << delta << ")" << std::endl;
             sendCommand("position fen " + fenDaUsare + "\n");
