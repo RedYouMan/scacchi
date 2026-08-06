@@ -319,9 +319,9 @@ int main(int argc, char *argv[])
 
     // banner di inizio
     std::cout << "CoachGame (C) 2026 - Rosario Turco" << std::endl;
-    Sleep(3000);
+    Sleep(5000);
 
-    callTextToSpeech(string("Benvenuto in CoachGame, il tuo assistente per l'analisi delle partite di scacchi.;(Attendi che venga completata l'analisi e ti verrà fornito un report\n"));
+    callTextToSpeech(string("Benvenuto in CoachGame, il tuo assistente per l'analisi delle partite di scacchi. Attendi che venga completata l'analisi e ti verrà fornito un report\n"));
     std::string file_game = "..//registrazioni//" + std::string(argv[1]);
     char colore = tolower(argv[2][0]);
     if (colore != 'b' && colore != 'n')
@@ -447,7 +447,8 @@ int main(int argc, char *argv[])
         std::string bestMove;
         if (!commentoScritto.empty())
         {
-            std::string fenDaUsare = (colore == 'b') ? fenPrimaMossa : fenPrimaNero;
+            // Usa la FEN precedente del colore opposto a quello sotto analisi
+            std::string fenDaUsare = (colore == 'b') ? fenPrimaNero : fenPrimaMossa;
             std::cout << commentoScritto << " (delta: " << delta << ")" << std::endl;
             sendCommand("position fen " + fenDaUsare + "\n");
             sendCommand("go depth 15\n");
