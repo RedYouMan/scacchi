@@ -302,16 +302,28 @@ bool Queen::checkMove(string source, string destination)
     string msg = "debug: verifica regole di gioco per la donna\n";
     // devo trovare le coordinate della casa g6
     ChessUtility utility;
-    string casa = "g6";
-    vector<int> Idx_casa = utility.getIndexPuntoDiVista(casa, puntoDiVista);
-    int i = Idx_casa.front();
-    int j = Idx_casa.back();
+    string casa_g6 = "g6", casa_f7 = "f7", casa_h5 = "h5";
+    vector<int> Idx_casa_g6 = utility.getIndexPuntoDiVista(casa_g6, puntoDiVista);
+    int i_g6 = Idx_casa_g6.front();
+    int j_g6 = Idx_casa_g6.back();
+
+    vector<int> Idx_casa_f7 = utility.getIndexPuntoDiVista(casa_f7, puntoDiVista);
+    int i_f7 = Idx_casa_f7.front();
+    int j_f7 = Idx_casa_f7.back();
+
+    vector<int> Idx_casa_h5 = utility.getIndexPuntoDiVista(casa_h5, puntoDiVista);
+    int i_h5 = Idx_casa_h5.front();
+    int j_h5 = Idx_casa_h5.back();
 
     // bug complesso da trovare: patch momentanea
-    if (source == "h5" && destination == "f7" && chessBoard[i][j].getBusySquare() == false)
+    if (source == "h5" && destination == "f7" && chessBoard[i_g6][j_g6].getBusySquare() == false)
     {
         // printf("debug: donna h5->f7\n");
-        return true;
+
+        if (chessBoard[i_f7][j_f7].getBusySquare() == false || (chessBoard[i_f7][j_f7].getBusySquare() == true && (chessBoard[i_f7][j_f7].getChessPiece().getColorPiece() != chessBoard[i_h5][j_h5].getChessPiece().getColorPiece())))
+        {
+            return true;
+        }
     }
     printDebug(msg);
     // printf("debug:source %s, destination %s\n", source.c_str(), destination.c_str());
@@ -625,7 +637,6 @@ bool King::checkMove(string source, string destination)
 }
 bool Knight::checkMove(string source, string destination)
 {
-
     bool status = true;
 
     string msg = "debug: verifica regole di gioco per il cavallo\n";
@@ -668,7 +679,6 @@ bool ChessPiece::checkJump(string source, string destination, bool toPrint)
 }
 bool Pawn::checkMove(string source, string destination)
 {
-
     bool status = true;
     string msg = "debug: verifica regole di gioco per il pedone\n";
     printDebug(msg);
@@ -815,7 +825,6 @@ bool Pawn::checkMove(string source, string destination)
 }
 void Pawn::promotion(string source, string destination, char color)
 {
-
     ChessUtility utility;
     vector<int> Idx_prom = utility.getIndexPuntoDiVista(destination, puntoDiVista);
     int riga = Idx_prom.front();
