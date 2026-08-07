@@ -13,8 +13,9 @@ def main():
         print_usage()
         sys.exit(1)
 
-    LogPartita = "..//registrazioni//" + sys.argv[1]
+    LogPartita = os.path.join("..", "registrazioni", sys.argv[1])
     Colore = sys.argv[2]
+    LogDaPassare = sys.argv[1]
 
     # 1. Preleva la directory di partenza e la memorizza
     start_dir = os.getcwd()
@@ -40,7 +41,7 @@ def main():
         # 3. Lancia aspettando l'eseguibile coachGame.exe con i parametri 
         if os.path.exists(exe_name):
             # print(f"Lancio di {exe_name} con parametri...")
-            subprocess.run([exe_path, LogPartita, Colore])
+            subprocess.run([exe_path, LogDaPassare, Colore])
             # print("Esecuzione di coachGame.exe terminata.")
         else:
             print(f"Errore: {exe_name} non trovato dentro {bin_dir}")

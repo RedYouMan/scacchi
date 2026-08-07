@@ -321,7 +321,7 @@ int main(int argc, char *argv[])
     std::cout << "CoachGame (C) 2026 - Rosario Turco" << std::endl;
     Sleep(5000);
 
-    callTextToSpeech(string("Benvenuto in CoachGame, il tuo assistente per l'analisi delle partite di scacchi. Attendi che venga completata l'analisi e ti verrà fornito un report\n"));
+    callTextToSpeech(string("Benvenuto in CoachGame, il tuo assistente per l'analisi delle partite di scacchi. Attendi che venga completata l'analisi nel file report.txt \n"));
     std::string file_game = "..//registrazioni//" + std::string(argv[1]);
     char colore = tolower(argv[2][0]);
     if (colore != 'b' && colore != 'n')
@@ -384,8 +384,6 @@ int main(int argc, char *argv[])
     std::vector<MossaAnalizzata> game(num_moves);
     std::vector<std::string> reportComments;
     std::vector<std::string> reportBestMoves;
-    std::string fenPrimaMossa;
-    std::string fenPrimaNero;
 
     if (!start())
     {
@@ -393,37 +391,63 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    // CICLO PRINCIPALE DI ANALISI: per ogni coppia di mosse (bianco + nero) della partita
     for (size_t i = 0; i < num_moves; ++i)
     {
+        // ========== FASE 1: IMPOSTAZIONE DATI DELLA MOSSA ==========
         game[i].set_n_mossa(static_cast<int>(i + 1));
         game[i].set_alu_bianco(whiteMoves[i]);
         game[i].set_alu_nero(blackMoves[i]);
-        fenPrimaMossa = FENCurrent;
 
+        // ========== FASE 2: ANALISI MOSSA DEL BIANCO ==========
+        // Calcola la FEN risultante dalla mossa del bianco usando whatIsNewFEN
+        // whatIsNewFEN converte la mossa algebrica in notazione FEN e aggiorna FENCurrent
         game[i].set_stock_bianco(whatIsNewFEN(game[i].get_alu_bianco(), 'b'));
         FENCurrent = game[i].get_stock_bianco();
-        fenPrimaNero = FENCurrent;
+
+        // Comando UCI: posiziona il motore sulla FEN della posizione dopo la mossa del bianco
         sendCommand("position fen " + FENCurrent + "\n");
+
+        // Comando UCI: analizza la posizione a profondità 15
         sendCommand("go depth 15\n");
+
+        // Recupera la valutazione di Stockfish e la salva (diviso 100 per ottenere centesimi di pedone)
         game[i].set_eval_prima_b(evalStock() / 100);
 
+        // ========== FASE 3: ANALISI MOSSA DEL NERO ==========
+        // Calcola la FEN risultante dalla mossa del nero
         game[i].set_stock_nero(whatIsNewFEN(game[i].get_alu_nero(), 'n'));
         FENCurrent = game[i].get_stock_nero();
+
+        // Comando UCI: posiziona il motore sulla FEN della posizione dopo la mossa del nero
         sendCommand("position fen " + FENCurrent + "\n");
+
+        // Comando UCI: analizza la posizione a profondità 15
         sendCommand("go depth 15\n");
+
+        // Recupera la valutazione di Stockfish dopo la mossa del nero
         game[i].set_eval_prima_n(evalStock() / 100);
 
+        // ========== FASE 4: CALCOLO DEL DELTA DI VALUTAZIONE ==========
+        // Determina la valutazione PRIMA della mossa del giocatore analizzato
         double evalBeforeMove = 0.0;
         if (colore == 'b')
         {
+            // Se analizziamo il BIANCO: eval prima = eval dopo il nero della mossa precedente
+            // (oppure 0 se è la prima mossa del bianco)
             evalBeforeMove = (i == 0) ? 0.0 : game[i - 1].get_eval_prima_n();
         }
         else
         {
+            // Se analizziamo il NERO: eval prima = eval dopo il bianco della mossa corrente
             evalBeforeMove = game[i].get_eval_prima_b();
         }
 
+        // Valutazione DOPO la mossa del giocatore analizzato
         double currentEval = (colore == 'b') ? game[i].get_eval_prima_b() : game[i].get_eval_prima_n();
+
+        // Delta = differenza assoluta tra valutazione dopo e valutazione prima
+        // Un delta grande significa che la mossa ha peggiorato molto la posizione
         double delta = std::fabs(currentEval - evalBeforeMove);
         std::string commentoScritto;
 
@@ -432,6 +456,8 @@ int main(int argc, char *argv[])
         // callTextToSpeech(spokenMoveText);
         Sleep(2000);
 
+        // ========== FASE 5: CLASSIFICAZIONE DELLA MOSSA IN BASE AL DELTA ==========
+        // Basato sul delta di valutazione, classifichiamo la qualità della mossa
         if (delta >= 0.5 && delta < 1.0)
         {
             commentoScritto = "Mossa sbagliata: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
@@ -445,10 +471,20 @@ int main(int argc, char *argv[])
             commentoScritto = "Mossa pessima: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
         }
 
-        // zona delicata della best move da ricavare
+        // ========== FASE 6: RICERCA DELLA BEST MOVE ==========
+        // Se la mossa è stata classificata come errata, cerchiamo quale sarebbe stata la miglior mossa
         /*
-          se si analizza colore bianco: la best move va calcolata a partire dalla FEN del nero precedente alla mossa corrente del bianco ritenuta scarsa o dalla FEN di inizio partita se è la prima mossa,
-          se si analizza colore nero: la best move va calcolata a partire dalla FEN prima della mossa corrente nera prendendo la mossa precedente bianca o la prima fen se di inizio partita.
+          LOGICA DELLA FEN DA USARE PER LA BEST MOVE:
+
+          Se si analizza il BIANCO:
+            - La best move del bianco va calcolata PRIMA che il bianco muova
+            - Quindi dalla FEN della posizione precedente (dopo la mossa del nero precedente)
+            - Se è la prima mossa (i==0), usiamo FENStart (posizione iniziale)
+
+          Se si analizza il NERO:
+            - La best move del nero va calcolata PRIMA che il nero muova
+            - Quindi dalla FEN della posizione dopo la mossa del bianco (game[i].get_stock_bianco())
+            - In questo modo il motore analizza da dove il nero stava per muovere
         */
         std::string bestMove;
         if (!commentoScritto.empty())
@@ -456,17 +492,23 @@ int main(int argc, char *argv[])
             std::string fenDaUsare;
             if (colore == 'b')
             {
-                fenDaUsare = (i == 0) ? FENCurrent : game[i - 1].get_stock_nero();
+                // BIANCO: best move dalla posizione precedente (prima della mossa bianca)
+                fenDaUsare = (i == 0) ? FENStart : game[i - 1].get_stock_nero();
             }
             else
             {
-                // Per il nero: best move è calcolata dalla FEN PRIMA della mossa corrente del nero
-                // Se è la prima mossa nera (i==0), partiamo da FENCurrent dopo la prima mossa bianca
+                // NERO: best move dalla posizione dopo la mossa bianca (prima della mossa nera)
                 fenDaUsare = game[i].get_stock_bianco();
             }
             std::cout << commentoScritto << " (delta: " << delta << ")" << std::endl;
-            sendCommand("position fen " + fenDaUsare + "\n");
+
+            // Comando UCI: posiziona il motore sulla FEN dal quale cercare la best move
+            sendCommand("pofenstartsition fen " + fenDaUsare + "\n");
+
+            // Comando UCI: analizza per trovare la miglior mossa
             sendCommand("go depth 15\n");
+
+            // Recupera la best move suggerita dal motore
             bestMove = getOutputMove();
             if (!bestMove.empty() && bestMove != "1")
             {
@@ -474,6 +516,7 @@ int main(int argc, char *argv[])
             }
         }
 
+        // Salva il commento e la best move nei vettori per il report finale
         reportComments.push_back(commentoScritto.empty() ? "Nessun commento" : commentoScritto);
         reportBestMoves.push_back(bestMove.empty() || bestMove == "1" ? "N/A" : bestMove);
     }
