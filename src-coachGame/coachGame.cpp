@@ -1,5 +1,8 @@
 // coachGame.cpp
-
+/*
+ il progetto serve ad analizzare una partita di scacchi e generare un report con commenti e best move suggerite da Stockfish.
+ Autore : Rosario Turco
+*/
 #ifndef _HAS_STD_BYTE
 #define _HAS_STD_BYTE 0
 #endif
@@ -303,6 +306,36 @@ std::string formatStockfishEval(double eval)
     return oss.str();
 }
 
+bool parsePieceLetter(char ch, char &pieceType)
+{
+    switch (std::toupper(static_cast<unsigned char>(ch)))
+    {
+    case 'D':
+        pieceType = 'Q';
+        return true;
+    case 'T':
+        pieceType = 'R';
+        return true;
+    case 'C':
+        pieceType = 'N';
+        return true;
+    case 'A':
+        pieceType = 'B';
+        return true;
+    case 'R':
+        pieceType = 'K';
+        return true;
+    case 'Q':
+    case 'N':
+    case 'B':
+    case 'K':
+        pieceType = static_cast<char>(std::toupper(static_cast<unsigned char>(ch)));
+        return true;
+    default:
+        return false;
+    }
+}
+
 // prototipo locale
 std::string whatIsNewFEN(const std::string &moveInput, char colore);
 
@@ -318,7 +351,7 @@ int main(int argc, char *argv[])
     }
 
     // banner di inizio
-    std::cout << "CoachGame (C) 2026 - Rosario Turco" << std::endl;
+    std::cout << "CoachGame (C) 2026 versione 1.0 - Rosario Turco" << std::endl;
     Sleep(5000);
 
     callTextToSpeech(string("Benvenuto in CoachGame, il tuo assistente per l'analisi delle partite di scacchi. Attendi che venga completata l'analisi nel file report.txt \n"));
@@ -477,14 +510,14 @@ int main(int argc, char *argv[])
           LOGICA DELLA FEN DA USARE PER LA BEST MOVE:
 
           Se si analizza il BIANCO:
-            - La best move del bianco va calcolata PRIMA che il bianco muova
-            - Quindi dalla FEN della posizione precedente (dopo la mossa del nero precedente)
-            - Se è la prima mossa (i==0), usiamo FENStart (posizione iniziale)
+            - La best move del bianco va calcolata PRIMA che il bianco muova.
+            - Quindi si parte dalla FEN della posizione precedente del nero.
+            - Se è la prima mossa (i == 0), si usa FENStart (posizione iniziale).
 
           Se si analizza il NERO:
-            - La best move del nero va calcolata PRIMA che il nero muova
-            - Quindi dalla FEN della posizione dopo la mossa del bianco (game[i].get_stock_bianco())
-            - In questo modo il motore analizza da dove il nero stava per muovere
+            - La best move del nero va calcolata PRIMA che il nero muova.
+            - Quindi si parte dalla FEN della posizione dopo la mossa del bianco corrente.
+            - In pratica, si usa la FEN del bianco precedente (game[i].get_stock_bianco()).
         */
         std::string bestMove;
         if (!commentoScritto.empty())
@@ -492,18 +525,19 @@ int main(int argc, char *argv[])
             std::string fenDaUsare;
             if (colore == 'b')
             {
-                // BIANCO: best move dalla posizione precedente (prima della mossa bianca)
+                // BIANCO: la best move va cercata dalla posizione prima della sua mossa
                 fenDaUsare = (i == 0) ? FENStart : game[i - 1].get_stock_nero();
             }
             else
             {
-                // NERO: best move dalla posizione dopo la mossa bianca (prima della mossa nera)
+                // NERO: la best move va cercata dalla posizione prima della sua mossa,
+                // cioè dopo la mossa del bianco corrente
                 fenDaUsare = game[i].get_stock_bianco();
             }
             std::cout << commentoScritto << " (delta: " << delta << ")" << std::endl;
 
             // Comando UCI: posiziona il motore sulla FEN dal quale cercare la best move
-            sendCommand("pofenstartsition fen " + fenDaUsare + "\n");
+            sendCommand("position fen " + fenDaUsare + "\n");
 
             // Comando UCI: analizza per trovare la miglior mossa
             sendCommand("go depth 15\n");
@@ -568,6 +602,7 @@ std::string whatIsNewFEN(const std::string &moveInput, char colore)
         moveText.erase(newpos);
     }
     FenState state = parseFEN(FENCurrent);
+    state.enPassant = "-";
     bool whiteMove = (colore == 'b');
     std::string move = normalizeMove(moveText);
     std::string FENstock;
@@ -665,10 +700,15 @@ std::string whatIsNewFEN(const std::string &moveInput, char colore)
 
     char pieceType = 'P';
     std::string body = move;
-    if (!body.empty() && std::string("NBRQK").find(std::toupper(static_cast<unsigned char>(body[0]))) != std::string::npos)
+    if (!body.empty())
     {
-        pieceType = static_cast<char>(std::toupper(static_cast<unsigned char>(body[0])));
-        body = body.substr(1);
+        char firstChar = static_cast<char>(body[0]);
+        char parsedPiece = '\0';
+        if (parsePieceLetter(firstChar, parsedPiece))
+        {
+            pieceType = parsedPiece;
+            body = body.substr(1);
+        }
     }
 
     std::string destination = body.substr(body.size() - 2, 2);
