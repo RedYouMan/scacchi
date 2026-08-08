@@ -300,31 +300,7 @@ bool Queen::checkMove(string source, string destination)
 {
     bool status = true;
     string msg = "debug: verifica regole di gioco per la donna\n";
-    // devo trovare le coordinate della casa g6
-    ChessUtility utility;
-    string casa_g6 = "g6", casa_f7 = "f7", casa_h5 = "h5";
-    vector<int> Idx_casa_g6 = utility.getIndexPuntoDiVista(casa_g6, puntoDiVista);
-    int i_g6 = Idx_casa_g6.front();
-    int j_g6 = Idx_casa_g6.back();
 
-    vector<int> Idx_casa_f7 = utility.getIndexPuntoDiVista(casa_f7, puntoDiVista);
-    int i_f7 = Idx_casa_f7.front();
-    int j_f7 = Idx_casa_f7.back();
-
-    vector<int> Idx_casa_h5 = utility.getIndexPuntoDiVista(casa_h5, puntoDiVista);
-    int i_h5 = Idx_casa_h5.front();
-    int j_h5 = Idx_casa_h5.back();
-
-    // bug complesso da trovare: patch momentanea
-    if (source == "h5" && destination == "f7" && chessBoard[i_g6][j_g6].getBusySquare() == false)
-    {
-        // printf("debug: donna h5->f7\n");
-
-        if (chessBoard[i_f7][j_f7].getBusySquare() == false || (chessBoard[i_f7][j_f7].getBusySquare() == true && (chessBoard[i_f7][j_f7].getChessPiece().getColorPiece() != chessBoard[i_h5][j_h5].getChessPiece().getColorPiece())))
-        {
-            return true;
-        }
-    }
     printDebug(msg);
     // printf("debug:source %s, destination %s\n", source.c_str(), destination.c_str());
 
@@ -344,7 +320,6 @@ bool Queen::checkMove(string source, string destination)
         if (checkDiagonale(source, destination, false) == false)
         {
 
-            // printf("debug: diagonale non valida\n");
             return false;
         }
     }
@@ -912,6 +887,7 @@ bool ChessPiece::checkDiagonale(string src, string dest, bool toPrint)
         }
         return false;
     }
+
     // controllo della ostruzione della diagonale
     // torna false se ostruita
     ChessUtility utility;
@@ -939,7 +915,6 @@ bool ChessPiece::checkDiagonale(string src, string dest, bool toPrint)
             // starti e startj sono seconda casa e endi e endj penultima casa
             msg.clear();
             // S/D VERSO IL BASSO
-
             // ovvero la riga 0 è in alto nella matrice e le lettere iniziano a sinistra
             starti = i + 1;
             startj = j + 1;
@@ -949,7 +924,6 @@ bool ChessPiece::checkDiagonale(string src, string dest, bool toPrint)
             incry = +1;
             msg = "debug: caso 1 sinistra destra verso il basso\n";
             printDebug(msg);
-
             for (int x = starti, y = startj; x <= endi, y <= endj; x = x + incrx, y = y + incry)
             {
                 if (chessBoard[x][y].getBusySquare() == true)
@@ -967,7 +941,6 @@ bool ChessPiece::checkDiagonale(string src, string dest, bool toPrint)
         {
             // i > m
             //   Sinistra Destra  alto
-
             starti = i - 1;
             startj = j + 1;
             endi = m + 1;
@@ -977,7 +950,6 @@ bool ChessPiece::checkDiagonale(string src, string dest, bool toPrint)
             msg.clear();
             msg = "debug: caso 2 sinistra destra verso alto \n";
             printDebug(msg);
-
             for (int x = starti, y = startj; x <= endi, y <= endj; x = x + incrx, y = y + incry)
             {
                 if (chessBoard[x][y].getBusySquare() == true)
@@ -1051,7 +1023,8 @@ bool ChessPiece::checkDiagonale(string src, string dest, bool toPrint)
 
             msg = "debug: caso 4 destra sinistra  alto sostituito con sinistra destra basso\n";
             printDebug(msg);
-            for (int x = starti, y = startj; x <= endi, y <= endj; x = x + incrx, y = x + incry)
+
+            for (int x = starti, y = startj; x <= endi, y <= endj; x = x + incrx, y = y + incry)
             {
                 if (chessBoard[x][y].getBusySquare() == true)
                 {

@@ -1,7 +1,7 @@
-Versione: 10.3
+Versione: 10.4
 data: 29 Luglio 2026
 
-La versione 10.3 bug: donna si bloccava su h5-f7.
+La versione 10.4 bug: donna si bloccava su h5-f7.
 La versione 10.1 risolve un piccolo bug di lampeggiamento di un pezzo in h8
 La versione 10.0 aggiunge il coachFEN che, a fronte di una FEN, suggerisce la miglior mossa.
 La versione 9.1 aggiunge la funzionalità validaFEN
