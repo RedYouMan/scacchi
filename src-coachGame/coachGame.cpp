@@ -44,7 +44,9 @@ namespace
     {
         std::string cleaned = move;
         cleaned.erase(std::remove_if(cleaned.begin(), cleaned.end(), [](char c)
-                                     { return c == '+' || c == '#' || c == '!' || c == '?'; }),
+                                     {
+                                         unsigned char uc = static_cast<unsigned char>(c);
+                                         return c == '+' || c == '#' || c == '!' || c == '?' || std::iscntrl(uc); }),
                       cleaned.end());
         return cleaned;
     }
@@ -336,12 +338,33 @@ bool parsePieceLetter(char ch, char &pieceType)
     }
 }
 
-// prototipo locale
+// prototipi locali
+std::string applyMoveToFEN(const std::string &baseFen, const std::string &moveInput, char colore);
 std::string whatIsNewFEN(const std::string &moveInput, char colore);
 
 // FEN globale da inizio gioco
 std::string FENStart = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 0";
 static std::string FENCurrent;
+
+std::string askBestMoveFromPosition(const std::string &fen)
+{
+    sendCommand("stop\n");
+    sendCommand("position fen " + fen + "\n");
+    sendCommand("go depth 15\n");
+
+    std::string bestMove;
+    for (int attempt = 0; attempt < 50; ++attempt)
+    {
+        bestMove = getOutputMove();
+        if (!bestMove.empty() && bestMove != "1")
+            break;
+
+        Sleep(100);
+    }
+
+    return bestMove;
+}
+
 int main(int argc, char *argv[])
 {
     if (argc < 3)
@@ -425,6 +448,7 @@ int main(int argc, char *argv[])
     }
 
     // CICLO PRINCIPALE DI ANALISI: per ogni coppia di mosse (bianco + nero) della partita
+    std::string fenPosizioneCorrente = FENStart;
     for (size_t i = 0; i < num_moves; ++i)
     {
         // ========== FASE 1: IMPOSTAZIONE DATI DELLA MOSSA ==========
@@ -433,13 +457,14 @@ int main(int argc, char *argv[])
         game[i].set_alu_nero(blackMoves[i]);
 
         // ========== FASE 2: ANALISI MOSSA DEL BIANCO ==========
-        // Calcola la FEN risultante dalla mossa del bianco usando whatIsNewFEN
-        // whatIsNewFEN converte la mossa algebrica in notazione FEN e aggiorna FENCurrent
-        game[i].set_stock_bianco(whatIsNewFEN(game[i].get_alu_bianco(), 'b'));
-        FENCurrent = game[i].get_stock_bianco();
+        // La FEN da usare per il bianco è sempre la posizione corrente prima della mossa del bianco.
+        std::string fenPrimaMossaBianco = fenPosizioneCorrente;
+        std::string fenDopoBianco = applyMoveToFEN(fenPrimaMossaBianco, game[i].get_alu_bianco(), 'b');
+        game[i].set_stock_bianco(fenDopoBianco);
+        FENCurrent = fenDopoBianco;
 
         // Comando UCI: posiziona il motore sulla FEN della posizione dopo la mossa del bianco
-        sendCommand("position fen " + FENCurrent + "\n");
+        sendCommand("position fen " + fenDopoBianco + "\n");
 
         // Comando UCI: analizza la posizione a profondità 15
         sendCommand("go depth 15\n");
@@ -448,18 +473,23 @@ int main(int argc, char *argv[])
         game[i].set_eval_prima_b(evalStock() / 100);
 
         // ========== FASE 3: ANALISI MOSSA DEL NERO ==========
-        // Calcola la FEN risultante dalla mossa del nero
-        game[i].set_stock_nero(whatIsNewFEN(game[i].get_alu_nero(), 'n'));
-        FENCurrent = game[i].get_stock_nero();
+        // La FEN da usare per il nero è sempre la posizione dopo la mossa del bianco corrente.
+        std::string fenPrimaMossaNero = fenDopoBianco;
+        std::string fenDopoNero = applyMoveToFEN(fenPrimaMossaNero, game[i].get_alu_nero(), 'n');
+        game[i].set_stock_nero(fenDopoNero);
+        FENCurrent = fenDopoNero;
 
         // Comando UCI: posiziona il motore sulla FEN della posizione dopo la mossa del nero
-        sendCommand("position fen " + FENCurrent + "\n");
+        sendCommand("position fen " + fenDopoNero + "\n");
 
         // Comando UCI: analizza la posizione a profondità 15
         sendCommand("go depth 15\n");
 
         // Recupera la valutazione di Stockfish dopo la mossa del nero
         game[i].set_eval_prima_n(evalStock() / 100);
+
+        // Aggiorniamo la posizione corrente per la prossima iterazione.
+        fenPosizioneCorrente = fenDopoNero;
 
         // ========== FASE 4: CALCOLO DEL DELTA DI VALUTAZIONE ==========
         // Determina la valutazione PRIMA della mossa del giocatore analizzato
@@ -505,48 +535,23 @@ int main(int argc, char *argv[])
         }
 
         // ========== FASE 6: RICERCA DELLA BEST MOVE ==========
-        // Se la mossa è stata classificata come errata, cerchiamo quale sarebbe stata la miglior mossa
-        /*
-          LOGICA DELLA FEN DA USARE PER LA BEST MOVE:
-
-          Se si analizza il BIANCO:
-            - La best move del bianco va calcolata PRIMA che il bianco muova.
-            - Quindi si parte dalla FEN della posizione precedente del nero.
-            - Se è la prima mossa (i == 0), si usa FENStart (posizione iniziale).
-
-          Se si analizza il NERO:
-            - La best move del nero va calcolata PRIMA che il nero muova.
-            - Quindi si parte dalla FEN della posizione dopo la mossa del bianco corrente.
-            - In pratica, si usa la FEN del bianco precedente (game[i].get_stock_bianco()).
-        */
+        // Se la mossa è stata classificata come errata, cerchiamo quale sarebbe stata la miglior mossa.
+        // Per il nero la FEN da usare è la posizione prima della mossa del nero, cioè la FEN dopo il bianco.
         std::string bestMove;
         if (!commentoScritto.empty())
         {
-            std::string fenDaUsare;
-            if (colore == 'b')
-            {
-                // BIANCO: la best move va cercata dalla posizione prima della sua mossa
-                fenDaUsare = (i == 0) ? FENStart : game[i - 1].get_stock_nero();
-            }
-            else
-            {
-                // NERO: la best move va cercata dalla posizione prima della sua mossa,
-                // cioè dopo la mossa del bianco corrente
-                fenDaUsare = game[i].get_stock_bianco();
-            }
+            std::string fenDaUsare = (colore == 'b') ? fenPrimaMossaBianco : fenPrimaMossaNero;
             std::cout << commentoScritto << " (delta: " << delta << ")" << std::endl;
 
-            // Comando UCI: posiziona il motore sulla FEN dal quale cercare la best move
-            sendCommand("position fen " + fenDaUsare + "\n");
-
-            // Comando UCI: analizza per trovare la miglior mossa
-            sendCommand("go depth 15\n");
-
-            // Recupera la best move suggerita dal motore
-            bestMove = getOutputMove();
+            // Richiedi al motore la best move dalla posizione corretta, con il lato giusto da muovere
+            bestMove = askBestMoveFromPosition(fenDaUsare);
             if (!bestMove.empty() && bestMove != "1")
             {
                 std::cout << "Best move suggerita: " << bestMove << std::endl;
+            }
+            else
+            {
+                std::cout << "Nessuna best move suggerita." << std::endl;
             }
         }
 
@@ -585,24 +590,22 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-std::string whatIsNewFEN(const std::string &moveInput, char colore)
+std::string applyMoveToFEN(const std::string &baseFen, const std::string &moveInput, char colore)
 {
-    /* funzione che riceve la mossa di lunghezza 3 o 2  caratteri in input di tipo algebrico italiano e deve restituire la variabile FENstock che vienecalcolata a partire da mossa e FENCurrent. Diciamo che FENCurrent è la FEN della posizione prima della mossa e FENstock è la FEN della posizione dopo la mossa. La funzione deve aggiornare anche la variabile globale FENCurrent con il valore di FENstock. La funzione deve essere implementata in modo da gestire tutte le possibili mosse legali, comprese le promozioni, gli arroccchi e le catture en passant. La funzione deve anche aggiornare correttamente il numero di mosse e il colore del giocatore da muovere.
+    /* funzione che riceve la mossa di lunghezza 3 o 2 caratteri in input di tipo algebrico italiano e deve restituire la FEN della posizione dopo la mossa.
+       La funzione lavora sempre a partire dalla FEN passata in input, evitando dipendenze dalla variabile globale FENCurrent.
      */
-    // se 00 allora è arrocco corto mentre 000 arrocco lungo
-    // char colore vale b o n
-    /* se mossa in input ha alla fine i caratteri + o # vanno esclusi */
     std::string moveText = moveInput;
     std::size_t pos = moveText.find_last_not_of("+#");
 
     if (pos != std::string::npos)
     {
-        // Cancella dal carattere successivo fino alla fine della stringa
         std::size_t newpos = pos + 1;
         moveText.erase(newpos);
     }
-    FenState state = parseFEN(FENCurrent);
-    state.enPassant = "-";
+
+    std::string fenBase = baseFen.empty() ? FENCurrent : baseFen;
+    FenState state = parseFEN(fenBase);
     bool whiteMove = (colore == 'b');
     std::string move = normalizeMove(moveText);
     std::string FENstock;
