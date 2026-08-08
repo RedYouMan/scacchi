@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 {
     if (argc < 4)
     {
-        cout << "fenpos v.2.2 - Usage: fenpos <testo in doppi apici > numero posizione> <fen in doppi apici" << endl;
+        cout << "fenpos v.2.3 - Usage: fenpos <testo in doppi apici > numero posizione> <fen in doppi apici" << endl;
         cout << "fenpos non fa la validazione della fen ma la trasforma in formato rotn" << endl;
         cout << "fenpos viene usato ai fini di Scacchi-it e nel caso m:B diminuisce di 1 il numero di mossa della posizione, incrementato poi da Scacchi-it" << endl;
         return 1;
@@ -190,7 +190,11 @@ int main(int argc, char *argv[])
             casaDaCatturare[1] = '5';
         }
         totaleU += casaDaCatturare;
-        outFile << "U:" << totaleU << endl;
+
+        if (totaleU.length() > 2)
+        {
+            outFile << "U:" << totaleU << endl;
+        }
     }
     if (semimosse > 0)
     {

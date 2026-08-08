@@ -1,6 +1,13 @@
 // coachGame.cpp
 /*
- il progetto serve ad analizzare una partita di scacchi e generare un report con commenti e best move suggerite da Stockfish.
+ il progetto coachGame serve ad analizzare una partita di scacchi e generare un report con commenti e best move suggerite da Stockfish.
+ In input vengono forniti: il nome del file da esaminare e il colore del giocatore da analizzare.
+ L'analisi viene condotta tenendo conto delle posizioni generate da ogni giocatore con la sua mossa e tradotte in FEN.
+ Ad ogni mossa viene presa la valutazione della posizione suggerita da stockfish.
+ Si considerano i valori delta delle valutazioni prima e dopo la mossa.
+Se tale delta supera in valore assoluto
+ delle soglie fissate, si genera un commento e eventualmente la best move consigliata al posto di quella fatta.
+
  Autore : Rosario Turco
 */
 #ifndef _HAS_STD_BYTE

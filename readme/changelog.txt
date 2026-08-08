@@ -1,6 +1,7 @@
-Versione: 10.4
+Versione: 10.5
 data: 29 Luglio 2026
 
+La versione 10.5 fissa un bug su fenposper U quando non si tratta di un enpassant reale
 La versione 10.4 bug: donna si bloccava su h5-f7.
 La versione 10.1 risolve un piccolo bug di lampeggiamento di un pezzo in h8
 La versione 10.0 aggiunge il coachFEN che, a fronte di una FEN, suggerisce la miglior mossa.
