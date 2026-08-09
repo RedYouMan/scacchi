@@ -3,6 +3,8 @@ Manuale completo di Scacchi-it
 Benvenuti a Scacchi-it il gioco degli scacchi in italiano con interfaccia vocale.
 Da oggi anche online e multiplayer. 
 Compatibile con screen reader come NVDA e JAWS
+per Windows 10 e 11
+
 
 Licenza
 *Scacchi-it* is free software released under the MIT License.  
@@ -18,8 +20,7 @@ Versione disponibile
 Questo paragrafo del tutorial segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
 Sul sito è stata pubblicata la versione 10.5 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
-La versione 10.0 aggiunge il coach, come potrete leggere di seguito.
-Questa versione consente anche di validare e incollare una FEN a Scacchi-it e di giocare online in multiplayer , fornendo il file di log del server, rendendone comoda la consultazione.
+
 I cambiamenti sono tracciati nel file changelog.txt nella directory readme e sono frutto delle segnalazioni della Community.
 
 Per verificare la vostra versione ascoltate quando parte il programma oppure digitate Ctrl+H.
@@ -780,20 +781,22 @@ ESISTONO VARI piani tariffari annuali estendendo ad esempio fino a 32 pc una ret
 Consultare il sito ufficiale.
 
 Segnalazioni
-Per segnalazioni di bug o altro potreste inviare via email a rosturco.na@gmail.com la posizione dei pezzi attraverso il file di sospensione della partita, segnalando anche la versione di scacchi che state usando e la descrizione del problema.
-Molto utile sarebbe avere server.log se state online e la selezione della videata della console  scacchi-start  . La videata di scacchi-start si ottiene con CtrlA e CtrlC da incollare, poi, in un file di testo da inviare nella email.
-
+Per segnalazioni di bug o altro scrivete a:
+rosturco.na@gmail.com 
+Inserite nella email la posizione dei pezzi attraverso il file di sospensione della partita, segnalando anche la versione di scacchi che state usando e la descrizione del problema.
+Utile sarebbe mettere nella email anche il contenuto della console scacchi-start, stando su essa e facendo Ctrl-A e Ctrl-C, il tutto da incollare con Ctrl-V nella email.
+Se state giocando in vpn online utile anche il contenuto del file server.log
+Si ringrazia la Community per le sue segnalazioni che hanno crescere il prodotto italiano a favore dei non vedenti.
 
 Conclusioni
 L'applicativo Scacchi-it presentato coglie vari aspetti importanti:
 - permette di giocare a non vedenti e vedenti
-- abbatte le barriere di distanza, digitali e di lingua
+- abbatte le barriere di distanza, e digitali 
 - include in un gioco alla pari vedenti e non vedenti
 - fa fruire, in modo trasparente, un insieme di cose che gli appassionati di scacchi non informatici non saprebbero come utilizzare: chess engine, comandi uci, tuning, openings book, formato pgn e polyglot, reti neurali, algoritmo alpha0 e altro ancora. 
 - è un applicativo open data, che permette l'interazione con esso attraverso la rot notation
 - permette di studiare, analizzare, giocare e dare lezioni di scacchi
 - permette di giocare offline o online
-
 
 Ricorda: L'accessibilità e la sicurezza, in ogni settore e genere, non sono un'opzione ma un diritto.
 Alla prossima
