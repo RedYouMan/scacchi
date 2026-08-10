@@ -10,21 +10,24 @@ La grafica fa uso della libreria sfml-2.6.1 ed eventuali cambi di tale libreria 
 parte sfml, questo perchè le versioni superiori sono state ridisegnate diversamente e diverse funzioni sono state modificate/eliminate oppure è cambiato lo standard di nomenclatura passato a quello Camel.
 
 I sorgenti .cpp e .h sono nelle directory src (contiene l'ultimaversione), src-clock , src-starter , srcfenpos , srcvalidaFEN , src-coach, src-coachGame (non testata ancora) e serverScacchi.
-La versione src è contemporaneamente online e offline, aggiornata alla 9.1. 
+La src è contemporaneamente online e offline, aggiornata alla ultima versione 
 I pacchetti di riferimento sono:
-- scacchi80.7z per i sorgenti
-- scacchiGr.7z su github contenenti solo eseguibili
+- scacchi<versione>.7z per i sorgenti(105 vuol dire ad es. 10.5)
+- scacchiGr.7z su github contenenti solo eseguibili+dll+config
  - scacchiGrxxx.7z su harddisk contenente gli eseguibili corrispondenti a githubIn particolare ora xxx=100 (in github) e 110 (non testata)
 - scacchigr.txt del tutorial va prelevato da scacchi/readme di scacchi80.7z
  
+Il repository scacchi di redyouman contiene tutti i sorgenti allineati all'ultima versione
  Il progetto si completa con serverScacchi, lo starter di scacchi e dell'orologio scacchistico.
-In particolare l'orologio è compilato a parte per usare un header più limitato come tts.h per il sorgente tts.cpp.
+In particolare l'orologio in src-clock è compilato a parte per usare un header più limitato come tts.h per il sorgente tts.cpp.
 
 Per srcfenpos che ha un solo .cpp si utilizza direttamente la compilazione di visual studio code, avente in .vscode i file launch.json e task.json.
 
-Il coach riceve una FEN e collaborando con stockfish, dice la miglior mossa che si può fare sulla posizione espressa dalla FEN e la valutazione posizione.
+Il coach in src-coach riceve una FEN e collaborando con stockfish, dice la miglior mossa che si può fare sulla posizione espressa dalla FEN e la valutazione posizione.
 
-IlcoachGame (da testare) riceve il log della partita fatta, presente in cartella registrazioni, e il colore di chi analizzare. Esso fa unna analisi della partita e traccia su report in registrazioni i suggerimenti.
+IlcoachGame (da testare e non ancora in campo) in src-coachgame riceve il log della partita fatta, presente in cartella registrazioni, e il colore di chi analizzare. Esso fa unna analisi della partita e traccia su report in registrazioni i suggerimenti.
+
+In src-starter si trovano tutti i python script resi exe di lancio degli exe in bin.
 
 github 
  
@@ -274,6 +277,19 @@ git checkout <codice hash della commit>
 poi si fa il branch
 
 Qua sta la documentazione ufficiale di git in italiano, le prime parti sono in italiano le altre sono in inglese: https://git-scm.com/book/it/v2/Per-Iniziare-Il-Controllo-di-Versione
+
+REFACTORING DA FARE:
+Alcuni sorgenti hanno delle funzionalità mai usate e potrebbero essere eliminate:
+- drawBoard
+- engine4.cpp e engine.h
+- utilityy.cpp
+- questions.cpp (da verificare se esistono ancora residui di funzionalità inutili)
+
+I summenzionati sorgenti sono delicati e va il refactoring va fatto con cura.
+
+Coachgame non è ancora stato ultimato sebbene nel repository.
+I coachFEN e coachGame per rapidità di assemblaggiohanno a bordo chess.cpp e chess.h a causa di proto.h e globale.h. Qua si è ritenuto di aggiungere myad.h che simulava la parte di globali di board.cpp
+Si potrebbero eliminare tutte le printDebug per ripulire il progetto.Molto utili in test unitario. Ma si possono anche mantenere.
 
 Conclusione della nota
 Grazie per l'attenzione.

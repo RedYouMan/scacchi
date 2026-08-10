@@ -808,7 +808,7 @@ float evalStock()
                     evaluation = evaluation.substr(start, last - start + 1);
                     try
                     {
-                        eval_value = static_cast<float>(stof(evaluation) * 100.0);
+                        eval_value = static_cast<float>(stof(evaluation));
                     }
                     catch (...)
                     {

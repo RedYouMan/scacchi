@@ -477,7 +477,7 @@ int main(int argc, char *argv[])
         sendCommand("go depth 15\n");
 
         // Recupera la valutazione di Stockfish e la salva (diviso 100 per ottenere centesimi di pedone)
-        game[i].set_eval_prima_b(evalStock() / 100);
+        game[i].set_eval_prima_b(evalStock());
 
         // ========== FASE 3: ANALISI MOSSA DEL NERO ==========
         // La FEN da usare per il nero è sempre la posizione dopo la mossa del bianco corrente.
@@ -493,7 +493,7 @@ int main(int argc, char *argv[])
         sendCommand("go depth 15\n");
 
         // Recupera la valutazione di Stockfish dopo la mossa del nero
-        game[i].set_eval_prima_n(evalStock() / 100);
+        game[i].set_eval_prima_n(evalStock());
 
         // Aggiorniamo la posizione corrente per la prossima iterazione.
         fenPosizioneCorrente = fenDopoNero;
