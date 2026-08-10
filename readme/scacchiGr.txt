@@ -17,7 +17,7 @@ Si è scelto di usare un file di testo, al posto di un professionale manuale in 
 Questo per il semplice motivo che un file di testo è il più accessibile possibile per un non vedente su browser con un screen reader. 
 
 Versione disponibile 
-Questo paragrafo del tutorial segnalerà sempre la presenza di eventuali nuove versioni migliorative.
+Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
 Sul sito è stata pubblicata la versione 10.5 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
@@ -30,7 +30,9 @@ Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima version
 Introduzione al programma Scacchi-it 
 Esso è un progetto italiano gratuito, , una piattaforma completa offline /online, ascoltabile con sintesi vocale, consigliato ai non vedenti, ma con grafica per consentire di giocare anche alle persone vedenti.
 
-Il non vedente, tramite lo screen reader NVDA, potrà utilizzare il computer e il programma, ascoltando anche i messaggi "verbosi" della console.
+Il software, una volta scompattato con unzip,  è leggero, e con i suoi 90 Mbyte può essere contenuto anche su una pendrive e giocato direttamente da essa. 
+
+Il non vedente, tramite uno screen reader come NVDA, oJAWS potrà utilizzare il computer e Scacchi-it ascoltando anche i messaggi "verbosi" della console.
 
 Come si vedrà Scacchi-it è soprattutto una piattaforma di studio e analisi, da usare a casa, oppure adatto a partite dove si attende la risposta di un amico oppure per lezioni di scacchi, o per risolvere dei problemi (puzzle) o per giocare contro il computer e infine per giocare anche online.
 Questa caratteristica sottolinea la modalità non agonistica del programma e, quindi, non necessita di orologio per la misurazione del tempo per le risposte di ogni giocatore.
@@ -38,10 +40,10 @@ Tuttavia la presenza dell'orologio nel pacchetto ha solo il significato di "alle
 
 Scacchi-it consente di:
 1 - navigare, con frecce e mouse, sulla scacchiera dando informazioni di pezzi e case vuote
-2 - scegliere il lato o il punto di vista da cui giocare
+2 - scegliere il lato della scacchiera o il punto di vista da cui giocare
 3 - inserire le mosse del Bianco e del Nero
 4 - controllare il diritto di mossa (Bianco o Nero)
-5 - registrare o meno la partita con notazione algebrica scacchistica (CtrlW per registrare)
+5 - registrare o meno la partita con notazione algebrica scacchistica italiana (CtrlW per registrare)
 6 - sospendere la partita per riprenderla quando si vuole (Ctrl-S)
 7 - riprendere una partita sospesa, continuando a registrare, se prima lo stavamo facendo. Inoltre la ripresa di una partita non registrata col computer, fa continuare a giocare con quest'ultimo (CtrlR)
 8 - caricare dei problemi scacchistici da risolvere (CtrlP)
@@ -335,18 +337,19 @@ N:Rf7;Dg1;
 M:N
 P:34;
 
-- T: descrive la posizione che verrà letta anche con sintesi vocale 
+- T: descrive la posizione , il tema o anche consigli tecnici, e verrà letta con sintesi vocale 
 - V: descrive da che punto di vista si vuole che il programma carichi la posizione (Bianco o Nero usando B; o N;) 
-- B: descrive l'elenco separato da punti e virgole dei pezzi con notazione algebrica italiana (es: Ag5;Re2;)
+- B: descrive l'elenco separato da punti e virgole dei pezzi con notazione algebrica italiana e lo stato degli arrocchi (es: Ag5;Re2;)
 - N: descrive l'insieme dei pezzi neri come sopra
 - M: descrive a chi tocca la mossa (Bianco o Nero usando B o N)
 - P: descrive il numero di mossa della posizione
 
-P nella ROTN che serve a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se viene passato ad un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N). 
+P nella ROTN, delle estensioni browser, che serve a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se viene passato (come con fenpos) ad un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N). 
 Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
-Questa diminuzione di 1 deve avvenire sia se compilate a mano il file ROTN da dare a Scacchi-it, sia automaticamente avviene se usate il comando incolla-fen che si poggia su fenpos.
 
-Ad esempio, il programma fenpos, che serve per tradurre la FEN a Scacchi-it, diminuisce di 1 se M:B, altrimenti lascia il valore trovato.
+Questa diminuzione di 1 deve avvenire solo se compilate a mano il file ROTN da dare a Scacchi-it, mentre automaticamente avviene se usate il comando incolla-fen che si poggia su fenpos.
+
+Infatti il programma fenpos, che serve per tradurre la FEN a Scacchi-it, diminuisce di 1 se M:B, altrimenti lascia il valore trovato.
 
 I descrittori sono obbligatori e con ordine fisso, ognuno con una propria riga. Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella lista di posizioni algebriche dei pezzi.
 
@@ -356,11 +359,17 @@ Il programma Scacchi-it usa solo le lettere dei pezzi in italiano, ma la rot not
 Dopo la lettera iniziale vi è la casella che indica dove va posizionato il pezzo.
 
 Descrittore opzionale U: se presente indica la lista di case, non separate da ';', dei pedoni che possono fare una cattura enpassant e la casa del pedone sotto attacco es. U:c4b4; altro esempio U:d4f4e4;
-Il descrittore serve negli automatismi di sospensione di una partita e  la sua ripresa. In posizioni scritte a mano,  è responsabilità di chi scrive osservare l'ordine esatto e la sintassi del comando.
+L'ultima è la casa del pedone che può essere catturato con enpassant, mentre le precedenti sono le case dei pedoni avversari affiancati.
+
+Il descrittore U serve negli automatismi di sospensione di una partita e  la sua ripresa, per segnalare con sintesi vocale la presenza di enpassant. In posizioni scritte a mano,  è responsabilità di chi scrive osservare l'ordine esatto e la sintassi del comando.
+
+In una FEN quando si muove un pedone di due passi (es. 1.e4)si valorizza il campo 4 enpassant (es. e3), questo anche se non ci sono pedoni avversari che possano sfruttarlo. 
+Però in riferimento ad U, che rappresenta la possibilità reale di catturare un pedone con enpassant, se non ci sono pedoni affiancati, uno o due, U non verrà segnato.
+Questo avviene, ad esempio, in fenpos.
 
 Descrittore opzionale Z: indica il numero di semimosse presenti nella fen (campo 5)
 
-Descrittori riservati ai produttori software:F, K, L, C, E.
+Descrittori riservati ai produttori software:F, K, L, C, E. Questi sono utilizzati per sospensione e ripresa della partita e sono competenza dell'applicativo di scacchi.
 
 La sintesi vocale nell'applicativo scacchistico deve leggere: obbligatoriamente T, M, P, U, Z; mentre per i pezzi deve leggere almeno: le posizioni dei re e opzionalmente, a proprio giudizio, le situazioni degli arrocchi o segnalarle su console. 
 
