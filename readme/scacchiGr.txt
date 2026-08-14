@@ -417,9 +417,11 @@ P:34;
 un ultima osservazione: la vera forza di Scacchi-it e ROTN non è evidente. 
 Mi permette di piazzare qualsiasi posizione in 3 secondi e testare: matto, stallo, arrocco, en passant e qualsiasi altra posizione complicata, senza dover giocare 40 mosse ogni volta.
 
+Questo diventa anche un vantaggio per gli istruttori di scacchi: la rapidità con cui creare una posizione didattica o un database di posizioni è elevata, con basso sforzo cognitivo.
+
 Come si nota la fen ha anche altre due barriere invisibili all'accessibilità:
 - la lingua: K, k, Q, q, B, b etc.
-- la non immediata comprensione: occorre farsi dei calcoli per capire la posizione dei pezzi
+- la non immediata comprensione: occorre farsi dei calcoli per capire la posizione dei pezzi(sforzo cognitivo)
 
 Scacchi-it , ideato per vedenti e non vedenti, nelle sospensioni si segna l'enpassant per comunicare la possibilità di esso alla ripresa, ma solo se esiste tale possibilità, diversamente dallo standard fen.
 
