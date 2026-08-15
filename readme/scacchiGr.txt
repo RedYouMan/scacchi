@@ -5,12 +5,10 @@ Da oggi anche online e multiplayer.
 Compatibile con screen reader come NVDA e JAWS
 per Windows 10 e 11
 
-
 Licenza
 *Scacchi-it* is free software released under the MIT License.  
 *Copyright © 2025 Rosario Turco* - Version 9.0  
 You may use, copy, and modify it freely, provided that this copyright notice is retained.
-
 
 Scelta file di testo per il manuale
 Si è scelto di usare un file di testo, al posto di un professionale manuale in pdf. 
@@ -82,6 +80,15 @@ Scacchi-it consente di:
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
 Tutte le possibilità di sopra, dipendono dalla vostra conoscenza degli strumenti a disposizione per poterlo fare, quindi è fondamentale sentire sia questo tutorial che l'help.
+
+Per interagire con Scacchi-it si procede su due elementi:
+- scacchiera grafica, realizzata con SFML (Simple & Fast Multimedia Library)
+- console
+
+La console permette, in modo semplice ed efficace, varie cose:
+- lancio dei comandi iniziali
+- inserimento dati: spostando il focus con Alt-Tab da scacchiera a console e viceversa
+- tracciamento di situazioni particolari verificatesi
 
 Download e Windows Defender 
 Da browser sul link https://redyouman.github.io/blog/2025/07/27/downloads.html
