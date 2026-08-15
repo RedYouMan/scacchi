@@ -351,10 +351,11 @@ P:34;
 - M: descrive a chi tocca la mossa (Bianco o Nero usando B o N)
 - P: descrive il numero di mossa della posizione
 
-P nella ROTN, delle estensioni browser, che serve a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se viene passato (come con fenpos) ad un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N). 
+P nella ROTN, delle estensioni browser, che serve a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se la FEN viene passata a fenpos) per un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N).
+ 
 Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
 
-Questa diminuzione di 1 deve avvenire solo se compilate a mano il file ROTN da dare a Scacchi-it, mentre automaticamente avviene se usate il comando incolla-fen che si poggia su fenpos.
+Questa diminuzione di 1 deve avvenire solo se la ROTN la copiate dalle estensioni browser o compilate a mano il file ROTN da dare a Scacchi-it, mentre la diminuzione, automaticamente, avviene se usate il comando incolla-fen che si poggia su fenpos.
 
 Infatti il programma fenpos, che serve per tradurre la FEN a Scacchi-it, diminuisce di 1 se M:B, altrimenti lascia il valore trovato.
 
@@ -371,8 +372,9 @@ L'ultima è la casa del pedone che può essere catturato con enpassant, mentre l
 Il descrittore U serve negli automatismi di sospensione di una partita e  la sua ripresa, per segnalare con sintesi vocale la presenza di enpassant. In posizioni scritte a mano,  è responsabilità di chi scrive osservare l'ordine esatto e la sintassi del comando.
 
 In una FEN quando si muove un pedone di due passi (es. 1.e4)si valorizza il campo 4 enpassant (es. e3), questo anche se non ci sono pedoni avversari che possano sfruttarlo. 
-Però in riferimento ad U, che rappresenta la possibilità reale di catturare un pedone con enpassant, se non ci sono pedoni affiancati, uno o due, U non verrà segnato.
-Questo avviene, ad esempio, in fenpos.
+Però in riferimento ad U, che rappresenta la possibilità reale alla ripresa di partita, dopo la sospensione elettronica, di catturare un pedone con enpassant, se non ci sono pedoni affiancati, uno o due, U alla sospensione non verrà segnato.
+Ricordiamo, infatti, che l'obiettivo di U alla ripresa della partita è di segnalare con sintesi vocale se esiste un pedone che si può catturare con enpassant.
+Per cui se una FEN presenta marcato il campo enpassant ma non ci sono pedoni che lo possano sfruttare, fenpos  o incolla-FEN non lo segnaleranno nella ROTN.
 
 Descrittore opzionale Z: indica il numero di semimosse presenti nella fen (campo 5)
 
@@ -433,10 +435,10 @@ Scacchi-it , ideato per vedenti e non vedenti, nelle sospensioni si segna l'enpa
 
 Scacchi-it, inoltre,  marca la situazione degli arrocchi validi e segnala il valore delle semimosse per la regola delle 50 mosse.
 
-In un ebook per non vedenti se ci sono immagini, esse non sono fruibili dal non vedente; per cui, generalmente, viene descritta la posizione con la notazione algebrica, che ha il vantaggio di far comprendere la posizione dei pezzi rapidamente. 
-La ROTN fa un passo ulteriore, consentendo l'ascolto e l'immediato utilizzo su scacchiera e non solo.
-
-Se in un ebook viene mostrata la ROTN, col copia e incolla si può rapidamente trasferirla in un file e caricarla in Scacchi-it. In tal modo si può ascoltare, con sintesi vocale, il testo e navigare sulla scacchiera esplorando la posizione, apprezzando meglio quanto descritto nel ebook.
+In un ebook se ci sono immagini, esse non sono fruibili dal non vedente; per cui, generalmente, viene descritta la posizione con la notazione algebrica, che ha il vantaggio di far comprendere la posizione dei pezzi rapidamente. 
+La ROTN fa un passo ulteriore,. 
+Se in un ebook, oltre alla immagine, viene mostrata la ROTN, col copia e incolla un non vedente può rapidamente trasferirla in un file e caricarla in Scacchi-it. In tal modo si può ascoltare, con sintesi vocale, il testo e navigare sulla scacchiera esplorando la posizione, apprezzando meglio quanto descritto nel ebook.
+Questo migliorerebbe anche le possibilità editoriali di un libro in versione e-book allargando il proprio pubblico anche tra i non vedenti.
 
 La ROTN, inoltre, rende open data l'applicativo Scacchi-it in modo bidirezionale: consente di sospendere una partita e di riprenderla più tardi, come pure scrivere o copiare problemi e caricarli per la loro soluzione.
 Per cui la giusta definizione della rot notation è che essa estende la notazione algebrica e rende open data un applicativo di scacchi, consentendo di interagire con esso in due direzioni e aggiungendo la sintesi vocale e i vantaggi di una immagine.
