@@ -1,13 +1,13 @@
 Manuale completo di Scacchi-it
 
 Benvenuti a Scacchi-it il gioco degli scacchi in italiano con interfaccia vocale.
-Da oggi anche online e multiplayer. 
+Da oggi anche online e multiplayers. 
 Compatibile con screen reader come NVDA e JAWS
 per Windows 10 e 11
 
 Licenza
 *Scacchi-it* is free software released under the MIT License.  
-*Copyright © 2025 Rosario Turco* - Version 9.0  
+*Copyright © 2025 Rosario Turco* 
 You may use, copy, and modify it freely, provided that this copyright notice is retained.
 
 Scelta file di testo per il manuale
