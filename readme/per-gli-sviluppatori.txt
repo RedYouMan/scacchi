@@ -14,10 +14,10 @@ La src è contemporaneamente online e offline, aggiornata alla ultima versione
 
 Github  
 Sono sotto github varie parti:
-- quelle per il rilascio sotto RedYouMan.github.io/_posts\repo che  contiene il pacchetto scacchiGr.7z ottenuto dall'impacchettamento della cartella  scacchi-it, , sotto Desktop/progc/scacchi-it, che serve per il rilascio rinominato come scacchiGr.7z
+- quelle per il rilascio della build sotto RedYouMan.github.io/_posts\repo che  contiene il pacchetto scacchiGr.7z ottenuto dall'impacchettamento della cartella  scacchi-it, , sotto Desktop/progc/scacchi-it, che serve per il rilascio rinominato come scacchiGr.7z
 - quelle per il rilascio del manuale In RedYouMan.github.io\_posts\tutorials dove si mette scachiGr.txt tratto e modificato nel repository redyouman.github.io\scacchi\readme 
-- quelle per il rilascio in Redyouman.github.io\_posts\estensioni le estenzioni browser per firefox e chrome come zip e un manuale.
--quelle per il versioning  e build, sotto RedYouMan.github.io\scacchi 
+- quelle per il rilascio delle estensioni browser in Redyouman.github.io\_posts\estensioni, contenente le estensioni per firefox e chrome come zip e un manuale.
+-quelle per il versioning  dei sorgenti e build, sotto RedYouMan.github.io\scacchi 
 
 Sorgenti su Github
 Il repository scacchi di redyouman contiene tutti i sorgenti allineati all'ultima versionecon configurazione e manuale
