@@ -18,7 +18,7 @@ Il gioco sollecita tutte le componenti cognitive della persona, migliorando l'ut
 Scacchi-it è orientato a:
 - non vedenti e vedenti
 - Windows 10 o superiori 
-- lingua italiana al momento
+- lingua italiana 
 E' costituito da tre parti:
 - motore grafico di navigazione
 - motore di controllo regole
