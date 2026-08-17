@@ -351,7 +351,7 @@ P:34;
 - M: descrive a chi tocca la mossa (Bianco o Nero usando B o N)
 - P: descrive il numero di mossa della posizione
 
-P nella ROTN, delle estensioni browser, che serve a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se la FEN viene passata a fenpos) per un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N).
+P nella ROTN, delle estensioni browser, che servono a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se la FEN viene passata a fenpos) per un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N).
  
 Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
 
@@ -361,8 +361,9 @@ Infatti il programma fenpos, che serve per tradurre la FEN a Scacchi-it, diminui
 
 I descrittori sono obbligatori e con ordine fisso, ognuno con una propria riga. Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella lista di posizioni algebriche dei pezzi.
 
-Per i casi ambigui di arrocco, come ad esempio di torre o re mossi in precedenza e poi ritornati nella posizione di origine o altre situazioni ambigue, si segnala l'arrocco non valido in B: o N: nella lista di pezzi: il valore NS (No Short Castle) e NL (No Long Castle). I due valori possono essere presenti uno solo, o entrambi separati da ';'. 
+Con la ROTN scritta a mano, per i casi ambigui di arrocco, come ad esempio di torre o re mossi in precedenza e poi ritornati nella posizione di origine o altre situazioni ambigue, si segnala l'arrocco non valido in B: o N: nella lista di pezzi: il valore NS (No Short Castle) e NL (No Long Castle). I due valori possono essere presenti uno solo, o entrambi separati da ';'. 
 
+Per la FEN, tradotta in ROTN da fenpos, lo stato degli arrocchi viene riportato con NS e/o NL.
 Il programma Scacchi-it usa solo le lettere dei pezzi in italiano, ma la rot notation può essere generalizzata e usare anche le lettere inglesi dei pezzi. e al posto del descrittore italiano B: il corrispondente inglese W: e analogamente per il descrittore italiano N: sostituito con quello inglese B:.
 Dopo la lettera iniziale vi è la casella che indica dove va posizionato il pezzo.
 
@@ -372,7 +373,7 @@ L'ultima è la casa del pedone che può essere catturato con enpassant, mentre l
 Il descrittore U serve negli automatismi di sospensione di una partita e  la sua ripresa, per segnalare con sintesi vocale la presenza di enpassant. In posizioni scritte a mano,  è responsabilità di chi scrive osservare l'ordine esatto e la sintassi del comando.
 
 In una FEN quando si muove un pedone di due passi (es. 1.e4)si valorizza il campo 4 enpassant (es. e3), questo anche se non ci sono pedoni avversari che possano sfruttarlo. 
-Però in riferimento ad U, che rappresenta la possibilità reale alla ripresa di partita, dopo la sospensione elettronica, di catturare un pedone con enpassant, se non ci sono pedoni affiancati, uno o due, U alla sospensione non verrà segnato.
+Però in riferimento ad U, che rappresenta la possibilità reale alla ripresa di partita, dopo la sospensione elettronica, di catturare un pedone con enpassant, se non ci sono pedoni avversari affiancati, uno o due, U alla sospensione non verrà segnato.
 Ricordiamo, infatti, che l'obiettivo di U alla ripresa della partita è di segnalare con sintesi vocale se esiste un pedone che si può catturare con enpassant.
 Per cui se una FEN presenta marcato il campo enpassant ma non ci sono pedoni che lo possano sfruttare, fenpos  o incolla-FEN non lo segnaleranno nella ROTN.
 
