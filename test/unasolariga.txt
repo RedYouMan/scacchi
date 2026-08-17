@@ -1,7 +1,0 @@
-T: Ripresa file in corso
-V:B
-B:Dh5;Ac4;Pe4;Pa2;Pb2;Pc2;Pd2;Pf2;Pg2;Ph2;Ta1;Cb1;Ac1;Re1;Cg1;Th1;
-N:Ta8;Cb8;Ac8;Dd8;Re8;Th8;Pa7;Pb7;Pc7;Pd7;Pf7;Pg7;Ph7;Cf6;Ac5;Pe5;
-M:B
-P:3
-F:
