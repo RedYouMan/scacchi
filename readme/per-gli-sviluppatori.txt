@@ -37,6 +37,9 @@ IlcoachGame (da testare e non ancora in campo) in src-coachgame riceve il log de
 
 In src-starter si trovano tutti i python script resi exe di lancio degli exe in bin.
 
+La cartella Test contiene file di test da caricare sotto cartella sospensioni  o sotto problemi. La differenza tra le due cartelle è che la prima dopo il caricamento con CtrlR cancella il file se non lockato da un editor, la seonda cartella non cancella i file e, quindi, adatta ia problemi o puzzle che si vogliono risolvere in qualche giorno.
+Non tutti i test hanno il T: col tema, spesso nati rapidamente per il test.
+
 Ambiente di sviluppo
 L'ambiente di sviluppo è basato su librerie Windows di Visual Studio 2022 col suo sdk e compilazione basata su cmake (CMAKELISTS.txt) e C17.
 Inoltre nell'ambiente è installato python 3.13.
