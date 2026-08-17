@@ -5,11 +5,14 @@ Rosario Turco
 Il progetto Scacchi-it è un progetto italiano,  per piattaforma Windows, nato per realizzare un gioco adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
 Tuttavia si è introdotta anche una grafica riproducente la scacchiera, in modo che i familiari possono aiutare e giocare col non vedente.
 Sul sito RedYouMan è presentato il gruppo NV&V e le loro finalità. 
+Per le funzionalità leggere readme.md
+Il progetto ora è totalmente open source.
+Per come contribuire leggere contributing.md
 
-La grafica fa uso della libreria sfml-2.6.1 ed eventuali cambi di tale libreria necessiterebbero di porting della
+In Scacchi-it la grafica fa uso della libreria sfml-2.6.1 ed eventuali cambi di tale libreria necessiterebbero di porting della
 parte sfml, questo perchè le versioni superiori sono state ridisegnate diversamente e diverse funzioni sono state modificate/eliminate oppure è cambiato lo standard di nomenclatura passato a quello Camel.
 
-I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , srcfenpos , srcvalidaFEN , src-coach, src-coachGame (non testata ancora) e serverScacchi.
+I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , srcfenpos , srcvalidaFEN , src-coach, src-coachGame (non testata ancora), src-estensioni e serverScacchi.
 La src è contemporaneamente online e offline, aggiornata alla ultima versione 
 
 Github  

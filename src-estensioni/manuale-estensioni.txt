@@ -1,0 +1,58 @@
+
+### *MANUALE FEN TO ROTN v1.3.0*
+
+#### _1. COMPATIBILITÀ E VERSIONI_
+Questa estensione funziona con:  
+_Browser supportati_: Mozilla Firefox versione 109 o successiva. Google Chrome versione 88 o successiva. Funziona anche su browser basati su Chromium come Edge e Brave.  
+_Lettore schermo_: Testato con NVDA. Funziona anche con JAWS.  
+_Sistema operativo_: Windows 10, Windows 11, Linux, MacOS  
+_Versione estensione_: 1.3.0  
+_Autore_: Rosario Turco
+
+#### _2. A COSA SERVE_
+Questa estensione cerca la prima FEN presente nella pagina, la converte in notazione ROTN.  
+Poi ti legge tutte le info con voce italiana e ti copia negli appunti la stringa pronta per incollarla.
+
+#### _3. INSTALLAZIONE FIREFOX_
+Passo 1: Scarica il file `fen-to-rotn-firefox.7z`  
+Passo 2: Estrai il file con 7zip o WinRAR. Otterrai `fen-to-rotn-firefox.xpi`  
+Passo 3: Apri Firefox  
+Passo 4: Vai su `about:addons`  
+Passo 5: Premi `Ctrl + O` e scegli `Installa componente aggiuntivo da file`  
+Passo 6: Seleziona il file `fen-to-rotn-firefox.xpi` appena estratto  
+Passo 7: Conferma l'installazione
+
+ATTENZIONE: Firefox ad inizio 2027 utilizzerà la versione manifest 3 abbandonando la MV2. Il che vorrà dire che dovrete utilizzare per firefox quella di chrome che già è a MV3.
+
+#### _4. INSTALLAZIONE CHROME / EDGE / BRAVE_
+Passo 1: Scarica il file `fen-to-rotn-chrome.7z`  
+Passo 2: Estrai il file con 7zip o WinRAR in una cartella. Es: `C:\Estensioni\fen-to-rotn-chrome`  
+Passo 3: Apri Chrome e vai su `chrome://extensions`  
+Passo 4: Attiva `Modalità sviluppatore` in alto a destra  
+Passo 5: Premi `Carica estensione non pacchettizzata` e seleziona la cartella `fen-to-rotn-chrome`  
+Passo 6: Importante: Non eliminare la cartella dopo l'installazione
+
+#### _5. COME SI USA_
+Passo 1: Vai su una pagina web contenente una FEN. Es: Lichess, Chess.com  
+Passo 2: Premi `Shift + F10` per aprire il menu contestuale  
+Passo 3: Scendi con freccia giù su `Converti FEN in ROTN - Rosario Turco` e premi `Invio`  
+Passo 4: L'estensione legge tutte le info e copia la ROTN negli appunti  
+Passo 5: Premi `ESC` per interrompere la lettura  
+Passo 6: Incolla con `Ctrl + V` su Notepad
+
+#### _6. COSA FA IL ROTN_
+L'estensione legge: Lato che muove, Re Bianco, Re Nero, Arrocchi consentiti/non consentiti, Numero mossa, Chi muove, Enpassant se presente, Semimosse se > 0, Elenco completo pezzi Bianchi e Neri.  
+E copia negli appunti la stringa in formato ROTN.
+
+#### _7. PROBLEMI COMUNI_
+_Problema_: Non parla  
+_Soluzione_: Controlla volume e che il sintetizzatore vocale di Windows sia attivo
+
+_Problema_: Non copia negli appunti  
+_Soluzione_: Ricarica la pagina e riprova
+
+_Problema_: Dice "Nessuna FEN trovata nella pagina"  
+_Soluzione_: Verifica che nella pagina ci sia una FEN valida
+
+_Problema_: Chrome dice "manifest non valido"  
+_Soluzione_: Hai selezionato il file .7z. Devi selezionare la cartella `fen-to-rotn-chrome` decompressa
