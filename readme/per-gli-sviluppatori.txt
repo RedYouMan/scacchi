@@ -139,9 +139,9 @@ Tutto questo viene esaminato nella funzione cheScacco() in questions.cpp. Questi
 Gli arrocchi sono settati validi alla disposizione iniziale dei pezzi, Poi se si muove la torre, viene posto afalso la validità dell'arrocco relativo (setValid000 o setValid00) attraverso la chiamata del setBusySquare a false sulla casella. 
 Altro momento di invalidazione di arrocco ,nel checkMove del re, se il re viene mosso dalla posizione iniziale si invalidano entrambi gli arrocchi.
 
-Per i caricamenti delle posizioni a partire da un file ROTN scritto a mano potrebbe essere necessario per gli arrocchi ambigui tipo che un re o una torre mosso dalla casa iniziale sono poi ritornati al posto iniziale, in tal caso si marca la lista dei pezzi bianchi o neri , separati da ';',con NS (No Short Castle) e/o con NL (No Long Castle).
+Per i caricamenti delle posizioni a partire da un file ROTN scritto a mano potrebbe essere necessario per gli arrocchi ambigui tipo che un re o una torre mosso dalla casa iniziale sono poi ritornati al posto iniziale, in tal caso si marca la lista dei pezzi bianchi o neri , separati da ';',con NS (No Short Castle) e/o con NL (No Long Castle) (vedi gesfile.cpp).
 
-Se si riceve una FEN viene sempre aggiunto NS E/o NL in base allo stato del campo 3 della FEN.
+Se si riceve una FEN viene sempre aggiunto NS E/o NL, tramite fenpos.cpp, in base allo stato del campo 3 della FEN.
 
 Quando si cambia il punto di vista, lo stato degli arrocchi deve essere trasferito all'altro lato (vedi nav.cpp quando si fa cntrlG)
 
