@@ -524,6 +524,8 @@ void navOnBoard(char who)
 
                         // non deve cambiare numero di mossa e chi gioca
                         // prelevo stato degli arrocchi
+                        // inizialmente sopra è il nero e sotto il bianco per iniziare a comprendere ma tutto ciò è dipendente solo da chi sta sopra e chi sotto all'atto del ctrlG
+
                         bool sopra00 = chessBoard[0][7].getValid00();
                         bool sopra000 = chessBoard[0][0].getValid000();
                         bool sotto00 = chessBoard[7][7].getValid00();
