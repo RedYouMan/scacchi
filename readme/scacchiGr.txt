@@ -351,6 +351,9 @@ P:34;
 - M: descrive a chi tocca la mossa (Bianco o Nero usando B o N)
 - P: descrive il numero di mossa della posizione
 
+I descrittori di sopra sono obbligatori e con ordine fisso, ognuno con una propria riga obbligatoriamente. 
+Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella lista di posizioni algebriche dei pezzi per separare i valori di essi.
+
 P nella ROTN, delle estensioni browser, che servono a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se la FEN viene passata a fenpos) per un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N).
  
 Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
@@ -358,8 +361,6 @@ Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il B
 Questa diminuzione di 1 deve avvenire solo se la ROTN la copiate dalle estensioni browser o compilate a mano il file ROTN da dare a Scacchi-it, mentre la diminuzione, automaticamente, avviene se usate il comando incolla-fen che si poggia su fenpos.
 
 Infatti il programma fenpos, che serve per tradurre la FEN a Scacchi-it, diminuisce di 1 se M:B, altrimenti lascia il valore trovato.
-
-I descrittori sono obbligatori e con ordine fisso, ognuno con una propria riga. Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella lista di posizioni algebriche dei pezzi.
 
 Con la ROTN scritta a mano, per i casi ambigui di arrocco, come ad esempio di torre o re mossi in precedenza e poi ritornati nella posizione di origine o altre situazioni ambigue, si segnala l'arrocco non valido in B: o N: nella lista di pezzi: il valore NS (No Short Castle) e NL (No Long Castle). I due valori possono essere presenti uno solo, o entrambi separati da ';'. 
 
