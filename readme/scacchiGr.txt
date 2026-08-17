@@ -354,6 +354,8 @@ P:34;
 I descrittori di sopra sono obbligatori e con ordine fisso, ognuno con una propria riga obbligatoriamente. 
 Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella lista di posizioni algebriche dei pezzi per separare i valori di essi.
 
+La regola "ogni descrittore una riga" non è per un fatto informatico ma per la semplice psicologia che un facile copia e incolla aumenta l'autostima del non vedente.
+ 
 P nella ROTN, delle estensioni browser, che servono a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se la FEN viene passata a fenpos) per un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N).
  
 Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
