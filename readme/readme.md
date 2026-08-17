@@ -1,14 +1,5 @@
-README
 
-English
-Rosario Turco is known for developing accessible games and computer tools, including graphical and command-line games designed for the visually impaired. His work falls within the context of digital accessibility, providing freely downloadable resources. 
 
-Italiano
-Rosario Turcoè noto per lo sviluppo di giochi e strumenti informatici accessibili, inclusi giochi grafici e a linea di comando pensati per non vedenti. 
-I suoi lavori si inseriscono nel contesto dell'accessibilità digitale, offrendo risorse scaricabili gratuitamente.
-Rosario Turco è un ingegnere italiano, divulgatore scientifico e ricercatore indipendente: in rete si possono trovare molti suoi saggi e articoli su Teoria dei Numeri, Matematica applicata, crittografia e Fisica Teorica.
-
-Scacchi-it 
 Scacchi-it è un progetto italiano, sviluppato da Rosario Turco, una piattaforma online e offline gratuita. 
 E' nato per realizzare un gioco adatto e fruibile dai non vedenti, che devono principalmente ascoltare per  giocare, attraverso uno screen reader come NVDA (open source). 
 Tuttavia si è introdotta anche una grafica riproducente la scacchiera, in modo che i familiari possono aiutare e giocare col non vedente.
@@ -48,3 +39,7 @@ I primi due motori consentono l'utilizzo del chess engine per:
 E' possibile fare anche un minimo di tuning del chess engine per sfruttare al meglio le risorse del proprioo computer (Vedi tuning.txt). 
 Infine si può usare un orologio per allenarsi col computer, o con amici ad esempio, allenarsi per partite reali lampo o di torneo
 
+
+Per gli sviluppatori molte altre informazioni sono nel file per-gli-sviluppatori.
+
+Il manuale è scacchigr.txt. E' stato scelto di farlo come file di testo e non pdf, per il semplice motivo che un file di testo è la migliore accessibilità possibile su browser per un non vedente.

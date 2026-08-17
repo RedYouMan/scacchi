@@ -1,0 +1,17 @@
+AUTORE DI SCACCHI-it
+Rosario Turco
+Vedi MIT licensein license directory
+
+Il programma va liberamente distribuito obbligatoriamente insieme al contenuto totale delle directory:
+license
+engine
+readme
+
+sito 
+https://redyouman.github.io/
+
+Biografia dell'autore
+Rosario Turcoè noto per lo sviluppo di giochi e strumenti informatici accessibili, inclusi giochi grafici e a linea di comando pensati per non vedenti. 
+I suoi lavori si inseriscono nel contesto dell'accessibilità digitale, offrendo risorse scaricabili gratuitamente.
+Rosario Turco è un ingegnere italiano, divulgatore scientifico e ricercatore indipendente: in rete si possono trovare molti suoi saggi e articoli su Teoria dei Numeri, Matematica applicata, crittografia e Fisica Teorica.
+Inoltre è l'ideatore e sviluppatore del progetto italiano Scacchi-it.
