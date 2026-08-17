@@ -121,6 +121,10 @@ La ROTN è usata per:
 
 La ROTN è una estensione della notazione algebrica delle posizioni e mosse degli scacchi, utilizzata per rendere un applicativo di scacchi di tipo open data. Difatti con essa è possibile interagire con Scacchi-it.
 
+La gestione del caricamento dei file scritti in formato ROTN avviene tramite il sorgente gesfile.cpp
+La specifica ufficiale è 2026-07-02-specifica-rotn.md
+Le informazioni sulla scrittura della ROTN e il suo utilizzo sono nel Manuale scacchigr.txt
+
 Il metodo checkSquareUnderAttack è un mattoncino base per fare i seguenti controlli:
 a) case minacciate dell'arrocco (vedi anche checkCastleUnderAttack)
 b) verifica di scacco al re o scacco matto o stallo (vedi cheScacco e cheStallo)
@@ -132,9 +136,15 @@ In particolare per dichiarare scacco matto non ci devono essere case libere di f
 Un pezzo avversario si può catturare col re se è adistanza 1 e non è difeso, altrimenti occorre verificare se catturabile con altro pezzo.
 Tutto questo viene esaminato nella funzione cheScacco() in questions.cpp. Questions.cpp considerache tipi di scacco sono in gioco, se un pezzo è catturabile e se si può interporre.
  
-Gli arrocchi sono settati validi alla disposizione iniziale dei pezzi, Poi se si muove la torre, viene posto afalso la validità dell'arrocco relativo (setValid000 o setValid00) nel momento che viene fatto setBusySquare a false sulla casella. Altro momento di invalidazione di arrocco ,nel checkMove del re, se il re viene mosso dalla posizione iniziale si invalidano entrambi gli arrocchi.
+Gli arrocchi sono settati validi alla disposizione iniziale dei pezzi, Poi se si muove la torre, viene posto afalso la validità dell'arrocco relativo (setValid000 o setValid00) attraverso la chiamata del setBusySquare a false sulla casella. 
+Altro momento di invalidazione di arrocco ,nel checkMove del re, se il re viene mosso dalla posizione iniziale si invalidano entrambi gli arrocchi.
+
+Per i caricamenti delle posizioni a partire da un file ROTN scritto a mano potrebbe essere necessario per gli arrocchi ambigui tipo che un re o una torre mosso dalla casa iniziale sono poi ritornati al posto iniziale, in tal caso si marca la lista dei pezzi bianchi o neri , separati da ';',con NS (No Short Castle) e/o con NL (No Long Castle).
+
+Se si riceve una FEN viene sempre aggiunto NS E/o NL in base allo stato del campo 3 della FEN.
+
 Quando si cambia il punto di vista, lo stato degli arrocchi deve essere trasferito all'altro lato (vedi nav.cpp quando si fa cntrlG)
-Nella ROTN si può segnalare anche nella lista dei pezzi bianchi o neri, separati da ';', lo stato non prevedibile degli arrocchi, con NS (No Short Castle) e NL (No Long Castle). 
+
 Le funzionalità cheScacco e cheStallo sono in Questions.cpp
 
 Per evitare troppa manutenzione a checkSquareUnderAttack è stata introdotta anche isPieceDefended che evita la logica negativa e utilizzato solo in casi particolari.
