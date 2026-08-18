@@ -1,8 +1,7 @@
 Manuale completo di Scacchi-it
 
 Benvenuti a Scacchi-it il gioco degli scacchi in italiano con interfaccia vocale.
-Da oggi anche online e multiplayers. 
-Compatibile con screen reader come NVDA e JAWS
+Strumento tiflologico, per gioco offline e online (multiplayers), compatibile con screen reader come NVDA e JAWS
 per Windows 10 e 11
 
 Licenza
@@ -449,6 +448,31 @@ Per cui la giusta definizione della rot notation è che essa estende la notazion
 
 La ROTN funge anche da lingua interna a Scacchi-it di interscambio con altri formati esterni come la fen o possibili formati futuri.
 
+I vecchi problemi delle applicazionipoco tiflologiche 
+Le criticità principali, ampiamente documentate anche dalla comunità diaccessibilità digitale, sono:
+
+1. Assenza di semantica e "Label Deprivation"
+     Una stringa FEN è una sequenza opaca di lettere, numeri e separatori. Per uno screen reader rappresenta una barriera: non esistono etichette che identifichino il pezzo, la casa, il colore. L'utente deve decodificare mentalmente `rnbqkbnr/pppp...` senza alcun supporto contestuale.
+
+2. Struttura non lineare e "Hierarchical Concealment"
+     La compattazione per righe con `/` e numeri costringe l'utente con disabilità visive a una navigazione lineare ripetitiva e a calcoli mentali per risalire alla posizione di un pezzo. Le informazioni rilevanti sono "nascoste" in una gerarchia che va ricostruita ad ogni lettura.
+
+3. Incompatibilità con le tecnologie assistive esistenti
+     Le soluzioni proposte finora richiedono l'abbandono di JAWS, NVDA e altri screen reader in favore di lettori proprietari. Questo costringe l'utente a cambiare ambiente di lavoro, con perdita di configurazioni e di autonomia. Inoltre tali reader alternativi gestiscono male le interazioni dinamiche.
+
+ROTN nasce per risolvere proprio questi tre punti alla radice, con un approccio diverso: non "leggere la FEN", ma "trasformarla".
+
+I principi progettuali di ROTN sono:
+- Natività semantica: ogni riga è già un'etichetta. `B:Re1;Dd1;` è immediatamente leggibile da uno screen reader come "Alfiere: Re1; Donna d1".
+- Ordine fisso e predicibile: i descrittori T,V,B,N,M,P garantiscono che l'utente trovi sempre le informazioni nello stesso punto, senza dover scandagliare tutta la stringa.
+-   Compatibilità totale: non richiede nuovi software. Funziona con qualsiasi screen reader già in uso, perché parla il linguaggio del testo.
+
+L'obiettivo non è sostituire la FEN tra motori, ma fornire un formato di 
+interscambio e pubblicazione orientato all'uomo e all'accessibilità, là 
+dove la FEN fallisce.
+
+Per questi motivi Scacchi-it è un efficace strumento di scacchi tiflologico.
+
 La funzionalità validaFEN
 Se volete verificare se una stringa è effettivamente una FEN valida potete usare validaFEN.
 Lo usage si ottiene con:
@@ -493,12 +517,13 @@ b. scaricare dal nostro sito le estensioni per il vostro browser e sistema opera
 
 Il caso a di incolla-fen è stato mostrato nel paragrafo precedente.
 
-Per il caso b sono state sviluppate delle estensioni browser fen-to-rotn-firefox e fen-rotn-to-chrome per dare voce alla fen, tramite la rotn, con sintesi vocale. Basta selezionare la fen su un portale, un ebook, un txt, un articolo web e viene spiegato tutto, fornendo anche negli appunti la ROTN valorizzata da mettere su un file Notepad.
+Per il caso b sono state sviluppate delle estensioni browser fen-to-rotn-firefox e fen-rotn-to-chrome per dare voce alla fen, con sintesi vocale e ottengono alla fine negli appunti anche la rotn. 
+Basta selezionare la fen su un portale, un ebook, un txt, un articolo web e viene spiegato tutto, fornendo anche negli appunti la ROTN valorizzata da mettere su un file Notepad.
 Le estensioni sono compatibili per la maggior parte dei browser utilizzati.
 Il software è al link:
 https://redyouman.github.io/blog/2026/07/18/estensioni-browser.html 
 Con esse potete selezionare una FEN, leggerla e ottenere una ROTN.
-Se vorreste usare la ROTN degli appunti delle estensioni con Scacchi-it se risulta M:B dovrete diminuire di 1 il numero di mossa della posizione P, altrimenti lo lasciate uguale.
+Se vorreste usare la ROTN degli appunti delle estensioni con Scacchi-it se risulta M:B dovrete diminuire di 1 il numero di mossa della posizione P. 
 
 Se, invece, volete scrivere da voi un file ROTN in cartella problemi, dovete solo rispettare la sintassi della ROTN e la condizione che se M:B diminuire di 1 il numero di mossa della posizione P.
 .
@@ -813,6 +838,8 @@ Si ringrazia la Community per le sue segnalazioni che hanno crescere il prodotto
 
 Conclusioni
 L'applicativo Scacchi-it presentato coglie vari aspetti importanti:
+- efficace strumento tiflologico
+- risolve tutti i classici problemi delle precedenti applicazioni: 
 - permette di giocare a non vedenti e vedenti
 - abbatte le barriere di distanza, e digitali 
 - include in un gioco alla pari vedenti e non vedenti
