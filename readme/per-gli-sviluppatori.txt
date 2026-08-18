@@ -301,13 +301,18 @@ Qua sta la documentazione ufficiale di git in italiano, le prime parti sono in i
 REFACTORING DA FARE:
 in utility.cpp interrompi_vocale non è stato più usato, dato che è stato necessario disabilitare l'exit handler a vantaggio di stockfish,ma è rimasto nel codice.
 Da verificare sempre in utility.cpp qualche funzione mai usata nel codice attuale.
-Qualche funzione anche in engine4.cpp e drawBoard.cpp è segnalata come non usata.
+Qualche funzione anche in drawBoard.cpp è segnalata come non usata.
 Da verificare se è rimasto qualche residuo di funzionalità non usata in questions.cpp 
 
-I summenzionati sorgenti sono delicati e va il refactoring va fatto con cura.
+I summenzionati sorgenti sono delicati e il refactoring va fatto con cura.
 
-Coachgame non è ancora stato ultimato sebbene nel repository.
-I coachFEN e coachGame per rapidità di assemblaggiohanno a bordo chess.cpp e chess.h a causa di proto.h e globale.h. Qua si è ritenuto di aggiungere myad.h che simulava la parte di variabili globali di board.cpp. In particolare proto.h ha i prototipi del 90% delle funzionalità, esclusi quelli di engine.h. Mentre globale.h contiene le variabili extern corrispondenti a quelle di board.cpp in modo da includere globale.h nei sorgenti che necessitavano la visibilità delle sue variabili globali.
+Coachgame non è ancora stato ultimato sebbene presente nel repository.
+I coachFEN e coachGame per rapidità di assemblaggio hanno a bordo a causa di dipendenze incrociate:
+- proto.h, chess.h , chess.cpp, utility.cpp, globale.h
+Qua si è ritenuto di aggiungere myad.h che simulava la parte di variabili globali di board.cpp. In particolare proto.h ha i prototipi del 90% delle funzionalità, esclusi quelli di engine.h. Mentre globale.h contiene le variabili extern corrispondenti a quelle di board.cpp in modo da includere globale.h nei sorgenti che necessitavano la visibilità delle sue variabili globali.
+In particolare a causa di proto.h alla fine si è lasciato, per rapidità, la dipendenza da sfml 2.6.1 anche in cmakelists.txt
+
+Ulteriore refactoring
 Si potrebbero eliminare tutte le printDebug per ripulire il progetto.Molto utili in test unitario. Ma si possono anche mantenere.
 
 Conclusione 

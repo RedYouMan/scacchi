@@ -18,7 +18,6 @@ isEngineRunning per verificare lo stato del motore
 string getPositionFen per ottenere la fen
 void evalPosition che da una valutazione della posizione
 float evalStock() che ritorna il valore numerico della valutazione di stockfish in centipedoni
-bool evalWithStop che valuta lo stato di gioco di stockfish (matto, stallo, patta, abbandona)
 setSkill(unsigned int skill) per settare lo skill con cui giocare
 setParam(int,int)per fare tuning del chess engine
 bool isReady() per sapere se l'engine è pronto a ricevere comandi
@@ -686,92 +685,6 @@ bool isReady()
         }
     }
     return isready;
-}
-
-string evalWithStop(string stock_color)
-{
-
-    /*
-     Questa funzione
-     - ha un valore soglia in centipedone (es. 500 ovvero 5 pedoni) e riceve in input il colore con cui gioca stockfish (es. Bianco o Nero),
-     - manda il comando uci eval
-     - legge la valutazione
-     - considera se la valutazione è riferita a stockfish:
-     - se la valutazione  dice che stockfish ha ricevuto matto ne da messaggio vocale , fa stop e ritorna true
-     - se la valutazione  riporta che stockfish è in stallo si manda il messaggio vocale, si fa stop e si ritorna true
-     -se la valutazione dichiara patta se ne da messaggio vocale, si fa stop e si ritorna true
-     - se la valutazione riferita a stockfish è oltre la soglia (perde più di della soglia) , da messaggio vocale che stockfish abbandona
-     */
-    /*
-    NON USATA
-    */
-    double threshold = 5.0;
-    string line = "", evaluation = "";
-    line.clear();
-    evaluation.clear();
-    char buffer[1024];
-    memset(buffer, '\0', sizeof(buffer));
-
-    sendCommand("eval\n");
-    DWORD dwRead;
-    while (ReadFile(hChildStdoutRd, buffer, sizeof(buffer) - 1, &dwRead, NULL) && dwRead > 0)
-    {
-        buffer[dwRead] = '\0';
-        line += buffer;
-
-        size_t pos = line.find("Final evaluation");
-        if (pos != string::npos)
-        {
-            size_t end = line.find(")");
-            if (end != string::npos)
-            {
-                evaluation = line.substr(pos + 23, end - pos - 23 + 1);
-                //   Controlla matto
-                if (evaluation.find("#") != string::npos)
-                {
-                    callTextToSpeech("Matto");
-                    return "1";
-                }
-                // Controlla stallo
-                if (evaluation.find("Stalemate") != string::npos)
-                {
-                    callTextToSpeech("Stallo");
-                    return "1";
-                }
-                // Controlla patta
-                if (evaluation.find("0.00") != string::npos)
-                {
-                    callTextToSpeech("Patta");
-                    return "1";
-                }
-                // Estrae valore numerico e confronta con threshold
-                try
-                {
-                    double eval_value = stof(evaluation);
-                    callTextToSpeech(evaluation);
-                    if (stock_color == "Nero" && eval_value > 0)
-                        if (eval_value > threshold)
-                        {
-                            callTextToSpeech("Abbandono");
-                            return "1";
-                        }
-                    if (stock_color == "Bianco" && eval_value < 0)
-                        threshold = -threshold;
-                    if (eval_value < threshold)
-                    {
-                        callTextToSpeech("Abbandono");
-                        return "1";
-                    }
-                }
-                catch (...)
-                {
-                    return "0";
-                }
-                break;
-            }
-        }
-    }
-    return "0";
 }
 
 float evalStock()
