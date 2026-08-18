@@ -295,15 +295,3 @@ void myRefresh()
 
     return;
 }
-
-// simpleRefresh : non usato troppo lento
-void simpleRefresh(sf::RenderWindow *window)
-{
-    // simulo un evento per accelerare il refresh
-
-    sf::Event event;
-    event.type = sf::Event::MouseMoved;
-    // Posizione "nascosta" o irrilevante
-    event.mouseMove.x = -1;
-    event.mouseMove.y = -1;
-}

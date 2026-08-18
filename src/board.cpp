@@ -10,8 +10,6 @@
 #include <string>
 #include "engine.h"
 #include "proto.h"
-#include <csignal>
-#include <atomic>
 #include "pgnreader.h"
 
 #include <future>
@@ -215,7 +213,11 @@ void insertNameFile()
     nameFile.append(".txt");
     return;
 }
-
+/* La funzione void playWhite deve funzionare per tre modalità:
+1. giocatore bianco contro nero sullo stesso programma Scacchi-it
+2. contro stockfish che gioca in nero
+3. online dove il colore scelto viene mosso ma l'altro si vede mosso da remoto
+*/
 void playWhite()
 {
 
@@ -348,6 +350,11 @@ void playWhite()
     numMove++;
     return;
 }
+/* La funzione void playBlack deve funzionare per tre modalità:
+1. giocatore bianco contro nero sullo stesso programma Scacchi-it
+2. contro stockfish che gioca  in bianco
+3. online dove il colore scelto viene mosso ma l'altro si vede mosso da remoto
+*/
 
 void playBlack()
 {

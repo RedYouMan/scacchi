@@ -7,8 +7,6 @@
 #include <string>
 #include <thread> // Per std::this_thread::sleep_for
 #include <chrono> // Per std::chrono::milliseconds
-#include <csignal>
-#include <atomic>
 #pragma warning(disable : 4267)
 
 using namespace std;
@@ -49,85 +47,25 @@ void printDebug(string msg)
 
 void help()
 {
-    // commentata a causa Abbandono automatico di stockfish
-
-    // signal(SIGINT, signalHandler);
 
     callTextToSpeech(string("Scacchi-it  v.10.5\n"));
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlX per approfondimenti sul sito\n"));
-    }
+    callTextToSpeech(string("CtrlX per approfondimenti sul sito\n"));
+    callTextToSpeech(string("CtrlN perinizializzare la scacchiera\n"));
+    callTextToSpeech(string("CtrlG per cambiare punto di vista di gioco\n"));
+    callTextToSpeech(string("frecce per navigare la scacchiera. Possibile anche il mouse. Attendere qualche secondo per avere le informazioni\n"));
+    callTextToSpeech(string("RETURN per selezionare il pezzo e ulteriore RETURN per selezionare la destinazione\n"));
+    callTextToSpeech(string("CtrlI per giocare online\n"));
+    callTextToSpeech(string("CtrlA per forzare un'apertura desiderata\n"));
+    callTextToSpeech(string("CtrlT per aprire l'Openings Trainer\n"));
+    callTextToSpeech(string("CtrlL per fare Abbandono col Re\n"));
+    callTextToSpeech(string("CtrlW per registrare la partita\n"));
+    callTextToSpeech(string("CtrlU per fare l'undo delle mosse\n"));
+    callTextToSpeech(string("CtrlP per caricare un problema da risolvere\n"));
+    callTextToSpeech(string("CtrlJ per far risolvere un problema al computer\n"));
+    callTextToSpeech(string("CtrlS per sospendere la partita da riprendere poi\n"));
+    callTextToSpeech(string("CtrlR per riprendere una partita\n"));
+    callTextToSpeech(string("CtrlQ per uscire dal gioco\n"));
 
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlN perinizializzare la scacchiera\n"));
-    }
-
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlG per cambiare punto di vista di gioco\n"));
-    }
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("frecce per navigare la scacchiera. Possibile anche il mouse. Attendere qualche secondo per avere le informazioni\n"));
-    }
-
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("RETURN per selezionare il pezzo e ulteriore RETURN per selezionare la destinazione\n"));
-    }
-
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlI per giocare online\n"));
-    }
-
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlA per forzare un'apertura desiderata\n"));
-    }
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlT per aprire l'Openings Trainer\n"));
-    }
-
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlL per fare Abbandono col Re\n"));
-    }
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlW per registrare la partita\n"));
-    }
-
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlU per fare l'undo delle mosse\n"));
-    }
-
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlP per caricare un problema da risolvere\n"));
-    }
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlJ per far risolvere un problema al computer\n"));
-    }
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlS per sospendere la partita da riprendere poi\n"));
-    }
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlR per riprendere una partita\n"));
-    }
-    if (!interrompiVocale)
-    {
-        callTextToSpeech(string("CtrlQ per uscire dal gioco\n"));
-    }
-
-    interrompiVocale = false;
     return;
 }
 

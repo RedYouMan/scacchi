@@ -27,7 +27,6 @@ chess.cpp
 questions.cpp
 engine4.cpp
 gesfile.cpp 
-displayboard.cpp
 utility.cpp
 drawboard.cpp
 tuning.cpp

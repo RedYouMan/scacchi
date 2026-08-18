@@ -25,7 +25,6 @@ void apriUrl();
 void gestione_toc();
 void printDebug(string msg);
 int move(string source, string destination, char who);
-void displayBoard();
 void clear_globali();
 void insertNameFile();
 void playWhite();
@@ -60,7 +59,6 @@ void patteElementari();
 void clearNoTouch();
 bool searchPieceNoTouch(string src);
 void cleanSquare();
-void simpleRefresh(sf::RenderWindow *window);
 void myRefresh();
 // parte undo
 void deleteUndo();

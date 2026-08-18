@@ -118,13 +118,6 @@ void navOnBoard(char who)
                     stop();
                 exit(0);
             }
-            // NON USATO: TROPPO LENTO
-            // evento fittizio scatenato da simpleRefresh e usato in nav.cpp quando avvengono loadfile
-            if (event.type == sf::Event::MouseMoved)
-            {
-                // Se arriva l'evento, il sistema è attivo
-                drawBoard();
-            }
             if (event.type == sf::Event::MouseButtonPressed)
             {
                 if (event.mouseButton.button == sf::Mouse::Left)
