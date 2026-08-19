@@ -102,6 +102,9 @@ PER evitare che Windows Defender consideri una minaccia lo zip lo dovrete esclud
 
 Aggiungete lo zip. 
 
+Nota sul tasto Win
+Negli ultimi aggiornamenti di Windows, il tasto Win con una sola lettera spesso individua più programmi, rimanendo dubbioso su cosa darvi. Ad esempio Win+E non va bene dovete mettere almeno tre lettere: Win+Esp per attivare "Esplora File". Ricordate che ciò che mettete dopo Win finisce in una casella di ricerca, quindi potete mettere anche il nome per esteso. 
+
 Installazione con "Esplora File" 
 Fate Win+E + return per "Esplora file" e cercate la cartella Downloads.
 
