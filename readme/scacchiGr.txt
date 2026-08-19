@@ -103,7 +103,9 @@ PER evitare che Windows Defender consideri una minaccia lo zip lo dovrete esclud
 Aggiungete lo zip. 
 
 Nota sul tasto Win
-Negli ultimi aggiornamenti di Windows, il tasto Win con una sola lettera spesso individua più programmi, rimanendo dubbioso su cosa darvi. Ad esempio Win+E non va bene dovete mettere almeno tre lettere: Win+Esp per attivare "Esplora File". Ricordate che ciò che mettete dopo Win finisce in una casella di ricerca, quindi potete mettere anche il nome per esteso. 
+Negli ultimi aggiornamenti di Windows, il tasto Win con una sola lettera spesso individua più programmi, rimanendo dubbioso su cosa darvi. Ad esempio Win+E non va bene dovete mettere almeno tre lettere: Win+Esp per attivare "Esplora File".
+Stessa cosa per il prompt dei comandi:prima bastava Win+c adesso è meglio digitare Win+comandi oppure Winn+prompt. 
+Ricordate che ciò che mettete dopo Win finisce in una casella di ricerca, quindi potete mettere anche il nome per esteso. 
 
 Installazione con "Esplora File" 
 Fate Win+E + return per "Esplora file" e cercate la cartella Downloads.
@@ -124,9 +126,12 @@ Sempre con "Esplora file" cliccate sulla cartella scacchi-it e vi entrate.
 Con "Esplora file" per lanciare nella directory scacchi-it un eseguibile, basta selezionarlo e fare return. Gli eseguibili sono:
 - scacchi-start
 - clock-start
+
+Altri programmi esistenti richiedono dei parametri di input ed è meglio lanciarli a linea di comando:
 - incolla-fen(ne parleremo in un paragrafo a parte)
 validaFEN (ne parleremo in un paragrafo a parte)
 coachFEN-start (ne parleremo in un paragrafo apposito) 
+
 Installazione con comandi da prompt
 Come alternativa al paragrafo precedente si possono fare i comandi a mano. Se avete già fatto il paragrafo precedente, questo lo potrete saltare.
 Si seguono i seguenti step:
