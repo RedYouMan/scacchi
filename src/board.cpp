@@ -712,8 +712,6 @@ int move(string src, string dest, char who)
     callTextToSpeech(msg_str);
     msg.clear();
 
-    // inizio a settare la notazione algebrica che si basa come informazioni su  ultimaMossa
-    algebricNotation(who, src, dest, primaLettera);
     /*
         dopo le istruzioni di sopra, essendo passati per il check del pedone
                                              sia EnP che casellaDaCatturare sono state annullate in chess.cpp
@@ -781,6 +779,10 @@ int move(string src, string dest, char who)
     {
         coloreCattura = "--";
     }
+
+    // inizio a settare la notazione algebrica che si basa come informazioni su  ultimaMossae avvenutaCattura
+    algebricNotation(who, src, dest, primaLettera);
+
     // Ora esegue la mossa ritenuta valida
     //   prendo il pezzo della casella src e lo metto nella casella dest
     ChessSquare casellaSrc = chessBoard[i][j];

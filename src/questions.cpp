@@ -746,136 +746,6 @@ bool isAmbiguousMove(string src, string dest, char pieceLetter)
 
     return (count > 0);
 }
-
-void algebricNotation(char who, string src, string dest, string prima_lettera)
-{
-    // simbolo di cattura nella notazione algebrica
-    string simboloCattura = "x";
-    char lettera = prima_lettera[0];
-    int mossa = numMove + 1;
-    if (who == 'W')
-    {
-        ultimaMossa.clear();
-        ultimaMossa.append(to_string(mossa));
-        ultimaMossa.append(".");
-
-        if (!arrocco.empty())
-        {
-            ultimaMossa.append(arrocco);
-            arrocco.clear();
-        }
-        else
-        {
-
-            if (!avvenutaCattura)
-            {
-                ultimaMossa.append(prima_lettera);
-                if (!isAmbiguousMove(src, dest, lettera))
-                {
-                    ultimaMossa.append(dest);
-                }
-                else
-                {
-                    ultimaMossa.push_back(src[0]);
-                    ultimaMossa.append(dest);
-                }
-            }
-            else if (avvenutaCattura && !prima_lettera.empty())
-            {
-                // cattura con pezzi
-                ultimaMossa.append(prima_lettera);
-                if (!isAmbiguousMove(src, dest, lettera))
-                {
-                    ultimaMossa.append(simboloCattura);
-                    ultimaMossa.append(dest);
-                }
-                else
-                {
-                    ultimaMossa.push_back(src[0]);
-                    ultimaMossa.append(simboloCattura);
-                    ultimaMossa.append(dest);
-                }
-            }
-            else
-            {
-                // cattura con pedone
-                ultimaMossa.push_back(src[0]);
-                ultimaMossa.append(simboloCattura);
-                ultimaMossa.append(dest);
-            }
-            avvenutaCattura = false;
-        }
-    }
-
-    if (who == 'W')
-    {
-        WriteGameToFile(nameFile, ultimaMossa, reg_to_file);
-    }
-
-    // Nero
-    if (who == 'B')
-    {
-        ultimaMossa.clear();
-        ultimaMossa.append(" ");
-
-        if (!arrocco.empty())
-        {
-            ultimaMossa.append(arrocco);
-            arrocco.clear();
-        }
-        else
-        {
-
-            if (!avvenutaCattura)
-            {
-                ultimaMossa.append(prima_lettera);
-
-                if (!isAmbiguousMove(src, dest, lettera))
-                {
-                    ultimaMossa.append(dest);
-                }
-                else
-                {
-                    ultimaMossa.push_back(src[0]);
-                    ultimaMossa.append(dest);
-                }
-            }
-            else if (avvenutaCattura && !prima_lettera.empty())
-            {
-                // cattura con pezzi
-                ultimaMossa.append(prima_lettera);
-                if (!isAmbiguousMove(src, dest, lettera))
-                {
-                    ultimaMossa.append(simboloCattura);
-                    ultimaMossa.append(dest);
-                }
-                else
-                {
-                    ultimaMossa.push_back(src[0]);
-                    ultimaMossa.append(simboloCattura);
-                    ultimaMossa.append(dest);
-                }
-            }
-            else
-            {
-                // cattura con pedone
-                ultimaMossa.push_back(src[0]);
-                ultimaMossa.append(simboloCattura);
-                ultimaMossa.append(dest);
-            }
-            avvenutaCattura = false;
-        }
-        // altra modifica
-        ultimaMossa.append(" ");
-        printDebug(ultimaMossa);
-        // modifica 2
-        WriteGameToFile(nameFile, ultimaMossa, reg_to_file);
-        ultimaMossa.clear();
-    }
-
-    return;
-}
-
 /*
 
  La funzione translateCastle se riceve una mossa di arrocco 0-0 o 0-0-0 la traduce per il programma in una mossa normale, ad esempio 0-0 diventa Rg1 per per il bianco e Rg8 per il nero, 0-0-0 diventa Rc1 per il bianco e Rc8 per il nero
@@ -1138,6 +1008,134 @@ void checkMate()
             }
             //
         }
+    }
+
+    return;
+}
+/*
+la funzione precedente algebricNotation è stata tratta da quella sotto che aveva dei bug e semplificata
+La precedente è stata rinominata con 2 e ora non usata(candidata ad essere eliminata)
+*/
+void algebricNotation(char who, string src, string dest, string prima_lettera)
+{
+    // simbolo di cattura nella notazione algebrica
+    string simboloCattura = "x";
+    char lettera = prima_lettera[0];
+    int mossa = numMove + 1;
+    if (who == 'W')
+    {
+        ultimaMossa.clear();
+        ultimaMossa.append(to_string(mossa));
+        ultimaMossa.append(".");
+        if (!arrocco.empty())
+        {
+            ultimaMossa.append(arrocco);
+
+            arrocco.clear();
+        }
+        else
+        {
+
+            if (!avvenutaCattura)
+            {
+                ultimaMossa.append(prima_lettera);
+
+                if (!isAmbiguousMove(src, dest, lettera))
+                {
+
+                    ultimaMossa.append(dest);
+                }
+                else
+                {
+                    ultimaMossa.push_back(src[0]);
+                    ultimaMossa.append(dest);
+                }
+            }
+            else if (avvenutaCattura && !prima_lettera.empty())
+            {
+                // cattura con pezzi
+                ultimaMossa.append(prima_lettera);
+                if (!isAmbiguousMove(src, dest, lettera))
+                {
+                    ultimaMossa.append(simboloCattura);
+                    ultimaMossa.append(dest);
+                }
+                else
+                {
+                    ultimaMossa.push_back(src[0]);
+                    ultimaMossa.append(simboloCattura);
+                    ultimaMossa.append(dest);
+                }
+            }
+            else
+            {
+                // cattura con pedone
+                ultimaMossa.push_back(src[0]);
+                ultimaMossa.append(simboloCattura);
+                ultimaMossa.append(dest);
+            }
+            avvenutaCattura = false;
+        }
+    }
+
+    if (who == 'W')
+    {
+        WriteGameToFile(nameFile, ultimaMossa, reg_to_file);
+    }
+
+    // Nero
+    if (who == 'B')
+    {
+        ultimaMossa.clear();
+        ultimaMossa.append(" ");
+
+        if (!arrocco.empty())
+        {
+            ultimaMossa.append(arrocco);
+
+            arrocco.clear();
+        }
+        else
+        {
+
+            if (!avvenutaCattura)
+            {
+                ultimaMossa.append(prima_lettera);
+
+                if (!isAmbiguousMove(src, dest, lettera))
+                {
+                    ultimaMossa.append(dest);
+                }
+                else
+                {
+                    ultimaMossa.push_back(src[0]);
+                    ultimaMossa.append(dest);
+                }
+            }
+            else if (avvenutaCattura && !prima_lettera.empty())
+            {
+
+                // cattura con pezzi
+                ultimaMossa.append(prima_lettera);
+                ultimaMossa.push_back(src[0]);
+                ultimaMossa.append(simboloCattura);
+                ultimaMossa.append(dest);
+            }
+            else
+            {
+                // cattura con pedone
+                ultimaMossa.push_back(src[0]);
+                ultimaMossa.append(simboloCattura);
+                ultimaMossa.append(dest);
+            }
+            avvenutaCattura = false;
+        }
+        // altra modifica
+        ultimaMossa.append(" ");
+        printDebug(ultimaMossa);
+        // modifica 2
+        WriteGameToFile(nameFile, ultimaMossa, reg_to_file);
+        ultimaMossa.clear();
     }
 
     return;

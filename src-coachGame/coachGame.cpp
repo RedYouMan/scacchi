@@ -6,8 +6,11 @@
  L'analisi viene condotta su una scacchiera virtuale interna, tenendo conto delle posizioni generate da ogni giocatore con la sua mossa tratta dal file registrato e tradotte in FEN.
  Ad ogni mossa viene presa la valutazione della posizione suggerita da stockfish.
  Si considerano i valori delta delle valutazioni prima e dopo la mossa.
-Se tale delta supera in valore assolutole
+Se tale delta supera in valore assoluto
  le soglie fissate(0.5, 1.0, 1.5), si genera un commento e la best move consigliata al posto di quella fatta.
+ Se la partita prosegue però occorre andare oltre la best move e rimettersi sul flusso originario.
+ In altri termini deve essere analizzata tutta la partita.
+
 */
 /*
 
@@ -377,6 +380,12 @@ std::string askBestMoveFromPosition(const std::string &fen)
         Sleep(100);
     }
 
+    // prima di restituire la best move su una mossa errata
+    // ci rimettiamo sul flusso rprecedente con stop e isReady
+    sendCommand("stop\n");
+    while (isReady() == false)
+    { // Attesa
+    }
     return bestMove;
 }
 
