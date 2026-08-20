@@ -680,7 +680,7 @@ bool isReady()
         {
 
             isready = true;
-            callTextToSpeech(evaluation);
+            // callTextToSpeech(evaluation);
             break;
         }
     }

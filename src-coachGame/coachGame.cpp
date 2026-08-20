@@ -1,12 +1,16 @@
+
 // coachGame.cpp
 /*
  il progetto coachGame serve ad analizzare una partita di scacchi e generare un report con commenti e best move suggerite da Stockfish.
  In input vengono forniti: il nome del file da esaminare e il colore del giocatore da analizzare.
- L'analisi viene condotta tenendo conto delle posizioni generate da ogni giocatore con la sua mossa e tradotte in FEN.
+ L'analisi viene condotta su una scacchiera virtuale interna, tenendo conto delle posizioni generate da ogni giocatore con la sua mossa tratta dal file registrato e tradotte in FEN.
  Ad ogni mossa viene presa la valutazione della posizione suggerita da stockfish.
  Si considerano i valori delta delle valutazioni prima e dopo la mossa.
-Se tale delta supera in valore assoluto
- delle soglie fissate, si genera un commento e eventualmente la best move consigliata al posto di quella fatta.
+Se tale delta supera in valore assolutole
+ le soglie fissate(0.5, 1.0, 1.5), si genera un commento e la best move consigliata al posto di quella fatta.
+*/
+/*
+
 
  Autore : Rosario Turco
 */
@@ -356,6 +360,10 @@ static std::string FENCurrent;
 std::string askBestMoveFromPosition(const std::string &fen)
 {
     sendCommand("stop\n");
+    while (isReady() == false)
+    { // Attesa
+      // cout << "Sono in attesa del isReady di stockfish" << endl;
+    }
     sendCommand("position fen " + fen + "\n");
     sendCommand("go depth 15\n");
 
@@ -382,9 +390,9 @@ int main(int argc, char *argv[])
 
     // banner di inizio
     std::cout << "CoachGame (C) 2026 versione 1.0 - Rosario Turco" << std::endl;
-    Sleep(5000);
+    Sleep(6000);
 
-    callTextToSpeech(string("Benvenuto in CoachGame, il tuo assistente per l'analisi delle partite di scacchi. Attendi che venga completata l'analisi nel file report.txt \n"));
+    callTextToSpeech(string("Benvenuto in CoachGame, il tuo assistente per l'analisi delle partite di scacchi. Attendi che venga completata l'analisi nel file report.txt\n"));
     std::string file_game = "..//registrazioni//" + std::string(argv[1]);
     char colore = tolower(argv[2][0]);
     if (colore != 'b' && colore != 'n')
