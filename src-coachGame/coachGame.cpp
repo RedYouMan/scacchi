@@ -453,7 +453,6 @@ int main(int argc, char *argv[])
         std::cerr << "Nessuna mossa trovata nel file " << file_game << std::endl;
         return 1;
     }
-
     const size_t num_moves = std::min(whiteMoves.size(), blackMoves.size());
     if (num_moves == 0)
     {
@@ -477,16 +476,20 @@ int main(int argc, char *argv[])
     {
         // ========== FASE 1: IMPOSTAZIONE DATI DELLA MOSSA ==========
         game[i].set_n_mossa(static_cast<int>(i + 1));
+        printf("Fase 1: impostazione dellamossa  %zu\n", i + 1);
         game[i].set_alu_bianco(whiteMoves[i]);
         game[i].set_alu_nero(blackMoves[i]);
 
+        printf("Fase 2: analisi mossa del bianco \n");
         // ========== FASE 2: ANALISI MOSSA DEL BIANCO ==========
         // La FEN da usare per il bianco è sempre la posizione corrente prima della mossa del bianco.
         std::string fenPrimaMossaBianco = fenPosizioneCorrente;
         std::string fenDopoBianco = applyMoveToFEN(fenPrimaMossaBianco, game[i].get_alu_bianco(), 'b');
+        printf("dopo apply move del bianco\n");
         game[i].set_stock_bianco(fenDopoBianco);
         FENCurrent = fenDopoBianco;
 
+        printf("Invio comandi uci\n");
         // Comando UCI: posiziona il motore sulla FEN della posizione dopo la mossa del bianco
         sendCommand("position fen " + fenDopoBianco + "\n");
 
@@ -495,14 +498,23 @@ int main(int argc, char *argv[])
 
         // Recupera la valutazione di Stockfish e la salva (diviso 100 per ottenere centesimi di pedone)
         game[i].set_eval_prima_b(evalStock());
-
+        printf("Recupero valutazione di stockfish\n");
+        printf("Fase 3: analisi mossa del nero\n");
         // ========== FASE 3: ANALISI MOSSA DEL NERO ==========
         // La FEN da usare per il nero è sempre la posizione dopo la mossa del bianco corrente.
         std::string fenPrimaMossaNero = fenDopoBianco;
+        if (fenDopoBianco.empty())
+        {
+            printf("Fase 3: non possibile trovare fenDopoBianco\n");
+        }
+
+        printf("Prima della apply move\n del nero");
+
         std::string fenDopoNero = applyMoveToFEN(fenPrimaMossaNero, game[i].get_alu_nero(), 'n');
+        printf("Dopo apply move\n del nero");
         game[i].set_stock_nero(fenDopoNero);
         FENCurrent = fenDopoNero;
-
+        printf("comandi uci per il nero\n");
         // Comando UCI: posiziona il motore sulla FEN della posizione dopo la mossa del nero
         sendCommand("position fen " + fenDopoNero + "\n");
 
@@ -511,10 +523,10 @@ int main(int argc, char *argv[])
 
         // Recupera la valutazione di Stockfish dopo la mossa del nero
         game[i].set_eval_prima_n(evalStock());
-
+        printf("Recuperata la valutazione di stockfish\n");
         // Aggiorniamo la posizione corrente per la prossima iterazione.
         fenPosizioneCorrente = fenDopoNero;
-
+        printf("Fase 4: calcolo delta\n");
         // ========== FASE 4: CALCOLO DEL DELTA DI VALUTAZIONE ==========
         // Determina la valutazione PRIMA della mossa del giocatore analizzato
         double evalBeforeMove = 0.0;
@@ -542,7 +554,7 @@ int main(int argc, char *argv[])
                                      game[i].get_alu_bianco() + ". Mossa del nero: " + game[i].get_alu_nero();
         // callTextToSpeech(spokenMoveText);
         Sleep(2000);
-
+        printf("Fase 5: Classificazione della mossa\n");
         // ========== FASE 5: CLASSIFICAZIONE DELLA MOSSA IN BASE AL DELTA ==========
         // Basato sul delta di valutazione, classifichiamo la qualità della mossa
         if (delta >= 0.5 && delta < 1.0)
@@ -557,7 +569,7 @@ int main(int argc, char *argv[])
         {
             commentoScritto = "Mossa pessima: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
         }
-
+        printf("Fase 6: Ricerca della best move\n");
         // ========== FASE 6: RICERCA DELLA BEST MOVE ==========
         // Se la mossa è stata classificata come errata, cerchiamo quale sarebbe stata la miglior mossa.
         // Per il nero la FEN da usare è la posizione prima della mossa del nero, cioè la FEN dopo il bianco.
@@ -592,7 +604,7 @@ int main(int argc, char *argv[])
         std::cerr << "Errore: impossibile creare il file di report " << reportFileName << std::endl;
         return 1;
     }
-
+    printf("Salvataggio report\n");
     reportFile << "Report della partita: " << file_game << std::endl;
     reportFile << "Colore del giocatore analizzato: " << (colore == 'b' ? "Bianco" : "Nero") << std::endl;
     reportFile << "--------------------------------------------------" << std::endl;

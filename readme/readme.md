@@ -1,26 +1,34 @@
-
-
-Scacchi-it è un progetto italiano, sviluppato da Rosario Turco, una piattaforma online e offline gratuita. 
-E' nato per realizzare un gioco adatto e fruibile dai non vedenti, che devono principalmente ascoltare per  giocare, attraverso uno screen reader come NVDA (open source). 
+Scacchi-it è un progetto italiano, sviluppato da Rosario Turco, una piattaforma online e offline gratuita.
+E' nato per realizzare un gioco adatto e fruibile dai non vedenti, che devono principalmente ascoltare per giocare, attraverso uno screen reader come NVDA (open source).
 Tuttavia si è introdotta anche una grafica riproducente la scacchiera, in modo che i familiari possono aiutare e giocare col non vedente.
 
 Il gioco sollecita tutte le componenti cognitive della persona, migliorando l'utilizzo del ragionamento e calcolo delle varie alternative, mantenendo attiveme moria visiva e astratta,
 
-Scacchi-it è orientato a:
+Adatto al gioco , lo studio, l'analisi e la didattica che coinvolge, in modo paritario e concreto sia vedenti e non vedenti, realizzando, con alto valore sociale ed etico, la inclusione digitale e l'autonomia con la giusta dignità dei non vedenti.
+La possibilità di utilizzarlo anche offline e gratuitamente, estende democraticamente anche il suo utilizzo a famiglie meno abbienti e rendendo gli studiosi indipendenti da ulteriori problemi di latenza della rete.
+Particolarmente utile anche a scuole che hanno problemi di utilizzo internet.
+
+Tuttavia Scacchi-it permette anche di giocare online con amici, parenti su stessa rete o su vpn Hamachi gratuitamente.
+
+Scacchi-it è uno strumento tiflologico orientato a:
+
 - non vedenti e vedenti
-- Windows 10 o superiori 
-- lingua italiana 
-E' costituito da tre parti:
-- motore grafico di navigazione
+- Windows 10 o superiori
+- lingua italiana
+
+E' costituito da almeno tre parti:
+
+- motore grafico di navigazione in SFML (Simple & Fast Multimedia Library)
 - motore di controllo regole
 - motore di gioco
 
 Il motore di gioco (chess engine) con cui le prime due parti sono testatte
-è stockfish, scaricabile da github e distribuito liberamente. 
+è stockfish, scaricabile da github e distribuito liberamente.
 Nel programma si da la possibilità di configurare anche altre eventuali
 versioni migliorative di stockfish.
 
 I primi due motori consentono l'utilizzo del chess engine per:
+
 - giocare contro il computer
 - giocare da soli sia bianco che nero
 - registrare le partite non giocate col computer
@@ -34,12 +42,10 @@ I primi due motori consentono l'utilizzo del chess engine per:
 - caricare problemi scritti da se stessi con la rot notation
 - fare undo delle mosse
 - forzare l'apertura desiderata e farla giocare al computer
-- giocare online su reti diverse come Internet
+- giocare online su stessa rete o su vpn Hamachi per reti diverse come Internet
 - validare e incollare una FEN a Scacchi-it
-E' possibile fare anche un minimo di tuning del chess engine per sfruttare al meglio le risorse del proprioo computer (Vedi tuning.txt). 
-Infine si può usare un orologio per allenarsi col computer, o con amici ad esempio, allenarsi per partite reali lampo o di torneo
-
-
-Per gli sviluppatori molte altre informazioni sono nel file per-gli-sviluppatori.
+  - studiare le aperture con un Opennings Trainer e un coach
+    E' possibile fare anche un minimo di tuning del chess engine per sfruttare al meglio le risorse del proprioo computer (Vedi tuning.txt).
+    Infine si può usare un orologio per allenarsi col computer, o con amici ad esempio, allenarsi per partite reali lampo o di torneo
 
 Il manuale è scacchigr.txt. E' stato scelto di farlo come file di testo e non pdf, per il semplice motivo che un file di testo è la migliore accessibilità possibile su browser per un non vedente.

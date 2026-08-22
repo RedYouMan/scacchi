@@ -69,12 +69,13 @@ Il progetto è costituito da tre parti:
 - motore di controllo 
 -motore di gioco
 
-Il motore di navigazione consente di navigare la scacchiera graficamente, utilizzando il mouse, le frecce e il return. Inoltre informa sul nome della casella, se contiene pezzi o se vuota. Infine gestisce tutti i controls da tastiera per il gioco
-Il motore di controllo, permette la gestione e il controllo di tutte le regole di gioco: movimento dei pezzi, arrocco, enpassant, scacco al re, scacco matto, stallo, notazione algebrica, RoT notation, i problemi, la registrazione della partita, la sospensione di gioco e la ripresa, la scelta di giocare col computer, la soluzione dei problemi con e senza computer, il cambio del punto di vista di gioco.
+Il motore di navigazione consente di navigare la scacchiera graficamente, (nav.cpp) utilizzando il mouse, le frecce e il return. Inoltre informa sul nome della casella, se contiene pezzi o se vuota. Infine gestisce tutti i controls da tastiera per il gioco
+Il motore di controllo, (board.cpp) permette, in collaborazione col motore di navigazione e altre funzionalità (come questions.cpp, utility.cpp, engine4.cpp, mynet.cpp, undo.cpp etc.) la gestione e il controllo di tutte le regole di gioco: movimento dei pezzi, arrocco, enpassant, scacco al re, scacco matto, stallo, notazione algebrica, RoT notation, i problemi, la registrazione della partita, la sospensione di gioco e la ripresa, la scelta di giocare col computer, la soluzione dei problemi con e senza computer, il cambio del punto di vista di gioco.
 Consente anche un addestramento alle aperture di gioco (Openings Trainer).
 Il motore di gioco, sfrutta il progetto open source stockfish.
+Il motore per gioco online dispone delle utility in mynet.cpp
 
-I test di sistema possono farsi prendendo i file da directory test e ponendoli in directory problemi per caricarli con cntrlP.
+I test possono farsi prendendo i file dalla directory test e ponendoli in directory problemi per caricarli con cntrlP.
  Inizialmente per i test unitari occorreva mettere in board.cpp a true le variabili durante la compilazione:
  sospendi_test
 test
@@ -83,11 +84,6 @@ Oppure solo quelle che maggiormente interessavano: test_fen produce un file chia
 Infine test permetteva di ascoltare il debugger interno al codice.
 test_fen produceva un file chiamato test_fen.txt nella directory log, sospendi_test permette nel caso di problemi di poter fare lo stesso la sospensione e, quindi, utilizzabile con file di test prelevati dalla directory test. 
 Si consiglia sempre di controllare nel codice se nelle ultime versioni sono rimaste le stampe nelle directory di logdir.
-Per i comandi uci e le posizioni fen, consultare:
-ucidoc.txt
-fen.txt
-fenhistory.txt
-
 Il protocollo uci tra stockfish e scacchi è realizzato in board.cpp e le primitive in engine4.cpp
 
 Scopo dei sorgenti principali
@@ -303,9 +299,15 @@ Coachgame non è ancora stato ultimato sebbene presente nel repository.
 
 I coachFEN e coachGame per rapidità di assemblaggio hanno a bordo a causa di dipendenze incrociate:
 - proto.h, chess.h , chess.cpp, utility.cpp, globale.h
-Qua si è ritenuto di aggiungere myad.h che simulava la parte di variabili globali di board.cpp. In particolare proto.h ha i prototipi del 90% delle funzionalità, esclusi quelli di engine.h. Mentre globale.h contiene le variabili extern corrispondenti a quelle di board.cpp in modo da includere globale.h nei sorgenti che necessitavano la visibilità delle sue variabili globali.
+
+In particolare chess.h e chess.cpp servono ad engine4.cpp per la costruzione della FEN a partire dalla posizione sulla scacchiera.
+
+Qua si è ritenuto di aggiungere myad.h che simula la parte di variabili globali di board.cpp. In particolare proto.h ha i prototipi del 90% delle funzionalità, esclusi quelli di engine.h. Mentre globale.h contiene le variabili extern corrispondenti a quelle di board.cpp in modo da includere globale.h nei sorgenti che necessitavano la visibilità delle sue variabili globali.
 Infine  a causa di proto.h che contiene sfml come include per vari sorgenti alla fine si è lasciato, per rapidità, la dipendenza da sfml 2.6.1 anche in cmakelists.txt
 Non vale la pena di fare il refactoring.
+
+Valutare di mettere a dll la parte engine4.cpp e tts.cpp
+
 Ulteriore refactoringda valutare se fare 
 Si potrebbero eliminare tutte le printDebug per ripulire il progetto.Molto utili in test unitario. Ma si possono anche mantenere. La funzione void printDebug è in utility.cpp e proto.h
 
