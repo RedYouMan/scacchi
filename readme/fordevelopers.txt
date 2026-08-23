@@ -306,16 +306,19 @@ I coachFEN e coachGame per rapidità di assemblaggio hanno a bordo a causa di di
 - proto.h, chess.h , chess.cpp, utility.cpp, globale.h
 
 In particolare chess.h e chess.cpp servono ad engine4.cpp per la costruzione della FEN a partire dalla posizione sulla scacchiera.
-
 Qua si è ritenuto di aggiungere myad.h che simula la parte di variabili globali di board.cpp. In particolare proto.h ha i prototipi del 90% delle funzionalità, esclusi quelli di engine.h. Mentre globale.h contiene le variabili extern corrispondenti a quelle di board.cpp in modo da includere globale.h nei sorgenti che necessitavano la visibilità delle sue variabili globali.
 Infine  a causa di proto.h che contiene sfml come include per vari sorgenti alla fine si è lasciato, per rapidità, la dipendenza da sfml 2.6.1 anche in cmakelists.txt
-Non vale la pena di fare il refactoring.
 
+Da valutare se rendere Object Oriented altre funzionalità presenti (la parte gesfile.cpp ad esempio). 
+Sono state affrontate in OO la parte chess.h, chess.cpp cuore del progetto e del motore di controllo e laparte pgn dell'Openings Trainer.
+
+Da valutare se ridurre le variabili globali in questo refactoring.
 Ulteriore refactoringda valutare se fare 
 Si potrebbero eliminare tutte le printDebug per ripulire il progetto.Molto utili in test unitario. Ma si possono anche mantenere. La funzione void printDebug è in utility.cpp e proto.h
 
 Conclusione 
 Grazie per l'attenzione.
 Spero che si possa far evolvere ulteriormente questo progetto, a vantaggio dei non vedenti in modo di aumentare la loro inclusione e autonomia con gioco alla pari con i normodotati.
+Soprattutto per la innovazione della specifica formale ROTN trattata in Scacchi-it.
 
 
