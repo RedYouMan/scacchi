@@ -56,6 +56,10 @@ I primi due motori consentono l'utilizzo del chess engine per:
 
 Il manuale è scacchigr.txt. E' stato scelto di farlo come file di testo e non pdf, per il semplice motivo che un file di testo è la migliore accessibilità possibile su browser per un non vedente.
 
+## Ringraziamenti a Dasor ##
+Le bellissime immagini sono tratte dal repository di Dasor su github.com nel progetto sfml-chess. 
+Il progetto sfml-chess utilizza la stessa licenza di Scacchi-it: GNU GPL versione 3.
+
 ## **Conclusioni**
 
 Ecco cosa afferma sul progetto la AI di Google .
