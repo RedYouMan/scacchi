@@ -5,7 +5,8 @@ Strumento tiflologico, per gioco offline e online (multiplayers), compatibile co
 per Windows 10 e 11
 
 Licenza
-*Scacchi-it* is free software released under the MIT License.  
+*Scacchi-it* is free software released under the GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+  
 *Copyright © 2025 Rosario Turco* 
 You may use, copy, and modify it freely, provided that this copyright notice is retained.
 
