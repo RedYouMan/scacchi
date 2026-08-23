@@ -386,6 +386,7 @@ std::string askBestMoveFromPosition(const std::string &fen)
     while (isReady() == false)
     { // Attesa
     }
+
     return bestMove;
 }
 
@@ -472,15 +473,22 @@ int main(int argc, char *argv[])
 
     // CICLO PRINCIPALE DI ANALISI: per ogni coppia di mosse (bianco + nero) della partita
     std::string fenPosizioneCorrente = FENStart;
+    std::string msg;
     for (size_t i = 0; i < num_moves; ++i)
     {
         // ========== FASE 1: IMPOSTAZIONE DATI DELLA MOSSA ==========
         game[i].set_n_mossa(static_cast<int>(i + 1));
-        printf("Fase 1: impostazione dellamossa  %zu\n", i + 1);
+        msg.clear();
+        Sleep(1000);
+        msg = "Fase 1: impostazione dellamossa " + to_string(i + 1);
+        callTextToSpeech(msg);
         game[i].set_alu_bianco(whiteMoves[i]);
         game[i].set_alu_nero(blackMoves[i]);
+        Sleep(1000);
 
-        printf("Fase 2: analisi mossa del bianco \n");
+        msg.clear();
+        msg = "Fase 2: analisi mossa del bianco\n";
+        callTextToSpeech(msg);
         // ========== FASE 2: ANALISI MOSSA DEL BIANCO ==========
         // La FEN da usare per il bianco è sempre la posizione corrente prima della mossa del bianco.
         std::string fenPrimaMossaBianco = fenPosizioneCorrente;
@@ -489,7 +497,6 @@ int main(int argc, char *argv[])
         game[i].set_stock_bianco(fenDopoBianco);
         FENCurrent = fenDopoBianco;
 
-        printf("Invio comandi uci\n");
         // Comando UCI: posiziona il motore sulla FEN della posizione dopo la mossa del bianco
         sendCommand("position fen " + fenDopoBianco + "\n");
 
@@ -499,22 +506,20 @@ int main(int argc, char *argv[])
         // Recupera la valutazione di Stockfish e la salva (diviso 100 per ottenere centesimi di pedone)
         game[i].set_eval_prima_b(evalStock());
         printf("Recupero valutazione di stockfish\n");
-        printf("Fase 3: analisi mossa del nero\n");
+        Sleep(1000);
+
+        msg.clear();
+        msg = "Fase 3: analisi mossa del nero\n";
+        callTextToSpeech(msg);
         // ========== FASE 3: ANALISI MOSSA DEL NERO ==========
         // La FEN da usare per il nero è sempre la posizione dopo la mossa del bianco corrente.
         std::string fenPrimaMossaNero = fenDopoBianco;
-        if (fenDopoBianco.empty())
-        {
-            printf("Fase 3: non possibile trovare fenDopoBianco\n");
-        }
-
         printf("Prima della apply move\n del nero");
 
         std::string fenDopoNero = applyMoveToFEN(fenPrimaMossaNero, game[i].get_alu_nero(), 'n');
         printf("Dopo apply move\n del nero");
         game[i].set_stock_nero(fenDopoNero);
         FENCurrent = fenDopoNero;
-        printf("comandi uci per il nero\n");
         // Comando UCI: posiziona il motore sulla FEN della posizione dopo la mossa del nero
         sendCommand("position fen " + fenDopoNero + "\n");
 
@@ -526,7 +531,11 @@ int main(int argc, char *argv[])
         printf("Recuperata la valutazione di stockfish\n");
         // Aggiorniamo la posizione corrente per la prossima iterazione.
         fenPosizioneCorrente = fenDopoNero;
-        printf("Fase 4: calcolo delta\n");
+        Sleep(1000);
+
+        msg.clear();
+        msg = "Fase 4: calcolo delta\n";
+        callTextToSpeech(msg);
         // ========== FASE 4: CALCOLO DEL DELTA DI VALUTAZIONE ==========
         // Determina la valutazione PRIMA della mossa del giocatore analizzato
         double evalBeforeMove = 0.0;
@@ -554,7 +563,8 @@ int main(int argc, char *argv[])
                                      game[i].get_alu_bianco() + ". Mossa del nero: " + game[i].get_alu_nero();
         // callTextToSpeech(spokenMoveText);
         Sleep(2000);
-        printf("Fase 5: Classificazione della mossa\n");
+        msg.clear();
+        msg = "Fase 5: Classificazione della mossa\n";
         // ========== FASE 5: CLASSIFICAZIONE DELLA MOSSA IN BASE AL DELTA ==========
         // Basato sul delta di valutazione, classifichiamo la qualità della mossa
         if (delta >= 0.5 && delta < 1.0)

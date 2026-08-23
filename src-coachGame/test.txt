@@ -1,45 +1,15 @@
+Abbiamo un errore di Runtime.
+Sto eseguendo il software sul record:
+1.e4 e5 2.Dh5 Cc6 3.Ac4 Cf6 4.Df3 Cd4 5.Dd3 d5 6.exd5 Cxd5
 
-Mi servono 10 file denominati partita_1.txt, partita_2.txt eccetera.
+Ho inserito delle printf di debug per circoscriveredove si verifica l'errore. Esso si verifica nella mossa 5, in fase 3 del nero. L'ultima printf scritta è relativa a prima dell'apply.
 
-[contenuto sostituito]
+Il mio dubbio è che valutando il bianco come gioca , dopo la best move suggerita, per proseguire non ci si rimette dopo la best move nel flusso originale descritto dal record. 
+Ho introdotto nella funzione che richiede la best move (adkxxxx) prima del return best move lo stop e l'attesa di isReady (prima del for aveva risolto un altro problema) ma non funziona in questo caso.
+Analizza tutto e tieni presente che:
+- il numero di mosse di una partita nel record può essere qualsiasi
+- l'analisi chiesta in input può essere per qualsiasi giocatore ovvero b o n.
 
-Essi devono contenere una partita ognuno in notazione algebrica italiana. Mi servono per fare i test. Estrai le partite da internet se vuoi. Scegli partite che contengono scacco la re simbolo +, scacco matto simbolo #. La partita termina dopo il matto o l'abbandona. Non è necessario scrivere abbandona. ti ho condiviso il software del coachGame che devo testare. Sotto la spiegazione mettimi: prima riga nome partita (es: partita_1.txt) e seconda riga una riga nel formato del tipo
-1.e4 e5 2.Cf3 Cc6 3.Ac4 Ac5 4.00 eccetera.
-Ti ricordo la tabellina di conversione dei pezzi da inglese a italiano:
-K r
-Q D
-B a 
-N C
-R T
-Ecco 10 test pronti, da usare come file separati (prima riga = nome file, seconda riga = partita):
 
-partita_1.txt
-1.e4 e5 2.Dh5 Cc6 3.Ac4 Cf6 4.Dxf7#
 
-partita_2.txt
-1.f3 e5 2.g4 Dh4#
-
-partita_3.txt
-1.e4 e5 2.Ac4 Cc6 3.Dh5 Cf6 4.Dxf7#
-
-partita_4.txt
-1.e4 e5 2.Dh5 Cc6 3.Ac4 d6 4.Dxe5+
-
-partita_5.txt
-1.e4 e5 2.Cf3 Cc6 3.Ac4 Ac5 4.d3 d6 5.Cc3 Cf6 6.Dh5+
-
-partita_6.txt
-1.e4 e5 2.Cf3 Cc6 3.Ac4 Ac5 4.00 d6 5.d3 Cf6 6.Dh5+
-
-partita_7.txt
-1.e4 e5 2.Ac4 Cc6 3.Dh5 Cf6 4.Dxf7#
-
-partita_8.txt
-1.e4 e5 2.Dh5 Cc6 3.Ac4 Cf6 4.Dxf7#
-
-partita_9.txt
-1.e4 e5 2.Cf3 Cc6 3.Ac4 Ac5 4.d3 d6 5.Cc3 Cf6 6.Dh5+
-
-partita_10.txt
-1.e4 e5 2.Cf3 Cc6 3.Ac4 Ac5 4.00 Cf6 5.Cc3 00 6.d3 d6 7.Dh5+
 
