@@ -3,11 +3,14 @@ NOTE PER GLI SVILUPPATORI
 Rosario Turco
 
 Il progetto Scacchi-it è un progetto italiano,  per piattaforma Windows, nato per realizzare un gioco adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
-Tuttavia si è introdotta anche una grafica riproducente la scacchiera, in modo che i familiari possono aiutare e giocare col non vedente.
+Tuttavia si è introdotta anche una grafica riproducente la scacchiera, e i pezzi, in modo che i familiari possono aiutare e giocare col non vedente.
 Sul sito RedYouMan è presentato il gruppo NV&V e le loro finalità. 
 Per le funzionalità leggere readme.md
 Il progetto ora è totalmente open source.
 Per come contribuire leggere contributing.md
+
+Il progetto inizialmente è nato per dimostrare l'utilità della ROTN, per cui nel prototipo è stata curata la parte Object Oriented cuore di controllo con chess.h, chess.cpp e la parte openings trainer con standard pgn.
+Successivamente da prototipo si sono completate le funzionalità rapidamente come C. Per cui nella nota finale sul  refactoringviene ricordato di individuare e valutare parti che possano essere rimesse in OO.
 
 In Scacchi-it la grafica fa uso della libreria sfml-2.6.1 ed eventuali cambi di tale libreria necessiterebbero di porting della
 parte sfml, questo perchè le versioni superiori sono state ridisegnate diversamente e diverse funzioni sono state modificate/eliminate oppure è cambiato lo standard di nomenclatura passato a quello Camel.
@@ -18,10 +21,16 @@ Rilascio Scacchi-it:
 - quelle per il rilascio del manuale In RedYouMan.github.io\_posts\tutorials dove si mette scachiGr.txt tratto e modificato nel repository redyouman.github.io\scacchi\readme 
 - quelle per il rilascio delle estensioni browser in Redyouman.github.io\_posts\estensioni, contenente le estensioni per firefox e chrome come zip e un manuale.
 Versioning:
--quelle per il versioning  dei sorgenti e build, sotto RedYouMan.github.io\scacchi 
-
+-quelle per il versioning  dei sorgenti e build, sotto questo repository, le directory inizano tutte con srcxxx 
 Sorgenti su Github
-Il repository scacchi di redyouman contiene tutti i sorgenti allineati all'ultima versionecon configurazione e manuale
+Il repository scacchi contiene tutti i sorgenti allineati all'ultima versionecon configurazione e manuale
+
+Rilascio di una versione
+Finora per rilasciare la versione veniva aggiornato nel codice la parte Banner di Scacchi-it che si trova in:
+- board.cpp(vedi cout in void start_game())
+- utility.cpp (vedi la sintesi vocale del help)
+
+Le utility cpp esclusi i starter hanno un proprio banner.
 
 Descrizione e dettagli ulteriori
 I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , srcfenpos , srcvalidaFEN , src-coach, src-coachGame (non testata ancora), src-estensioni e serverScacchi.
