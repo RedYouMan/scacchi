@@ -12,7 +12,12 @@ Evoluzione del progetto
 Il progetto inizialmente è nato per dimostrare l'utilità della ROTN, per cui nel prototipo è stata curata la parte Object Oriented cuore di controllo con chess.h, chess.cpp e la parte openings trainer con standard pgn.
 Successivamente da prototipo si sono completate le funzionalità rapidamente come C. Per cui nella nota finale sul  refactoring viene ricordato di individuare e valutare parti che possano essere rimesse in OO.
 
-Tieni presente che sono non vedente e ho impiegato da solo 10 mesi per implementarlo e renderlo funzionante.
+Per documentarsi sul ROT notation si raccomanda leggere:
+- manuale (scacchigr.txt)
+- articolo rotn-versus-fen.md
+- articolo motoregrafico.md
+
+Tieni presente che sono non vedente e ho impiegato da solo 10 mesi per implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
 
 In Scacchi-it la grafica fa uso della libreria sfml-2.6.1 ed eventuali cambi di tale libreria necessiterebbero di porting della
 parte sfml, questo perchè le versioni superiori sono state ridisegnate diversamente e diverse funzioni sono state modificate/eliminate oppure è cambiato lo standard di nomenclatura passato a quello Camel.
