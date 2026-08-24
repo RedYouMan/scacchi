@@ -19,7 +19,7 @@ Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove ve
 
 Sul sito è stata pubblicata la versione 10.6 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
-I cambiamenti sono tracciati nel file changelog.txt nella directory readme e sono frutto delle segnalazioni della Community.
+I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
 Per verificare la vostra versione ascoltate quando parte il programma oppure digitate Ctrl+H.
 
