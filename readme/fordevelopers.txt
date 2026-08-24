@@ -2,25 +2,27 @@
 NOTE PER GLI SVILUPPATORI
 Rosario Turco
 
-Il progetto Scacchi-it è un progetto italiano,  per piattaforma Windows, nato per realizzare un gioco adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
+Il progetto Scacchi-it è un progetto italiano,  gratuito, per piattaforma Windows, nato per realizzare un gioco tiflologico, adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
 Tuttavia si è introdotta anche una grafica riproducente la scacchiera, e i pezzi, in modo che i familiari possono aiutare e giocare col non vedente.
-Sul sito RedYouMan è presentato il gruppo NV&V e le loro finalità. 
 Per le funzionalità leggere readme.md
 Il progetto ora è totalmente open source.
 
 Evoluzione del progetto
-Il progetto inizialmente è nato per dimostrare l'utilità della ROTN, per cui nel prototipo è stata curata la parte Object Oriented cuore di controllo con chess.h, chess.cpp e la parte openings trainer con standard pgn.
+Il progetto inizialmente è nato per dimostrare l'utilità della ROTN,per superare i problemi di immagini e della FEN,  per cui nel prototipo è stata curata la parte Object Oriented cuore di controllo con chess.h, chess.cpp e la parte openings trainer con standard pgn.
 Successivamente da prototipo si sono completate le funzionalità rapidamente come C. Per cui nella nota finale sul  refactoring viene ricordato di individuare e valutare parti che possano essere rimesse in OO.
 
 Per documentarsi sul ROT notation si raccomanda leggere:
 - manuale (scacchigr.txt)
 - articolo rotn-versus-fen.md
 - articolo motoregrafico.md
+- specifica rotn (specifica formale secondo EBNF ISO 14977)
 
 Tieni presente che sono non vedente e ho impiegato da solo 10 mesi per implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
 
+Grafica SFML(Simple&Fast Multimedia Library)
 In Scacchi-it la grafica fa uso della libreria sfml-2.6.1 ed eventuali cambi di tale libreria necessiterebbero di porting della
 parte sfml, questo perchè le versioni superiori sono state ridisegnate diversamente e diverse funzioni sono state modificate/eliminate oppure è cambiato lo standard di nomenclatura passato a quello Camel.
+
 Github  
 Sono sotto github varie parti.
 Rilascio Scacchi-it:
@@ -29,6 +31,7 @@ Rilascio Scacchi-it:
 - quelle per il rilascio delle estensioni browser in Redyouman.github.io\_posts\estensioni, contenente le estensioni per firefox e chrome come zip e un manuale.
 Versioning:
 -quelle per il versioning  dei sorgenti e build, sotto questo repository, le directory inizano tutte con srcxxx 
+
 Sorgenti su Github
 Il repository scacchi contiene tutti i sorgenti allineati all'ultima versionecon configurazione e manuale
 
@@ -331,10 +334,16 @@ Sono state affrontate in OO la parte chess.h, chess.cpp cuore del progetto e del
 Da valutare se ridurre le variabili globali in questo refactoring.
 Ulteriore refactoringda valutare se fare 
 Si potrebbero eliminare tutte le printDebug per ripulire il progetto.Molto utili in test unitario. Ma si possono anche mantenere. La funzione void printDebug è in utility.cpp e proto.h
+Segnalazioni
+Per eventuali segnalazioni di bugscrivere a:
+rosturco.na@gmail.com
+Nel manuale è scritto cosa inviare allegato alla email.
 
 Conclusione 
-Grazie per l'attenzione.
+Ho reso open source il progetto per condividere con voi la ROTN, utile strumento semplificativo del gioco per i non vedenti, per far studiare tale soluzione.
+L'applicativo consente ai normodotati e ai non vedenti di giocare, studiare , sia con persone sia con stockfish, sia in locale che in vpn Hamachi, rendendo il gioco democratico (gratuito), alla pari, con gli stessi strumenti per la crescita cognitiva. 
 Spero che si possa far evolvere ulteriormente questo progetto, a vantaggio dei non vedenti in modo di aumentare la loro inclusione e autonomia con gioco alla pari con i normodotati.
 Soprattutto per la innovazione della specifica formale ROTN trattata in Scacchi-it.
+Grazie per l'attenzione.
 
 
