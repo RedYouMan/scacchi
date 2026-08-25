@@ -311,7 +311,6 @@ La guida la puoi seguire sia da cmd che da visual studio code aprendo la console
 2) Step 2, aggiungere un messaggio di commit  git commit -m 'Ho modificato il file xyz'
 3) Step 3, pushare verso github, git push
 
-
 Se vuoi lavorare su un branch per provare un feature nuova e poi poter tornare eventualmente indietro ad una versione precedente:
 1) git checkout -b nome_feature dove -b significa 'crea il branch se non esiste', se ti vuoi spostare ad un branch esistente invece basta git checkout nomebranch, ad esempio git checkout main (che è il branch principale del progetto)
 2) fai sempre il giro di sopra, git add, git commit, git push
@@ -330,6 +329,20 @@ la documentazione ufficiale di git in italiano, le prime parti sono in italiano 
 Utili alcuni comandi:
 se sei nella cartella che hai ottenuto da una clonazione e vuoi sapere la url del repository:
 git remote get-url origin
+
+Se dopo il clone devi prendere gli aggiornamenti:
+git fetch
+Quando ti serve
+Prima di unire o lavorare: Per controllare lo stato del progetto sul server prima di fare qualsiasi modifica.
+Per evitare conflitti a sorpresa: Prima di un git pull, per capire se ci sono modifiche che potrebbero creare problemi.
+Per vedere chi ha fatto cosa: Quando vuoi ispezionare il lavoro degli altri sviluppatori prima di integrarlo.
+
+Confronta il tuo branch locale con quello remoto per vedere cosa è cambiato:
+git diff origin/main
+``` *(sostituisci `main` con il nome del tuo branch, ad esempio `master`)*.
+
+Se vuoi scaricare e unire subito i cambiamenti nel tuo codice, usa:
+git pull
 
 REFACTORING DA valutare se fare
 Coachgame non è ancora stato ultimato sebbene presente nel repository.
