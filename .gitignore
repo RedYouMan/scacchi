@@ -73,7 +73,7 @@ logdir/*
 registrazioni/*
 sospensioni/*
 *.exe
-
+!/engine/*.exe
 # ignore all files in problemi except problema1.txt
 problemi/*
 !problemi/problema1.txt

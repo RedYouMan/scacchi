@@ -60,6 +60,14 @@ essi sono:
 engine.cnf
 chessparam.cnf
 
+Dove sono gli eseguibili
+Nella root troviamo:
+scacchi-start.exe, clock-start.exe, incolla-FEN.exe, validaFEN.exe, coachFEN-start.exe e coachGame-start.exe.
+Nella bin:
+scacchi.exe, orologioScacchi.exe, coachFEN.exe, , coachGame.exe
+In sospensioni:
+fenpos.exe
+
 Descrizione e dettagli ulteriori
 I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , srcfenpos , srcvalidaFEN , src-coach, src-coachGame (non testata ancora), src-estensioni e serverScacchi.
 La src è contemporaneamente online e offline, aggiornata alla ultima versione 
