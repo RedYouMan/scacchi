@@ -54,6 +54,12 @@ Finora per rilasciare la versione veniva aggiornato nel codice la parte Banner d
 
 Le utility cpp esclusi i starter hanno un proprio banner.
 
+File di configurazione
+Sono realizzati in src ma posti nella bin
+essi sono:
+engine.cnf
+chessparam.cnf
+
 Descrizione e dettagli ulteriori
 I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , srcfenpos , srcvalidaFEN , src-coach, src-coachGame (non testata ancora), src-estensioni e serverScacchi.
 La src è contemporaneamente online e offline, aggiornata alla ultima versione 
