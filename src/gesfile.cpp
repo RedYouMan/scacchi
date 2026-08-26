@@ -9,7 +9,7 @@
  - per il caricamento dei pezzi secondo una posizione caricata attraverso la funzione void load
  - per sospendere unapartita
  - per riprendere una partita attraverso la funzione load
- - per ruotare la scacchiera sfruttando sospensione e ripresa della partita
+ - per ruotare la scacchiera sfruttando sospensione e ripresa della partita (vedi nav.cpp parte cntrlG)
 
 */
 
