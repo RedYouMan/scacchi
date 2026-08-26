@@ -1012,10 +1012,6 @@ void checkMate()
 
     return;
 }
-/*
-la funzione precedente algebricNotation è stata tratta da quella sotto che aveva dei bug e semplificata
-La precedente è stata rinominata con 2 e ora non usata(candidata ad essere eliminata)
-*/
 void algebricNotation(char who, string src, string dest, string prima_lettera)
 {
     // simbolo di cattura nella notazione algebrica

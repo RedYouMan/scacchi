@@ -13,8 +13,11 @@
  - undo.cpp per la didattica
  - utility.cpp per le varie utility e help
  - chess.cpp per il controllo regole di gioco
- - questions.cpp per matto, scacco, stallo e altro
-*/
+ - questions.cpp per inserimento algebrica notazione, controllo matto, scacco, stallo e altro
+
+
+Nota: insertNotation è in questions.cpp e non in utility come logica, per evitare di includere chess.h anche a utility.cpp
+ */
 #include <windows.h>
 #include <iostream>
 #include <clocale>

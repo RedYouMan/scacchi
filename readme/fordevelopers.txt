@@ -47,6 +47,11 @@ Sorgenti su Github
 Il repository scacchi contiene tutti i sorgenti allineati all'ultima versionecon configurazione e manuale
 
 
+Per ricercare una funzione nel codice 
+E' possibile che durante la manutenzione occorre cercare una funzione o una stringa tra tutti i sorgenti.
+Il comando dos migliore è:
+findstr <stringa> *
+
 Rilascio di una versione
 Finora per rilasciare la versione veniva aggiornato nel codice la parte Banner di Scacchi-it che si trova in:
 - board.cpp(vedi cout in void start_game())
@@ -317,11 +322,6 @@ Difatti in nav.cpp non viene consentito.
 
 Non viene consentito l'utilizzo di stockfish in modalità online e nemmeno l'opening trainer.
 Nè dell'Openings Trainer.
-
-Suggerimento per ricerca di stringhe nei file
-E' possibile che durante la manutenzione occorre cercare una funzione o una stringa tra tutti i sorgenti.
-Il comando dos migliore è:
-findstr <stringa> *
 
 Comandi git
 di Mario Turco
