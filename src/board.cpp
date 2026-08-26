@@ -1,6 +1,20 @@
 
 // board.cpp, questo sorgente, è il main del gioco
-// nav.cpp permette, invece, la navigazione su scacchiera
+/*
+ Board.cpp gestisce tutto il gioco su scacchiera:
+ - tra due giocatori che giocano sulla stessa scacchiera
+ - tra giocatore e stockfish
+ - tradue giocatori sulla stessa rete locale o su vpn log Hamachi
+
+ Per ottenere questo collabora con:
+ - nav.cpp la parte grafica SFML e i vari tasti cntrl
+ - engine4.cpp per i comandi uci a stockfish
+ - myNet.cpp per giocare su rete locale o log Hamachi (vedi manuale scacchigr.txt)
+ - undo.cpp per la didattica
+ - utility.cpp per le varie utility e help
+ - chess.cpp per il controllo regole di gioco
+ - questions.cpp per matto, scacco, stallo e altro
+*/
 #include <windows.h>
 #include <iostream>
 #include <clocale>

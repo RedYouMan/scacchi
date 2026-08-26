@@ -1,5 +1,9 @@
 // nav.cpp
-// Il modulo di navigazione permette al non vedente di scoprire come sono posizionati i pezzi sulla scacchiera, di sapere il nome della casa su cui si trova e di giocare selezionando la casa di partenza e quella di arrivo del pezzo che vuole muovere
+/*
+Il modulo di navigazione permette al non vedente di scoprire come sono posizionati i pezzi sulla scacchiera, di sapere il nome della casa su cui si trova e di giocare selezionando la casa di partenza e quella di arrivo del pezzo che vuole muovere
+Questo modulo gestisce la grafica SFML, i tasti Cntrl e il menu di gioco
+Collabora con drawboard.cpp per la grafica
+*/
 #include <sfml/graphics.hpp>
 #include <sfml/window.hpp>
 #include <sfml/system.hpp>
