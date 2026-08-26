@@ -1,5 +1,9 @@
 // openingstrainer.cpp
 #pragma warning(disable : 4244 4267)
+/*
+ Il programma consente di selezionare un file pgn presenti nella cartella pgn_data e eseguire le prime dieci mosse della partita scelta sulla scacchiera,
+ per apprendere l'apertura.
+*/
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <string>
