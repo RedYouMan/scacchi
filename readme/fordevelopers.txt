@@ -46,7 +46,6 @@ git clone 'url'
 Sorgenti su Github
 Il repository scacchi contiene tutti i sorgenti allineati all'ultima versionecon configurazione e manuale
 
-
 Per ricercare una funzione nel codice 
 E' possibile che durante la manutenzione occorre cercare una funzione o una stringa tra tutti i sorgenti.
 Il comando dos migliore è:
@@ -72,6 +71,8 @@ Nella bin:
 scacchi.exe, orologioScacchi.exe, coachFEN.exe, , coachGame.exe
 In sospensioni:
 fenpos.exe
+In serverScacchi
+serverScacchi.exe
 
 Ambiente finale per creare il tuo zip Scacchi-it
 Quando hai creato tutti gli exe posizionandoli nella cartella giusta, controlla che esistano tutte le directory, in modo particolare:
