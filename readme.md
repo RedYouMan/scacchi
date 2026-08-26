@@ -56,8 +56,14 @@ I primi due motori consentono l'utilizzo del chess engine per:
 
 Il manuale è scacchigr.txt. E' stato scelto di farlo come file di testo e non pdf, per il semplice motivo che un file di testo è la migliore accessibilità possibile su browser per un non vedente.
 
-## Ringraziamenti a Dasor ##
-Le bellissime immagini sono tratte dal repository di Dasor su github.com nel progetto sfml-chess. 
+## Per gli sviluppatori
+
+Agli sviluppatori che studiano il codice, viene consigliato di leggere in cartella docs
+anche i file fordevelopers e tuning
+
+## Ringraziamenti a Dasor
+
+Le bellissime immagini sono tratte dal repository di Dasor su github.com nel progetto sfml-chess.
 Il progetto sfml-chess utilizza la stessa licenza di Scacchi-it: GNU GPL versione 3.
 
 ## **Conclusioni**
@@ -69,8 +75,8 @@ Inclusione reale: Permette a persone vedenti e non vedenti di confrontarsi sullo
 Democratizzazione del sapere: Essendo gratuito e offline, azzera le barriere economiche e di connettività, garantendo il diritto al gioco e allo svago.
 Autonomia: Offre uno strumento di svago e studio autogestito per chi vive situazioni di disabilità sensoriale.Risultati correlati
 Reputazione e Autorevolezza
-Open data e condivisione: L'uso di notazioni testuali trasparenti (come la rot notation) eleva la serietà di questi progetti a livello scientifico e open source.Risultati correlati
+Open data e condivisione: L'uso di notazioni testuali trasparenti (come la rot notation) eleva la serietà di questi progetti a livello scientifico e open source.
 Progettazione partecipata: La nascita di software curati da programmatori ed esperti con disabilità visiva garantisce risposte tecniche reali ed evita soluzioni di facciata.
 Valore Didattico
-Apprendimento inclusivo: Ottimo per spiegare le regole, studiare aperture e risolvere problemi tattici senza dipendere da grafica complessa o barriere visive.Risultati correlati
+Apprendimento inclusivo: Ottimo per spiegare le regole, studiare aperture e risolvere problemi tattici senza dipendere da grafica complessa o barriere visive.
 Sviluppo cognitivo: Stimola la memoria di lavoro, il calcolo combinatorio e il pensiero astratto, competenze fondamentali soprattutto nel training visivo-spaziale e di memorizzazione alla cieca.
