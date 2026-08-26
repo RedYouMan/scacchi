@@ -105,9 +105,10 @@ E' consigliata la installazione di Visual Studio 2022 con il suo sdk.
 Tuttavia, dopo aver installato le librerie che si porta dietro Visual Studio Community 2022, per maggiore libertà qui abbiamo usato Visual studio code con cmake.
 Il risultato è identico, anche se si appoggia alle librerie della installazione di VisualStudio 2022.
 Il cmakelist.txt  è presente in ogni directory dei sorgenti cpp insieme alla directory build contenente debug dove viene creato l'eseguibile.
+Avvertenze:
 Il make alla fine (post build) copia eseguibile e dll necessarie nella destination_dir configurata nel cmake.
 Nel cmakelists.txt risiede il path al sfml-2.6.1 da esplicitare per il proprio ambiente windows.
-e la bin dove mettere scacchi.exe
+e la bin dove mettere scacchi.exee gli altri exe.
 Il cmake fa riferimento ad una directory in cui è installato localmente SFML 2.6.1
 
 I sorgenti in serverScacchi e src-starter sono sorgenti python, producendo alla fine degli exe col comando pyinstaller: 

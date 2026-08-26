@@ -1,7 +1,18 @@
 
 // gesfile.cpp
-// gestisce la scrittura su file
-// il caricamento del file per i problemi di scacchi
+/*
+
+ Questo sorgente gestisce la lettura da file secondo la notazione ROTN
+ Per comprendere la ROTN leggi il manuale scacchigr.txt
+ Il sorgente lavora sulla ROTN in varie modalità:
+ - per inizializzare la scacchiera con la funzione void init()
+ - per il caricamento dei pezzi secondo una posizione caricata attraverso la funzione void load
+ - per sospendere unapartita
+ - per riprendere una partita attraverso la funzione load
+ - per ruotare la scacchiera sfruttando sospensione e ripresa della partita
+
+*/
+
 #include <windows.h>
 #include <iostream>
 #include <cstdio>
