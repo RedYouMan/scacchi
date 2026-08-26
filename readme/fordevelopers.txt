@@ -68,6 +68,14 @@ scacchi.exe, orologioScacchi.exe, coachFEN.exe, , coachGame.exe
 In sospensioni:
 fenpos.exe
 
+Ambiente finale per creare il tuo zip Scacchi-it
+Quando hai creato tutti gli exe posizionandoli nella cartella giusta, controlla che esistano tutte le directory, in modo particolare:
+- sospensioni
+- registrazioni
+- logdir
+
+Queste directory dopo il clone non vengono create essendo vuote. Provvedi a crearle.
+
 Descrizione e dettagli ulteriori
 I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , srcfenpos , srcvalidaFEN , src-coach, src-coachGame (non testata ancora), src-estensioni e serverScacchi.
 La src è contemporaneamente online e offline, aggiornata alla ultima versione 
