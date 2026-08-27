@@ -51,8 +51,8 @@ Per clonare usa il comando:
 git clone 'url'
 
 Se crei un tuo progetto
-Ricorda di mettere authors, license e readme.md dove mensioni il progetto da cui deriva il tuo, l'autore originale con la sua email e il suo repository.
- 
+Ricorda, per gli aspetti legali dovuti alla licenza GNU GPL 	versione 3,  di rendere anche il tuo progetto open source, di mettere nel tuo progetto i file di Scacchi-it: authors, license e nel tuo readme.md inserire il progetto da cui deriva il tuo, l'autore originale con la sua email e il repository di Scacchi-it.
+
 Sorgenti su Github
 Il repository scacchi contiene tutti i sorgenti allineati all'ultima versionecon configurazione e manuale
 
