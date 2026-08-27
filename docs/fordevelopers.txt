@@ -41,11 +41,18 @@ Rilascio Scacchi-it:con repository privato
 Versioning:con repository pubblico
 -quelle per il versioning  dei sorgenti sotto questo repository, le directory iniziano tutte con srcxxx 
 
+Sul disco locale
+Oltre ad avere il repository in locale con i sorgenti, le cartelle e i make, occorre avere una altra cartella parallela a scacchi, chiamata scacchi-it che serve al rilascio della applicazione e in cui ci sono tutte le cartelle necessarie (basati su scacchiGr.7z) al funzionamento, : file di configurazione, le dll, gli eseguibili, le immagini e fonts
+Se hai clonato il progetto per creare la tua applicazione al posto di scacchi-it metti alla cartella il nome del tuo progetto.
+
 Repository pubblico dei sorgenti
 la url è https://github.com/RedYouMan/scacchi.git
 Per clonare usa il comando:
 git clone 'url'
 
+Se crei un tuo progetto
+Ricorda di mettere authors, license e readme.md dove mensioni il progetto da cui deriva il tuo, l'autore originale con la sua email e il suo repository.
+ 
 Sorgenti su Github
 Il repository scacchi contiene tutti i sorgenti allineati all'ultima versionecon configurazione e manuale
 
