@@ -1,6 +1,0 @@
-T:Matto in una mossa
-V:N;
-B:Rh8
-N:Rf7;Dg1;
-M:B
-P:0;
