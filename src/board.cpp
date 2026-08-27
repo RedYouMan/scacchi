@@ -15,7 +15,7 @@
  - chess.cpp per il controllo regole di gioco
  - questions.cpp per inserimento algebrica notazione, controllo matto, scacco, stallo e altro
 
-
+Board.cpp durante il gioco con stockfish, gestisce anche l'assenza di risposta di stockfish se, quest'ultimo trovandosi in cattiva situazione di gioco non rispondesse più.Viene, difatti settato un timeout di 2 minuti sufficiente, dato che stockfish in condizioni normali riesce a rispondere molto velocemente.
 Nota: insertNotation è in questions.cpp e non in utility come logica, per evitare di includere chess.h anche a utility.cpp
  */
 #include <windows.h>
@@ -328,9 +328,12 @@ void playWhite()
         }
 
         /*
-         devo però verificare lo stato di stockfish che potrebbe trovarsi in
+        Stockfish se si trova in pessime condizioni di gioco, potrebbe non rispondere più.
+        devo anche verificare lo stato di stockfish che potrebbe trovarsi in
          matto, stallo, patta o abbandona. Per farlo setto
          un timer e gestisco la getOutputMove  in asincrono
+         Questo per evitare che stockfish non risponda più.
+         Sono sufficienti 2 minuti di attesa, stockfish risponde sempre molto velocemente.
         */
         string app;
         app.clear();
