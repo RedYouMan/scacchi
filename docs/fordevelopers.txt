@@ -2,10 +2,16 @@
 NOTE PER GLI SVILUPPATORI
 Rosario Turco
 
-Il progetto Scacchi-it è un progetto italiano,  gratuito, per piattaforma Windows, versioni 10 e 11, nato per realizzare un gioco tiflologico, adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
+Premessa
+Tieni presente che sono non vedente e ho impiegato da solo 12 mesi per implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
+Il mio sforzo principale è stato ideare e mettere a punto una notazione scacchistica più semplice come la ROTN, che permette la inclusione e la completa autonomia dei non vedenti.
+
+Introduzione
+Il progetto Scacchi-it è un progetto tiflologico italiano,  gratuito, per piattaforma Windows, versioni 10 e 11, nato per realizzare un gioco di scacchi adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
 Tuttavia si è introdotta anche una grafica riproducente la scacchiera, e i pezzi, in modo che i familiari e gli amici possono giocare col non vedente.
+In sostanza Scacchi-it è inclusivo.
 Per le funzionalità leggere readme.md
-Il progetto ora è totalmente open source.
+Il progetto ora è totalmente open source e open data.
 
 Evoluzione del progetto
 Il progetto inizialmente è nato per dimostrare l'utilità della ROTN (nuova notazione),per superare i problemi di:
@@ -20,9 +26,6 @@ Per documentarsi sul ROT notation si raccomanda leggere:
 - articolo motoregrafico.md
 - specifica rotn (specifica formale secondo EBNF ISO 14977)
 
-Avvertenza
-Tieni presente che sono non vedente e ho impiegato da solo 10 mesi per implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
-
 Grafica SFML(Simple&Fast Multimedia Library)
 In Scacchi-it la grafica fa uso della libreria sfml-2.6.1 ed eventuali cambi di tale libreria necessiterebbero di porting della
 parte sfml, questo perchè le versioni superiori sono state ridisegnate diversamente e diverse funzioni sono state modificate/eliminate oppure è cambiato lo standard di nomenclatura passato a quello Camel.
@@ -32,7 +35,7 @@ La motivazione di partire con la versione 2.6.1 è stata condizionata dal fatto 
 Github  
 Sono sotto github varie parti.
 Rilascio Scacchi-it:con repository privato
-- quelle per il rilascio della build sotto RedYouMan.github.io/_posts\repo che  contiene il pacchetto scacchiGr.7z ottenuto dall'impacchettamento della cartella  scacchi-it, , sotto Desktop/progc/scacchi-it, che serve per il rilascio rinominato come scacchiGr.7z
+- quelle per il rilascio della build sotto RedYouMan.github.io/_posts\repo che  contiene il pacchetto scacchiGr.7z ottenuto dall'impacchettamento della cartella  scacchi-it, 
 - quelle per il rilascio del manuale In RedYouMan.github.io\_posts\tutorials dove si mette scachiGr.txt tratto e modificato nel repository redyouman.github.io\scacchi\readme 
 - quelle per il rilascio delle estensioni browser in Redyouman.github.io\_posts\estensioni, contenente le estensioni per firefox e chrome come zip e un manuale.
 Versioning:con repository pubblico
@@ -56,7 +59,7 @@ Finora per rilasciare la versione veniva aggiornato nel codice la parte Banner d
 - board.cpp(vedi cout in void start_game())
 - utility.cpp (vedi la sintesi vocale del help)
 
-Le utility cpp esclusi i starter hanno un proprio banner.
+Le utility esclusi i starter hanno un proprio banner.
 
 File di configurazione
 Sono realizzati in src ma posti nella bin
@@ -101,7 +104,8 @@ Anche serverScacchi.exe è ottenuto nella cartella ServerScacchi facendo il pyin
 
 Test di posizioni scacchistiche
 La cartella Test contiene file di test da caricare sotto cartella sospensioni  o sotto problemi. La differenza tra le due cartelle è che la prima dopo il caricamento con CtrlR cancella il file se non lockato da un editor, la seonda cartella non cancella i file e, quindi, adatta ia problemi o puzzle che si vogliono risolvere in qualche giorno.
-Non tutti i test hanno il T: col tema, spesso nati rapidamente per il test.
+Non tutti i test hanno il T: col tema, specificato in modo chiaro, spesso nati rapidamente per il test.
+Provvederò pian piano a mettere il tema quando possibile.
 
 Ambiente di sviluppo
 L'ambiente di sviluppo è basato su librerie Windows di Visual Studio 2022 col suo sdk e compilazione basata su cmake (CMAKELISTS.txt) e C17.
