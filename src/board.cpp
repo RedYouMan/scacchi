@@ -842,7 +842,7 @@ int move(string src, string dest, char who)
     /*
 
         Ultima cosa da controllare
-        non devo finire sotto scaccoa mia volta
+        non devo finire sotto scacco a mia volta
         */
 
     if (sottoScacco(who))
@@ -1622,7 +1622,7 @@ void cleanSquare()
             continue;
         }
 
-        vector<int> Index = utility.getIndexPuntoDiVista(PieceNoTouch[i], puntoDiVista);
+        vector<int> Index = utility.getIndexPuntoDiVista(PieceNoTouch[i].substr(0, 2), puntoDiVista);
         p = Index.front();
         q = Index.back();
         if (chessBoard[p][q].getBusySquare() == false)
