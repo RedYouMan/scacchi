@@ -26,11 +26,6 @@ void insertUndoMove(char who, string src, string destination, int num, int numWh
 
     */
     string cmd = "";
-    if (reg_to_file == true)
-    {
-        deleteUndo();
-        return;
-    }
     if (online)
     {
         deleteUndo();
@@ -88,14 +83,7 @@ Per rendere di nuovo validi gli arrocchi occorre usare setValid00 e setValid000
         return;
     }
 
-    if (reg_to_file)
-    {
-        deleteUndo();
-        callTextToSpeech(string("Non è possibile annullare la mossa durante la registrazione della partita contro l'engine\n"));
-        return;
-    }
-
-    // sviluppo della funzione
+        // sviluppo della funzione
     string cmd = undoTail.back();
     undoTail.pop_back();
     stringstream ss(cmd);

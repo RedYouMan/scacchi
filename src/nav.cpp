@@ -275,11 +275,18 @@ void navOnBoard(char who)
                     // undo
                     if (event.key.code == sf::Keyboard::U)
                     {
-
-                        undoMove();
-                        myRefresh();
-                        // window_app->display();
-                        gioca();
+                        if (reg_to_file)
+                        {
+                            string mys = "Non puoi fare undo con la registrazione in corso";
+                            callTextToSpeech(mys);
+                        }
+                        else
+                        {
+                            undoMove();
+                            myRefresh();
+                            // window_app->display();
+                            gioca();
+                        }
                     }
 
                     if (event.key.code == sf::Keyboard::Q)
