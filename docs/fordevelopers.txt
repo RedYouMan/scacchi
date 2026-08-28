@@ -5,6 +5,10 @@ Rosario Turco
 Premessa
 Tieni presente che sono non vedente e ho impiegato da solo 12 mesi per implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
 Il mio sforzo principale è stato ideare e mettere a punto una notazione scacchistica più semplice come la ROTN, che permette la inclusione e la completa autonomia dei non vedenti.
+Se fai un tuo progetto, spero che tu possa, con maggiore successo, fare affermare la ROTN in campo scacchistico, editoriale e in ambito didattico. Solo creando un seguito nelle varie associazioni, gruppi facebook, Reddit, forum etc. potrai far diffondere la sua utilità.
+
+Un altro punto. Creare un chess engine come Scacchi-it che si propone sia come motore di controllo e gioco a due, sia come motore di controllo di stockfish e, infine, come motore online Hamachi, ti assicuro che non è semplice. La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.
+Il consiglio è, quindi, studiarlo, migliorarlo e aggiungere funzionalità, mancanti ma partendo da qualcosa di funzionante e con una scelta architetturale che pian piano comprenderai.
 
 Introduzione
 Il progetto Scacchi-it è un progetto tiflologico italiano,  gratuito, per piattaforma Windows, versioni 10 e 11, nato per realizzare un gioco di scacchi adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
@@ -141,8 +145,8 @@ La directory src-starter  è utilizzata per file python che vengono resi eseguib
 
 Il progetto è costituito da tre parti:
 - motore grafico di navigazione della scacchiera
-- motore di controllo 
--motore di gioco
+- motore di controllo e gioco a  due, anche su Hamachi 
+-motore di gioco(stockfish)
 
 Il motore di navigazione consente di navigare la scacchiera graficamente, (nav.cpp) utilizzando il mouse, le frecce e il return. Inoltre informa sul nome della casella, se contiene pezzi o se vuota. Infine gestisce tutti i controls da tastiera per il gioco
 Il motore di controllo, (board.cpp) permette, in collaborazione col motore di navigazione e altre funzionalità (come questions.cpp, utility.cpp, engine4.cpp, mynet.cpp, undo.cpp etc.) la gestione e il controllo di tutte le regole di gioco: movimento dei pezzi, arrocco, enpassant, scacco al re, scacco matto, stallo, notazione algebrica, RoT notation, i problemi, la registrazione della partita, la sospensione di gioco e la ripresa, la scelta di giocare col computer, la soluzione dei problemi con e senza computer, il cambio del punto di vista di gioco.
@@ -219,7 +223,8 @@ In cheScacco() si dichiara scacco al re se non è scacco matto.
 In particolare per dichiarare scacco matto non ci devono essere case libere di fuga (checkFreeSquare)e il pezzo che da scacco non può essere catturato e non esistono propri pezzi che possono parare lo scacco, ovvero per parare si intende trovare un pezzo che possa mettersi davanti al re.
 Un pezzo avversario si può catturare col re se è adistanza 1 e non è difeso, altrimenti occorre verificare se catturabile con altro pezzo.
 Tutto questo viene esaminato nella funzione cheScacco() in questions.cpp. Questions.cpp considerache tipi di scacco sono in gioco, se un pezzo è catturabile e se si può interporre.
- 
+
+E' presente anche la funzionalità sottoScacco, per evitare di fare mosse non valide finendo sotto scacco. 
 Gli arrocchi sono settati validi alla disposizione iniziale dei pezzi, Poi se si muove la torre, viene posto afalso la validità dell'arrocco relativo (setValid000 o setValid00) attraverso la chiamata del setBusySquare a false sulla casella. 
 Altro momento di invalidazione di arrocco ,nel checkMove del re, se il re viene mosso dalla posizione iniziale si invalidano entrambi gli arrocchi.
 
@@ -258,7 +263,7 @@ Occorre prima fare lo start() (vedi engine4.cpp)
 che invia il comando di sincronizzazione
 uci return
 Importante anche lo stop() (vedi engine4.cpp)
-e getOutputMovecon cui ricevo le risposte di stockfish.
+e getOutputMove con cui ricevo le risposte di stockfish.
 se parte il computercome bianco
 ucinewgame 
 oppure
@@ -278,6 +283,9 @@ Infatti per i problemi occorre partire con la fen
 Vedi void risolviProblema(char who) in board.cpp
 In generale vedi board.cpp
 
+La getOutputMove è posta sotto un timeout. Questo perchè stockfish, se si trovasse molto inferiore come posizione, potrebbe non rispondere più. Di conseguenza sono settati due minuti dopo di che se non arriva la risposta scatta il timeout con abbandono di stockfish.Di solito stockfish risponde sermpre molto rapidamente in condizioni normali.
+
+Osserva in GesFile.cpp quando si sospende una partita vengono salvati come ROTN altri parametri sul file di sospensione, che servono alla ripresa di gioco: file di log della partita se veniva registrata, la attivazione di stockfish se ci stavi giocando, i parametri di livello di gioco con stockfish, etc.
 
 Distribuzione dell'applicativo 
 Occorre aggiungere le dll dell'estensione dovuta al sdk installato insieme a Visual Studio Community 2022.
