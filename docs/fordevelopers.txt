@@ -206,6 +206,9 @@ a) case minacciate dell'arrocco (vedi anche checkCastleUnderAttack)
 b) verifica di scacco al re o scacco matto o stallo (vedi cheScacco e cheStallo)
 c) se un pezzo è difeso
 d) lo scacco matto si basa su checkFreeSquare che usa sempre il mattoncino di sopra
+
+Attenzione il metodo ha 4 parametri di input. Il quarto va esplicitato a true quando lo si usa per controllare il proprio re se sotto attacco, altrimenti risulterebbe che il proprio re attacca le proprie case. 
+
 Il concetto dietro a pezzo difeso sibasa sul fatto che è difeso se la casa su cui si trova è minacciata da un pezzo amico.
 In cheScacco() si dichiara scacco al re se non è scacco matto.
 In particolare per dichiarare scacco matto non ci devono essere case libere di fuga (checkFreeSquare)e il pezzo che da scacco non può essere catturato e non esistono propri pezzi che possono parare lo scacco, ovvero per parare si intende trovare un pezzo che possa mettersi davanti al re.

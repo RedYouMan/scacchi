@@ -1,7 +1,7 @@
-Versione: 10.6
-data: 21 Agosto 2026
+Versione: 10.7
+data: 22 Agosto 2026
 
-
+La versione 10.7 aggiunge la funzionalità di controllo che facendo una mossa non si vada sotto scacco.
 La versione 10.6 fissa l'ultimo bug noto sulla registrazione della partita
 La versione 10.5 fissa un bug su fenposper U quando non si tratta di un enpassant reale
 La versione 10.4 bug: donna si bloccava su h5-f7.
@@ -13,13 +13,15 @@ La versione 9.0 aggiunge la funzionalità incolla-fen, permettendo di dare a Sca
 La versione 8 rende Scacchi-it giocabile online oltre al gioco offline.
 
 Nella versione 8.2 sono state introdotti:
+
 - regola che il re non possa essere "mangiato", diretta conseguenza delle posizioni rotn che si possono caricare
 
-- per le posizioni ROTN si possa rappresentare una posizione di matto in cui il matto è stato già dato; in tal caso se 
-si carica una posizione simile, Scacchi-it dichiara che il matto era già stato dato e che dopo 3 secondi reinizializza la scacchiera
+- per le posizioni ROTN si possa rappresentare una posizione di matto in cui il matto è stato già dato; in tal caso se
+  si carica una posizione simile, Scacchi-it dichiara che il matto era già stato dato e che dopo 3 secondi reinizializza la scacchiera
 - corretta una stampa di un testo accentato che veniva scritto male nello stallo
 
 Nella versione 8.3 rispettate regole di validazione ROTN:
+
 - esistenza descrittori, posizione fissa, presenza valori attesi
 - non superamento di 16 pezzi per colore
 - presenza dei re
@@ -33,4 +35,4 @@ La versione 8.6 effettua adeguamento alla specifica 1.4
 
 La versione 8.7 esplicita il descrittore opzionale Z, utile per il numero di semimosse dichiarato nella fen.
 
-La versione 8  è da considerarsi mainstream stabile, completa le funzionalità previste per l'applicativo e nella fattispecie aggiunge sia la possibilità di giocare online e ingloba tutto il precedente della versione 7.3 (vedi tutorial), oltre alla già presente reinizializzazione della scacchiera.
+La versione 8 è da considerarsi mainstream stabile, completa le funzionalità previste per l'applicativo e nella fattispecie aggiunge sia la possibilità di giocare online e ingloba tutto il precedente della versione 7.3 (vedi tutorial), oltre alla già presente reinizializzazione della scacchiera.

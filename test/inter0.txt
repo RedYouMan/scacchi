@@ -1,0 +1,6 @@
+T: non andare sotto scacco
+V:B
+B:Ra1;Af6;
+N:Rh8;Ag7;Ph7;
+M:B
+P:0

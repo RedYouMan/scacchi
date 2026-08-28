@@ -509,12 +509,11 @@ bool isPieceIntercept(int m, int n, int x, int y, char who)
                     pezzo = chessBoard[i][j].getChessPiece();
                     src = utility.getSquarePuntoDiVista(i, j, puntoDiVista);
 
-                    // se src esiste nel array PieceNoTouch[] si il salta pezzo sta parando già uno scacco al re
+                    // se src esiste nel array PieceNoTouch[] si salta il pezzo sta parando già uno scacco al re
                     if (searchPieceNoTouch(src) == true)
                     {
                         continue;
                     }
-
                     // determino la direzionedello scacco: diagonale o traversa
                     if (abs(x - m) == abs(y - n))
                     {
@@ -1135,4 +1134,39 @@ void algebricNotation(char who, string src, string dest, string prima_lettera)
     }
 
     return;
+}
+
+bool sottoScacco(char who)
+{
+    int a = 0, b = 0;
+    bool trovati = false;
+    for (int x = 0; x < 8; x++)
+    {
+        for (int y = 0; y < 8; y++)
+        {
+            if (chessBoard[x][y].getBusySquare() == true && chessBoard[x][y].getChessPiece().getTypePiece() == KING && chessBoard[x][y].getChessPiece().getColorPiece() == who)
+            {
+
+                trovati = true;
+                a = x;
+                b = y;
+                break;
+            }
+            // ho cercato il mio re
+
+            if (trovati)
+            {
+                break;
+            }
+        }
+    }
+    // cercoi pezzi di colore opposto al mio re di colore who
+    // chessSquareUnderAttack dentro cerca i pezzi di colore diversi da who
+    King king_da_verificare = King();
+    if (king_da_verificare.checkSquareUnderAttack(a, b, who, true) == true)
+    {
+        return true;
+    }
+
+    return false;
 }

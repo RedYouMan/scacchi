@@ -154,7 +154,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 10.6 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 10.7 - Rosario Turco\n";
     cout << "sulla scacchiera: CtrlH per help(), CtrlX per tutorial\n";
     init();
     Sleep(10000);
@@ -800,12 +800,6 @@ int move(string src, string dest, char who)
         coloreCattura = "--";
     }
 
-    /*
-    Per la registrazione su log
-    setto  la notazione algebrica che si basa come informazioni suvariabili globali
-    ultimaMossa, arrocco e avvenutaCattura
-    */
-    algebricNotation(who, src, dest, primaLettera);
     // Ora esegue la mossa ritenuta valida
     //   prendo il pezzo della casella src e lo metto nella casella dest
     ChessSquare casellaSrc = chessBoard[i][j];
@@ -817,7 +811,6 @@ int move(string src, string dest, char who)
     casellaSrc.setBusySquare(false);
     chessBoard[i][j] = casellaSrc;
     animationBoard(i, j, m, n);
-
     // qua devo fare i controlli se preso enpassant
 
     // inoltre dovendo gestire sia mossa che cattura basandomi su m,n devo fare il cotrollo dopo aver settato l'esecuzione della mossa
@@ -844,6 +837,29 @@ int move(string src, string dest, char who)
             insertUndoMove(who, src, dest, startColor, numMove, pezzoCatturato, operation, "--", coloreCattura);
         }
     }
+
+    /*
+
+        Ultima cosa da controllare
+        non devo finire sotto scaccoa mia volta
+        */
+
+    if (sottoScacco(who))
+    {
+
+        string mys = "Finisci sotto scacco!\n";
+        callTextToSpeech(mys);
+        undoMove();
+        myRefresh();
+        return 0;
+    }
+
+    /*
+    Per la registrazione su log
+    setto  la notazione algebrica che si basa come informazioni suvariabili globali
+    ultimaMossa, arrocco e avvenutaCattura
+    */
+    algebricNotation(who, src, dest, primaLettera);
 
     // pulisco case di PieceNoTouch che risultano vuote
 
