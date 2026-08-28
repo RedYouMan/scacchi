@@ -1,6 +1,7 @@
-Versione: 10.7
-data: 22 Agosto 2026
+Versione: 10.8
+data: 24 Agosto 2026
 
+La versione 10.8 quando un pezzo non è più inchiodato si può muovere
 La versione 10.7 aggiunge la funzionalità di controllo che facendo una mossa non si vada sotto scacco.
 La versione 10.6 fissa l'ultimo bug noto sulla registrazione della partita
 La versione 10.5 fissa un bug su fenposper U quando non si tratta di un enpassant reale

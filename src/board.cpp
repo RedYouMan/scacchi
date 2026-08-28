@@ -1,4 +1,3 @@
-
 // board.cpp, questo sorgente, è il main del gioco
 /*
  Board.cpp gestisce tutto il gioco su scacchiera:
@@ -53,7 +52,7 @@ string playerOnline = "";
 // variabile globale usata da checkMoveKing e Intercepte start_game
 string PieceNoTouch[100];
 int IndiceNoTouch = 0;
-
+string squareCheck;
 // per saltare il messaggio di cattura pezzo nel caso di pezzo fermacarte
 bool jumpFalsePiece = false;
 // per printDebug mettendo a false non stampa
@@ -154,7 +153,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 10.7 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 10.8 - Rosario Turco\n";
     cout << "sulla scacchiera: CtrlH per help(), CtrlX per tutorial\n";
     init();
     Sleep(10000);
@@ -713,7 +712,9 @@ int move(string src, string dest, char who)
         check = re.checkMove(src, dest);
     }
 
-    if (isScaccoRe == true && checkMoveKing(m, n, i, j, who) == 0)
+    // squareCheck è la casa di chi ha mosso e ha fatto scacco
+
+    if (isScaccoRe == true && checkMoveKing(m, n, i, j, who, squareCheck) == 0)
     {
         check = false;
         printf("mossa non valida, il re è sotto scacco e questa mossa non lo toglie dallo scacco!\n");
@@ -723,7 +724,7 @@ int move(string src, string dest, char who)
         printf("mossa non valida per il pezzo selezionato!\n");
         return 0;
     }
-
+    squareCheck.clear();
     string msg_str = "muove " + string(chessBoard[i][j].getChessPiece().getNamePiece()) + "\n";
     callTextToSpeech(msg_str);
 
@@ -980,7 +981,7 @@ void clear_globali()
 {
     // pulizia variabili delle globali
     // tranne gRow , gCol, puntoDiVista
-
+    squareCheck.clear();
     enpFEN.clear();
     online = false;
     colorOnline.clear();
@@ -1584,13 +1585,26 @@ void clearNoTouch()
 
 bool searchPieceNoTouch(string src)
 {
+    ChessUtility utility;
+    vector<int> Ind;
+    string casaAttaccante;
 
     for (int i = 0; i < 100; i++)
     {
-        if (src == PieceNoTouch[i])
+        if (PieceNoTouch[i].length() >= 2 && src == PieceNoTouch[i].substr(0, 2))
         {
-            printf("Pezzo in %s che para già uno scacco!\n", src.c_str());
-            return true;
+
+            casaAttaccante = PieceNoTouch[i].substr(2, 2);
+
+            printf("casa attaccante %s\n", casaAttaccante.c_str());
+            Ind = utility.getIndexPuntoDiVista(casaAttaccante, puntoDiVista);
+            int k = Ind.front();
+            int w = Ind.back();
+            if (chessBoard[k][w].getBusySquare() == true)
+            {
+                printf("Pezzo in %s che para già uno scacco!\n", src.c_str());
+                return true;
+            }
         }
     }
     return false;

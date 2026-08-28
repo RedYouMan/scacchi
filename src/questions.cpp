@@ -41,6 +41,10 @@ void cheScacco(int m, int n, char who)
                     msg = "Scacco: verifichiamo se solo scacco al Re o scacco matto\n";
                     // callTextToSpeech(string("debug voice: scacco, verifichiamo se scacco al re o matto"));
                     printf("%s", msg.c_str());
+
+                    ChessUtility util;
+                    squareCheck = util.getSquarePuntoDiVista(m, n, puntoDiVista);
+
                     string tipoMossa;
                     tipoMossa.clear();
                     if (king_da_verificare.checkFreeSquare(x, y, UsecolorOfKing) == false)
@@ -308,10 +312,13 @@ who è il colore del giocatore che deve muovere
 
     return;
 }
-int checkMoveKing(int m, int n, int p, int q, char who)
+int checkMoveKing(int m, int n, int p, int q, char who, string casaAttaccante)
 {
     // p e q sono src di un pezzo mosso al posto del re
     // m e n la destination
+
+    // casaAttaccante è dove si è messo l'avversario se ha fatto scacco
+
     bool check = false;
     bool isPiecePresent = false;
     scaccoRimosso = false;
@@ -466,8 +473,7 @@ int checkMoveKing(int m, int n, int p, int q, char who)
         ChessUtility utility;
         string casaInd = utility.getSquarePuntoDiVista(x, y, puntoDiVista);
         string sorg = utility.getSquarePuntoDiVista(p, q, puntoDiVista);
-
-        PieceNoTouch[IndiceNoTouch] = casaInd;
+        PieceNoTouch[IndiceNoTouch] = casaInd + casaAttaccante;
         IndiceNoTouch++;
         int chi = (chessBoard[x][y].getChessPiece().getColorPiece() == 'W' ? 0 : 1);
         insertUndoMove(who, sorg, casaInd, startColor, chi, chessBoard[x][y].getChessPiece(), "mossa");

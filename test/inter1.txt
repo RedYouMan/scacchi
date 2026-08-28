@@ -1,0 +1,6 @@
+T: Inchiodatura alfiere tolta
+V:B
+B:Re1;Dg5;
+N:Rh8;Af8;Ph7;
+M:B
+P:0

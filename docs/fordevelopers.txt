@@ -168,6 +168,11 @@ Il progetto ha diversi sorgenti, di cui board.cpp è il main, mentre nav.cpp è 
 - animationBoard che effettua l'animazione
 - myRefresh() che permette dei refresh col trucco di una finta animazione
 
+La classe ChessUtility in chess.h è di cruciale importanza. Tieni presente che in ogni momento potresti aver
+bisogno di ruotare la scacchiera.  La chiave di lettura della scacchiera che è una matrice 8x8 con la casa 0,0 fissa in alto a sinistra, è proprio tale classe.
+Infatti potresti avere il bianco normalmente in righe 7 e 6 col nero in 0 e 1, oppure il contrario bianco in 0 e 1 e nero in 7 e 6.
+ChessUtility è presente ovunque e Tipermette in base al puntoDiVista, che avrai scelto, di trovare la x,y di qualsiasi casa della scacchiera ruotata o il nome della casa a partire da x,y.
+
 Il file gesfile.cpp è il fulcro della ROTN su cui si basa lo start di inizializzazione dei pezzi sulla scacchiera, la sospensione, la ripresa e il cambio puntoDiVista.
 Esso si basa sulla rot notation.
 

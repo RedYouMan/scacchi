@@ -48,7 +48,7 @@ void cheStallo(char who);
 bool isPiecePresent(int m, int n, int x, int y, char color);
 bool isPieceIntercept(int m, int n, int x, int y, char who);
 bool isPieceDefended(int m, int n, char who);
-int checkMoveKing(int m, int n, int x, int y, char who);
+int checkMoveKing(int m, int n, int x, int y, char who, string casaAttaccante);
 void whatColorComputer();
 void interpreter(string response);
 void readChessParam();
