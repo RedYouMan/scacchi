@@ -4,18 +4,23 @@ Rosario Turco
 
 Premessa
 Tieni presente che sono non vedente e ho impiegato da solo 12 mesi per implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
-Il progetto totalmente italiano è stato basato innanzitutto sulla inclusione paritaria, quindi scacchi a cui giocano contemporaneamente vedenti e non vedenti sulla stessa scacchiera, con mouse e tasti e sintesi vocale,con autonomia dei non vedenti e pari possibilità di crescita cognitiva.
+Il progetto, totalmente italiano, è stato basato innanzitutto sulla inclusione paritaria, quindi agli scacchi a cui giocano contemporaneamente vedenti e non vedenti sulla stessa scacchiera, con mouse,  tasti e sintesi vocale, con autonomia dei non vedenti e pari possibilità di crescita cognitiva.
 Il mio sforzo principale è stato ideare e mettere a punto una notazione scacchistica più semplice come la ROTN, che permette la inclusione e la completa autonomia dei non vedenti.
 Il risultato di una tale idea comporta un progetto non solo open source, dove puoi analizzare i sorgenti, ma anche open data, attraverso la ROTN, che consente:
 - importare ed esportare i dati in modo semplice
+- sospendere e riprendere una partita
 - esportare posizioni dove si è avuto un bug
 - interscambiare dati tra formati diversi (da FEN a ROTN ad esempio)
 - svolgere i test più rapidamente
 - mettere su database didattici più rapidamente
 - aggiungere alle immagini dei diagrammi nei libri ed ebook un formato per non vedenti semplice, dove col copia e incolla un non vedente può provare la posizione su una piattaforma come Scacchi-it
 - creare problemi o copiarli in formato ROTN
+- scrivere specifiche da parte degli istruttori in modo inclusivo
 - utilizzare la ROTN, grazie alla sua struttura rigida, per l'addestramento delle reti neurali trasformer per giocare a scacchi
 - creare delle estensioni browser che permettano l'interscambio dei dati da un formato attuale a quello ROTN 
+
+Scacchi-it è, esso stesso, la testimonianza pratica della utilità, semplicità, chiarezza e rapidità con cui si può lavorare con la ROTN per lo studio, la didattica,  la inclusione e completa autonomia dei non vedenti, che possono apprendere le stesse cose dei normodotati nella stessa classe di corso.
+
 Se fai un tuo progetto, spero che tu possa, con maggiore successo, fare affermare la ROTN in campo scacchistico, editoriale e in ambito didattico. Solo creando un seguito nelle varie associazioni, gruppi facebook, Reddit, forum etc. potrai far diffondere la sua utilità.
 
 Un altro punto. Creare un chess engine come Scacchi-it che si propone sia come motore di controllo e gioco a due, sia come motore di controllo di stockfish e, infine, come motore online Hamachi, ti assicuro che non è semplice. La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.
@@ -137,9 +142,8 @@ Gli exe xxx-start.exe costruiti nella cartella build di src-starter vengono mess
 Anche serverScacchi.exe è ottenuto nella cartella ServerScacchi facendo il pyinstall di uno script python che viene costruito nella build della cartella ServerScacchi e copiato a mano in ServerScacchi.
 
 Test di posizioni scacchistiche
-La cartella Test contiene file di test da caricare sotto cartella sospensioni  o sotto problemi. La differenza tra le due cartelle è che la prima dopo il caricamento con CtrlR cancella il file se non lockato da un editor, la seonda cartella non cancella i file e, quindi, adatta ia problemi o puzzle che si vogliono risolvere in qualche giorno.
-Non tutti i test hanno il T: col tema, specificato in modo chiaro, spesso nati rapidamente per il test.
-Provvederò pian piano a mettere il tema quando possibile.
+La cartella Test contiene file di test da copiare e caricare sotto cartella sospensioni  (o sotto problemi. La differenza tra le due cartelle è che la prima dopo il caricamento con CtrlR cancella il file se non lockato da un editor, la seconda cartella non cancella i file e, quindi, adatta ai problemi o puzzle che si vogliono risolvere in qualche giorno.
+Non ho conservato tutti i test unitari inutili, ma alcuni più importanti. Vi esorto di scrivere sempre il tema anche se il test si può organizzare in pochissimi minuti da un copia e incolla e modificando le posizioni dei pezzi. Infatti se non metterete il tema corretto, già dopo qualche ora farete fatica a ricordare a cosa serviva il test.
 
 Ambiente di sviluppo
 L'ambiente di sviluppo è basato su librerie Windows di Visual Studio 2022 col suo sdk e compilazione basata su cmake (CMAKELISTS.txt) e C17.

@@ -1,4 +1,4 @@
-T: Ripresa partita precedente
+T: Stallo se fai 22.Dg5, attendi che dica patta e resetta la scacchiera
 V:B
 B:Rg1;Dg3;Ph6;
 N:Rh8;Ph7;

@@ -1,4 +1,4 @@
-T:Stallo
+T:Stallo se bianco muove Rd6, attendi che dica patta e resetta la scacchiera
 V:B
 B:Rd5;Pd7;
 N:Rd8;

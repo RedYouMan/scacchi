@@ -1,4 +1,4 @@
-T: Ripresa partita precedente
+T: Stallo se il nero fa Dg4, attendi che il programma dica patta e resetta la scacchiera
 V:B
 B:Rh1;Ph2;
 N:Rh8;Ph3;Dg7;

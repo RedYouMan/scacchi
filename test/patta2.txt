@@ -1,4 +1,4 @@
-T: patta elementare
+T: patta elementare, attendi che lo dica e resetta la scacchiera
 V:B
 B:Rg1;Ah2;
 N:Rh8;
