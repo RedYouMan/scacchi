@@ -4,7 +4,17 @@ Rosario Turco
 
 Premessa
 Tieni presente che sono non vedente e ho impiegato da solo 12 mesi per implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
+Il progetto totalmente italiano è stato basato innanzitutto sulla inclusione paritaria, quindi scacchi a cui giocano contemporaneamente vedenti e non vedenti sulla stessa scacchiera, con mouse e tasti e sintesi vocale,con autonomia dei non vedenti e pari possibilità di crescita cognitiva.
 Il mio sforzo principale è stato ideare e mettere a punto una notazione scacchistica più semplice come la ROTN, che permette la inclusione e la completa autonomia dei non vedenti.
+Il risultato di una tale idea comporta un progetto non solo open source, dove puoi analizzare i sorgenti, ma anche open data, attraverso la ROTN, che consente:
+- importare ed esportare i dati in modo semplice
+- esportare posizioni dove si è avuto un bug
+- interscambiare dati tra formati diversi (da FEN a ROTN ad esempio)
+- svolgere i test più rapidamente
+- mettere su database didattici più rapidamente
+- aggiungere alle immagini dei diagrammi nei libri ed ebook un formato per non vedenti semplice, dove col copia e incolla un non vedente può provare la posizione su una piattaforma come Scacchi-it
+- creare problemi o copiarli in formato ROTN
+ 
 Se fai un tuo progetto, spero che tu possa, con maggiore successo, fare affermare la ROTN in campo scacchistico, editoriale e in ambito didattico. Solo creando un seguito nelle varie associazioni, gruppi facebook, Reddit, forum etc. potrai far diffondere la sua utilità.
 
 Un altro punto. Creare un chess engine come Scacchi-it che si propone sia come motore di controllo e gioco a due, sia come motore di controllo di stockfish e, infine, come motore online Hamachi, ti assicuro che non è semplice. La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.
@@ -23,6 +33,9 @@ Il progetto inizialmente è nato per dimostrare l'utilità della ROTN (nuova not
 - della FEN,troppo posizionale e non leggibile in modo chiaro dagli screen reader come NVDA e JAWS  
 per cui nel prototipo è stata curata la parte Object Oriented del cuore di controllo con chess.h, chess.cpp e la parte openings trainer con standard pgn.
 Successivamente da prototipo si sono completate le funzionalità rapidamente come C. Per cui nella nota finale sul  refactoring viene ricordato di individuare e valutare parti che possano essere rimesse in OO.
+Sono suggerite anche parti da sviluppare a integrazione di un progetto come Scacchi-it. 
+
+Il progetto Scacchi-it non presenta il file contributing. Questo perchè l'autore dona alla community l'apertura dei sorgenti, ma non esclude di continuare a completare la piattaforma, con i ritmi di un non vedente anziano.
 
 Per documentarsi sul ROT notation si raccomanda leggere:
 - manuale (scacchigr.txt)
@@ -42,11 +55,18 @@ Rilascio Scacchi-it:con repository privato
 - quelle per il rilascio della build sotto RedYouMan.github.io/_posts\repo che  contiene il pacchetto scacchiGr.7z ottenuto dall'impacchettamento della cartella  scacchi-it, 
 - quelle per il rilascio del manuale In RedYouMan.github.io\_posts\tutorials dove si mette scachiGr.txt tratto e modificato nel repository redyouman.github.io\scacchi\readme 
 - quelle per il rilascio delle estensioni browser in Redyouman.github.io\_posts\estensioni, contenente le estensioni per firefox e chrome come zip e un manuale.
+
+Sul blog di RedYouMan troverete sempre l'ultimo rilascio.
+
 Versioning:con repository pubblico
 -quelle per il versioning  dei sorgenti sotto questo repository, le directory iniziano tutte con srcxxx 
 
+
 Sul disco locale
-Oltre ad avere il repository in locale con i sorgenti, le cartelle e i make, occorre avere una altra cartella parallela a scacchi, chiamata scacchi-it che serve al rilascio della applicazione e in cui ci sono tutte le cartelle necessarie (basati su scacchiGr.7z) al funzionamento, : file di configurazione, le dll, gli eseguibili, le immagini e fonts
+Dopo il clone del progetto oltre ad avere il repository in locale con i sorgenti, le cartelle e i make, occorre: 
+-avere tutte le cartelle per il funzionamento (puoi sbirciare sullo zip del rilascio scacchiGr.7z) 
+- una altra cartella parallela a scacchi, che io ho chiamato col nome scacchi-it che serve per zippare tutto e rilasciare l'applicazione in formato usufruibile, contenente directory, immagini, fonts, suoni, dll, exe, file di configurazione, licenza, etc. 
+
 Se hai clonato il progetto per creare la tua applicazione al posto di scacchi-it metti alla cartella il nome del tuo progetto.
 
 Repository pubblico dei sorgenti
@@ -66,9 +86,11 @@ Il comando dos migliore è:
 findstr <stringa> *
 
 Rilascio di una versione
-Finora per rilasciare la versione veniva aggiornato nel codice la parte Banner di Scacchi-it che si trova in:
+Finora su Scacchi-it per rilasciare la versione veniva aggiornato nel codice la parte Banner di Scacchi-it che si trova in:
 - board.cpp(vedi cout in void start_game())
 - utility.cpp (vedi la sintesi vocale del help)
+
+Infine veniva aggiornato il maniale che avvertiva della versione rilasciata. Tale manuale è richiamabile da Scacchi-it su browser.
 
 Le utility esclusi i starter hanno un proprio banner.
 
@@ -141,19 +163,42 @@ I passi di compilazione sono:
 3 - cmake --build . > log.txt
  4 - da scacchi si esegue scacchi-start.exe
 
+Il log è comodo e rintracciabile nella cartella build dei sorgenti, che state compilando.
+
 La directory src-starter  è utilizzata per file python che vengono resi eseguibili. Tali eseguibili sono scacchi-start e clock-start, posti poi nella home directory a mano.
 
+Architettura
 Il progetto è costituito da tre parti:
 - motore grafico di navigazione della scacchiera
 - motore di controllo e gioco a  due, anche su Hamachi 
 -motore di gioco(stockfish)
 
-Il motore di navigazione consente di navigare la scacchiera graficamente, (nav.cpp) utilizzando il mouse, le frecce e il return. Inoltre informa sul nome della casella, se contiene pezzi o se vuota. Infine gestisce tutti i controls da tastiera per il gioco
-Il motore di controllo, (board.cpp) permette, in collaborazione col motore di navigazione e altre funzionalità (come questions.cpp, utility.cpp, engine4.cpp, mynet.cpp, undo.cpp etc.) la gestione e il controllo di tutte le regole di gioco: movimento dei pezzi, arrocco, enpassant, scacco al re, scacco matto, stallo, notazione algebrica, RoT notation, i problemi, la registrazione della partita, la sospensione di gioco e la ripresa, la scelta di giocare col computer, la soluzione dei problemi con e senza computer, il cambio del punto di vista di gioco.
-Consente anche un addestramento alle aperture di gioco (Openings Trainer).
-Il motore di gioco, sfrutta il progetto open source stockfish.
-Il motore per gioco online dispone delle utility in mynet.cpp
+Il cervello di tutto o main è board.cpp. Esso si avvale delle competenze di varie parti:
+- nav.cpp per la grafica della scacchiera e pezzi, compreso i tasti ctrl e mouse(che utilizza drawboard.cpp)
+- chess.h e chess.cpp per il controllo delle regole di gioco
+- gesfile.cpp che permette il caricamento dei file di formato ROTN e la sospensione e la ripresa, oltre alla rotazione della scacchiera
+- engine.h e engine4cpp per i comandi uci e la gestione di stockfish, per la creazione della FEN
+- myNet.cpp per la gestione del gioco in rete locale o in vpn Hamachi
+- undo.cpp per l'undo delle mosse
+- utility.cpp per utility varie compreso il suono
+- questions.cpp per gestione scacco al re, scacco matto, sottoScacco, patta elementare, stallo
+- openingstrainer.cpp per la gestione dello studio delle aperture
+- tts.cpp per la gestione della sintesi vocale in italiano e settaggio della libreria come italiano
+- proto.h contiene tutti i prototipi 
+- globale.h ha le variabili globali condivise con extern e relative a quelle di board.cpp
+Non tutte le variabili sono in globale.h, alcune comson locali solo ai due sorgenti che le riusano, ma sono in numero veramente esiguo.
+ 
+Si è scelto l'utilizzo delle variabili globali circa una ventina, per semplicità di progetto, che è partito come prototipo e, poi, data la sua efficacia si è trasformato in progetto.
+board.cpp consente poi anche il caricamento e la soluzione di problemi, da solo o con stockfish.
 
+A parte ci sono coachFEN.cpp e coachGame.cpp
+Oltre a ciò ci sono serverScacchi.py e orologioScacchi.cpp
+
+Scacchi-it informa sul nome della casella, se contiene pezzi o se vuota. Infine gestisce tutti i controls da tastiera per il gioco
+Il motore di controllo, (board.cpp) permette, in collaborazione col motore di navigazione e altre funzionalità la gestione e il controllo di tutte le regole di gioco: movimento dei pezzi, arrocco, enpassant, scacco al re, scacco matto, stallo, notazione algebrica, RoT notation, i problemi, la registrazione della partita, la sospensione di gioco e la ripresa, la scelta di giocare col computer, la soluzione dei problemi con e senza computer, il cambio del punto di vista di gioco.
+Consente anche un addestramento alle aperture di gioco (Openings Trainer).
+
+Test
 I test possono farsi prendendo i file dalla directory test e ponendoli in directory problemi per caricarli con cntrlP.
  Inizialmente per i test unitari occorreva mettere in board.cpp a true le variabili durante la compilazione:
  sospendi_test
@@ -411,6 +456,10 @@ Sono state affrontate in OO la parte chess.h, chess.cpp cuore del progetto e del
 Da valutare se ridurre le variabili globali in questo refactoring.
 Ulteriore refactoringda valutare se fare 
 Si potrebbero eliminare tutte le printDebug per ripulire il progetto.Molto utili in test unitario. Ma si possono anche mantenere. La funzione void printDebug è in utility.cpp e proto.h
+
+Cosa si potrebbe ulteriormente aggiungere come sviluppo
+Si potrebbe aggiungere uno script python, da rendere exe, che dal log del serverScacchi, raggruppa le informazioni per room e che interpreta come sia finita la partita in ogni room.
+
 Segnalazioni
 Per eventuali segnalazioni di bugscrivere a:
 rosturco.na@gmail.com
