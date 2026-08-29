@@ -1,4 +1,4 @@
-T:Abbandono
+T:Abbandonosia senza stockfish che con stockfish
 V:B
 B:Re1;Dd1;Df1;
 N:Re8;

@@ -1,4 +1,4 @@
-T: Inchiodatura alfiere tolta
+T: scaccho in f6 di donna e parata di alfiere, poi scacco di donna in ottava per dimostrare che l'alfiere si possa togliere.
 V:B
 B:Re1;Dg5;
 N:Rh8;Af8;Ph7;

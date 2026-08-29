@@ -14,7 +14,8 @@ Il risultato di una tale idea comporta un progetto non solo open source, dove pu
 - mettere su database didattici più rapidamente
 - aggiungere alle immagini dei diagrammi nei libri ed ebook un formato per non vedenti semplice, dove col copia e incolla un non vedente può provare la posizione su una piattaforma come Scacchi-it
 - creare problemi o copiarli in formato ROTN
- 
+- utilizzare la ROTN, grazie alla sua struttura rigida, per l'addestramento delle reti neurali trasformer per giocare a scacchi
+- creare delle estensioni browser che permettano l'interscambio dei dati da un formato attuale a quello ROTN 
 Se fai un tuo progetto, spero che tu possa, con maggiore successo, fare affermare la ROTN in campo scacchistico, editoriale e in ambito didattico. Solo creando un seguito nelle varie associazioni, gruppi facebook, Reddit, forum etc. potrai far diffondere la sua utilità.
 
 Un altro punto. Creare un chess engine come Scacchi-it che si propone sia come motore di controllo e gioco a due, sia come motore di controllo di stockfish e, infine, come motore online Hamachi, ti assicuro che non è semplice. La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.

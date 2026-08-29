@@ -1,4 +1,4 @@
-T: matto in f6 di Alfiere parato da alfiere
+T: scacco alfiere in f6, parata di alfiere in g7 e matto in b8 di donna
 V:B
 B:Ra1;Dg3;Ag5;
 N:Rh8;Af8;Ph7;

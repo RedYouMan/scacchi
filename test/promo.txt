@@ -1,4 +1,4 @@
-T: Ripresa partita precedente
+T: promozione pedone 
 V:B
 B:Pe7;Rh1;Ta2;
 N:Rh8;

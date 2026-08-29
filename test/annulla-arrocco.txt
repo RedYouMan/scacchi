@@ -1,6 +1,6 @@
-T: Ripresa partita precedente
+T: Mossa di torre che viene riportata in h1 e successivo tentativo di arrocco vietato
 V:B
-B:Ac4;Pe4;Cf3;Pa2;Pb2;Pc2;Pd2;Pf2;Pg2;Ph2;Ta1;Cb1;Ac1;Dd1;Re1;Th1;
+B:Ac4;Pe4;Cf3;Pa2;Pb2;Pc2;Pd2;Pf2;Pg2;Ph2;Ta1;Cb1;Ac1;Dd1;Re1;Tf1;
 N:Ta8;Ac8;Dd8;Re8;Cg8;Th8;Pa7;Pb7;Pc7;Pd7;Pf7;Pg7;Ph7;Cc6;Ac5;Pe5;
 M:B
 P:3

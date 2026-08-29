@@ -1,4 +1,4 @@
-T:Cattura dle re vietata 
+T:Cattura del re vietata 
 V:N;
 B:Rf1;Df6;
 N:Rh8;

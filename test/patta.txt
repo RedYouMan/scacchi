@@ -1,4 +1,4 @@
-T: Ripresa partita precedente
+T: Patta elementare 
 V:B
 B:Rg1;
 N:Rh8;

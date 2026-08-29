@@ -1,4 +1,4 @@
-T: Ripresa partita precedente
+T: promozione pedone: provare ogni pezzo T, A, C, D
 V:B
 B:Pe7;Rh1;
 N:Rh8

@@ -1,4 +1,4 @@
-T: Ripresa partita precedente
+T: non dichiara patta elementare
 V:B
 B:Rg1;Ah2;
 N:Rh8;Ca8;Ac8;

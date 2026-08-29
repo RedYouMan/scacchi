@@ -1,4 +1,4 @@
-T: non andare sotto scacco
+T: Mossa di alfiere in e7: dimostrare mossa non valida per non andare sotto scacco
 V:B
 B:Ra1;Af6;
 N:Rh8;Ag7;Ph7;

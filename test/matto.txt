@@ -1,4 +1,4 @@
-T: Ripresa partita precedente
+T: mossa suicida di Rh1 e mossa data a stockfish come nero
 V:B
 B:Ph2;Pg2;Rg1;
 N:Rh8;Da8;
