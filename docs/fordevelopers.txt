@@ -2,8 +2,9 @@
 NOTE PER GLI SVILUPPATORI
 Rosario Turco
 
+Settembre 2026
 Premessa
-Tieni presente che sono non vedente e ho impiegato da solo 12 mesi per implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
+Tieni presente che sono non vedente e ho 66 anni. Sono un ingegnere e ho impiegato da solo 14 mesi per implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
 Il progetto, totalmente italiano, è stato basato innanzitutto sulla inclusione paritaria, quindi agli scacchi a cui giocano contemporaneamente vedenti e non vedenti sulla stessa scacchiera, con mouse,  tasti e sintesi vocale, con autonomia dei non vedenti e pari possibilità di crescita cognitiva.
 Il mio sforzo principale è stato ideare e mettere a punto una notazione scacchistica più semplice come la ROTN, che permette la inclusione e la completa autonomia dei non vedenti.
 Il risultato di una tale idea comporta un progetto non solo open source, dove puoi analizzare i sorgenti, ma anche open data, attraverso la ROTN, che consente:
@@ -23,8 +24,9 @@ Scacchi-it è, esso stesso, la testimonianza pratica della utilità, semplicità
 
 Se fai un tuo progetto, spero che tu possa, con maggiore successo, fare affermare la ROTN in campo scacchistico, editoriale e in ambito didattico. Solo creando un seguito nelle varie associazioni, gruppi facebook, Reddit, forum etc. potrai far diffondere la sua utilità.
 
-Un altro punto. Creare un chess engine come Scacchi-it che si propone sia come motore di controllo e gioco a due, sia come motore di controllo di stockfish e, infine, come motore online Hamachi, ti assicuro che non è semplice. La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.
-Il consiglio è, quindi, studiarlo, migliorarlo e aggiungere funzionalità, mancanti ma partendo da qualcosa di funzionante e con una scelta architetturale che pian piano comprenderai.
+Un altro punto. 
+Creare un chess engine come Scacchi-it che si propone sia come motore di controllo e gioco a due, sia come motore di controllo di stockfish e, infine, come motore online Hamachi multiplayers, ti assicuro che non è semplice. La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.
+Il consiglio è, quindi, studiarlo, migliorarlo e aggiungere funzionalità, ma partendo da qualcosa di funzionante e con una scelta architetturale che pian piano comprenderai.
 
 Introduzione
 Il progetto Scacchi-it è un progetto tiflologico italiano,  gratuito, per piattaforma Windows, versioni 10 e 11, nato per realizzare un gioco di scacchi adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
