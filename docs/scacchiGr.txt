@@ -339,7 +339,7 @@ ROTN
 La ROTN che esamineremo di seguito è importante perchè su Internet e sui libri le partite o i problemi mostrano solo diagrammi (immagini), che un non vedente non può utilizzare. La RoT Notation descrive, più efficacemente di una FEN Notation,  lo scopo della posizione, come sono dislocati tutti i pezzi, il punto di vista da cui mettersi, chi muove e il numero di mossa da cui partire. 
 Essa è una estensione della notazione algebrica per rendere un applicativo di scacchi di tipo open data.
 La paternità di essa è tutelata dal copyright di Scacchi-it.
-Il nome ROT è uno spiritoso gioco fatto su due cose: nome e cognome dell'autore (Ro. T.) e sul descrittore V: (punto di Vista), che può costituire una rotazione della scacchiera.
+Il nome ROT è un gioco di parole fatto su due cose: nome e cognome dell'autore (Ro T.) e sul descrittore V: (punto di Vista), che può chiedere durante il caricamento una rotazione della scacchiera.
 
 Come si scrive un problema o una posizione
 
