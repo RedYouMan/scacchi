@@ -20,6 +20,9 @@ Il risultato di una tale idea comporta un progetto non solo open source, dove pu
 - scrivere specifiche da parte degli istruttori in modo inclusivo
 - utilizzare la ROTN, grazie alla sua struttura rigida, per l'addestramento delle reti neurali trasformer per giocare a scacchi
 
+Non fare l'errore di credere che la ROTN sostituisca qualche standard: non sostituisce nè lo standard pgn, nè la FEN.Piuttosto si aggiunge come utile strumento ulteriore a vantaggio dei non vedenti e degli screen reader.
+Sopra abbiamo detto anche che, volendo si adopera come trasformatore da una lingua ad un'altra. Scacchi-it stesso dispone del comando incolla-FEN.
+
 Il nome ROT è un gioco di parole fatto su due cose: nome e cognome dell'autore (Ro T.) e sul descrittore V: (punto di Vista), che può chiedere durante il caricamento una rotazione della scacchiera, dando dinamicità alle informazioni.
 
 Scacchi-it è, esso stesso, la testimonianza pratica della utilità, semplicità, chiarezza e rapidità con cui si può lavorare con la ROTN per lo studio, la didattica,  la inclusione e completa autonomia dei non vedenti, che possono apprendere le stesse cose dei normodotati nella stessa classe di corso.
