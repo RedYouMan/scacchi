@@ -132,7 +132,7 @@ Quando hai creato tutti gli exe posizionandoli nella cartella giusta, controlla 
 Queste directory dopo il clone non vengono create essendo vuote. Provvedi a crearle.
 
 Descrizione e dettagli ulteriori
-I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , srcfenpos , srcvalidaFEN , src-coach, src-coachGame (non testata ancora), src-estensioni e serverScacchi.
+I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , src-fenpos , src-validaFEN , src-coach, src-coachGame (non testata ancora), src-estensioni e serverScacchi.
 La src è contemporaneamente online e offline, aggiornata alla ultima versione 
 
 Il progetto si completa con serverScacchi, lo starter di scacchi e dell'orologio scacchistico.
