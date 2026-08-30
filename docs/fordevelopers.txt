@@ -27,8 +27,9 @@ Scacchi-it è, esso stesso, la testimonianza pratica della utilità, semplicità
 Se fai un tuo progetto, spero che tu possa, con maggiore successo, fare affermare la ROTN in campo scacchistico, editoriale e in ambito didattico. Solo creando un seguito nelle varie associazioni, gruppi facebook, Reddit, forum etc. potrai far diffondere la sua utilità.
 
 Un altro punto. 
-Creare un chess engine come Scacchi-it che si propone sia come motore di controllo e gioco a due, sia come motore di controllo di stockfish e, infine, come motore online Hamachi multiplayers, ti assicuro che non è semplice. La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.
-Il consiglio è, quindi, studiarlo, migliorarlo e aggiungere funzionalità, ma partendo da qualcosa di funzionante e con una scelta architetturale che pian piano comprenderai.
+Creare un chess engine come Scacchi-it che si propone sia come motore di controllo e gioco a due, sia come motore di controllo di stockfish e, infine, come motore online Hamachi multiplayers, ti assicuro che non è semplice. 
+La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.
+Il consiglio è, quindi, clonarlo, studiarlo, migliorarlo e aggiungere funzionalità, ma partendo da qualcosa di funzionante e con una scelta architetturale che pian piano comprenderai.
 
 Concludo la premessa con la frase:
 We shall rotate!
@@ -49,6 +50,7 @@ Successivamente da prototipo si sono completate le funzionalità rapidamente com
 Sono suggerite anche parti da sviluppare a integrazione di un progetto come Scacchi-it. 
 
 Il progetto Scacchi-it non presenta il file contributing. Questo perchè l'autore dona alla community l'apertura dei sorgenti, ma non esclude di continuare a completare la piattaforma, con i ritmi di un non vedente anziano.
+Se vorreste qualche funzionalità particolare, scrivetemi e se sono ancora attivo attorno ad esso, aggiungerò la funzionalità al repository.
 
 Per documentarsi sul ROT notation si raccomanda leggere:
 - manuale (scacchigr.txt)
@@ -448,12 +450,14 @@ Confronta il tuo branch locale con quello remoto per vedere cosa è cambiato:
 git diff origin/main
 ``` *(sostituisci `main` con il nome del tuo branch, ad esempio `master`)*.
 
-Se vuoi scaricare e unire subito i cambiamenti nel tuo codice, usa:
+Se dopo la fetch vuoi mettere i file su un branch particolare invece di git pull che lo mette sul main
+puoi fare:
+git merge origin/nome_branch
+Se vuoi scaricare e unire subito i cambiamenti nel tuo codice, nel branch main usa:
 git pull
 
 REFACTORING DA valutare se fare
-Coachgame non è ancora stato ultimato sebbene presente nel repository.
-
+coachGame appresso citato non è stato ancora rilasciato.
 I coachFEN e coachGame per rapidità di assemblaggio hanno a bordo a causa di dipendenze incrociate:
 - proto.h, chess.h , chess.cpp, utility.cpp, globale.h
 
@@ -462,13 +466,12 @@ Qua si è ritenuto di aggiungere myad.h che simula la parte di variabili globali
 Infine  a causa di proto.h che contiene sfml come include per vari sorgenti alla fine si è lasciato, per rapidità, la dipendenza da sfml 2.6.1 anche in cmakelists.txt
 
 Da valutare se rendere Object Oriented altre funzionalità presenti (la parte gesfile.cpp ad esempio). 
-Sono state affrontate in OO la parte chess.h, chess.cpp cuore del progetto e del motore di controllo e laparte pgn dell'Openings Trainer.
+Sono state affrontate in OO solo la parte chess.h, chess.cpp cuore del progetto e del motore di controllo e laparte pgn dell'Openings Trainer.
 
-Da valutare se ridurre le variabili globali in questo refactoring.
-Ulteriore refactoringda valutare se fare 
+Da valutare se ridurre le variabili globali durante il refactoring OO delle altre parti che si affrontano.
 Si potrebbero eliminare tutte le printDebug per ripulire il progetto.Molto utili in test unitario. Ma si possono anche mantenere. La funzione void printDebug è in utility.cpp e proto.h
 
-Cosa si potrebbe ulteriormente aggiungere come sviluppo
+Funzionalità da aggiungere
 Si potrebbe aggiungere uno script python, da rendere exe, che dal log del serverScacchi, raggruppa le informazioni per room e che interpreta come sia finita la partita in ogni room.
 
 Segnalazioni
