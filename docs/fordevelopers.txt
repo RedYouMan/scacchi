@@ -72,7 +72,7 @@ Rilascio Scacchi-it:con repository privato
 Sul blog di RedYouMan troverete sempre l'ultimo rilascio.
 
 Versioning:con repository pubblico
--quelle per il versioning  dei sorgenti sotto questo repository, le directory iniziano tutte con srcxxx 
+-quelle per il versioning  dei sorgenti sotto questo repository, le directory iniziano tutte con src-xxx 
 
 
 Sul disco locale
