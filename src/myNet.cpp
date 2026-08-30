@@ -1,3 +1,15 @@
+// myNet.cpp
+/*
+ Il programma permette di giocare su rete locale oppure su rete vpn Log Hamachi.
+ Una rete Log Hamachi è gratuita fino a 5 computer collegati  tra loro.
+ Il programma fa riferimento al serverScacchi.exe presente nella cartella serverScacchi, dove è presente anche il file di configurazione server.cnf della rrete.
+
+Questo sorgente rappresenta le primitive di comunicazione tra board.cpp e serverScacchi.
+
+Il server consente di giocare in multiplayers (vedi script python serverScacchi.py reso exe).
+Il server logga un file nella cartella serverScacchi stessa.
+Nel manuale sono descritti tutti i valori che traccia e come interpretarli.
+*/
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <string>
