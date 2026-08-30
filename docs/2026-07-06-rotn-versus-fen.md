@@ -36,6 +36,7 @@ La rotn, in realtà , è una opportunità aggiuntiva alla fen, per sfruttare alt
 Non fare l'errore di credere che la ROTN sostituisca qualche standard: non sostituisce nè lo standard pgn, nè la FEN. Piuttosto si aggiunge come utile strumento ulteriore a vantaggio dei non vedenti e degli screen reader.
 Scacchi-it stesso dispone del comando incolla-FEN.
 
+Non si deve modificare nessun chess engine come stockfish e analoghi, la FEN può continuare a lavorare sotto cofano in questi motori, nell'ambito della piattaforma che si va a costituire.
 La ROTN è costituita da un file testuale fatto di descrittori seguiti da valori. Tutti i campi descrittori sono obbligatori e con posizione e ordine fisso.
 
 _Esempio ROTN_

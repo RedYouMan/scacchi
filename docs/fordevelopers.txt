@@ -39,6 +39,8 @@ Il consiglio è, quindi, clonarlo, studiarlo, migliorarlo e aggiungere funzional
 Concludo la premessa con la frase:
 We shall rotate!
 
+Avvertenza: se hai clonato il repository è buona abitudine di aggiornarlo periodicamente con il comando git pull. Vedi di seguito il paragrafo su git.
+
 Introduzione
 Il progetto Scacchi-it è un progetto tiflologico italiano,  gratuito, per piattaforma Windows, versioni 10 e 11, nato per realizzare un gioco di scacchi adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
 Tuttavia si è introdotta anche una grafica riproducente la scacchiera, e i pezzi, in modo che i familiari e gli amici possono giocare col non vedente.
