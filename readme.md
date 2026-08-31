@@ -5,7 +5,7 @@ E' una piattaforma online e offline gratuita.
 E' nato per realizzare un gioco adatto e fruibile dai non vedenti, che devono principalmente ascoltare per giocare, attraverso uno screen reader come NVDAo JASW.
 Ha tuttavia anche una grafica riproducente la scacchierae i pezzi, in modo che gli amici ed i familiari possono giocare col non vedente.
 
-Il gioco sollecita tutte le componenti cognitive della persona, migliorando l'utilizzo del ragionamento e calcolo delle varie alternative, mantenendo attive me moria visiva e astratta,
+Il gioco sollecita tutte le componenti cognitive della persona, migliorando l'utilizzo del ragionamento e calcolo delle varie alternative, mantenendo attive me moria visiva e astratta.
 
 Adatto al gioco , lo studio, l'analisi e la didattica che coinvolge, in modo paritario e concreto sia vedenti e non vedenti, realizzando, con alto valore sociale ed etico, la inclusione digitale e l'autonomia con la giusta dignità dei non vedenti.
 La possibilità di utilizzarlo anche offline e gratuitamente, estende democraticamente anche il suo utilizzo a famiglie meno abbienti e rendendo gli studiosi indipendenti da ulteriori problemi di latenza della rete.
@@ -58,8 +58,7 @@ Il manuale è scacchigr.txt. E' stato scelto di farlo come file di testo e non p
 
 ## Per gli sviluppatori
 
-Agli sviluppatori che studiano il codice, viene consigliato di leggere in cartella docs
-anche i file fordevelopers e tuning
+Agli sviluppatori che studiano il codice, viene consigliato di leggere in cartella docsanche i file fordevelopers e tuning
 
 ## Ringraziamenti a Dasor
 
@@ -67,8 +66,6 @@ Le bellissime immagini sono tratte dal repository di Dasor su github.com nel pro
 Il progetto sfml-chess utilizza la stessa licenza di Scacchi-it: GNU GPL versione 3.
 
 ## **Conclusioni**
-
-Ecco cosa afferma sul progetto la AI di Google .
 
 Valore Sociale ed Etico
 Inclusione reale: Permette a persone vedenti e non vedenti di confrontarsi sullo stesso piano grazie anotazioni e interfacce accessibili.Risultati correlati
