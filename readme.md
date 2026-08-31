@@ -2,10 +2,10 @@
 
 Scacchi-it è un progetto italiano, sviluppato da Rosario Turco.
 E' una piattaforma online e offline gratuita.
-E' nato per realizzare un gioco adatto e fruibile dai non vedenti, che devono principalmente ascoltare per giocare, attraverso uno screen reader come NVDAo JASW.
-Ha tuttavia anche una grafica riproducente la scacchierae i pezzi, in modo che gli amici ed i familiari possono giocare col non vedente.
+E' nato per realizzare un gioco adatto e fruibile dai non vedenti, che devono principalmente ascoltare per giocare, attraverso uno screen reader come NVDA o JAWS.
+Ha tuttavia anche una grafica riproducente la scacchiera e i pezzi, in modo che gli amici ed i familiari possono giocare col non vedente.
 
-Il gioco sollecita tutte le componenti cognitive della persona, migliorando l'utilizzo del ragionamento e calcolo delle varie alternative, mantenendo attive me moria visiva e astratta.
+Il gioco sollecita tutte le componenti cognitive della persona, migliorando l'utilizzo del ragionamento e calcolo delle varie alternative, mantenendo attive memoria visiva e astratta.
 
 Adatto al gioco , lo studio, l'analisi e la didattica che coinvolge, in modo paritario e concreto sia vedenti e non vedenti, realizzando, con alto valore sociale ed etico, la inclusione digitale e l'autonomia con la giusta dignità dei non vedenti.
 La possibilità di utilizzarlo anche offline e gratuitamente, estende democraticamente anche il suo utilizzo a famiglie meno abbienti e rendendo gli studiosi indipendenti da ulteriori problemi di latenza della rete.
