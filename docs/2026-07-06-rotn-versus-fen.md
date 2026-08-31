@@ -31,7 +31,7 @@ L'obiettivo della ROTN è di avere una posizione parlante con sintesi vocale e c
 
 Oggi uno screen reader leggendo la fen vi spara un insieme di caratteri velocemente, senza darvi il tempo di "vedere" attraverso il canale uditivo.
 
-La rotn, in realtà , è una opportunità aggiuntiva alla fen, per sfruttare altri canali tecnologici e dare voce alla FEN.
+La rotn, in realtà , è una opportunità aggiuntiva alla fen, per sfruttare altri canali tecnologici . Come si vedrà risulterà utile in molte situazioni.
 
 Non fare l'errore di credere che la ROTN sostituisca qualche standard: non sostituisce nè lo standard pgn, nè la FEN. Piuttosto si aggiunge come utile strumento ulteriore a vantaggio dei non vedenti e degli screen reader.
 
@@ -41,6 +41,11 @@ La ROTN non deve fare da tramite per pgn, lo standard pgn è già molto efficace
 
 Non si deve modificare nessun chess engine come stockfish e analoghi, la FEN può continuare a lavorare sotto cofano in questi motori, nell'ambito della piattaforma che si va a costituire.
 
+I nuovi ebook potranno riportare sia diagrammi che la ROTN.
+
+I database didattici potranno proseguire con le nuove posizioni usando la ROTN, oppure un programma automaticamente potrà aggiornare tutto il database didattico con la ROTN.
+
+Come è fatta la ROTN
 La ROTN è costituita da un file testuale fatto di descrittori seguiti da valori. Tutti i campi descrittori sono obbligatori e con posizione e ordine fisso.
 
 _Esempio ROTN_
@@ -134,8 +139,9 @@ Per cui la giusta definizione della rot notation è che essa estende la notazion
 Infine la ROTN è, nel caso Scacchi-it, la lingua interna, di interscambio con tutti i formati esterni come laFEN o altri formati futuri.
 
 un ultima osservazione: la vera forza di ROTN non è evidente. Permette di piazzare qualsiasi posizione in 3 secondi e testare: matto, stallo, arrocco, en passant e qualsiasi altra posizione complicata, senza dover giocare 40 mosse ogni volta. Un grosso guadagno di tempo per consolidare Scacchi-it.
+Tutto ciò permette anche l'automazione dei test o addirittura l'addestramento di reti neurali trasformer per il gioco degli scacchi.
 
-Questo risulta un enorme vantaggio anche per gli istruttori di scacchi, che con basso sforzo cognitivo possono creare rapidamente posizioni o database di posizioni didattiche.
+E' un enorme vantaggio anche per gli istruttori di scacchi, che con basso sforzo cognitivo possono creare rapidamente posizioni o database di posizioni didattiche.
 
 # **Specifica formalizzata per non vedenti**
 
@@ -147,6 +153,6 @@ Se siete interessati a scaricare Scacchi-it, il manuale e la specifica, utilizza
 [Manuale Scacchi-it](https://github.com/RedYouMan/redyouman.github.io/raw/main/_posts/tutorials/scacchiGr.txt)
 
 La definizione della Specifica ufficiale ROTN completa, ISO 14977 è disponibile a:
-[Leggi specifica](https://redyouman.github.io/blog/2026/07/02/specifica-rotn.html
+[Specifica formale ROTN](https://redyouman.github.io/blog/2026/07/02/specifica-rotn.html
 
-[Dare voce alla fen con rotn](https://redyouman.github.io/blog/2026/07/18/estensioni-browser.html)
+[Estensioni browser per la ROTN](https://redyouman.github.io/blog/2026/07/18/estensioni-browser.html)
