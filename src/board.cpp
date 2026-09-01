@@ -18,6 +18,7 @@ Board.cpp durante il gioco con stockfish, gestisce anche l'assenza di risposta d
 Nota: insertNotation è in questions.cpp e non in utility come logica, per evitare di includere chess.h anche a utility.cpp
  */
 #include <windows.h>
+#include <filesystem>
 #include <iostream>
 #include <clocale>
 #include <algorithm>
@@ -34,6 +35,8 @@ Nota: insertNotation è in questions.cpp e non in utility come logica, per evita
 #include <thread>
 
 using namespace std;
+namespace fs = std::filesystem;
+
 std::atomic<bool> interrompiVocale(false);
 
 /*
@@ -153,7 +156,14 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 10.8 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 10.9 - Rosario Turco\n";
+
+    // controllo esistenza di stockfish
+    if (!ensureEngine())
+        exit(1);
+
+    //
+
     cout << "sulla scacchiera: CtrlH per help(), CtrlX per tutorial\n";
     init();
     Sleep(10000);
@@ -1794,4 +1804,54 @@ void checkNumbers()
         exit(1);
     }
     return;
+}
+
+// questa parte controlla se l'eseguibile di stockfish esiste, altrimenti lo scarica
+
+bool ensureEngine()
+{
+    fs::path engineDir = fs::current_path().parent_path() / "engine";
+    if (!fs::exists(engineDir))
+    {
+        engineDir = fs::current_path() / "engine";
+    }
+    fs::create_directories(engineDir);
+
+    auto checkPresent = [&]() -> bool
+    {
+        for (auto &p : fs::recursive_directory_iterator(engineDir))
+        {
+            if (!p.is_regular_file())
+                continue;
+            std::string name = p.path().filename().string();
+            for (auto &c : name)
+                c = tolower(c);
+            if (name.find("stockfish") != std::string::npos && name.find(".exe") != std::string::npos)
+            {
+                // std::cout << "Motore trovato in: " << p.path() << "\n";
+                return true;
+            }
+        }
+        return false;
+    };
+
+    if (checkPresent())
+        return true;
+
+    std::cout << "Motore non trovato in " << engineDir << ", scarico...\n";
+
+    std::string url = "https://github.com/official-stockfish/Stockfish/releases/latest/download/stockfish-windows-x86-64-avx2.zip";
+    fs::path zip = engineDir / "tmp.zip";
+
+    std::string cmd1 = "curl -L -o \"" + zip.string() + "\" " + url;
+    if (std::system(cmd1.c_str()) != 0)
+        return false;
+
+    std::string cmd2 = "tar -xf \"" + zip.string() + "\" -C \"" + engineDir.string() + "\"";
+    std::system(cmd2.c_str());
+
+    fs::remove(zip);
+
+    // ricontrolla dopo estrazione, anche in sottocartella
+    return checkPresent();
 }
