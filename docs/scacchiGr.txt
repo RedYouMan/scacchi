@@ -549,8 +549,9 @@ La risposta del coach è in gergo stockfish: casa partenza+casa arrivo. Senza le
 Oltre alla "best move" il coach fornisce la valutazione della posizione relativa alla FEN.
  
 Configurabilità delle versioni di stockfish
-Qualora ci fossero versioni più recenti di stockfish è possibile scaricare la nuova versione nella directory engine emodificare, nella directory bin, il file engine.cnf per mettervi il nuovo nome dell'eseguibile stockfish gui e la corretta cartella dove è posizionato.
+Qualora ci fossero versioni più recenti di stockfish è possibile scaricare la nuova versione nella directory engine emodificare, il file engine.cnf nella directory bin,  per mettervi il nuovo nome dell'eseguibile stockfish gui e la corretta cartella dove è posizionato.
 L'applicativo Scacchi-it continuerà a lavorare correttamente se il nuovo motore stockfish si basa ancora su comandi standard uci (universal chess interface).
+Attenzione: per motivi di licenza GNU GPL versione 3, in engine del runtime non viene distribuito stockfish. Tuttavia all'avvio Scacchi-it se non trova un eseguibile di stockfish in engine, la prima volta scarica quello di default consigliato. Questo installer facilita il compito a persone non vedenti. L'installer utilizza comandi curl.
 
 Tuning del chess engine
 Nel pacchetto 7z nella cartella readme esistono vari file, tra cui tuning.txt (dalla versione 3.9 in poi).

@@ -72,6 +72,7 @@ bin/*.bin
 logdir/*
 registrazioni/*
 sospensioni/*
+engine/stockfish/
 *.exe
 !/engine/*.exe
 # ignore all files in problemi except problema1.txt
