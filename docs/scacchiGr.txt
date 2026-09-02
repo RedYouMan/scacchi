@@ -17,13 +17,19 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione 10.9 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione runtime 10.9 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
 Per verificare la vostra versione ascoltate quando parte il programma oppure digitate Ctrl+H.
 
 Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima versione del presente file.
+
+Open Source
+Il progetto è open source e potete consultare i sorgenti al repository:
+https://github.com/RedYouMan/scacchi.git
+per clonare il repository fate il comando:
+git clone https://github.com/RedYouMan/scacchi.git 
 
 Introduzione al programma Scacchi-it 
 Esso è un progetto italiano gratuito, , una piattaforma completa offline /online, ascoltabile con sintesi vocale, consigliato ai non vedenti, ma con grafica per consentire di giocare anche alle persone vedenti.
@@ -135,6 +141,7 @@ validaFEN (ne parleremo in un paragrafo a parte)
 coachFEN-start (ne parleremo in un paragrafo apposito) 
 
 Attenzione: Se non è presente stockfish nella cartella engine, Scacchi-it utilizza il suo installer per scaricare la prima volta la versione preferita di stockfish e installarlo. Questo perchè nello zip scaricato stockfish non è presente sia per motivi di licenza GNU GPL versione 3, sia per avere un pacchetto runtime leggero da scaricare.
+Solo in questa occasione serve attiva la connessione Internet. Se la connessione non è troppo stabile, caso raro, potrebbe servire un secondo lancio di Scacchi-it per far riuscire a scaricare e installare stockfish la prima volta. Puoi esaminare il sorgente board.cpp verso la fine per la parte installer di Scacchi-it.
 
 Installazione con comandi da prompt
 Come alternativa al paragrafo precedente si possono fare i comandi a mano. Se avete già fatto il paragrafo precedente, questo lo potrete saltare.
