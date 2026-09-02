@@ -158,11 +158,11 @@ void start_game()
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
     cout << "Scacchi-it (C) 2025 versione 10.9 - Rosario Turco\n";
 
-    // controllo esistenza di stockfish
+    /*
+    controllo esistenza di stockfish, altrimenti la prima volta lo scarica e lo estrae nella cartella engine
+    */
     if (!ensureEngine())
         exit(1);
-
-    //
 
     cout << "sulla scacchiera: CtrlH per help(), CtrlX per tutorial\n";
     init();
@@ -1806,8 +1806,9 @@ void checkNumbers()
     return;
 }
 
-// questa parte controlla se l'eseguibile di stockfish esiste, altrimenti lo scarica
-
+/*
+questa parte controlla se l'eseguibile di stockfish esiste nella cartella engine e sottodirectory, altrimenti alla prima esecuzione di Scacchi-it lo scarica con curl e lo estrae con tar. Se non riesce a scaricare o estrarre l'eseguibile ritorna false e il programma Scacchi-it termina.Curl e tar sono utility che sono presenti di default in Windows 10 e successivi. In caso di mancata presenza di curl o tar il programma termina con errore.
+*/
 bool ensureEngine()
 {
     fs::path engineDir = fs::current_path().parent_path() / "engine";
@@ -1838,7 +1839,7 @@ bool ensureEngine()
     if (checkPresent())
         return true;
 
-    std::cout << "Motore non trovato in " << engineDir << ", scarico...\n";
+    std::cout << "stockfish non trovato in " << engineDir << ", lo scarico la prima volta...\n";
 
     std::string url = "https://github.com/official-stockfish/Stockfish/releases/latest/download/stockfish-windows-x86-64-avx2.zip";
     fs::path zip = engineDir / "tmp.zip";
