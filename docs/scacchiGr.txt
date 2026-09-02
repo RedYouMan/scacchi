@@ -28,7 +28,7 @@ Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima version
 Introduzione al programma Scacchi-it 
 Esso è un progetto italiano gratuito, , una piattaforma completa offline /online, ascoltabile con sintesi vocale, consigliato ai non vedenti, ma con grafica per consentire di giocare anche alle persone vedenti.
 
-Il software, una volta scompattato con unzip,  è leggero, e con i suoi 90 Mbyte può essere contenuto anche su una pendrive e giocato direttamente da essa. 
+Il software, una volta scompattato con unzip,  è leggero, e con i suoi 30 Mbyte può essere contenuto anche su una pendrive e giocato direttamente da essa. 
 
 Il non vedente, tramite uno screen reader come NVDA, oJAWS potrà utilizzare il computer e Scacchi-it ascoltando anche i messaggi "verbosi" della console.
 
@@ -76,7 +76,7 @@ Scacchi-it consente di:
 37 - leggere una FEN con estensione browser e ottenere negli appunti la ROTN 
 38 - validare una FEN
 39 - sapere la miglior mossa da fare su una FEN (coaching)
-
+40 - autoinstallare stockfish la prima volta se non esiste nella cartella engine
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
 Tutte le possibilità di sopra, dipendono dalla vostra conoscenza degli strumenti a disposizione per poterlo fare, quindi è fondamentale sentire sia questo tutorial che l'help.
@@ -132,6 +132,8 @@ Altri programmi esistenti richiedono dei parametri di input ed è meglio lanciar
 - incolla-fen(ne parleremo in un paragrafo a parte)
 validaFEN (ne parleremo in un paragrafo a parte)
 coachFEN-start (ne parleremo in un paragrafo apposito) 
+
+Attenzione: Se non è presente stockfish nella cartella engine, Scacchi-it utilizza il suo installer per scaricare la prima volta la versione preferita di stockfish e installarlo. Questo perchè nello zip scaricato stockfish non è presente sia per motivi di licenza GNU GPL versione 3, sia per avere un pacchetto runtime leggero da scaricare.
 
 Installazione con comandi da prompt
 Come alternativa al paragrafo precedente si possono fare i comandi a mano. Se avete già fatto il paragrafo precedente, questo lo potrete saltare.
