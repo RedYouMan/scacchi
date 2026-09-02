@@ -131,9 +131,9 @@ chessparam.cnf
 
 Dove sono gli eseguibili
 Nella root troviamo:
-scacchi-start.exe, clock-start.exe, incolla-FEN.exe, validaFEN.exe, coachFEN-start.exe e coachGame-start.exe.
+scacchi-start.exe, clock-start.exe, incolla-FEN.exe, validaFEN.exe, coachFEN-start.exe 
 Nella bin:
-scacchi.exe, orologioScacchi.exe, coachFEN.exe, , coachGame.exe
+scacchi.exe, orologioScacchi.exe, coachFEN.exe, 
 In sospensioni:
 fenpos.exe
 In serverScacchi
@@ -147,7 +147,7 @@ Attenzione: quando hai creato tutti gli exe posizionandoli nella cartella giusta
 Queste directory dopo il clone non vengono create essendo vuote. Provvedi a crearle, perchè sono necessarie.
 
 Descrizione e dettagli ulteriori
-I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , src-fenpos , src-validaFEN , src-coach, src-coachGame (non testata ancora), src-estensioni e serverScacchi.
+I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , src-fenpos , src-validaFEN , src-coach, src-estensioni e serverScacchi.
 La src è contemporaneamente online e offline, aggiornata alla ultima versione 
 
 Il progetto si completa con serverScacchi, lo starter di scacchi e dell'orologio scacchistico.
@@ -156,8 +156,6 @@ In particolare l'orologio in src-clock è compilato a parte per usare un header 
 Per srcfenpos che ha un solo .cpp si utilizza direttamente la compilazione di visual studio code, avente in .vscode i file launch.json e task.json.
 
 Il coach in src-coach riceve una FEN e collaborando con stockfish, dice la miglior mossa che si può fare sulla posizione espressa dalla FEN e la valutazione posizione.
-
-IlcoachGame (da testare e non ancora in campo) in src-coachgame riceve il log della partita fatta, presente in cartella registrazioni, e il colore di chi analizzare. Esso fa unna analisi della partita e traccia su report in registrazioni i suggerimenti.
 
 In src-starter si trovano tutti i python script che vengono resi exe e servono per il lancio degli exe in bin.
 Gli exe xxx-start.exe costruiti nella cartella build di src-starter vengono messi a mano nella cartella root di scacchi-it.
@@ -225,7 +223,7 @@ Non tutte le variabili sono in globale.h, alcune comson locali solo ai due sorge
 Si è scelto l'utilizzo delle variabili globali circa una ventina, per semplicità di progetto, che è partito come prototipo e, poi, data la sua efficacia si è trasformato in progetto.
 board.cpp consente poi anche il caricamento e la soluzione di problemi, da solo o con stockfish.
 
-A parte ci sono coachFEN.cpp e coachGame.cpp
+A parte c'è coachFEN.cpp 
 Oltre a ciò ci sono serverScacchi.py e orologioScacchi.cpp
 
 Scacchi-it informa sul nome della casella, se contiene pezzi o se vuota. Infine gestisce tutti i controls da tastiera per il gioco
@@ -478,8 +476,8 @@ Se vuoi scaricare e unire subito i cambiamenti nel tuo codice, nel branch main u
 git pull
 
 REFACTORING DA valutare se fare
-coachGame appresso citato non è stato ancora rilasciato.
-I coachFEN e coachGame per rapidità di assemblaggio hanno a bordo a causa di dipendenze incrociate:
+
+Il coachFEN per rapidità di assemblaggio ha a bordo a causa di dipendenze incrociate:
 - proto.h, chess.h , chess.cpp, utility.cpp, globale.h
 
 In particolare chess.h e chess.cpp servono ad engine4.cpp per la costruzione della FEN a partire dalla posizione sulla scacchiera.
