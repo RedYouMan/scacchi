@@ -168,8 +168,15 @@ La cartella Test contiene file di test da copiare e caricare sotto cartella sosp
 Non ho conservato tutti i test unitari inutili, ma alcuni più importanti. Vi esorto di scrivere sempre il tema anche se il test si può organizzare in pochissimi minuti da un copia e incolla e modificando le posizioni dei pezzi. Infatti se non metterete il tema corretto, già dopo qualche ora farete fatica a ricordare a cosa serviva il test.
 
 Ambiente di sviluppo
-L'ambiente di sviluppo è basato su librerie Windows di Visual Studio 2022 col suo sdk e compilazione basata su cmake (CMAKELISTS.txt) e C17.
+L'ambiente di sviluppo è basato su librerie Windows di Visual Studio 2022 col suo sdk e compilazione basata su cmake (CMAKELISTS.txt) e linguaggio C17.
+
 Inoltre nell'ambiente è installato python 3.13.
+
+Va installato anche sfml-2.6.1 che ho preferito installare localmente sul Desktop, per cui poi nel cmakelists.txt ho dovuto esplicitare questo path.
+
+Ho installato anche cmake, la mia versione risulta:
+cmake version 4.1.2
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
 
 E' consigliata la installazione di Visual Studio 2022 con il suo sdk.
 Tuttavia, dopo aver installato le librerie che si porta dietro Visual Studio Community 2022, per maggiore libertà qui abbiamo usato Visual studio code con cmake.
@@ -184,7 +191,7 @@ Il cmake fa riferimento ad una directory in cui è installato localmente SFML 2.
 I sorgenti in serverScacchi e src-starter sono sorgenti python, producendo alla fine degli exe col comando pyinstaller: 
 pyinstaller --onefile <script>.py
 
-I passi di compilazione sono:
+I passi di compilazione con cmake sono:
 1 - cd src/build
 2 - cmake ..
 3 - cmake --build . > log.txt
