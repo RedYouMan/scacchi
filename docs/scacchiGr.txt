@@ -77,6 +77,7 @@ Scacchi-it consente di:
 38 - validare una FEN
 39 - sapere la miglior mossa da fare su una FEN (coaching)
 40 - autoinstallare stockfish la prima volta se non esiste nella cartella engine
+
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
 Tutte le possibilità di sopra, dipendono dalla vostra conoscenza degli strumenti a disposizione per poterlo fare, quindi è fondamentale sentire sia questo tutorial che l'help.
