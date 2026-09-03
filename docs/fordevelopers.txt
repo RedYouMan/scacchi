@@ -131,9 +131,9 @@ chessparam.cnf
 
 Dove sono gli eseguibili
 Nella root troviamo:
-scacchi-start.exe, clock-start.exe, incolla-FEN.exe, validaFEN.exe, coachFEN-start.exe 
+scacchi-start.exe, clock-start.exe, incolla-FEN.exe, validaFEN.exe, coachFEN-start.exe, coachGame-start.exe 
 Nella bin:
-scacchi.exe, orologioScacchi.exe, coachFEN.exe, 
+scacchi.exe, orologioScacchi.exe, coachFEN.exe,coachGame.exe 
 In sospensioni:
 fenpos.exe
 In serverScacchi
@@ -147,7 +147,7 @@ Attenzione: quando hai creato tutti gli exe posizionandoli nella cartella giusta
 Queste directory dopo il clone non vengono create essendo vuote. Provvedi a crearle, perchè sono necessarie.
 
 Descrizione e dettagli ulteriori
-I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , src-fenpos , src-validaFEN , src-coach, src-estensioni e serverScacchi.
+I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , src-fenpos , src-validaFEN , src-coach, src-coachGame, src-estensioni e serverScacchi.
 La src è contemporaneamente online e offline, aggiornata alla ultima versione 
 
 Il progetto si completa con serverScacchi, lo starter di scacchi e dell'orologio scacchistico.
@@ -156,6 +156,9 @@ In particolare l'orologio in src-clock è compilato a parte per usare un header 
 Per srcfenpos che ha un solo .cpp si utilizza direttamente la compilazione di visual studio code, avente in .vscode i file launch.json e task.json.
 
 Il coach in src-coach riceve una FEN e collaborando con stockfish, dice la miglior mossa che si può fare sulla posizione espressa dalla FEN e la valutazione posizione.
+Il coachGame riceve due parametri:
+-nome del file con .txt e contenuto nella cartella registrazioni
+- il colore del giocatore da analizzare: b oppure n 
 
 In src-starter si trovano tutti i python script che vengono resi exe e servono per il lancio degli exe in bin.
 Gli exe xxx-start.exe costruiti nella cartella build di src-starter vengono messi a mano nella cartella root di scacchi-it.
@@ -164,7 +167,7 @@ Anche serverScacchi.exe è ottenuto nella cartella ServerScacchi facendo il pyin
 Test di posizioni scacchistiche
 La cartella Test contiene file di test da copiare e caricare sotto cartella sospensioni  (o sotto problemi. La differenza tra le due cartelle è che la prima dopo il caricamento con CtrlR cancella il file se non lockato da un editor, la seconda cartella non cancella i file e, quindi, adatta ai problemi o puzzle che si vogliono risolvere in qualche giorno.
 Non ho conservato tutti i test unitari inutili, ma alcuni più importanti. Vi esorto di scrivere sempre il tema anche se il test si può organizzare in pochissimi minuti da un copia e incolla e modificando le posizioni dei pezzi. Infatti se non metterete il tema corretto, già dopo qualche ora farete fatica a ricordare a cosa serviva il test.
-
+Ho lasciato anche alcuni file di registrazioni: matto4mosse.txt, scaccomatto.txt, partita.txt e partita2.txt
 Ambiente di sviluppo
 L'ambiente di sviluppo è basato su librerie Windows di Visual Studio 2022 col suo sdk e compilazione basata su cmake (CMAKELISTS.txt) e linguaggio C17.
 

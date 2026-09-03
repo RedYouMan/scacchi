@@ -17,7 +17,7 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione runtime 10.9 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione runtime 11.0 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
@@ -83,7 +83,7 @@ Scacchi-it consente di:
 38 - validare una FEN
 39 - sapere la miglior mossa da fare su una FEN (coaching)
 40 - autoinstallare stockfish la prima volta se non esiste nella cartella engine
-
+41 - utilizzare un coachGame per analizzare un file di partita registrata
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
 Tutte le possibilità di sopra, dipendono dalla vostra conoscenza degli strumenti a disposizione per poterlo fare, quindi è fondamentale sentire sia questo tutorial che l'help.
@@ -139,6 +139,7 @@ Altri programmi esistenti richiedono dei parametri di input ed è meglio lanciar
 - incolla-fen(ne parleremo in un paragrafo a parte)
 validaFEN (ne parleremo in un paragrafo a parte)
 coachFEN-start (ne parleremo in un paragrafo apposito) 
+coachGame-start (ne parleremo in un paragrafo apposito)
 
 Attenzione: Se non è presente stockfish nella cartella engine, Scacchi-it utilizza il suo installer per scaricare la prima volta la versione preferita di stockfish e installarlo. Questo perchè nello zip scaricato stockfish non è presente sia per motivi di licenza GNU GPL versione 3, sia per avere un pacchetto runtime leggero da scaricare.
 Solo in questa occasione serve attiva la connessione Internet. Se la connessione non è troppo stabile, caso raro, potrebbe servire un secondo lancio di Scacchi-it per far riuscire a scaricare e installare stockfish la prima volta. Puoi esaminare il sorgente board.cpp verso la fine per la parte installer di Scacchi-it.
@@ -557,6 +558,17 @@ coachFEN-start invio
 Da qui saprete che il programma accetta un solo parametro ovvero la FEN tra doppi apici.
 La risposta del coach è in gergo stockfish: casa partenza+casa arrivo. Senza lettera del pezzo. Ad esempio: e1g1 è una mossa di re bianco per fare l'arrocco corto a destra, mentre e1c1 mossa di rebianco per l'arrocco lungo a sinistra, c2c4 è una mossa di pedone bianco, e7e5 una mossa di pedone nero.
 Oltre alla "best move" il coach fornisce la valutazione della posizione relativa alla FEN.
+
+La funzionalità coachGame-start
+Questa funzionalità vi permette di analizzare una partita e sapere come un giocatore ha giocato.
+Essa non va usata se avete una partita in corso col computer, altrimenti vi chiuderà la sessione col computer.
+PER l'uso digitate come sempre:
+coachGame-start invio
+
+Da qui saprete che il programma accetta due parametri ovvero il nome del log della partita che si trova nella cartella registrazioni (deve essere comprensivo di estensione .txt), e il colore del giocatore da analizzare: b oppure n.
+La risposta del coach è in gergo stockfish: casa partenza+casa arrivo. Senza lettera del pezzo. Ad esempio: e1g1 è una mossa di re bianco per fare l'arrocco corto a destra, mentre e1c1 mossa di rebianco per l'arrocco lungo a sinistra, c2c4 è una mossa di pedone bianco, e7e5 una mossa di pedone nero.
+Il coach fa il delta tra la valutazione di come stava prima il giocatore e come sta dopo la mossa.  In base a questo delta e delle soglie (0.5, 1.0, 1.5) stabilisce se la mossa è debole, cattiva, errata e consiglia una best move.
+Il tutto viene riportato in un file report.txt nella cartella registrazioni.
  
 Configurabilità delle versioni di stockfish
 Qualora ci fossero versioni più recenti di stockfish è possibile scaricare la nuova versione nella directory engine emodificare, il file engine.cnf nella directory bin,  per mettervi il nuovo nome dell'eseguibile stockfish gui e la corretta cartella dove è posizionato.

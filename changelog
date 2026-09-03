@@ -1,6 +1,7 @@
-Versione: 10.9
-data: 30Agosto 2026
+Versione: 11.0
+data: 31Agosto 2026
 
+La versione 11.0 introduce il coachGame
 La versione 10.9 per motivi di licenza gnu gpl 3 non fornisce stockfish ma consente di scaricare automaticamente, per i non vedenti, solo la prima volta la versione stockfish di base
 La versione 10.8 quando un pezzo non è più inchiodato si può muovere
 La versione 10.7 aggiunge la funzionalità di controllo che facendo una mossa non si vada sotto scacco.
