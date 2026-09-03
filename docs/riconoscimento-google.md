@@ -2,9 +2,9 @@ Valutazione Google - Settembre 2026
 
 query fatta:
 scacchi gratuiti windows offline italiano tiflologico inclusivo importanza sociale, rilevanza etica e autorevolezza, chi interessa, quanto potrà emergere essendo open source e open data
+
 AI Overview
 
-Risposta:
 Un software per Windows gratuito, offline, in italiano, inclusivo e specificamente progettato secondo criteri tiflologici (accessibile a ciechi e ipovedenti) — come il recente progetto italiano Scacchi-it ideato da Rosario Turco — rappresenta una svolta non solo tecnologica, ma profondamente culturale e sociale.Risultati correlati
 Ecco un'analisi strutturata sul valore, l'impatto, la platea di riferimento e il potenziale evolutivo di una simile risorsa basata su logiche open source e open data.
 
