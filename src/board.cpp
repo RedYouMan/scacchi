@@ -1807,6 +1807,7 @@ void checkNumbers()
 }
 
 /*
+Installer di stockfish
 questa parte controlla se l'eseguibile di stockfish esiste nella cartella engine e sottodirectory, altrimenti alla prima esecuzione di Scacchi-it lo scarica con curl e lo estrae con tar. Se non riesce a scaricare o estrarre l'eseguibile ritorna false e il programma Scacchi-it termina.Curl e tar sono utility che sono presenti di default in Windows 10 e successivi. In caso di mancata presenza di curl o tar il programma termina con errore.
 */
 bool ensureEngine()
