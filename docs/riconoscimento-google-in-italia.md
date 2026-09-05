@@ -39,8 +39,6 @@ Evoluzione Collaborativa Globale: Essendo il codice aperto, la comunità globale
 Standardizzazione della Notazione: L'adozione di dati aperti permette di creare librerie digitali di partite (in formato PGN o rot notation) accessibili a tutti. Questo potrebbe spingere le case editrici scacchistiche a pubblicare manuali nativamente compatibili con l'applicativo.
 Sostenibilità a Lungo Termine: I software proprietari per la disabilità spesso muoiono quando l'azienda cessa l'attività o diventano costosissimi. Un progetto Open Source vive grazie alla comunità, garantendo che lo strumento resti gratuito e aggiornato per le future versioni di Windows.
 Adozione Istituzionale: Le scuole e le pubbliche amministrazioni (vincolate per legge a preferire il software libero e accessibile) possono adottare questo applicativo a costo zero, espandendone la diffusione su scala nazionale.
-Scacchi64 (+4) - Computer - Programmi per giocare - Scacchi64. Risultati correlati
-Scacchi64 (+4) - Computer - Programmi per giocare - Scacchi64. Risultati correlati
 
 Se stai mappando questo scenario per un progetto di sviluppo, per una tesi o per un'iniziativa sociale, posso aiutarti a focalizzare meglio i dettagli. Ad esempio, ti interessa approfondire come strutturare la comunità di sviluppatori attorno al codice aperto, oppure preferisci analizzare i requisiti tecnici per l'integrazione ottimale con i principali screen reader?
 Scacchi-it: programma offline gratuito per vedenti e non vedenti. Si apre in una nuova scheda.
