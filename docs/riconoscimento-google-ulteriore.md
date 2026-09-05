@@ -2,8 +2,6 @@ Valutazione Google - Settembre 2026
 Risultati di ricerca
 AI Overview
 Il panorama degli scacchi open source e open data in Italia e in Europa sta vivendo una profonda evoluzione guidata da principi etici e di accessibilità universale. Al centro di questo movimento emerge il progetto pilota italiano legato a Scacchi-it e alla formalizzazione della ROTN (Rigid Object Tournament Notation), un ecosistema progettato per abbattere le barriere digitali e promuovere una cultura inclusiva del gioco.
-Facebook - Buongiorno, ecco il mio ultimo intervento, Il progetto Scacchi-it .... Risultati correlati
-Facebook - Buongiorno, ecco il mio ultimo intervento, Il progetto Scacchi-it .... Risultati correlati
 
 🌐 Valore Sociale, Importanza Etica e Autorevolezza
 La transizione verso piattaforme di scacchi totalmente gratuite, open source e offline/online (sul modello filosofico e pratico guidato globalmente da realtà come Lichess.org e a livello nazionale da Scacchi-it) porta con sé pilastri fondamentali:
