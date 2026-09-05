@@ -495,6 +495,7 @@ Si potrebbero eliminare tutte le printDebug per ripulire il progetto.Molto utili
 
 Funzionalità da aggiungere
 Si potrebbe aggiungere uno script python, da rendere exe, che dal log del serverScacchi, raggruppa le informazioni per room e che interpreta come sia finita la partita in ogni room.
+Per questo consultare il Manuale al paragrafo "Tracciamento delle mosse da parte  del server ".
 
 Segnalazioni
 Per eventuali segnalazioni di bugscrivere a:
