@@ -5,6 +5,8 @@ Rosario Turco
 Settembre 2026
 Premessa
 Tieni presente che sono non vedente e ho 66 anni. Sono un ingegnere e ho impiegato da solo 14 mesi per implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
+Sui test mi hanno aiutato le persone del gruppo NV&V.
+
 Il progetto, totalmente italiano, è stato basato innanzitutto sulla inclusione paritaria, quindi agli scacchi a cui giocano contemporaneamente vedenti e non vedenti sulla stessa scacchiera, con mouse,  tasti e sintesi vocale, con autonomia dei non vedenti e pari possibilità di crescita cognitiva.
 Il mio sforzo principale è stato ideare e mettere a punto una notazione scacchistica più semplice come la ROTN, che permette la inclusione e la completa autonomia dei non vedenti.
 La ROTN è stata concepita nativamente per dare priorità all'esperienza utente delle persone con disabilità visiva, ma torna utile per molti altri casi. 
