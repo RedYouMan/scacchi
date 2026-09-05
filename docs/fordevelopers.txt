@@ -26,7 +26,7 @@ Nel caso della pgn, però non si deve mettere la ROTN come tramite; difatti  lo 
 Molti altri vantaggi sono stati evidenziati sopra. 
 Non si deve modificare nessun chess engine come stockfish e analoghi, la FEN può sempre lavorare 'sotto cofano' in questi motori.
 
-I nuovi ebook potranno riportare sia diagrammi che la ROTN.
+I nuovi ebook potranno riportare sia diagrammi che la ROTN: sotto il diagramma ed esterno ad esso basta indicare il n.ro di ROTN in appendice. La ROTN in appendice per salva-spazio può essere scritta con dimensione caratteri minore: viene letta bene lo stesso dagli screen reader e si può fare il copia e incolla.
 
 I database didattici potranno proseguire con le nuove posizioni usando la ROTN, oppure un programma automaticamente potrà aggiornare tutto il database didattico con la ROTN.
 
