@@ -4,7 +4,7 @@ description: "Una specifica per notazione ROTN negli scacchi"
 categories: Blog
 ---
 
-# ROTN v1.8 - Rot Notation Specification
+# ROTN v1.9 - Rot Notation Specification
 
 # AUTHOR: Rosario Turco
 
