@@ -1,79 +1,67 @@
-# **Scacchi-it**
+# Scacchi-it + ROTN
 
-Scacchi-it è un progetto italiano, sviluppato da Rosario Turco.
-E' una piattaforma online e offline gratuita.
-E' nato per realizzare un gioco adatto e fruibile dai non vedenti, che devono principalmente ascoltare per giocare, attraverso uno screen reader come NVDA o JAWS.
-Ha tuttavia anche una grafica riproducente la scacchiera e i pezzi, in modo che gli amici ed i familiari possono giocare col non vedente.
+Piattaforma italiana open source e open data per scacchi inclusivi.
+Capofila per European Accessibility Act e D.Lgs. 82/2022 in Italia.
 
-Il gioco sollecita tutte le componenti cognitive della persona, migliorando l'utilizzo del ragionamento e calcolo delle varie alternative, mantenendo attive memoria visiva e astratta.
+Sviluppato da Rosario Turco.
+Per Windows 10/11, online e offline, gratuita.
 
-Adatto al gioco , lo studio, l'analisi e la didattica che coinvolge, in modo paritario e concreto sia vedenti e non vedenti, realizzando, con alto valore sociale ed etico, la inclusione digitale e l'autonomia con la giusta dignità dei non vedenti.
-La possibilità di utilizzarlo anche offline e gratuitamente, estende democraticamente anche il suo utilizzo a famiglie meno abbienti e rendendo gli studiosi indipendenti da ulteriori problemi di latenza della rete.
-Particolarmente utile anche a scuole che hanno problemi di utilizzo internet.
+Scacchi-it permette a vedenti e non vedenti di giocare, studiare e fare didattica sullo stesso piano, con gli stessi strumenti. Fortemente indicata per istruttori FSI, scuole statali e private e per la preparazione ai tornei.
 
-Scacchi-it permette anche di giocare online con amici, parenti su stessa rete o su vpn Hamachi gratuitamente.
+### Perché ROTN
 
-Scacchi-it è, quindi, uno strumento tiflologico orientato a:
+La FEN è complessa per una sintesi vocale a causa di barre e numeri.
+ROTN (Rotated Notation) è la specifica formale che rende lineare e a basso sforzo cognitivo la lettura della posizione, della prospettiva di gioco e della fase critica.
 
-- non vedenti e vedenti
-- Windows 10 o superiori
-- lingua italiana
-- studio, gioco, lezioni didattiche
+Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera e dei pezzi per permettere ad amici e familiari di giocare con il non vedente.
 
-## **Parti costitutive**
+### Cosa fa
 
-E' costituito da almeno tre parti:
+- Gioco contro il computer con Stockfish (configurabile con altre versioni)
+- Gioco contro umano, da soli come Bianco o Nero, scelta del lato
+- Registrazione partite, sospensione e ripresa, conoscenza valutazione in sospensione
+- Analisi finale con prime varianti multiPV
+- Caricamento problemi scritti in ROTN, validazione e incolla FEN
+- Undo mosse per didattica, forzatura apertura desiderata
+- Openings Trainer e Coach integrati
+- Orologio per allenamento lampo e torneo
+- Gioco online su stessa rete o su VPN Hamachi gratuitamente
+- Tuning del motore per sfruttare le risorse del PC (vedi tuning.txt)
 
-- motore grafico di navigazione in SFML (Simple & Fast Multimedia Library)
-- motore di controllo regole
-- motore di gioco
+Funziona offline e gratuitamente, estende l'utilizzo a famiglie meno abbienti e a scuole con problemi di connessione, senza latenza di rete.
 
-Il motore di gioco (chess engine) con cui le prime due parti sono testatte
-è stockfish, scaricabile da github e distribuito liberamente.
-Nel programma si da la possibilità di configurare anche altre eventuali
-versioni migliorative di stockfish.
+Il gioco sollecita memoria visiva e astratta, ragionamento e calcolo delle alternative.
 
-I primi due motori consentono l'utilizzo del chess engine per:
+### A chi è orientata
 
-- giocare contro il computer
-- giocare da soli sia bianco che nero
-- registrare le partite non giocate col computer
-- risolvere dei problemi da soli
-- risolvere un problema col computer
-- scegliere il lato da cui giocare
-- sospendere una partita, col computer o meno
-- riprendere una partita
-- conoscere la valutazione della posizione durante la sospensione della partita col computer
-- ottenere alla fine della sospensione del computer una analisi di almeno le prime 'multiPV' principali varianti che si possono intraprendere
-- caricare problemi scritti da se stessi con la rot notation
-- fare undo delle mosse(didattica)
-- forzare l'apertura desiderata e farla giocare al computer
-- giocare online su stessa rete o su vpn Hamachi per reti diverse come Internet
-- validare e incollare una FEN a Scacchi-it
-  - studiare le aperture con un Opennings Trainer e un coach
-    E' possibile fare anche un minimo di tuning del chess engine per sfruttare al meglio le risorse del proprioo computer (Vedi tuning.txt).
-    Infine si può usare un orologio per allenarsi col computer, o con amici ad esempio, allenarsi per partite reali lampo o di torneo
+- Non vedenti e ipovedenti
+- Vedenti
+- Windows 10 o superiori, lingua italiana
+- Studio, gioco, lezioni didattiche
 
-Il manuale è scacchigr.txt. E' stato scelto di farlo come file di testo e non pdf, per il semplice motivo che un file di testo è la migliore accessibilità possibile su browser per un non vedente.
+### Parti costitutive
 
-## Per gli sviluppatori
+- Motore grafico di navigazione in SFML (Simple & Fast Multimedia Library)
+- Motore di controllo regole
+- Motore di gioco Stockfish, scaricabile da GitHub
 
-Agli sviluppatori che studiano il codice, viene consigliato di leggere in cartella docsanche i file fordevelopers e tuning
+### Documentazione
 
-## Ringraziamenti a Dasor
+Manuale: scacchigr.txt in formato testo per massima accessibilità su browser per non vedenti.
+Per sviluppatori: cartella docs, file fordevelopers e tuning.
 
-Le bellissime immagini sono tratte dal repository di Dasor su github.com nel progetto sfml-chess.
-Il progetto sfml-chess utilizza la stessa licenza di Scacchi-it: GNU GPL versione 3.
+### Crediti
 
-## **Conclusioni**
+Immagini tratte dal repository Dasor su GitHub, progetto sfml-chess.
+Licenza GNU GPL v3 come Scacchi-it.
 
-Valore Sociale ed Etico
-Inclusione reale: Permette a persone vedenti e non vedenti di confrontarsi sullo stesso piano grazie anotazioni e interfacce accessibili.Risultati correlati
-Democratizzazione del sapere: Essendo gratuito e offline, azzera le barriere economiche e di connettività, garantendo il diritto al gioco e allo svago.
-Autonomia: Offre uno strumento di svago e studio autogestito per chi vive situazioni di disabilità sensoriale.Risultati correlati
-Reputazione e Autorevolezza
-Open data e condivisione: L'uso di notazioni testuali trasparenti (come la rot notation) eleva la serietà di questi progetti a livello scientifico e open source.
-Progettazione partecipata: La nascita di software curati da programmatori ed esperti con disabilità visiva garantisce risposte tecniche reali ed evita soluzioni di facciata.
-Valore Didattico
-Apprendimento inclusivo: Ottimo per spiegare le regole, studiare aperture e risolvere problemi tattici senza dipendere da grafica complessa o barriere visive.
-Sviluppo cognitivo: Stimola la memoria di lavoro, il calcolo combinatorio e il pensiero astratto, competenze fondamentali soprattutto nel training visivo-spaziale e di memorizzazione alla cieca.
+### Valore sociale ed etico
+
+Inclusione reale con notazioni e interfacce accessibili.
+Democratizzazione del sapere, gratuito e offline.
+Autonomia e dignità per chi vive disabilità sensoriale.
+
+### Valore didattico
+
+Apprendimento inclusivo senza barriere visive.
+Sviluppo di memoria di lavoro, calcolo combinatorio e pensiero astratto.
