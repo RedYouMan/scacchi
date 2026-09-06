@@ -1,12 +1,14 @@
 # Scacchi-it + ROTN
 
+(pronuncia: Scacchitrattinoit)
+
 Piattaforma italiana open source e open data per scacchi inclusivi.
 Capofila per European Accessibility Act e D.Lgs. 82/2022 in Italia.
 
 Sviluppato da Rosario Turco.
 Per Windows 10/11, online e offline, gratuita.
 
-Scacchi-it permette a vedenti e non vedenti di giocare, studiare e fare didattica sullo stesso piano, con gli stessi strumenti. Fortemente indicata per istruttori FSI, scuole statali e private e per la preparazione ai tornei.
+Scacchi-it è un eco-sistema che permette a vedenti e non vedenti di giocare, studiare e fare didattica sullo stesso piano, con gli stessi strumenti. Fortemente indicata per istruttori FSI, scuole statali e private e per la preparazione ai tornei.
 
 ### Perché ROTN
 
