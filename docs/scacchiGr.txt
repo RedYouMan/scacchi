@@ -1,5 +1,5 @@
 Manuale completo di Scacchi-it
-
+(pronuncia: Scacchitrattinoit)
 Benvenuti a Scacchi-it il gioco degli scacchi in italiano con interfaccia vocale.
 Strumento tiflologico, per gioco offline e online (multiplayers), compatibile con screen reader come NVDA e JAWS
 per Windows 10 e 11
