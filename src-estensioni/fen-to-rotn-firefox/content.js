@@ -50,7 +50,7 @@ function parseFEN(fen) {
   const V = turnF === 'w'? 'B' : 'N';
   const M = V;
   const mossaFen = parseInt(moveNum);
-  const P = turnF === 'w'? mossaFen : mossaFen;
+  const P = turnF === 'w'? mossaFen -1 : mossaFen;
   const lang = 'it-IT';
   const files = 'abcdefgh';
   const nomi = {K:'R', Q:'D', R:'T', B:'A', N:'C', P:'P'};

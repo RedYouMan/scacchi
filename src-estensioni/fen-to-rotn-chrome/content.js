@@ -46,7 +46,7 @@ function parseFEN(fen) {
   const [board, turnF, castling, enpassant, halfmoves, moveNum] = fen.split(' ');
   const V = turnF === 'w'? 'B' : 'N';
   const M = V;
-  const P = turnF === 'w'? parseInt(moveNum) : parseInt(moveNum);
+  const P = turnF === 'w'? parseInt(moveNum) -1 : parseInt(moveNum);
   const files = 'abcdefgh';
   const nomi = {K:'R', Q:'D', R:'T', B:'A', N:'C', P:'P'};
   let B_re = '-', N_re = '-';
