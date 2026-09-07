@@ -44,14 +44,14 @@ Descrittore riservato K - livello di skill dell'engine alla ripresa
 Descrittore riservato L - livello di profondità analisi dell'engine alla ripresa
 Descrittore riservato C - per salvataggio mossa se utile per la ripresa
 
-| Descrittore | Significato                       | Valori / Esempio                          |
-| ----------- | --------------------------------- | ----------------------------------------- |
-| T           | Testo della posizione             | T:Matto in 2 mosse                        |
-| V           | Punto di vista / Lato             | V:B; = Guardi dal Bianco, V:N; = dal Nero |
-| B           | Posizione Pezzi Bianchi           | Lista Pezzoxx separati da ;               |
-| N           | Posizione Pezzi Neri              | Lista Pezzoxx separati da ;               |
-| M           | Chi muove                         | M:B; oppure M:N;                          |
-| P           | Numero di mossa n della posizione | P:1;                                      |
+| Descrittore | Significato                               | Valori / Esempio                          |
+| ----------- | ----------------------------------------- | ----------------------------------------- |
+| T           | Testo della posizione                     | T:Matto in 2 mosse                        |
+| V           | Punto di vista / Lato                     | V:B; = Guardi dal Bianco, V:N; = dal Nero |
+| B           | Posizione Pezzi Bianchi                   | Lista Pezzoxx separati da ;               |
+| N           | Posizione Pezzi Neri                      | Lista Pezzoxx separati da ;               |
+| M           | Chi muove                                 | M:B; oppure M:N;                          |
+| P           | ultimo Numero di mossa giocato dal bianco | P:1;                                      |
 
 Notazione Pezzi IT: R=Re, D=Donna, T=Torre, A=Alfiere, C=Cavallo, P=Pedone.
 Notazione Pezzi EN: K=King, Q=Queen, R=Rook, B=Bishop, N=Knight, P=Pawn.
@@ -83,7 +83,7 @@ V:B;
 B:Ta1;Cb1;Ac1;Dd1;Re1;Af1;Cg1;Th1;Pa2;Pb2;Pc2;Pd2;Pe2;Pf2;Pg2;Ph2;
 N:Ta8;Cb8;Ac8;Dd8;Re8;Af8;Cg8;Th8;Pa7;Pb7;Pc7;Pd7;Pe7;Pf7;Pg7;Ph7;
 M:B;
-P:1;
+P:0;
 
 ### [IT] Esempio 2: Stallo.
 
@@ -121,14 +121,14 @@ Restricted Descriptor K - engine skill to be restarted at resume
 Restricted Descriptor L - engine depth
 Restricted Descriptor C - for data engine if useful
 
-| Descriptor | Meaning                       | Values / Example                          |
-| ---------- | ----------------------------- | ----------------------------------------- |
-| T          | Position Text                 | T:Mate in 2                               |
-| V          | Viewpoint / Side              | V:W; = View from White, V:B; = from Black |
-| W          | White Pieces Position         | List Piecexx ; separated                  |
-| B          | Black Pieces Position         | List Piecexx ; separated                  |
-| M          | Move Side                     | M:W; or M:B;                              |
-| P          | Move Number n of the position | P:1;                                      |
+| Descriptor | Meaning                          | Values / Example                          |
+| ---------- | -------------------------------- | ----------------------------------------- |
+| T          | Position Text                    | T:Mate in 2                               |
+| V          | Viewpoint / Side                 | V:W; = View from White, V:B; = from Black |
+| W          | White Pieces Position            | List Piecexx ; separated                  |
+| B          | Black Pieces Position            | List Piecexx ; separated                  |
+| M          | Move Side                        | M:W; or M:B;                              |
+| P          | last Move Number played by white | P:1;                                      |
 
 ### [EN] Example 1: Starting Position
 
@@ -137,7 +137,7 @@ V:W;
 W:Ra1;Nb1;Bc1;Qd1;Ke1;Bf1;Ng1;Rh1;Pa2;Pb2;Pc2;Pd2;Pe2;Pf2;Pg2;Ph2;
 B:Ra8;Nb8;Bc8;Qd8;Ke8;Bf8;Ng8;Rh8;Pa7;Pb7;Pc7;Pd7;Pe7;Pf7;Pg7;Ph7;
 M:W;
-P:1;
+P:0;
 
 ### [EN] Example 2: StaleMate.
 
