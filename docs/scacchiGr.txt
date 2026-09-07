@@ -369,7 +369,7 @@ P:34;
 - B: descrive l'elenco separato da punti e virgole dei pezzi con notazione algebrica italiana e lo stato degli arrocchi (es: Ag5;Re2;)
 - N: descrive l'insieme dei pezzi neri come sopra
 - M: descrive a chi tocca la mossa (Bianco o Nero usando B o N)
-- P: descrive il numero di mossa della posizione
+- P: descrive l'ultimo numero di mossa giocato dalbianco 
 
 I descrittori di sopra sono obbligatori e con ordine fisso, ognuno con una propria riga obbligatoriamente. 
 Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella lista di posizioni algebriche dei pezzi per separare i valori di essi.
@@ -377,6 +377,7 @@ Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella
 La regola "ogni descrittore una riga" non è per un fatto informatico ma per la semplice psicologia che un facile copia e incolla aumenta l'autostima del non vedente.
  
 P nella ROTN, delle estensioni browser, che servono a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se la FEN viene passata a fenpos) per un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N).
+Questo perchè nella FEN viene indicato il nuovo numero da giocare, mentre nella ROTN si indica l'ultimo numero giocato dal bianco.
  
 Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
 
@@ -384,7 +385,7 @@ Questa diminuzione di 1 deve avvenire solo se la ROTN la copiate dalle estension
 
 Infatti il programma fenpos, che serve per tradurre la FEN a Scacchi-it, diminuisce di 1 se M:B, altrimenti lascia il valore trovato.
 
-Con la ROTN scritta a mano, per i casi ambigui di arrocco, come ad esempio di torre o re mossi in precedenza e poi ritornati nella posizione di origine o altre situazioni ambigue, si segnala l'arrocco non valido in B: o N: nella lista di pezzi: il valore NS (No Short Castle) e NL (No Long Castle). I due valori possono essere presenti uno solo, o entrambi separati da ';'. 
+Con la ROTN scritta a mano, per i casi ambigui di arrocco, come ad esempio di torre o re mossi in precedenza e poi ritornati nella posizione di origine o altre situazioni ambigue, si segnala l'arrocco non valido in B: o N: nella lista di pezzi: il valore NS (No Short Castle) e/o NL (No Long Castle). I due valori possono essere presenti uno solo, o entrambi separati da ';'. 
 
 Per la FEN, tradotta in ROTN da fenpos, lo stato degli arrocchi viene riportato con NS e/o NL.
 Il programma Scacchi-it usa solo le lettere dei pezzi in italiano, ma la rot notation può essere generalizzata e usare anche le lettere inglesi dei pezzi. e al posto del descrittore italiano B: il corrispondente inglese W: e analogamente per il descrittore italiano N: sostituito con quello inglese B:.
