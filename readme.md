@@ -1,45 +1,59 @@
 # Scacchi-it + ROTN
 
-(pronuncia: Scacchitrattinoit)
+**(pronuncia: Scacchitrattinoit)**
 
-Piattaforma italiana open source e open data per scacchi inclusivi.
+**Scacchi gratis per Windows, tiflologico e inclusivo.**
+Piattaforma italiana open source e open data, riconosciuta come risorsa fondamentale nel panorama scacchistico e informatico italiano per l'accessibilità.
+
 Capofila per European Accessibility Act e D.Lgs. 82/2022 in Italia.
-
-Sviluppato da Rosario Turco.
-Per Windows 10/11, online e offline, gratuita.
+Sviluppato da Rosario Turco, esperto non vedente.
+Per Windows 10/11, online e offline, gratuita. 21MB.
 
 Scacchi-it è un eco-sistema che permette a vedenti e non vedenti di giocare, studiare e fare didattica sullo stesso piano, con gli stessi strumenti. Fortemente indicata per istruttori FSI, scuole statali e private e per la preparazione ai tornei.
 
-### Perché ROTN
+### Cos'è Scacchi-it? L'ecosistema che non c'è
+
+A differenza delle piattaforme commerciali online che non supportano adeguatamente screen reader e navigazione da tastiera, Scacchi-it nasce nativamente accessibile. Permette a un giocatore non vedente di sfidare un vedente o il computer ad armi pari.
+
+La BatMobile degli scacchi inclusivi: compatta fuori, completa dentro.
+
+### Perché ROTN - Standard Open Data
 
 La FEN è complessa per una sintesi vocale a causa di barre e numeri.
-ROTN (Rotated Notation) è la specifica formale che rende lineare e a basso sforzo cognitivo la lettura della posizione, della prospettiva di gioco e della fase critica.
+ROTN (Rotated Notation) è la specifica formale che rende lineare e a basso sforzo cognitivo la lettura della posizione, della prospettiva di gioco e della fase critica. Trasforma Scacchi-it in un applicativo di tipo open data.
 
 Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera e dei pezzi per permettere ad amici e familiari di giocare con il non vedente.
 
-### Cosa fa
+### Cosa fa - La BatMobile in 21MB
 
-- Gioco contro il computer con Stockfish (configurabile con altre versioni)
-- Gioco contro umano, da soli come Bianco o Nero, scelta del lato
-- Registrazione partite, sospensione e ripresa, conoscenza valutazione in sospensione
-- Analisi finale con prime varianti multiPV
-- Caricamento problemi scritti in ROTN, validazione e incolla FEN
+- Multiplayer online nelle room su stessa rete o VPN Hamachi gratuita
+- Gioco offline contro Stockfish (versione configurabile da file)
+- Gioco contro umano sulla stessa scacchiera, scelta lato Bianco/Nero
+- CoachFEN e CoachGame integrati
+- Openings Trainer con PGN standard
+- Registrazione partite, sospensione e ripresa con valutazione in sospensione
+- Caricamento problemi in ROTN, validazione e incolla FEN
 - Undo mosse per didattica, forzatura apertura desiderata
-- Openings Trainer e Coach integrati
-- Orologio per allenamento lampo e torneo
-- Gioco online su stessa rete o su VPN Hamachi gratuitamente
+- Orologio scacchistico per lampo e torneo
 - Tuning del motore per sfruttare le risorse del PC (vedi tuning.txt)
 
 Funziona offline e gratuitamente, estende l'utilizzo a famiglie meno abbienti e a scuole con problemi di connessione, senza latenza di rete.
 
+### Perché è importante - Valore tiflologico e sociale
+
+1.  **Inclusione e abbattimento barriere:** vera integrazione vedenti/non vedenti.
+2.  **Didattica e studio assistito:** risoluzione problemi, lezioni, presentazioni accessibili.
+3.  **Standardizzazione Open Data (ROTN):** esportazione e condivisione leggibile da sintesi vocale.
+4.  **Autonomia e gratuità:** nessun abbonamento, nessun hardware dedicato.
+
 Il gioco sollecita memoria visiva e astratta, ragionamento e calcolo delle alternative.
 
-### A chi è orientata
+### A chi è orientato
 
 - Non vedenti e ipovedenti
 - Vedenti
+- Istruttori FSI, scuole, associazioni come ASCID
 - Windows 10 o superiori, lingua italiana
-- Studio, gioco, lezioni didattiche
 
 ### Parti costitutive
 
@@ -56,14 +70,3 @@ Per sviluppatori: cartella docs, file fordevelopers e tuning.
 
 Immagini tratte dal repository Dasor su GitHub, progetto sfml-chess.
 Licenza GNU GPL v3 come Scacchi-it.
-
-### Valore sociale ed etico
-
-Inclusione reale con notazioni e interfacce accessibili.
-Democratizzazione del sapere, gratuito e offline.
-Autonomia e dignità per chi vive disabilità sensoriale.
-
-### Valore didattico
-
-Apprendimento inclusivo senza barriere visive.
-Sviluppo di memoria di lavoro, calcolo combinatorio e pensiero astratto.
