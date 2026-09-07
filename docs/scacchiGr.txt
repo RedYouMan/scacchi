@@ -376,12 +376,10 @@ Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella
 
 La regola "ogni descrittore una riga" non è per un fatto informatico ma per la semplice psicologia che un facile copia e incolla aumenta l'autostima del non vedente.
  
-Da notare che se la FEN viene passata a fenpos) per un software di scacchi, come Scacchi-it, per definizione di P nella ROTN, viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N).
+Da notare che se la FEN viene passata a fenpos, per definizione di P nella ROTN, viene diminuito di 1 il numero di mossa della FEN se a giocare per prima è il Bianco (M:B) oppure rimane uguale al numero richiesto dalla FEN se gioca per prima il Nero (M:N).
 Questo perchè nella FEN viene indicato il nuovo numero da giocare, mentre nella ROTN si indica l'ultimo numero giocato dal bianco.
- 
-Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
 
-Se compilate a mano la ROTN ricordate che in P va l'ultimo valore giocato dal bianco. Se siamo in partenza P=0.Se si deve giocare ancora la mossa 2 e gioca il bianco P=1 (quella gioocata), se quella giocata era la 2 e gioca il nero allora P=2.
+Se compilate a mano la ROTN ricordate che in P va l'ultimo valore giocato dal bianco. Se siamo in partenza P=0. Se si deve giocare ancora la mossa 2 e gioca il bianco P=1 in P va (quella giocata), se quella giocata era la 2 e gioca il nero allora P=2.
 
 mentre la diminuzione, automaticamente, avviene se usate il comando incolla-fen che si poggia su fenpos.
 
