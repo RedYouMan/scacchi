@@ -1,7 +1,7 @@
 Manuale completo di Scacchi-it
 (pronuncia: Scacchitrattinoit)
 Benvenuti a Scacchi-it il gioco degli scacchi in italiano con interfaccia vocale.
-Strumento tiflologico, per gioco offline e online (multiplayers), compatibile con screen reader come NVDA e JAWS
+Ecosistema tiflologico, per gioco offline e online (multiplayers), compatibile con screen reader come NVDA e JAWS
 per Windows 10 e 11
 
 Licenza
@@ -376,7 +376,7 @@ Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella
 
 La regola "ogni descrittore una riga" non è per un fatto informatico ma per la semplice psicologia che un facile copia e incolla aumenta l'autostima del non vedente.
  
-P nella ROTN, delle estensioni browser, che servono a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se la FEN viene passata a fenpos) per un software di scacchi, come Scacchi-it, per comodità viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N).
+P nella ROTN, delle estensioni browser, che servono a dare voce alla FEN viene letto con lo stesso valore della FEN; ma se la FEN viene passata a fenpos) per un software di scacchi, come Scacchi-it, per definizione di P nella ROTN, viene diminuito di 1 se a giocare per prima è il Bianco (M:B) oppure rimane uguale alla FEN se gioca per prima il Nero (M:N).
 Questo perchè nella FEN viene indicato il nuovo numero da giocare, mentre nella ROTN si indica l'ultimo numero giocato dal bianco.
  
 Il motivo è che Scacchi-it incrementa di 1 se si trova a giocare per prima il Bianco mentre non lo fa per il Nero.
