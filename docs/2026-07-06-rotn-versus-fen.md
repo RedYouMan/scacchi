@@ -61,7 +61,8 @@ P:34;
 - B: descrive l'elenco separato da punti e virgole dei pezzi con notazione algebrica italiana e la situazione degli arrocchi se necessario (es: Ag5;Re2;)
 - N: descrive l'insieme dei pezzi neri come sopra
 - M: descrive a chi tocca la mossa (Bianco o Nero usando B o N)
-- P: descrive il numero di mossa della posizione
+- P: descrive l'ultimo numero di mossa giocato dal bianco
+
   La regola "ogni descrittore una riga" non è per un fatto informatico ma per la semplice psicologia che un facile copia e incolla aumenta l'autostima del non vedente.
 
 Descrittore opzionale U: se presente indica la lista di case, non separate da ';', dei pedoni che possono fare una cattura enpassant e la casa del pedone sotto attacco es. U:c4b4; altro esempio U:d4f4e4;
