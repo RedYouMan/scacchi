@@ -22,7 +22,7 @@ La BatMobile degli scacchi inclusivi: compatta fuori, completa dentro.
 La FEN è complessa per una sintesi vocale a causa di barre e numeri.
 ROTN (Rotated Notation) è la specifica formale che rende lineare e a basso sforzo cognitivo la lettura della posizione, della prospettiva di gioco e della fase critica. Trasforma Scacchi-it in un applicativo di tipo open data.
 
-Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera e dei pezzi per permettere ad amici e familiari di giocare con il non vedente.
+Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera e dei in SFML pezzi per permettere ad amici e familiari di giocare con il non vedente.
 
 ### Cosa fa - La BatMobile in 21MB
 
@@ -31,6 +31,7 @@ Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera e dei pez
 - Gioco contro umano sulla stessa scacchiera, scelta lato Bianco/Nero
 - CoachFEN e CoachGame integrati
 - Openings Trainer con PGN standard
+- animazione delle mosse
 - Registrazione partite, sospensione e ripresa con valutazione in sospensione
 - Caricamento problemi in ROTN, validazione e incolla FEN
 - Undo mosse per didattica, forzatura apertura desiderata
