@@ -34,7 +34,7 @@ I database didattici potranno proseguire con le nuove posizioni usando la ROTN, 
 
 Se il mondo avesse seguito sempre la consuetudine non si avrebbe mai avuto innovazione.
 
-Il nome ROT è un gioco di parole fatto su due cose: nome e cognome dell'autore (Ro T.) e sul descrittore V: (punto di Vista), che può chiedere durante il caricamento una rotazione della scacchiera, dando dinamicità alle informazioni.
+Il nome ROT è un gioco di parole fatto su due cose: nome e cognome dell'autore (Ro T.) e sul descrittore V: (punto di Vista), che può chiedere durante il caricamento una rotazione della scacchiera, dando dinamicità alle informazioni. In sostanza ROTN può essere tradotto come Rotated Notation.
 
 Scacchi-it è, esso stesso, la testimonianza pratica della utilità, semplicità, chiarezza e rapidità con cui si può lavorare con la ROTN per lo studio, la didattica,  la inclusione e completa autonomia dei non vedenti, che possono apprendere le stesse cose dei normodotati nella stessa classe di corso.
 

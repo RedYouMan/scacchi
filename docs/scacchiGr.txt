@@ -351,7 +351,7 @@ ROTN
 La ROTN che esamineremo di seguito è importante perchè su Internet e sui libri le partite o i problemi mostrano solo diagrammi (immagini), che un non vedente non può utilizzare. La RoT Notation descrive, più efficacemente di una FEN Notation,  lo scopo della posizione, come sono dislocati tutti i pezzi, il punto di vista da cui mettersi, chi muove e il numero di mossa da cui partire. 
 Essa è una estensione della notazione algebrica per rendere un applicativo di scacchi di tipo open data.
 La paternità di essa è tutelata dal copyright di Scacchi-it.
-Il nome ROT è un gioco di parole fatto su due cose: nome e cognome dell'autore (Ro T.) e sul descrittore V: (punto di Vista), che può chiedere durante il caricamento una rotazione della scacchiera.
+Il nome ROT è un gioco di parole fatto su due cose: nome e cognome dell'autore (Ro T.) e sul descrittore V: (punto di Vista), che può chiedere durante il caricamento una rotazione della scacchiera. ROTN può tradursi come Rotated Notation.
 
 Come si scrive un problema o una posizione
 
@@ -382,7 +382,7 @@ Questo perchè nella FEN viene indicato il nuovo numero da giocare, mentre nella
 
 Se compilate a mano la ROTN ricordate che in P va l'ultimo valore giocato dal bianco. Se siamo in partenza P=0. Se si deve giocare ancora la mossa 2 e gioca il bianco P=1 in P va (quella giocata), se quella giocata era la 2 e gioca il nero allora P=2.
 
-mentre la diminuzione, automaticamente, avviene se usate il comando incolla-fen che si poggia su fenpos.
+mentre la diminuzioneavviene, automaticamente, se usate il comando incolla-fen che si poggia su fenpos.
 
 Con la ROTN scritta a mano, per i casi ambigui di arrocco, come ad esempio di torre o re mossi in precedenza e poi ritornati nella posizione di origine o altre situazioni ambigue, si segnala l'arrocco non valido in B: o N: nella lista di pezzi: il valore NS (No Short Castle) e/o NL (No Long Castle). I due valori possono essere presenti uno solo, o entrambi separati da ';'. 
 
