@@ -156,7 +156,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 11.1 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 11.2 - Rosario Turco\n";
 
     /*
     controllo esistenza di stockfish, altrimenti la prima volta lo scarica e lo estrae nella cartella engine
@@ -1841,15 +1841,20 @@ bool ensureEngine()
         return true;
 
     std::cout << "stockfish non trovato in " << engineDir << ", lo scarico la prima volta...\n";
+    std::string url = "https://github.com/official-stockfish/Stockfish/releases/download/sf_18/stockfish-windows-x86-64-avx2.zip";
 
-    std::string url = "https://github.com/official-stockfish/Stockfish/releases/latest/download/stockfish-windows-x86-64-avx2.zip";
     fs::path zip = engineDir / "tmp.zip";
 
-    std::string cmd1 = "curl -L -o \"" + zip.string() + "\" " + url;
+    std::string cmd1 = "curl -L --fail -A \"Scacchi-it/19.3\" -o \"" + zip.string() + "\" " + url;
     if (std::system(cmd1.c_str()) != 0)
         return false;
 
-    std::string cmd2 = "tar -xf \"" + zip.string() + "\" -C \"" + engineDir.string() + "\"";
+    // FIX 2: controlla che non sia il file da 9 byte
+    if (!fs::exists(zip) || fs::file_size(zip) < 1000)
+        return false;
+
+    // FIX 3: su Windows scompatta con PowerShell, non con tar
+    std::string cmd2 = "powershell -Command \"Expand-Archive -Force -Path '" + zip.string() + "' -DestinationPath '" + engineDir.string() + "'\"";
     std::system(cmd2.c_str());
 
     fs::remove(zip);
