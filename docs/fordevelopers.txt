@@ -49,6 +49,7 @@ Concludo la premessa con la frase:
 We shall rotate!
 
 Avvertenza: se hai clonato il repository è buona abitudine di aggiornarlo periodicamente con il comando git pull. Vedi di seguito il paragrafo su git.
+Fino a fine 2027 cercherò di arricchire il progetto con le funzionalità necessarie.
 
 Introduzione
 Il progetto Scacchi-it è un progetto tiflologico italiano,  gratuito, per piattaforma Windows, versioni 10 e 11, nato per realizzare un gioco di scacchi adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
@@ -68,7 +69,7 @@ Sono suggerite anche parti da sviluppare a integrazione di un progetto come Scac
 Il progetto Scacchi-it non presenta il file contributing. Questo perchè l'autore dona alla community l'apertura dei sorgenti, ma non esclude di continuare a completare la piattaforma, con i ritmi di un non vedente anziano.
 Se vorreste qualche funzionalità particolare, scrivetemi e se sono ancora attivo attorno ad esso, aggiungerò la funzionalità al repository.
 
-Per documentarsi sul ROT notation si raccomanda leggere:
+Per documentarsi sul ROT notation si raccomanda di leggere nella docs:
 - manuale (scacchigr.txt)
 - articolo rotn-versus-fen.md
 - articolo motoregrafico.md
@@ -91,7 +92,6 @@ Sul blog di RedYouMan troverete sempre l'ultimo rilascio.
 
 Versioning:con repository pubblico
 -quelle per il versioning  dei sorgenti sotto questo repository, le directory iniziano tutte con src-xxx 
-
 
 Sul disco locale
 Dopo il clone del progetto oltre ad avere il repository in locale con i sorgenti, le cartelle e i make, occorre: 
@@ -149,7 +149,7 @@ Attenzione: quando hai creato tutti gli exe posizionandoli nella cartella giusta
 Queste directory dopo il clone non vengono create essendo vuote. Provvedi a crearle, perchè sono necessarie.
 
 Descrizione e dettagli ulteriori
-I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , src-fenpos , src-validaFEN , src-coach, src-coachGame, src-estensioni e serverScacchi.
+I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , src-fenpos , src-validaFEN , src-coach, src-coachGame, src-incolla-ROTN, src-estensioni e serverScacchi.
 La src è contemporaneamente online e offline, aggiornata alla ultima versione 
 
 Il progetto si completa con serverScacchi, lo starter di scacchi e dell'orologio scacchistico.
@@ -165,11 +165,13 @@ Il coachGame riceve due parametri:
 In src-starter si trovano tutti i python script che vengono resi exe e servono per il lancio degli exe in bin.
 Gli exe xxx-start.exe costruiti nella cartella build di src-starter vengono messi a mano nella cartella root di scacchi-it.
 Anche serverScacchi.exe è ottenuto nella cartella ServerScacchi facendo il pyinstall di uno script python che viene costruito nella build della cartella ServerScacchi e copiato a mano in ServerScacchi.
+Infine anche fenpos.exe veine messo a mano in sospensioni e incolla-ROTN.exe a mano nella root.
 
 Test di posizioni scacchistiche
 La cartella Test contiene file di test da copiare e caricare sotto cartella sospensioni  (o sotto problemi. La differenza tra le due cartelle è che la prima dopo il caricamento con CtrlR cancella il file se non lockato da un editor, la seconda cartella non cancella i file e, quindi, adatta ai problemi o puzzle che si vogliono risolvere in qualche giorno.
 Non ho conservato tutti i test unitari inutili, ma alcuni più importanti. Vi esorto di scrivere sempre il tema anche se il test si può organizzare in pochissimi minuti da un copia e incolla e modificando le posizioni dei pezzi. Infatti se non metterete il tema corretto, già dopo qualche ora farete fatica a ricordare a cosa serviva il test.
 Ho lasciato anche alcuni file di registrazioni: matto4mosse.txt, scaccomatto.txt, partita.txt e partita2.txt
+
 Ambiente di sviluppo
 L'ambiente di sviluppo è basato su librerie Windows di Visual Studio 2022 col suo sdk e compilazione basata su cmake (CMAKELISTS.txt) e linguaggio C17.
 
