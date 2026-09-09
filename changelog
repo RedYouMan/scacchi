@@ -1,6 +1,7 @@
-Versione: 11.1
+Versione: 11.2
 data: 04 Settembre2026
 
+La versione 11.2 migliora l'installer di stockfish
 La versione 11.1 aggiunge la funzionalità incolla-ROTN
 La versione 11.0 introduce il coachGame
 La versione 10.9 per motivi di licenza gnu gpl 3 non fornisce stockfish ma consente di scaricare automaticamente, per i non vedenti, solo la prima volta la versione stockfish di base
