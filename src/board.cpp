@@ -1810,13 +1810,12 @@ void checkNumbers()
 Installer di stockfish
 questa parte controlla se l'eseguibile di stockfish esiste nella cartella engine e sottodirectory, altrimenti alla prima esecuzione di Scacchi-it lo scarica con curl e lo estrae con tar. Se non riesce a scaricare o estrarre l'eseguibile ritorna false e il programma Scacchi-it termina.Curl e tar sono utility che sono presenti di default in Windows 10 e successivi. In caso di mancata presenza di curl o tar il programma termina con errore.
 */
+
 bool ensureEngine()
 {
     fs::path engineDir = fs::current_path().parent_path() / "engine";
     if (!fs::exists(engineDir))
-    {
         engineDir = fs::current_path() / "engine";
-    }
     fs::create_directories(engineDir);
 
     auto checkPresent = [&]() -> bool
@@ -1829,36 +1828,42 @@ bool ensureEngine()
             for (auto &c : name)
                 c = tolower(c);
             if (name.find("stockfish") != std::string::npos && name.find(".exe") != std::string::npos)
-            {
-                // std::cout << "Motore trovato in: " << p.path() << "\n";
                 return true;
-            }
         }
         return false;
     };
-
     if (checkPresent())
         return true;
 
-    std::cout << "stockfish non trovato in " << engineDir << ", lo scarico la prima volta...\n";
-    std::string url = "https://github.com/official-stockfish/Stockfish/releases/download/sf_18/stockfish-windows-x86-64-avx2.zip";
+    std::cout << "stockfish non trovato in " << engineDir << ", lo scarico...\n";
+
+    // Lista di URL da provare in ordine: latest -> sf_18 -> architetture fallback
+    std::vector<std::string> urls = {
+        "https://github.com/official-stockfish/Stockfish/releases/latest/download/stockfish-windows-x86-64-avx2.zip",
+        "https://github.com/official-stockfish/Stockfish/releases/latest/download/stockfish-windows-x86-64-modern.zip",
+        "https://github.com/official-stockfish/Stockfish/releases/latest/download/stockfish-windows-x86-64-sse41-popcnt.zip",
+        "https://github.com/official-stockfish/Stockfish/releases/download/sf_18/stockfish-windows-x86-64-avx2.zip"};
 
     fs::path zip = engineDir / "tmp.zip";
+    bool downloaded = false;
 
-    std::string cmd1 = "curl -L --fail -A \"Scacchi-it/19.3\" -o \"" + zip.string() + "\" " + url;
-    if (std::system(cmd1.c_str()) != 0)
+    for (auto &url : urls)
+    {
+        std::string cmd1 = "curl -L --fail --connect-timeout 15 -A \"Scacchi-it/19.3\" -o \"" + zip.string() + "\" " + url;
+        if (std::system(cmd1.c_str()) == 0 && fs::exists(zip) && fs::file_size(zip) > 1000000)
+        {
+            downloaded = true;
+            break;
+        }
+        fs::remove(zip);
+    }
+
+    if (!downloaded)
         return false;
 
-    // FIX 2: controlla che non sia il file da 9 byte
-    if (!fs::exists(zip) || fs::file_size(zip) < 1000)
-        return false;
-
-    // FIX 3: su Windows scompatta con PowerShell, non con tar
     std::string cmd2 = "powershell -Command \"Expand-Archive -Force -Path '" + zip.string() + "' -DestinationPath '" + engineDir.string() + "'\"";
     std::system(cmd2.c_str());
-
     fs::remove(zip);
 
-    // ricontrolla dopo estrazione, anche in sottocartella
     return checkPresent();
 }
