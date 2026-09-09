@@ -1,5 +1,6 @@
 Manuale completo di Scacchi-it
 (pronuncia: Scacchitrattinoit)
+
 Benvenuti a Scacchi-it il gioco degli scacchi in italiano con interfaccia vocale.
 Ecosistema tiflologico, per gioco offline e online (multiplayers), compatibile con screen reader come NVDA e JAWS
 per Windows 10 e 11
@@ -97,6 +98,23 @@ La console permette, in modo semplice ed efficace, varie cose:
 - lancio dei comandi iniziali
 - inserimento dati: spostando il focus con Alt-Tab da scacchiera a console e viceversa
 - tracciamento di situazioni particolari verificatesi
+
+Architettura Scacchi-it
+L'ecosistema Scacchi-it è costituito da varie parti.
+Scacchi-it core, suddiviso in:
+1. Motore grafico e controllo tasti
+ 2. motore di controllo, con parte controllo gioco a due, controllo stockfish, controllo online, Openings Trainer,undo
+ 3. stockfish, scaricato dal suo sito
+
+Scacchi-it Utility che collaborano con la parte core:
+1. IncollaFEN
+2. validaFEN
+3. fenpos
+ 
+Scacchi-it Applicativi indipendenti, costituita da:
+1. coachFEN
+2. coachGame
+3.clock-start  
 
 Download e Windows Defender 
 Da browser sul link https://redyouman.github.io/blog/2025/07/27/downloads.html
