@@ -14,6 +14,6 @@ il path corretto, devi controllare solo il nome dell'eseguibile.
 Al riavvio l'applicazione funzionerà.
 
 Nota 2: il runtime di Scacchi-it controlla l'esistenza di stockfish in cartella engine e sottocartelle, se al primo avvio non trovasse stockfish, l'installer che Scacchi-it dispone provvederà a scaricare la versione di default preferita.
-Qualora l'installer non trovasse tale versione, dovrete provvedere a scaricare a mano la versione disponibile
+Qualora l'installer non trovasse tale versione, Scacchi-it esce sul prompt non proseguendo e dovrete provvedere ascaricare a mano la versione disponibile
 
 Licenza Stockfish: GPLv3 - https://github.com/official-stockfish/Stockfish
