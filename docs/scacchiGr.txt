@@ -85,6 +85,7 @@ Scacchi-it consente di:
 39 - sapere la miglior mossa da fare su una FEN (coaching)
 40 - autoinstallare stockfish la prima volta se non esiste nella cartella engine
 41 - utilizzare un coachGame per analizzare un file di partita registrata
+42 - incollare una ROTN proveniente da file o da estensioni browser
 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
@@ -109,7 +110,8 @@ Scacchi-it core, suddiviso in:
 Scacchi-it Utility che collaborano con la parte core:
 1. IncollaFEN
 2. validaFEN
-3. fenpos
+3. fenpo
+4. incolla-ROTN
  
 Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
@@ -159,6 +161,7 @@ Altri programmi esistenti richiedono dei parametri di input ed è meglio lanciar
 validaFEN (ne parleremo in un paragrafo a parte)
 coachFEN-start (ne parleremo in un paragrafo apposito) 
 coachGame-start (ne parleremo in un paragrafo apposito)
+- incolla-ROTN (ne parleremo in un paragrafo apposito)
 
 Attenzione: Se non è presente stockfish nella cartella engine, Scacchi-it utilizza il suo installer per scaricare la prima volta la versione preferita di stockfish e installarlo. Questo perchè nello zip scaricato stockfish non è presente sia per motivi di licenza GNU GPL versione 3, sia per avere un pacchetto runtime leggero da scaricare.
 Solo in questa occasione serve attiva la connessione Internet. Se la connessione non è troppo stabile, caso raro, potrebbe servire un secondo lancio di Scacchi-it per far riuscire a scaricare e installare stockfish la prima volta. Puoi esaminare il sorgente board.cpp verso la fine per la parte installer di Scacchi-it.
@@ -562,10 +565,18 @@ Le estensioni sono compatibili per la maggior parte dei browser utilizzati.
 Il software è al link:
 https://redyouman.github.io/blog/2026/07/18/estensioni-browser.html 
 Con esse potete selezionare una FEN, leggerla e ottenere una ROTN.
-Se vorreste usare la ROTN degli appunti delle estensioni con Scacchi-it se risulta M:B dovrete diminuire di 1 il numero di mossa della posizione P. 
+Se, invece, volete scrivere da voi un file ROTN in cartella problemi, dovete solo rispettare la sintassi della ROTN e la definizione di P. Per incollare, invece, direttamente gli appunti ottenuti con estensioni browser, potete usare incolla-ROTN.
 
-Se, invece, volete scrivere da voi un file ROTN in cartella problemi, dovete solo rispettare la sintassi della ROTN e la condizione che se M:B diminuire di 1 il numero di mossa della posizione P.
-.
+La funzionalità incolla-ROTN
+Serve quando avete copiato la ROTN da un file oppure aventi la ROTN negli appunti caricati dalle estensioni browser.
+Otterrete lo usage se digitate solo:
+incolla-ROTN
+
+Lo usage dice di digitare il nome del file senza estensioni e dare return, dopo di che sulla console incollate ilcontenuto degli appunti.
+Poi occorre fare Ctrl-Z+Return.
+
+Per caricare il tutto su Scacchi-it occorre fare dopo
+Ctrl-R e inserire su console il nome del file senza estensione
 
 La funzionalità coachFEN-start
 Questa funzionalità di coaching permette, prima di incollare la FEN a Scacchi-it, di sapere la miglior mossa da fare. 

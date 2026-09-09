@@ -133,7 +133,7 @@ chessparam.cnf
 
 Dove sono gli eseguibili
 Nella root troviamo:
-scacchi-start.exe, clock-start.exe, incolla-FEN.exe, validaFEN.exe, coachFEN-start.exe, coachGame-start.exe 
+scacchi-start.exe, clock-start.exe, incolla-FEN.exe, validaFEN.exe, incolla-ROTN.exe, coachFEN-start.exe, coachGame-start.exe 
 Nella bin:
 scacchi.exe, orologioScacchi.exe, coachFEN.exe,coachGame.exe 
 In sospensioni:

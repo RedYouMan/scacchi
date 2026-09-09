@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
   // 1. Controlla se l'utente ha passato il nome del file
   if (argc < 2)
   {
-    std::cout << "Usage: nomefile senza estensione appunti-da-incollare seguito da ctrl-Z + RETURN per terminare l'input" << std::endl;
+    std::cout << "Usage: nomefile senza estensione+RETURN Poi appunti-da-incollare + ctrl-Z + RETURN" << std::endl;
     return 1;
   }
 
