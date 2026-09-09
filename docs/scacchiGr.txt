@@ -114,7 +114,7 @@ Scacchi-it Utility che collaborano con la parte core:
 Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
 2. coachGame
-3.clock-start  
+3. clock-start  
 
 Download e Windows Defender 
 Da browser sul link https://redyouman.github.io/blog/2025/07/27/downloads.html
