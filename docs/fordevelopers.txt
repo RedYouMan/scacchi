@@ -155,7 +155,7 @@ La src è contemporaneamente online e offline, aggiornata alla ultima versione
 Il progetto si completa con serverScacchi, lo starter di scacchi e dell'orologio scacchistico.
 In particolare l'orologio in src-clock è compilato a parte per usare un header più limitato come tts.h per il sorgente tts.cpp.
 
-Per srcfenpos che ha un solo .cpp si utilizza direttamente la compilazione di visual studio code, avente in .vscode i file launch.json e task.json.
+Per src-fenpos e src-incolla-ROTN che hanno un solo .cpp si utilizza direttamente la compilazione di visual studio code, avente in .vscode i file launch.json e task.json.
 
 Il coach in src-coach riceve una FEN e collaborando con stockfish, dice la miglior mossa che si può fare sulla posizione espressa dalla FEN e la valutazione posizione.
 Il coachGame riceve due parametri:
