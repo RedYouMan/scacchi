@@ -203,22 +203,24 @@ I passi di compilazione con cmake sono:
 Il log è comodo e rintracciabile nella cartella build dei sorgenti, che state compilando.
 
 La directory src-starter  è utilizzata per file python che vengono resi eseguibili. Tali eseguibili sono scacchi-start e clock-start, posti poi nella home directory a mano.
+
 Architettura Scacchi-it
 L'ecosistema Scacchi-it è costituito da varie parti.
 Scacchi-it core, suddiviso in:
 1. Motore grafico e controllo tasti
  2. motore di controllo, con parte controllo gioco a due, controllo stockfish, controllo online, Openings Trainer,undo
- 3. stockfish
+ 3. stockfish, scaricato dal suo sito
 
 Scacchi-it Utility che collaborano con la parte core:
 1. IncollaFEN
-2. 
-
+2. validaFEN
+3. fenpos
+ 
 Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
 2. coachGame
-3.  
-
+3. clock-start
+  
 Il cervello di tutto o main è board.cpp. Esso si avvale delle competenze di varie parti:
 - nav.cpp per la grafica della scacchiera e pezzi, compreso i tasti ctrl e mouse(che utilizza drawboard.cpp)
 - chess.h e chess.cpp per il controllo delle regole di gioco
