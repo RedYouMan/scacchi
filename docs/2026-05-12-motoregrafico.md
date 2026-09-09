@@ -42,6 +42,7 @@ Scacchi-it Utility che collaborano con la parte core:
 1. IncollaFEN
 2. validaFEN
 3. fenpos
+4. incolla-ROTN
 
 Scacchi-it Applicativi indipendenti, costituita da:
 
