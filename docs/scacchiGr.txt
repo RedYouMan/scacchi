@@ -35,7 +35,7 @@ git clone https://github.com/RedYouMan/scacchi.git
 Introduzione al programma Scacchi-it 
 Esso è un progetto italiano gratuito, , una piattaforma completa offline /online, ascoltabile con sintesi vocale, consigliato ai non vedenti, ma con grafica per consentire di giocare anche alle persone vedenti.
 
-Il software, una volta scompattato con unzip,  è leggero, e con i suoi 30 Mbyte può essere contenuto anche su una pendrive e giocato direttamente da essa. 
+Il software, una volta scompattato con unzip,  è leggero, e con i suoi 21 Mbyte può essere contenuto anche su una pendrive e giocato direttamente da essa. 
 
 Il non vedente, tramite uno screen reader come NVDA, oJAWS potrà utilizzare il computer e Scacchi-it ascoltando anche i messaggi "verbosi" della console.
 
