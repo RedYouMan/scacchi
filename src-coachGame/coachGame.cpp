@@ -447,6 +447,7 @@ int main(int argc, char *argv[])
 {
     if (argc < 3)
     {
+
         std::cout << "Uso: coachGame\"<nome file partita con estensione> <colore (es. b o n)>" << std::endl;
         return 1;
     }
