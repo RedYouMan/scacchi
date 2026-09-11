@@ -162,7 +162,11 @@ void start_game()
     controllo esistenza di stockfish, altrimenti la prima volta lo scarica e lo estrae nella cartella engine
     */
     if (!ensureEngine())
+    {
+        cout << "Errore: impossibile scaricare o estrarre Stockfish. Controlla la connessione internet e i permessi di scrittura.\n";
+        cout << "Dovrai scaricare stockfish a mano da https://stockfishchess.org/download/ e metterlo nella cartella engine. Controlla la correttezza del contenuto del file engine.cnf nella bin\n";
         exit(1);
+    }
 
     cout << "sulla scacchiera: CtrlH per help(), CtrlX per tutorial\n";
     init();
