@@ -602,7 +602,19 @@ Il tutto viene riportato in un file report.txt nella cartella registrazioni.
 Configurabilità delle versioni di stockfish
 Qualora ci fossero versioni più recenti di stockfish è possibile scaricare la nuova versione nella directory engine emodificare, il file engine.cnf nella directory bin,  per mettervi il nuovo nome dell'eseguibile stockfish gui e la corretta cartella dove è posizionato.
 L'applicativo Scacchi-it continuerà a lavorare correttamente se il nuovo motore stockfish si basa ancora su comandi standard uci (universal chess interface).
-Attenzione: per motivi di licenza GNU GPL versione 3, in engine del runtime non viene distribuito stockfish. Tuttavia all'avvio Scacchi-it se non trova un eseguibile di stockfish in engine, la prima volta scarica quello di default consigliato. Questo installer facilita il compito a persone non vedenti. L'installer utilizza comandi curl.
+
+Installer di stockfish
+Per motivi di licenza GNU GPL versione 3, ma anche per allegerire il pacchetto runtime di Scacchi-it in engine non viene distribuito stockfish. Tuttavia all'avvio Scacchi-it se non trova un eseguibile di stockfish in engine, e sottocartelle la prima volta scarica quello di default consigliato. Questo installer facilita il compito a persone non vedenti. L'installer utilizza comandi curl, sfruttando quello installato su Windows di default.
+
+Possibili insuccessidi download di stockfish possono essere:
+1. connessione Internet non stabile o spenta
+2. gli autori di stockfish hanno cambiato sul sito la posizione o il nome di stockfish
+
+In questi casi dovrete controllare la connessione e riprovare a lanciare scacchi-start. Se l'errore persiste, dovrete scaricare a mano stockfish da https://stockfishchess.org/download/ 
+Dopo aver spacchettato lo zip in cartella engine, di solito vi creerà la cartella stockfish.
+Sono importanti i seguenti controlli:
+1. controllare nel file engine.cnf nella cartella bin che contenga corretto sia il path che il nome dell'eseguibile
+2. avviare scacchi-start e provare a far giocare stockfish con CtrlZ e dare a stockfish il bianco e livello 10. Se fa la prima mossa è tutto ok. 
 
 Tuning del chess engine
 Nel pacchetto 7z nella cartella readme esistono vari file, tra cui tuning.txt (dalla versione 3.9 in poi).
