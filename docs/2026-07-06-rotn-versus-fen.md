@@ -29,6 +29,8 @@ La specifica dichiara un metodo semplice e intuitivo per superare facilmente vec
 
 L'obiettivo della ROTN è di avere una posizione parlante con sintesi vocale e contenente descrizioni come il tema della posizione e consigli anche tecnici.
 
+Nel seguito ROTN sta per Readable Ordered Text Notation.
+
 Oggi uno screen reader leggendo la fen vi spara un insieme di caratteri velocemente, senza darvi il tempo di "vedere" attraverso il canale uditivo.
 
 La rotn, in realtà , è una opportunità aggiuntiva alla fen, per sfruttare altri canali tecnologici . Come si vedrà risulterà utile in molte situazioni.
