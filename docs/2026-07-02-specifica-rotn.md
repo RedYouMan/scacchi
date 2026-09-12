@@ -14,7 +14,7 @@ categories: Blog
 
 ## [IT] Specifica Italiana
 
-ROTN = ROT Notation
+ROTN = Readable Ordered Text Notation.
 Formato testuale ASCII per descrivere posizioni scacchistiche accessibili per screen reader.
 
 Regole Generali:
