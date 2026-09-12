@@ -164,7 +164,7 @@ coachGame-start (ne parleremo in un paragrafo apposito)
 - incolla-ROTN (ne parleremo in un paragrafo apposito)
 
 Attenzione: Se non è presente stockfish nella cartella engine, Scacchi-it utilizza il suo installer per scaricare la prima volta la versione preferita di stockfish e installarlo. Questo perchè nello zip scaricato stockfish non è presente sia per motivi di licenza GNU GPL versione 3, sia per avere un pacchetto runtime leggero da scaricare.
-Solo in questa occasione serve attiva la connessione Internet. Se la connessione non è troppo stabile, caso raro, potrebbe servire un secondo lancio di Scacchi-it per far riuscire a scaricare e installare stockfish la prima volta. Puoi esaminare il sorgente board.cpp verso la fine per la parte installer di Scacchi-it.
+Solo in questa occasione serve attiva la connessione Internet e dare consenso a scaricare a Windows Defender. Se la connessione non è troppo stabile, caso raro, potrebbe servire un secondo lancio di Scacchi-it per far riuscire a scaricare e installare stockfish la prima volta. Puoi esaminare il sorgente board.cpp verso la fine per la parte installer di Scacchi-it.
 
 Installazione con comandi da prompt
 Come alternativa al paragrafo precedente si possono fare i comandi a mano. Se avete già fatto il paragrafo precedente, questo lo potrete saltare.
@@ -605,7 +605,7 @@ L'applicativo Scacchi-it continuerà a lavorare correttamente se il nuovo motore
 
 Installer di stockfish
 Per motivi di licenza GNU GPL versione 3, ma anche per allegerire il pacchetto runtime di Scacchi-it in engine non viene distribuito stockfish. Tuttavia all'avvio Scacchi-it se non trova un eseguibile di stockfish in engine, e sottocartelle la prima volta scarica quello di default consigliato. Questo installer facilita il compito a persone non vedenti. L'installer utilizza comandi curl, sfruttando quello installato su Windows di default.
-
+Dare consenso a Windows Defender di scaricarlo.
 Possibili insuccessidi download di stockfish possono essere:
 1. connessione Internet non stabile o spenta
 2. gli autori di stockfish hanno cambiato sul sito la posizione o il nome di stockfish
