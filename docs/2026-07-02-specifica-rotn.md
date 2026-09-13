@@ -1,10 +1,10 @@
 ---
-title: "scacchi accessibili: Specifica ROTN - Rot Notation"
+title: "scacchi accessibili: Specifica ROTN - Readable Ordered Text Notation"
 description: "Una specifica per notazione ROTN negli scacchi"
 categories: Blog
 ---
 
-# ROTN v1.9 - Rot Notation Specification
+# ROTN v1.9 - Readable Ordered Text NotationSpecification
 
 # AUTHOR: Rosario Turco
 
