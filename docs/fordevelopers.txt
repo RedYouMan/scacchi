@@ -102,7 +102,7 @@ Dopo il clone del progetto oltre ad avere il repository in locale con i sorgenti
 Se hai clonato il progetto per creare la tua applicazione al posto di scacchi-it metti alla cartella il nome del tuo progetto.
 
 Repository pubblico dei sorgenti
-la url è https://github.com/RedYouMan/scacchi.git
+la url è https://github.com/RedYouMan/scacchi
 Per clonare usa il comando:
 git clone 'url'
 
