@@ -4,7 +4,7 @@ description: "Una specifica per notazione ROTN negli scacchi"
 categories: Blog
 ---
 
-# ROTN v1.9 - Readable Ordered Text NotationSpecification
+# ROTN v1.9 - Readable Ordered Text Notation Specification
 
 # AUTHOR: Rosario Turco
 
