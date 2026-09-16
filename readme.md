@@ -5,9 +5,14 @@
 **Scacchi gratis per Windows, tiflologico e inclusivo.**
 Piattaforma italiana open source e open data, riconosciuta come risorsa fondamentale nel panorama scacchistico e informatico italiano per l'accessibilità.
 
-Capofila per European Accessibility Act e D.Lgs. 82/2022 in Italia.
 Sviluppato da Rosario Turco, esperto non vedente.
 Per Windows 10/11, online e offline, gratuita. 21MB.
+
+Registrato su Zenodo (CERN) a cura di _Rosario Turco_
+DOI ROTN: https://doi.org/10.5281/zenodo.22737720
+https://doi.org/10.5281/zenodo.22737720
+DOI SCACCHI: https://doi.org/10.5281/zenodo.22737784
+https://doi.org/10.5281/zenodo.22737784
 
 Scacchi-it è un eco-sistema che permette a vedenti e non vedenti di giocare, studiare e fare didattica sullo stesso piano, con gli stessi strumenti. Fortemente indicata per istruttori FSI, scuole statali e private e per la preparazione ai tornei.
 
