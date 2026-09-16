@@ -1,0 +1,6 @@
+T:Torre contro cavallo;
+V:B;
+B:Rg1;Th1;
+N:Re8;Cd7;
+M:B;
+P:30;
