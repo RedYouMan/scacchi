@@ -791,7 +791,7 @@ string translateCastle(string move)
 void patteElementari()
 {
 
-    int numBianchi = 0, numNeri = 0, numFigBianche = 0, numFigNere = 0;
+    int numBianchi = 0, numNeri = 0, numFigBianche = 0, numFigNere = 0, numAltroBianchi = 0, numAltroNeri = 0;
     for (int i = 0; i < 8; i++)
     {
 
@@ -802,11 +802,20 @@ void patteElementari()
             if (chessBoard[i][j].getBusySquare() && chessBoard[i][j].getChessPiece().getTypePiece() != KING && chessBoard[i][j].getChessPiece().getColorPiece() == 'W')
             {
                 numBianchi++;
+                // se Torre o Donna
+                if (chessBoard[i][j].getChessPiece().getTypePiece() == ROOK || chessBoard[i][j].getChessPiece().getTypePiece() == QUEEN)
+                {
+                    numAltroBianchi++;
+                }
                 // se alfiere o cavallo
                 if (chessBoard[i][j].getChessPiece().getTypePiece() == BISHOP || chessBoard[i][j].getChessPiece().getTypePiece() == KNIGHT)
                 {
                     numFigBianche++;
                 }
+            }
+            if (chessBoard[i][j].getChessPiece().getTypePiece() == ROOK || chessBoard[i][j].getChessPiece().getTypePiece() == QUEEN)
+            {
+                numAltroNeri++;
             }
             if (chessBoard[i][j].getBusySquare() && chessBoard[i][j].getChessPiece().getTypePiece() != KING && chessBoard[i][j].getChessPiece().getColorPiece() == 'B')
             {
@@ -828,6 +837,10 @@ void patteElementari()
         WriteGameToFile(nameFile, ultimaMossa, reg_to_file);
         Sleep(3);
         reStart();
+    }
+    if (numAltroBianchi > 0 || numAltroNeri > 0)
+    {
+        return; // non risulta patta elementare
     }
     if (numBianchi == 1 && numFigBianche == 1 && numNeri <= 1 && numFigNere <= 1)
     {

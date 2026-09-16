@@ -18,7 +18,7 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione runtime 11.2 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione runtime 11.3 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
@@ -110,7 +110,7 @@ Scacchi-it core, suddiviso in:
 Scacchi-it Utility che collaborano con la parte core:
 1. IncollaFEN
 2. validaFEN
-3. fenpo
+3. fenpos
 4. incolla-ROTN
  
 Scacchi-it Applicativi indipendenti, costituita da:
@@ -568,7 +568,7 @@ Con esse potete selezionare una FEN, leggerla e ottenere una ROTN.
 Se, invece, volete scrivere da voi un file ROTN in cartella problemi, dovete solo rispettare la sintassi della ROTN e la definizione di P. Per incollare, invece, direttamente gli appunti ottenuti con estensioni browser, potete usare incolla-ROTN.
 
 La funzionalità incolla-ROTN
-Serve quando avete copiato la ROTN da un file oppure aventi la ROTN negli appunti caricati dalle estensioni browser.
+Serve quando avete copiato la ROTN da un file oppure da un pdf che la presenta su un'unica riga oppure dagli appunti caricati dalle estensioni browser.
 Otterrete lo usage se digitate solo:
 incolla-ROTN
 
@@ -578,6 +578,8 @@ Poi occorre fare Ctrl-Z+Return.
 Per caricare il tutto su Scacchi-it occorre fare dopo
 Ctrl-R e inserire su console il nome del file senza estensione
 
+Se avete preso la ROTN da un pdf su un'unica riga e Scacchi-it vi scarta ilfile, potreste visionare il file in cartella sospensioni col notepad. Una volta capito l'errore a cosa sia dovuto (il pdf era formattato male) lo potreste correggere e salvarlo. Dopo di che potreste ricaricarlo.
+ 
 La funzionalità coachFEN-start
 Questa funzionalità di coaching permette, prima di incollare la FEN a Scacchi-it, di sapere la miglior mossa da fare. 
 Essa non va usata se avete una partita in corso col computer, altrimenti vi chiuderà la sessione col computer.
