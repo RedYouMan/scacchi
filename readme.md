@@ -20,16 +20,16 @@ Scacchi-it è un eco-sistema che permette a vedenti e non vedenti di giocare, st
 
 A differenza delle piattaforme commerciali online che non supportano adeguatamente screen reader e navigazione da tastiera, Scacchi-it nasce nativamente accessibile. Permette a un giocatore non vedente di sfidare un vedente o il computer ad armi pari.
 
-La BatMobile degli scacchi inclusivi: compatta fuori, completa dentro.
+L'ecosistema degli scacchi inclusivi: compatto fuori, completo dentro.
 
 ### Perché ROTN - Standard Open Data
 
 La FEN è complessa per una sintesi vocale a causa di barre e numeri.
-ROTN (Rotated Notation) è la specifica formale che rende lineare e a basso sforzo cognitivo la lettura della posizione, della prospettiva di gioco e della fase critica. Trasforma Scacchi-it in un applicativo di tipo open data.
+ROTN (Readable Ordered Text Notation) è la specifica formale che rende lineare e a basso sforzo cognitivo la lettura della posizione, della prospettiva di gioco e della fase critica. Trasforma Scacchi-it in un applicativo di tipo open data.
 
 Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera e dei in SFML pezzi per permettere ad amici e familiari di giocare con il non vedente.
 
-### Cosa fa - La BatMobile in 21MB
+### Cosa fa - Scacchi-it in 21MB
 
 - Multiplayer online nelle room su stessa rete o VPN Hamachi gratuita
 - Gioco offline contro Stockfish (versione configurabile da file)
@@ -40,6 +40,7 @@ Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera e dei in 
 - Registrazione partite, sospensione e ripresa con valutazione in sospensione
 - Caricamento problemi in ROTN, validazione e incolla FEN
 - Undo mosse per didattica, forzatura apertura desiderata
+- incolla-ROTN da appunti delle estensioni browser o da copia su pdf o ebook
 - Orologio scacchistico per lampo e torneo
 - Tuning del motore per sfruttare le risorse del PC (vedi tuning.txt)
 
