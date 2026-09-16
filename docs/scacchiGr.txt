@@ -28,9 +28,9 @@ Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima version
 
 Open Source
 Il progetto è open source e potete consultare i sorgenti al repository:
-https://github.com/RedYouMan/scacchi.git
+https://github.com/RedYouMan/scacchi
 per clonare il repository fate il comando:
-git clone https://github.com/RedYouMan/scacchi.git 
+git clone https://github.com/RedYouMan/scacchi 
 
 Introduzione al programma Scacchi-it 
 Esso è un progetto italiano gratuito, , una piattaforma completa offline /online, ascoltabile con sintesi vocale, consigliato ai non vedenti, ma con grafica per consentire di giocare anche alle persone vedenti.
