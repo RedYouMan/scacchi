@@ -813,13 +813,13 @@ void patteElementari()
                     numFigBianche++;
                 }
             }
-            if (chessBoard[i][j].getChessPiece().getTypePiece() == ROOK || chessBoard[i][j].getChessPiece().getTypePiece() == QUEEN)
-            {
-                numAltroNeri++;
-            }
             if (chessBoard[i][j].getBusySquare() && chessBoard[i][j].getChessPiece().getTypePiece() != KING && chessBoard[i][j].getChessPiece().getColorPiece() == 'B')
             {
                 numNeri++;
+                if (chessBoard[i][j].getChessPiece().getTypePiece() == ROOK || chessBoard[i][j].getChessPiece().getTypePiece() == QUEEN)
+                {
+                    numAltroNeri++;
+                }
                 if (chessBoard[i][j].getChessPiece().getTypePiece() == BISHOP || chessBoard[i][j].getChessPiece().getTypePiece() == KNIGHT)
                 {
                     numFigNere++;
