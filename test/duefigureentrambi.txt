@@ -1,0 +1,6 @@
+T: Non patta con 2figure entrambi: si gioca
+V:B
+B:Rg1;cc7;Ag2;
+N:Rh8;Af8;Cd6;
+M:B
+P:21;
