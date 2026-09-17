@@ -46,11 +46,13 @@ Creare un chess engine come Scacchi-it che si propone sia come motore di control
 La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.
 Il consiglio è, quindi, clonarlo, studiarlo, migliorarlo e aggiungere funzionalità, ma partendo da qualcosa di funzionante e con una scelta architetturale che pian piano comprenderai.
 
-Concludo la premessa con la frase:
+Il progetto fornisce margini per ulteriori innovazioni.
+
+Dato che la ROTN consente con il descrittore V il comando di rotazione della scacchiera, fornendo dinamicità alle informazioni, concludo la premessa con la frase:
 We shall rotate!
 
 Avvertenza: se hai clonato il repository è buona abitudine di aggiornarlo periodicamente con il comando git pull. Vedi di seguito il paragrafo su git.
-Fino a fine 2027 cercherò di arricchire il progetto con le funzionalità necessarie.
+Fino a fine 2027 cercherò di arricchire il progetto con le funzionalità necessarie e la risoluzione dieventuali bug. .
 
 Introduzione
 Il progetto Scacchi-it è un progetto tiflologico italiano,  gratuito, per piattaforma Windows, versioni 10 e 11, nato per realizzare un gioco di scacchi adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
@@ -122,7 +124,7 @@ Finora su Scacchi-it per rilasciare la versione veniva aggiornato nel codice la 
 - board.cpp(vedi cout in void start_game())
 - utility.cpp (vedi la sintesi vocale del help)
 
-Infine veniva aggiornato il maniale che avvertiva della versione rilasciata. Tale manuale è richiamabile da Scacchi-it su browser.
+Infine veniva aggiornato il manuale che avvertiva della versione rilasciata. Tale manuale è richiamabile da Scacchi-it su browser.
 
 Le utility esclusi i starter hanno un proprio banner.
 
@@ -166,7 +168,7 @@ Il coachGame riceve due parametri:
 In src-starter si trovano tutti i python script che vengono resi exe e servono per il lancio degli exe in bin.
 Gli exe xxx-start.exe costruiti nella cartella build di src-starter vengono messi a mano nella cartella root di scacchi-it.
 Anche serverScacchi.exe è ottenuto nella cartella ServerScacchi facendo il pyinstall di uno script python che viene costruito nella build della cartella ServerScacchi e copiato a mano in ServerScacchi.
-Infine anche fenpos.exe veine messo a mano in sospensioni e incolla-ROTN.exe a mano nella root.
+Infine anche fenpos.exe viene messo a mano in sospensioni e incolla-ROTN.exe a mano nella root.
 
 Test di posizioni scacchistiche
 La cartella Test contiene file di test da copiare e caricare sotto cartella sospensioni  (o sotto problemi. La differenza tra le due cartelle è che la prima dopo il caricamento con CtrlR cancella il file se non lockato da un editor, la seconda cartella non cancella i file e, quindi, adatta ai problemi o puzzle che si vogliono risolvere in qualche giorno.
@@ -238,12 +240,12 @@ Il cervello di tutto o main è board.cpp. Esso si avvale delle competenze di var
 - tts.cpp per la gestione della sintesi vocale in italiano e settaggio della libreria come italiano
 - proto.h contiene tutti i prototipi 
 - globale.h ha le variabili globali condivise con extern e relative a quelle di board.cpp
-Non tutte le variabili sono in globale.h, alcune comson locali solo ai due sorgenti che le riusano, ma sono in numero veramente esiguo.
+Non tutte le variabili sono in globale.h, alcune sono locali solo ai due sorgenti che le riusano, ma sono in numero veramente esiguo.
  
 Si è scelto l'utilizzo delle variabili globali circa una ventina, per semplicità di progetto, che è partito come prototipo e, poi, data la sua efficacia si è trasformato in progetto.
 board.cpp consente poi anche il caricamento e la soluzione di problemi, da solo o con stockfish.
 
-A parte c'è coachFEN.cpp 
+A parte c'è coachFEN.cppe coachGame.cpp 
 Oltre a ciò ci sono serverScacchi.py e orologioScacchi.cpp
 
 Scacchi-it informa sul nome della casella, se contiene pezzi o se vuota. Infine gestisce tutti i controls da tastiera per il gioco
@@ -294,22 +296,25 @@ La classe ChessUtility (Vedi chess.h) fornisce i metodi opportuni e viene utiliz
 
 Per garantire di ruotare la scacchiera in qualsiasi momento, si utilizza in sequenza la sospensione e il ricaricamento successivo della posizione in modo che tutto sia di nuovo identico come posizione, mossa etc.ma ruotato di 180 gradi.
 
-e' stato definito la ROT notation (ROTN) (dal nome e cognome dell'autore) che rispetto alla posizione fen utilizzata negli scacchi è più utile per i non vedenti, anche rispettoaduna immagine di un libro. 
+e' stata definita la ROTN (Readable Ordered Text Notation)rispetto che rispetto alla posizione fen utilizzata negli scacchi è più utile per i non vedenti, anche rispetto aduna immagine di un libro (vedi la specifica formale della ROTN definita con EBNF ISO 14977). 
 La ROTN è usata per:
 - inizializzare la scacchiera (init)
 - sospenzione (sospendi) e ripresa (loadFile) della partita
 - per la rotazione della scacchiera (sospendi e loadFile)
 - per il caricamento dei problemi (loadFile) 
 - per registrare la presenza di enpassant nelle sospensioni
+- per segnalare il valore relativo alla regola delle 50 mosse
 
 La ROTN è una estensione della notazione algebrica delle posizioni e mosse degli scacchi, utilizzata per rendere un applicativo di scacchi di tipo open data. Difatti con essa è possibile interagire con Scacchi-it.
 La gestione del caricamento dei file scritti in formato ROTN avviene tramite il sorgente gesfile.cpp
+Non si usa una estensione particolare come potrebbe essere .rotn, ma quella .txt per facilitare il compito al non vedente nell'utilizzo del Notepad.
+Il principio guida della progettazione dell'accessibilità per i non vedenti deve essere il Wu-Wei: minimo sforzo per il massimo rendimento.
 La specifica ufficiale è 2026-07-02-specifica-rotn.md
 Le informazioni sulla scrittura della ROTN e il suo utilizzo sono nel Manuale scacchigr.tx, ulteriori approfondimenti sono nell'articolo 2026-07-06-rotn-versus-fen.md
 
 Il metodo checkSquareUnderAttack è un mattoncino base per fare i seguenti controlli:
 a) case minacciate dell'arrocco (vedi anche checkCastleUnderAttack)
-b) verifica di scacco al re o scacco matto o stallo (vedi cheScacco e cheStallo)
+b) verifica di scacco al re o scacco matto o stallo o sottoScacco (vedi cheScacco , cheStallo e sottoScacco)
 c) se un pezzo è difeso
 d) lo scacco matto si basa su checkFreeSquare che usa sempre il mattoncino di sopra
 
@@ -346,7 +351,7 @@ Il caricamento dei pezzi con init, il caricamento dei file della ROTN sono in ge
 Init() si occupa solo della predisposizione iniziale dei pezzi, mentre loadFile permette con gli opportuni flag 1 o 2 di caricare le sospensioni o i problemi.
 
 Viene utilizzato stockfish per consentire di giocare contro il computer. I file di gestione di stockfish sono:
-- engine.cnfposto in bin
+- engine.cnf posto in bin
 - engine.h
 - engine4.cpp
 Lo start in engine4.cpp definisce anche un exit handler per consentire in caso di Cntrl-Q o di control-c di fare un 'graceful stop' di stockfish.
@@ -387,7 +392,7 @@ Osserva in GesFile.cpp quando si sospende una partita vengono salvati come ROTN 
 Distribuzione dell'applicativo 
 Occorre aggiungere le dll dell'estensione dovuta al sdk installato insieme a Visual Studio Community 2022.
 In particolare vcruntime140.dll, vcruntime140_1.dll, ucrtbase.dll, msvcp140.dll e le versioni con d.
-Nel seguito descriviamo il metodo per individuare le dll e rendere il progrmma autosufficiente, senza necessità di pre-installareun pacchetto redistribuibile.
+Nel seguito descriviamo il metodo per individuare le dll e rendere il programma autosufficiente, senza necessità di pre-installareun pacchetto redistribuibile.
 
 Per giocare a tali applicazioni si può scegliere tra varie soluzioni:
 1 - installare, metodo più semplice, Visual Studio Community 2022 con SDK scelto nel piano di lavoro dell'installer,in modo da avere tutte le dll necessarie
@@ -418,6 +423,7 @@ ribuildare daccapo
 
 Eventuali errori di Runtime library spesso sono dovuti a una build non corretta
 Tenere presente che .net framework su cui si basa sia Visual studio e cmake non ricompilano tutti gli oggetti se ritengono che l'exe è più nuovo della nuova compilazione, per questo gli oggetti (obj) si possono trovare disallineati.
+
 Funzioni playWhite() e playBlack()
 Queste funzioni sono molto delicate. Permettono contemporaneamente:
 - giocare contro avversario da stesso pc facendo alternativamente le mosse
