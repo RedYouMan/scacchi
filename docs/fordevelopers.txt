@@ -39,8 +39,11 @@ Il nome ROTN sta per Readable Ordered Text Notation.
 
 Scacchi-it è, esso stesso, la testimonianza pratica della utilità, semplicità, chiarezza e rapidità con cui si può lavorare con la ROTN per lo studio, la didattica,  la inclusione e completa autonomia dei non vedenti, che possono apprendere le stesse cose dei normodotati nella stessa classe di corso.
 
-Se fai un tuo progetto, spero che tu possa, con maggiore successo, fare affermare la ROTN in campo scacchistico, editoriale e in ambito didattico. Solo creando un seguito nelle varie associazioni, gruppi facebook, Reddit, forum etc. potrai far diffondere la sua utilità.
+Registrato su Zenodo (CERN) a cura di _Rosario Turco_
+DOI ROTN: https://doi.org/10.5281/zenodo.22737720
+DOI SCACCHI: https://doi.org/10.5281/zenodo.22737784
 
+Come affrontare questo software
 Un altro punto. 
 Creare un chess engine come Scacchi-it che si propone sia come motore di controllo e gioco a due, sia come motore di controllo di stockfish e, infine, come motore online Hamachi multiplayers, ti assicuro che non è semplice. 
 La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.
