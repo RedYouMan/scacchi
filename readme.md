@@ -6,15 +6,13 @@
 Piattaforma italiana open source e open data, riconosciuta come risorsa fondamentale nel panorama scacchistico e informatico italiano per l'accessibilità.
 
 Sviluppato da Rosario Turco, esperto non vedente.
-Per Windows 10/11, online e offline, gratuita. 21MB.
+Per Windows 10/11, online e offline, gratuito. 21MB.
 
 Registrato su Zenodo (CERN) a cura di _Rosario Turco_
 DOI ROTN: https://doi.org/10.5281/zenodo.22737720
-https://doi.org/10.5281/zenodo.22737720
 DOI SCACCHI: https://doi.org/10.5281/zenodo.22737784
-https://doi.org/10.5281/zenodo.22737784
 
-Scacchi-it è un eco-sistema che permette a vedenti e non vedenti di giocare, studiare e fare didattica sullo stesso piano, con gli stessi strumenti. Fortemente indicata per istruttori FSI, scuole statali e private e per la preparazione ai tornei.
+Scacchi-it è un eco-sistema che permette a vedenti e non vedenti di giocare, studiare e fare didattica sullo stesso piano, con gli stessi strumenti. Fortemente indicato per istruttori FSI, scuole statali e private e per la preparazione ai tornei.
 
 ### Cos'è Scacchi-it? L'ecosistema che non c'è
 
@@ -27,7 +25,7 @@ L'ecosistema degli scacchi inclusivi: compatto fuori, completo dentro.
 La FEN è complessa per una sintesi vocale a causa di barre e numeri.
 ROTN (Readable Ordered Text Notation) è la specifica formale che rende lineare e a basso sforzo cognitivo la lettura della posizione, della prospettiva di gioco e della fase critica. Trasforma Scacchi-it in un applicativo di tipo open data.
 
-Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera in SFML per permettere ad amici e familiari di giocare con il non vedente.
+Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera in SFML per permettere ad amici e familiari di giocare con il non vedente, usando il mouse.
 
 ### Cosa fa - Scacchi-it in 21MB
 
@@ -38,9 +36,10 @@ Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera in SFML p
 - Openings Trainer con PGN standard
 - animazione delle mosse
 - Registrazione partite, sospensione e ripresa con valutazione in sospensione
+- scelta del lato di gioco della scacchiera
 - Caricamento problemi in ROTN, validazione e incolla FEN
-- Undo mosse per didattica, forzatura apertura desiderata
 - incolla-ROTN da appunti delle estensioni browser o da copia su pdf o ebook
+- Undo mosse per didattica, forzatura apertura desiderata
 - Orologio scacchistico per lampo e torneo
 - Tuning del motore per sfruttare le risorse del PC (vedi tuning.txt)
 
@@ -65,7 +64,7 @@ Il gioco sollecita memoria visiva e astratta, ragionamento e calcolo delle alter
 ### Parti costitutive
 
 - Motore grafico di navigazione in SFML (Simple & Fast Multimedia Library)
-- Motore di controllo regole
+- Motore di controllo (regole e tutte le funzionalità)
 - Motore di gioco Stockfish, scaricabile da GitHub
 
 ### Documentazione
