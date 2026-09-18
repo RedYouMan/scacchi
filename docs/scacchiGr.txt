@@ -22,7 +22,7 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione runtime 11.3 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione runtime 12.0 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
@@ -90,7 +90,7 @@ Scacchi-it consente di:
 40 - autoinstallare stockfish la prima volta se non esiste nella cartella engine
 41 - utilizzare un coachGame per analizzare un file di partita registrata
 42 - incollare una ROTN proveniente da file o da estensioni browser
-
+43 - creare un Database di posizioni classificate secondo le esigenze didattiche con un simpleEditor
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
 Tutte le possibilità di sopra, dipendono dalla vostra conoscenza degli strumenti a disposizione per poterlo fare, quindi è fondamentale sentire sia questo tutorial che l'help.
@@ -908,6 +908,11 @@ Estendere una rete Hamachi
 ESISTONO VARI piani tariffari annuali estendendo ad esempio fino a 32 pc una rete con un abbonamento annuo minimo oppure estendendo a reti multiple a costi contenuti.
 Consultare il sito ufficiale.
 
+La funzionalità simpleEditor
+In Scacchi-it nella cartella simpleEditor vi è un semplice editor testuale per creare un Database di posizioni in ROTN, che potrete classificare sotto la cartella Database, in base alle esigenze didattiche (Strategia, Tattica, Finali, etc.). Si è preferito di creare un semplice editor testuale per facilitarne l'uso anche ad istruttori non vedenti.
+Il simpleEditor segnalerà, la prima volta, di configurare il file ste.cnf se non trova la cartella del Database, consigliata di chiamarsi proprio Database.
+Si consiglia, inoltre, di mettere la cartella Database al di fuori della cartella Scacchi-it, in tal modo nei casi di aggiornamento della versione non dovrete intervenire sul Database.
+
 Segnalazioni
 Per segnalazioni di bug o altro scrivete a:
 rosturco.na@gmail.com 
@@ -930,6 +935,7 @@ L'applicativo Scacchi-it presentato coglie vari aspetti importanti:
 - Permette una didattica inclusiva insegnando gli scacchi in classe mettendo sullo stesso piano tutti gli studenti.
 - Strumento di analisi: Utile ai docenti per proiettare o dimostrare soluzioni di problemi e varianti di apertura.
 - Supporto dimostrativo: Ideale per lezioni frontali e laboratori scolastici.
+- supporto per creazione di Database testuali didattici
 
 Ricorda: L'accessibilità e la sicurezza, in ogni settore e genere, non sono un'opzione ma un diritto.
 Alla prossima

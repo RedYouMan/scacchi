@@ -146,6 +146,7 @@ In sospensioni:
 fenpos.exe
 In serverScacchi
 serverScacchi.exe
+in simpleEditor trovi simpleEditor.exe e ste.cnf
 
 Ambiente finale per creare il tuo zip Scacchi-it
 Attenzione: quando hai creato tutti gli exe posizionandoli nella cartella giusta, controlla che esistano tutte le directory, in modo particolare:
@@ -155,13 +156,13 @@ Attenzione: quando hai creato tutti gli exe posizionandoli nella cartella giusta
 Queste directory dopo il clone non vengono create essendo vuote. Provvedi a crearle, perchè sono necessarie.
 
 Descrizione e dettagli ulteriori
-I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , src-fenpos , src-validaFEN , src-coach, src-coachGame, src-incolla-ROTN, src-estensioni e serverScacchi.
+I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , src-fenpos , src-validaFEN , src-coach, src-coachGame, src-incolla-ROTN, src-estensioni, src-simpleEditor  e serverScacchi.
 La src è contemporaneamente online e offline, aggiornata alla ultima versione 
 
 Il progetto si completa con serverScacchi, lo starter di scacchi e dell'orologio scacchistico.
 In particolare l'orologio in src-clock è compilato a parte per usare un header più limitato come tts.h per il sorgente tts.cpp.
 
-Per src-fenpos e src-incolla-ROTN che hanno un solo .cpp si utilizza direttamente la compilazione di visual studio code, avente in .vscode i file launch.json e task.json.
+Per src-fenpos, src-incolla-ROTN , src-simpleEditor che hanno un solo .cpp si utilizza direttamente la compilazione di visual studio code, avente in .vscode i file launch.json e task.json.
 
 Il coach in src-coach riceve una FEN e collaborando con stockfish, dice la miglior mossa che si può fare sulla posizione espressa dalla FEN e la valutazione posizione.
 Il coachGame riceve due parametri:
