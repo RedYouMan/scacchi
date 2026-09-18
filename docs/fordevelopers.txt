@@ -225,7 +225,8 @@ Scacchi-it Utility che collaborano con la parte core:
 2. validaFEN
 3. fenpos
 4. incollaROTN
- 
+5. simpleEditor  
+
 Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
 2. coachGame
