@@ -42,6 +42,7 @@ Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera in SFML p
 - Undo mosse per didattica, forzatura apertura desiderata
 - Orologio scacchistico per lampo e torneo
 - Tuning del motore per sfruttare le risorse del PC (vedi tuning.txt)
+- simpleEditor per creare un Database testuale di posizioni con la ROTN, classificandole secondo le esigenze didattiche
 
 Funziona offline e gratuitamente, estende l'utilizzo a famiglie meno abbienti e a scuole con problemi di connessione, senza latenza di rete.
 
