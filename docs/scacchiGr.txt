@@ -22,7 +22,7 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione runtime 12.0 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione runtime 12.1 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
@@ -911,8 +911,11 @@ Consultare il sito ufficiale.
 
 La funzionalità simpleEditor
 In Scacchi-it nella cartella simpleEditor vi è un semplice editor testuale per creare un Database di posizioni in ROTN, che potrete classificare sotto la cartella Database, in base alle esigenze didattiche (Strategia, Tattica, Finali, etc.). Si è preferito di creare un semplice editor testuale per facilitarne l'uso anche ad istruttori non vedenti.
+La cartella di classificazione se non esiste viene creata.
+Viene mostrato, se la cartella esiste, lultimo nome di file creato temporalmente. Se date ai file un nome come pos001.txt cioè ognuno contenente un progressivo a tre cifre come 001, 002, etc. vi verranno ordinati e l'ultimo file è quello col progressivo maggiore.
 Il simpleEditor segnalerà, la prima volta, di configurare il file ste.cnf se non trova la cartella del Database, consigliata di chiamarsi proprio Database.
 Si consiglia, inoltre, di mettere la cartella Database al di fuori della cartella Scacchi-it, in tal modo nei casi di aggiornamento della versione non dovrete intervenire sul Database.
+Il simpleEditor vi avvisa se un nome di file è già esistente e vi chiederà di cambiare nome.
 
 Segnalazioni
 Per segnalazioni di bug o altro scrivete a:

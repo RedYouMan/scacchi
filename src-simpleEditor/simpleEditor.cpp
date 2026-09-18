@@ -132,11 +132,42 @@ static void readPieces(std::ofstream &output, char colour)
     output << '\n';
 }
 
+static void showLatestFile(const fs::path &directory)
+{
+    fs::path latestFile;
+    fs::file_time_type latestTime;
+    bool found = false;
+
+    for (const fs::directory_entry &entry : fs::directory_iterator(
+             directory, fs::directory_options::skip_permission_denied))
+    {
+        std::error_code error;
+        if (!entry.is_regular_file(error) || error)
+            continue;
+
+        const fs::file_time_type modified = entry.last_write_time(error);
+        if (error)
+            continue;
+
+        if (!found || modified > latestTime)
+        {
+            latestFile = entry.path();
+            latestTime = modified;
+            found = true;
+        }
+    }
+
+    if (found)
+        std::cout << "Ultimo file creato: " << latestFile.filename().string() << '\n';
+    else
+        std::cout << "Nessun file presente nella cartella di classificazione.\n";
+}
+
 int main()
 {
 
     // Banner
-    std::cout << "simpleEditor ROTN (C) 2026 - versione 1.0 - Rosario Turco\n";
+    std::cout << "simpleEditor ROTN (C) 2026 - versione 1.1 - Rosario Turco\n";
     try
     {
         std::ifstream config("ste.cnf");
@@ -167,8 +198,37 @@ int main()
 
         const fs::path classification =
             configuredPath / readLine("Cartella di classificazione: ");
-        fs::create_directories(classification);
-        const fs::path file = classification / readLine("Nome del file: ");
+        if (fs::exists(classification))
+        {
+            if (!fs::is_directory(classification))
+            {
+                std::cerr << "Il percorso di classificazione non e' una directory.\n";
+                return 1;
+            }
+            showLatestFile(classification);
+        }
+        else
+        {
+            fs::create_directories(classification);
+        }
+        fs::path file;
+        for (;;)
+        {
+            const std::string fileName = readLine("Nome del file con estensione txt: ");
+            file = classification / fileName;
+
+            if (file.extension() != ".txt")
+            {
+                std::cerr << "Errore: il file deve avere estensione .txt.\n";
+                continue;
+            }
+            if (fs::exists(file))
+            {
+                std::cerr << "Errore: il file esiste '. Inserire un altro nome.\n";
+                continue;
+            }
+            break;
+        }
 
         std::ofstream output(file);
         if (!output)

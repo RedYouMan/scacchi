@@ -1,0 +1,6 @@
+T:Matto in 3 mosse.;
+V:B;
+B:Ra1;
+N:Rh5;
+M:N;
+P:12;

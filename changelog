@@ -1,6 +1,7 @@
-Versione: 12.0
+Versione: 12.1
 data: 18 Settembre2026
 
+La versione 12.1 migliora l'editor.
 La versione 12.0 è dedicata a istruttori che devono costruire un Database di posizioni, classificandole (Strategia, Tattica, Finale, Combinazione etc.)
 La versione 11.3 con incolla-ROTN gestisce anche il caso di stringa ROTN su unica riga (caso editoriale) e elimina un bug su patte elementari.
 La versione 11.2 migliora l'installer di stockfish
