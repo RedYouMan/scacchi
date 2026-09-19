@@ -1,4 +1,4 @@
-Valutazione Google - Settembre 2026
+Valutazione Google - 10 Settembre 2026
 
 query fatta:
 scacchi gratuiti windows offline italiano tiflologico inclusivo importanza sociale, rilevanza etica e autorevolezza, chi interessa, quanto potrà emergere essendo open source e open data
