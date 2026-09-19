@@ -1,0 +1,6 @@
+T:Problema grafo del re;
+V:B;
+B:Ra1;Rc3;
+N:Rh8;
+M:B;
+P:0;

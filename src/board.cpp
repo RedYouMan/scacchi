@@ -156,7 +156,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 12.0 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 12.2 - Rosario Turco\n";
 
     /*
     controllo esistenza di stockfish, altrimenti la prima volta lo scarica e lo estrae nella cartella engine
@@ -1736,6 +1736,8 @@ void checkKings()
 
     // su tutta la scacchiera cerco i due re se esistono altrimenti è un errore e
     // devo uscire dal programma
+    // esco anche se i re sono maggiori di 1
+    int numKWhite = 0, numKBlack = 0;
     bool foundWhiteKing = false;
     bool foundBlackKing = false;
     ChessUtility utility;
@@ -1751,6 +1753,7 @@ void checkKings()
             if (chessBoard[row][col].getBusySquare() && chessBoard[row][col].getChessPiece().getTypePiece() == KING && chessBoard[row][col].getChessPiece().getColorPiece() == 'W')
             {
                 foundWhiteKing = true;
+                numKWhite++;
                 my_king = "Re bianco in casa " + casa + "\n";
                 Sleep(1500);
                 callTextToSpeech(my_king);
@@ -1758,11 +1761,23 @@ void checkKings()
             if (chessBoard[row][col].getBusySquare() && chessBoard[row][col].getChessPiece().getTypePiece() == KING && chessBoard[row][col].getChessPiece().getColorPiece() == 'B')
             {
                 foundBlackKing = true;
+                numKBlack++;
                 my_king = "Re nero in casa " + casa + "\n";
                 Sleep(1500);
                 callTextToSpeech(my_king);
             }
         }
+    }
+
+    if (numKWhite > 1)
+    {
+        callTextToSpeech(string("Errore: più di un re bianco sulla scacchiera. Esco dal programma.\n"));
+        exit(1);
+    }
+    if (numKBlack > 1)
+    {
+        callTextToSpeech(string("Errore: più di un re nero sulla scacchiera. Esco dal programma.\n"));
+        exit(1);
     }
     if (!foundWhiteKing || !foundBlackKing)
     {
