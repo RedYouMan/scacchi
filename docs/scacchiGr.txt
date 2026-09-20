@@ -22,7 +22,7 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione runtime 12.2 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione runtime 12.3 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
@@ -91,7 +91,7 @@ Scacchi-it consente di:
 41 - utilizzare un coachGame per analizzare un file di partita registrata
 42 - incollare una ROTN proveniente da file o da estensioni browser
 43 - creare un Database di posizioni classificate secondo le esigenze didattiche con un simpleEditor
-
+44 - accorpare il log del gioco online multiplayer per room 
 
 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
@@ -120,11 +120,13 @@ Scacchi-it Utility che collaborano con la parte core:
 3. fenpos
 4. incolla-ROTN
 5. simpleEditor
+6. sortLog
  
 Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
 2. coachGame
 3. clock-start  
+4. serverScacchi
 
 Download e Windows Defender 
 Da browser sul link https://redyouman.github.io/blog/2025/07/27/downloads.html
@@ -907,6 +909,9 @@ Ricordare che sul log bisogna mettersi dal punto di vista del server, cioè è i
 Il messaggio Errore send riporta uno di questi comandi, ma la dicitura errore dipende dal fatto che nel caso Matto, Stallo, Patta l'altro applicativo Scacchi-it ha già completato la partita dopo la ricezione della mossa riconosciuta come matto o patta o stallo e ha restartato, di conseguenza, non ha prelevato l'ultimo messaggio. Tuttavia il tracciamento del Matto, Stallo e Patta elementare sono corretti.
 
 Le patte non elementari sono concordate tra i giocatori e verranno, eventualmente, comunicate a parte al circolo con una email.
+
+Funzionalità sortLog
+Essendo il gioco online multiplayer, ciò comporta che nel file server.log sono mischiate le informazioni delle varie room. E' Posssibile ottenere un log che accorpi le informazioni per room alla fine di tutte le partite con il comando sortLog.exe. Tale comando non accetta nessun parametro , esso sa già di dover analizzare il file server.log e produrre il file serverordinato.txt
 
 Estendere una rete Hamachi
 ESISTONO VARI piani tariffari annuali estendendo ad esempio fino a 32 pc una rete con un abbonamento annuo minimo oppure estendendo a reti multiple a costi contenuti.

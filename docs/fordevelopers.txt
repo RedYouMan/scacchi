@@ -49,7 +49,6 @@ Creare un chess engine come Scacchi-it che si propone sia come motore di control
 La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.
 Il consiglio è, quindi, clonarlo, studiarlo, migliorarlo e aggiungere funzionalità, ma partendo da qualcosa di funzionante e con una scelta architetturale che pian piano comprenderai.
 
-Il progetto fornisce margini per ulteriori innovazioni.
 
 Dato che la ROTN consente con il descrittore V il comando di rotazione della scacchiera, fornendo dinamicità alle informazioni, concludo la premessa con la frase:
 We shall rotate!
@@ -70,7 +69,6 @@ Il progetto inizialmente è nato per dimostrare l'utilità della ROTN (nuova not
 - della FEN,troppo posizionale e non leggibile in modo chiaro dagli screen reader come NVDA e JAWS  
 per cui nel prototipo è stata curata la parte Object Oriented del cuore di controllo con chess.h, chess.cpp e la parte openings trainer con standard pgn.
 Successivamente da prototipo si sono completate le funzionalità rapidamente come C. Per cui nella nota finale sul  refactoring viene ricordato di individuare e valutare parti che possano essere rimesse in OO.
-Sono suggerite anche parti da sviluppare a integrazione di un progetto come Scacchi-it. 
 
 Il progetto Scacchi-it non presenta il file contributing. Questo perchè l'autore dona alla community l'apertura dei sorgenti, ma non esclude di continuare a completare la piattaforma, con i ritmi di un non vedente anziano.
 Se vorreste qualche funzionalità particolare, scrivetemi e se sono ancora attivo attorno ad esso, aggiungerò la funzionalità al repository.
@@ -145,7 +143,7 @@ scacchi.exe, orologioScacchi.exe, coachFEN.exe,coachGame.exe
 In sospensioni:
 fenpos.exe
 In serverScacchi
-serverScacchi.exe
+serverScacchi.exee sortLog.exe
 in simpleEditor trovi simpleEditor.exe e ste.cnf
 
 Ambiente finale per creare il tuo zip Scacchi-it
@@ -226,12 +224,14 @@ Scacchi-it Utility che collaborano con la parte core:
 3. fenpos
 4. incollaROTN
 5. simpleEditor  
+6. sortLog
 
 Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
 2. coachGame
 3. clock-start
-  
+4. serverScacchi  
+
 Il cervello di tutto o main è board.cpp. Esso si avvale delle competenze di varie parti:
 - nav.cpp per la grafica della scacchiera e pezzi, compreso i tasti ctrl e mouse(che utilizza drawboard.cpp)
 - chess.h e chess.cpp per il controllo delle regole di gioco
