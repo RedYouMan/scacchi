@@ -29,7 +29,7 @@ Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera in SFML p
 
 ### Cosa fa - Scacchi-it
 
-- Multiplayer online nelle room su stessa rete o VPN Hamachi gratuita
+- Multiplayer online nelle room su stessa rete o VPN Hamachi gratuita, con possibilità dei circoli anche di gioco da casa e tracciamento delle mosse e dell'esito di ogni partita su log
 - Gioco offline contro Stockfish (versione configurabile da file)
 - Gioco contro umano sulla stessa scacchiera, scelta lato Bianco/Nero
 - CoachFEN e CoachGame integrati

@@ -440,7 +440,7 @@ La manutenzione di esse va fatta con molta delicatezza e con accurati test.
 Sulla getOutput si testa anche il timeout se stockfish non risponde entro 5 minuti al massimo.
 
 Architettura per online
-Scacchi-it haè il client in c++ di uno dei giocatori e comunica col server in python via socket.
+Scacchi-it è il client in c++ di uno dei giocatori e comunica col server in python via socket.
 Il server è multiplayer e per garantire questo in modo semplice, dato che il server non usa db, si fa generare al server, grazie al pacchetto secrets, un nome univoco sicuro di room asegnandolo al bianco.
 
 I moduli myNet.cpp e serverScacchi.py gestiscono la comunicazione
@@ -520,10 +520,6 @@ Sono state affrontate in OO solo la parte chess.h, chess.cpp cuore del progetto 
 
 Da valutare se ridurre le variabili globali durante il refactoring OO delle altre parti che si affrontano.
 Si potrebbero eliminare tutte le printDebug per ripulire il progetto.Molto utili in test unitario. Ma si possono anche mantenere. La funzione void printDebug è in utility.cpp e proto.h
-
-Funzionalità da aggiungere
-Si potrebbe aggiungere uno script python, da rendere exe, che dal log del serverScacchi, raggruppa le informazioni per room e che interpreta come sia finita la partita in ogni room.
-Per questo consultare il Manuale al paragrafo "Tracciamento delle mosse da parte  del server ".
 
 Segnalazioni
 Per eventuali segnalazioni di bugscrivere a:
