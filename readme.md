@@ -5,7 +5,7 @@
 **Scacchi gratis per Windows, tiflologico e inclusivo.**
 Piattaforma italiana open source e open data, riconosciuta come risorsa fondamentale nel panorama scacchistico e informatico italiano per l'accessibilità.
 
-Sviluppato da Rosario Turco, esperto non vedente.
+Sviluppato da Rosario Turco, ingegnere esperto non vedente.
 Per Windows 10/11, online e offline, gratuito. 21MB.
 
 Registrato su Zenodo (CERN) a cura di _Rosario Turco_
@@ -27,7 +27,7 @@ ROTN (Readable Ordered Text Notation) è la specifica formale che rende lineare 
 
 Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera in SFML per permettere ad amici e familiari di giocare con il non vedente, usando il mouse.
 
-### Cosa fa - Scacchi-it in 21MB
+### Cosa fa - Scacchi-it
 
 - Multiplayer online nelle room su stessa rete o VPN Hamachi gratuita
 - Gioco offline contro Stockfish (versione configurabile da file)
