@@ -1,6 +1,7 @@
-Versione: 12.3
+Versione: 12.4
 data: 20 Settembre2026
 
+La versione 12.4 consente di inserire NS e/o NL con simpleEditor
 La versione 12.3 aggiunge in serverScacchi sortLog.exe per accorpare il log per singola room nel gioco online multiplayer
 La versione 12.2 assicura che per ogni colore non ci possono essere più di un re.
 La versione 12.1 migliora l'editor.

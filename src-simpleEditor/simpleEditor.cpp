@@ -69,6 +69,13 @@ static char upperInitial(const std::string &value)
     return value.empty() ? '\0' : static_cast<char>(std::toupper(static_cast<unsigned char>(value.front())));
 }
 
+static std::string upperAnswer(std::string value)
+{
+    for (char &character : value)
+        character = static_cast<char>(std::toupper(static_cast<unsigned char>(character)));
+    return value;
+}
+
 static std::string lowerInitial(std::string value)
 {
     if (!value.empty())
@@ -129,6 +136,26 @@ static void readPieces(std::ofstream &output, char colour)
         std::string square = readSquare();
         output << upperInitial(type) << lowerInitial(square) << ';';
     }
+    for (const char *castle : {"NS", "NL"})
+    {
+        bool present = false;
+        for (;;)
+        {
+            const std::string answer = upperAnswer(readLine(
+                std::string("E' presente arrocco ambiguo ") +
+                (castle[1] == 'S' ? "corto" : "lungo") + " (si/no): "));
+            if (answer == "SI" || answer == "S")
+            {
+                present = true;
+                break;
+            }
+            if (answer == "NO" || answer == "N")
+                break;
+            std::cout << "Rispondere SI oppure NO.\n";
+        }
+        if (present)
+            output << castle << ';';
+    }
     output << '\n';
 }
 
@@ -167,7 +194,7 @@ int main()
 {
 
     // Banner
-    std::cout << "simpleEditor ROTN (C) 2026 - versione 1.1 - Rosario Turco\n";
+    std::cout << "simpleEditor ROTN (C) 2026 - versione 1.2 - Rosario Turco\n";
     try
     {
         std::ifstream config("ste.cnf");

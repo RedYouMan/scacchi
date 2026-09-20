@@ -22,7 +22,7 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione runtime 12.3 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione runtime 12.4 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
@@ -924,6 +924,8 @@ Viene mostrato, se la cartella esiste, lultimo nome di file creato temporalmente
 Il simpleEditor segnalerà, la prima volta, di configurare il file ste.cnf se non trova la cartella del Database, consigliata di chiamarsi proprio Database.
 Si consiglia, inoltre, di mettere la cartella Database al di fuori della cartella Scacchi-it, in tal modo nei casi di aggiornamento della versione non dovrete intervenire sul Database.
 Il simpleEditor vi avvisa se un nome di file è già esistente e vi chiederà di cambiare nome.
+Il SimpleEditor consente anche di inserire o meno NS o NL nei casi di arrocchi ambigui per il bianco e/o il Nero.
+Si raccomanda sempre di controllare i file generati alla fine.
 
 Segnalazioni
 Per segnalazioni di bug o altro scrivete a:
