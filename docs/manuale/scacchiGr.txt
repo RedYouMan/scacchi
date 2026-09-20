@@ -896,13 +896,13 @@ Tempi di rete
 I tempi di rete possono dipendere dal controllo del firewall e del antivirus. Eventualmente se notate lentezza escludete da essi serverScacchi.exe, scacchi.exe e scacchi-start.exe o in alternativa la sola cartella scacchi-it che li contiene.
 
 Tracciamento delle mosse da parte  del server 
-Il log del server permette l'osservazione del tracciamento di ogni partita mossa per mossa inviata, in ogni room. 
+Il log del server permette l'osservazione del tracciamento di ogni partita mossa per mossa inviata, in ogni room, riportandone anche i tempi. 
 L'esito della partita può essere compreso dai comandi che il server traccia:
 - quitAB: c'è stato l'abbandono da parte di chi lo inoltra.
 - Matto: la partita è terminata con matto inflitto a chi riceve il comando Matto. Il matto viene dato da chi effettua l'ultima mossa. 
 - Stallo: la partita è terminata con Stallo da parte di chi doveva muovere
 - Patta: la partita è terminata con patta elementare da parte di chi doveva muovere
-- none : probabile patta concordata (da verificare con i giocatori)
+- none : probabile patta concordata (da verificare con i giocatori che devono inviare una email di avvenuto accordo al circolo)
 
 Ricordare che sul log bisogna mettersi dal punto di vista del server, cioè è il server che dice: "ricevuto da".
 
