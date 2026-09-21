@@ -46,7 +46,6 @@ COPYRIGHT: vedi MIT license
  */
 
 /* variabili globali */
-;
 // variabili globali per giocare in rete
 bool online = false;
 string colorOnline = "Bianco";
