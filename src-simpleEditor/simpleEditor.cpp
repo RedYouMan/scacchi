@@ -26,7 +26,9 @@ Questo per non appesantire Scacchi-it e anche per quando si reinstalla una nuova
 15. si ripete tutti i punti da 9 a 14 per i pezzi neri
 16 chiede chi ha il tratto (B o N) e scrive M:+il valore seguito da ';' e return
 17. chiede l'ultimo numero di mossa giocato dal bianco e scrive P: seguito dal numero e da ';'
-18 chiude il file dando il messaggio di aver creat il file.
+18. Chiede se occorre mettere l'enpassant con U: se SI (anche S o s o si )chiede le case dei pedoni che possono catturare il pedone, seguito dalla casa del pedone catturabile al massimo possono essere 6 caratteri e minimo quattro caratteri di case.In particolare se sono 6 caratteri si deve controllare che l'ultima casa sia compresa tra le prime due Va controllato che sono case della scacchiera
+19 Chiede il numero di mosse per le 50 mosse: un intero tra 0 in suda mettere come z:seguito dal valore. Se 0 la Z: non si mette.
+20chiude il file dando il messaggio di aver creat il file.
 */
 
 #include <filesystem>
@@ -101,6 +103,74 @@ static std::string readSquare()
         }
         std::cout << "Casa non valida. Inserire una casa da a1 a h8.\n";
     }
+}
+
+static void readEnPassant(std::ofstream &output)
+{
+    for (;;)
+    {
+        const std::string answer = upperAnswer(readLine(
+            "Inserire l'en passant (si/no): "));
+        if (answer == "NO" || answer == "N")
+            return;
+        if (answer == "SI" || answer == "S")
+            break;
+        std::cout << "Rispondere SI oppure NO.\n";
+    }
+
+    int pawnCount;
+    for (;;)
+    {
+        pawnCount = readNumber("Numero di pedoni che possono catturare (1/2): ");
+        if (pawnCount == 1 || pawnCount == 2)
+            break;
+        std::cout << "Inserire 1 oppure 2.\n";
+    }
+
+    std::string value = "U:";
+    if (pawnCount == 1)
+    {
+        for (;;)
+        {
+            const std::string pawn = readSquare();
+            const std::string captured = readSquare();
+
+            // Le due case devono essere contigue sulla stessa traversa.
+            // La casa catturabile puo' precedere o seguire quella del pedone.
+            if (pawn[1] == captured[1] &&
+                std::abs(pawn[0] - captured[0]) == 1)
+            {
+                value += pawn + captured;
+                break;
+            }
+            std::cout << "Le due case devono essere contigue, senza colonne "
+                         "di separazione, sulla stessa traversa. Riprovare.\n";
+        }
+    }
+    else
+    {
+        for (;;)
+        {
+            const std::string first = readSquare();
+            const std::string second = readSquare();
+            const std::string captured = readSquare();
+
+            // Con due pedoni, la casa catturabile deve essere esattamente
+            // a meta tra le prime due: stessa traversa e file adiacenti.
+            const bool centered =
+                first[1] == second[1] && second[1] == captured[1] &&
+                std::abs(first[0] - second[0]) == 2 &&
+                captured[0] == static_cast<char>((first[0] + second[0]) / 2);
+            if (centered)
+            {
+                value += first + second + captured;
+                break;
+            }
+            std::cout << "La terza casa deve stare esattamente tra le prime due "
+                         "case, senza colonne di distanza. Riprovare.\n";
+        }
+    }
+    output << value << ";\n";
 }
 
 static void readPieces(std::ofstream &output, char colour)
@@ -194,7 +264,7 @@ int main()
 {
 
     // Banner
-    std::cout << "simpleEditor ROTN (C) 2026 - versione 1.2 - Rosario Turco\n";
+    std::cout << "simpleEditor ROTN (C) 2026 - versione 1.3 - Rosario Turco\n";
     try
     {
         std::ifstream config("ste.cnf");
@@ -270,6 +340,11 @@ int main()
         readPieces(output, 'N');
         output << "M:" << upperInitial(readLine("Chi ha il tratto (B/N): ")) << ";\n";
         output << "P:" << readNumber("Ultimo numero di mossa giocato dal bianco: ") << ";\n";
+        readEnPassant(output);
+        const int fiftyMoveCount = readNumber(
+            "Numero di mosse per la regola delle 50 mosse (0 per omettere Z): ");
+        if (fiftyMoveCount > 0)
+            output << "Z:" << fiftyMoveCount << ";\n";
         std::cout << "Creato il file: " << file.string() << '\n';
     }
     catch (const std::exception &error)
