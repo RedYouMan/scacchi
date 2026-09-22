@@ -563,7 +563,7 @@ Nel primo caso potreste incollare la ROTN in un file Notepad e metterlo nella di
 Nel secondo caso avete due soluzioni:
 a. usare incolla-fen 
 b. scaricare dal nostro sito le estensioni per il vostro browser e sistema operativo
-
+Oppure se avete Scacchi-it le estensioni sono presenti nella cartella browser col manuale.
 Il caso a di incolla-fen è stato mostrato nel paragrafo precedente.
 
 Per il caso b sono state sviluppate delle estensioni browser fen-to-rotn-firefox e fen-rotn-to-chrome per dare voce alla fen, con sintesi vocale e ottengono alla fine negli appunti anche la rotn. 
@@ -571,8 +571,10 @@ Basta selezionare la fen su un portale, un ebook, un txt, un articolo web e vien
 Le estensioni sono compatibili per la maggior parte dei browser utilizzati.
 Il software è al link:
 https://redyouman.github.io/blog/2026/07/18/estensioni-browser.html 
+Oppure sono disponibili in Scacchi-it nella cartella browser.
 Con esse potete selezionare una FEN, leggerla e ottenere una ROTN.
 Se, invece, volete scrivere da voi un file ROTN in cartella problemi, dovete solo rispettare la sintassi della ROTN e la definizione di P. Per incollare, invece, direttamente gli appunti ottenuti con estensioni browser, potete usare incolla-ROTN.
+Potreste usare il simpleEditor che vi aiuta velocemente ma fatelo nel Database esterno a Scacchi-it.
 
 La funzionalità incolla-ROTN
 Serve quando avete copiato la ROTN da un file oppure da un pdf che la presenta su un'unica riga oppure dagli appunti caricati dalle estensioni browser.
