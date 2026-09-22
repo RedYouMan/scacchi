@@ -28,7 +28,7 @@ Per verificare la vostra versione ascoltate quando parte il programma oppure dig
 Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima versione del presente file.
 
 Open Source
-Il progetto è open source e potete consultare i sorgenti al repository:
+Il progetto è open source dal 27 agosto 2026 e potete consultare i sorgenti al repository:
 https://github.com/RedYouMan/scacchi
 per clonare il repository fate il comando:
 git clone https://github.com/RedYouMan/scacchi 
@@ -110,6 +110,7 @@ Scacchi-it core, suddiviso in:
 1. Motore grafico e controllo tasti
  2. motore di controllo, con parte controllo gioco a due, controllo stockfish, controllo online, Openings Trainer,undo
  3. stockfish, scaricato dal suo sito
+4. serverScacchi
 
 Scacchi-it Utility che collaborano con la parte core:
 1. IncollaFEN
@@ -118,12 +119,12 @@ Scacchi-it Utility che collaborano con la parte core:
 4. incolla-ROTN
 5. simpleEditor
 6. sortLog
- 
+7. estensioni browser 
+
 Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
 2. coachGame
 3. clock-start  
-4. serverScacchi
 
 Download e Windows Defender 
 Da browser sul link https://redyouman.github.io/blog/2025/07/27/downloads.html

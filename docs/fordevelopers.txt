@@ -217,6 +217,7 @@ Scacchi-it core, suddiviso in:
 1. Motore grafico e controllo tasti
  2. motore di controllo, con parte controllo gioco a due, controllo stockfish, controllo online, Openings Trainer,undo
  3. stockfish, scaricato dal suo sito
+4. serverScacchi
 
 Scacchi-it Utility che collaborano con la parte core:
 1. IncollaFEN
@@ -225,12 +226,12 @@ Scacchi-it Utility che collaborano con la parte core:
 4. incollaROTN
 5. simpleEditor  
 6. sortLog
+7. estensioni browser
 
 Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
 2. coachGame
 3. clock-start
-4. serverScacchi  
 
 Il cervello di tutto o main è board.cpp. Esso si avvale delle competenze di varie parti:
 - nav.cpp per la grafica della scacchiera e pezzi, compreso i tasti ctrl e mouse(che utilizza drawboard.cpp)
