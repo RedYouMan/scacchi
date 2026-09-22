@@ -918,14 +918,18 @@ ESISTONO VARI piani tariffari annuali estendendo ad esempio fino a 32 pc una ret
 Consultare il sito ufficiale.
 
 La funzionalità simpleEditor
+
 In Scacchi-it nella cartella simpleEditor vi è un semplice editor testuale per creare un Database di posizioni in ROTN, che potrete classificare sotto la cartella Database, in base alle esigenze didattiche (Strategia, Tattica, Finali, etc.). Si è preferito di creare un semplice editor testuale per facilitarne l'uso anche ad istruttori non vedenti.
-La cartella di classificazione se non esiste viene creata.
-Viene mostrato, se la cartella esiste, lultimo nome di file creato temporalmente. Se date ai file un nome come pos001.txt cioè ognuno contenente un progressivo a tre cifre come 001, 002, etc. vi verranno ordinati e l'ultimo file è quello col progressivo maggiore.
+L'editor ha il vantaggio di poter essere usato in offline, rimanendo indipendente da problemi di connessioni.
 Il simpleEditor segnalerà, la prima volta, di configurare il file ste.cnf se non trova la cartella del Database, consigliata di chiamarsi proprio Database.
-Si consiglia, inoltre, di mettere la cartella Database al di fuori della cartella Scacchi-it, in tal modo nei casi di aggiornamento della versione non dovrete intervenire sul Database.
-Il simpleEditor vi avvisa se un nome di file è già esistente e vi chiederà di cambiare nome.
+La cartella di classificazione se non esiste viene creata.
+L'Editor permette di introdurre tutti i descrittori obbligatori e i due descrittori opzionali U: per l'enpassant nella concezione ROTN e Z: legato alla regola delle 50 mosse.
+Viene mostrato, se la cartella esiste, lultimo nome di file creato temporalmente. Se date ai file un nome come pos001.txt cioè ognuno contenente un progressivo a tre cifre come 001, 002, etc. vi verranno ordinati e l'ultimo file è quello col progressivo maggiore.
+L'edtor aiuta a compilare una posizione ROTN facendo il maggior numero di controlli possibili e vi avvisa se un nome di file è già esistente, chiedendovi di cambiare nome.
 Il SimpleEditor consente anche di inserire o meno NS o NL nei casi di arrocchi ambigui per il bianco e/o il Nero.
+Nell'inserimento dei pezzi l'editor invoglia di mettere sempre per prima i pezzi di maggior valore.
 Si raccomanda sempre di controllare i file generati alla fine.
+Si consiglia, infine, di mettere la cartella Database al di fuori della cartella Scacchi-it, in tal modo nei casi di aggiornamento della versione non dovrete intervenire sul Database.
 
 Segnalazioni
 Per segnalazioni di bug o altro scrivete a:
@@ -938,20 +942,22 @@ Si ringrazia la Community per le sue segnalazioni che hanno crescere il prodotto
 Conclusioni
 L'applicativo Scacchi-it presentato coglie vari aspetti importanti:
 - efficace strumento tiflologico
-- risolve tutti i classici problemi delle precedenti applicazioni: 
-- permette di giocare a non vedenti e vedenti
+- risolve tutti i classici problemi delle precedenti applicazioni scacchistiche: 
+- permette di giocare insieme a non vedenti e vedenti
 - abbatte le barriere di distanza, e digitali 
-- include in un gioco alla pari vedenti e non vedenti
+- include in un gioco e nella didattica alla pari vedenti e non vedenti
 - fa fruire, in modo trasparente, un insieme di cose che gli appassionati di scacchi non informatici non saprebbero come utilizzare: chess engine, comandi uci, tuning, openings book, formato pgn e polyglot, reti neurali, algoritmo alpha0 e altro ancora. 
-- è un applicativo open data, che permette l'interazione con esso attraverso la rot notation
+- è un ecosistema tiflologico gratis, open source, open data, che permette l'interazione con esso attraverso la rot notation(Readable Ordered Text Notation)
 - permette di studiare, analizzare, giocare e dare lezioni di scacchi
 - permette di giocare offline o online
-- Permette una didattica inclusiva insegnando gli scacchi in classe mettendo sullo stesso piano tutti gli studenti.
+- L'offline e la gratuità dell'ecosistema abbatte costi per famiglie non abbienti
+- Permette una didattica inclusiva, democratica e alla pari  insegnando gli scacchi in classe mettendo sullo stesso piano tutti gli studenti.
+- permette con la ROTN appunti e doc con estrema facilità e accessibilità
 - Strumento di analisi: Utile ai docenti per proiettare o dimostrare soluzioni di problemi e varianti di apertura.
 - Supporto dimostrativo: Ideale per lezioni frontali e laboratori scolastici.
-- supporto per creazione di Database testuali didattici
+- supporto per creazione offline di Database testuali didattici
 
-Ricorda: L'accessibilità e la sicurezza, in ogni settore e genere, non sono un'opzione ma un diritto.
+Ricorda: L'accessibilità e la sicurezza, in ogni settore e genere, non sono un'opzione ma un diritto. Per cui vanno affrontati già in fase di progettazione.
 Alla prossima
 
 ===== ALLEGATI=====
