@@ -1,0 +1,27 @@
+
+{
+  "manifest_version": 2,
+  "name": "FEN to ROTN Voice",
+  "version": "1.0.0",
+  "author": "Rosario Turco",
+  "description": "Converte FEN in ROTN con voce italiana. Per accessibilità scacchi.",
+  "homepage_url": "https://redyouman.github.com/",
+  "permissions": ["activeTab", "clipboardWrite", "notifications"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "commands": {
+    "convert-fen": {
+      "suggested_key": {
+        "default": "Alt+Shift+R"
+      },
+      "description": "Converti FEN in ROTN e leggi riassunto"
+    }
+  }
+}
