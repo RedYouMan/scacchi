@@ -89,7 +89,7 @@ Scacchi-it consente di:
 42 - incollare una ROTN proveniente da file o da estensioni browser
 43 - creare un Database di posizioni classificate secondo le esigenze didattiche con un simpleEditor
 44 - accorpare il log del gioco online multiplayer per room 
-
+45 - utilizzare estensioni browser per prendere una fen da un portale web 
 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
@@ -560,10 +560,11 @@ Vi possono capitare tre situazioni:
 - scrivete una ROTN
 
 Nel primo caso potreste incollare la ROTN in un file Notepad e metterlo nella directory problemi, che tratta posizioni o puzzle, e date ad esso un nome con estensione txt.  
+Oppure usate incolla-ROTN che vi metterà il file in cartella sospensioni da caricare con Ctrl-R.
 
 Nel secondo caso avete due soluzioni:
 a. usare incolla-fen 
-b. scaricare dal nostro sito le estensioni per il vostro browser e sistema operativo
+b. Se non avete Scacchi-it scaricare dal nostro sito le estensioni per il vostro browser e sistema operativo
 Oppure se avete Scacchi-it le estensioni sono presenti nella cartella browser col manuale.
 Il caso a di incolla-fen è stato mostrato nel paragrafo precedente.
 
