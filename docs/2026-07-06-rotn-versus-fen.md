@@ -159,3 +159,7 @@ La definizione della Specifica ufficiale ROTN completa, ISO 14977 è disponibile
 [Specifica formale ROTN](https://redyouman.github.io/blog/2026/07/02/specifica-rotn.html
 
 [Estensioni browser per la ROTN](https://redyouman.github.io/blog/2026/07/18/estensioni-browser.html)
+
+Registrato su Zenodo (CERN) a cura di _Rosario Turco_
+DOI ROTN: https://doi.org/10.5281/zenodo.22737720
+DOI SCACCHI: https://doi.org/10.5281/zenodo.22737784
