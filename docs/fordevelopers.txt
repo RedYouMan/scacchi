@@ -35,8 +35,9 @@ I database didattici potranno proseguire con le nuove posizioni usando la ROTN, 
 
 Se il mondo avesse seguito sempre la consuetudine non si avrebbe mai avuto innovazione.
 
-Il nome ROTN sta per Readable Ordered Text Notation.
-
+Il mio tentativo è stato di ribaltare il paradigma seguito finora. Prima era l'uomo che si doveva adattare a strumenti, regolamenti e burocrazia. Oggi ho messo al centro l'uomo, vedente e non vedente, e adattato gli strumenti a esso. Spero che ciò avvenga per necessità anche sui restanti fronti.
+Il nome ROTN sta per Readable Ordered Text Notation. Questo perchè rende la lettura delle posizioni ordinata e leggibile dagli screen reader e dall'uomo.
+Tra uomo e posizioni sulla scacchiera esiste uno strato software di primo livello, costituito dagli screen reader, che interfacciandosi con strumenti del passato non riescono a far fruire fluidamente e a basso sforzo cognitivo le informazioni. Questo non vuol dire che tali strumenti vanno eliminati, ma solo vanno scalati al livello a loro più consono ed efficace.
 Scacchi-it è, esso stesso, la testimonianza pratica della utilità, semplicità, chiarezza e rapidità con cui si può lavorare con la ROTN per lo studio, la didattica,  la inclusione e completa autonomia dei non vedenti, che possono apprendere le stesse cose dei normodotati nella stessa classe di corso.
 
 Registrato su Zenodo (CERN) a cura di _Rosario Turco_
@@ -44,12 +45,15 @@ DOI ROTN: https://doi.org/10.5281/zenodo.22737720
 DOI SCACCHI: https://doi.org/10.5281/zenodo.22737784
 
 Come affrontare questo software
-Un altro punto. 
 Creare un chess engine come Scacchi-it che si propone sia come motore di controllo e gioco a due, sia come motore di controllo di stockfish e, infine, come motore online Hamachi multiplayers, ti assicuro che non è semplice. 
 La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.
 Il consiglio è, quindi, clonarlo, studiarlo, migliorarlo e aggiungere funzionalità, ma partendo da qualcosa di funzionante e con una scelta architetturale che pian piano comprenderai.
 
+Il sistema operativoscelto
+Ho scelto Windows solo per una questione di numero: in Italia le postazioni windows sono il 78% contro il resto (Linux, Mac). Questo permetteva di far utilizzare Scacchi-it alla maggioranza delle persone vedenti e non vedenti.
+Spero che in futuro altri progetti, discendenti da Scacchi-it, possano farne il porting. Il consiglio è aspettare la maturazione completa di Scacchi-it.
 
+Un motto
 Dato che la ROTN consente con il descrittore V il comando di rotazione della scacchiera, fornendo dinamicità alle informazioni, concludo la premessa con la frase:
 We shall rotate!
 
@@ -61,7 +65,7 @@ Il progetto Scacchi-it è un progetto tiflologico italiano,  gratuito, per piatt
 Tuttavia si è introdotta anche una grafica riproducente la scacchiera, e i pezzi, in modo che i familiari e gli amici possono giocare col non vedente.
 In sostanza Scacchi-it è inclusivo.
 Per le funzionalità leggere readme.md
-Il progetto ora è totalmente open source e open data.
+Il progetto dal 27 agosto 2026 è totalmente open source e open data, oltre a essere già precedentemente gratis e senza pubblicità. 
 
 Evoluzione del progetto
 Il progetto inizialmente è nato per dimostrare l'utilità della ROTN (nuova notazione),per superare i problemi di:
