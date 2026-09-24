@@ -23,7 +23,9 @@ L'ecosistema degli scacchi inclusivi: compatto fuori, completo dentro.
 ### Perché ROTN - Standard Open Data
 
 La FEN è complessa per una sintesi vocale a causa di barre e numeri.
-ROTN (Readable Ordered Text Notation) è la specifica formale che rende lineare e a basso sforzo cognitivo la lettura della posizione, della prospettiva di gioco e della fase critica. Trasforma Scacchi-it in un applicativo di tipo open data.
+ROTN (Readable Ordered Text Notation) è la specifica formale che rende lineare e a basso sforzo cognitivo la lettura della posizione, della prospettiva di gioco e della fase critica.
+
+> _Principio architetturale: la ROTN è per l'interfaccia umana, la FEN resta sotto cofano per gli engine._
 
 Compatibile con NVDA, JAWS e display Braille. Grafica della scacchiera in SFML per permettere ad amici e familiari di giocare con il non vedente, usando il mouse.
 
