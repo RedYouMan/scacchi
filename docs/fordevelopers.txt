@@ -38,6 +38,7 @@ Se il mondo avesse seguito sempre la consuetudine non si avrebbe mai avuto innov
 Il mio tentativo è stato di ribaltare il paradigma seguito finora. Prima era l'uomo che si doveva adattare a strumenti, regolamenti e burocrazia. Oggi ho messo al centro l'uomo, vedente e non vedente, e adattato gli strumenti a esso. Spero che ciò avvenga per necessità anche sui restanti fronti.
 Il nome ROTN sta per Readable Ordered Text Notation. Questo perchè rende la lettura delle posizioni ordinata e leggibile dagli screen reader e dall'uomo.
 Tra uomo e posizioni sulla scacchiera esiste uno strato software di primo livello, costituito dagli screen reader, che interfacciandosi con strumenti del passato non riescono a far fruire fluidamente e a basso sforzo cognitivo le informazioni. Questo non vuol dire che tali strumenti vanno eliminati, ma solo vanno scalati al livello a loro più consono ed efficace.
+Immagina se alle scuole elementari ci avessero insegnato una lettura e una scrittura complicata, oggi quante persone saprebbero leggere e scrivere? Gli abbandoni prematuri della scuola sarebbero stati elevati.
 Scacchi-it è, esso stesso, la testimonianza pratica della utilità, semplicità, chiarezza e rapidità con cui si può lavorare con la ROTN per lo studio, la didattica,  la inclusione e completa autonomia dei non vedenti, che possono apprendere le stesse cose dei normodotati nella stessa classe di corso.
 
 Registrato su Zenodo (CERN) a cura di _Rosario Turco_
