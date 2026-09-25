@@ -4,8 +4,6 @@ Manuale completo di Scacchi-it
 Benvenuti a Scacchi-it il gioco degli scacchi in italiano con interfaccia vocale.
 Ecosistema tiflologico, per gioco offline e online (multiplayers), compatibile con screen reader come NVDA e JAWS
 per Windows 10 e 11
-
-
 LICENSE: CC BY-SA 4.0 + GPL v3
 *Copyright © 2025 Rosario Turco* 
 
