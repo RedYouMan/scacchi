@@ -7,7 +7,6 @@ Piattaforma italiana open source e open data, riconosciuta come risorsa fondamen
 
 Sviluppato da Rosario Turco, ingegnere esperto non vedente.
 Per Windows 10/11, online e offline, gratuito. 21MB.
-Non occorre account, non traccia dati sensibili, nessuna pubblicità
 
 Registrato su Zenodo (CERN) a cura di _Rosario Turco_
 DOI ROTN: https://doi.org/10.5281/zenodo.22737720
