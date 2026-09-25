@@ -809,7 +809,7 @@ E' consigliabile il secondo comando.
 1. Solo il bianco avvia l'eseguibile serverScacchi.exe nella directory serverScacchi
 2. ogni giocatore avvia il programma scacchi-start.exe   
 3. ogni giocatore, aspetta prima il caricamento solito del programma,  poi fa CtrlI e risponde correttamente alle domande
-Dato che si gioca in multiplayer è importante che ogni giocatore inserisca come player almeno la iniziale del proprio nome seguito da cognome senza spazi (es. FArionne) . 
+Dato che si gioca in multiplayer è importante che ogni giocatore inserisca come player almeno la iniziale del proprio nome seguito da cognome senza spazi (es. FArionne) . Si può inserire anche un nickname ma occorre essere sicuri che l'altro giocatore non usi lo stesso nickname, basta mettersi d'daccordo.
 Suggerimento al Bianco: usare 1 per giocare in bianco su online.
 Suggerimento al Nero: prima di fare 	CtrlI, fare CtrlG per stare dalla parte del Nero e usare 2 per giocare in Nero su online. 
 Il server assegna al Bianco il nome della room con cui accedere e che va comunicata al Nero. 
