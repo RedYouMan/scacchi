@@ -62,7 +62,7 @@ Scacchi-it consente di:
 16 - usare le posizioni o i problemi scritti con una ROT notation per Non Vedenti  che informa sulla posizione in termini di descrizione del problema, disposizione dei pezzi del bianco e del nero, il punto di vista da cui giocare, il tratto, l'ultimo numero di mossa giocato dal bianco
 17 - controllare la correttezza dei file dei problemi scritti a mano
 18 - far risolvere i problemi al computer
-19 - leggere il manualeda browser 
+19 - leggere il manuale da browser 
 20 - vedere animazione della mossa dei pezzi
 21 - utilizzare le frecce e return oppure il mouse per giocare
 22 - sintesi vocale in italiano con messaggi verbosi su console
