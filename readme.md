@@ -75,6 +75,9 @@ Il gioco sollecita memoria visiva e astratta, ragionamento e calcolo delle alter
 Manuale: scacchigr.txt in formato testo per massima accessibilità su browser per non vedenti.
 Per sviluppatori: cartella docs, file fordevelopers e tuning.
 
+Attenzione:
+La valutazione di conformità della soluzione ROTN per la propria collana editoriale spetta all'editore con il proprio consulente per l'accessibilità e, ove previsto, con AGID. Quanto qui proposto non costituisce certificazione di conformità.
+
 ### Crediti
 
 Immagini tratte dal repository Dasor su GitHub, progetto sfml-chess.
