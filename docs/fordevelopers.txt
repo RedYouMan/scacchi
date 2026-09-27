@@ -4,9 +4,9 @@ Rosario Turco
 
 Settembre 2026
 Premessa
-Tieni presente che sono non vedente e ho 66 anni. Sono un ingegnere e ho impiegato da solo 14 mesi per implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
-Sui test mi hanno aiutato le persone del gruppo NV&V.
-L'immagine sul sito di Scacchi-it mi è stata fornita da Francesco Longobardi (componente di NV&V).
+Tieni presente che sono non vedente e ho 66 anni. Sono un ingegnere e ho impiegato da solo 14 mesi per progettare, implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
+Sui test mi hanno aiutato le persone del gruppo NV&V: in particolare Francesco Longobardi, Mario Turco e Luigi Racioppi.
+L'immagine sul sito di Scacchi-it mi è stata fornita da Francesco Longobardi. 
 La parte git è stata scritta da mio figlio Mario Turco.
 
 Scacchi-it
@@ -22,7 +22,7 @@ Il risultato di una tale idea comporta un progetto non solo open source, dove pu
 - mettere su database didattici più rapidamente
 - aggiungere alle immagini dei diagrammi nei libri ed ebook un formato per non vedenti semplice, dove col copia e incolla un non vedente può provare la posizione su una piattaforma come Scacchi-it
 - creare problemi o copiarli in formato ROTN
-- scrivere specifiche da parte degli istruttori in modo inclusivo
+- scrivere dispense, da parte degli istruttori fsi, in modo inclusivo
 - utilizzare la ROTN, grazie alla sua struttura rigida, per l'addestramento delle reti neurali trasformer per giocare a scacchi
 
 Non fare l'errore di credere che la ROTN sostituisca qualche standard: non sostituisce nè lo standard pgn, nè la FEN.Piuttosto si aggiunge come utile strumento ulteriore a vantaggio dei non vedenti e degli screen reader.
@@ -34,6 +34,8 @@ Non si deve modificare nessun chess engine come stockfish e analoghi, la FEN pu�
 I nuovi ebook potranno riportare sia diagrammi con ALT indicante una sintesi che la ROTN: con salva-spazio ovvero può essere scritta con dimensione caratteri minore: ma viene letta bene lo stesso dagli screen reader e si può fare il copia e incolla. In tal modo si soddisfano le esigenze visive di normodotati e di non vedenti.
 
 I database didattici potranno proseguire con le nuove posizioni usando la ROTN, oppure un programma automaticamente potrà aggiornare tutto il database didattico con la ROTN.
+A tal proposito il simpleEditor fornito,
+che fa tutti i controlli possibili, accelera la scrittura di un Database di posizioni espresse in ROTN.
 
 Se il mondo avesse seguito sempre la consuetudine non si avrebbe mai avuto innovazione.
 
@@ -48,6 +50,9 @@ Scacchi-it è, esso stesso, la testimonianza pratica della utilità, semplicità
 Registrato su Zenodo (CERN) a cura di _Rosario Turco_
 DOI ROTN: https://doi.org/10.5281/zenodo.22737720
 DOI SCACCHI: https://doi.org/10.5281/zenodo.22737784
+
+> *Licenze: documentazione - CC BY-SA 4.0 | Software - GPLv3*
+> _Tutto il progetto è rilasciato in open source senza scopo di lucro per finalità tiflologiche e inclusive._
 
 Come affrontare questo software
 Creare un chess engine come Scacchi-it che si propone sia come motore di controllo e gioco a due, sia come motore di controllo di stockfish e, infine, come motore online Hamachi multiplayers, ti assicuro che non è semplice. 
