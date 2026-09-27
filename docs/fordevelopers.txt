@@ -47,6 +47,10 @@ Tra uomo e posizioni sulla scacchiera esiste uno strato software di primo livell
 Immagina se alle scuole elementari ci avessero insegnato una lettura e una scrittura complicata, oggi quante persone saprebbero leggere e scrivere? Gli abbandoni prematuri della scuola sarebbero stati elevati  o la scuola non sarebbe stata nemmeno iniziata.
 Scacchi-it è, esso stesso, la testimonianza pratica della utilità, semplicità, chiarezza e rapidità con cui si può lavorare con la ROTN per il gioco, lo studio, la didattica,  la inclusione e completa autonomia dei non vedenti, che possono apprendere le stesse cose dei normodotati nella stessa classe di corso.
 
+Scacchi-it semplifica il carico cognitivo, anche nella didattica: fen e pgn usati da esso, sono sotto-cofano. Per guidare un auto non è necessario andare dentro al motore.
+
+Questo semplifica e avvicina rapidamente alla qualità del gioco, evidenziando subito le capacità dell'individuo di esprimere la sua forza intellettuale e divertendosi.
+
 Registrato su Zenodo (CERN) a cura di _Rosario Turco_
 DOI ROTN: https://doi.org/10.5281/zenodo.22737720
 DOI SCACCHI: https://doi.org/10.5281/zenodo.22737784
