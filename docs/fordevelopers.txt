@@ -30,6 +30,7 @@ Sopra abbiamo detto che, volendo la ROTN si adopera anche come trasformatore da 
 Nel caso della pgn, però non si deve mettere la ROTN come tramite; difatti  lo standard pgn è già molto efficace basandosi su una notazione algebrica.
 Molti altri vantaggi sono stati evidenziati sopra. 
 Non si deve modificare nessun chess engine come stockfish e analoghi, la FEN può sempre lavorare 'sotto cofano' in questi motori.
+La stessa pgn è da vedersi sotto cofano.
 
 I nuovi ebook potranno riportare sia diagrammi con ALT indicante una sintesi che la ROTN: con salva-spazio ovvero può essere scritta con dimensione caratteri minore: ma viene letta bene lo stesso dagli screen reader e si può fare il copia e incolla. In tal modo si soddisfano le esigenze visive di normodotati e di non vedenti.
 
@@ -50,6 +51,11 @@ Scacchi-it è, esso stesso, la testimonianza pratica della utilità, semplicità
 Scacchi-it semplifica il carico cognitivo, anche nella didattica: fen e pgn usati da esso, sono sotto-cofano. Per guidare un auto non è necessario andare dentro al motore.
 
 Questo semplifica e avvicina rapidamente alla qualità del gioco, evidenziando subito le capacità dell'individuo di esprimere la sua forza intellettuale e divertendosi.
+
+Il principio per abbassare il carico cognitivo è che l'utente deve giocare e non conoscere i formati, competenza solo degli sviluppatori. Il che è realizzabile scalando i formati sotto cofano, ovvero di un livello logico.
+Scacchi-it, per esempio, ha l'Openings Trainer che fa addestrare alle aperture, leggendo file pgn, oppure lavora con i comandi uci, passando la FEN a stockfish.
+Ma il giocatore ignora totalmente i formati.
+
 
 Registrato su Zenodo (CERN) a cura di _Rosario Turco_
 DOI ROTN: https://doi.org/10.5281/zenodo.22737720
