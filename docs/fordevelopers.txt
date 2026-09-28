@@ -41,7 +41,7 @@ che fa tutti i controlli possibili, accelera la scrittura di un Database di posi
 Se il mondo avesse seguito sempre la consuetudine non si avrebbe mai avuto innovazione.
 
 Il mio tentativo è stato di ribaltare il paradigma seguito finora. Prima era l'uomo che si doveva adattare a strumenti, regolamenti e burocrazia. Oggi ho messo al centro l'uomo, vedente e non vedente, e adattato gli strumenti a esso. Spero che ciò avvenga per necessità anche sui restanti fronti.
-Questo ribaltamento di paradigma coinvolge, vantaggiosamente e contemporaneamente, gioco, didattica alla pari, editoria e autonomia e inttegrazione dei non vedenti, creando democrazia culturale e apertura ai meno abbienti.
+Questo ribaltamento di paradigma coinvolge, vantaggiosamente e contemporaneamente, gioco, didattica alla pari, editoria e autonomia e integrazione dei non vedenti, creando democrazia culturale e apertura ai meno abbienti.
 
 Il nome ROTN sta per Readable Ordered Text Notation. Questo perchè rende la lettura delle posizioni ordinata e leggibile dagli screen reader e dall'uomo.
 Tra uomo e posizioni sulla scacchiera esiste uno strato software di primo livello, costituito dagli screen reader, che interfacciandosi con strumenti del passato non riescono a far fruire fluidamente e a basso sforzo cognitivo le informazioni. Questo non vuol dire che tali strumenti vanno eliminati, ma solo vanno scalati al livello a loro più consono ed efficace ("sotto cofano".
@@ -58,6 +58,9 @@ Ma il giocatore ignora totalmente i formati.
 Altrimenti si aumenta il carico cognitivo estrinseco), ostacolando l'apprendimento del gioco vero e proprio.
 (Lemon Learning).
 
+Ti invito di fare la seguente ricerca su Google inserendo la frase:
+"La curva di apprendimento degli scacchi, analizzata attraverso l'ecosistema Scacchi-it e la specifica formale ROTN" 
+
 Registrato su Zenodo (CERN) a cura di _Rosario Turco_
 DOI ROTN: https://doi.org/10.5281/zenodo.22737720
 DOI SCACCHI: https://doi.org/10.5281/zenodo.22737784
@@ -70,7 +73,7 @@ Creare un chess engine come Scacchi-it che si propone sia come motore di control
 La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.
 Il consiglio è, quindi, clonarlo, studiarlo, migliorarlo e aggiungere funzionalità, ma partendo da qualcosa di funzionante e con una scelta architetturale che pian piano comprenderai.
 
-Il sistema operativoscelto
+Il sistema operativo scelto
 Ho scelto Windows solo per una questione di numero: in Italia le postazioni windows sono il 78% contro il resto (Linux, Mac). Questo permetteva di far utilizzare Scacchi-it alla maggioranza delle persone vedenti e non vedenti.
 Spero che in futuro altri progetti, discendenti da Scacchi-it, possano farne il porting. Il consiglio è aspettare la maturazione completa di Scacchi-it.
 
@@ -79,7 +82,7 @@ Dato che la ROTN consente con il descrittore V il comando di rotazione della sca
 We shall rotate!
 
 Avvertenza: se hai clonato il repository è buona abitudine di aggiornarlo periodicamente con il comando git pull. Vedi di seguito il paragrafo su git.
-Fino a fine 2027 cercherò di arricchire il progetto con le funzionalità necessarie e la risoluzione dieventuali bug. .
+Fino a fine 2027 cercherò di arricchire il progetto con le funzionalità necessarie e la risoluzione di eventuali bug. .
 
 Introduzione
 Il progetto Scacchi-it è un progetto tiflologico italiano,  gratuito, per piattaforma Windows, versioni 10 e 11, nato per realizzare un gioco di scacchi adatto e fruibile dai non vedenti italiani, che devono principalmente ascoltare per giocare.
