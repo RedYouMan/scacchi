@@ -61,7 +61,7 @@ Altrimenti si aumenta il carico cognitivo estrinseco), ostacolando l'apprendimen
 (Lemon Learning).
 
 Ti invito di fare la seguente ricerca su Google inserendo la frase:
-"La curva di apprendimento degli scacchi, analizzata attraverso l'ecosistema Scacchi-it e la specifica formale ROTN" 
+curva di apprendimento negli scacchi attraverso l'ecosistema tiflologico Scacchi-it e la specifica formale ROTN carico cognitivo e abbandoni
 
 Registrato su Zenodo (CERN) a cura di _Rosario Turco_
 DOI ROTN: https://doi.org/10.5281/zenodo.22737720
