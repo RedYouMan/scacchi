@@ -923,17 +923,19 @@ Consultare il sito ufficiale.
 
 La funzionalità simpleEditor
 
-In Scacchi-it nella cartella simpleEditor vi è un semplice editor testuale per creare un Database di posizioni in ROTN, che potrete classificare sotto la cartella Database, in base alle esigenze didattiche (Strategia, Tattica, Finali, etc.). Si è preferito di creare un semplice editor testuale per facilitarne l'uso anche ad istruttori non vedenti.
+In Scacchi-it nella cartella simpleEditor vi è un semplice editor testuale per creare un Database di posizioni in ROTN, che gli istruttori possono classificare sotto la cartella Database, in base alle esigenze didattiche (Strategia, Tattica, Finali, etc.). Si è preferito di creare un semplice editor testuale per facilitarne l'uso anche ad istruttori non vedenti.
 L'editor ha il vantaggio di poter essere usato in offline, rimanendo indipendente da problemi di connessioni.
-Il simpleEditor segnalerà, la prima volta, di configurare il file ste.cnf se non trova la cartella del Database, consigliata di chiamarsi proprio Database.
+
+Il simpleEditor segnalerà, la prima volta, di configurare il file ste.cnf se non trova la cartella del Database, che per gli istruttori consigliamo di chiamare proprio Database. Per i giocatori non vedenti, invece, conviene chiamarla scacchi-it mentre le cartelle di classificazione come sospensioni e problemi. In poche parole il giocatore non vedente facendo puntare il file ste.cnf alla cartella scacchi-it del programma ha il vantaggio di evitare di dover copiare file in sospensioni e problemi, questo perchè crea ifile direttamente in quelle cartelle. 
+ 
 La cartella di classificazione se non esiste viene creata.
 L'Editor permette di introdurre tutti i descrittori obbligatori e i due descrittori opzionali U: per l'enpassant nella concezione ROTN e Z: legato alla regola delle 50 mosse.
 Viene mostrato, se la cartella esiste, lultimo nome di file creato temporalmente. Se date ai file un nome come pos001.txt cioè ognuno contenente un progressivo a tre cifre come 001, 002, etc. vi verranno ordinati e l'ultimo file è quello col progressivo maggiore.
 L'edtor aiuta a compilare una posizione ROTN facendo il maggior numero di controlli possibili e vi avvisa se un nome di file è già esistente, chiedendovi di cambiare nome.
 Il SimpleEditor consente anche di inserire o meno NS o NL nei casi di arrocchi ambigui per il bianco e/o il Nero.
 Nell'inserimento dei pezzi l'editor invoglia di mettere sempre per prima i pezzi di maggior valore.
-Si raccomanda sempre di controllare i file generati alla fine.
-Si consiglia, infine, di mettere la cartella Database al di fuori della cartella Scacchi-it, in tal modo nei casi di aggiornamento della versione non dovrete intervenire sul Database.
+Agli istruttori si raccomanda sempre di controllare i file generati alla fine.
+Si consiglia, infine, agli istruttori di mettere la cartella Database al di fuori della cartella Scacchi-it, in tal modo nei casi di aggiornamento della versione non si dovrà intervenire sul Database.
 
 Segnalazioni
 Per segnalazioni di bug o altro scrivete a:
