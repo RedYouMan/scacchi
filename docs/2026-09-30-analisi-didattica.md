@@ -24,6 +24,8 @@ L'ecosistema Scacchi-it, sviluppato da Rosario Turco, è un ambiente software pe
 
 L'interesse didattico dell'ecosistema emerge dall'incrocio di tre ambiti: scacchi, tiflologia e psicologia cognitiva.
 
+La scacchiera digitale segue la stessa filosofia della scacchiera tattile: si naviga su essa riconoscendo in ogni casa: il nome della casa, se vuota, se presente un pezzo e quale tipo, comprensivo di colore.
+
 ### 1. Curva di apprendimento e churning
 
 Nella didattica è noto che il carico cognitivo estraneo è una delle cause del churning, inteso come abbandono precoce. Nel contesto tiflologico tradizionale, l'apprendimento degli scacchi presenta una fase iniziale di forte rallentamento. Le cause sono legate all'esplorazione manuale continua della scacchiera e alla decodifica lineare tramite sintesi vocale di codifiche come la FEN.
@@ -79,7 +81,7 @@ Per ottenere la mappa mentale da FEN, l'utente con screen reader deve:
 
 Su 64 case, questo comporta in media 15-20 aggiornamenti di contatori e conversioni numero-spazio per una posizione di mediogioco.
 
-In ROTN, l'operazione è diretta: `Nb1` = Cavallo in b1. Zero conversioni. Una sola operazione di posizionamento per pezzo. Il carico estraneo si riduce da computazione di conteggio a semplice associazione semantica.
+In ROTN, l'operazione è diretta: `Cb1` = Cavallo in b1. Zero conversioni. Una sola operazione di posizionamento per pezzo. Il carico estraneo si riduce da computazione di conteggio a semplice associazione semantica.
 
 _4.3 Resa su screen reader e Braille_
 
