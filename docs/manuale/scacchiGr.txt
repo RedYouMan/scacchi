@@ -105,7 +105,8 @@ La console permette, in modo semplice ed efficace, varie cose:
 - tracciamento di situazioni particolari verificatesi
 
 Architettura Scacchi-it
-L'ecosistema Scacchi-it è costituito da varie parti.
+Nella progettazione sono stati seguiti i principi della Universal Design (UD) e della Universal Design for Learning (UDL).
+L'ecosistema Scacchi-it è fisicamente costituito da varie parti.
 Scacchi-it core, suddiviso in:
 1. Motore grafico e controllo tasti
  2. motore di controllo, con parte controllo gioco a due, controllo stockfish, controllo online, Openings Trainer,undo
