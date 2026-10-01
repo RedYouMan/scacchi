@@ -408,16 +408,17 @@ Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella
 
 La regola "ogni descrittore una riga" non è per un fatto informatico ma per la semplice psicologia che un facile copia e incolla aumenta l'autostima del non vedente.
  
-Da notare che se la FEN viene passata a fenpos, per definizione di P nella ROTN, viene diminuito di 1 il numero di mossa della FEN se a giocare per prima è il Bianco (M:B) oppure rimane uguale al numero richiesto dalla FEN se gioca per prima il Nero (M:N).
+Da notare che se la FEN deve essere trasformata in ROTN, per definizione di P nella ROTN, va diminuito di 1 il numero di mossa della FEN se a giocare per prima è il Bianco (M:B) oppure rimane uguale al numero richiesto dalla FEN se gioca per prima il Nero (M:N).
 Questo perchè nella FEN viene indicato il nuovo numero da giocare, mentre nella ROTN si indica l'ultimo numero giocato dal bianco.
 
-Se compilate a mano la ROTN ricordate che in P va l'ultimo valore giocato dal bianco. Se siamo in partenza P=0. Se si deve giocare ancora la mossa 2 e gioca il bianco P=1 in P va (quella giocata), se quella giocata era la 2 e gioca il nero allora P=2.
+Se compilate a mano la ROTN senza far riferimento a nessuna FEN, ricordate che in P va l'ultimo valore giocato dal bianco. Ovviamente a posizione iniziale il bianco non ha mai giocato quindi P?=0.
 
-mentre la diminuzioneavviene, automaticamente, se usate il comando incolla-fen che si poggia su fenpos.
+Ricordate che anzicchè compilare a mano un file ROTN potreste usare simpleEditor, che controlla e vi ricorda tutto.
 
 Con la ROTN scritta a mano, per i casi ambigui di arrocco, come ad esempio di torre o re mossi in precedenza e poi ritornati nella posizione di origine o altre situazioni ambigue, si segnala l'arrocco non valido in B: o N: nella lista di pezzi: il valore NS (No Short Castle) e/o NL (No Long Castle). I due valori possono essere presenti uno solo, o entrambi separati da ';'. 
 
-Per la FEN, tradotta in ROTN da fenpos, lo stato degli arrocchi viene riportato con NS e/o NL.
+Per la FEN, tradotta in ROTN da incollaFENlo stato degli arrocchi viene riportato con NS e/o NL, se necessari.
+
 Il programma Scacchi-it usa solo le lettere dei pezzi in italiano, ma la rot notation può essere generalizzata e usare anche le lettere inglesi dei pezzi. e al posto del descrittore italiano B: il corrispondente inglese W: e analogamente per il descrittore italiano N: sostituito con quello inglese B:.
 Dopo la lettera iniziale vi è la casella che indica dove va posizionato il pezzo.
 
@@ -429,7 +430,7 @@ Il descrittore U serve negli automatismi di sospensione di una partita e  la sua
 In una FEN quando si muove un pedone di due passi (es. 1.e4)si valorizza il campo 4 enpassant (es. e3), questo anche se non ci sono pedoni avversari che possano sfruttarlo. 
 Però in riferimento ad U, che rappresenta la possibilità reale alla ripresa di partita, dopo la sospensione elettronica, di catturare un pedone con enpassant, se non ci sono pedoni avversari affiancati, uno o due, U alla sospensione non verrà segnato.
 Ricordiamo, infatti, che l'obiettivo di U alla ripresa della partita è di segnalare con sintesi vocale se esiste un pedone che si può catturare con enpassant.
-Per cui se una FEN presenta marcato il campo enpassant ma non ci sono pedoni che lo possano sfruttare, fenpos  o incolla-FEN non lo segnaleranno nella ROTN.
+Per cui se una FEN presenta marcato il campo enpassant ma non ci sono pedoni che lo possano sfruttare, incolla-FEN non lo segnalerà nella ROTN.
 
 Descrittore opzionale Z: indica il numero di semimosse presenti nella fen (campo 5)
 
