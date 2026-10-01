@@ -381,7 +381,9 @@ La ROTN che esamineremo di seguito è importante perchè su Internet e sui libri
 Essa è una estensione della notazione algebrica per rendere un applicativo di scacchi di tipo open data.
 La paternità di essa è tutelata dal copyright di Scacchi-it.
 Il nome ROTN  sta per Readable Ordered Text Notation.
-
+La ROTN interviene nelle posizioni da creare e caricare: sospensione partita, caricamento partita sospesa, caricamento problema o puzzle da risolvere. Scacchi-it, invece, utilizza una efficace tecnica di accessibilità per gli screen reader dicendo con sintesi vocale la casa su cui ci si muove, se è presente un pezzo e quale, se la casa è vuota.
+Non esiste nessun problema di conversione mentale da un formato ad un altro se si passa ad un'altro applicativo di scacchi o portale.
+ 
 Come si scrive un problema o una posizione
 
 La ROTN è un file testuale fatto di descrittori seguiti da valori. Tutti i campi descrittori sono obbligatori e V: va messo dopo T: e prima degli altri rimanenti.
