@@ -82,8 +82,10 @@ Il sistema operativo scelto
 Ho scelto Windows solo per una questione di numero: in Italia le postazioni windows sono il 78% contro il resto (Linux, Mac). Questo permetteva di far raggiungere con Scacchi-it la maggioranza delle persone vedenti e non vedenti in Italia.
 Spero che in futuro altri progetti, discendenti da Scacchi-it, possano farne il porting. Il consiglio è aspettare la maturazione completa di Scacchi-it.
 Un ecosistema come Scacchi-it ha poco senso di essere portato come semplice APP su iOS.
+
 Server di massa o offline
 Scacchi-it per scelta è offline innanzitutto. Questo per la inclusione paritaria e la democratizzazione della cultura scacchistica, per aiutare scuolecon basso budget e le famiglie meno abbienti. L'online tramite vpn Hamachi aiuta ad evitare l'isolamento dei non vedenti, consentendo loro di trovare un amico online con cui giocare, se in famiglia non fosse possibile. La configurazione Hamachi è superabile sia con un manuale molto dettagliato, sia per addestramento dei non vedenti da parte di un istruttore fsi.
+
 Natura e uso
 Scacchi-it è un ecosistema tiflologico fortemente indicato alla didattica inclusiva paritaria e democratica,  soprattutto per i non vedenti. Gli strumenti presenti come il simpleEditor, le estensioni browser,  incollaFEN, incollaROTN, stockfish, coachFEN e coachGame gli consentono l'utilizzo anche dopo l'addestramento di primo livello per migliorarsi ulteriormente affrontando stockfish a livelli sempre superiori (20 livelli). L'orologio tiflologico consente ai non vedenti anche di superare l'ansia da torneo.
 
