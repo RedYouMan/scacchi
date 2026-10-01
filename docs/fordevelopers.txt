@@ -85,12 +85,17 @@ Un ecosistema come Scacchi-it ha poco senso di essere portato come semplice APP 
 
 Server di massa o offline
 Scacchi-it per scelta è offline innanzitutto. Questo per la inclusione paritaria e la democratizzazione della cultura scacchistica, per aiutare scuolecon basso budget e le famiglie meno abbienti. L'online tramite vpn Hamachi aiuta ad evitare l'isolamento dei non vedenti, consentendo loro di trovare un amico online con cui giocare, se in famiglia non fosse possibile. La configurazione Hamachi è superabile sia con un manuale molto dettagliato, sia per addestramento dei non vedenti da parte di un istruttore fsi.
+Prima c'era il nulla per i non vedenti, per l'addestramento e possibilità di giocare a casa gratuitamente, in modo semplice e accessibile al 100%. Non era possibile nemmeno partecipare ad un corso fsi se non attrezzato e nemmeno in un corso con vedenti.  
+Non ha senso il confronto con i portali, esistenti da almeno 20 anni che hanno sempre puntato alla massa dei giocatori online vedenti e tuttora hanno problemi di accessibilità non ancora al 100%. Voler confrontare portali e Scacchi-it è confrontare contesti di natura e scopo completamente diversi.
 
 Natura e uso
 Scacchi-it è un ecosistema tiflologico fortemente indicato alla didattica inclusiva paritaria e democratica,  soprattutto per i non vedenti. Gli strumenti presenti come il simpleEditor, le estensioni browser,  incollaFEN, incollaROTN, stockfish, coachFEN e coachGame gli consentono l'utilizzo anche dopo l'addestramento di primo livello per migliorarsi ulteriormente affrontando stockfish a livelli sempre superiori (20 livelli). L'orologio tiflologico consente ai non vedenti anche di superare l'ansia da torneo.
 
 La GUI
 Scacchi-it possiede una scacchiera grafica in SFML (Simple Fast Multimedia Library) con pezzi realizzati in pgn. La console viene utilizzata per il tracciamento degli errori o comunque per i messaggi di andamento del gioco. Viene usata poco per l'inserimento di dati di input.
+
+La standardizzazione
+La ROTN è usata da circoli scacchistici e nella didattica da istruttori fsi che ne riconoscono la utilità didattica. La standardizzazione della ROTN è un problema sopratutto burocratico di fsi e della fide. Il progetto è registrato sia come ROTN e come Scacchi-it presso Zenodo.org (CERN) che ne testimonia la autorevolezza scientifica.
  
 Un motto
 Dato che la ROTN consente con il descrittore V il comando di rotazione della scacchiera, fornendo dinamicità alle informazioni, concludo la premessa con la frase:
