@@ -25,6 +25,8 @@ Il risultato di una tale idea comporta un progetto non solo open source, dove pu
 - scrivere dispense, da parte degli istruttori fsi, in modo inclusivo
 - utilizzare la ROTN, grazie alla sua struttura rigida, per l'addestramento delle reti neurali trasformer per giocare a scacchi
 
+La specifica formale ROTN è bilingue, anche per pezzi espressi in inglese, per dare modo anche all'estero di essere utilizzata.
+
 Non fare l'errore di credere che la ROTN sostituisca qualche standard: non sostituisce nè lo standard pgn, nè la FEN.Piuttosto si aggiunge come utile strumento ulteriore a vantaggio dei non vedenti e degli screen reader.
 Sopra abbiamo detto che, volendo la ROTN si adopera anche come trasformatore da una lingua ad un'altra là dove veramente è necessario. Scacchi-it stesso dispone del comando incolla-FEN.
 Nel caso della pgn, però non si deve mettere la ROTN come tramite; difatti  lo standard pgn è già molto efficace basandosi su una notazione algebrica.
@@ -36,7 +38,7 @@ I nuovi ebook potranno riportare sia diagrammi con ALT indicante una sintesi che
 
 I database didattici potranno proseguire con le nuove posizioni usando la ROTN, oppure un programma automaticamente potrà aggiornare tutto il database didattico con la ROTN.
 A tal proposito il simpleEditor fornito,
-che fa tutti i controlli possibili, accelera la scrittura di un Database di posizioni espresse in ROTN.
+che fa tutti i controlli possibili, accelera la scrittura di un Database di posizioni espresse in ROTN. Esso è testuale, destinato anche a istruttori non vedenti.
 
 Se il mondo avesse seguito sempre la consuetudine non si avrebbe mai avuto innovazione.
 
@@ -59,6 +61,7 @@ Scacchi-it, per esempio, ha l'Openings Trainer che fa addestrare alle aperture, 
 Ma il giocatore ignora totalmente i formati.
 Altrimenti si aumenta il carico cognitivo estrinseco), ostacolando l'apprendimento del gioco vero e proprio.
 (Lemon Learning).
+Scacchi-it rispetta i principi di Universal Design (UD) e Universal Design for Learning (UDL).
 
 Ti invito di fare la seguente ricerca su Google inserendo la frase:
 curva di apprendimento negli scacchi attraverso l'ecosistema tiflologico Scacchi-it e la specifica formale ROTN carico cognitivo e abbandoni
@@ -76,9 +79,17 @@ La tentazione quando si legge il software qui proposto è di buttare via tutto e
 Il consiglio è, quindi, clonarlo, studiarlo, migliorarlo e aggiungere funzionalità, ma partendo da qualcosa di funzionante e con una scelta architetturale che pian piano comprenderai.
 
 Il sistema operativo scelto
-Ho scelto Windows solo per una questione di numero: in Italia le postazioni windows sono il 78% contro il resto (Linux, Mac). Questo permetteva di far utilizzare Scacchi-it alla maggioranza delle persone vedenti e non vedenti.
+Ho scelto Windows solo per una questione di numero: in Italia le postazioni windows sono il 78% contro il resto (Linux, Mac). Questo permetteva di far raggiungere con Scacchi-it la maggioranza delle persone vedenti e non vedenti in Italia.
 Spero che in futuro altri progetti, discendenti da Scacchi-it, possano farne il porting. Il consiglio è aspettare la maturazione completa di Scacchi-it.
+Un ecosistema come Scacchi-it ha poco senso di essere portato come semplice APP su iOS.
+Server di massa o offline
+Scacchi-it per scelta è offline innanzitutto. Questo per la inclusione paritaria e la democratizzazione della cultura scacchistica, per aiutare scuolecon basso budget e le famiglie meno abbienti. L'online tramite vpn Hamachi aiuta ad evitare l'isolamento dei non vedenti, consentendo loro di trovare un amico online con cui giocare, se in famiglia non fosse possibile. La configurazione Hamachi è superabile sia con un manuale molto dettagliato, sia per addestramento dei non vedenti da parte di un istruttore fsi.
+Natura e uso
+Scacchi-it è un ecosistema tiflologico fortemente indicato alla didattica inclusiva paritaria e democratica,  soprattutto per i non vedenti. Gli strumenti presenti come il simpleEditor, le estensioni browser,  incollaFEN, incollaROTN, stockfish, coachFEN e coachGame gli consentono l'utilizzo anche dopo l'addestramento di primo livello per migliorarsi ulteriormente affrontando stockfish a livelli sempre superiori (20 livelli). L'orologio tiflologico consente ai non vedenti anche di superare l'ansia da torneo.
 
+La GUI
+Scacchi-it possiede una scacchiera grafica in SFML (Simple Fast Multimedia Library) con pezzi realizzati in pgn. La console viene utilizzata per il tracciamento degli errori o comunque per i messaggi di andamento del gioco. Viene usata poco per l'inserimento di dati di input.
+ 
 Un motto
 Dato che la ROTN consente con il descrittore V il comando di rotazione della scacchiera, fornendo dinamicità alle informazioni, concludo la premessa con la frase:
 We shall rotate!
