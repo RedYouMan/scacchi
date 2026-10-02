@@ -42,7 +42,7 @@ Il non vedente, tramite uno screen reader come NVDA, oJAWS potrà utilizzare il 
 
 Come si vedrà Scacchi-it è soprattutto una piattaforma di studio e analisi, da usare a casa, oppure adatto a partite dove si attende la risposta di un amico oppure per lezioni di scacchi, o per risolvere dei problemi (puzzle) o per giocare contro il computer e infine per giocare anche online.
 Questa caratteristica sottolinea la modalità non agonistica del programma e, quindi, non necessita di orologio per la misurazione del tempo per le risposte di ogni giocatore.
-Tuttavia la presenza dell'orologio nel pacchetto ha solo il significato di "allenamento col computer" per abituarsi al tempo di gioco.
+Tuttavia la presenza di un orologio tiflologico nel pacchetto ha solo il significato di "allenamento col computer" per abituarsi al tempo di gioco prima di partecipare ad un torneo e abbassare la fase di ansia  da prestazione.
 
 Scacchi-it consente di:
 1 - navigare, con frecce e mouse, sulla scacchiera dando informazioni di pezzi e case vuote
@@ -128,9 +128,8 @@ Scacchi-it Applicativi indipendenti, costituita da:
 3. clock-start  
 
 Download e Windows Defender 
-Da browser sul link https://redyouman.github.io/blog/2025/07/27/downloads.html
-Trovate la sezione grafica C++ e scaricate scacchi
-
+Da browser sul link https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
+Trovate il link per scaricare Scacchi-it.
 Lo zip verrà posto in Downloads. 
 
 PER evitare che Windows Defender consideri una minaccia lo zip lo dovrete escludere con i seguenti passaggi:
@@ -161,7 +160,7 @@ Aggiungete a Windows Defender anche la cartella scacchi-it sul Desktop, con gli 
 
 Sempre con "Esplora file" cliccate sulla cartella scacchi-it e vi entrate.
 
-Con "Esplora file" per lanciare nella directory scacchi-it un eseguibile, basta selezionarlo e fare return. Gli eseguibili sono:
+Con "Esplora file" per lanciare nella directory scacchi-it un eseguibile, basta selezionarlo e fare return. Gli eseguibili principali sono:
 - scacchi-start
 - clock-start
 
@@ -172,8 +171,8 @@ coachFEN-start (ne parleremo in un paragrafo apposito)
 coachGame-start (ne parleremo in un paragrafo apposito)
 - incolla-ROTN (ne parleremo in un paragrafo apposito)
 
-Attenzione: Se non è presente stockfish nella cartella engine, Scacchi-it utilizza il suo installer per scaricare la prima volta la versione preferita di stockfish e installarlo. Questo perchè nello zip scaricato stockfish non è presente sia per motivi di licenza GNU GPL versione 3, sia per avere un pacchetto runtime leggero da scaricare.
-Solo in questa occasione serve attiva la connessione Internet e dare consenso a scaricare a Windows Defender. Se la connessione non è troppo stabile, caso raro, potrebbe servire un secondo lancio di Scacchi-it per far riuscire a scaricare e installare stockfish la prima volta. Puoi esaminare il sorgente board.cpp verso la fine per la parte installer di Scacchi-it.
+Attenzione: Se non è presente stockfish nella cartella engine, Scacchi-it utilizza il suo installer per scaricare, solo la prima volta, la versione preferita di stockfish e installarlo. Questo perchè nello zip scaricato stockfish non è presente sia per motivi di licenza GNU GPL versione 3, sia per avere un pacchetto runtime leggero da scaricare.
+Solo in questa occasione serve attiva la connessione Internet e dare consenso a scaricare a Windows Defender. Se la connessione non è troppo stabile, caso raro, potrebbe servire un secondo lancio di Scacchi-it per far riuscire a scaricare e installare stockfish la prima volta. Puoi esaminare, se vuoi, il sorgente board.cpp verso la fine per la parte installer di Scacchi-it 
 
 Installazione con comandi da prompt
 Come alternativa al paragrafo precedente si possono fare i comandi a mano. Se avete già fatto il paragrafo precedente, questo lo potrete saltare.
@@ -182,14 +181,14 @@ Si seguono i seguenti step:
 Tale operazione la potreste fare con Win+E + return per "Esplora file", andare sullo zip e con Fn+"menu contestuale" e cercare 7zip per fare Estrai qui. 
 2 - Aggiungete a Windows Defender la cartella scacchi-it 
 3 - per lanciare scacchi-start.exe potreste farlo sempre da "Esplora file" oppure lanciarlo da linea di comando della console o cliccando su esso col mouse.
-Per comodità ricordiamo che dopo aver aperto la console con Tasto Start + c + enter,
+Per comodità ricordiamo che dopo aver aperto la console con Tasto Start + prompt + enter,
 dovete digitare:
 cd Desktop 
 cd scacchi-it
 ora digitate scacchi-start 
 l'ultimo comando farà partire il programma.
 Se vi servisse l'orologio digitare clock-start seguito da return (Vedi il paragrafo che lo riguarda per avere una sola console).
-Per incolla-fen, e validaFEN ne parleremo in seguito.
+Per incolla-fen, e validaFEN  o incolla-ROTN ne parleremo in seguito.
 
 Dove sono attivabili i controls
 Tutti i controls sono attivi solo sulla scacchiera grafica.
@@ -206,7 +205,7 @@ Navigazione
 La navigazione consente al non vedente di esplorare tutta la scacchiera tramite le frecce su, giù, destra e sinistra. Per i vedenti è possibile l'uso del mouse.
 La navigazione è udibile con NVDA o con sintesi vocale, mentre senza NVDA si udranno le informazioni essenziali della sintesi vocale per la comprensione del gioco.
 Si consiglia durante la navigazione di attendere sempre un secondo per ascoltare nome della casa e presenza o meno di un pezzo.
-Attenzione che occorre usare il RETURN per le frecce, sia per selezionare il pezzo che per indicare la casa dove metterlo. Analogamente col mouse si usa il tasto sinistro per selezionare pezzo e casa destinazione con un click sul tasto.
+Attenzione che con le frecce occorre usare il RETURN sia per selezionare il pezzo che per indicare la casa dove metterlo. Analogamente col mouse si usa il tasto sinistro per selezionare pezzo e casa destinazione con un click sul tasto.
 
 Tempi di attesa con mouse o tasti 
 Essendo un gioco dedicato ai non vedenti, esiste sempre 1 secondo di ritardo per individuare se la casa è vuota o con presenza di pezzo da menzionare.
@@ -284,7 +283,7 @@ Noi consigliamo semplicemente  di usare una  abbreviazione di nome e cognome dei
 giurivcarcav12022026, senza estensione. Sarà il  programma che aggiungerà l'estensione  .txt.
 Il file verrà aperto nella directory registrazioni se state registrando o nella directory sospensioni se state sospendendo la partita. Alla ripresa dovrete solo ricordarne il nome.
 
-Per i nomi dei problemi o delle posizioni che create a mano, potreste solamente numerarli: problema1.txt  etc
+Per i nomi dei problemi o delle posizioni che create a mano, o meglio con il simpleEditor potreste solamente numerarli: problema1.txt  etc
 Per le partite sospese è sufficiente un nome come sospesa Se giocate con un solo amico senza estensione a cui provvederà il programma. Tale file non dovrete preoccuparvi di cancellarlo se sospendete ancora la partita e usate lo stesso nome, difatti esso  verrà rimosso al suo caricamento successivo.
 Fate attenzione quando vi viene richiesto il nome del file desiderato, dato che viene precisato di NON mettere l'estensione.
 
@@ -358,7 +357,7 @@ Se volessimo giocare col computer e che questi avesse il bianco, in sequenza dov
 - avviare il programma attendendo la scacchiera
 - CtrlZ
 - Ci chiederà con che colore deve giocare il computer 
-- La seconda domanda che ci farà è il livello di gioco desiderato (da 1 a 20).
+- La seconda domanda che ci farà è il livello di gioco desiderato (da 0 a 20).
 - Facciamo Ctrl-G per stare dalla parte del nero
  Nota: le partite col computer non si registrano. Si possono registrare le partite contro gli amici nello scenario precedente.
 
@@ -404,6 +403,10 @@ P:34;
 - M: descrive a chi tocca la mossa (Bianco o Nero usando B o N)
 - P: descrive l'ultimo numero di mossa giocato dalbianco 
 
+Lo stato degli arrocchi può richiedere NS (No Short Castle) e/o NL (No Long Castle)
+Nella lista di pezzi è consigliato di mettere per prima i pezzi di valore maggiore secondo una scala del tipo: Re, Donna, Torre, Alfiere, Cavallo, Pedone.
+I pedoni nella lista richiedono la lettera P (es: Pa1)
+
 I descrittori di sopra sono obbligatori e con ordine fisso, ognuno con una propria riga obbligatoriamente. 
 Non è obbligatorio il ';' alla fine di ogni riga, ma è obbligatorio solo nella lista di posizioni algebriche dei pezzi per separare i valori di essi.
 
@@ -414,7 +417,7 @@ Questo perchè nella FEN viene indicato il nuovo numero da giocare, mentre nella
 
 Se compilate a mano la ROTN senza far riferimento a nessuna FEN, ricordate che in P va l'ultimo valore giocato dal bianco. Ovviamente a posizione iniziale il bianco non ha mai giocato quindi P?=0.
 
-Ricordate che anzicchè compilare a mano un file ROTN potreste usare simpleEditor, che controlla e vi ricorda tutto.
+Invece di compilare a mano un file ROTN potreste usare simpleEditor, che controlla e vi ricorda tutto (vedi paragrafo relativo).
 
 Con la ROTN scritta a mano, per i casi ambigui di arrocco, come ad esempio di torre o re mossi in precedenza e poi ritornati nella posizione di origine o altre situazioni ambigue, si segnala l'arrocco non valido in B: o N: nella lista di pezzi: il valore NS (No Short Castle) e/o NL (No Long Castle). I due valori possono essere presenti uno solo, o entrambi separati da ';'. 
 
@@ -494,11 +497,12 @@ Scacchi-it, inoltre,  marca la situazione degli arrocchi validi e segnala il val
 
 In un ebook se ci sono immagini, esse non sono fruibili dal non vedente; per cui, generalmente, viene descritta la posizione con la notazione algebrica, che ha il vantaggio di far comprendere la posizione dei pezzi rapidamente. 
 La ROTN fa un passo ulteriore,. 
-Se in un ebook, oltre alla immagine, viene mostrata la ROTN, col copia e incolla un non vedente può rapidamente trasferirla in un file e caricarla in Scacchi-it. In tal modo si può ascoltare, con sintesi vocale, il testo e navigare sulla scacchiera esplorando la posizione, apprezzando meglio quanto descritto nel ebook.
+Se in un ebook, oltre alla immagine, viene mostrata la ROTN, col copia e incolla un non vedente può rapidamente trasferirla col comando incolla-ROTN e caricarla in Scacchi-it. In tal modo si può ascoltare, con sintesi vocale, il testo e navigare sulla scacchiera esplorando la posizione, apprezzando meglio quanto descritto nel ebook.
 Questo migliorerebbe anche le possibilità editoriali di un libro in versione e-book allargando il proprio pubblico anche tra i non vedenti.
 
 La ROTN, inoltre, rende open data l'applicativo Scacchi-it in modo bidirezionale: consente di sospendere una partita e di riprenderla più tardi, come pure scrivere o copiare problemi e caricarli per la loro soluzione.
 Per cui la giusta definizione della rot notation è che essa estende la notazione algebrica e rende open data un applicativo di scacchi, consentendo di interagire con esso in due direzioni e aggiungendo la sintesi vocale e i vantaggi di una immagine.
+Una definizione più sintetica è che la ROTN rende una immagine testuale.
 
 La ROTN funge anche da lingua interna a Scacchi-it di interscambio con altri formati esterni come la fen o possibili formati futuri.
 
@@ -530,7 +534,7 @@ Per questi motivi Scacchi-it è un efficace strumento di scacchi tiflologico.
 La funzionalità validaFEN
 Se volete verificare se una stringa è effettivamente una FEN valida potete usare validaFEN.
 Lo usage si ottiene con:
-validFEN e invio
+validaFEN e invio
 
 Come dice lo usage non occorre mettere tra doppi apici la FEN quando gliela passate per il controllo.
 
@@ -565,6 +569,7 @@ Vi possono capitare tre situazioni:
 
 Nel primo caso potreste incollare la ROTN in un file Notepad e metterlo nella directory problemi, che tratta posizioni o puzzle, e date ad esso un nome con estensione txt.  
 Oppure usate incolla-ROTN che vi metterà il file in cartella sospensioni da caricare con Ctrl-R.
+La differenza tra sospensioni e problemi è che in sospensioni dopo aver caricato il file, esso viene rimosso.
 
 Nel secondo caso avete due soluzioni:
 a. usare incolla-fen 
@@ -580,12 +585,12 @@ https://redyouman.github.io/blog/2026/07/18/estensioni-browser.html
 Oppure sono disponibili in Scacchi-it nella cartella browser.
 Con esse potete selezionare una FEN, leggerla e ottenere una ROTN.
 Se, invece, volete scrivere da voi un file ROTN in cartella problemi, dovete solo rispettare la sintassi della ROTN e la definizione di P. Per incollare, invece, direttamente gli appunti ottenuti con estensioni browser, potete usare incolla-ROTN.
-Potreste usare il simpleEditor che vi aiuta velocemente ma fatelo nel Database esterno a Scacchi-it.
+Potreste usare il simpleEditor che vi aiuta velocemente(vedi paragrafo relativo). 
 
 La funzionalità incolla-ROTN
 Serve quando avete copiato la ROTN da un file oppure da un pdf che la presenta su un'unica riga oppure dagli appunti caricati dalle estensioni browser.
 Otterrete lo usage se digitate solo:
-incolla-ROTN
+incolla-ROTN return
 
 Lo usage dice di digitare il nome del file senza estensioni e dare return, dopo di che sulla console incollate ilcontenuto degli appunti.
 Poi occorre fare Ctrl-Z+Return.
@@ -623,7 +628,7 @@ L'applicativo Scacchi-it continuerà a lavorare correttamente se il nuovo motore
 Installer di stockfish
 Per motivi di licenza GNU GPL versione 3, ma anche per allegerire il pacchetto runtime di Scacchi-it in engine non viene distribuito stockfish. Tuttavia all'avvio Scacchi-it se non trova un eseguibile di stockfish in engine, e sottocartelle la prima volta scarica quello di default consigliato. Questo installer facilita il compito a persone non vedenti. L'installer utilizza comandi curl, sfruttando quello installato su Windows di default.
 Dare consenso a Windows Defender di scaricarlo.
-Possibili insuccessidi download di stockfish possono essere:
+Possibili insuccessi di download di stockfish possono essere:
 1. connessione Internet non stabile o spenta
 2. gli autori di stockfish hanno cambiato sul sito la posizione o il nome di stockfish
 
@@ -636,7 +641,7 @@ Sono importanti i seguenti controlli:
 Tuning del chess engine
 Nel pacchetto 7z nella cartella readme esistono vari file, tra cui tuning.txt (dalla versione 3.9 in poi).
 
-Come funziona l'orologio
+Come funziona l'orologiotiflologico
 Se dovete avere orologio e scacchiera, lanciate prima l'orologio e sulla stessa console avviate Scacchi-it.
 Dall'help, durante il lancio di clock-start, si apprende:
 - digitare spazio la prima volta per avviarlo
