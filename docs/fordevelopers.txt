@@ -63,6 +63,8 @@ Altrimenti si aumenta il carico cognitivo estrinseco), ostacolando l'apprendimen
 (Lemon Learning).
 Scacchi-it rispetta i principi di Universal Design (UD) e Universal Design for Learning (UDL).
 
+Scacchi-it non è un gioco per non vedenti. È una palestra neuroscientifica inclusiva dove vedenti e non vedenti si allenano fianco a fianco contro Stockfish a 21 livelli, con carico cognitivo ottimizzato e curva di apprendimento multimodale.
+
 Ti invito di fare la seguente ricerca su Google inserendo la frase:
 curva di apprendimento negli scacchi attraverso l'ecosistema tiflologico Scacchi-it e la specifica formale ROTN carico cognitivo e abbandoni
 
