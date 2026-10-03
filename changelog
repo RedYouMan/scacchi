@@ -1,6 +1,7 @@
-Versione: 12.5
-data: 20 Settembre2026
+Versione: 12.6
+data: 30 Settembre2026
 
+La versione 12.6 include nel pacchetto runtime anche le estensioni browser nella cartella browser.
 La versione 12.5 permette al simpleEditor anche i descrittori opzionali U: e Z:
 La versione 12.4 consente di inserire NS e/o NL con simpleEditor
 La versione 12.3 aggiunge in serverScacchi sortLog.exe per accorpare il log per singola room nel gioco online multiplayer
