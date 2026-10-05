@@ -611,7 +611,7 @@ void navOnBoard(char who)
                                 callTextToSpeech(string("Il computer risulta pronto agiocare\n"));
                                 setParam(maxThreads, maxHashTable, multiPV);
 
-                                reg_to_file = false;
+                                // reg_to_file = false;
                                 callTextToSpeech(string("Fai Alt-Tab per andare sulla console e rispondi alle domande"));
                                 whatColorComputer();
                                 setSkill(skill);

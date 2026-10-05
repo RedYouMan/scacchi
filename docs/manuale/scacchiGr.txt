@@ -269,7 +269,7 @@ Se avete già entrambe le lingue userà l'italiano.
 Non ci sono problemi di installazione se avete Windows in italiano. 
 
 Registrazione partita
-La registrazione è consentita attivarla in offline solo ad inizio partita con CtrlW. Non si registrano i problemi, nè le partite col computer.
+La registrazione è consentita attivarla in offline solo ad inizio partita con CtrlW. Non si registrano i problemi, mentre le partite col computer sono consentite per l'uso successivo di coachGame.
 La registrazione avviene ad ogni semimossa dei giocatori e continua anche se la partita viene ripresa dopo una sospensione.
  
 Scelta livello di skill
@@ -354,12 +354,13 @@ Supponiamo che vogliamo giocare gestendo bianco e nero    liberamente, per atten
 - Facciamo ora CtrlG per avere il punto di vista nero da cui giocare
 
 Se volessimo giocare col computer e che questi avesse il bianco, in sequenza dovremo fare:
-- avviare il programma attendendo la scacchiera
-- CtrlZ
+- avviare il programma attendendo la scacchiera 
+-Ctrl-W se vuoi registrare la partita 
+- CtrlZ per avviare il computer
 - Ci chiederà con che colore deve giocare il computer 
 - La seconda domanda che ci farà è il livello di gioco desiderato (da 0 a 20).
 - Facciamo Ctrl-G per stare dalla parte del nero
- Nota: le partite col computer non si registrano. Si possono registrare le partite contro gli amici nello scenario precedente.
+ Nota: le partite col computer si possono registrare per poter usare coachGame successivamente.  e Si possono registrare anche le partite contro gli amici nello scenario precedente.
 
 Se volessimo ascoltare l'analisi del computer nel risolver un problema:
 - avviare il programma
