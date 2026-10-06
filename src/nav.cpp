@@ -561,34 +561,37 @@ void navOnBoard(char who)
                         char who = (startColor == 0 ? 'W' : 'B');
                         string fen = getPositionFen(who);
                         // Incrementa di uno il numero di mossa nell'ultimo campo della FEN.
-                        size_t lastSpace = fen.find_last_of(' ');
-                        if (lastSpace != string::npos)
+                        if (who == 'W')
                         {
-                            string lastPart = fen.substr(lastSpace + 1);
-                            bool validNumber = !lastPart.empty();
-                            for (char digit : lastPart)
+                            size_t lastSpace = fen.find_last_of(' ');
+                            if (lastSpace != string::npos)
                             {
-                                if (digit < '0' || digit > '9')
+                                string lastPart = fen.substr(lastSpace + 1);
+                                bool validNumber = !lastPart.empty();
+                                for (char digit : lastPart)
                                 {
-                                    validNumber = false;
-                                    break;
+                                    if (digit < '0' || digit > '9')
+                                    {
+                                        validNumber = false;
+                                        break;
+                                    }
                                 }
-                            }
 
-                            if (validNumber)
-                            {
-                                size_t i = lastPart.size();
-                                while (i > 0 && lastPart[i - 1] == '9')
+                                if (validNumber)
                                 {
-                                    lastPart[i - 1] = '0';
-                                    --i;
-                                }
-                                if (i > 0)
-                                    ++lastPart[i - 1];
-                                else
-                                    lastPart.insert(lastPart.begin(), '1');
+                                    size_t i = lastPart.size();
+                                    while (i > 0 && lastPart[i - 1] == '9')
+                                    {
+                                        lastPart[i - 1] = '0';
+                                        --i;
+                                    }
+                                    if (i > 0)
+                                        ++lastPart[i - 1];
+                                    else
+                                        lastPart.insert(lastPart.begin(), '1');
 
-                                fen.replace(lastSpace + 1, string::npos, lastPart);
+                                    fen.replace(lastSpace + 1, string::npos, lastPart);
+                                }
                             }
                         }
                         // scrive a console la FEN
