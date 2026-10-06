@@ -1,6 +1,7 @@
-Versione: 12.7
-data: 01 Ottobre2026
+Versione: 12.8
+data: 04 Ottobre2026
 
+La versione 12.8 consente di estrarre la FEN dalla ROTN sulla scacchiera con Ctrl-E
 La versione 12.7 fa registrare la partita con stockfish per usare il coachGame
 La versione 12.6 include nel pacchetto runtime anche le estensioni browser nella cartella browser.
 La versione 12.5 permette al simpleEditor anche i descrittori opzionali U: e Z:

@@ -553,6 +553,17 @@ void navOnBoard(char who)
                         drawBoard();
                         gioca();
                     }
+                    // esttrae FEN
+                    if (event.key.code == sf::Keyboard::E)
+                    {
+
+                        // Deve estrarre la FEN con string getPositionFEN(char who) e who deve ricavarlo da startColor, se startColor è 0 allora who = 'W' altrimenti who = 'B'
+                        char who = (startColor == 0 ? 'W' : 'B');
+                        string fen = getPositionFen(who);
+                        // scrive a console la FEN
+                        cout << "FEN: " << fen << endl;
+                    }
+
                     if (event.key.code == sf::Keyboard::X)
                         apriUrl();
 

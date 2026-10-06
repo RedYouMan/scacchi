@@ -48,7 +48,7 @@ void printDebug(string msg)
 void help()
 {
 
-    callTextToSpeech(string("Scacchi-it  v.12.7\n"));
+    callTextToSpeech(string("Scacchi-it  v.12.8\n"));
     callTextToSpeech(string("CtrlX per approfondimenti sul sito\n"));
     callTextToSpeech(string("CtrlN perinizializzare la scacchiera\n"));
     callTextToSpeech(string("CtrlG per cambiare punto di vista di gioco\n"));
@@ -65,6 +65,7 @@ void help()
     callTextToSpeech(string("CtrlS per sospendere la partita da riprendere poi\n"));
     callTextToSpeech(string("CtrlR per riprendere una partita\n"));
     callTextToSpeech(string("CtrlQ per uscire dal gioco\n"));
+    callTextToSpeech(string("CtrlE per ottenere la FEN dalla ROTN\n"));
 
     return;
 }

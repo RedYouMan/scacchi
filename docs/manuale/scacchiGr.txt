@@ -19,7 +19,7 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione runtime 12.7 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione runtime 12.8 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
@@ -90,7 +90,7 @@ Scacchi-it consente di:
 43 - creare un Database di posizioni classificate secondo le esigenze didattiche con un simpleEditor
 44 - accorpare il log del gioco online multiplayer per room 
 45 - utilizzare estensioni browser per prendere una fen da un portale web 
-
+46 - estrarre la FEN da una posizione ROTN sulla scacchiera verso la console
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
 Tutte le possibilità di sopra, dipendono dalla vostra conoscenza degli strumenti a disposizione per poterlo fare, quindi è fondamentale sentire sia questo tutorial che l'help.
@@ -253,6 +253,7 @@ I nomi dei controls sono tali da avere l'ultima lettera che stimoli una associaz
 - Q per uscire (quit) 
 - N per reinizializzare la scacchiera
 - I per giocare online su Internet
+- E per estrarre la FEN dalla scacchiera e stamparla a console 
 
 Come fare l'arrocco
 Basta selezionare il re e muoverlo di due case. Ad esempio per un arrocco corto del bianco, il re da e1 si sposta in g1, mentre per un arrocco lungo bianco il re si sposta da e1 a c1. Il programma automaticamente sposta, poi, la torre relativa. 
