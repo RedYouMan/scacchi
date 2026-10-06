@@ -553,13 +553,44 @@ void navOnBoard(char who)
                         drawBoard();
                         gioca();
                     }
-                    // esttrae FEN
+                    // estrae FEN
                     if (event.key.code == sf::Keyboard::E)
                     {
 
                         // Deve estrarre la FEN con string getPositionFEN(char who) e who deve ricavarlo da startColor, se startColor è 0 allora who = 'W' altrimenti who = 'B'
                         char who = (startColor == 0 ? 'W' : 'B');
                         string fen = getPositionFen(who);
+                        // Incrementa di uno il numero di mossa nell'ultimo campo della FEN.
+                        size_t lastSpace = fen.find_last_of(' ');
+                        if (lastSpace != string::npos)
+                        {
+                            string lastPart = fen.substr(lastSpace + 1);
+                            bool validNumber = !lastPart.empty();
+                            for (char digit : lastPart)
+                            {
+                                if (digit < '0' || digit > '9')
+                                {
+                                    validNumber = false;
+                                    break;
+                                }
+                            }
+
+                            if (validNumber)
+                            {
+                                size_t i = lastPart.size();
+                                while (i > 0 && lastPart[i - 1] == '9')
+                                {
+                                    lastPart[i - 1] = '0';
+                                    --i;
+                                }
+                                if (i > 0)
+                                    ++lastPart[i - 1];
+                                else
+                                    lastPart.insert(lastPart.begin(), '1');
+
+                                fen.replace(lastSpace + 1, string::npos, lastPart);
+                            }
+                        }
                         // scrive a console la FEN
                         cout << "FEN: " << fen << endl;
                     }

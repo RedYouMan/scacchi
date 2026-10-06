@@ -1,6 +1,7 @@
-Versione: 12.8
+Versione: 12.9
 data: 04 Ottobre2026
 
+La versione 12.9 riguarda un bug sulla fen stampata a console
 La versione 12.8 consente di estrarre la FEN dalla ROTN sulla scacchiera con Ctrl-E
 La versione 12.7 fa registrare la partita con stockfish per usare il coachGame
 La versione 12.6 include nel pacchetto runtime anche le estensioni browser nella cartella browser.
