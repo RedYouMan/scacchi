@@ -1,6 +1,7 @@
-Versione: 13.0
-data: 04 Ottobre2026
+Versione: 13.1
+data: 07 Ottobre2026
 
+La versione 13.1 aggiunge l'utility make-FEN2SVG per creare immagini svg dalla FEN
 La versione 13.0 incrementa di 1 la fen ottenuta con ctrlE solo se W
 La versione 12.9 riguarda un bug sulla fen stampata a console
 La versione 12.8 consente di estrarre la FEN dalla ROTN sulla scacchiera con Ctrl-E

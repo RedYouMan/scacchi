@@ -132,6 +132,7 @@ Per documentarsi sul ROT notation si raccomanda di leggere nella docs:
 - articolo rotn-versus-fen.md
 - articolo motoregrafico.md
 - specifica rotn (specifica formale secondo EBNF ISO 14977)
+Ma esaminate anche l'articolo sulle neuroscienze per comprendere come Scacchi-it si poggia su principi scientifici valid.
 
 Grafica SFML(Simple&Fast Multimedia Library)
 In Scacchi-it la grafica fa uso della libreria sfml-2.6.1 ed eventuali cambi di tale libreria necessiterebbero di porting della
@@ -199,6 +200,7 @@ fenpos.exe
 In serverScacchi
 serverScacchi.exee sortLog.exe
 in simpleEditor trovi simpleEditor.exe e ste.cnf
+In diagrammi trovi make-FEN2SVG
 
 Ambiente finale per creare il tuo zip Scacchi-it
 Attenzione: quando hai creato tutti gli exe posizionandoli nella cartella giusta, controlla che esistano tutte le directory, in modo particolare:
@@ -281,6 +283,7 @@ Scacchi-it Utility che collaborano con la parte core:
 5. simpleEditor  
 6. sortLog
 7. estensioni browser
+8 make-FEN2SVG
 
 Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
