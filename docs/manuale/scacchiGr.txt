@@ -955,7 +955,7 @@ rosturco.na@gmail.com
 Inserite nella email la posizione dei pezzi attraverso il file di sospensione della partita, segnalando anche la versione di scacchi che state usando e la descrizione del problema.
 Utile sarebbe mettere nella email anche il contenuto della console scacchi-start, stando su essa e facendo Ctrl-A e Ctrl-C, il tutto da incollare con Ctrl-V nella email.
 Se state giocando in vpn online utile anche il contenuto del file server.log
-Si ringrazia la Community per le sue segnalazioni che hanno crescere il prodotto italiano a favore dei non vedenti.
+Si ringrazia la Community per le sue segnalazioni che fanno crescere il prodotto italiano a favore dei non vedenti.
 
 Conclusioni
 L'applicativo Scacchi-it presentato coglie vari aspetti importanti:
