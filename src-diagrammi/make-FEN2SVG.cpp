@@ -169,9 +169,9 @@ namespace
 
     void usage(const char *program)
     {
-        std::cerr << "Uso: " << program << " \"FEN\" output.svg [\"Didascalia\"]\n"
+        std::cerr << "Uso: " << program << " \"FEN\" output.svg\n"
                   << "Esempio: " << program
-                  << " \"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\" partita.svg \"1. e4 e5 2. Cf3\"\n";
+                  << " \"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\" partita.svg\n";
     }
 } // namespace
 
@@ -180,10 +180,10 @@ int main(int argc, char *argv[])
     std::cout << "make-FEN2SVG versione 1.1 - (C) - 2026 Rosario Turco\n";
     // Permette di avviare il programma con F5 anche senza argomenti di lancio.
     const std::string defaultFen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
-    const char *fen = argc == 1 ? defaultFen.c_str() : (argc >= 2 ? argv[1] : nullptr);
-    const char *outputPath = argc == 1 ? "diagramma.svg" : (argc >= 3 ? argv[2] : nullptr);
+    const char *fen = argc == 1 ? defaultFen.c_str() : (argc == 3 ? argv[1] : nullptr);
+    const char *outputPath = argc == 1 ? "diagramma.svg" : (argc == 3 ? argv[2] : nullptr);
 
-    if ((argc != 1 && (argc < 3 || argc > 4)))
+    if (argc != 1 && argc != 3)
     {
         usage(argv[0]);
         return 1;
@@ -196,11 +196,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    const std::string caption = argc == 4 ? argv[3] : "";
-    const auto lines = wrapText(caption, 72);
-    const int textLineHeight = 25;
-    const int height = boardY + boardSize + margin +
-                       (lines.empty() ? 0 : 28 + static_cast<int>(lines.size()) * textLineHeight);
+    const int height = boardY + boardSize + margin;
 
     std::ofstream out(outputPath, std::ios::binary);
     if (!out)
@@ -252,20 +248,6 @@ int main(int argc, char *argv[])
             << static_cast<char>('a' + i) << "</text>\n";
     }
 
-    if (!lines.empty())
-    {
-        int y = boardY + boardSize + 58;
-        out << "<text x=\"" << boardX << "\" y=\"" << y
-            << "\" font-family=\"Arial, sans-serif\" font-size=\"18\" font-weight=\"bold\">Didascalia</text>\n";
-        y += textLineHeight;
-        for (const auto &line : lines)
-        {
-            out << "<text x=\"" << boardX << "\" y=\"" << y
-                << "\" font-family=\"Arial, sans-serif\" font-size=\"16\">"
-                << xmlEscape(line) << "</text>\n";
-            y += textLineHeight;
-        }
-    }
     out << "</svg>\n";
     return 0;
 }
