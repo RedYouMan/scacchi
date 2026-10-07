@@ -1,6 +1,7 @@
-Versione: 13.1
+Versione: 13.2
 data: 07 Ottobre2026
 
+La versione 13.2fa in modo che l'utility usi immagini al posto delle lettere. 
 La versione 13.1 aggiunge l'utility make-FEN2SVG per creare immagini svg dalla FEN
 La versione 13.0 incrementa di 1 la fen ottenuta con ctrlE solo se W
 La versione 12.9 riguarda un bug sulla fen stampata a console

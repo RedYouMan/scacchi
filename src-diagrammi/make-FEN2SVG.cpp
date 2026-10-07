@@ -1,8 +1,10 @@
+
+
 // Genera un diagramma SVG di una posizione di scacchi a partire da una FEN.
 //
 // Compilazione in due modi possibili:
 // 1. da Visual Studio Code con F5
-// 2. g++ -std=c++17 -O2 make-FEN2SVG.cpp -o make-FEN2SVG
+// 2. g++ -std=c++17 -O2 make-fen.cpp -o make-fen
 
 #include <array>
 #include <cctype>
@@ -125,69 +127,85 @@ namespace
         return lines;
     }
 
-    void usage(const char *program)
+    void writePieceSymbol(std::ostream &out, char piece)
     {
-        std::cerr << "Uso: " << program << " EN|IT \"FEN\" output.svg [\"Didascalia\"]\n"
-                  << "Esempio: " << program
-                  << " IT \"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\" partita.svg \"1. e4 e5 2. Cf3\"\n";
+        const bool white = std::isupper(static_cast<unsigned char>(piece));
+        const char kind = static_cast<char>(std::tolower(static_cast<unsigned char>(piece)));
+        const char side = white ? 'w' : 'b';
+        out << "<symbol id=\"" << side << kind << "\" viewBox=\"0 0 48 56\">\n"
+            << "<g stroke=\"" << (white ? "#303030" : "#eeeeee")
+            << "\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\" fill=\""
+            << (white ? "#fffdf2" : "#242424") << "\">\n";
+
+        switch (kind)
+        {
+        case 'p':
+            out << "<circle cx=\"24\" cy=\"15\" r=\"6\"/><path d=\"M18 23 Q24 19 30 23 L34 42 H14 Z\"/>\n";
+            break;
+        case 'r':
+            out << "<path d=\"M13 10 H19 V16 H23 V10 H29 V16 H35 V10 H40 L38 24 H14 Z\"/>"
+                << "<path d=\"M17 24 H35 L32 43 H16 Z\"/>\n";
+            break;
+        case 'n':
+            out << "<path d=\"M12 43 Q13 34 19 29 L15 21 Q22 20 25 24 Q28 14 39 13 L37 21 Q43 26 38 32 L34 43 Z\"/>"
+                << "<circle cx=\"34\" cy=\"22\" r=\"1.5\" fill=\"" << (white ? "#303030" : "#eeeeee") << "\"/>\n";
+            break;
+        case 'b':
+            out << "<path d=\"M24 8 Q35 17 28 25 Q34 29 34 43 H14 Q14 29 20 25 Q13 17 24 8 Z\"/>"
+                << "<path d=\"M20 18 L28 25\" fill=\"none\"/>\n";
+            break;
+        case 'q':
+            out << "<path d=\"M13 22 L10 12 L19 18 L24 8 L29 18 L38 12 L35 22 L32 43 H16 Z\"/>"
+                << "<circle cx=\"10\" cy=\"11\" r=\"2.5\"/><circle cx=\"24\" cy=\"7\" r=\"2.5\"/><circle cx=\"38\" cy=\"11\" r=\"2.5\"/>\n";
+            break;
+        case 'k':
+            out << "<path d=\"M21 7 H27 V13 H33 V19 H27 V23 Q35 27 34 43 H14 Q13 27 21 23 V19 H15 V13 H21 Z\"/>"
+                << "<path d=\"M18 31 H30\" fill=\"none\"/>\n";
+            break;
+        }
+        out << "<path d=\"M12 43 H36 L40 50 H8 Z\"/><path d=\"M8 51 H40\" fill=\"none\"/>\n"
+            << "</g></symbol>\n";
     }
 
-    char pieceLetter(char piece, bool italian)
+    void usage(const char *program)
     {
-        switch (static_cast<char>(std::toupper(static_cast<unsigned char>(piece))))
-        {
-        case 'K':
-            return italian ? 'R' : 'K'; // Re / King
-        case 'Q':
-            return italian ? 'D' : 'Q'; // Donna / Queen
-        case 'R':
-            return italian ? 'T' : 'R'; // Torre / Rook
-        case 'B':
-            return italian ? 'A' : 'B'; // Alfiere / Bishop
-        case 'N':
-            return italian ? 'C' : 'N'; // Cavallo / Knight
-        case 'P':
-            return 'P';
-        default:
-            return piece;
-        }
+        std::cerr << "Uso: " << program << " \"FEN\" output.svg [\"Didascalia\"]\n"
+                  << "Esempio: " << program
+                  << " \"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\" partita.svg \"1. e4 e5 2. Cf3\"\n";
     }
 } // namespace
 
 int main(int argc, char *argv[])
 {
-    std::cout << "make-SVG versione 1.0 - (C) - 2026 Rosario Turco\n";
-    if (argc < 4 || argc > 5)
+    std::cout << "make-FEN2SVG versione 1.1 - (C) - 2026 Rosario Turco\n";
+    // Permette di avviare il programma con F5 anche senza argomenti di lancio.
+    const std::string defaultFen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+    const char *fen = argc == 1 ? defaultFen.c_str() : (argc >= 2 ? argv[1] : nullptr);
+    const char *outputPath = argc == 1 ? "diagramma.svg" : (argc >= 3 ? argv[2] : nullptr);
+
+    if ((argc != 1 && (argc < 3 || argc > 4)))
     {
         usage(argv[0]);
         return 1;
     }
 
-    const std::string language = argv[1];
-    if (language != "EN" && language != "IT")
-    {
-        std::cerr << "Lingua non valida: usare EN oppure IT in maiuscolo.\n";
-        return 1;
-    }
-    const bool italian = language == "IT";
-
     std::array<std::array<char, 8>, 8> board{};
-    if (!parseFenBoard(argv[2], board))
+    if (!parseFenBoard(fen, board))
     {
         std::cerr << "FEN non valida: la posizione deve contenere 8 righe corrette.\n";
         return 1;
     }
 
-    const std::string caption = argc == 5 ? argv[4] : "";
+    const std::string caption = argc == 4 ? argv[3] : "";
     const auto lines = wrapText(caption, 72);
     const int textLineHeight = 25;
     const int height = boardY + boardSize + margin +
                        (lines.empty() ? 0 : 28 + static_cast<int>(lines.size()) * textLineHeight);
 
-    std::ofstream out(argv[3], std::ios::binary);
+    std::ofstream out(outputPath, std::ios::binary);
     if (!out)
     {
-        std::cerr << "Impossibile creare il file: " << argv[3] << '\n';
+        std::cerr << "Impossibile creare il file: " << outputPath << '\n';
         return 1;
     }
 
@@ -195,7 +213,11 @@ int main(int argc, char *argv[])
         << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\""
         << boardSize + 2 * margin << "\" height=\"" << height
         << "\" viewBox=\"0 0 " << boardSize + 2 * margin << ' ' << height << "\">\n"
-        << "<rect width=\"100%\" height=\"100%\" fill=\"white\"/>\n";
+        << "<rect width=\"100%\" height=\"100%\" fill=\"white\"/>\n"
+        << "<defs>\n";
+    for (char piece : std::string("KQRBNPkqrbnp"))
+        writePieceSymbol(out, piece);
+    out << "</defs>\n";
 
     for (int row = 0; row < 8; ++row)
     {
@@ -210,15 +232,10 @@ int main(int argc, char *argv[])
             const char piece = board[row][col];
             if (piece != '\0')
             {
-                const bool white = std::isupper(static_cast<unsigned char>(piece));
-                out << "<text x=\"" << x + squareSize / 2 << "\" y=\""
-                    << y + 54 << "\" text-anchor=\"middle\" font-family=\"DejaVu Sans, Arial, sans-serif\""
-                    << " font-size=\"48\" font-weight=\"bold\" fill=\""
-                    << (white ? "#ffffff" : "#222222")
-                    << "\" stroke=\"" << (white ? "#333333" : "#eeeeee")
-                    << "\" stroke-width=\"1\" paint-order=\"stroke\">"
-                    << pieceLetter(piece, italian)
-                    << "</text>\n";
+                const char side = std::isupper(static_cast<unsigned char>(piece)) ? 'w' : 'b';
+                const char kind = static_cast<char>(std::tolower(static_cast<unsigned char>(piece)));
+                out << "<use href=\"#" << side << kind << "\" x=\"" << x + 12
+                    << "\" y=\"" << y + 8 << "\" width=\"48\" height=\"56\"/>\n";
             }
         }
     }

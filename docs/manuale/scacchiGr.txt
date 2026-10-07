@@ -19,7 +19,7 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione runtime 13.1 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione runtime 13.2 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
@@ -958,7 +958,7 @@ Lo usage lo otterrete digitando:
 make-FEN2SVG return
 
 Va usata nel seguente modo:
-make-FEN2SVG <it oppure en (la lingua dei pezzi)> "FEN tra virgolette" <nome-img.svg> "didascalia tra virgolette"
+make-FEN2SVG "FEN tra virgolette" <nome-img.svg> "didascalia tra virgolette"
 Ho inteso usare la fen per fare una sola utility. Una ROTN la caricate su scacchiera ed estraete la FEN con Ctrl-E.
 
 L'immagine per test la potete verificare col browser mettendo nella location il comando:
