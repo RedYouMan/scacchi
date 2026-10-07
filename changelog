@@ -1,6 +1,7 @@
-Versione: 12.9
+Versione: 13.0
 data: 04 Ottobre2026
 
+La versione 13.0 incrementa di 1 la fen ottenuta con ctrlE solo se W
 La versione 12.9 riguarda un bug sulla fen stampata a console
 La versione 12.8 consente di estrarre la FEN dalla ROTN sulla scacchiera con Ctrl-E
 La versione 12.7 fa registrare la partita con stockfish per usare il coachGame
