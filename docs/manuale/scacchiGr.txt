@@ -964,8 +964,11 @@ make-FEN2SVG "FEN tra virgolette" <nome-img.svg>
 
 Ho inteso usare la fen per fare una sola utility. Una ROTN la caricate su scacchiera ed estraete la FEN con Ctrl-E.
 
-L'immagine per test la potete verificare col browser mettendo nella location il comando:
-file///<percorso a partire da C:><nome-della-immagine.svg>
+L'immagine per test di visualizzazione la potete vedere col browser mettendo nella location il comando:
+file///<percorso a partire da C:> <nome-della-immagine.svg>
+
+Modificare le dimensioni visive del svg (altezza e larghezza):
+• Puoi cambiare gli attributi width e height oppure il viewBox direttamente dentro il codice di testo del file SVG con un qualsiasi editor di testo (come Blocco Note o VS Code).
 
 Segnalazioni
 Per segnalazioni di bug o altro scrivete a:
