@@ -82,5 +82,6 @@ void checkNumbers();
 void checkU(string mossa);
 bool sottoScacco(char who);
 bool ensureEngine();
+void mostraEsercito(char who);
 
 #endif

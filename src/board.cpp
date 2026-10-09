@@ -155,7 +155,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 13.0 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 13.4 - Rosario Turco\n";
 
     /*
     controllo esistenza di stockfish, altrimenti la prima volta lo scarica e lo estrae nella cartella engine
@@ -1884,4 +1884,110 @@ bool ensureEngine()
     fs::remove(zip);
 
     return checkPresent();
+}
+
+/*
+La funzionalità void mostraEsercito( char who) riceve in input solo il colore dello schieramento da mostrare con sintesi vocale usando callTextToSpeech.
+Si devono elencare, con piccolo intervallo di tempo tra un pezzo e l'altro:
+I Pezzi Maggiori e Minori (senza pedoni): Raggruppati per categoria, ovvero nell'ordine R, D, T, A, C. Questo permette di capire subito dove si concentra la forza dell'esercito e quali linee o diagonali sono controllate.
+I Pedoni: vanno poi dopo elencati.
+I pedoni definiscono la "struttura" della posizione (le catene di pedoni, le case deboli, le colonne aperte). Elencali subito dopo i pezzi, preferibilmente in ordine di colonna (da A a H).
+3. Esempio Pratico di Output Consigliato
+Se l'utente seleziona "Bianco" ovvero in input alla funzione arriva un char 'W',, l'utility potrebbe rispondere con un testo strutturato così:
+Numero pezzi Bianchi : 7
+• Re: e1
+• Donna: d1
+• Torri: a1, f1
+• Alfieri: c1, g2 (Pattern: Alfiere in fianchetto!)
+• Cavalli: c3, f3
+Numero pedoni Bianchi : 8
+• a2, b2, c2, d4, e4, f2, g3, h2
+VANTAGGI
+Perché questo formato aiuta a riconoscere i pattern?
+Fianchetti e Arrocchi immediati: Leggendo "Alfiere g2, Cavallo f3, Re g1" (in caso di arrocco effettuato), il giocatore non vedente riconosce all'istante il pattern del Re al sicuro e dell'Alfiere in fianchetto.
+Coppia degli Alfieri o delle Torri: Vedere le Torri su "a1 e f1" fa capire subito quale Torre è già stata sviluppata e quale è rimasta nella casa iniziale.
+Centro di pedoni: Leggere i pedoni in "d4, e4" isolati rispetto agli altri fa capire immediatamente che c'è un centro aperto o una forte occupazione centrale.
+*/
+void mostraEsercito(char who)
+{
+    if (who != 'W' && who != 'B')
+    {
+        callTextToSpeech(string("Colore non valido. Indicare W per Bianco o B per Nero.\n"));
+        return;
+    }
+
+    const string colore = (who == 'W') ? "Bianchi" : "Neri";
+    struct Categoria
+    {
+        TypePiece tipo;
+        const char *nome;
+    };
+    const Categoria categorie[] = {
+        {KING, "Re"},
+        {QUEEN, "Donna"},
+        {ROOK, "Torri"},
+        {BISHOP, "Alfieri"},
+        {KNIGHT, "Cavalli"}};
+
+    int numeroPezzi = 0;
+    int numeroPedoni = 0;
+    for (int row = 0; row < 8; ++row)
+    {
+        for (int col = 0; col < 8; ++col)
+        {
+            if (!chessBoard[row][col].getBusySquare() ||
+                chessBoard[row][col].getChessPiece().getColorPiece() != who)
+                continue;
+            if (chessBoard[row][col].getChessPiece().getTypePiece() == PAWN)
+                ++numeroPedoni;
+            else
+                ++numeroPezzi;
+        }
+    }
+
+    callTextToSpeech("Numero pezzi " + colore + ": " + to_string(numeroPezzi) + "\n");
+
+    for (const Categoria &categoria : categorie)
+    {
+        vector<string> casePezzi;
+        for (int row = 0; row < 8; ++row)
+        {
+            for (int col = 0; col < 8; ++col)
+            {
+                if (chessBoard[row][col].getBusySquare() &&
+                    chessBoard[row][col].getChessPiece().getColorPiece() == who &&
+                    chessBoard[row][col].getChessPiece().getTypePiece() == categoria.tipo)
+                    casePezzi.push_back(chessBoard[row][col].getSquareName());
+            }
+        }
+        sort(casePezzi.begin(), casePezzi.end());
+        if (casePezzi.empty())
+            continue;
+
+        callTextToSpeech(string(categoria.nome) + ":\n");
+        for (const string &casa : casePezzi)
+        {
+            callTextToSpeech(casa + "\n");
+            Sleep(400);
+        }
+    }
+
+    callTextToSpeech("Numero pedoni " + colore + ": " + to_string(numeroPedoni) + "\n");
+    vector<string> casePedoni;
+    for (int row = 0; row < 8; ++row)
+    {
+        for (int col = 0; col < 8; ++col)
+        {
+            if (chessBoard[row][col].getBusySquare() &&
+                chessBoard[row][col].getChessPiece().getColorPiece() == who &&
+                chessBoard[row][col].getChessPiece().getTypePiece() == PAWN)
+                casePedoni.push_back(chessBoard[row][col].getSquareName());
+        }
+    }
+    sort(casePedoni.begin(), casePedoni.end());
+    for (const string &casa : casePedoni)
+    {
+        callTextToSpeech(casa + "\n");
+        Sleep(400);
+    }
 }

@@ -523,6 +523,38 @@ void navOnBoard(char who)
                             }
                         }
                     }
+                    // mostraEsercito
+                    if (event.key.code == sf::Keyboard::D)
+                    {
+                        // si può usare la funzionalità sempre
+                        // si chiede di fare Alt-TAB per andare su console e rispondere alla domanda di quale colore si vuole essere mostrato lo schieramento
+                        callTextToSpeech(string("Fai Alt-Tab per andare sulla console e rispondi alla domanda di quale colore vuoi vedere lo schieramento\n"));
+                        Sleep(2000);
+
+                        callTextToSpeech(string("Inserisci il colore con cui vuoi vedere lo schieramento (1=Bianco, 2=Nero)\n"));
+                        int valore = 0;
+                        cin >> valore;
+                        cin.ignore();
+                        if (valore == 1)
+                        {
+                            who_play = 'W';
+                        }
+                        else if (valore == 2)
+                        {
+                            who_play = 'B';
+                        }
+                        else
+                        {
+                            callTextToSpeech(string("Valore non valido, esco per farti ricominciare correttamente\n"));
+                            return;
+                            ;
+                        }
+                        who_play = (valore == 1 ? 'W' : 'B');
+                        callTextToSpeech(string("Hai scelto di vedere lo schieramento del colore ") + (who_play == 'W' ? "Bianco" : "Nero") + string("\n"));
+                        mostraEsercito(who_play);
+                        callTextToSpeech(string("Fai Alt-Tab per tornare alla scacchiera\n"));
+                    }
+
                     if (event.key.code == sf::Keyboard::G)
                     {
 
