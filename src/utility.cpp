@@ -66,6 +66,7 @@ void help()
     callTextToSpeech(string("CtrlR per riprendere una partita\n"));
     callTextToSpeech(string("CtrlQ per uscire dal gioco\n"));
     callTextToSpeech(string("CtrlE per ottenere la FEN dalla ROTN\n"));
+    callTextToSpeech(string("CtrlD per avere la disposizione di uno schieramento\n"));
 
     return;
 }
