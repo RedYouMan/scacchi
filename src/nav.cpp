@@ -628,7 +628,9 @@ void navOnBoard(char who)
                         }
                         // scrive a console la FEN
                         cout << "FEN: " << fen << endl;
-                    }
+                        string my_message = "Fai Alt-Tab e vai sulla console per selezionare la FEN\n";
+                        callTextToSpeech(my_message);
+                                        }
 
                     if (event.key.code == sf::Keyboard::X)
                         apriUrl();
