@@ -31,10 +31,13 @@ public:
 
     void addCharacter(char c)
     {
-        if (isInputMode && std::isdigit(c))
+        // modifica 12-10-2026
+        // Controlla solo cifre ASCII, evitando conversioni ambigue di char in isdigit.
+        if (isInputMode && c >= '0' && c <= '9')
         {
             inputBuffer += c;
         }
+        // modifica 12-10-2026
     }
 
     void removeCharacter()

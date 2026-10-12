@@ -48,10 +48,10 @@ void printDebug(string msg)
 void help()
 {
 
-    callTextToSpeech(string("Scacchi-it  v.13.4\n"));
+    callTextToSpeech(string("Scacchi-it  v.13.5\n"));
     callTextToSpeech(string("CtrlX per approfondimenti sul sito\n"));
     callTextToSpeech(string("CtrlN perinizializzare la scacchiera\n"));
-    callTextToSpeech(string("CtrlG per cambiare punto di vista di gioco\n"));
+    callTextToSpeech(string("CtrlG per girare la scacchiera e cambiare punto di vista di gioco\n"));
     callTextToSpeech(string("frecce per navigare la scacchiera. Possibile anche il mouse. Attendere qualche secondo per avere le informazioni\n"));
     callTextToSpeech(string("RETURN per selezionare il pezzo e ulteriore RETURN per selezionare la destinazione\n"));
     callTextToSpeech(string("CtrlI per giocare online\n"));

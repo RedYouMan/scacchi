@@ -19,7 +19,7 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione runtime 13.4 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione runtime 13.5 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
@@ -93,7 +93,7 @@ Scacchi-it consente di:
 46 - estrarre la FEN con Ctrl-E da una posizione ROTN sulla scacchiera verso la console
 47 - ottenere una immagine svg da una FEN
 48 - ottenere a fronte di un colore lo schieramento desiderato (Ctrl-D)
-
+49 - creare un pgn con le partite registrate
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
 Tutte le possibilità di sopra, dipendono dalla vostra conoscenza degli strumenti a disposizione per poterlo fare, quindi è fondamentale sentire sia questo tutorial che l'help.
@@ -125,6 +125,7 @@ Scacchi-it Utility che collaborano con la parte core:
 6. sortLog
 7. estensioni browser 
 8 make-FEN2SVN 
+9make-pgn
 
 Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
@@ -970,6 +971,21 @@ file///<percorso a partire da C:> <nome-della-immagine.svg>
 Modificare le dimensioni visive del svg (altezza e larghezza):
 • Puoi cambiare gli attributi width e height oppure il viewBox direttamente dentro il codice di testo del file SVG con un qualsiasi editor di testo (come Blocco Note o VS Code).
 
+La funzionalità make-pgn
+Nella cartella make-pgn trovate l'utility make-pgn.exe, il cui scopo è di creare un pgn a partire da file di partite registrate nella cartella registrazioni.
+
+Si individuano i file txt nella cartella registrazioni e si copiano in cartella make-pgn/elenco. Questo è suggerito dato che i file txt dopo la elaborazione vengono cancellati e magari volete esaminarli ancora con il coachGame.
+
+Si indica il percorso della cartella elenco, cosa voluta dato che potreste mettere i file anche in altra cartella.
+A questo punto la utility vi chiede il nome del giocatore a cui intestare il pgn e tutte le informazioni come evento, luogo, data, i nomi dei giocatori, il loro punteggio elo, un echo. Dopo di che estrae la partita dal txt.
+Questo procedimento si ripete per ogni file.
+
+Le informazioni sono a cura del compilatore, senza controllo. 
+
+Alla fine, se proprio volete vedere se tutto è ok, potreste spostare il file momentaneamente in cartella pgn_data e aprire l'Openings Trainer e vedere se carica il file. Ovviamente essendo l'Openings Trainer dedicato alle aperture, si fermerà al massimo alla decima mossa.
+
+Fate attenzione che se in cartella elenco esiste già il file pgn di quel giocatore, le informazioni dei nuovi txt si accoderanno alle precedenti, cosa utile se volete mettere insieme tutte le vostre partite.
+  
 Segnalazioni
 Per segnalazioni di bug o altro scrivete a:
 rosturco.na@gmail.com 

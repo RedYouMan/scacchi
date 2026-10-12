@@ -67,6 +67,9 @@ std::string PGNReader::getInfoMoves(int NumGame)
 
 bool PGNReader::readFile(const std::string &filename)
 {
+    // 2. 12-10-2026
+    // La numerazione delle partite deve riferirsi al solo file appena selezionato.
+    clearGames();
     std::ifstream file(filename);
     if (!file.is_open())
     {
@@ -78,14 +81,9 @@ bool PGNReader::readFile(const std::string &filename)
 
     while (std::getline(file, line))
     {
-        // CORREZIONE: Trim spazi iniziali e finali
         if (line.empty())
         {
-            if (!currentGame.event.empty())
-            {
-                games.push_back(currentGame);
-                currentGame = Game();
-            }
+            // Le righe vuote PGN possono separare intestazioni e mosse.
             continue;
         }
 
@@ -102,7 +100,14 @@ bool PGNReader::readFile(const std::string &filename)
             std::string value = line.substr(firstQuote + 1, lastQuote - firstQuote - 1);
 
             if (key == "Event")
+            {
+                if (!currentGame.event.empty())
+                {
+                    games.push_back(currentGame);
+                    currentGame = Game();
+                }
                 currentGame.event = value;
+            }
             else if (key == "Site")
                 currentGame.site = value;
             else if (key == "Date")
@@ -129,6 +134,7 @@ bool PGNReader::readFile(const std::string &filename)
 
     file.close();
     return true;
+    // 2. 12-10-2026
 }
 
 int PGNReader::getGamesCount() const
@@ -246,3 +252,4 @@ const std::string PGNReader::translateMoves(const std::string &moves)
 
     return translatedMoves;
 }
+
