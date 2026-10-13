@@ -225,6 +225,22 @@ namespace
         return oss.str();
     }
 
+    std::string normalizeFenForSideToMove(const std::string &fen, char targetSide)
+    {
+        if (targetSide != 'w' && targetSide != 'b')
+            return fen;
+
+        FenState state = parseFEN(fen);
+        state.sideToMove = targetSide;
+        state.fullmove = std::max(1, state.fullmove);
+        return buildFEN(state);
+    }
+
+    double evalForAnalyzedColor(double whiteEval, char analyzedColor)
+    {
+        return (analyzedColor == 'n') ? -whiteEval : whiteEval;
+    }
+
     void removeCastlingRight(std::string &rights, char right)
     {
         rights.erase(std::remove(rights.begin(), rights.end(), right), rights.end());
@@ -407,29 +423,19 @@ static std::string FENCurrent;
 
 std::string askBestMoveFromPosition(const std::string &fen, char coloreMossa)
 {
-    // evalStock() lascia il motore in modalita' di ricerca.  In precedenza
-    // qui si inviava "stop" seguito da "isready" prima di ogni ricerca; se
-    // il lettore dell'output aveva gia' consumato readyok, il ciclo poteva
-    // restare bloccato indefinitamente (in particolare durante l'analisi del
-    // nero, quando la ricerca della best move avviene a meta' partita).
-    // La best move va cercata dal lato che deve effettuare la mossa, non dal
-    // colore del giocatore analizzato. Per non confondere il parametro di
-    // input ("b"=bianco, "n"=nero) con il lato da muovere della FEN, si
-    // prende prima il side-to-move della FEN e si usa solo come fallback il
-    // colore richiesto dal programma.
-    FenState bestMoveState = parseFEN(fen);
-    // La FEN passata rappresenta la posizione prima della mossa del giocatore
-    // analizzato. Non correggere silenziosamente il turno: se non coincide,
-    // la posizione costruita dal chiamante e' errata e va rifiutata.
+    // La best move va sempre cercata dal lato del giocatore che deve muovere.
+    // Il colore analizzato non e' un vincolo sul turno della FEN: se necessario
+    // lo correggiamo prima di richiedere la mossa a Stockfish.
     const char expectedSide = (std::tolower(static_cast<unsigned char>(coloreMossa)) == 'n') ? 'b' : 'w';
+    FenState bestMoveState = parseFEN(fen);
     if (bestMoveState.sideToMove != expectedSide)
     {
-        std::cerr << "Errore best move: FEN con turno " << bestMoveState.sideToMove
-                  << ", atteso " << expectedSide << ": " << fen << std::endl;
-        return std::string();
+        std::cerr << "Best move: FEN con turno " << bestMoveState.sideToMove
+                  << ", corretto a " << expectedSide << ": " << fen << std::endl;
+        bestMoveState.sideToMove = expectedSide;
     }
     bestMoveState.fullmove = std::max(1, bestMoveState.fullmove);
-    const std::string positionFen = buildFEN(bestMoveState);
+    const std::string positionFen = normalizeFenForSideToMove(buildFEN(bestMoveState), expectedSide);
 
     // evalStock() puo' lasciare in coda il bestmove della ricerca precedente.
     // Consumarlo DOPO lo stop e PRIMA di inviare la nuova posizione evita di
@@ -574,6 +580,7 @@ int main(int argc, char *argv[])
     {
         std::string fenPrimaMossaBianco;
         std::string fenPrimaMossaNero;
+        const bool blackMoveIsMate = blackMoves[i].find('#') != std::string::npos;
 
         try
         {
@@ -606,26 +613,33 @@ int main(int argc, char *argv[])
                 std::cerr << "ERRORE: FEN non valida dopo mossa del bianco " << i + 1 << ": " << game[i].get_alu_bianco() << std::endl;
                 std::cerr << "FEN generata: " << fenDopoBianco << std::endl;
                 std::cerr << "FEN deve contenere ' b ' per il turno del nero" << std::endl;
-                break; // Ferma l'analisi
+                fenDopoBianco = normalizeFenForSideToMove(fenDopoBianco, 'b');
+                std::cerr << "FEN corretta automaticamente: " << fenDopoBianco << std::endl;
             }
+            fenDopoBianco = normalizeFenForSideToMove(fenDopoBianco, 'b');
 
             game[i].set_stock_bianco(fenDopoBianco);
             FENCurrent = fenDopoBianco;
 
-            // Comando UCI: posiziona il motore sulla FEN della posizione dopo la mossa del bianco
-            // Termina sempre l'eventuale ricerca precedente prima di riusare
-            // il motore. Senza questo stop Stockfish può restituire il
-            // bestmove della posizione precedente (il problema si manifesta
-            // soprattutto quando si passa dalla mossa bianca a quella nera).
-            sendCommand("stop\n");
-            Sleep(100);
-            sendCommand("position fen " + fenDopoBianco + "\n");
-
-            // Comando UCI: analizza la posizione a profondità 15
-            sendCommand("go depth 15\n");
-
-            // Recupera la valutazione di Stockfish e la salva (diviso 100 per ottenere centesimi di pedone)
-            double evalB = evalStock();
+            // Da questa posizione il nero ha matto in una: Stockfish restituisce
+            // uno score mate, non necessariamente "score cp". evalStock puo'
+            // quindi restare in attesa; la notazione # permette di evitare la
+            // ricerca e di trattare esplicitamente il risultato come matto.
+            double evalB;
+            if (blackMoveIsMate)
+            {
+                evalB = -10000.0; // score dal punto di vista del bianco
+                std::cout << "Posizione con matto nero annotato; evalStock saltato. FEN: "
+                          << fenDopoBianco << std::endl;
+            }
+            else
+            {
+                sendCommand("stop\n");
+                Sleep(100);
+                sendCommand("position fen " + fenDopoBianco + "\n");
+                sendCommand("go depth 15\n");
+                evalB = evalStock();
+            }
             // std::cout << "Valutazione dopo mossa bianco: " << evalB << std::endl;
             game[i].set_eval_prima_b(evalB);
             Sleep(1000);
@@ -652,21 +666,30 @@ int main(int argc, char *argv[])
                 std::cerr << "ERRORE: FEN non valida dopo mossa del nero " << i + 1 << ": " << game[i].get_alu_nero() << std::endl;
                 std::cerr << "FEN generata: " << fenDopoNero << std::endl;
                 std::cerr << "FEN deve contenere ' w ' per il turno del bianco" << std::endl;
-                break; // Ferma l'analisi
+                fenDopoNero = normalizeFenForSideToMove(fenDopoNero, 'w');
+                std::cerr << "FEN corretta automaticamente: " << fenDopoNero << std::endl;
             }
+            fenDopoNero = normalizeFenForSideToMove(fenDopoNero, 'w');
 
             game[i].set_stock_nero(fenDopoNero);
             FENCurrent = fenDopoNero;
-            // Comando UCI: posiziona il motore sulla FEN della posizione dopo la mossa del nero
-            sendCommand("stop\n");
-            Sleep(100);
-            sendCommand("position fen " + fenDopoNero + "\n");
-
-            // Comando UCI: analizza la posizione a profondità 15
-            sendCommand("go depth 15\n");
-
-            // Recupera la valutazione di Stockfish dopo la mossa del nero
-            double evalN = evalStock();
+            // Comando UCI: posiziona il motore sulla FEN della posizione dopo la mossa del nero.
+            // Il turno deve essere sempre quello del bianco, perche' la mossa del nero e' stata applicata.
+            double evalN;
+            if (blackMoveIsMate)
+            {
+                // Dopo la mossa # la posizione e' terminale: non avviare una
+                // ricerca che potrebbe non produrre uno score in centipawn.
+                evalN = 10000.0; // score dal punto di vista del bianco
+            }
+            else
+            {
+                sendCommand("stop\n");
+                Sleep(100);
+                sendCommand("position fen " + fenDopoNero + "\n");
+                sendCommand("go depth 15\n");
+                evalN = evalStock();
+            }
             // std::cout << "Valutazione dopo mossa nero: " << evalN << std::endl;
             game[i].set_eval_prima_n(evalN);
             //  Aggiorniamo la posizione corrente per la prossima iterazione.
@@ -702,27 +725,27 @@ int main(int argc, char *argv[])
         double evalBeforeMove = 0.0;
         if (colore == 'b')
         {
-            // Se analizziamo il BIANCO: eval prima = eval dopo il nero della mossa precedente
-            // (oppure 0 se è la prima mossa del bianco)
-            evalBeforeMove = (i == 0) ? 0.0 : game[i - 1].get_eval_prima_n();
+            // Se analizziamo il BIANCO: la valutazione iniziale e' quella calcolata
+            // dal punto di vista del bianco prima della sua mossa.
+            evalBeforeMove = (i == 0) ? 0.0 : evalForAnalyzedColor(game[i - 1].get_eval_prima_n(), 'b');
         }
         else
         {
-            // Se analizziamo il NERO: eval prima = eval dopo il bianco della mossa corrente
-            // Invertire il segno perché Stockfish calcola dal punto di vista del bianco
-            evalBeforeMove = -game[i].get_eval_prima_b();
+            // Se analizziamo il NERO: la FEN prima della mossa nera e' la posizione
+            // successiva alla mossa del bianco, da cui Stockfish valuta in prospettiva
+            // del bianco; per ottenere la prospettiva del nero basta invertire il segno.
+            evalBeforeMove = evalForAnalyzedColor(game[i].get_eval_prima_b(), 'n');
         }
 
-        // Valutazione DOPO la mossa del giocatore analizzato
+        // Valutazione DOPO la mossa del giocatore analizzato.
         double currentEval = 0.0;
         if (colore == 'b')
         {
-            currentEval = game[i].get_eval_prima_b();
+            currentEval = evalForAnalyzedColor(game[i].get_eval_prima_b(), 'b');
         }
         else
         {
-            // Invertire il segno per il nero
-            currentEval = -game[i].get_eval_prima_n();
+            currentEval = evalForAnalyzedColor(game[i].get_eval_prima_n(), 'n');
         }
 
         // Conserva il delta con il segno per il report; il valore assoluto viene
@@ -753,6 +776,12 @@ int main(int argc, char *argv[])
         {
             commentoScritto = "Mossa pessima: " + (colore == 'b' ? game[i].get_alu_bianco() : game[i].get_alu_nero());
         }
+        if (colore == 'b' && blackMoveIsMate)
+        {
+            // Anche se lo score mate non e' stato ricavato da evalStock,
+            // la mossa bianca va segnalata e deve generare una best move.
+            commentoScritto = "Mossa che consente il matto: " + game[i].get_alu_bianco();
+        }
         msg.clear();
 
         if (!commentoScritto.empty())
@@ -774,9 +803,13 @@ int main(int argc, char *argv[])
         {
             Sleep(2000);
             std::string fenDaUsare = (colore == 'b') ? fenPrimaMossaBianco : fenPrimaMossaNero;
+            const char sideToMoveExpected = (colore == 'b') ? 'w' : 'b';
+            fenDaUsare = normalizeFenForSideToMove(fenDaUsare, sideToMoveExpected);
             std::cout << commentoScritto << " (delta: " << delta << ")" << std::endl;
+            std::cout << "FEN usata per la best move (turno " << sideToMoveExpected << "): "
+                      << fenDaUsare << std::endl;
 
-            // Richiedi al motore la best move dalla posizione corretta, con il lato giusto da muovere
+            // Richiedi al motore la best move dalla posizione corretta, con il lato giusto da muovere.
             // 'colore' indica il giocatore analizzato: b = mossa bianca,
             // n = mossa nera. La partita continua poi dalla FEN salvata.
             bestMove = askBestMoveFromPosition(fenDaUsare, colore);
@@ -1066,4 +1099,5 @@ std::string applyMoveToFEN(const std::string &baseFen, const std::string &moveIn
         ++state.halfmove;
 
     return finishFen();
-}
+}
+
