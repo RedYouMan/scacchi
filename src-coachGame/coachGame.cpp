@@ -483,7 +483,7 @@ int main(int argc, char *argv[])
     }
 
     // banner di inizio
-    std::cout << "CoachGame (C) 2026 versione 1.1 - Rosario Turco" << std::endl;
+    std::cout << "CoachGame (C) 2026 versione 1.2 - Rosario Turco" << std::endl;
     Sleep(6000);
 
     callTextToSpeech(string("Benvenuto in CoachGame, il tuo assistente per l'analisi delle partite di scacchi. Attendi che venga completata l'analisi nel file report.txt\n"));
