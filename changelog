@@ -1,6 +1,7 @@
-Versione: 13.5
-data: 10 Ottobre2026
+Versione: 13.6
+data: 12 Ottobre2026
 
+La versione 13.6 risolve un bug su coachgame quando si analizzava il nero.
 La versione 13.5 aggiunge utility make-pgn che estrae la partita dai file di registrazione e li include in un pgn
 La versione 13.4 aggiunge il Ctrl-D che permette a fronte della scelta del colore di avere le informazioni di uno schieramento
 La versione 13.3 non riporta nei diagrammi nessuna informazione, demandata all'esternodi essi.

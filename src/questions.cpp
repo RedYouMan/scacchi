@@ -82,7 +82,8 @@ void cheScacco(int m, int n, char who)
                         ultimaMossa.clear();
                         printf("Partita terminata\n");
                         callTextToSpeech(string("Partita terminata"));
-                        reStart();
+                        reStart()
+                        ;
                     }
                     else
                     {

@@ -1,4 +1,4 @@
-// board.cpp, questo sorgente, è il main del gioco
+// boar.cpp, questo sorgente, è il main del gioco
 /*
  Board.cpp gestisce tutto il gioco su scacchiera:
  - tra due giocatori che giocano sulla stessa scacchiera
@@ -155,7 +155,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 13.5 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 13.6 - Rosario Turco\n";
 
     /*
     controllo esistenza di stockfish, altrimenti la prima volta lo scarica e lo estrae nella cartella engine

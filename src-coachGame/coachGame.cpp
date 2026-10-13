@@ -177,6 +177,22 @@ namespace
         return state;
     }
 
+    bool bestMoveMatchesSideToMove(const FenState &state, const std::string &move)
+    {
+        if (move.size() < 4)
+            return false;
+
+        int fromRow = -1;
+        int fromCol = -1;
+        if (!squareToIndex(move.substr(0, 2), fromRow, fromCol))
+            return false;
+
+        const char piece = state.board[fromRow][fromCol];
+        if (piece == '.')
+            return false;
+        return state.sideToMove == 'w' ? isWhitePiece(piece) : isBlackPiece(piece);
+    }
+
     std::string buildFEN(const FenState &state)
     {
         std::ostringstream oss;
@@ -397,50 +413,58 @@ std::string askBestMoveFromPosition(const std::string &fen, char coloreMossa)
     // restare bloccato indefinitamente (in particolare durante l'analisi del
     // nero, quando la ricerca della best move avviene a meta' partita).
     // La best move va cercata dal lato che deve effettuare la mossa, non dal
-    // colore del giocatore analizzato. La FEN passata deve quindi contenere
-    // il lato corretto (w per il bianco, b per il nero).
-    // ``b`` means white (bianco), while ``n`` means black (nero).  Do not
-    // merely warn when a temporary FEN has the other side: Stockfish would
-    // then analyse the opponent's move and the following read could wait for
-    // a bestmove that does not belong to the requested position.  Normalize
-    // the side field before sending the position to the engine.
-    const char expectedSide = (coloreMossa == 'b') ? 'w' : 'b';
+    // colore del giocatore analizzato. Per non confondere il parametro di
+    // input ("b"=bianco, "n"=nero) con il lato da muovere della FEN, si
+    // prende prima il side-to-move della FEN e si usa solo come fallback il
+    // colore richiesto dal programma.
     FenState bestMoveState = parseFEN(fen);
+    // La FEN passata rappresenta la posizione prima della mossa del giocatore
+    // analizzato. Non correggere silenziosamente il turno: se non coincide,
+    // la posizione costruita dal chiamante e' errata e va rifiutata.
+    const char expectedSide = (std::tolower(static_cast<unsigned char>(coloreMossa)) == 'n') ? 'b' : 'w';
     if (bestMoveState.sideToMove != expectedSide)
     {
-        bestMoveState.sideToMove = expectedSide;
-        bestMoveState.fullmove = std::max(1, bestMoveState.fullmove);
+        std::cerr << "Errore best move: FEN con turno " << bestMoveState.sideToMove
+                  << ", atteso " << expectedSide << ": " << fen << std::endl;
+        return std::string();
     }
+    bestMoveState.fullmove = std::max(1, bestMoveState.fullmove);
     const std::string positionFen = buildFEN(bestMoveState);
 
-    sendCommand("stop\n");
-    Sleep(100);
-    sendCommand("position fen " + positionFen + "\n");
-    sendCommand("go depth 15\n");
-
-    std::string bestMove;
-    for (int attempt = 0; attempt < 100; ++attempt)
+    // evalStock() puo' lasciare in coda il bestmove della ricerca precedente.
+    // Consumarlo DOPO lo stop e PRIMA di inviare la nuova posizione evita di
+    // scambiarlo per la risposta alla nuova ricerca (puo' essere una mossa
+    // nera perfettamente legale, come a7a6, ma riferita ad un'altra posizione).
+    for (int search = 0; search < 3; ++search)
     {
-        bestMove = getOutputMove();
-        if (!bestMove.empty() && bestMove != "1")
-        {
-            // Quando getOutputMove() riceve "bestmove", Stockfish ha gia'
-            // terminato la ricerca.  Non inviare un ulteriore "stop": puo'
-            // restare nella coda UCI e interferire con il successivo
-            // position/go, soprattutto quando la posizione e' quella del
-            // nero a meta' partita.
-            return bestMove;
-        }
+        sendCommand("stop\n");
+        Sleep(100);
+        getOutputMove(); // scarica l'eventuale risposta residua della ricerca precedente
+        sendCommand("position fen " + positionFen + "\n");
+        sendCommand("go depth 15\n");
 
-        Sleep(150);
+        for (int attempt = 0; attempt < 100; ++attempt)
+        {
+            std::string bestMove = getOutputMove();
+            if (!bestMove.empty() && bestMove != "1")
+            {
+                if (bestMoveMatchesSideToMove(bestMoveState, bestMove))
+                {
+                    // bestmove appartiene alla posizione richiesta e al lato
+                    // analizzato, quindi non e' una risposta residua.
+                    return bestMove;
+                }
+                // La risposta residua e' stata consumata: passa alla prossima
+                // ricerca, che verra' eseguita dopo aver reimpostato la FEN.
+                break;
+            }
+            Sleep(150);
+        }
     }
 
-    // Qui la ricerca non ha prodotto una risposta valida: interrompila prima
-    // di restituire il controllo al ciclo principale.
     sendCommand("stop\n");
     Sleep(200);
-
-    return bestMove;
+    return std::string();
 }
 
 int main(int argc, char *argv[])
@@ -453,7 +477,7 @@ int main(int argc, char *argv[])
     }
 
     // banner di inizio
-    std::cout << "CoachGame (C) 2026 versione 1.0 - Rosario Turco" << std::endl;
+    std::cout << "CoachGame (C) 2026 versione 1.1 - Rosario Turco" << std::endl;
     Sleep(6000);
 
     callTextToSpeech(string("Benvenuto in CoachGame, il tuo assistente per l'analisi delle partite di scacchi. Attendi che venga completata l'analisi nel file report.txt\n"));
@@ -846,7 +870,7 @@ std::string applyMoveToFEN(const std::string &baseFen, const std::string &moveIn
     auto finishFen = [&]() -> std::string
     {
         state.sideToMove = whiteMove ? 'b' : 'w';
-        if (state.sideToMove == 'b')
+        if (!whiteMove)
             ++state.fullmove;
         FENstock = buildFEN(state);
         FENCurrent = FENstock;
@@ -1042,4 +1066,4 @@ std::string applyMoveToFEN(const std::string &baseFen, const std::string &moveIn
         ++state.halfmove;
 
     return finishFen();
-}
+}
