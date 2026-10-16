@@ -1,4 +1,4 @@
-// boar.cpp, questo sorgente, è il main del gioco
+// board.cpp, questo sorgente, è il main del gioco
 /*
  Board.cpp gestisce tutto il gioco su scacchiera:
  - tra due giocatori che giocano sulla stessa scacchiera
@@ -155,7 +155,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 13.7 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 13.8 - Rosario Turco\n";
 
     /*
     controllo esistenza di stockfish, altrimenti la prima volta lo scarica e lo estrae nella cartella engine
@@ -1792,13 +1792,23 @@ void checkNumbers()
     // la funzione conta i pezzi del bianco e del nero
     // se il loro numero supera il 16 per il bianco o per il nero esiste un errore
     int numBianchi = 0, numNeri = 0;
-
+    int numPawnBianchi = 0, numPawnNeri = 0;
     for (int i = 0; i < 8; i++)
     {
         for (int j = 0; j < 8; j++)
         {
             if (chessBoard[i][j].getBusySquare())
             {
+
+                if (chessBoard[i][j].getChessPiece().getColorPiece() == 'W' && chessBoard[i][j].getChessPiece().getTypePiece() == PAWN)
+                {
+                    numPawnBianchi++;
+                }
+                if (chessBoard[i][j].getChessPiece().getColorPiece() == 'B' && chessBoard[i][j].getChessPiece().getTypePiece() == PAWN)
+                {
+                    numPawnNeri++;
+                }
+
                 if (chessBoard[i][j].getChessPiece().getColorPiece() == 'W')
                 {
                     numBianchi++;
@@ -1809,6 +1819,18 @@ void checkNumbers()
                 }
             }
         }
+    }
+
+    if (numPawnBianchi > 8)
+    {
+        callTextToSpeech(string("Errore: il numero di pedoni bianchi supera 8. Esco dal programma.\n"));
+        exit(1);
+    }
+
+    if (numPawnNeri > 8)
+    {
+        callTextToSpeech(string("Errore: il numero di pedoni neri supera 8. Esco dal programma.\n"));
+        exit(1);
     }
 
     if (numBianchi > 16)
