@@ -94,6 +94,7 @@ Scacchi-it consente di:
 47 - ottenere una immagine svg da una FEN
 48 - ottenere a fronte di un colore lo schieramento desiderato (Ctrl-D)
 49 - creare un pgn con le partite registrate
+
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
 Tutte le possibilità di sopra, dipendono dalla vostra conoscenza degli strumenti a disposizione per poterlo fare, quindi è fondamentale sentire sia questo tutorial che l'help.
@@ -131,6 +132,15 @@ Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
 2. coachGame
 3. clock-start  
+
+Usare Scacchi-it da chiavetta USB
+Se devi usare Scacchi-it su chiavetta USB, ti conviene fare i seguenti passi:
+1. scompatta scacchigr.7z prima sul desktop del pc e segui i paragrafi successivi. Questo ti permetterà di far scaricare alla prima installazione anche stockfish. 
+Quando la scompattazione del 7z sul pc è completata, entra nella cartella scacchi-it efai anche il comando 
+scacchi-start per installare stockfish.
+Dopo aver installato con i paragrafi successivi Scacchi-it ritorna a questo paragrafo e fai:
+2. copia la intera cartella scacchi-it sulla chiavetta USB
+Ora la chiavetta è pronta. 
 
 Download e Windows Defender 
 Da browser sul link https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
