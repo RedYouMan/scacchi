@@ -68,6 +68,9 @@ Scacchi-it non è un gioco per non vedenti. È una palestra neuroscientifica inc
 Ti invito di fare la seguente ricerca su Google inserendo la frase:
 curva di apprendimento negli scacchi attraverso l'ecosistema tiflologico Scacchi-it e la specifica formale ROTN carico cognitivo e abbandoni
 
+Sul mio blog https://redyouman.github.io/ nel 2026 ho pubblicato un corpus di articoli che presentano le discipline e la bibliografia  relativa. Essi fanno da infrastruttura e cornice alla visione che ha portato alla creazione di Scacchi-it. 
+Ti invito aleggerli, oltre a quelli che sono sul repository.
+
 Registrato su Zenodo (CERN) a cura di _Rosario Turco_
 DOI ROTN: https://doi.org/10.5281/zenodo.22737720
 DOI SCACCHI: https://doi.org/10.5281/zenodo.22737784
