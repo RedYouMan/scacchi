@@ -139,7 +139,7 @@ Se devi usare Scacchi-it su chiavetta USB, ti conviene fare i seguenti passi:
 Quando la scompattazione del 7z sul pc è completata, entra nella cartella scacchi-it efai anche il comando 
 scacchi-start per installare stockfish.
 Dopo aver installato con i paragrafi successivi Scacchi-it ritorna a questo paragrafo e fai:
-2. copia la intera cartella scacchi-it sulla chiavetta USB
+2. copia l'intera cartella scacchi-it sulla chiavetta USB
 Ora la chiavetta è pronta. 
 
 Download e Windows Defender 
