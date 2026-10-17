@@ -1,6 +1,7 @@
-Versione: 13.10
+Versione: 13.11
 data: 15 Ottobre2026
 
+La versione 13.11 migliora e aggiunge la utility extractGame per il serverScacchi
 La versione 13.10 migliora il gioco online parte server
 La versione 13.9 non fa bloccare l'online in caso di errore mossa
 La versione 13.8 aggiunge altri controlli di validazione per solidità

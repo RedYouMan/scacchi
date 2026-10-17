@@ -19,7 +19,7 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione runtime 13.10 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione runtime 13.11 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
@@ -94,6 +94,7 @@ Scacchi-it consente di:
 47 - ottenere una immagine svg da una FEN
 48 - ottenere a fronte di un colore lo schieramento desiderato (Ctrl-D)
 49 - creare un pgn con le partite registrate
+50 - usare la utility extractGame per ottenere file da ServerScacchi e da sottoporre a make-pgn
 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
@@ -127,6 +128,7 @@ Scacchi-it Utility che collaborano con la parte core:
 7. estensioni browser 
 8 make-FEN2SVN 
 9make-pgn
+10- extractGame
 
 Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
@@ -944,10 +946,22 @@ Il messaggio Errore send riporta sempre uno dei comandi, visti nell'elenco di pr
 
 Le patte non elementari sono concordate tra i giocatori e verranno, eventualmente, comunicate a parte al circolo con una email.
 
-Attenzione il log del server certifica i tempi e le mosse da casa di partenza a casa di arrivo, non le catture, le promozioni di pedone ad altro pezzo o gli enpassant. Per cui se serve la partita tracciata con notazione algebrica, deve essere inoltrata, in questo caso, al circolo dai giocatori.
+Attenzione il log del server certifica i tempi e le mosse da casa di partenza a casa di arrivo.
+Si è fornita una utility extractGame che dopo l'uso di sortLog , può analizzare l'output file del sortLog e per una certa room provare a estrarre le mosse in notazione algebrica in un file da sottoporre poi a make-pgn (vedi paragrafo di extractGame).
+Avvertenza: dopo aver creato un file in notazione algebrica è fortemente consigliato verificare se catture, enpassant, promozioni siano state riportate correttamente.
 
 Funzionalità sortLog
 Essendo il gioco online multiplayer, ciò comporta che nel file server.log sono mischiate le informazioni delle varie room. E' Posssibile ottenere un log che accorpi le informazioni per room alla fine di tutte le partite con il comando sortLog.exe. Tale comando non accetta nessun parametro , esso sa già di dover analizzare il file server.log e produrre il file serverordinato.txt
+
+Funzionalità extractGame
+Dopo aver ordinato il log per room, l'output file di sortLog lo possiamo sottomettere a extractGame per ottenere un fileper la room di interesse e ottenere un file di testo di notazione algebrica da sottoporre, poi, a make-pgn.
+
+L'uso richiesto è:
+extractGame <nome room> <nome file da analizzare>
+
+Avvertenza: analizzate sempre il risultato del file che vi darà soprattutto per le catture, gli enpassant e le promozioni di pedoni. 
+Questo specialmente se dovete ottenere da make-pgn un file ufficiale da consegnare o caricare su qualche repository.
+. 
 
 Estendere una rete Hamachi
 ESISTONO VARI piani tariffari annuali estendendo ad esempio fino a 32 pc una rete con un abbonamento annuo minimo oppure estendendo a reti multiple a costi contenuti.
