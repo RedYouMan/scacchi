@@ -917,7 +917,7 @@ Queste possibilità comunicano via rete anche all'altro giocatore e lo fanno ria
 
 Avvertenze generali per l'online
 - Non si consente online l'uso di stockfish
-- Non si può registrare una partita 
+- Non si può registrare una partita (la scrittura su file può dar fastidio alle socket) 
 - Non si può sospendere e riprendere una partita
 - non si possono fare mosse di undo
 - non si può fare l'opening trainer
@@ -938,10 +938,13 @@ L'esito della partita può essere compreso dai comandi che il server traccia:
 - none : probabile patta concordata (da verificare con i giocatori che devono inviare una email di avvenuto accordo al circolo)
 
 Ricordare che sul log bisogna mettersi dal punto di vista del server, cioè è il server che dice: "ricevuto da".
+Quindi per capire bene, basta cercare la frase "mossa inviata a".
 
-Il messaggio Errore send riporta uno di questi comandi, ma la dicitura errore dipende dal fatto che nel caso Matto, Stallo, Patta l'altro applicativo Scacchi-it ha già completato la partita dopo la ricezione della mossa riconosciuta come matto o patta o stallo e ha restartato, di conseguenza, non ha prelevato l'ultimo messaggio. Tuttavia il tracciamento del Matto, Stallo e Patta elementare sono corretti.
+Il messaggio Errore send riporta sempre uno dei comandi, visti nell'elenco di prima, ma la dicitura errore dipende dal fatto che nel caso Matto, Stallo, Patta l'altro applicativo Scacchi-it ha già completato la partita dopo la ricezione della mossa riconosciuta come matto o patta o stallo e ha restartato, di conseguenza, non ha prelevato l'ultimo messaggio. Tuttavia il tracciamento del Matto, Stallo e Patta elementare sono corretti.
 
 Le patte non elementari sono concordate tra i giocatori e verranno, eventualmente, comunicate a parte al circolo con una email.
+
+Attenzione il log del server certifica i tempi e le mosse da casa di partenza a casa di arrivo, non le catture, le promozioni di pedone ad altro pezzo o gli enpassant. Per cui se serve la partita tracciata con notazione algebrica, deve essere inoltrata, in questo caso, al circolo dai giocatori.
 
 Funzionalità sortLog
 Essendo il gioco online multiplayer, ciò comporta che nel file server.log sono mischiate le informazioni delle varie room. E' Posssibile ottenere un log che accorpi le informazioni per room alla fine di tutte le partite con il comando sortLog.exe. Tale comando non accetta nessun parametro , esso sa già di dover analizzare il file server.log e produrre il file serverordinato.txt
