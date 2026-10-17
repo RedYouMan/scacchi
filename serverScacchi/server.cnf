@@ -1,5 +1,5 @@
 # configurazione rete
 # su stessa reete usare ip 192.168.x.y del server per tutti i pc
 # su reete Hamachi usare ip 25.x.y.z del server per tutti i pc
-ipaddress=25.21.139.174
+ipaddress=192.168.1.13
 port=65432
