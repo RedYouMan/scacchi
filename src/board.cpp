@@ -155,7 +155,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 13.8 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 13.9 - Rosario Turco\n";
 
     /*
     controllo esistenza di stockfish, altrimenti la prima volta lo scarica e lo estrae nella cartella engine
@@ -288,16 +288,23 @@ void playWhite()
         {
             giocatore = "Bianco";
         }
-
+        bool salta_errore_mossa = false;
         while (status == 0)
         {
             if (stockfish_color.empty() || giocatore == "Bianco")
             {
                 // se in rete Aspetto le mosse del nero
-                checkReceiveRete('B');
+                if (salta_errore_mossa == false)
+                {
+                    checkReceiveRete('B');
+                }
                 navOnBoard('W');
                 status = insertMoveNav('W');
                 // se in rete e bianco devo inviare la mossa
+                if (online && status == 0)
+                {
+                    salta_errore_mossa = true;
+                }
                 if (online && colorOnline == "Bianco" && status != 0)
                 {
 
@@ -423,6 +430,7 @@ void playBlack()
         {
             giocatore = "Nero";
         }
+        bool salta_errore_mossa = false;
         while (status == 0)
         {
 
@@ -430,10 +438,17 @@ void playBlack()
             {
 
                 // se in rete Aspetto le mosse del bianco
-                checkReceiveRete('W');
+                if (salta_errore_mossa == false)
+                {
+                    checkReceiveRete('W');
+                }
                 navOnBoard('B');
                 status = insertMoveNav('B');
                 // se in rete e nero devo inviare la mossa
+                if (online && status == 0)
+                {
+                    salta_errore_mossa = true;
+                }
                 if (online && colorOnline == "Nero" && status != 0)
                 {
                     invioMossaRete();

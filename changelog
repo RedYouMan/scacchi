@@ -1,6 +1,7 @@
-Versione: 13.8
-data: 13 Ottobre2026
+Versione: 13.9
+data: 14 Ottobre2026
 
+La versione 13.9 non fa bloccare l'online in caso di errore mossa
 La versione 13.8 aggiunge altri controlli di validazione per solidità
 La versione 13.7 risolve un bug su coachgame quando si analizzava il bianco.
 La versione 13.6 risolve un bug su coachgame quando si analizzava il nero.
