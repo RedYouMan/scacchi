@@ -10,6 +10,7 @@ from datetime import datetime
 
 MAX_FIELD_LEN = 7
 MOVE_LEN = 6
+PROMOTION_MOVE_LEN = 7
 
 logger = logging.getLogger('serverScacchi')
 
@@ -60,7 +61,7 @@ def valid_field(value):
 
 
 def valid_move(value):
-    return value == 'none' or len(value) == MOVE_LEN
+    return value == 'none' or len(value) in (MOVE_LEN, PROMOTION_MOVE_LEN)
 
 
 def suggest_room(existing_rooms):

@@ -6,6 +6,7 @@
 std::atomic<bool> interrompiVocale(false);
 
 // variabili globali per giocare in rete
+string letteraPromozione;
 bool online = false;
 string colorOnline = "Bianco";
 string roomOnline = "";

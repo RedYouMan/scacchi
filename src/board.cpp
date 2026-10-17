@@ -46,6 +46,9 @@ COPYRIGHT: vedi MIT license
  */
 
 /* variabili globali */
+
+string letteraPromozione;
+
 // variabili globali per giocare in rete
 bool online = false;
 string colorOnline = "Bianco";
@@ -155,7 +158,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 13.9 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 13.10 - Rosario Turco\n";
 
     /*
     controllo esistenza di stockfish, altrimenti la prima volta lo scarica e lo estrae nella cartella engine
@@ -1009,6 +1012,7 @@ void clear_globali()
 {
     // pulizia variabili delle globali
     // tranne gRow , gCol, puntoDiVista
+    letteraPromozione.clear();
     squareCheck.clear();
     enpFEN.clear();
     online = false;
@@ -1734,7 +1738,11 @@ void invioMossaRete()
         mossa.append(sourceOnBoard);
         mossa.push_back(sourceOnBoard[0]);
         mossa.append(destOnBoard.substr(1));
-
+        if (!letteraPromozione.empty())
+        {
+            mossa.append(letteraPromozione);
+        }
+        letteraPromozione.clear();
         if (sendMove(roomOnline, playerOnline, mossa) == false)
         {
             callTextToSpeech(string("Errore nell'invio della mossa al server, esco per consentirti di riprovare\n"));

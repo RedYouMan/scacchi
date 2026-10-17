@@ -5,6 +5,7 @@
 #include <atomic>
 extern std::atomic<bool> interrompiVocale;
 
+extern string letteraPromozione;
 extern string squareCheck;
 extern string enpFEN;
 extern bool online;

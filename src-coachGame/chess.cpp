@@ -812,6 +812,7 @@ void Pawn::promotion(string source, string destination, char color)
     if (riga == 7 || riga == 0)
     {
         // promuovere a pezzo
+        letteraPromozione.clear();
         callTextToSpeech(string("Fai Alt-Tab per andare sulla console e rispondere alle domande\n"));
         callTextToSpeech(string("Scegli la figura a cui promuovere il pedone (T come Torre, C come Cavallo, Acome Alfiere, D come Donna) e fai return\n"));
         cin >> scelta;
@@ -823,6 +824,8 @@ void Pawn::promotion(string source, string destination, char color)
             Rook torre = Rook(appo3.c_str(), color);
             casella.setChessPiece(torre);
             callTextToSpeech(string("Pedone promosso a Torre\n"));
+            ultimaMossa.push_back('T');
+            letteraPromozione.append("T");
         }
 
         if (toupper(scelta) == 'D')
@@ -832,6 +835,8 @@ void Pawn::promotion(string source, string destination, char color)
             Queen donna = Queen(appo3.c_str(), color);
             casella.setChessPiece(donna);
             callTextToSpeech(string("Pedone promosso a Donna\n"));
+            ultimaMossa.push_back('D');
+            letteraPromozione.append("D");
         }
 
         if (toupper(scelta) == 'C')
@@ -841,6 +846,8 @@ void Pawn::promotion(string source, string destination, char color)
             Knight cavallo = Knight(appo3.c_str(), color);
             casella.setChessPiece(cavallo);
             callTextToSpeech(string("Pedone promosso a Cavallo\n"));
+            ultimaMossa.push_back('C');
+            letteraPromozione.append("C");
         }
         if (toupper(scelta) == 'A')
         {
@@ -849,6 +856,8 @@ void Pawn::promotion(string source, string destination, char color)
             Bishop alfiere = Bishop(appo3.c_str(), color);
             casella.setChessPiece(alfiere);
             callTextToSpeech(string("Pedone promosso ad Alfiere\n"));
+            ultimaMossa.push_back('A');
+            letteraPromozione.append("A");
         }
         casella.setBusySquare(true);
         chessBoard[riga][col] = casella;
