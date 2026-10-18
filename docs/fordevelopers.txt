@@ -4,7 +4,7 @@ Rosario Turco
 
 Settembre 2026
 Premessa
-Tieni presente che sono non vedente e ho 66 anni. Sono un ingegnere e ho impiegato da solo 14 mesi per progettare, implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
+Tieni presente che sono non vedente e ho 66 anni. Sono un ingegnere, ricercatore indipendente e ho impiegato da solo 14 mesi per progettare, implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
 Sui test mi hanno aiutato le persone del gruppo NV&V: in particolare Francesco Longobardi, Mario Turco e Luigi Racioppi.
 L'immagine sul sito di Scacchi-it mi è stata fornita da Francesco Longobardi. 
 La parte git è stata scritta da mio figlio Mario Turco.
@@ -45,14 +45,20 @@ Se il mondo avesse seguito sempre la consuetudine non si avrebbe mai avuto innov
 Il mio tentativo è stato di ribaltare il paradigma seguito finora. Prima era l'uomo che si doveva adattare a strumenti, regolamenti e burocrazia. Oggi ho messo al centro l'uomo, vedente e non vedente, e adattato gli strumenti a esso. Spero che ciò avvenga per necessità anche sui restanti fronti.
 Questo ribaltamento di paradigma coinvolge, vantaggiosamente e contemporaneamente, gioco, didattica alla pari, editoria e autonomia e integrazione dei non vedenti, creando democrazia culturale e apertura ai meno abbienti.
 
+Sembra assurdo ma nel 2026 stiamo a dire, per i non vedenti, tre parole antiche: libertà, uguaglianza e fraternità.
+
 Il nome ROTN sta per Readable Ordered Text Notation. Questo perchè rende la lettura delle posizioni ordinata e leggibile dagli screen reader e dall'uomo.
-Una definizione breve di ROTN potrebbe essere: la ROTN rende una immagine testuale.
+
+Se cercate una definizione breve di ROTN potrebbe essere: la ROTN rende una immagine testuale.
+
+Spesso i giochi nascono per i vedenti e, quando maturi, si cerca di adattarli anche ai non vedenti.
+Le tecnologie come ALT e ARIA label, in fondo sono una toppa a qualcosa NON progettato nativamente per gli screen reader. ROTN e Scacchi-it, invece, sono nativamente progettati per avere un gioco adatto a vedenti e non vedenti fin dall'inizio.
 
 Tra uomo e posizioni sulla scacchiera esiste uno strato software di primo livello, costituito dagli screen reader, che interfacciandosi con strumenti del passato non riescono a far fruire fluidamente e a basso sforzo cognitivo le informazioni. Questo non vuol dire che tali strumenti vanno eliminati, ma solo vanno scalati al livello a loro più consono ed efficace ("sotto cofano".
 Immagina se alle scuole elementari ci avessero insegnato una lettura e una scrittura complicata, oggi quante persone saprebbero leggere e scrivere? Gli abbandoni prematuri della scuola sarebbero stati elevati  o la scuola non sarebbe stata nemmeno iniziata.
 Scacchi-it è, esso stesso, la testimonianza pratica della utilità, semplicità, chiarezza e rapidità con cui si può lavorare con la ROTN per il gioco, lo studio, la didattica,  la inclusione e completa autonomia dei non vedenti, che possono apprendere le stesse cose dei normodotati nella stessa classe di corso.
 
-Scacchi-it semplifica il carico cognitivo, anche nella didattica: fen e pgn usati da esso, sono sotto-cofano. Per guidare un auto non è necessario andare dentro al motore.
+Scacchi-it semplifica il carico cognitivo, anche e soprattutto nella didattica: fen e pgn usati da esso, sono sotto-cofano. Per guidare un auto non è necessario sedersi dentro al motore.
 
 Questo semplifica e avvicina rapidamente alla qualità del gioco, evidenziando subito le capacità dell'individuo di esprimere la sua forza intellettuale e divertendosi.
 
@@ -65,11 +71,11 @@ Scacchi-it rispetta i principi di Universal Design (UD) e Universal Design for L
 
 Scacchi-it non è un gioco per non vedenti. È una palestra neuroscientifica inclusiva dove vedenti e non vedenti si allenano fianco a fianco contro Stockfish a 21 livelli, con carico cognitivo ottimizzato e curva di apprendimento multimodale.
 
-Ti invito di fare la seguente ricerca su Google inserendo la frase:
+Ti invito a fare la seguente ricerca su Google inserendo la frase:
 curva di apprendimento negli scacchi attraverso l'ecosistema tiflologico Scacchi-it e la specifica formale ROTN carico cognitivo e abbandoni
 
 Sul mio blog https://redyouman.github.io/ nel 2026 ho pubblicato un corpus di articoli che presentano le discipline e la bibliografia  relativa. Essi fanno da infrastruttura e cornice alla visione che ha portato alla creazione di Scacchi-it. 
-Ti invito aleggerli, oltre a quelli che sono sul repository.
+Ti invito a leggerli, insieme a quelli che troverai sul repository come importanti per i concetti di base e la specifica formale della ROTN. 
 
 Registrato su Zenodo (CERN) a cura di _Rosario Turco_
 DOI ROTN: https://doi.org/10.5281/zenodo.22737720
@@ -89,9 +95,9 @@ Spero che in futuro altri progetti, discendenti da Scacchi-it, possano farne il 
 Un ecosistema come Scacchi-it ha poco senso di essere portato come semplice APP su iOS.
 
 Server di massa o offline
-Scacchi-it per scelta è offline innanzitutto. Questo per la inclusione paritaria e la democratizzazione della cultura scacchistica, per aiutare scuolecon basso budget e le famiglie meno abbienti. L'online tramite vpn Hamachi aiuta ad evitare l'isolamento dei non vedenti, consentendo loro di trovare un amico online con cui giocare, se in famiglia non fosse possibile. La configurazione Hamachi è superabile sia con un manuale molto dettagliato, sia per addestramento dei non vedenti da parte di un istruttore fsi.
+Scacchi-it per scelta è offline innanzitutto (offline-first). Questo per la inclusione paritaria e la democratizzazione della cultura scacchistica, per aiutare scuolecon basso budget e le famiglie meno abbienti. L'online tramite vpn Hamachi aiuta ad evitare l'isolamento dei non vedenti, consentendo loro di trovare un amico online con cui giocare, se in famiglia non fosse possibile. La configurazione Hamachi è superabile sia con un manuale molto dettagliato, sia per addestramento dei non vedenti da parte di un istruttore fsi.
 Prima c'era il nulla per i non vedenti, per l'addestramento e possibilità di giocare a casa gratuitamente, in modo semplice e accessibile al 100%. Non era possibile nemmeno partecipare ad un corso fsi se non attrezzato e nemmeno in un corso con vedenti.  
-Non ha senso il confronto con i portali, esistenti da almeno 20 anni che hanno sempre puntato alla massa dei giocatori online vedenti e tuttora hanno problemi di accessibilità non ancora al 100%. Voler confrontare portali e Scacchi-it è confrontare contesti di natura e scopo completamente diversi.
+Non ha senso il confronto con i portali, esistenti da almeno 20 anni che hanno sempre puntato alla massa dei giocatori online vedenti e tuttora hanno problemi di accessibilità non ancora risolta al 100%. Voler confrontare portali e Scacchi-it è confrontare contesti di natura e scopo completamente diversi.
 
 Natura e uso
 Scacchi-it è un ecosistema tiflologico fortemente indicato alla didattica inclusiva paritaria e democratica,  soprattutto per i non vedenti. Gli strumenti presenti come il simpleEditor, le estensioni browser,  incollaFEN, incollaROTN, stockfish, coachFEN e coachGame gli consentono l'utilizzo anche dopo l'addestramento di primo livello per migliorarsi ulteriormente affrontando stockfish a livelli sempre superiori (20 livelli). L'orologio tiflologico consente ai non vedenti anche di superare l'ansia da torneo.
@@ -99,12 +105,16 @@ Scacchi-it è un ecosistema tiflologico fortemente indicato alla didattica inclu
 La GUI
 Scacchi-it possiede una scacchiera grafica in SFML (Simple Fast Multimedia Library) con pezzi realizzati in pgn. La console viene utilizzata per il tracciamento degli errori o comunque per i messaggi di andamento del gioco. Viene usata poco per l'inserimento di dati di input.
 
+La scelta è voluta. Avere un pacchetto leggero e portable su chiavetta USB, offline-first e gratuito è un vantaggio anche per le scuole, senza installazioni complesse e con scarsa possibilità di Internet, il che rende possibile l'uso del gioco nei laboratori scolastici, mostrandosi semplice, democratico e per le fasce deboli familiari e istituzionali.
+
 La standardizzazione
 La ROTN è usata da circoli scacchistici e nella didattica da istruttori fsi che ne riconoscono la utilità didattica. La standardizzazione della ROTN è un problema sopratutto burocratico di fsi e della fide. Il progetto è registrato sia come ROTN e come Scacchi-it presso Zenodo.org (CERN) che ne testimonia la autorevolezza scientifica.
 
 Quando interviene la ROTN
 La ROTN interviene nelle posizioni da creare e caricare: sospensione partita, caricamento partita sospesa, caricamento problema o puzzle da risolvere. Scacchi-it, invece, utilizza una efficace tecnica di accessibilità per gli screen reader dicendo con sintesi vocale la casa su cui ci si muove, se è presente un pezzo e quale, se la casa è vuota.
 Non esiste nessun problema di conversione mentale da un formato ad un altro se si passa ad un'altro applicativo di scacchi o portale.
+
+Se date uno sguardo al Manuale completo, vi renderete conto delle molteplici utility fornite: dalle estensioni browser per prelevare FEN dai portali e tradurle immediatamente in ROTN, il simpleEditor, il make-pgn per convertire le partite registrate in pgn, il make-FEN2SVG per ottenere immagini delle posizioni da condividere, estractGame che nel gioco online produce dal server le partite in notazione algebriche che sottoposte a make-pgn vi fa ottenere il file pgn da caricare sul repository fsi.
  
 Un motto
 Dato che la ROTN consente con il descrittore V il comando di rotazione della scacchiera, fornendo dinamicità alle informazioni, concludo la premessa con la frase:
@@ -201,15 +211,24 @@ scacchi.exe, orologioScacchi.exe, coachFEN.exe,coachGame.exe
 In sospensioni:
 fenpos.exe
 In serverScacchi
-serverScacchi.exee sortLog.exe
+serverScacchi.exe, sortLog.exe e extractGame.exe
 in simpleEditor trovi simpleEditor.exe e ste.cnf
 In diagrammi trovi make-FEN2SVG
+In browser trovi le cartelle per le estensioni browser da caricare sul tuo browser (vedi manuale nella cartella delle estensioni)
+In cartella make-pgn trovi make-pgn.exe e la cartella elenco per mettervi i file da impacchettare.
 
 Ambiente finale per creare il tuo zip Scacchi-it
 Attenzione: quando hai creato tutti gli exe posizionandoli nella cartella giusta, controlla che esistano tutte le directory, in modo particolare:
 - sospensioni
 - registrazioni
 - logdir
+- browser
+- diagrammi
+- make-pgn
+- openingsbook
+- serverScacchi
+- simpleEditor
+
 Queste directory dopo il clone non vengono create essendo vuote. Provvedi a crearle, perchè sono necessarie.
 
 Descrizione e dettagli ulteriori
@@ -228,8 +247,8 @@ Il coachGame riceve due parametri:
 
 In src-starter si trovano tutti i python script che vengono resi exe e servono per il lancio degli exe in bin.
 Gli exe xxx-start.exe costruiti nella cartella build di src-starter vengono messi a mano nella cartella root di scacchi-it.
-Anche serverScacchi.exe è ottenuto nella cartella ServerScacchi facendo il pyinstall di uno script python che viene costruito nella build della cartella ServerScacchi e copiato a mano in ServerScacchi.
-Idem fenpos.exe viene messo a mano in sospensioni e incolla-ROTN.exe a mano nella root.
+Anche serverScacchi.exe, sortLog.exe e extractGame.exe  sono ottenuti nella cartella ServerScacchi facendo il pyinstaller --onefile <sorgente.py> che vengono costruiti nella dist della cartella ServerScacchi e copiati a mano in ServerScacchi.
+Idem fenpos.exe viene messo a mano in sospensioni e incolla-ROTN.exe, incolla-FEN.exe e validaFEN.exe a mano nella root.
 Idem make-FEN2SVG.exe va messo in cartella diagrammi e make-pgn.exe va messo da build/debugin cartella make-pgn.
 
 Test di posizioni scacchistiche
@@ -289,6 +308,7 @@ Scacchi-it Utility che collaborano con la parte core:
 7. estensioni browser
 8 make-FEN2SVG
 9 make-pgn
+10 extractGame
 
 Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
@@ -313,12 +333,19 @@ Non tutte le variabili sono in globale.h, alcune sono locali solo ai due sorgent
 Si è scelto l'utilizzo delle variabili globali circa una ventina, per semplicità di progetto, che è partito come prototipo e, poi, data la sua efficacia si è trasformato in progetto.
 board.cpp consente poi anche il caricamento e la soluzione di problemi, da solo o con stockfish.
 
-A parte c'è coachFEN.cppe coachGame.cpp 
-Oltre a ciò ci sono serverScacchi.py e orologioScacchi.cpp
+A parte c'è coachFEN.cpp e coachGame.cpp 
+
+Oltre a ciò ci sono tutte le utility, la parte serverScacchi e l'orologio tiflologico.
 
 Scacchi-it informa sul nome della casella, se contiene pezzi o se vuota. Infine gestisce tutti i controls da tastiera per il gioco
 Il motore di controllo, (board.cpp) permette, in collaborazione col motore di navigazione e altre funzionalità la gestione e il controllo di tutte le regole di gioco: movimento dei pezzi, arrocco, enpassant, scacco al re, scacco matto, stallo, notazione algebrica, RoT notation, i problemi, la registrazione della partita, la sospensione di gioco e la ripresa, la scelta di giocare col computer, la soluzione dei problemi con e senza computer, il cambio del punto di vista di gioco.
 Consente anche un addestramento alle aperture di gioco (Openings Trainer).
+
+Durante il gioco nel cambio turno, posiziona il giocatore nel suo schieramento iniziale ovvero in e2 per il bianco e e7 per il nero.
+
+La funzionalità Ctrl+D consente una analisi dello schieramento del colore desiderato, utile per il riconoscimento di pattern di gioco.
+
+Scacchi-it copre una cinquantina di funzionalità.
 
 Test
 I test possono farsi prendendo i file dalla directory test e ponendoli in directory problemi per caricarli con cntrlP.
