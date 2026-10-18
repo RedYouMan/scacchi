@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 
-MOVE_RE = re.compile(r"^([PRNTDACBNQK])([a-h][1-8])([PRNTDACBNQK])([a-h][1-8])(?:=([PRNTDACBNQK]))?$", re.I)
+MOVE_RE = re.compile(r"^([PRNTDACBNQK])([a-h][1-8])([PRNTDACBNQK])([a-h][1-8])(?:=?([PRNTDACBNQK]))?$", re.I)
 SENT_RE = re.compile(
 	r"Mossa inviata a (?P<player>.+?) in (?P<room>[^:]+):\s*(?P<move>\S+)", re.I
 )
@@ -37,9 +37,9 @@ def format_move(raw_move):
 	if not match:
 		return None
 	start_piece, _start_square, end_piece, end_square, promotion = match.groups()
-	piece = PIECE_NAMES.get(end_piece.upper(), PIECE_NAMES.get(start_piece.upper(), ""))
 	if promotion:
-		piece += "=" + PIECE_NAMES.get(promotion.upper(), promotion.upper())
+		return end_square + PIECE_NAMES.get(promotion.upper(), promotion.upper())
+	piece = PIECE_NAMES.get(end_piece.upper(), PIECE_NAMES.get(start_piece.upper(), ""))
 	return piece + end_square
 
 

@@ -19,7 +19,7 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione runtime 13.11 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione runtime 14.0 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
@@ -281,6 +281,8 @@ Occorre mettere il proprio pedone alle spalle del pedone che si vuole catturare 
 
 Come promuovere un pedone
 Si viene guidati sulla console con Alt-Tab e si deve rispondere Con T per torre, C per cavallo, A per alfiere o D per donna. Se si da un valore diverso non viene promosso il pedone.
+
+ATTENZIONE anche nel caso online si deve rispondere da entrambe le parti, per riportare la promozione  al pezzo giusto, per cui i due giocatori si devono comunicare l'informazione in modo che chi sta dall'altro lato risponda correttamente a quale pezzo è stato promosso il pedone.
 
 Scelta automatica della lingua italiana
 Scacchi-it sceglie automaticamente la lingua italiana se disponibile, altrimenti quella di sistema. Ad esempio se avete Windows in inglese, vi leggerà le frasi italiane con accento inglese. Per evitare questo occorre installare anche la lingua italiana su Windows in inglese.
