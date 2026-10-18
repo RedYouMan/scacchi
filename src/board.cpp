@@ -158,7 +158,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 14.0 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 14.1 - Rosario Turco\n";
 
     /*
     controllo esistenza di stockfish, altrimenti la prima volta lo scarica e lo estrae nella cartella engine
@@ -812,7 +812,8 @@ int move(string src, string dest, char who)
     ChessPiece pezzoCatturato;
     string coloreCattura = "";
     pezzoCatturato = chessBoard[m][n].getChessPiece();
-    if (pezzoCatturato.getTypePiece() == KING)
+    // modifica del 18 ottobre
+    if (pezzoCatturato.getTypePiece() == KING && chessBoard[m][n].getBusySquare() == true)
     {
         printf("Mossa non valida. Non si deve catturare il Re.\n");
         return 0;
@@ -978,6 +979,9 @@ int insertMoveNav(char who)
 
     source.append(sourceOnBoard);
     destination.append(destOnBoard);
+    // printf("miodebug: mossa da casa %s\n", source.c_str());
+    // printf("miodebug: mossa verso casa %s\n", destOnBoard.c_str());
+    // printf("miodebug: mossa verso casa %s\n", destination.c_str());
 
     printDebug("debug: mossa da casella iniziale " + source + "\n");
     printDebug("debug: mossa verso casella destinazione " + destination + "\n");

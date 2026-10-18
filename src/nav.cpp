@@ -91,7 +91,8 @@ void navOnBoard(char who)
         {
             endPos = sf::Vector2i(col, row);
             destOnBoard.clear();
-            destOnBoard.push_back(chessBoard[row][col].getChessPiece().getNamePiece()[0]);
+            destOnBoard.push_back(sourceOnBoard[0]);
+            // destOnBoard.push_back(chessBoard[row][col].getChessPiece().getNamePiece()[0]);
             ChessUtility utility;
             string casa = utility.getSquarePuntoDiVista(row, col, puntoDiVista);
             destOnBoard.append(casa);
@@ -630,7 +631,7 @@ void navOnBoard(char who)
                         cout << "FEN: " << fen << endl;
                         string my_message = "Fai Alt-Tab e vai sulla console per selezionare la FEN\n";
                         callTextToSpeech(my_message);
-                                        }
+                    }
 
                     if (event.key.code == sf::Keyboard::X)
                         apriUrl();
