@@ -89,12 +89,12 @@ Scacchi-it consente di:
 42 - incollare una ROTN proveniente da file o da estensioni browser
 43 - creare un Database di posizioni classificate secondo le esigenze didattiche con un simpleEditor
 44 - accorpare il log del gioco online multiplayer per room 
-45 - utilizzare estensioni browser per prendere una fen da un portale web 
-46 - estrarre la FEN con Ctrl-E da una posizione ROTN sulla scacchiera verso la console
+45 - utilizzare la copia per prendere una fen da un portale web o un pdf e incollarla su Scacchi-it 
+46 - estrarre la FEN con Ctrl-E da una posizione ROTN sulla scacchiera mandandola verso la console
 47 - ottenere una immagine svg da una FEN
 48 - ottenere a fronte di un colore lo schieramento desiderato (Ctrl-D)
 49 - creare un pgn con le partite registrate
-50 - usare la utility extractGame per ottenere file da ServerScacchi e da sottoporre a make-pgn
+50 - usare la utility extractGame per ottenere dal serverScacchi un file di testo in notazione algebrica e da sottoporre a make-pgn
 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
@@ -188,8 +188,9 @@ coachFEN-start (ne parleremo in un paragrafo apposito)
 coachGame-start (ne parleremo in un paragrafo apposito)
 - incolla-ROTN (ne parleremo in un paragrafo apposito)
 
-Attenzione: Se non è presente stockfish nella cartella engine, Scacchi-it utilizza il suo installer per scaricare, solo la prima volta, la versione preferita di stockfish e installarlo. Questo perchè nello zip scaricato stockfish non è presente sia per motivi di licenza GNU GPL versione 3, sia per avere un pacchetto runtime leggero da scaricare.
+Attenzione: Se non è presente stockfish nella cartella engine, Scacchi-it, all'avvio con scacchi-start, utilizza il suo installer per scaricare, solo la prima volta, la versione ultima di stockfish e installarlo. Questo perchè nello zip scaricato stockfish non è presente sia per motivi di licenza GNU GPL versione 3, sia per avere un pacchetto runtime leggero da scaricare.
 Solo in questa occasione serve attiva la connessione Internet e dare consenso a scaricare a Windows Defender. Se la connessione non è troppo stabile, caso raro, potrebbe servire un secondo lancio di Scacchi-it per far riuscire a scaricare e installare stockfish la prima volta. Puoi esaminare, se vuoi, il sorgente board.cpp verso la fine per la parte installer di Scacchi-it 
+Leggere anche paragrafo Installer di stockfish.
 
 Installazione con comandi da prompt
 Come alternativa al paragrafo precedente si possono fare i comandi a mano. Se avete già fatto il paragrafo precedente, questo lo potrete saltare.
@@ -203,7 +204,8 @@ dovete digitare:
 cd Desktop 
 cd scacchi-it
 ora digitate scacchi-start 
-l'ultimo comando farà partire il programma.
+l'ultimo comando farà partire il programma e se non fosse installato stockfish ve lo scarica. Controllate sempre se in cartella engine esiste la cartella stockfish, all'interno della quale ci deve essere l'eseguibile di stockfish. Se non esiste la cartella stockfish ma altro, leggere il readme.md nella cartella engine.
+
 Se vi servisse l'orologio digitare clock-start seguito da return (Vedi il paragrafo che lo riguarda per avere una sola console).
 Per incolla-fen, e validaFEN  o incolla-ROTN ne parleremo in seguito.
 
@@ -212,11 +214,11 @@ Tutti i controls sono attivi solo sulla scacchiera grafica.
 
 Help
 L'Help si può richiamare con Ctrl+H in qualunque momento del gioco, in modo che si può ricordare cosa fare per la situazione in corso.
-L'help della versione grafica è con sintesi vocale. 
-Maggiori dettagli però sono nel tutorial che vi conviene leggere.
+L'help è con sintesi vocale. 
+Maggiori dettagli rispetto all'help però sono nel tutorial/manuale qui presente. che vi conviene leggere.
 
 Tutorial con CtrlX
-Questo tutorial è attivabile anche da programma Scacchi-it  con CtrlX sulla scacchiera.
+Questo tutorial/manuale  è attivabile anche da programma Scacchi-it  con CtrlX sulla scacchiera.
 
 Navigazione
 La navigazione consente al non vedente di esplorare tutta la scacchiera tramite le frecce su, giù, destra e sinistra. Per i vedenti è possibile l'uso del mouse.
