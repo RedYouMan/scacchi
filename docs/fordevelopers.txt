@@ -256,6 +256,15 @@ La cartella Test contiene file di test da copiare e caricare sotto cartella sosp
 Non ho conservato tutti i test unitari inutili, ma alcuni più importanti. Vi esorto di scrivere sempre il tema anche se il test si può organizzare in pochissimi minuti da un copia e incolla e modificando le posizioni dei pezzi. Infatti se non metterete il tema corretto, già dopo qualche ora farete fatica a ricordare a cosa serviva il test.
 Ho lasciato anche alcuni file di registrazioni: matto4mosse.txt, scaccomatto.txt, partita.txt e partita2.txt
 
+Un consiglio per il test dell'online. Non è certo una buona idea farsi tutta la partita per arrivare alla posizione di test. Suicidio! Per usare il caricamento di una posizione con Ctrl-P basta che in Nav.cpp vengano commentate nella parte con keyboard::I (attiva l'online) le tre istruzioni:
+clear_globali()
+clearBoard()
+init()
+
+Dopo di che si deve caricare la posizione su entrami i giocatori, attivare serverScacchi sul log, chiedere di giocare online sul bianco einserire tutte le informazioni come 1 per il bianco, il nome del player e copiarsi la room da inviare al nero. Dopo di che si fa lo stesso sul nero rispondendo 2 per il nero, inserendo il nome del player e la room ricevuta dal bianco. In questo modo siete pronti a testare.
+
+Una avvertenza. Nel caso il bianco, ad esempio (vale anche per il nero), dovesse promuovere un pedone e sceglie il pezzo ad esempio D(donna)  o altro, anche dall'altro giocatore verrà chiesto a cosa si promuove il pedone. Questo vuol dire che il bianco deve comunicare a cosa si promuove il pedone e dall'altra parte si risponderà allo stesso modo.
+
 Ambiente di sviluppo
 L'ambiente di sviluppo è basato su librerie Windows di Visual Studio 2022 col suo sdk e compilazione basata su cmake (CMAKELISTS.txt) e linguaggio C17.
 
