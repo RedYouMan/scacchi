@@ -224,6 +224,8 @@ Qui descriviamo solo due cose:
 la directory dei sorgenti è src-comnet
 Gli eseguibili vanno in serverScacchi e sono serverCom.exe e clientCom.exe
 Il file di configurazione va sempre nella stessa directory degli eseguibili ed è comnet.cnf
+Per assemblare sorgenti e uso di pyinstaller in questo caso particolare, esaminare NOTE.txt
+
 
 Ambiente finale per creare il tuo zip Scacchi-it
 Attenzione: quando hai creato tutti gli exe posizionandoli nella cartella giusta, controlla che esistano tutte le directory, in modo particolare:
