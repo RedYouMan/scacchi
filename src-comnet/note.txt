@@ -1,0 +1,40 @@
+Crea un ambiente virtuale usando:
+python -m venv .venv
+ 
+all'interno della cartella in cui vuoi iniziare un progetto, o dove ne esiste già uno.
+Poi esegui:
+per windows:
+.venv\scripts\activate
+
+qui sulla root del progetto:
+ora fai pip install winsockets 
+pip install keyboard winsound  
+
+entra in .vemve fai
+pip install pyinstaller
+Ritorna sulla root.
+
+Durante la compilazione attento se nella root devi fare qualche altro pip install.
+
+per  
+1. Come compilarli in .exe stabili con PyInstaller
+Per assicurarti che PyInstaller includa tutti i moduli nascosti derivanti dai link dinamici, usa i seguenti comandi nel terminale per generare gli eseguiti indipendenti:
+# Compilazione del Server
+.vemv\scripts\pyinstaller --onefile --hidden-import=websockets --hidden-import=websockets.server serverCom.py
+
+# Compilazione del Client
+.venv\scripts\pyinstaller --onefile --hidden-import=websockets --hidden-import=websockets.client --hidden-import=keyboard --hidden-import=winsound clientCom.py
+
+
+# Test su un solo PC:
+# 1. Metti serverCom.exe, clientCom.exe e comnet.cnf nella stessa cartella;
+#    per il test locale imposta ipaddress=127.0.0.1 e port=8989.
+# 2. Apri due finestre terminale nella cartella. Avvia prima `serverCom.exe`.
+# 3. In ciascun terminale avvia `clientCom.exe`: scegli Bianco nel primo,
+#    Nero nel secondo e lo stesso tempo iniziale. Usa Alt+T per passare il turno;
+#    Alt+O richiede al server i tempi di entrambi. Verifica che la finestra dell'altro
+#    client aggiorni i tempi a ogni cambio turno. Per provare la scadenza usa 1 minuto.
+#4. Alt U annuncia la promozione di un pedone ad un pezzo scelto dopo ctrl+U
+#5 Ctrl+P chiede accordo di patta. Si può rispondere Alt+1 ok o Alt+2 No. 
+#6. Su Windows le scorciatoie globali possono richiedere autorizzazioni; interrompi
+#    i client con Ctrl+C. Per gli exe, distribuisci comnet.cnf accanto agli eseguibili.

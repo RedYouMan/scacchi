@@ -27,6 +27,13 @@ Per verificare la vostra versione ascoltate quando parte il programma oppure dig
 
 Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima versione del presente file.
 
+** Novità **
+Plugin per partite online
+Oltre al pacchetto di Scacchi-it (scacchiGr.7z),  scarica anche Scacchi-it-Net.7z da:
+https://github.com/RedYouMan/redyouman.github.io/raw/main/_posts/repo/Scacchi-it-Net.7z
+o anche dalla pagina https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
+Leggi il paragrafo Comunicazioni online di questo Manuale.
+
 Open Source
 Il progetto è open source dal 27 agosto 2026 e potete consultare i sorgenti al repository:
 https://github.com/RedYouMan/scacchi
@@ -970,6 +977,36 @@ Questo specialmente se dovete ottenere da make-pgn un file ufficiale da consegna
 Estendere una rete Hamachi
 ESISTONO VARI piani tariffari annuali estendendo ad esempio fino a 32 pc una rete con un abbonamento annuo minimo oppure estendendo a reti multiple a costi contenuti.
 Consultare il sito ufficiale.
+
+La funzionalità Comunicazione online (scacchi-it-Net.7z)
+Questafunzionalità è un plugin aggiuntivo alla versione base 14.1 di Scacchi-it. Esso permette di avere un secondo server di comunicazione nel gioco online per:
+1. comunicare a quale pezzo si promuove il pedone
+2. avere un orologio comune tra i due giocatori
+3. proporre la patta che si può accettare o rifiutare.
+ Tutto viene fatto da sequenza di tasti diversi dall'applicativo di scacchi usando Alt invece di Ctrl e si può fare la sequenza anche fuori console del client.
+I tasti sono:
+- Alt+U per dire la promozione del pedone. Viene chiesto di inserire D per donna, T per torre, A per alfiere e C per cavallo.
+- Alt+O per sapere i minuti consumati
+- Alt+T per switchare l'orologio all'avversario dopo aver mosso
+- Alt+P per chiedere la Patta a cui si può rispondere Alt+1 per accettare o Alt+2 per rifiutare
+
+Durante la digitazione di tali tasti, le risposte alla proposta di Patta o l'annuncio di promozione del pedone e all'esaurimento del tempo vi sono segnali acustici.
+
+Come si installa?
+Mettete lo zip accanto alla cartella scacchi-it e fate con "esplora File" sullo zip, poi "Estrai qua". In scacchi-it cartella serverScacchi dovete trovare 3 file:
+- clientCom.exe
+- comnet.cnf
+- ServerCom.exe
+
+Il file comnet.cnf come si configura? 
+Se siete il giocatore che ha attivi sia il serverscacchi.exe e ServerCom.exe tutti su un solo computer considerato il server di gioco, allora comnet.cnf ha lo stesso ip di server.cnf ma porta diversa.L'altro giocatore deve avere la stessa configurazione anche se non attiva niente.
+
+Se, invece, volete bilanciare il carico di lavoro tra i due pc allora:
+giocatore A ha solo serverScacchi.exe attivo ma nella configurazione di comnet.cnf deve avere l'IP (di rete normale o Hamachi) dell'altro giocatore che ha messo attivo serverCom.ex e viceversa avviene lato giocatore B per serverScacchi.exe
+
+Attenzione prima di una partita, specie se per voi importante, esercitatevi un poco anche solo con la parte di comunicazione che è indipendente da Scacchi-it. Potete mettere solo attivo il serverCom.exe e due client sul vostro pc, uno che fa da bianco e l'altro che fa da nero, per esercitarvi. 
+
+Durante la partita, invece, avrete attivo Scacchi-it, i due server, (spero per voi solo uno ma dipende se l'altro lo sa utilizzare) e un client. I due serverCom e il client sono necessari per l'orologio fin dall'inizio. 
 
 La funzionalità simpleEditor
 

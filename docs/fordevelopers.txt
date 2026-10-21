@@ -217,6 +217,14 @@ In diagrammi trovi make-FEN2SVG
 In browser trovi le cartelle per le estensioni browser da caricare sul tuo browser (vedi manuale nella cartella delle estensioni)
 In cartella make-pgn trovi make-pgn.exe e la cartella elenco per mettervi i file da impacchettare.
 
+PLUGIN Scacchi-it-Net
+E' stato introdotto questo plugin per migliorare la comunicazione di gioco tra i giocatori, escluso il nome della room che dovrà viaggiare via whatsapp o email per comunicarla all'altro giocatore o dettata per telefono.
+
+Qui descriviamo solo due cose:
+la directory dei sorgenti è src-comnet
+Gli eseguibili vanno in serverScacchi e sono serverCom.exe e clientCom.exe
+Il file di configurazione va sempre nella stessa directory degli eseguibili ed è comnet.cnf
+
 Ambiente finale per creare il tuo zip Scacchi-it
 Attenzione: quando hai creato tutti gli exe posizionandoli nella cartella giusta, controlla che esistano tutte le directory, in modo particolare:
 - sospensioni
