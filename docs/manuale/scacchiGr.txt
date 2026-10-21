@@ -32,7 +32,7 @@ Plugin per partite online
 Oltre al pacchetto di Scacchi-it (scacchiGr.7z),  scarica anche Scacchi-it-Net.7z da:
 https://github.com/RedYouMan/redyouman.github.io/raw/main/_posts/repo/Scacchi-it-Net.7z
 o anche dalla pagina https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
-Leggi il paragrafo Comunicazioni online di questo Manuale.
+Leggi il paragrafo Comunicazione online di questo Manuale.
 
 Open Source
 Il progetto è open source dal 27 agosto 2026 e potete consultare i sorgenti al repository:
@@ -979,7 +979,7 @@ ESISTONO VARI piani tariffari annuali estendendo ad esempio fino a 32 pc una ret
 Consultare il sito ufficiale.
 
 La funzionalità Comunicazione online (scacchi-it-Net.7z)
-Questafunzionalità è un plugin aggiuntivo alla versione base 14.1 di Scacchi-it. Esso permette di avere un secondo server di comunicazione nel gioco online per:
+Questa funzionalità è un plugin aggiuntivo alla versione base 14.1 di Scacchi-it. Esso permette di avere un secondo server di comunicazione nel gioco online per:
 1. comunicare a quale pezzo si promuove il pedone
 2. avere un orologio comune tra i due giocatori
 3. proporre la patta che si può accettare o rifiutare.
