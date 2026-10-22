@@ -48,8 +48,9 @@ Il software, una volta scompattato con unzip,  è leggero, e può essere contenu
 Il non vedente, tramite uno screen reader come NVDA, oJAWS potrà utilizzare il computer e Scacchi-it ascoltando anche i messaggi "verbosi" della console.
 
 Come si vedrà Scacchi-it è soprattutto una piattaforma di studio e analisi, da usare a casa, oppure adatto a partite dove si attende la risposta di un amico oppure per lezioni di scacchi, o per risolvere dei problemi (puzzle) o per giocare contro il computer e infine per giocare anche online.
-Questa caratteristica sottolinea la modalità non agonistica del programma e, quindi, non necessita di orologio per la misurazione del tempo per le risposte di ogni giocatore.
-Tuttavia la presenza di un orologio tiflologico nel pacchetto ha solo il significato di "allenamento col computer" per abituarsi al tempo di gioco prima di partecipare ad un torneo e abbassare la fase di ansia  da prestazione.
+
+La presenza di un orologio tiflologico nel pacchetto scacchiGr.7z ha solo il significato di "allenamento col computer" per abituarsi al tempo di gioco prima di partecipare ad un torneo e abbassare la fase di ansia  da prestazione.
+Mentre per le gare online esiste il plugin Scacchi-it-Net che fornisce un orologio su rete e altre possibilità di comunicazione per la richiesta di patta e per la promozione di un pedone. 
 
 Scacchi-it consente di:
 1 - navigare, con frecce e mouse, sulla scacchiera dando informazioni di pezzi e case vuote
@@ -102,6 +103,9 @@ Scacchi-it consente di:
 48 - ottenere a fronte di un colore lo schieramento desiderato (Ctrl-D)
 49 - creare un pgn con le partite registrate
 50 - usare la utility extractGame per ottenere dal serverScacchi un file di testo in notazione algebrica e da sottoporre a make-pgn
+51 - comunicare un accordo di patta su rete, accettabile o rifiutabile
+52 - disporre di un orologio su rete condiviso
+53 - comunicare su rete a quale pezzo viene promosso un pedone 
 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
@@ -124,6 +128,8 @@ Scacchi-it core, suddiviso in:
  2. motore di controllo, con parte controllo gioco a due, controllo stockfish, controllo online, Openings Trainer,undo
  3. stockfish, scaricato dal suo sito
 4. serverScacchi
+5 serverCom(plugin)
+6clientCom (plugin) 
 
 Scacchi-it Utility che collaborano con la parte core:
 1. IncollaFEN
@@ -144,8 +150,8 @@ Scacchi-it Applicativi indipendenti, costituita da:
 
 Usare Scacchi-it da chiavetta USB
 Se devi usare Scacchi-it su chiavetta USB, ti conviene fare i seguenti passi:
-1. scompatta scacchigr.7z prima sul desktop del pc e segui i paragrafi successivi. Questo ti permetterà di far scaricare alla prima installazione anche stockfish. 
-Quando la scompattazione del 7z sul pc è completata, entra nella cartella scacchi-it efai anche il comando 
+1. scompatta scacchigr.7z e, eventualmente, anche Scacchi-it-Net.7z prima sul desktop del pc e segui i paragrafi successivi. Questo ti permetterà di far scaricare alla prima installazione anche stockfish. 
+Quando la scompattazione dei 7z sul pc è completata, entra nella cartella scacchi-it efai anche il comando 
 scacchi-start per installare stockfish.
 Dopo aver installato con i paragrafi successivi Scacchi-it ritorna a questo paragrafo e fai:
 2. copia l'intera cartella scacchi-it sulla chiavetta USB
@@ -213,7 +219,7 @@ cd scacchi-it
 ora digitate scacchi-start 
 l'ultimo comando farà partire il programma e se non fosse installato stockfish ve lo scarica. Controllate sempre se in cartella engine esiste la cartella stockfish, all'interno della quale ci deve essere l'eseguibile di stockfish. Se non esiste la cartella stockfish ma altro, leggere il readme.md nella cartella engine.
 
-Se vi servisse l'orologio digitare clock-start seguito da return (Vedi il paragrafo che lo riguarda per avere una sola console).
+Se vi servisse l'orologio locale digitare clock-start seguito da return (Vedi il paragrafo che lo riguarda per avere una sola console).
 Per incolla-fen, e validaFEN  o incolla-ROTN ne parleremo in seguito.
 
 Dove sono attivabili i controls
@@ -292,6 +298,7 @@ Come promuovere un pedone
 Si viene guidati sulla console con Alt-Tab e si deve rispondere Con T per torre, C per cavallo, A per alfiere o D per donna. Se si da un valore diverso non viene promosso il pedone.
 
 ATTENZIONE anche nel caso online si deve rispondere da entrambe le parti, per riportare la promozione  al pezzo giusto, per cui i due giocatori si devono comunicare l'informazione in modo che chi sta dall'altro lato risponda correttamente a quale pezzo è stato promosso il pedone.
+Vedi anche il paragrafoComunicazione online di questo Manuale.
 
 Scelta automatica della lingua italiana
 Scacchi-it sceglie automaticamente la lingua italiana se disponibile, altrimenti quella di sistema. Ad esempio se avete Windows in inglese, vi leggerà le frasi italiane con accento inglese. Per evitare questo occorre installare anche la lingua italiana su Windows in inglese.
@@ -675,8 +682,9 @@ Sono importanti i seguenti controlli:
 Tuning del chess engine
 Nel pacchetto 7z nella cartella readme esistono vari file, tra cui tuning.txt (dalla versione 3.9 in poi).
 
-Come funziona l'orologiotiflologico
-Se dovete avere orologio e scacchiera, lanciate prima l'orologio e sulla stessa console avviate Scacchi-it.
+Come funziona l'orologio tiflologico locale
+Esistono due tipi di orologio: quello locale qui descritto, quello in rete descritto nel paragrafo Comunicazione online. Ne dovrete attivare solo uno in base a se giocate in locale da soli oppure in rete.
+Se dovete avere orologio locale e scacchiera, lanciate prima l'orologio e sulla stessa console avviate Scacchi-it.
 Dall'help, durante il lancio di clock-start, si apprende:
 - digitare spazio la prima volta per avviarlo
 - spazio per dire di aver mosso e fare cambio turno
@@ -687,7 +695,7 @@ L'orologio rileva la durata del tempo di pensiero della mossa e lo detrae solo a
 Non dimentichiamo che lo strumento deve essere adatto ai non vedenti, che non possono vedere il trascorrere del tempo ma solo ascoltarlo, quindi, diventa improponibile aggiornare ogni secondo e far dire un vocale. 
 
 Quando usare l'orologio scacchistico
-Se vorreste allenarvi con un orologio, ad esempio giocando col computer a partite lampo di 5-10 minuti oppure con un amico assegnando un tempo di 120 minuti (un'ora) per fare 40 mosse,  abbiamo due possibili scenari:
+Se vorreste allenarvi con un orologio locale, ad esempio giocando col computer a partite lampo di 5-10 minuti oppure con un amico assegnando un tempo di 120 minuti (un'ora) per fare 40 mosse,  abbiamo due possibili scenari:
 In entrambi gli scenari, dobbiamo attivare su una sola console sia Chess Clock che scacchi. 
 -Scenario col computer per le lampo
 1. attivate prima il Chess Clock (orologio) con clock-start(scacchi-start su una prima finestra di prompt)
@@ -696,7 +704,7 @@ In entrambi gli scenari, dobbiamo attivare su una sola console sia Chess Clock c
 4. Alt-Tab sulla finestra "Scacchi-it" e fate la mossa (o la fate fare al computer come bianco)
 5. Alt-Tab verso la finestra "Chess Clock" e premere spazio per ogni giocatore che ha appena fatto fare il "toc" del pezzo sulla scacchiera
 
-- Scenario con un amico
+- Scenario gioco in locale con un amico
 Stesso procedimento di prima, ma col punto 4 dove è il singolo giocatore che va sull'orologio e fa spazio
 
 Prima di giocare con l'orologio prendete prima la mano per spostarvi da una finestra ad un'altra, lasciando Alt solo dopo che il Tab vi ha portato sulla finestra giusta, ascoltando la voce di aiuto. 
@@ -983,7 +991,8 @@ Questa funzionalità è un plugin aggiuntivo alla versione base 14.1 di Scacchi-
 1. comunicare a quale pezzo si promuove il pedone
 2. avere un orologio comune tra i due giocatori
 3. proporre la patta che si può accettare o rifiutare.
- Tutto viene fatto da sequenza di tasti diversi dall'applicativo di scacchi usando Alt invece di Ctrl e si può fare la sequenza anche fuori console del client.
+ 
+Tutto viene fatto da sequenza di tasti diversi dall'applicativo di scacchi usando Alt invece di Ctrl e si può fare la sequenza anche fuori console del client.
 I tasti sono:
 - Alt+U per dire la promozione del pedone. Viene chiesto di inserire D per donna, T per torre, A per alfiere e C per cavallo.
 - Alt+O per sapere i minuti consumati
@@ -991,7 +1000,8 @@ I tasti sono:
 - Alt+P per chiedere la Patta a cui si può rispondere Alt+1 per accettare o Alt+2 per rifiutare
 
 Durante la digitazione di tali tasti, le risposte alla proposta di Patta o l'annuncio di promozione del pedone e all'esaurimento del tempo vi sono segnali acustici.
-
+Gli effetti sonori, poco frequenti, servono anche per attirare l'attenzione dell'arbitro nelle gare.
+ 
 Come si installa?
 Mettete lo zip accanto alla cartella scacchi-it e fate con "esplora File" sullo zip, poi "Estrai qua". In scacchi-it cartella serverScacchi dovete trovare 3 file:
 - clientCom.exe
@@ -999,14 +1009,27 @@ Mettete lo zip accanto alla cartella scacchi-it e fate con "esplora File" sullo 
 - ServerCom.exe
 
 Il file comnet.cnf come si configura? 
-Se siete il giocatore che ha attivi sia il serverscacchi.exe e ServerCom.exe tutti su un solo computer considerato il server di gioco, allora comnet.cnf ha lo stesso ip di server.cnf ma porta diversa.L'altro giocatore deve avere la stessa configurazione anche se non attiva niente.
+Se siete il giocatore che ha attivi sia il serverscacchi.exe e ServerCom.exe tutti su un solo computer  allora comnet.cnf ha lo stesso ip di server.cnf ma porta diversa (lasciate quella proposta). L'altro giocatore deve avere la stessa configurazione anche se non attiva niente.
 
-Se, invece, volete bilanciare il carico di lavoro tra i due pc allora:
-giocatore A ha solo serverScacchi.exe attivo ma nella configurazione di comnet.cnf deve avere l'IP (di rete normale o Hamachi) dell'altro giocatore che ha messo attivo serverCom.ex e viceversa avviene lato giocatore B per serverScacchi.exe
+Se, invece, volete bilanciare il carico di lavoro tra i due pc, cosa consigliata nelle gare di torneo, allora:
+il giocatore A ha solo serverScacchi.exe attivo ma nella configurazione di comnet.cnf deve avere l'IP (di rete normale o Hamachi) dell'altro giocatore che ha messo attivo serverCom.exe e viceversa avviene lato giocatore B per serverScacchi.exe
 
-Attenzione prima di una partita, specie se per voi importante, esercitatevi un poco anche solo con la parte di comunicazione che è indipendente da Scacchi-it. Potete mettere solo attivo il serverCom.exe e due client sul vostro pc, uno che fa da bianco e l'altro che fa da nero, per esercitarvi. 
+Attenzione prima di una partita, specie se per voi importante, esercitatevi un poco anche solo con la parte di comunicazione che è indipendente da Scacchi-it. Potete, infatti, mettere solo attivo il serverCom.exe e due client sul vostro pc, uno che fa da bianco e l'altro che fa da nero, per esercitarvi. 
 
-Durante la partita, invece, avrete attivo Scacchi-it, i due server, (spero per voi solo uno ma dipende se l'altro lo sa utilizzare) e un client. I due serverCom e il client sono necessari per l'orologio fin dall'inizio. 
+Durante la partita online, invece, avrete attivo Scacchi-it, i due server, (spero per voi solo uno ma dipende se l'altro lo sa utilizzare) e un client. I due serverCom e il client sono necessari per l'orologio fin dall'inizio. 
+
+La modalità consigliata di avvio dei programmi è:
+1. avviare uno dei server sul pc
+2. avviare il client
+3. avviare Scacchi-it
+
+Questa modalità permetterà di avere a sinistra tutte le console che userete di meno, la stessa console del client, tranne per il caso della promozione del pedone, non si deve raggiungere con Alt-Tab dato che le sequenze dei comandi sono fattibili anche fuori console.
+
+La modalità consigliata per la promozione del pedone durante la partita online è la seguente:
+1. promuovere sulla propria scacchiera il pedone al pezzo desiderato
+2. comunicare con il clientCom il pezzo a cui si promuove il pedone
+3. l'avversario ricevuta tale comunicazione provvede a effettuare tale promozione sul proprio Scacchi-it 
+4. in gara ufficiale l'arbitro attirato dal sonoro controlla se la promozione è corretta
 
 La funzionalità simpleEditor
 

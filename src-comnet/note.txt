@@ -8,23 +8,19 @@ per windows:
 
 qui sulla root del progetto:
 ora fai pip install winsockets 
-pip install keyboard winsound  
+pip install keyboard 
 
 entra in .vemve fai
 pip install pyinstaller
 Ritorna sulla root.
 
-Durante la compilazione attento se nella root devi fare qualche altro pip install.
-
-per  
-1. Come compilarli in .exe stabili con PyInstaller
+Come compilarli in .exe stabili con PyInstaller
 Per assicurarti che PyInstaller includa tutti i moduli nascosti derivanti dai link dinamici, usa i seguenti comandi nel terminale per generare gli eseguiti indipendenti:
 # Compilazione del Server
 .vemv\scripts\pyinstaller --onefile --hidden-import=websockets --hidden-import=websockets.server serverCom.py
 
 # Compilazione del Client
 .venv\scripts\pyinstaller --onefile --hidden-import=websockets --hidden-import=websockets.client --hidden-import=keyboard --hidden-import=winsound clientCom.py
-
 
 # Test su un solo PC:
 # 1. Metti serverCom.exe, clientCom.exe e comnet.cnf nella stessa cartella;
