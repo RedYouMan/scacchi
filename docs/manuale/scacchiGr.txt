@@ -1000,7 +1000,7 @@ I tasti sono:
 - Alt+P per chiedere la Patta a cui si può rispondere Alt+1 per accettare o Alt+2 per rifiutare
 
 Durante la digitazione di tali tasti, le risposte alla proposta di Patta o l'annuncio di promozione del pedone e all'esaurimento del tempo vi sono segnali acustici.
-Gli effetti sonori, poco frequenti, servono anche per attirare l'attenzione dell'arbitro nelle gare ufficiali.
+Gli effetti sonori, poco frequenti, servono anche per attirare l'attenzione dell'arbitro nelle gare ufficiali a patto che almeno uno dei giocatori non indossi la cuffia, altrimenti deve essere allertato dai giocatori stessi.
  
 Come si installa?
 Mettete lo zip accanto alla cartella scacchi-it e fate con "esplora File" sullo zip, poi "Estrai qua". In scacchi-it cartella serverScacchi dovete trovare 3 file:
