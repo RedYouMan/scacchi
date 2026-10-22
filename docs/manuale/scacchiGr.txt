@@ -1037,7 +1037,7 @@ La modalità consigliata per la patta è la seguente:
 3. se la proposta viene accettata comunicare via email al circolo o a chi aggiorna i punteggi tale patta. Consigliato di fare la email dopo che si chiudono tutti i programmi. 
 
 Suggerimento ad un circolo:
-Se dovete giocare online in rete locale nel vostro circolo potreste avere un pc che fa da server collegato in rete. Su esso  Scacchi-it terrà attivo solo i due server. In questo caso gli ip dei due file di configurazione sono gli stessi e corrispondenti all'ip del pc server. In questo caso tutti i giocatori nei due file di configurazione in serverScacchi devono avere come ip quello del pc locale messo a disposizione dal circolo come server.
+Se dovete giocare online in rete locale o in rete Hamachi nel vostro circolo potreste avere un pc che fa da server collegato in rete. Su esso  Scacchi-it terrà attivo solo i due server. In questo caso gli ip dei due file di configurazione sono gli stessi e corrispondenti all'ip del pc server. In questo caso tutti i giocatori nei due file di configurazione in serverScacchi devono avere come ip quello del pc locale messo a disposizione dal circolo come server.
 
 La funzionalità simpleEditor
 
