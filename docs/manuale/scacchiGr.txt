@@ -1029,15 +1029,20 @@ La modalità consigliata per la promozione del pedone durante la partita online 
 1. promuovere sulla propria scacchiera il pedone al pezzo desiderato
 2. comunicare con il clientCom il pezzo a cui si promuove il pedone
 3. l'avversario ricevuta tale comunicazione provvede a effettuare tale promozione sul proprio Scacchi-it 
-4. in gara ufficiale l'arbitro attirato dal sonoro controlla se la promozione è corretta
+4. in gara ufficiale l'arbitro attirato dal sonoro controlla se la promozione è corretta.
+In ogni caso tale promozione risulta sul log Di serverScacchi da parte di chi ha promosso il pedone.
 
 La modalità consigliata per la patta è la seguente:
 1. inoltrare proposta di patta
 2. attendere se viene accettata o rifiutata
-3. se la proposta viene accettata comunicare via email al circolo o a chi aggiorna i punteggi tale patta. Consigliato di fare la email dopo che si chiudono tutti i programmi. 
+3. se la proposta viene accettata i giocatori hanno l'obbligo di comunicare via email questa patta al circolo o a chi aggiorna i punteggi . Consigliato di fare la email dopo che si chiudono tutti i programmi. 
+
+In caso di timeout, scadenza del tempo, il giocatore che ha vinto per tempo non scaduto ha l'obbligo di inviare email al responsabile del punteggio del circolo.
 
 Suggerimento ad un circolo:
 Se dovete giocare online in rete locale o in rete Hamachi nel vostro circolo potreste avere un pc che fa da server collegato in rete. Su esso  Scacchi-it terrà attivo solo i due server. In questo caso gli ip dei due file di configurazione sono gli stessi e corrispondenti all'ip del pc server. In questo caso tutti i giocatori nei due file di configurazione in serverScacchi devono avere come ip quello del pc locale messo a disposizione dal circolo come server.
+
+I suggerimenti circa le email sono qui solo una proposta, sarà ovviamente il circolo a decidere le modalità da utilizzare e comunicarle a tutti i giocatori.
 
 La funzionalità simpleEditor
 
