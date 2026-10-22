@@ -1000,7 +1000,7 @@ I tasti sono:
 - Alt+P per chiedere la Patta a cui si può rispondere Alt+1 per accettare o Alt+2 per rifiutare
 
 Durante la digitazione di tali tasti, le risposte alla proposta di Patta o l'annuncio di promozione del pedone e all'esaurimento del tempo vi sono segnali acustici.
-Gli effetti sonori, poco frequenti, servono anche per attirare l'attenzione dell'arbitro nelle gare.
+Gli effetti sonori, poco frequenti, servono anche per attirare l'attenzione dell'arbitro nelle gare ufficiali.
  
 Come si installa?
 Mettete lo zip accanto alla cartella scacchi-it e fate con "esplora File" sullo zip, poi "Estrai qua". In scacchi-it cartella serverScacchi dovete trovare 3 file:
@@ -1030,6 +1030,11 @@ La modalità consigliata per la promozione del pedone durante la partita online 
 2. comunicare con il clientCom il pezzo a cui si promuove il pedone
 3. l'avversario ricevuta tale comunicazione provvede a effettuare tale promozione sul proprio Scacchi-it 
 4. in gara ufficiale l'arbitro attirato dal sonoro controlla se la promozione è corretta
+
+La modalità consigliata per la patta è la seguente:
+1. inoltrare proposta di patta
+2. attendere se viene accettata o rifiutata
+3. se la proposta viene accettata comunicare via email al circolo o a chi aggiorna i punteggi tale patta. Consigliato di fare la email dopo che si chiudono tutti i programmi. 
 
 La funzionalità simpleEditor
 
