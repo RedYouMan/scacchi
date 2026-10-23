@@ -1038,6 +1038,7 @@ La modalità consigliata per la patta è la seguente:
 3. se la proposta viene accettata i giocatori hanno l'obbligo di comunicare via email questa patta al circolo o a chi aggiorna i punteggi . Consigliato di fare la email dopo che si chiudono tutti i programmi. 
 
 In caso di timeout, scadenza del tempo, il giocatore che ha vinto per tempo non scaduto ha l'obbligo di inviare email al responsabile del punteggio del circolo.
+Il log di serverScacchi permette, anche qui, di osservare il tempo di inizio della prima mossa e il tempo dell'ultima mossa del giocatore in timeout. Con la differenza si comprende di quanto era a corto di tempo rispetto a chi ha vinto.
 
 Suggerimento ad un circolo:
 Se dovete giocare online in rete locale o in rete Hamachi nel vostro circolo potreste avere un pc che fa da server collegato in rete. Su esso  Scacchi-it terrà attivo solo i due server. In questo caso gli ip dei due file di configurazione sono gli stessi e corrispondenti all'ip del pc server. In questo caso tutti i giocatori nei due file di configurazione in serverScacchi devono avere come ip quello del pc locale messo a disposizione dal circolo come server.
