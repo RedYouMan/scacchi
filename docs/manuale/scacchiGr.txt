@@ -111,6 +111,7 @@ Scacchi-it consente di:
 51 - comunicare un accordo di patta su rete, accettabile o rifiutabile
 52 - disporre di un orologio su rete condiviso
 53 - comunicare su rete a quale pezzo viene promosso un pedone 
+54 - utilizzare una AI esterna
 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
@@ -663,6 +664,7 @@ Da qui saprete che il programma accetta due parametri ovvero il nome del log del
 La risposta del coach è in gergo stockfish: casa partenza+casa arrivo. Senza lettera del pezzo. Ad esempio: e1g1 è una mossa di re bianco per fare l'arrocco corto a destra, mentre e1c1 mossa di rebianco per l'arrocco lungo a sinistra, c2c4 è una mossa di pedone bianco, e7e5 una mossa di pedone nero.
 Il coach fa il delta tra la valutazione di come stava prima il giocatore e come sta dopo la mossa.  In base a questo delta e delle soglie (0.5, 1.0, 1.5) stabilisce se la mossa è debole, cattiva, errata e consiglia una best move.
 Il tutto viene riportato in un file report.txt nella cartella registrazioni.
+Si può, a questo punto, dopo aver letto report.txt utilizzare una AI esterna, come Chat GPT, Gemini o Meta-AI. Si copia il contenuto del file report.txt e si incolla alla AI esterna e le si fanno tutte le domande, ad esempio: "perchè ho perso la partita?" e lei ci darà in italiano, mossa per mossa, spiegazioni strategico-tattiche.
 
 Estrarre dalla scacchiera una FEN
 Se dovete usare, ad esempio, il coachFEN o il make-FEN2SVG o vi interessa portare la posizione su un portale, potete fare Ctrl-E, poi  spostarvi sulla console  con Alt-Tab per trovare il messaggio "fen: valore della FEN". Il consiglio è di selezionare dalla console il valore facendo Ctrl-A seguito da Ctrl-C e incollarlo, momentaneamente,  su un file notepad per selezionare la sola parte del valore.
