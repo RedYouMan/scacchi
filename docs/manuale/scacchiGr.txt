@@ -27,17 +27,21 @@ Per verificare la vostra versione ascoltate quando parte il programma oppure dig
 
 Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima versione del presente file.
 
-**Novità  1**
+** Novità  1 **
 Plugin per partite online
 Oltre al pacchetto di Scacchi-it (scacchiGr.7z),  scarica anche Scacchi-it-Net.7z da:
 https://github.com/RedYouMan/redyouman.github.io/raw/main/_posts/repo/Scacchi-it-Net.7z
 o anche dalla pagina https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
 Leggi il paragrafo Comunicazione online di questo Manuale.
 
-**Novità 2**
+** Novità 2 **
 CoachGame fornisce il report.txt che è l'analisi di una partita.
 Se copiate il contenuto di report.txt e lo incollate a Gemini o Chat GPT o a META-AI
 e gli chiedete perchè avete perso la partita, vi spiegherà tutto in italiano e con analisi scacchistica
+
+** Novità 3 **
+Metodo per trasformare da soli un audio di partita in pgn
+https://github.com/RedYouMan/redyouman.github.io/raw/main/_posts/tutorials/audio-in-pgn.txt
 
 Open Source
 Il progetto è open source dal 27 agosto 2026 e potete consultare i sorgenti al repository:
