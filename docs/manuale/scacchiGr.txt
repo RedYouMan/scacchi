@@ -42,6 +42,7 @@ e gli chiedete perchè avete perso la partita, vi spiegherà tutto in italiano e
 ** Novità 3 **
 Metodo per trasformare da soli un audio di partita in pgn
 https://github.com/RedYouMan/redyouman.github.io/raw/main/_posts/tutorials/audio-in-pgn.txt
+o anche dalla pagina https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
 
 Open Source
 Il progetto è open source dal 27 agosto 2026 e potete consultare i sorgenti al repository:
