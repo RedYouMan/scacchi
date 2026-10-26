@@ -129,7 +129,7 @@ Scacchi-it consente di:
 52 - disporre di un orologio su rete condiviso
 53 - comunicare su rete a quale pezzo viene promosso un pedone 
 54 - utilizzare una AI esterna
-55 - fare l'analisi di mosse sospette se si gioca online 
+55 - fare l'analisi di mosse sospette (sperimentale) se si gioca online 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
 Tutte le possibilità di sopra, dipendono dalla vostra conoscenza degli strumenti a disposizione per poterlo fare, quindi è fondamentale sentire sia questo tutorial che l'help.
@@ -998,7 +998,7 @@ Attenzione il log del server certifica i tempi e le mosse da casa di partenza a 
 Si è fornita una utility extractGame che dopo l'uso di sortLog , può analizzare l'output file del sortLog e per una certa room provare a estrarre le mosse in notazione algebrica in un file da sottoporre poi a make-pgn (vedi paragrafo di extractGame).
 Avvertenza: dopo aver creato un file in notazione algebrica è fortemente consigliato verificare se catture, enpassant, promozioni siano state riportate correttamente.
 
-Verifica che il giocatore non abbia avuto aiuti da una AI
+Verifica che il giocatore non abbia avuto aiuti da una AI(sperimentale)
 Osservando il codice open source, quando si gioca online è inibito l'utilizzo di stockfish.
 Inoltre l'amministratore del torneo può applicare una analisi dei log e del ritmo di gioco (Behavioral Analysis)
 Si possono facilmente individuare Tempi di reazione disumani o matematicamente perfetti: L'AI calcola la mossa ottimale in millisecondi. I log tracciano il tempo impiegato dal giocatore per ogni decisione. Se un giocatore gioca in modo costante e robotico (con variazioni di tempo innaturali) o adotta una strategia GTO (Game Theory Optimal) rigida e priva delle tipiche oscillazioni umane è facilmente individuabile.
@@ -1016,8 +1016,8 @@ I valori di default sono già un buon inizio di indagine. Basta digitare:
 analisi_tempi server.log
 
 Attenzione se esiste un precedente log viene sovrapposto.
- 
-E' da ricordare che il programma individua eventuali indizi ma non prove certe.
+
+*AVVERTENZA: Si ricorda che il programma individua esclusivamente eventuali indizi e non prove certe. Si raccomanda pertanto di verificare attentamente la normativa vigente prima di intraprendere qualsiasi iniziativa.*
 
 Funzionalità sortLog
 Essendo il gioco online multiplayer, ciò comporta che nel file server.log sono mischiate le informazioni delle varie room. E' Posssibile ottenere un log che accorpi le informazioni per room alla fine di tutte le partite con il comando sortLog.exe. Tale comando non accetta nessun parametro , esso sa già di dover analizzare il file server.log e produrre il file serverordinato.txt
