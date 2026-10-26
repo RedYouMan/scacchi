@@ -987,6 +987,12 @@ Attenzione il log del server certifica i tempi e le mosse da casa di partenza a 
 Si è fornita una utility extractGame che dopo l'uso di sortLog , può analizzare l'output file del sortLog e per una certa room provare a estrarre le mosse in notazione algebrica in un file da sottoporre poi a make-pgn (vedi paragrafo di extractGame).
 Avvertenza: dopo aver creato un file in notazione algebrica è fortemente consigliato verificare se catture, enpassant, promozioni siano state riportate correttamente.
 
+Verifica che il giocatore non abbia avuto aiuti da una AI
+Osservando il codice open source, quando si gioca online è inibito l'utilizzo di stockfish.
+Inoltre l'amministratore del torneo può applicare una analisi dei log e del ritmo di gioco (Behavioral Analysis)
+Si possono facilmente individuare Tempi di reazione disumani o matematicamente perfetti: L'AI calcola la mossa ottimale in millisecondi. I log tracciano il tempo impiegato dal giocatore per ogni decisione. Se un giocatore gioca in modo costante e robotico (con variazioni di tempo innaturali) o adotta una strategia GTO (Game Theory Optimal) rigida e priva delle tipiche oscillazioni umane è facilmente individuabile.
+Se, però, il gioco online è fatto in una sede unica, in rete locale, un firewall può inibire l'uscita verso le AI esterne. Questo non è comunque un compito di Scacchi-it.
+ 
 Funzionalità sortLog
 Essendo il gioco online multiplayer, ciò comporta che nel file server.log sono mischiate le informazioni delle varie room. E' Posssibile ottenere un log che accorpi le informazioni per room alla fine di tutte le partite con il comando sortLog.exe. Tale comando non accetta nessun parametro , esso sa già di dover analizzare il file server.log e produrre il file serverordinato.txt
 
