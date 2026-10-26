@@ -1006,10 +1006,10 @@ Dopo aver ordinato il log per room, l'output file di sortLog lo possiamo sottome
 L'uso richiesto è:
 extractGame <nome room> <nome file da analizzare>
 
-Avvertenza: analizzate sempre il risultato del file che vi darà soprattutto per le catture, gli enpassant e le promozioni di pedoni. 
-Questo specialmente se dovete ottenere da make-pgn un file ufficiale da consegnare o caricare su qualche repository.
-. 
+Nota: Se esaminate il nome di file che produce sortLog.exe esso è serverOrdinato.txt. Avvertenza: analizzate sempre il risultato del file che vi darà soprattutto per le catture, gli enpassant e le promozioni di pedoni. 
 
+Questa utility vi aiuta specialmente se dovete ottenere da make-pgn un file ufficiale da consegnare o caricare su qualche repository.
+ 
 Estendere una rete Hamachi
 ESISTONO VARI piani tariffari annuali estendendo ad esempio fino a 32 pc una rete con un abbonamento annuo minimo oppure estendendo a reti multiple a costi contenuti.
 Consultare il sito ufficiale.

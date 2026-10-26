@@ -1,0 +1,83 @@
+=== LOG GENERALI DI SISTEMA ===
+2026-10-17 10:44:38 INFO [2026-10-17 10:44] Mossa ricevuta da Bianco in
+: Pe2Pe4
+2026-10-17 10:50:12 ERROR Errore SEND: SEND ry1n8iq Bianco Matto room=ry1n8iq player=Bianco
+2026-10-17 10:50:12 ERROR Errore SEND: SEND ry1n8iq Bianco Matto room=ry1n8iq player=Bianco
+2026-10-17 10:50:28 ERROR Errore SEND: SEND ry1n8iq Nero Matto room=ry1n8iq player=Nero
+2026-10-17 10:50:28 ERROR Errore SEND: SEND ry1n8iq Nero Matto room=ry1n8iq player=Nero
+
+=== ROOM: ascolto ===
+2026-06-23 20:12:55 INFO Server in ascolto su 25.21.139.174:65432
+2026-10-17 10:08:56 INFO Server in ascolto su 192.168.1.13:65432
+2026-10-17 10:39:45 INFO Server in ascolto su 192.168.1.13:65432
+2026-10-18 20:09:49 INFO Server in ascolto su 192.168.1.13:65432
+2026-10-18 22:49:10 INFO Server in ascolto su 192.168.1.13:65432
+2026-10-18 23:01:57 INFO Server in ascolto su 192.168.1.13:65432
+2026-10-18 23:20:11 INFO Server in ascolto su 192.168.1.13:65432
+2026-10-19 07:48:09 INFO Server in ascolto su 192.168.1.13:65432
+2026-10-19 09:14:49 INFO Server in ascolto su 192.168.1.13:65432
+
+=== ROOM: r2zv1zj ===
+2026-10-18 23:08:29 INFO Suggerimento room inviato: r2zv1zj
+
+=== ROOM: r3l5oa2 ===
+2026-10-19 07:48:51 INFO Suggerimento room inviato: r3l5oa2
+2026-10-19 07:54:24 INFO [2026-10-19 07:54] Mossa ricevuta da rosario in r3l5oa2: Pe7Pe8D
+2026-10-19 07:54:24 INFO [2026-10-19 07:54] Mossa inviata a filippo in r3l5oa2: Pe7Pe8D
+2026-10-19 07:55:41 INFO [2026-10-19 07:55] Mossa ricevuta da filippo in r3l5oa2: none
+2026-10-19 07:55:43 INFO [2026-10-19 07:55] Mossa inviata a rosario in r3l5oa2: none
+
+=== ROOM: r41nkld ===
+2026-06-23 20:14:12 INFO Suggerimento room inviato: r41nkld
+2026-06-23 20:17:11 INFO [2026-06-23 20:17] Mossa ricevuta da rosario in r41nkld: Pe2Pe4
+2026-06-23 20:17:12 INFO [2026-06-23 20:17] Mossa inviata a mario in r41nkld: Pe2Pe4
+2026-06-23 20:17:58 INFO [2026-06-23 20:17] Mossa ricevuta da mario in r41nkld: Pe7Pe5
+2026-06-23 20:18:00 INFO [2026-06-23 20:18] Mossa inviata a rosario in r41nkld: Pe7Pe5
+2026-06-23 20:18:15 INFO [2026-06-23 20:18] Mossa ricevuta da rosario in r41nkld: none
+2026-06-23 20:18:17 INFO [2026-06-23 20:18] Mossa inviata a mario in r41nkld: none
+
+=== ROOM: r7sr0m1 ===
+2026-10-17 10:11:01 INFO Suggerimento room inviato: r7sr0m1
+2026-10-17 10:14:38 INFO [2026-10-17 10:14] Mossa ricevuta da Rosario in r7sr0m1: Pe2Pe4
+2026-10-17 10:14:39 INFO [2026-10-17 10:14] Mossa inviata a Nero in r7sr0m1: Pe2Pe4
+2026-10-17 10:15:25 INFO [2026-10-17 10:15] Mossa ricevuta da Nero in r7sr0m1: Pe7Pe5
+2026-10-17 10:15:27 INFO [2026-10-17 10:15] Mossa inviata a Rosario in r7sr0m1: Pe7Pe5
+
+=== ROOM: rcyaonv ===
+2026-10-18 23:22:59 INFO Suggerimento room inviato: rcyaonv
+2026-10-18 23:30:22 INFO [2026-10-18 23:30] Mossa ricevuta da rosario in rcyaonv: none
+2026-10-18 23:30:24 INFO [2026-10-18 23:30] Mossa inviata a filippo in rcyaonv: none
+
+=== ROOM: rexcnzr ===
+2026-10-18 20:11:52 INFO Suggerimento room inviato: rexcnzr
+2026-10-18 20:12:42 INFO [2026-10-18 20:12] Mossa ricevuta da bianco1 in rexcnzr: none
+
+=== ROOM: rjy8jhf ===
+2026-10-18 23:04:10 INFO Suggerimento room inviato: rjy8jhf
+
+=== ROOM: ry1n8iq ===
+2026-10-17 10:41:19 INFO Suggerimento room inviato: ry1n8iq
+2026-10-17 10:44:39 INFO [2026-10-17 10:44] Mossa inviata a Nero in ry1n8iq: Pe2Pe4
+2026-10-17 10:45:21 INFO [2026-10-17 10:45] Mossa ricevuta da Nero in ry1n8iq: Pe7Pe5
+2026-10-17 10:45:21 INFO [2026-10-17 10:45] Mossa inviata a Bianco in ry1n8iq: Pe7Pe5
+2026-10-17 10:46:21 INFO [2026-10-17 10:46] Mossa ricevuta da Bianco in ry1n8iq: Af1Ac4
+2026-10-17 10:46:22 INFO [2026-10-17 10:46] Mossa inviata a Nero in ry1n8iq: Af1Ac4
+2026-10-17 10:47:21 INFO [2026-10-17 10:47] Mossa ricevuta da Nero in ry1n8iq: Af8Ac5
+2026-10-17 10:47:23 INFO [2026-10-17 10:47] Mossa inviata a Bianco in ry1n8iq: Af8Ac5
+2026-10-17 10:48:23 INFO [2026-10-17 10:48] Mossa ricevuta da Bianco in ry1n8iq: Dd1Dh5
+2026-10-17 10:48:24 INFO [2026-10-17 10:48] Mossa inviata a Nero in ry1n8iq: Dd1Dh5
+2026-10-17 10:49:09 INFO [2026-10-17 10:49] Mossa ricevuta da Nero in ry1n8iq: Cg8Cf6
+2026-10-17 10:49:10 INFO [2026-10-17 10:49] Mossa inviata a Bianco in ry1n8iq: Cg8Cf6
+2026-10-17 10:50:12 INFO [2026-10-17 10:50] Mossa ricevuta da Bianco in ry1n8iq: Dh5Df7
+2026-10-17 10:50:12 INFO [2026-10-17 10:50] Mossa inviata a Nero in ry1n8iq: Dh5Df7
+2026-10-17 10:50:28 INFO [2026-10-17 10:50] Mossa ricevuta da Nero in ry1n8iq: Dh5Df7
+
+=== ROOM: ryqmyq1 ===
+2026-10-19 09:15:53 INFO Suggerimento room inviato: ryqmyq1
+2026-10-19 09:21:27 INFO [2026-10-19 09:21] Mossa ricevuta da pippo in ryqmyq1: Pe7Pe8D
+2026-10-19 09:21:28 INFO [2026-10-19 09:21] Mossa inviata a pluto in ryqmyq1: Pe7Pe8D
+2026-10-19 09:22:50 INFO [2026-10-19 09:22] Mossa ricevuta da pluto in ryqmyq1: Rh8Rh7D
+2026-10-19 09:22:50 INFO [2026-10-19 09:22] Mossa inviata a pippo in ryqmyq1: Rh8Rh7D
+2026-10-19 09:23:23 INFO [2026-10-19 09:23] Mossa ricevuta da pippo in ryqmyq1: none
+2026-10-19 09:23:24 INFO [2026-10-19 09:23] Mossa inviata a pluto in ryqmyq1: none
+
