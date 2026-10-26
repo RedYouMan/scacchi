@@ -870,13 +870,16 @@ Sono possibili due comandi:
 serverScacchi
 ServerScacchi --log server.log
 
-Il primo comando manda i log a video, il secondo sul file server.log.
-E' consigliabile il secondo comando.
+Il primo comando manda i log a video ed è usato di solito per test, il secondo sul file server.log.
+Se volete usare dopo sortLog.exe, esso cerca  server.log, quindi, usate quel nome di log quando lanciate serverScacchi.
+E' consigliabile sempre il secondo comando.
 
- Come si gioca su stessa rete
+ Come si gioca su stessa rete(rete locale)
 1. Solo il bianco avvia l'eseguibile serverScacchi.exe nella directory serverScacchi
  consigliato il comando:
 serverScacchi --log server.log
+Per usare sortLog.exe, usate nel comando di sopra il nome server.log che è quello che cerca.
+
 2. ogni giocatore avvia il programma scacchi-start.exe   
 3. ogni giocatore, aspetta prima il caricamento solito del programma,  poi fa CtrlI e risponde correttamente alle domande
 Dato che si gioca in multiplayer è importante che ogni giocatore inserisca come player almeno la iniziale del proprio nome seguito da cognome senza spazi (es. FArionne) . Si può inserire anche un nickname ma occorre essere sicuri che l'altro giocatore non usi lo stesso nickname, basta mettersi d'accordo.
@@ -937,8 +940,9 @@ Sono possibili due comandi:
 serverScacchi
 ServerScacchi --log server.log
 
-Il primo comando manda i log a video, il secondo sul file server.log.
+Il primo comando manda i log a video ed è usato solitamente per test, il secondo sul file server.log.
 E' consigliabile il secondo comando.
+Inoltre volendo usare dopo sortLog.exe che cerca il nome server.log, mantenere nel comando di sopra tale nome di log.
 
 Attenzione: se Hamachi non è attivo, il server leggendo su server.cnf l'ip di Hamachi andrà in errore (Traceback).
  
