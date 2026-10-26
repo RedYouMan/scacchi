@@ -6,6 +6,7 @@ Settembre 2026
 Premessa
 Tieni presente che sono non vedente e ho 66 anni. Sono un ingegnere, ricercatore indipendente e ho impiegato da solo 14 mesi per progettare, implementare e rendere Scacchi-it funzionante, oltre a rimuovere i bug segnalatomi o che trovavo.
 Sui test mi hanno aiutato le persone del gruppo NV&V: in particolare Francesco Longobardi, Mario Turco e Luigi Racioppi.
+Una menzione particolare anche a mia moglie Maria Colonnese, con cui abbiamo messo a punto il "Test alla cieca":confronto tra ciò che si vede (visto da mia moglie) e quello che si sente (sentito da me). 
 L'immagine sul sito di Scacchi-it mi è stata fornita da Francesco Longobardi. 
 La parte git è stata scritta da mio figlio Mario Turco.
 
