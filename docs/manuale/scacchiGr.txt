@@ -44,6 +44,12 @@ Metodo per trasformare da soli un audio di partita in pgn
 https://github.com/RedYouMan/redyouman.github.io/raw/main/_posts/tutorials/audio-in-pgn.txt
 o anche dalla pagina https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
 
+** Novità 4 **
+Come configurare il client di posta in modo semplificato con Mozilla Thunderbird
+https://github.com/RedYouMan/redyouman.github.io/raw/main/_posts/tutorials/client-di-posta-thunderbird.txt
+oppure vedi https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
+
+
 Open Source
 Il progetto è open source dal 27 agosto 2026 e potete consultare i sorgenti al repository:
 https://github.com/RedYouMan/scacchi
