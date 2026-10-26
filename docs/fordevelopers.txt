@@ -124,9 +124,9 @@ Le soluzioni per introdurre una AI interna sperimentate comportavano l'utilizzo 
 3. hardware adatto, a partire da una scheda di rete NVIDIA migliore
 4. tempi di attesa per il caricamento del modello
 5. perdita progressiva del concetto portable
- 
-Aquesto punto è sembrato evidente che una AI esterna, per copiare il contenuto di un file e incollarlo ad essa, era la soluzione estremamente semplice, non inficiava il vantaggio portable, permetteva tempi di risposta immediati, utilizzando una delle AI super testate nel mondo con i modelli esistenti migliori, al posto di uno semplice.
- 
+6 Ollama con licenza MIT per la distribuzione e il modello ne aveva sicuramente una anche esso. 
+Aquesto punto è sembrato evidente che una AI esterna, per copiare il contenuto di un file e incollarlo ad essa, era la soluzione estremamente semplice, non inficiava il vantaggio portable, permetteva tempi di risposta immediati, utilizzando una delle AI super testate nel mondo con i modelli esistenti migliori, al posto di uno semplice.Nessun hardware carrozzato e gratis.
+
 Un motto
 Dato che la ROTN consente con il descrittore V il comando di rotazione della scacchiera, fornendo dinamicità alle informazioni, concludo la premessa con la frase:
 We shall rotate!
@@ -222,7 +222,8 @@ scacchi.exe, orologioScacchi.exe, coachFEN.exe,coachGame.exe
 In sospensioni:
 fenpos.exe
 In serverScacchi
-serverScacchi.exe, sortLog.exe e extractGame.exe. Con il plugin Scacchi-it-Net.7z si aggiungono serverCom.exe, clientCom.exe e il file comnet.cnf.
+serverScacchi.exe, sortLog.exe e extractGame.exe. Con il plugin Scacchi-it-Net.7z si aggiungono serverCom.exe, clientCom.exe e il file comnet.cnf.Col plugin analisiMosseSospette.7z si aggiunge analisi_tempi.exe
+
 in simpleEditor trovi simpleEditor.exe e ste.cnf
 In diagrammi trovi make-FEN2SVG
 In browser trovi le cartelle per le estensioni browser da caricare sul tuo browser (vedi manuale nella cartella delle estensioni)
@@ -236,6 +237,10 @@ la directory dei sorgenti è src-comnet
 Gli eseguibili vanno in serverScacchi e sono serverCom.exe e clientCom.exe
 Il file di configurazione va sempre nella stessa directory degli eseguibili ed è comnet.cnf
 Per assemblare sorgenti e uso di pyinstaller in questo caso particolare, esaminare NOTE.txt
+
+Plugin analisiMosseSospette.7z
+Permette idndividuare indizi o sospetti che un giocatore si stia o si è fatto aiutare da una AI, ma non si possono considerare prove. Vedi il Manuale.
+Il plugin aggiunge in serverScacchi analisi_tempi.exe
 
 Ambiente finale per creare il tuo zip Scacchi-it
 Attenzione: quando hai creato tutti gli exe posizionandoli nella cartella giusta, controlla che esistano tutte le directory, in modo particolare:
