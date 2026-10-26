@@ -49,6 +49,12 @@ Come configurare il client di posta in modo semplificato con Mozilla Thunderbird
 https://github.com/RedYouMan/redyouman.github.io/raw/main/_posts/tutorials/client-di-posta-thunderbird.txt
 oppure vedi https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
 
+** Novità 5 **
+Analisi mosse sospette (sperimentale)
+Scarica il plugin da
+https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
+Vedi paragrafo Verifica che il giocatore non abbia avuto aiuti da una AI
+
 
 Open Source
 Il progetto è open source dal 27 agosto 2026 e potete consultare i sorgenti al repository:
@@ -123,7 +129,7 @@ Scacchi-it consente di:
 52 - disporre di un orologio su rete condiviso
 53 - comunicare su rete a quale pezzo viene promosso un pedone 
 54 - utilizzare una AI esterna
-
+55 - fare l'analisi di mosse sospette se si gioca online 
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
 Tutte le possibilità di sopra, dipendono dalla vostra conoscenza degli strumenti a disposizione per poterlo fare, quindi è fondamentale sentire sia questo tutorial che l'help.
@@ -157,8 +163,9 @@ Scacchi-it Utility che collaborano con la parte core:
 6. sortLog
 7. estensioni browser 
 8 make-FEN2SVN 
-9make-pgn
-10- extractGame
+9 make-pgn
+10 extractGame
+11 analisi_tempi
 
 Scacchi-it Applicativi indipendenti, costituita da:
 1. coachFEN
@@ -996,7 +1003,22 @@ Osservando il codice open source, quando si gioca online è inibito l'utilizzo d
 Inoltre l'amministratore del torneo può applicare una analisi dei log e del ritmo di gioco (Behavioral Analysis)
 Si possono facilmente individuare Tempi di reazione disumani o matematicamente perfetti: L'AI calcola la mossa ottimale in millisecondi. I log tracciano il tempo impiegato dal giocatore per ogni decisione. Se un giocatore gioca in modo costante e robotico (con variazioni di tempo innaturali) o adotta una strategia GTO (Game Theory Optimal) rigida e priva delle tipiche oscillazioni umane è facilmente individuabile.
 Se, però, il gioco online è fatto in una sede unica, in rete locale, un firewall può inibire l'uscita verso le AI esterne. Questo non è comunque un compito di Scacchi-it.
+
+In particolare, a titolo sperimentale, viene fornita la utility analisi_tempi.exe che va usata su server.log. Esso può analizzare statisticamente il file per ogni room e dare un report di output analisiAI.txt
+
+Si deve scaricare il plugin analisiMosseSospette da https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
+
+Mettere lo zip affianco alla cartella scacchi-it e con "Esplora File" sullo zip fare "Estrai qui". In scacchi-it cartella serverScacchi ora ci deve essere anche analisi_tempi.exe.
+
+Il programma accetta anche altri valori di input per tarare meglio la individuazione di mosse sospette. Per ottenere tutti i parametri, digitare:
+analisi_tempi return
+I valori di default sono già un buon inizio di indagine. Basta digitare:
+analisi_tempi server.log
+
+Attenzione se esiste un precedente log viene sovrapposto.
  
+E' da ricordare che il programma individua eventuali indizi ma non prove certe.
+
 Funzionalità sortLog
 Essendo il gioco online multiplayer, ciò comporta che nel file server.log sono mischiate le informazioni delle varie room. E' Posssibile ottenere un log che accorpi le informazioni per room alla fine di tutte le partite con il comando sortLog.exe. Tale comando non accetta nessun parametro , esso sa già di dover analizzare il file server.log e produrre il file serverordinato.txt
 
