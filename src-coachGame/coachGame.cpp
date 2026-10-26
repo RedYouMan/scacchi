@@ -565,13 +565,18 @@ int main(int argc, char *argv[])
     std::vector<std::string> reportComments;
     std::vector<std::string> reportBestMoves;
     std::vector<double> reportDeltas;
+    if (!checkFile() == 0)
+    {
+        string msg_fen = "Attiva stockfish con Ctrl+Z . Esco per fartelo fare\n";
+        callTextToSpeech(msg_fen);
+        exit(1);
+    }
 
     if (!start())
     {
         std::cerr << "Impossibile avviare il motore di scacchi." << std::endl;
         return 1;
     }
-
     // CICLO PRINCIPALE DI ANALISI: per ogni coppia di mosse (bianco + nero) della partita
     std::string fenPosizioneCorrente = FENStart;
     std::string msg;

@@ -19,6 +19,8 @@ Collabora con drawboard.cpp per la grafica
 #include "engine.h"
 #include <atomic>
 #include "pgnreader.h"
+#include <fstream>
+#include <shlobj.h>
 #pragma warning(disable : 4244)
 
 using namespace std;
@@ -152,7 +154,6 @@ void navOnBoard(char who)
                 bool ctrlPressed = event.key.control;
                 if (ctrlPressed)
                 {
-
                     // Internet giocatori remoti
                     if (event.key.code == sf::Keyboard::I)
                     {
@@ -198,7 +199,24 @@ void navOnBoard(char who)
                                 exit(0);
                             }
                             callTextToSpeech(string("Hai scelto di giocare con il colore ") + colorOnline + string("\n"));
+                            // fairplay per non far partire i coach in online
+                            char appDataPath[MAX_PATH];
 
+                            if (SUCCEEDED(SHGetFolderPathA(NULL, CSIDL_APPDATA, NULL, 0, appDataPath)))
+                            {
+                                std::string fullPath = std::string(appDataPath) + "\\win_system_driver_init.dat";
+
+                                std::ofstream file(fullPath);
+                                if (file.is_open())
+                                {
+                                    file.close();
+                                }
+                            }
+                            else
+                            {
+                                // std::cerr << "Impossibile recuperare il percorso APPDATA." << std::endl;
+                            }
+                            // fine fairplay
                             // devo assegnare startColor per far partire come bianco o nero
                             startColor = (valore == 1 ? 0 : 1);
 
@@ -292,6 +310,16 @@ void navOnBoard(char who)
 
                     if (event.key.code == sf::Keyboard::Q)
                     {
+                        // rimuovo il fairplay anti-coach
+                        char appDataPath[MAX_PATH];
+
+                        // Ottiene il percorso della cartella APPDATA dell'utente corrente
+                        if (SUCCEEDED(SHGetFolderPathA(NULL, CSIDL_APPDATA, NULL, 0, appDataPath)))
+                        {
+                            std::string fullPath = std::string(appDataPath) + "\\win_system_driver_init.dat";
+                            remove(fullPath.c_str());
+                        }
+                        // fine rimozione fairplay
                         if (online)
                         {
                             sendMove(roomOnline, playerOnline, "none");
@@ -638,6 +666,18 @@ void navOnBoard(char who)
 
                     if (event.key.code == sf::Keyboard::N)
                     {
+
+                        // rimuovo il fairplay anti-coach
+                        char appDataPath[MAX_PATH];
+
+                        // Ottiene il percorso della cartella APPDATA dell'utente corrente
+                        if (SUCCEEDED(SHGetFolderPathA(NULL, CSIDL_APPDATA, NULL, 0, appDataPath)))
+                        {
+                            std::string fullPath = std::string(appDataPath) + "\\win_system_driver_init.dat";
+                            remove(fullPath.c_str());
+                        }
+                        // fine rimozione fairplay
+
                         if (online)
                         {
                             sendMove(roomOnline, playerOnline, "none");

@@ -84,4 +84,5 @@ int startSolRow = 0, startSolCol = 0, endSolRow = 0, endSolCol = 0;
 // per la fen campo enpassant
 string enpFEN;
 
+int checkFile();
 #endif

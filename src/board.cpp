@@ -33,6 +33,8 @@ Nota: insertNotation è in questions.cpp e non in utility come logica, per evita
 #include <future>
 #include <chrono>
 #include <thread>
+#include <fstream>
+#include <shlobj.h>
 
 using namespace std;
 namespace fs = std::filesystem;
@@ -158,7 +160,7 @@ void start_game()
     clearNoTouch();
     deleteUndo();
     callTextToSpeech(string("Benvenuti a Scacchi-it! Il gioco degli scacchi in italiano con interfaccia vocale. \n"));
-    cout << "Scacchi-it (C) 2025 versione 14.1 - Rosario Turco\n";
+    cout << "Scacchi-it (C) 2025 versione 14.2 - Rosario Turco\n";
 
     /*
     controllo esistenza di stockfish, altrimenti la prima volta lo scarica e lo estrae nella cartella engine
@@ -1593,6 +1595,18 @@ void reStart()
 {
 
     // Inizializzazione della scacchiera
+
+    // rimuovo il fairplay anti-coach
+    char appDataPath[MAX_PATH];
+
+    // Ottiene il percorso della cartella APPDATA dell'utente corrente
+    if (SUCCEEDED(SHGetFolderPathA(NULL, CSIDL_APPDATA, NULL, 0, appDataPath)))
+    {
+        std::string fullPath = std::string(appDataPath) + "\\win_system_driver_init.dat";
+        remove(fullPath.c_str());
+    }
+    // fine rimozione fairplay
+
     deleteUndo();
     if (isEngineRunning())
     {

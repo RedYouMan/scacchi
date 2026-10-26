@@ -12,7 +12,6 @@ Se la fen e la profondità sono valide,
 
 // coach.cpp
 #include "proto.h"
-
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -175,7 +174,14 @@ int main(int argc, char *argv[])
         std::cerr << "FEN non valida." << std::endl;
         return 1;
     }
-
+    // inizio fairplay
+    string msg_coach = "Sei online non puoi usare il coach\n";
+    if (checkFile() == 0)
+    {
+        callTextToSpeech(msg_coach);
+        exit(0); // Il file esiste: esce dal programma
+        // fine fairplay
+    }
     if (!start())
     {
         std::cerr << "Impossibile avviare il motore di scacchi." << std::endl;

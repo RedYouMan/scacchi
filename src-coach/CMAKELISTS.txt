@@ -26,6 +26,7 @@ engine4.cpp
 chess.cpp
 utility.cpp
 TTS.cpp
+controllo.cpp
 engine.h
 myad.h
 globale.h

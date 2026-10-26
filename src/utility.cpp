@@ -48,7 +48,7 @@ void printDebug(string msg)
 void help()
 {
 
-    callTextToSpeech(string("Scacchi-it  v.14.1\n"));
+    callTextToSpeech(string("Scacchi-it  v.14.2\n"));
     callTextToSpeech(string("CtrlX per approfondimenti sul sito\n"));
     callTextToSpeech(string("CtrlN perinizializzare la scacchiera\n"));
     callTextToSpeech(string("CtrlG per girare la scacchiera e cambiare punto di vista di gioco\n"));
