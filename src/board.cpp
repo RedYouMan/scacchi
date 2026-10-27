@@ -30,7 +30,6 @@ Nota: insertNotation è in questions.cpp e non in utility come logica, per evita
 #include "pgnreader.h"
 
 #include <future>
-#include <future>
 #include <chrono>
 #include <thread>
 #include <fstream>
