@@ -520,19 +520,24 @@ La getOutputMove è posta sotto un timeout. Questo perchè stockfish, se si trov
 Osserva in GesFile.cpp quando si sospende una partita vengono salvati come ROTN altri parametri sul file di sospensione, che servono alla ripresa di gioco: file di log della partita se veniva registrata, la attivazione di stockfish se ci stavi giocando, i parametri di livello di gioco con stockfish, etc.
 
 Distribuzione dell'applicativo 
-Occorre aggiungere le dll dell'estensione dovuta al sdk installato insieme a Visual Studio Community 2022.
-In particolare vcruntime140.dll, vcruntime140_1.dll, ucrtbase.dll, msvcp140.dll e le versioni con d.
-Nel seguito descriviamo il metodo per individuare le dll e rendere il programma autosufficiente, senza necessità di pre-installareun pacchetto redistribuibile.
+Occorre aggiungere le dll dell'estensione dovuta al sdk installato insieme a Visual Studio Community 2022, ovvero si deve installare la versione più recente di librerie windows redistribuibili per vc++, tra cui vcruntime140.dll, vcruntime140_1.dll, ucrtbase.dll, msvcp140.dll e le versioni con d.
+Nel seguito descriviamo il metodo per installare le dll localmente. 
+senza necessità dell'utente di pre-installareun pacchetto redistribuibile.
 
 Per giocare a tali applicazioni si può scegliere tra varie soluzioni:
 1 - installare, metodo più semplice, Visual Studio Community 2022 con SDK scelto nel piano di lavoro dell'installer,in modo da avere tutte le dll necessarie
 2 - installare il pacchetto ridistribuibile di Visual Studio C++, ultima versione
 (vedi: https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version)
-3 - mettere le dll necessarieper rendere autosufficiente l'applicazione
+3 - mettere le dll localmmente necessarie per rendere autosufficiente l'applicazione
 
-Il metodo 3 è vantaggioso per un utente non vedente.
+Il metodo 3 è vantaggioso per un utente non vedente ed è quello che ho seguito, in modo di non fargli installare nulla.
 
-l'iter per il metodo 3 è il seguente:
+Da segnalare che oltre alle dll windows di cui prima , occorrono quelle sfml per la grafica e openal32 per i suoni (tipo il toc degli scacchi).
+
+l'iter per il metodo 3 è installare il pacchetto redistribuibile vc++ più recente.
+
+Tuttavia se si verificano errori, per controllare se si dispone di tutte le dll il metodo di test e controllo è quello che vi descrivo di seguito.
+
 1. fare il test senza dll e farsi dire quelle che mancano
 2. spacchettare lo zip di lucasg dove è l'exe dell'applicazione(duplicare l'applicazione in un'altra directory)
  (spacchettare Dependencies_x64_Release_.without.peview.exe)
