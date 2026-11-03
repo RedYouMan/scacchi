@@ -85,6 +85,17 @@ DOI SCACCHI: https://doi.org/10.5281/zenodo.22737784
 > *Licenze: documentazione - CC BY-SA 4.0 | Software - GPLv3*
 > _Tutto il progetto è rilasciato in open source senza scopo di lucro per finalità tiflologiche e inclusive._
 
+Come valutare Scacchi-it
+Se giochi con Scacchi-it, non incontrerai mai un qualcosa che ti parli di ROTN o di FEN.
+Sentirai solo in cuffia le informazioni in modo fluido, casella per casella quando ti muovi sulla scacchiera. Lo stesso se usi CtrlD per farti spieigare la disposizione di uno schieramento di pezzi avversari o anche proprio. Se usi il simpleEditor è lui che ti guida per sapere le informazioni per descrivere la posizione che caricherai sulla scacchiera.
+Se sospendi una partita e la riprendi, se ruoti la scacchiera con CtrlG è Scacchi-it che usa la ROTN come meccanismo interno, senza farlo notare.
+Nessun formato è veramente forzato a essere ricordato, ma è trasparente all'utente. Se l'utente dispone di una FEN presa su un portale o sun una pagina web può incollarla a Scacchi-it. Se, invece, usasse le estensioni browser che prelevano la FEN e la convertono in ROTN la possono incollare col incollaROTN, ma in entrambi i casi non è richiesto all'utente di ricordarsi ogni campo della FEN o della ROTN.
+Gli strumenti di "incolla" sono solo di trasporto senza aumento di carico cognitivo.
+ 
+Con Scacchi-it l'utente si concentra solo sul gioco e mai su nessun formato. La ROTN va considerata come un meccanismo interno della scacchiera, e la FEN similmente che viene passata a stockfish per farlo giocare. 
+La ROTN, come meccanismo interno, facilità il compito al giocatore e Fa parte della scacchiera. il gioco è sempre identico da millenni.
+
+ 
 Come affrontare questo software
 Creare un chess engine come Scacchi-it che si propone sia come motore di controllo e gioco a due, sia come motore di controllo di stockfish e, infine, come motore online Hamachi multiplayers, ti assicuro che non è semplice. 
 La tentazione quando si legge il software qui proposto è di buttare via tutto e rifarlo (cosa che ho fatto anche diverse volte). Sicuramente potrai fare meglio, come object oriented, ma alla fine farai ne più ne meno quello che è nel repository.
