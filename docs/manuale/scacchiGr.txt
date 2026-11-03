@@ -30,33 +30,27 @@ Per verificare la vostra versione ascoltate quando parte il programma oppure dig
 Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima versione del presente file.
 
 ** Novità  1 **
-Plugin per partite online
-Oltre al pacchetto di Scacchi-it (scacchiGr.7z),  scarica anche Scacchi-it-Net.7z da:
-https://github.com/RedYouMan/redyouman.github.io/raw/main/_posts/repo/Scacchi-it-Net.7z
-o anche dalla pagina https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
-Leggi il paragrafo Comunicazione online di questo Manuale.
+
+Oltre al pacchetto di Scacchi-it (scacchiGr.7z),  scarica anche 
+- Scacchi-it-Net.7z e leggi il paragrafo "Comunicazione online" 
+- Analisi mosse sospette (sperimentale)e leggi paragrafo "Verifica che il giocatore non abbia avuto aiuti da una AI esterna" 
+
+Da notare che i coach quando si gioca online non sono attivabili e nemmeno stockfish.
+Scarica i due plugin da
+https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
 
 ** Novità 2 **
 CoachGame fornisce il report.txt che è l'analisi di una partita.
 Se copiate il contenuto di report.txt e lo incollate a Gemini o Chat GPT o a META-AI
-e gli chiedete perchè avete perso la partita, vi spiegherà tutto in italiano e con analisi scacchistica
+e gli chiedete perchè avete perso la partita, vi spiegherà tutto in italiano e con analisi scacchistica.
 
-** Novità 3 **
-Metodo per trasformare da soli un audio di partita in pgn
+Viene fornito anche un Metodo per trasformare da soli un audio di partita in pgn
 https://github.com/RedYouMan/redyouman.github.io/raw/main/_posts/tutorials/audio-in-pgn.txt
 o anche dalla pagina https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
 
-** Novità 4 **
-Come configurare il client di posta in modo semplificato con Mozilla Thunderbird
+Inoltre per inviare le email viene fornito unmanualetto per come configurare il client di posta in modo semplificato con Mozilla Thunderbird
 https://github.com/RedYouMan/redyouman.github.io/raw/main/_posts/tutorials/client-di-posta-thunderbird.txt
 oppure vedi https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
-
-** Novità 5 **
-Analisi mosse sospette (sperimentale)
-Scarica il plugin da
-https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
-Vedi paragrafo Verifica che il giocatore non abbia avuto aiuti da una AI
-
 
 Open Source
 Il progetto è open source dal 27 agosto 2026 e potete consultare i sorgenti al repository:
@@ -1000,7 +994,7 @@ Attenzione il log del server certifica i tempi e le mosse da casa di partenza a 
 Si è fornita una utility extractGame che dopo l'uso di sortLog , può analizzare l'output file del sortLog e per una certa room provare a estrarre le mosse in notazione algebrica in un file da sottoporre poi a make-pgn (vedi paragrafo di extractGame).
 Avvertenza: dopo aver creato un file in notazione algebrica è fortemente consigliato verificare se catture, enpassant, promozioni siano state riportate correttamente.
 
-Verifica che il giocatore non abbia avuto aiuti da una AI(sperimentale)
+Verifica che il giocatore non abbia avuto aiuti da una AI esterna (sperimentale)
 Osservando il codice open source, quando si gioca online è inibito l'utilizzo di stockfish.
 Inoltre l'amministratore del torneo può applicare una analisi dei log e del ritmo di gioco (Behavioral Analysis)
 Si possono facilmente individuare Tempi di reazione disumani o matematicamente perfetti: L'AI calcola la mossa ottimale in millisecondi. I log tracciano il tempo impiegato dal giocatore per ogni decisione. Se un giocatore gioca in modo costante e robotico (con variazioni di tempo innaturali) o adotta una strategia GTO (Game Theory Optimal) rigida e priva delle tipiche oscillazioni umane è facilmente individuabile.
