@@ -19,11 +19,9 @@ Questo per il semplice motivo che un file di testo è il più accessibile possib
 Versione disponibile 
 Questo paragrafo del Manuale segnalerà sempre la presenza di eventuali nuove versioni migliorative.
 
-Sul sito è stata pubblicata la versione runtime 14.2 di Scacchi-it, da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
+Sul sito è stata pubblicata la versione runtime 14.3 di Scacchi-it, che include anche tutti i plugin e da considerarsi la main stream stabile e non verrà aggiornata ulteriormente a meno di segnalazioni della Community.
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
-
-La verisone 14.2 introduce il controllo fairplay anti-coach nel gioco online.
 
 Per verificare la vostra versione ascoltate quando parte il programma oppure digitate Ctrl+H.
 
@@ -31,13 +29,11 @@ Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima version
 
 ** Novità  1 **
 
-Oltre al pacchetto di Scacchi-it (scacchiGr.7z),  scarica anche 
-- Scacchi-it-Net.7z e leggi il paragrafo "Comunicazione online" 
-- Analisi mosse sospette (sperimentale)e leggi paragrafo "Verifica che il giocatore non abbia avuto aiuti da una AI esterna" 
+Le novità sono:
+- Scacchi-it-Net.7z è presente nella 14.3, leggi il paragrafo "Comunicazione online" 
+- Analisi mosse sospette (sperimentale) è presente nella 14.3, leggi paragrafo "Verifica che il giocatore non abbia avuto aiuti da una AI esterna" 
 
 Da notare che i coach quando si gioca online non sono attivabili e nemmeno stockfish.
-Scarica i due plugin da
-https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
 
 ** Novità 2 **
 CoachGame fornisce il report.txt che è l'analisi di una partita.
@@ -170,8 +166,8 @@ Scacchi-it Applicativi indipendenti, costituita da:
 
 Usare Scacchi-it da chiavetta USB
 Se devi usare Scacchi-it su chiavetta USB, ti conviene fare i seguenti passi:
-1. scompatta scacchigr.7z e, eventualmente, anche Scacchi-it-Net.7z prima sul desktop del pc e segui i paragrafi successivi. Questo ti permetterà di far scaricare alla prima installazione anche stockfish. 
-Quando la scompattazione dei 7z sul pc è completata, entra nella cartella scacchi-it efai anche il comando 
+1. scompatta scacchigr.7z prima sul desktop del pc e segui i paragrafi successivi. Questo ti permetterà di far scaricare alla prima installazione anche stockfish. 
+Quando la scompattazione del 7z sul pc è completata, entra nella cartella scacchi-it e fai anche il comando 
 scacchi-start per installare stockfish.
 Dopo aver installato con i paragrafi successivi Scacchi-it ritorna a questo paragrafo e fai:
 2. copia l'intera cartella scacchi-it sulla chiavetta USB
@@ -1002,9 +998,7 @@ Se, però, il gioco online è fatto in una sede unica, in rete locale, un firewa
 
 In particolare, a titolo sperimentale, viene fornita la utility analisi_tempi.exe che va usata su server.log. Esso può analizzare statisticamente il file per ogni room e dare un report di output analisiAI.txt
 
-Si deve scaricare il plugin analisiMosseSospette da https://redyouman.github.io/blog/2026/04/18/tuttoscacchi.html
-
-Mettere lo zip affianco alla cartella scacchi-it e con "Esplora File" sullo zip fare "Estrai qui". In scacchi-it cartella serverScacchi ora ci deve essere anche analisi_tempi.exe.
+In scacchi-it cartella serverScacchi ci deve essere anche analisi_tempi.exe.
 
 Il programma accetta anche altri valori di input per tarare meglio la individuazione di mosse sospette. Per ottenere tutti i parametri, digitare:
 analisi_tempi return
@@ -1033,7 +1027,7 @@ ESISTONO VARI piani tariffari annuali estendendo ad esempio fino a 32 pc una ret
 Consultare il sito ufficiale.
 
 La funzionalità Comunicazione online (scacchi-it-Net.7z)
-Questa funzionalità è un plugin aggiuntivo alla versione base 14.1 di Scacchi-it. Esso permette di avere un secondo server di comunicazione nel gioco online per:
+Questa funzionalità è un plugin aggiuntivo già presente nella versione base 14.3 di Scacchi-it. Esso permette di avere un secondo server di comunicazione nel gioco online per:
 1. comunicare a quale pezzo si promuove il pedone
 2. avere un orologio comune tra i due giocatori
 3. proporre la patta che si può accettare o rifiutare.
@@ -1048,8 +1042,7 @@ I tasti sono:
 Durante la digitazione di tali tasti, le risposte alla proposta di Patta o l'annuncio di promozione del pedone e all'esaurimento del tempo vi sono segnali acustici.
 Gli effetti sonori, poco frequenti, servono anche per attirare l'attenzione dell'arbitro nelle gare ufficiali a patto che almeno uno dei giocatori non indossi la cuffia, altrimenti deve essere allertato dai giocatori stessi.
  
-Come si installa?
-Mettete lo zip accanto alla cartella scacchi-it e fate con "esplora File" sullo zip, poi "Estrai qua". In scacchi-it cartella serverScacchi dovete trovare 3 file:
+In serverScacchi ci sono 3 file:
 - clientCom.exe
 - comnet.cnf
 - ServerCom.exe

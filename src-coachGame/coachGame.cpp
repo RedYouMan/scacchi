@@ -565,12 +565,15 @@ int main(int argc, char *argv[])
     std::vector<std::string> reportComments;
     std::vector<std::string> reportBestMoves;
     std::vector<double> reportDeltas;
-    if (!checkFile() == 0)
+
+    // inizio fairplay
+    string msg_coach = "Sei online non puoi usare il coach\n";
+    if (checkFile() == 0)
     {
-        string msg_fen = "Attiva stockfish con Ctrl+Z . Esco per fartelo fare\n";
-        callTextToSpeech(msg_fen);
-        exit(1);
+        callTextToSpeech(msg_coach);
+        exit(0);
     }
+    // fine fairplay
 
     if (!start())
     {
