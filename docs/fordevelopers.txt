@@ -532,10 +532,11 @@ Osserva in GesFile.cpp quando si sospende una partita vengono salvati come ROTN 
 
 Distribuzione dell'applicativo 
 Occorre aggiungere le dll dell'estensione dovuta al sdk installato insieme a Visual Studio Community 2022, ovvero si deve installare la versione più recente di librerie windows redistribuibili per vc++, tra cui vcruntime140.dll, vcruntime140_1.dll, ucrtbase.dll, msvcp140.dll e le versioni con d.
-Nel seguito descriviamo il metodo per installare le dll localmente. 
-senza necessità dell'utente di pre-installareun pacchetto redistribuibile.
+Se hai installato Sdk e Visual Studio Community 2022 le dll redistribuibili vengono installate in system32.
 
-Per giocare a tali applicazioni si può scegliere tra varie soluzioni:
+Nel seguito descriviamo il metodo per installare le dll localmente alla applicazione senza necessità dell'utente di pre-installare un pacchetto redistribuibile.
+
+Infatti per giocare a tali applicazioni si può scegliere tra varie soluzioni:
 1 - installare, metodo più semplice, Visual Studio Community 2022 con SDK scelto nel piano di lavoro dell'installer,in modo da avere tutte le dll necessarie
 2 - installare il pacchetto ridistribuibile di Visual Studio C++, ultima versione
 (vedi: https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-supported-redistributable-version)
@@ -545,19 +546,17 @@ Il metodo 3 è vantaggioso per un utente non vedente ed è quello che ho seguito
 
 Da segnalare che oltre alle dll windows di cui prima , occorrono quelle sfml per la grafica e openal32 per i suoni (tipo il toc degli scacchi).
 
-l'iter per il metodo 3 è installare il pacchetto redistribuibile vc++ più recente.
+l'iter per il metodo 3 è installare il pacchetto redistribuibile vc++ più recente, ma se avete installato SDK e Visual Studio Community 2022, come già accennato prima, le avete già a disposizione in system32 e vanno prelevate solo quelle redistribuibili dette prima.
 
-Tuttavia se si verificano errori, per controllare se si dispone di tutte le dll il metodo di test e controllo è quello che vi descrivo di seguito.
-
+Tuttavia se si verificano errori, o per essere certi di prelevare solo quelle redistribuibili necessarie, descriviamo un metodo di controllo. 
 1. fare il test senza dll e farsi dire quelle che mancano
-2. spacchettare lo zip di lucasg dove è l'exe dell'applicazione(duplicare l'applicazione in un'altra directory)
- (spacchettare Dependencies_x64_Release_.without.peview.exe)
-Spacchettando tale pacchetto ci saranno molte dll e file dovuti a lucasg 
+2. duplicare l'applicazione in una directory diversa per fare le operazioni di test e spacchettare qui lo zip di lucasg. Poi  spacchettare sempre nella directory di test Dependencies_x64_Release_.without.peview.exe
+Spacchettando tale pacchetto, nella directory di test  ci saranno molte dll e file dovuti a lucasg 
 3. farsi fare il report da lucesg col comando:
  dependencies.exe -modules -chain -depth 2 scacchi.exe > report.txt
 4. per le dll mancanti dal report si vede la directory dove sta ognuna
-5. copi da tali directory le dll accanto all'exe dell'applicazione
-6. fare la copia dell'applicazione su chiavetta comprensiva di dll senza dependencies e le sue innumerevoli dll e file
+5. copi da tali directory le dll accanto all'exe dell'applicazione nella directory reale
+6. fare la copia dell'applicazione su chiavetta comprensiva di dll 
 7 prima prova su chiavetta prima sandbox)
 8 provi su altro pc vergine di Visual Studio(seconda sandbox)
 Se supera i punti 7 e 8, successo e fine della "Ricerca della dll perduta".

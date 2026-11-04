@@ -179,9 +179,10 @@ int main(int argc, char *argv[])
     if (checkFile() == 0)
     {
         callTextToSpeech(msg_coach);
-        exit(0); // Il file esiste: esce dal programma
-        // fine fairplay
+        exit(0);
     }
+    // fine fairplay
+
     if (!start())
     {
         std::cerr << "Impossibile avviare il motore di scacchi." << std::endl;
