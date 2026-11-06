@@ -122,6 +122,7 @@ Scacchi-it consente di:
 53 - comunicare su rete a quale pezzo viene promosso un pedone 
 54 - utilizzare una AI esterna
 55 - fare l'analisi di mosse sospette (sperimentale) se si gioca online 
+
 La maggior parte di queste caratteristiche sono offerte in modalità offline, ma anche online sono presenti un sottoinsieme di esse: consultare il paragrafo online per vedere cosa è escluso.
 
 Tutte le possibilità di sopra, dipendono dalla vostra conoscenza degli strumenti a disposizione per poterlo fare, quindi è fondamentale sentire sia questo tutorial che l'help.
@@ -678,7 +679,9 @@ Si può, a questo punto, dopo aver letto report.txt utilizzare una AI esterna, c
 
 Estrarre dalla scacchiera una FEN
 Se dovete usare, ad esempio, il coachFEN o il make-FEN2SVG o vi interessa portare la posizione su un portale, potete fare Ctrl-E, poi  spostarvi sulla console  con Alt-Tab per trovare il messaggio "fen: valore della FEN". Il consiglio è di selezionare dalla console il valore facendo Ctrl-A seguito da Ctrl-C e incollarlo, momentaneamente,  su un file notepad per selezionare la sola parte del valore.
- 
+Dato che può capitare che non selezionate bene tutto, a causa di spazi che non vi fanno rendere conto della presenza degli ulteriori campi, vi conviene aprire un'altra console e usare validaFEN.
+ Oppure state attenti a prendere tutto, a partire dal primo spazio c'è il campo di chi ha il tratto (w o b) poi altro spazio e seguono gli arrocchi etc.fino ad arrivare al campo del numero di mossa.  Fate un poco di pratica.
+
 Configurabilità delle versioni di stockfish
 Qualora ci fossero versioni più recenti di stockfish è possibile scaricare la nuova versione nella directory engine emodificare, il file engine.cnf nella directory bin,  per mettervi il nuovo nome dell'eseguibile stockfish gui e la corretta cartella dove è posizionato.
 L'applicativo Scacchi-it continuerà a lavorare correttamente se il nuovo motore stockfish si basa ancora su comandi standard uci (universal chess interface).
