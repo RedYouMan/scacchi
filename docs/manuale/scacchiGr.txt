@@ -1041,6 +1041,7 @@ I tasti sono:
 - Alt+O per sapere i minuti consumati
 - Alt+T per switchare l'orologio all'avversario dopo aver mosso
 - Alt+P per chiedere la Patta a cui si può rispondere Alt+1 per accettare o Alt+2 per rifiutare
+Ma i comandi sono ricordati dal programma stesso.
 
 Durante la digitazione di tali tasti, le risposte alla proposta di Patta o l'annuncio di promozione del pedone e all'esaurimento del tempo vi sono segnali acustici.
 Gli effetti sonori, poco frequenti, servono anche per attirare l'attenzione dell'arbitro nelle gare ufficiali a patto che almeno uno dei giocatori non indossi la cuffia, altrimenti deve essere allertato dai giocatori stessi.
@@ -1067,6 +1068,18 @@ La modalità consigliata di avvio dei programmi è:
 
 Questa modalità permetterà di avere a sinistra tutte le console che userete di meno, la stessa console del client, tranne per il caso della promozione del pedone, non si deve raggiungere con Alt-Tab dato che le sequenze dei comandi sono fattibili anche fuori console.
 
+La modalità di funzionamento dell'orologio per la sincronizzazione è la seguente:
+1. avviate il clientCom e rispondete se siete bianco con b (o nero con n).
+2. settate i minuti previsti per la partita (es. 120)
+3. fino a quando il nero non collega il suo clientCom e messo lo stesso tempo (ad es. 120 minuti) non parte il tempo del bianco.
+4. il bianco pensa alla sua mossa, la fa, Alt-T e switch l'orologio al nero
+5. il nero dopo aver visto la mossa online, fa Alt-O e sincronizza l'orologio e vede quanto ha consumato il bianco e se ha impostato la stessa quantità di minuti della partita (es. 120)
+6. il nero pensa alla mossa, la fa, Alt-T e switch dell'orologio al bianco
+7. il bianco vista lamossa fatta dal nero online, fa Alt-O e sincronizza l'orologio e vede quanto tempo il nero ha consumato e se ha messo la stessa sua quantità di minuti impostati all'inizio
+e si procede in questo modo
+
+Il procedimento di sopra evita problematiche di latenza di rete: quello che si legge è sempre il tempo consumato localmente al giocatore.
+  
 La modalità consigliata per la promozione del pedone durante la partita online è la seguente:
 1. promuovere sulla propria scacchiera il pedone al pezzo desiderato
 2. comunicare con il clientCom il pezzo a cui si promuove il pedone
