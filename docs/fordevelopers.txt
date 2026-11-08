@@ -254,6 +254,12 @@ Plugin analisiMosseSospette.7z
 Permette idndividuare indizi o sospetti che un giocatore si stia o si è fatto aiutare da una AI, ma non si possono considerare prove. Vedi il Manuale.
 Il plugin aggiunge in serverScacchi analisi_tempi.exe
 
+Spiegazione della sincronizzazione orologio di rete
+Si usa una semplice idea. Vedi la sequenza di utilizzo sul Manuale al par. funzionalità Comunicazione online
+In sintesi, a partire dal nero, visto che il bianco ha mosso, si fa Alt+O e si sa quanto ha consumato il bianco. Poi il nero pensa, fa la mossa e fa Alt-T per passare l'orologio al bianco.
+Il bianco fa lo stesso come ha fatto il nero e si procede in questo modo.
+Questa modalità elimina ritardi e latenze di rete, perchè il tempo è consumato localmente al giocatore e poi inoltrato all'avversario quando quest'ultimo fa Alt+o
+
 Ambiente finale per creare il tuo zip Scacchi-it
 Attenzione: quando hai creato tutti gli exe posizionandoli nella cartella giusta, controlla che esistano tutte le directory, in modo particolare:
 - sospensioni
