@@ -30,8 +30,8 @@ Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima version
 ** Novità  1 **
 
 Le novità sono:
-- Scacchi-it-Net.7z è presente nella 14.3, leggi il paragrafo "Comunicazione online" 
-- Analisi mosse sospette (sperimentale) è presente nella 14.3, leggi paragrafo "Verifica che il giocatore non abbia avuto aiuti da una AI esterna" 
+- Scacchi-it-Net è già presente come eseguibile e file di configurazione nella 14.3, leggi il paragrafo "Comunicazione online" 
+- Analisi mosse sospette (sperimentale) è già presente come eseguibile nella 14.3, leggi paragrafo "Verifica che il giocatore non abbia avuto aiuti da una AI esterna" 
 
 Da notare che i coach quando si gioca online non sono attivabili e nemmeno stockfish.
 

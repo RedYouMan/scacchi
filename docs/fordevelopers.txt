@@ -243,6 +243,7 @@ In cartella make-pgn trovi make-pgn.exe e la cartella elenco per mettervi i file
 
 PLUGIN Scacchi-it-Net
 E' stato introdotto questo plugin per migliorare la comunicazione di gioco tra i giocatori, escluso il nome della room che dovrà viaggiare via whatsapp o email per comunicarla all'altro giocatore o dettata per telefono.
+Il plugin è rimasto come nome, ma i suoi file eseguibili e il file di configurazione sono già presenti nella versione 14.3 di Scacchi-it nella cartella serverScacchi.
 
 Qui descriviamo solo due cose:
 la directory dei sorgenti è src-comnet
@@ -251,8 +252,9 @@ Il file di configurazione va sempre nella stessa directory degli eseguibili ed �
 Per assemblare sorgenti e uso di pyinstaller in questo caso particolare, esaminare NOTE.txt
 
 Plugin analisiMosseSospette.7z
-Permette idndividuare indizi o sospetti che un giocatore si stia o si è fatto aiutare da una AI, ma non si possono considerare prove. Vedi il Manuale.
+Permette individuare indizi o sospetti che un giocatore si stia o si è fatto aiutare da una AI, ma non si possono considerare prove. Vedi il Manuale.
 Il plugin aggiunge in serverScacchi analisi_tempi.exe
+Anche questo plugin è rimasto solo come nome, ma gli eseguibili sono già presenti nella versione 14.3 di Scacchi-it nella cartella serverScacchi.
 
 Spiegazione della sincronizzazione orologio di rete
 Si usa una semplice idea. Vedi la sequenza di utilizzo sul Manuale al par. funzionalità Comunicazione online
@@ -273,6 +275,8 @@ Attenzione: quando hai creato tutti gli exe posizionandoli nella cartella giusta
 - simpleEditor
 
 Queste directory dopo il clone non vengono create essendo vuote. Provvedi a crearle, perchè sono necessarie.
+
+Fai sempre un confronto con scacchiGr.7z.
 
 Descrizione e dettagli ulteriori
 I sorgenti .cpp e .h sono nelle directory src, src-clock , src-starter , src-fenpos , src-validaFEN , src-coach, src-coachGame, src-incolla-ROTN, src-estensioni, src-simpleEditor, src-diagrammi, src-make-pgn   e serverScacchi.
