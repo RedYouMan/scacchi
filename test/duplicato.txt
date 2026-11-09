@@ -1,0 +1,6 @@
+T: due pezzi stessa casa
+V:B
+B:Rg1;Dc7;
+N:Rh8;Cc7;
+M:B
+P:21;

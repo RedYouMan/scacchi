@@ -26,9 +26,19 @@
 #include "chess.h"
 #include <cctype>
 #include "engine.h"
+#include <string>
 #pragma warning(disable : 4267)
 
 using namespace std;
+
+// Definiamo la costante per la capacità massima dell'array
+const int MAX_CASE = 64;
+
+// Array globale
+std::string CaseOccupate[MAX_CASE];
+
+// Variabile globale per tenere traccia del numero attuale di stringhe nell'array
+int numeroElementi = 0;
 
 // segnala che i record B o N sono stati elaborati prima di V:
 bool isPresentB = false;
@@ -105,7 +115,12 @@ bool makeConfig(string name, int tipoPath)
     int status = true; // ok
     ifstream fin;
     string nameWithExtension;
-
+    // nel makeConfig si deve pulire CaseOccupate
+    numeroElementi = 0;
+    for (int i = 0; i < MAX_CASE; i++)
+    {
+        CaseOccupate[i].clear();
+    }
     if (tipoPath == 1) // problemi
     {
         nameWithExtension = "..//problemi//";
@@ -388,6 +403,14 @@ bool setPieceIntoSquare(string com)
         else
         {
             isPresentB = true;
+            // B: o N: quindi setto i pezzi ma devo controllare prima se non li metto 2 volte in una stessa casa
+            // controllo due volte stessa casa
+            string casa = mossa.substr(1, 2);
+            // faccio il controllo su CaseOccupate
+            if (cercaEInserisci(casa) == false)
+            {
+                // tutto ok non ci sono due pezzi nella stessa casa
+            }
             setPiece(myColor, mossa);
         }
     }
@@ -945,4 +968,33 @@ void checkU(string mossa)
         }
     }
     return;
+}
+
+// Funzione che cerca la stringa e la inserisce se non è presente
+bool cercaEInserisci(const std::string &stringaDaCercare)
+{
+    // 1. Cerca la stringa nell'array
+    for (int i = 0; i < numeroElementi; i++)
+    {
+        if (CaseOccupate[i] == stringaDaCercare)
+        {
+            callTextToSpeech(string("stai inserendo due pezzi nella stessa casa. Esco per farti correggere\n"));
+            exit(1);
+        }
+    }
+
+    // 2. Se non è stata trovata, prova a inserirla
+    if (numeroElementi < MAX_CASE)
+    {
+        CaseOccupate[numeroElementi] = stringaDaCercare;
+        numeroElementi++;
+        // std::cout << "-> \"" << stringaDaCercare << "\" non trovata. Inserita con successo.\n";
+    }
+    else
+    {
+        std::cout << "-> Errore: l'array CaseOccupate è pieno! Impossibile inserire.\n";
+        exit(1);
+    }
+
+    return false; // Stringa non era presente
 }
