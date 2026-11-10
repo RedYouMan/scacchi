@@ -411,8 +411,20 @@ bool setPieceIntoSquare(string com)
             {
                 // tutto ok non ci sono due pezzi nella stessa casa
             }
+            else
+            {
+                callTextToSpeech(string("Attenzione: nel file ci sono due pezzi nella stessa casa, esco per consentirti di correggere il file\n"));
+                exit(1);
+            }
             setPiece(myColor, mossa);
         }
+    }
+
+    // pulizia dell'array CaseOccupate per la prossima volta
+    numeroElementi = 0;
+    for (int i = 0; i < MAX_CASE; i++)
+    {
+        CaseOccupate[i].clear();
     }
     // posizione sicura per settare validi gli arrocchi
     // anche se ripetuta almeno 4 volte Entra solo in un if per volta.
@@ -978,11 +990,9 @@ bool cercaEInserisci(const std::string &stringaDaCercare)
     {
         if (CaseOccupate[i] == stringaDaCercare)
         {
-            callTextToSpeech(string("stai inserendo due pezzi nella stessa casa. Esco per farti correggere\n"));
-            exit(1);
+            return true; // Stringa già presente
         }
     }
-
     // 2. Se non è stata trovata, prova a inserirla
     if (numeroElementi < MAX_CASE)
     {
