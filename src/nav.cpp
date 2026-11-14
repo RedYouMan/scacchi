@@ -575,14 +575,17 @@ void navOnBoard(char who)
                         }
                         else
                         {
-                            callTextToSpeech(string("Valore non valido, esco per farti ricominciare correttamente\n"));
-                            return;
+                            callTextToSpeech(string("Valore non valido\n"));
+                            callTextToSpeech(string("Fai Alt-Tab per tornare alla scacchiera\n"));
                             ;
                         }
-                        chi = (valore == 1 ? 'W' : 'B');
-                        callTextToSpeech(string("Hai scelto di vedere lo schieramento del colore ") + (who_play == 'W' ? "Bianco" : "Nero") + string("\n"));
-                        mostraEsercito(chi);
-                        callTextToSpeech(string("Fai Alt-Tab per tornare alla scacchiera\n"));
+                        if (valore == 1 || valore == 2)
+                        {
+                            chi = (valore == 1 ? 'W' : 'B');
+                            callTextToSpeech(string("Hai scelto di vedere lo schieramento del colore ") + (who_play == 'W' ? "Bianco" : "Nero") + string("\n"));
+                            mostraEsercito(chi);
+                            callTextToSpeech(string("Fai Alt-Tab per tornare alla scacchiera\n"));
+                        }
                     }
 
                     if (event.key.code == sf::Keyboard::G)
