@@ -1,6 +1,7 @@
-Versione: 14.7
+Versione: 14.8
 data: 08 Novembre 2026
 
+La versione 14.8 toglie un bug su CtrlD
 La versione 14.7 migliora il controllo precedente.
 La versione 14.4 aggiunge un controllo di validazione sui caricamenti: due pezzi in stessa casa
 La versione 14.3 risolve messaggio errato di coachGame e mette insieme tutti i plugin

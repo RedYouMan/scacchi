@@ -564,13 +564,14 @@ void navOnBoard(char who)
                         int valore = 0;
                         cin >> valore;
                         cin.ignore();
+                        char chi = '@';
                         if (valore == 1)
                         {
-                            who_play = 'W';
+                            chi = 'W';
                         }
                         else if (valore == 2)
                         {
-                            who_play = 'B';
+                            chi = 'B';
                         }
                         else
                         {
@@ -578,9 +579,9 @@ void navOnBoard(char who)
                             return;
                             ;
                         }
-                        who_play = (valore == 1 ? 'W' : 'B');
+                        chi = (valore == 1 ? 'W' : 'B');
                         callTextToSpeech(string("Hai scelto di vedere lo schieramento del colore ") + (who_play == 'W' ? "Bianco" : "Nero") + string("\n"));
-                        mostraEsercito(who_play);
+                        mostraEsercito(chi);
                         callTextToSpeech(string("Fai Alt-Tab per tornare alla scacchiera\n"));
                     }
 
