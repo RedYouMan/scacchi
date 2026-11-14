@@ -68,7 +68,11 @@ void WriteGameToFile(string nameFile, string str, bool scrivi)
 
 void loadFile(int tipoPath, bool cambioColore)
 {
-
+    numeroElementi = 0;
+    for (int i = 0; i < MAX_CASE; i++)
+    {
+        CaseOccupate[i].clear();
+    }
     isPresentB = false;
     if (isProblem)
     {
@@ -571,7 +575,11 @@ void init()
     com.clear();
     cleanBoard();
     isPresentB = false;
-
+    numeroElementi = 0;
+    for (int i = 0; i < MAX_CASE; i++)
+    {
+        CaseOccupate[i].clear();
+    }
     while (cont < 8)
     {
         if (cont == 1)

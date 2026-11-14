@@ -5,6 +5,7 @@
 // Compilazione in due modi possibili:
 // 1. da Visual Studio Code con F5
 // 2. g++ -std=c++17 -O2 make-fen.cpp -o make-fen
+// Autore: Rosario Turco
 
 #include <array>
 #include <cctype>
