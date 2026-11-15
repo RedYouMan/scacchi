@@ -582,7 +582,7 @@ void navOnBoard(char who)
                         if (valore == 1 || valore == 2)
                         {
                             chi = (valore == 1 ? 'W' : 'B');
-                            callTextToSpeech(string("Hai scelto di vedere lo schieramento del colore ") + (who_play == 'W' ? "Bianco" : "Nero") + string("\n"));
+                            callTextToSpeech(string("Hai scelto di vedere lo schieramento del colore ") + (chi == 'W' ? "Bianco" : "Nero") + string("\n"));
                             mostraEsercito(chi);
                             callTextToSpeech(string("Fai Alt-Tab per tornare alla scacchiera\n"));
                         }
