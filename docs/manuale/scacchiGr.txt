@@ -54,7 +54,7 @@ https://github.com/RedYouMan/scacchi
 per clonare il repository fate il comando:
 git clone https://github.com/RedYouMan/scacchi 
 
-Disclaimers
+Disclaimer
 Scacchi-it è pensato per l'insegnamento, la didattica e le partite amatoriali. Non è destinato all'uso in tornei ufficiali, per i quali si raccomanda un'adeguata fase di sperimentazione preventiva.
 
 Introduzione al programma Scacchi-it 
