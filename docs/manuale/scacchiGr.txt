@@ -7,7 +7,8 @@ per Windows 10 e 11
 *Licenze: documentazione - CC BY-SA 4.0 | Software - GPLv3*
 Tutto il progetto è rilasciato in open source senza scopo di lucro per finalità tiflologiche e inclusive.
 *Copyright © 2025 Rosario Turco* 
-
+il software viene fornito "così com'è" (as-is), senza garanzie sul funzionamento continuo o privo di errori.
+ 
 Registrato su Zenodo (CERN) a cura di _Rosario Turco_
 DOI ROTN: https://doi.org/10.5281/zenodo.22737720
 DOI SCACCHI: https://doi.org/10.5281/zenodo.22737784
@@ -55,7 +56,7 @@ per clonare il repository fate il comando:
 git clone https://github.com/RedYouMan/scacchi 
 
 Disclaimer
-Scacchi-it è pensato per l'insegnamento, la didattica e le partite amatoriali. Non è destinato all'uso in tornei ufficiali, per i quali si raccomanda un'adeguata fase di sperimentazione preventiva.
+Scacchi-it è un progetto open source pensato esclusivamente per l'insegnamento, la didattica e le partite amatoriali. Il software viene fornito "così com'è", senza alcuna garanzia. Non è destinato né omologato per l'uso diretto in tornei ufficiali: per qualsiasi impiego in ambito agonistico si raccomanda un'adeguata fase di sperimentazione preventiva sotto la piena responsabilità degli organizzatori.
 
 Introduzione al programma Scacchi-it 
 Esso è un progetto italiano gratuito, , una piattaforma completa offline /online, ascoltabile con sintesi vocale, consigliato ai non vedenti, ma con grafica per consentire di giocare anche alle persone vedenti.
