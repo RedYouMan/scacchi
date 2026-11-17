@@ -68,7 +68,7 @@ Il non vedente, tramite uno screen reader come NVDA, oJAWS potrà utilizzare il 
 Come si vedrà Scacchi-it è soprattutto una piattaforma di studio e analisi, da usare a casa, oppure adatto a partite dove si attende la risposta di un amico oppure per lezioni di scacchi, o per risolvere dei problemi (puzzle) o per giocare contro il computer e infine per giocare anche online.
 
 La presenza di un orologio tiflologico nel pacchetto scacchiGr.7z ha solo il significato di "allenamento col computer" per abituarsi al tempo di gioco prima di partecipare ad un torneo e abbassare la fase di ansia  da prestazione.
-Mentre per le gare online esiste il plugin Scacchi-it-Net che fornisce un orologio su rete e altre possibilità di comunicazione per la richiesta di patta e per la promozione di un pedone. 
+Mentre per le gare online esiste il plugin Scacchi-it-Net che fornisce un orologio su rete senza latenza e altre possibilità di comunicazione per la richiesta di patta e per la promozione di un pedone. 
 
 Scacchi-it consente di:
 1 - navigare, con frecce e mouse, sulla scacchiera dando informazioni di pezzi e case vuote
@@ -122,7 +122,7 @@ Scacchi-it consente di:
 49 - creare un pgn con le partite registrate
 50 - usare la utility extractGame per ottenere dal serverScacchi un file di testo in notazione algebrica e da sottoporre a make-pgn
 51 - comunicare un accordo di patta su rete, accettabile o rifiutabile
-52 - disporre di un orologio su rete condiviso
+52 - disporre di un orologio su rete condivisosenza latenza di rete
 53 - comunicare su rete a quale pezzo viene promosso un pedone 
 54 - utilizzare una AI esterna
 55 - fare l'analisi di mosse sospette (sperimentale) se si gioca online 
@@ -1048,15 +1048,15 @@ ESISTONO VARI piani tariffari annuali estendendo ad esempio fino a 32 pc una ret
 Consultare il sito ufficiale.
 
 La funzionalità Comunicazione online (scacchi-it-Net.7z)
-Questa funzionalità è un plugin aggiuntivo già presente nella versione base 14.3 di Scacchi-it. Esso permette di avere un secondo server di comunicazione nel gioco online per:
+Questa funzionalità è un plugin aggiuntivo già presente dalla versione base 14.3 di Scacchi-it. Esso permette di avere un secondo server di comunicazione nel gioco online per:
 1. comunicare a quale pezzo si promuove il pedone
-2. avere un orologio comune tra i due giocatori
+2. avere un orologio comune tra i due giocatorisenza latenza di rete
 3. proporre la patta che si può accettare o rifiutare.
  
 Tutto viene fatto da sequenza di tasti diversi dall'applicativo di scacchi usando Alt invece di Ctrl e si può fare la sequenza anche fuori console del client.
 I tasti sono:
 - Alt+U per dire la promozione del pedone. Viene chiesto di inserire D per donna, T per torre, A per alfiere e C per cavallo.
-- Alt+O per sapere i minuti consumati
+- Alt+O per sapere i minuti consumati localmente e trasmessi da ognuno all'altro
 - Alt+T per switchare l'orologio all'avversario dopo aver mosso
 - Alt+P per chiedere la Patta a cui si può rispondere Alt+1 per accettare o Alt+2 per rifiutare
 Ma i comandi sono ricordati dal programma stesso.
