@@ -97,7 +97,6 @@ Gli strumenti di "incolla" sono solo di trasporto dati senza aumento di carico c
 
 Con Scacchi-it l'utente si concentra solo sul gioco e mai su nessun formato. La ROTN va considerata come un meccanismo interno della scacchiera, e la FEN similmente che viene passata a stockfish per farlo giocare. 
 La ROTN, come meccanismo interno, facilità il compito al giocatore (come gioco e chiarezza in cuffia) e Fa parte della scacchiera. il gioco è sempre identico da millenni, gli standard sono sempre là.
-
  
 Come affrontare questo software
 Creare un chess engine come Scacchi-it che si propone sia come motore di controllo e gioco a due, sia come motore di controllo di stockfish e, infine, come motore online Hamachi multiplayers, ti assicuro che non è semplice. 
