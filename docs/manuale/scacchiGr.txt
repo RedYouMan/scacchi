@@ -1118,6 +1118,31 @@ Se dovete giocare online in rete locale o in rete Hamachi nel vostro circolo pot
 
 I suggerimenti circa le email sono qui solo una proposta, sarà ovviamente il circolo a decidere le modalità da utilizzare e comunicarle a tutti i giocatori.
 
+
+Proposta arbitraggio su rete(online) 
+Quello che qui esponiamo è solo una proposta, , dato che il software non è omologato, ma il suo utilizzo in tornei ufficiali è oggetto di accurata sperimentazione e responsabilità e decisione degli organizzatori di partite online, che si daranno un proprio regolamento ufficiale per tali competizioni.
+Esistono due scenari:
+1. partite amichevoli o amatoriali
+2. partite di torneo ufficiali
+
+Facciamo la premessa
+Il tempo dell'orologio parte al bianco quando il nero si collega
+Quando si fa Ctrl-O dato che il tempo è su 5 campi (000:00) si ottengono due informazioni:
+a- il consumo dell'avversario locale
+b se ha settatol'orologio alla stessa durata (es: 120:00 minuti)
+La procedura potrebbe essere quindi:
+- Appena collegato al server, lato nero si fa partire un cronometro da polso.
+- Appena si muove un pezzo bianco lato nero si ferma il cronometro da polso.
+Se con Ctrl-O arriva 118:43 il tempo ottenuto col cronometro da polso se si è in rete locale è quasi identico: al Ctrl-O, infatti  si tratta della differenza di un secondo al massimo o uguale; mentre se si è in rete VPN sarà maggiore perchè il tempo consumato deve essere trasmesso su rete e il tempo cronometrato sarà maggiore di quello realmente consumato.
+
+Primo scenario
+I giocatori fanno da soli e non cronometrano, orientandosi solo sul fatto che il valore di tempo ricevuto si avvicina molto al tempo che si doveva settare.
+
+Secondo scenario.
+Se si è in un torneo ufficiale in rete locale, un arbitro passa per le due postazioni e setta il tempo e collega il nero.
+Se si è in rete remota vpn, due arbitri, uno per lato, setteranno l'orologio e cronometreranno con crono da polso il tempo fino al pezzo che si muove della prima mossa. Il tempo viene ritenuto valido  col criterio come spiegato precedentemente. 
+
+
 La funzionalità simpleEditor
 
 In Scacchi-it nella cartella simpleEditor vi è un semplice editor testuale per creare un Database di posizioni in ROTN, che gli istruttori possono classificare sotto la cartella Database, in base alle esigenze didattiche (Strategia, Tattica, Finali, etc.). Si è preferito di creare un semplice editor testuale per facilitarne l'uso anche ad istruttori non vedenti.
