@@ -338,9 +338,10 @@ Se avete già entrambe le lingue userà l'italiano.
 Non ci sono problemi di installazione se avete Windows in italiano. 
 
 Registrazione partita
-La registrazione è consentita attivarla in offline solo ad inizio partita con CtrlW. Non si registrano i problemi, mentre le partite col computer sono consentite per l'uso successivo di coachGame.
+La registrazione è consentita attivarla in offline solo ad inizio partita con CtrlW. Non si registrano i problemi, mentre le registrazioni delle partite col computer sono consentite per l'uso successivo di coachGame.
 La registrazione avviene ad ogni semimossa dei giocatori e continua anche se la partita viene ripresa dopo una sospensione.
- 
+ Essa registra solo le mosse secondo la notazione algebrica italiana e non i tempi. In offline non c'è un server che traccia i tempi su log, cosa esistente , invece, in online.
+
 Scelta livello di skill
 Quando si gioca in offline contro il computer (CtrlZ o CtrlA) è possibile scegliere un livello di gioco tra 0 e 20.
 
