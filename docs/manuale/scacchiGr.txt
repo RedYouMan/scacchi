@@ -1043,17 +1043,17 @@ Attenzione se esiste un precedente log viene sovrapposto.
 
 Funzionalità sortLog
 Essendo il gioco online multiplayer, ciò comporta che nel file server.log sono mischiate le informazioni delle varie room. E' Posssibile ottenere un log che accorpi le informazioni per room alla fine di tutte le partite con il comando sortLog.exe. Tale comando non accetta nessun parametro , esso sa già di dover analizzare il file server.log e produrre il file serverordinato.txt
+Questa funzionalità serve soprattutto a fini umani per vedere con occhi le partite accorpate nel log. Ma se non dovete esaminare ad occhio le cose, ma solo estrarre partite fate riferimento a extractGame dando in input la room.
+Essa cerca il file server.log e produce un file serverOrdinato.txt 
 
 Funzionalità extractGame
-Dopo aver ordinato il log per room, l'output file di sortLog lo possiamo sottomettere a extractGame per ottenere un fileper la room di interesse e ottenere un file di testo di notazione algebrica da sottoporre, poi, a make-pgn.
+L'utility extractGame se fatta girare sul log del server (come server.log) vi permette di ottenere un file di testo in notazione algebrica della partita per la room di interesse da sottoporre, poi, a make-pgn oppure a coachGame se ha estensione txt.
 
 L'uso richiesto è:
 extractGame <nome room> <nome file da analizzare>
 
-Nota: Se esaminate il nome di file che produce sortLog.exe esso è serverOrdinato.txt. Avvertenza: analizzate sempre il risultato del file che vi darà soprattutto per le catture, gli enpassant e le promozioni di pedoni. 
+Avvertenza: analizzate sempre il risultato del file che vi darà soprattutto per le catture, gli enpassant e le promozioni di pedoni. 
 
-Questa utility vi aiuta specialmente se dovete ottenere da make-pgn un file ufficiale da consegnare o caricare su qualche repository.
- 
 Estendere una rete Hamachi
 ESISTONO VARI piani tariffari annuali estendendo ad esempio fino a 32 pc una rete con un abbonamento annuo minimo oppure estendendo a reti multiple a costi contenuti.
 Consultare il sito ufficiale.
