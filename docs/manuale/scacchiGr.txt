@@ -703,7 +703,9 @@ coachGame-start invio
 
 Da qui saprete che il programma accetta due parametri ovvero il nome del log della partita che si trova nella cartella registrazioni (deve essere comprensivo di estensione .txt), e il colore del giocatore da analizzare: b oppure n.
 La risposta del coach è in gergo stockfish: casa partenza+casa arrivo. Senza lettera del pezzo. Ad esempio: e1g1 è una mossa di re bianco per fare l'arrocco corto a destra, mentre e1c1 mossa di rebianco per l'arrocco lungo a sinistra, c2c4 è una mossa di pedone bianco, e7e5 una mossa di pedone nero.
-Il coach fa il delta tra la valutazione di come stava prima il giocatore e come sta dopo la mossa.  In base a questo delta e delle soglie (0.5, 1.0, 1.5) stabilisce se la mossa è debole, cattiva, errata e consiglia una best move.
+Il coach fa il delta tra la valutazione di come stava prima il giocatore e come sta dopo la mossa.  In base a questo delta e delle soglie (0.5, 1.0, 1.5) stabilisce come è la mossa.
+se la mossa è con delta >=0.5 e minore di 1.0 la mossa è ritenuta sbagliata. Se delta >= 1.0 e minore di 1.5 la mossa viene ritenuta molto sbagliata. Se il delta è superiore o uguale a 1.5 la mossa è ritenuta pessima.
+ Di solito in questi casi il coachGame consiglia una best move.
 Il tutto viene riportato in un file report.txt nella cartella registrazioni.
 Si può, a questo punto, dopo aver letto report.txt utilizzare una AI esterna, come Chat GPT, Gemini o Meta-AI. Si copia il contenuto del file report.txt e si incolla alla AI esterna e le si fanno tutte le domande, ad esempio: "perchè ho perso la partita?" e lei ci darà in italiano, mossa per mossa, spiegazioni strategico-tattiche.
 
