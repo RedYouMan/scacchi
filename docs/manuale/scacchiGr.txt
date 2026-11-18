@@ -24,7 +24,7 @@ Sul sito è stata pubblicata la versione runtime 15.0 di Scacchi-it, che include
 
 I cambiamenti sono tracciati nel file changelog e sono frutto delle segnalazioni della Community.
 
-Per verificare la vostra versione ascoltate quando parte il programma oppure digitate Ctrl+H.
+Per verificare la vostra versione ascoltate quando parte il programma oppure digitate CtrlH.
 
 Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima versione del presente file.
 
@@ -116,9 +116,9 @@ Scacchi-it consente di:
 43 - creare un Database di posizioni classificate secondo le esigenze didattiche con un simpleEditor
 44 - accorpare il log del gioco online multiplayer per room 
 45 - utilizzare la copia per prendere una fen da un portale web o un pdf e incollarla su Scacchi-it 
-46 - estrarre la FEN con Ctrl-E da una posizione ROTN sulla scacchiera mandandola verso la console
+46 - estrarre la FEN con CtrlE da una posizione ROTN sulla scacchiera mandandola verso la console
 47 - ottenere una immagine svg da una FEN
-48 - ottenere a fronte di un colore lo schieramento desiderato (Ctrl-D)
+48 - ottenere a fronte di un colore lo schieramento desiderato (CtrlD)
 49 - creare un pgn con le partite registrate
 50 - usare la utility extractGame per ottenere dal serverScacchi un file di testo in notazione algebrica e da sottoporre a make-pgn
 51 - comunicare un accordo di patta su rete, accettabile o rifiutabile
@@ -247,7 +247,7 @@ Dove sono attivabili i controls
 Tutti i controls sono attivi solo sulla scacchiera grafica.
 
 Help
-L'Help si può richiamare con Ctrl+H in qualunque momento del gioco, in modo che si può ricordare cosa fare per la situazione in corso.
+L'Help si può richiamare con CtrlH in qualunque momento del gioco, in modo che si può ricordare cosa fare per la situazione in corso.
 L'help è con sintesi vocale. 
 Maggiori dettagli rispetto all'help però sono nel tutorial/manuale qui presente. che vi conviene leggere.
 
@@ -289,7 +289,7 @@ Questo ti eviterà, quando usi NVDA, di ascoltare contemporaneamente console e s
 Ascolta la scacchiera,  dato che starai quasi sempre sulla scacchiera.
 
 Nomi dei comandi da ricordare
-I nomi dei controls sono tali da avere l'ultima lettera che stimoli una associazione di idee per ricordarli:
+I nomi dei controls sono ottenuti con il tasto Ctrl seguito da una lettera che stimoli una associazione di idee per ricordarli:
 - H per help o aiuto
 - W per write/registrare 
 - P per i problemi o le posizioni 
@@ -308,6 +308,12 @@ I nomi dei controls sono tali da avere l'ultima lettera che stimoli una associaz
 - I per giocare online su Internet
 - E per estrarre la FEN dalla scacchiera e stamparla a console 
 D - per ottenere informazioni della disposizione di uno schieramento
+
+Ora esaminiamo i controls che si attivano con Alt seguito da lettera:
+- AltU per dire il pezzo a cui promuovere un pedone. 
+- AltO per sapere i minuti consumati localmente e trasmessi da ognuno all'altro
+- AltT per switchare l'orologio all'avversario dopo aver mosso
+- AltP per chiedere la Patta a cui si può rispondere Alt1 per accettare o Alt2 per rifiutare
 
 Come fare l'arrocco
 Basta selezionare il re e muoverlo di due case. Ad esempio per un arrocco corto del bianco, il re da e1 si sposta in g1, mentre per un arrocco lungo bianco il re si sposta da e1 a c1. Il programma automaticamente sposta, poi, la torre relativa. 
@@ -413,11 +419,11 @@ Supponiamo che vogliamo giocare gestendo bianco e nero    liberamente, per atten
 
 Se volessimo giocare col computer e che questi avesse il bianco, in sequenza dovremo fare:
 - avviare il programma attendendo la scacchiera 
--Ctrl-W se vuoi registrare la partita 
+-CtrlW se vuoi registrare la partita 
 - CtrlZ per avviare il computer
 - Ci chiederà con che colore deve giocare il computer 
 - La seconda domanda che ci farà è il livello di gioco desiderato (da 0 a 20).
-- Facciamo Ctrl-G per stare dalla parte del nero
+- Facciamo CtrlG per stare dalla parte del nero
  Nota: le partite col computer si possono registrare per poter usare coachGame successivamente.  e Si possono registrare anche le partite contro gli amici nello scenario precedente.
 
 Se volessimo ascoltare l'analisi del computer nel risolver un problema:
@@ -641,7 +647,7 @@ Vi possono capitare tre situazioni:
 - scrivete una ROTN
 
 Nel primo caso potreste incollare la ROTN in un file Notepad e metterlo nella directory problemi, che tratta posizioni o puzzle, e date ad esso un nome con estensione txt.  
-Oppure usate incolla-ROTN che vi metterà il file in cartella sospensioni da caricare con Ctrl-R.
+Oppure usate incolla-ROTN che vi metterà il file in cartella sospensioni da caricare con CtrlR.
 La differenza tra sospensioni e problemi è che in sospensioni dopo aver caricato il file, esso viene rimosso.
 
 Nel secondo caso avete due soluzioni:
@@ -666,10 +672,10 @@ Otterrete lo usage se digitate solo:
 incolla-ROTN return
 
 Lo usage dice di digitare il nome del file senza estensioni e dare return, dopo di che sulla console incollate ilcontenuto degli appunti.
-Poi occorre fare Ctrl-Z+Return.
+Poi occorre fare CtrlZ+Return.
 
 Per caricare il tutto su Scacchi-it occorre fare dopo
-Ctrl-R e inserire su console il nome del file senza estensione
+CtrlR e inserire su console il nome del file senza estensione
 
 Se avete preso la ROTN da un pdf su un'unica riga e Scacchi-it vi scarta ilfile, potreste visionare il file in cartella sospensioni col notepad. Una volta capito l'errore a cosa sia dovuto (il pdf era formattato male) lo potreste correggere e salvarlo. Dopo di che potreste ricaricarlo.
  
@@ -696,7 +702,7 @@ Il tutto viene riportato in un file report.txt nella cartella registrazioni.
 Si può, a questo punto, dopo aver letto report.txt utilizzare una AI esterna, come Chat GPT, Gemini o Meta-AI. Si copia il contenuto del file report.txt e si incolla alla AI esterna e le si fanno tutte le domande, ad esempio: "perchè ho perso la partita?" e lei ci darà in italiano, mossa per mossa, spiegazioni strategico-tattiche.
 
 Estrarre dalla scacchiera una FEN
-Se dovete usare, ad esempio, il coachFEN o il make-FEN2SVG o vi interessa portare la posizione su un portale, potete fare Ctrl-E, poi  spostarvi sulla console  con Alt-Tab per trovare il messaggio "fen: valore della FEN". Il consiglio è di selezionare dalla console il valore facendo Ctrl-A seguito da Ctrl-C e incollarlo, momentaneamente,  su un file notepad per selezionare la sola parte del valore.
+Se dovete usare, ad esempio, il coachFEN o il make-FEN2SVG o vi interessa portare la posizione su un portale, potete fare CtrlE, poi  spostarvi sulla console  con Alt-Tab per trovare il messaggio "fen: valore della FEN". Il consiglio è di selezionare dalla console il valore facendo Ctrl-A seguito da Ctrl-C e incollarlo, momentaneamente,  su un file notepad per selezionare la sola parte del valore.
 Dato che può capitare che non selezionate bene tutto, a causa di spazi che non vi fanno rendere conto della presenza degli ulteriori campi, vi conviene aprire un'altra console e usare validaFEN.
  Oppure state attenti a prendere tutto, a partire dal primo spazio c'è il campo di chi ha il tratto (w o b) poi altro spazio e seguono gli arrocchi etc.fino ad arrivare al campo del numero di mossa.  Fate un poco di pratica.
 
@@ -726,7 +732,7 @@ Se dovete avere orologio locale e scacchiera, lanciate prima l'orologio e sulla 
 Dall'help, durante il lancio di clock-start, si apprende:
 - digitare spazio la prima volta per avviarlo
 - spazio per dire di aver mosso e fare cambio turno
-- Ctrl-Q per uscire
+- CtrlQ per uscire
 
 Dopo l'help occorre inserire la durata del gioco in minuti (es. 5 minuti, 240 minuti etc.) 
 L'orologio rileva la durata del tempo di pensiero della mossa e lo detrae solo al digitare dello spazio. Questa scelta è sia per evitare di consumare la CPU dietro solo all'orologio, sia per capire mentalmente quanto dura il proprio pensiero di gioco senza vedere l'orologio.
@@ -906,7 +912,7 @@ Dato che si gioca in multiplayer è importante che ogni giocatore inserisca come
 Suggerimento al Bianco: usare 1 per giocare in bianco su online.
 Suggerimento al Nero: prima di fare 	CtrlI, fare CtrlG per stare dalla parte del Nero e usare 2 per giocare in Nero su online. 
 Il server assegna al Bianco il nome della room con cui accedere e che va comunicata al Nero. 
-I non vedenti possono catturare il nome della room dalla console facendo prima Ctrl-A sulla console seguito da copia CtrlC e incollarlo su un notepad e trovare il nome della room da copiare e comunicare al Nero, magari con whatsapp.
+I non vedenti possono catturare il nome della room dalla console facendo prima CtrlA sulla console seguito da copia CtrlC e incollarlo su un notepad e trovare il nome della room da copiare e comunicare al Nero, magari con whatsapp.
 4. se il nero è collegato, il bianco può fare la prima mossa
 5. dopo una mossa il programma segnala come sempre quale numero di mossa si dovrà fare successivamente
 6. ogni giocatore vede la mossa fatta dall'altro
@@ -1055,10 +1061,10 @@ Questa funzionalità è un plugin aggiuntivo già presente dalla versione base 1
  
 Tutto viene fatto da sequenza di tasti diversi dall'applicativo di scacchi usando Alt invece di Ctrl e si può fare la sequenza anche fuori console del client.
 I tasti sono:
-- Alt+U per dire la promozione del pedone. Viene chiesto di inserire D per donna, T per torre, A per alfiere e C per cavallo.
-- Alt+O per sapere i minuti consumati localmente e trasmessi da ognuno all'altro
-- Alt+T per switchare l'orologio all'avversario dopo aver mosso
-- Alt+P per chiedere la Patta a cui si può rispondere Alt+1 per accettare o Alt+2 per rifiutare
+- AltU per dire la promozione del pedone. Viene chiesto di inserire D per donna, T per torre, A per alfiere e C per cavallo.
+- AltO per sapere i minuti consumati localmente e trasmessi da ognuno all'altro
+- AltT per switchare l'orologio all'avversario dopo aver mosso
+- AltP per chiedere la Patta a cui si può rispondere Alt1 per accettare o Alt2 per rifiutare
 Ma i comandi sono ricordati dal programma stesso.
 
 Durante la digitazione di tali tasti, le risposte alla proposta di Patta o l'annuncio di promozione del pedone e all'esaurimento del tempo vi sono segnali acustici.
@@ -1084,16 +1090,16 @@ La modalità consigliata di avvio dei programmi è:
 2. avviare il client
 3. avviare Scacchi-it
 
-Questa modalità permetterà di avere a sinistra tutte le console che userete di meno, la stessa console del client, tranne per il caso della promozione del pedone, non si deve raggiungere con Alt-Tab dato che le sequenze dei comandi sono fattibili anche fuori console.
+Questa modalità permetterà di avere a sinistra tutte le console che userete di meno, la stessa console del client, tranne per il caso della promozione del pedone, non si deve raggiungere con AltTab dato che le sequenze dei comandi sono fattibili anche fuori console.
 
 La modalità di funzionamento dell'orologio per la sincronizzazione è la seguente:
 1. avviate il clientCom e rispondete se siete bianco con b (o nero con n).
 2. settate i minuti previsti per la partita (es. 120)
 3. fino a quando il nero non collega il suo clientCom e messo lo stesso tempo (ad es. 120 minuti) non parte il tempo del bianco.
-4. il bianco pensa alla sua mossa, la fa, Alt-T e switch l'orologio al nero
-5. il nero dopo aver visto la mossa online, fa Alt-O e sincronizza l'orologio e vede quanto ha consumato il bianco e se ha impostato la stessa quantità di minuti della partita (es. 120)
-6. il nero pensa alla mossa, la fa, Alt-T e switch dell'orologio al bianco
-7. il bianco vista lamossa fatta dal nero online, fa Alt-O e sincronizza l'orologio e vede quanto tempo il nero ha consumato e se ha messo la stessa sua quantità di minuti impostati all'inizio
+4. il bianco pensa alla sua mossa, la fa, AltT e switch l'orologio al nero
+5. il nero dopo aver visto la mossa online, fa AltO e sincronizza l'orologio e vede quanto ha consumato il bianco e se ha impostato la stessa quantità di minuti della partita (es. 120)
+6. il nero pensa alla mossa, la fa, AltT e switch dell'orologio al bianco
+7. il bianco vista lamossa fatta dal nero online, fa AltO e sincronizza l'orologio e vede quanto tempo il nero ha consumato e se ha messo la stessa sua quantità di minuti impostati all'inizio
 e si procede in questo modo
 
 Il procedimento di sopra evita problematiche di latenza di rete: quello che si legge è sempre il tempo consumato localmente al giocatore.
@@ -1127,13 +1133,13 @@ Esistono due scenari:
 
 Facciamo la premessa
 Il tempo dell'orologio parte al bianco quando il nero si collega
-Quando si fa Ctrl-O dato che il tempo è su 5 campi (000:00) si ottengono due informazioni:
+Quando si fa AltO dato che il tempo è su 5 campi (000:00) si ottengono due informazioni:
 a- il consumo dell'avversario locale
 b se ha settatol'orologio alla stessa durata (es: 120:00 minuti)
 La procedura potrebbe essere quindi:
 - Appena collegato al server, lato nero si fa partire un cronometro da polso.
 - Appena si muove un pezzo bianco lato nero si ferma il cronometro da polso.
-Se con Ctrl-O arriva 118:43 il tempo ottenuto col cronometro da polso se si è in rete locale è quasi identico: al Ctrl-O, infatti  si tratta della differenza di un secondo al massimo o uguale; mentre se si è in rete VPN sarà maggiore perchè il tempo consumato deve essere trasmesso su rete e il tempo cronometrato sarà maggiore di quello realmente consumato.
+Se con AltO arriva 118:43 il tempo ottenuto col cronometro da polso se si è in rete locale è quasi identico: al Ctrl-O, infatti  si tratta della differenza di un secondo al massimo o uguale; mentre se si è in rete VPN sarà maggiore o quasi uguale perchè il tempo consumato deve essere trasmesso su rete e il tempo cronometrato sarà maggiore di quello realmente consumato.
 
 Primo scenario
 I giocatori fanno da soli e non cronometrano, orientandosi solo sul fatto che il valore di tempo ricevuto si avvicina molto al tempo che si doveva settare.
@@ -1141,7 +1147,7 @@ I giocatori fanno da soli e non cronometrano, orientandosi solo sul fatto che il
 Secondo scenario.
 Se si è in un torneo ufficiale in rete locale, un arbitro passa per le due postazioni e setta il tempo e collega il nero.
 Se si è in rete remota vpn, due arbitri, uno per lato, setteranno l'orologio e cronometreranno con crono da polso il tempo fino al pezzo che si muove della prima mossa. Il tempo viene ritenuto valido  col criterio come spiegato precedentemente. 
-
+I due arbitri possono anche consultarsi per dirsi di aver settato uguale gli orologi senza cronometrare, il che dipende dal regolamento ufficiale che l'organizzazione si da.
 
 La funzionalità simpleEditor
 
