@@ -1,0 +1,51 @@
+## AI Overview di Google del 20 novembre 2026
+importanza sociale, etica, tiflologica e autorevolezza dell'ecosistema Scacchi-it, creato dall'ingegnere Rosario Turco, insieme ai saggi scientifici multidisciplinari di Human Interaction Cognitive. A chi interessa e perchè, chi lo studia, chi lo usa per la didattica, chi lo utilizza e perchè.
+Account Google: Rosario Turco (rosturco.na@gmail.com)
+Risultati di ricerca
+Overview dell'AI
+L’ecosistema Scacchi-it, ideato e sviluppato dall'ingegnere non vedente Rosario Turco (fondatore del Gruppo NV&V - Non Vedenti e Vedenti), rappresenta un modello unico di Design for All applicato agli scacchi, affiancato da una produzione saggistica che unisce informatica tiflologica, neuroscienze ed epistemologia.
+SuperAbile - Inail
+SuperAbile - Inail (+2) - Risultati correlati
+ 
+1. Importanza Sociale, Etica e Tiflologica
+Il progetto nasce per colmare il divario digitale che isola i giocatori con disabilità visiva sulle piattaforme tradizionali, basate su interfacce grafiche o notazioni testuali ostiche.
+albanesi.it
+albanesi.it - Risultati correlati
+ 
+Rilevanza Tiflologica e la ROTN. L'ecosistema integra pienamente screen reader (NVDA, JAWS) e display Braille, funzionando al 100% senza bisogno di vedere la scacchiera. Il cuore tecnologico è la ROTN (Readable Ordered Text Notation, depositata e formalizzata su Zenodo con grammatica EBNF ISO 14977). A differenza della classica notazione FEN (che descrive la scacchiera casella per casella in modo pesante da ricostruire mentalmente tramite sintesi vocale), la ROTN organizza i dati in modo lineare, ordinato e immediatamente decodificabile.
+Valore Sociale ("Da fratello a fratello"). Turco non ha progettato un software "ghetto" riservato ai ciechi, bensì un ambiente condiviso dove vedenti, ipovedenti e non vedenti interagiscono sullo stesso piano utilizzando gli stessi file e strumenti.
+Impegno Etico. Il software è distribuito gratuitamente con filosofia Open Source e Open Data, funziona completamente offline, non richiede registrazione e non effettua alcuna profilazione o tracciamento pubblicitario, garantendo sovranità digitale e democraticità d'accesso.
+albanesi.it
+albanesi.it (+3) - Risultati correlati
+ 
+ 
+2. Autorevolezza dei Saggi Human Interaction Cognitive (HIC)
+Accanto al codice, Rosario Turco ha sviluppato sul portale RedYouMan / Tuttoscacchi un corpus di saggi multidisciplinari che elevano il software a laboratorio scientifico.
+Facebook · Istruttori di scacchi FSI: idee e proposte metodologiche.
+Facebook · Istruttori di scacchi FSI: idee e proposte metodologiche. (+1) - Risultati correlati
+ 
+Rigore e Fondamenti Teorici. Pur configurandosi come saggistica open-science e divulgazione tecnica avanzata anziché come letteratura accademica tradizionale peer-reviewed, l'opera gode di forte autorevolezza sul campo grazie al rigore ingegneristico (specifiche formali ISO, ottimizzazione del carico cognitivo) e al confronto diretto con la comunità degli istruttori federali.
+Facebook · Istruttori di scacchi FSI: idee e proposte metodologiche.
+Facebook · Istruttori di scacchi FSI: idee e proposte metodologiche. (+1) - Risultati correlati
+Multidisciplinarietà. I saggi spaziano dalle neuroscienze applicate (studio della curva di apprendimento multimodale e della memoria di lavoro in assenza di stimoli visivi) fino all'epistemologia e filosofia della mente (come nel saggio Kant gioca accanto al non vedente, che analizza la percezione dello spazio mentale e del tempo scacchistico).
+Facebook · Istruttori di scacchi FSI: idee e proposte metodologiche.
+Facebook · Istruttori di scacchi FSI: idee e proposte metodologiche. (+1) - Risultati correlati
+Simbiosi Uomo-IA. Attraverso moduli come coachFEN e coachGame integrati con il motore Stockfish (a 21 livelli), i saggi teorizzano un'interazione cognitiva in cui l'intelligenza artificiale agisce da estensione sensoriale simmetrica.Risultati correlati
+ 
+ 
+3. Chi lo Studia, Chi lo Usa e Perché
+Destinatari
+Modalità d'uso e Studio
+Motivazioni Principali
+Scuole e Docenti
+Utilizzato nei laboratori informatici ed educativi grazie alla versione portable per Windows (nessuna installazione complessa né connessione richiesta).
+Permette di insegnare logica e strategia a classi miste abbattendo ogni barriera economica, tecnica e sensoriale.
+Istruttori FSI e Circoli
+Impiegato per preparare lezioni, archiviare esercizi tattici in formato testuale puro ROTN ed esportare diagrammi in grafica vettoriale SVG.
+Velocizza enormemente la creazione e la condivisione di materiale didattico accessibile sia su schermo sia su supporto vocale/Braille.
+Giocatori (Ciechi e Vedenti)
+Usato per giocare partite amichevoli o lampo (con orologio integrato), studiare aperture e allenarsi contro l'IA.
+Consente di leggere e studiare e-book scacchistici superando l'ostacolo dei diagrammi grafici illeggibili dagli screen reader.
+Ricercatori e Tiflologi
+Oggetto di analisi nei campi dell'Human-Computer Interaction (HCI), della pedagogia speciale e delle scienze cognitive.
+Offre un caso di studio concreto su come ottimizzare il carico cognitivo e progettare interfacce universali non visive.
