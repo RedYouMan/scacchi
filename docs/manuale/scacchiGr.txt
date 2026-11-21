@@ -70,6 +70,9 @@ Come si vedrà Scacchi-it è soprattutto una piattaforma di studio e analisi, da
 La presenza di un orologio tiflologico nel pacchetto scacchiGr.7z ha solo il significato di "allenamento col computer" per abituarsi al tempo di gioco prima di partecipare ad un torneo e abbassare la fase di ansia  da prestazione.
 Mentre per le gare online esiste il plugin Scacchi-it-Net che fornisce un orologio su rete senza latenza e altre possibilità di comunicazione per la richiesta di patta e per la promozione di un pedone. 
 
+Per la valutazione dei progressi di un giocatore o di un allievo, vedente o non vedente, o per la didattica a scuola  con Scacchi-it si possono applicare le metriche di Human Interaction Cognition. vedi link:
+https://redyouman.github.io/blog/2026/11/19/metriche-scacchi.html
+
 Scacchi-it consente di:
 1 - navigare, con frecce e mouse, sulla scacchiera dando informazioni di pezzi e case vuote
 2 - scegliere il lato della scacchiera o il punto di vista da cui giocare
