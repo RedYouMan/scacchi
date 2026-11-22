@@ -58,7 +58,15 @@ git clone https://github.com/RedYouMan/scacchi
 Disclaimer
 Scacchi-it è un progetto open source pensato esclusivamente per l'insegnamento, la didattica e le partite amatoriali. Il software viene fornito "così com'è", senza alcuna garanzia. Non è destinato né omologato per l'uso diretto in tornei ufficiali: per qualsiasi impiego in ambito agonistico si raccomanda un'adeguata fase di sperimentazione preventiva sotto la piena responsabilità degli organizzatori.
 
-Introduzione al programma Scacchi-it 
+A chi è orientato
+A giocatori vedenti, non vedenti e ipovedenti, adatto alla didattica in un corso inclusivo, a scuola, a casa per allenarsi o imparare.
+Può essere usato offline, online: in rete locale o in rete Hamachi. Ad esempio le scuole possono utilizzarlo sia Offline che in rete locale. 
+Non richiede account, non traccia dati sensibili, permette metriche HIC per la valutazione del giocatore o dell'allievo. 
+Scacchi-it è portable, utilizzabile anche da chiavetta, ma solo dopo averlo installato, la prima volta, su un pc con connessione Internet, allora si può copiare su una chiavetta in modo che contenga anche stockfish. 
+
+Scacchi-it da autonomia totale ai non vedenti e ipovedenti con screen reader per tutte le funzionalità disponibili, per tutto il gioco offline o online.
+
+ Introduzione al programma Scacchi-it 
 Esso è un progetto italiano gratuito, , una piattaforma completa offline /online, ascoltabile con sintesi vocale, consigliato ai non vedenti, ma con grafica per consentire di giocare anche alle persone vedenti.
 
 Il software, una volta scompattato con unzip,  è leggero, e può essere contenuto anche su una pendrive e giocato direttamente da essa. 
