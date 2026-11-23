@@ -61,9 +61,11 @@ Scacchi-it è un progetto open source pensato esclusivamente per l'insegnamento,
 A chi è orientato
 A giocatori vedenti, non vedenti e ipovedenti, adatto alla didattica in un corso inclusivo, a scuola, a casa per allenarsi o imparare.
 Può essere usato offline, online: in rete locale o in rete Hamachi. Ad esempio le scuole possono utilizzarlo sia Offline che in rete locale. 
-Non richiede account, non traccia dati sensibili, permette metriche HIC per la valutazione del giocatore o dell'allievo. 
-Scacchi-it è portable, utilizzabile anche da chiavetta, ma solo dopo averlo installato, la prima volta, su un pc con connessione Internet, allora si può copiare su una chiavetta in modo che contenga anche stockfish. 
+Non richiede account, non traccia dati sensibili, senza pubblicità, permette metriche HIC per la valutazione dei progressi del giocatore o dell'allievo. 
+Scacchi-it è portable, utilizzabile anche da chiavetta, ma solo dopo averlo installato, la prima volta, su un pc con connessione Internet, allora si può copiare su una chiavetta in modo che contenga anche stockfish con 21 livelli di difficoltà.
 
+Scacchi-it è progettato by design per la conformità alla Legge 82/2022 (European Accessibility Act - EN 301 549 / WCAG 2.1), garantendo accessibilità fluida con i migliori screen reader come NVDA, JAWS e display Braille.
+Risolve il problema della lettura con screen reader delle immagini, attraverso la notazione ROTN, trasformando una immagine in immagine descrittiva, copiabile e riutilizzabile immediatamente su Scacchi-it a partire dai documenti, dispense, ebook, epub.
 Scacchi-it da autonomia totale ai non vedenti e ipovedenti con screen reader per tutte le funzionalità disponibili, per tutto il gioco offline o online.
 
  Introduzione al programma Scacchi-it 
