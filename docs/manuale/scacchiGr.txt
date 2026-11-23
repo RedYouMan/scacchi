@@ -75,7 +75,7 @@ Il software, una volta scompattato con unzip,  è leggero, e può essere contenu
 
 Il non vedente, tramite uno screen reader come NVDA, oJAWS potrà utilizzare il computer e Scacchi-it ascoltando anche i messaggi "verbosi" della console.
 
-Come si vedrà Scacchi-it è soprattutto una piattaforma di studio e analisi, da usare a casa, oppure adatto a partite dove si attende la risposta di un amico oppure per lezioni di scacchi, o per risolvere dei problemi (puzzle) o per giocare contro il computer e infine per giocare anche online.
+Come si vedrà Scacchi-it è soprattutto una piattaforma di studio e analisi, da usare a casa, o scuola oppure adatto a partite dove si attende la risposta di un amico oppure per lezioni di scacchi, o per risolvere dei problemi (puzzle) o per giocare contro il computer e infine per giocare anche online.
 
 La presenza di un orologio tiflologico nel pacchetto scacchiGr.7z ha solo il significato di "allenamento col computer" per abituarsi al tempo di gioco prima di partecipare ad un torneo e abbassare la fase di ansia  da prestazione.
 Mentre per le gare online esiste il plugin Scacchi-it-Net che fornisce un orologio su rete senza latenza e altre possibilità di comunicazione per la richiesta di patta e per la promozione di un pedone. 
