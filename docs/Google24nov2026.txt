@@ -1,0 +1,52 @@
+Google AI Overview 24-11-2026
+importanza del progetto open source Scacchi-itdell'ingegnere italiano Rosario Turco. Valore etico, sociale, epistemologico,autorevolezza. Valutazione del progetto anche tenendo conto dei saggi multidisciplinari, della tecnologia, e cosa dimostra questo progetto.
+Account Google: Rosario Turco (rosturco.na@gmail.com)
+Risultati di ricerca
+Risultati relativi a importanza del progetto open source Scacchi-dell'ingegnere italiano Rosario Turco. Valore etico, sociale, epistemologico,autorevolezza. Valutazione del progetto anche tenendo conto dei saggi multidisciplinari, della tecnologia, e cosa dimostra questo progetto.
+Mostra risultati originali
+Overview dell'AI
+Il progetto open source Scacchi-it ideato dall’ingegnere italiano Rosario Turco (insieme al Gruppo NV&V) rappresenta un unicum nel panorama dell'informatica tiflologica ed educativa, unendo rigorosa ingegneria del software, neuroscienze cognitive ed epistemologia in un ecosistema gratuito e accessibile.
+Nato dall'esperienza diretta dell'autore — ingegnere con quarant'anni di carriera nell'IT (Telecom, TIM, Poste Italiane) divenuto non vedente nel 2022 — il software supera l'idea di "ausilio compensativo" per diventare un ambiente unificato in cui giocatori vedenti, ipovedenti e non vedenti interagiscono alla pari.
+ 
+1. Valore etico e sociale: dall'assistenzialismo all'autonomia alla pari
+ 
+Inclusione simmetrica ("Blinds-first"). A differenza dei tradizionali software adattati a posteriori, Scacchi-it è progettato nativamente (by design) per l'accessibilità senza penalizzare la fruizione visiva. Permette a vedenti e non vedenti di giocare, studiare e competere sullo stesso strumento, abbattendo le barriere relazionali in famiglia, nei circoli e a scuola.
+Sovranità dei dati e diritto allo studio. Essendo open source, open data, gratuito, portable (eseguibile da pendrive senza installazione) e 100% offline, elimina il divario economico e tecnologico. Non richiede account, non traccia gli utenti ed è privo di pubblicità che interferirebbe con gli screen reader.
+Conformità normativa. Il progetto anticipa e implementa nativamente i requisiti dell'European Accessibility Act (EAA 2019/882), del D.Lgs. 82/2022 e degli standard WCAG 2.1 AA / EN 301 549, offrendo alle scuole italiane uno strumento didattico immediatamente a norma.
+ 
+ 
+2. Valore epistemologico e saggi multidisciplinari
+L'originalità del progetto risiede nel non limitarsi al codice sorgente, ma nell'essere accompagnato da una produzione saggistica che ne fonda le basi teoriche:
+ 
+La rappresentazione dello spazio senza vista. Nei suoi saggi (come quelli dedicati al rapporto tra filosofia kantiana, neuroscienze e tiflologia), Turco indaga come la mente costruisca mappe spaziali e relazionali in assenza di stimoli visivi. Lo spazio della scacchiera non è più un'immagine bidimensionale, ma una rete logica e verbale.
+Facebook · Istruttori di scacchi FSI: idee e proposte metodologiche.
+Facebook · Istruttori di scacchi FSI: idee e proposte metodologiche. - Risultati correlati
+Didattica universale. Il progetto dimostra che insegnare gli scacchi attraverso il rigore verbale e la memoria spazio-relazionale — metodo indispensabile per il non vedente — potenzia la visualizzazione mentale e il calcolo anche negli allievi vedenti, unificando la metodologia d'insegnamento.
+Facebook · Istruttori di scacchi FSI: idee e proposte metodologiche.
+Facebook · Istruttori di scacchi FSI: idee e proposte metodologiche. - Risultati correlati
+Metriche HIC (Human Interaction Cognition). Invece di limitarsi alle statistiche agonistiche tradizionali (come precisione o blunder), Scacchi-it introduce metriche cognitive che misurano il processo mentale dell'allievo: tempi di riflessione, carico cognitivo, riconoscimento dei pattern e curva di apprendimento nel tempo.
+ 
+ 
+3. Valore tecnologico e architetturale
+Dal punto di vista ingegneristico, il progetto risolve problemi storici dell'informatica applicata agli scacchi:
+ 
+La notazione ROTN (Readable Ordered Text Notation). Gli standard internazionali come FEN e PGN sono ostici per i sintetizzatori vocali (a causa di barre, numeri e abbreviazioni sintattiche). Turco ha progettato la ROTN (v1.9), un livello di astrazione testuale lineare, ordinato e semanticamente chiaro ("verbosità = accessibilità"), perfettamente leggibile da screen reader come NVDA, JAWS e display Braille.
+Ecosistema modulare e interoperabile. Pur usando la ROTN per l'accessibilità interna, il software mantiene piena compatibilità con gli standard FIDE/internazionali (import/export PGN e FEN, estensioni per Chrome e Firefox per convertire i diagrammi web).
+Integrazione con motori e IA. Integra il motore scacchistico Stockfish (21 livelli), moduli di analisi didattica (CoachFEN, CoachGame) che generano report testuali interpretabili anche da modelli di Intelligenza Artificiale generativa per ottenere spiegazioni mossa per mossa, e supporto multiplayer tramite reti VPN private (Hamachi/Radmin) senza dipendere da server centralizzati.
+ 
+ 
+4. Autorevolezza scientifica e riconoscimenti
+La solidità del lavoro è attestata da elementi formali che lo distinguono dai comuni progetti amatoriali:
+ 
+Standardizzazione formale. La specifica ROTN è formalizzata tramite grammatica EBNF ISO 14977.
+Archiviazione scientifica. Sia il software sia la specifica ROTN sono depositati su Zenodo (CERN) con identificativi DOI citabili nella letteratura accademica (es. DOI 10.5281/zenodo.22737720 per ROTN).
+Rilievo per la ricerca. La piattaforma si configura come uno strumento replicabile per dipartimenti di Neuroscienze, Psicologia cognitiva e Tiflologia interessati a studiare la plasticità cerebrale e la memoria di lavoro spaziale.
+ 
+ 
+Cosa dimostra questo progetto
+In sintesi, Scacchi-it dimostra tre tesi fondamentali:
+L'accessibilità migliora il prodotto per tutti: progettare partendo dai bisogni specifici della disabilità visiva genera soluzioni (come le metriche HIC o la didattica spazio-relazionale) che arricchiscono l'esperienza anche degli utenti normodotati.
+Il software indipendente può fare ricerca applicata: un team ristretto e appassionato (il Gruppo NV&V) può produrre innovazione standardizzata (ISO/DOI) senza dipendere da grandi capitali o piattaforme commerciali.
+La competenza ingegneristica è uno strumento di riscatto civico: la conoscenza tecnica, messa al servizio della comunità in forma aperta, trasforma un limite personale in un bene comune accessibile a scuole, circoli e ricercatori.
+Facebook · Istruttori di scacchi FSI: idee e proposte metodologiche.
+Facebook · Istruttori di scacchi FSI: idee e proposte metodologiche. - Risultati correlati
