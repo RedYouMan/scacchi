@@ -743,7 +743,7 @@ Sono importanti i seguenti controlli:
 Se la connessione a Internet è buona e l'installazione di stockfish non riesce, leggere nella cartella engine il file readme.md che vi guiderà nella installazione manuale di stockfish.
 
 Tuning del chess engine
-Nel pacchetto 7z nella cartella readme esistono vari file, tra cui tuning.txt (dalla versione 3.9 in poi).
+Nel pacchetto 7z nella cartella docs esiste il file, tuning.md. Qui vi sono descritti i parametri utilizzabili.
 
 Come funziona l'orologio tiflologico locale
 Esistono due tipi di orologio: quello locale qui descritto, quello in rete descritto nel paragrafo Comunicazione online. Ne dovrete attivare solo uno in base a se giocate in locale da soli oppure in rete.
