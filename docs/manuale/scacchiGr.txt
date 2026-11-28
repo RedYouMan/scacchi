@@ -28,16 +28,13 @@ Per verificare la vostra versione ascoltate quando parte il programma oppure dig
 
 Fate sempre F5 sul browser per assicurarvi che vi faccia vedere l'ultima versione del presente file.
 
-** Novità  1 **
+** Novità   **
 
 Le novità sono:
-- Scacchi-it-Net è già presente come eseguibile e file di configurazione nella 14.3, leggi il paragrafo "Comunicazione online" 
-- Analisi mosse sospette (sperimentale) è già presente come eseguibile nella 14.3, leggi paragrafo "Verifica che il giocatore non abbia avuto aiuti da una AI esterna" 
-
+- Scacchi-it-Net  e analisiMosseSospette (sperimentale) sono già presenti come eseguibili e file di configurazione dalla 14.3, leggi i paragrafi "Comunicazione online" e "Verifica che il giocatore non abbia avuto aiuti da una AI esterna"  
 Da notare che i coach quando si gioca online non sono attivabili e nemmeno stockfish.
 
-** Novità 2 **
-CoachGame fornisce il report.txt che è l'analisi di una partita.
+- CoachGame fornisce il report.txt che è l'analisi di una partita.
 Se copiate il contenuto di report.txt e lo incollate a Gemini o Chat GPT o a META-AI
 e gli chiedete perchè avete perso la partita, vi spiegherà tutto in italiano e con analisi scacchistica.
 
@@ -60,7 +57,7 @@ Scacchi-it è un progetto open source pensato esclusivamente per l'insegnamento,
 
 A chi è orientato
 A giocatori vedenti, non vedenti e ipovedenti, adatto alla didattica in un corso inclusivo, a scuola, a casa per allenarsi o imparare.
-Può essere usato offline, online: in rete locale o in rete Hamachi. Ad esempio le scuole possono utilizzarlo sia Offline che in rete locale. 
+Può essere usato offline, online: in rete locale o in rete Hamachi. 
 Non richiede account, non traccia dati sensibili, senza pubblicità, permette metriche HIC per la valutazione dei progressi del giocatore o dell'allievo. 
 Scacchi-it è portable, utilizzabile anche da chiavetta, ma solo dopo averlo installato, la prima volta, su un pc con connessione Internet, allora si può copiare su una chiavetta in modo che contenga anche stockfish con 21 livelli di difficoltà.
 
@@ -242,7 +239,7 @@ coachGame-start (ne parleremo in un paragrafo apposito)
 
 Attenzione: Se non è presente stockfish nella cartella engine, Scacchi-it, all'avvio con scacchi-start, utilizza il suo installer per scaricare, solo la prima volta, la versione ultima di stockfish e installarlo. Questo perchè nello zip scaricato stockfish non è presente sia per motivi di licenza GNU GPL versione 3, sia per avere un pacchetto runtime leggero da scaricare.
 Solo in questa occasione serve attiva la connessione Internet e dare consenso a scaricare a Windows Defender. Se la connessione non è troppo stabile, caso raro, potrebbe servire un secondo lancio di Scacchi-it per far riuscire a scaricare e installare stockfish la prima volta. Puoi esaminare, se vuoi, il sorgente board.cpp verso la fine per la parte installer di Scacchi-it 
-Leggere anche paragrafo Installer di stockfish.
+Leggere anche paragrafo Installer di stockfish, per avere supporto su varie problematiche che potrebbero capitarti.
 
 Installazione con comandi da prompt
 Come alternativa al paragrafo precedente si possono fare i comandi a mano. Se avete già fatto il paragrafo precedente, questo lo potrete saltare.
@@ -732,7 +729,7 @@ Qualora ci fossero versioni più recenti di stockfish è possibile scaricare la 
 L'applicativo Scacchi-it continuerà a lavorare correttamente se il nuovo motore stockfish si basa ancora su comandi standard uci (universal chess interface).
 
 Installer di stockfish
-Per motivi di licenza GNU GPL versione 3, ma anche per allegerire il pacchetto runtime di Scacchi-it in engine non viene distribuito stockfish. Tuttavia all'avvio Scacchi-it se non trova un eseguibile di stockfish in engine, e sottocartelle la prima volta scarica quello di default consigliato. Questo installer facilita il compito a persone non vedenti. L'installer utilizza comandi curl, sfruttando quello installato su Windows di default.
+Per motivi di licenza GNU GPL versione 3, ma anche per allegerire il pacchetto runtime di Scacchi-it in engine non viene distribuito stockfish. Tuttavia all'avvio Scacchi-it se non trova un eseguibile di stockfish in cartella engine, e sottocartelle la prima volta scarica quello di default consigliato. Questo installer facilita il compito a persone non vedenti. L'installer utilizza comandi curl, sfruttando quello installato su Windows di default.
 Dare consenso a Windows Defender di scaricarlo.
 Possibili insuccessi di download di stockfish possono essere:
 1. connessione Internet non stabile o spenta
@@ -743,6 +740,7 @@ Dopo aver spacchettato lo zip in cartella engine, di solito vi creerà la cartel
 Sono importanti i seguenti controlli:
 1. controllare nel file engine.cnf nella cartella bin che contenga corretto sia il path che il nome dell'eseguibile
 2. avviare scacchi-start e provare a far giocare stockfish con CtrlZ e dare a stockfish il bianco e livello 10. Se fa la prima mossa è tutto ok. 
+Se la connessione a Internet è buona e l'installazione di stockfish non riesce, leggere nella cartella engine il file readme.md che vi guiderà nella installazione manuale di stockfish.
 
 Tuning del chess engine
 Nel pacchetto 7z nella cartella readme esistono vari file, tra cui tuning.txt (dalla versione 3.9 in poi).
